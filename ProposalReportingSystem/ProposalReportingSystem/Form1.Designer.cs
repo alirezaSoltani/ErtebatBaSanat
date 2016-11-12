@@ -56,11 +56,13 @@
             this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.addProposal = new System.Windows.Forms.Panel();
+            this.addProposalAddGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.addProposalPanel = new System.Windows.Forms.Panel();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.mainTabControl.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
+            this.addProposalPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // home_tab
@@ -158,23 +160,25 @@
             this.mainTabControl.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainTabControl.ControlBox.MenuBox,
             this.mainTabControl.ControlBox.CloseBox});
-            this.mainTabControl.Controls.Add(this.superTabControlPanel3);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel7);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel6);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel4);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel5);
             this.mainTabControl.Controls.Add(this.superTabControlPanel2);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel3);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel4);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel7);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
             this.mainTabControl.Controls.Add(this.superTabControlPanel1);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel6);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel5);
+            this.mainTabControl.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.mainTabControl.Location = new System.Drawing.Point(0, 14);
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.ReorderTabsEnabled = true;
-            this.mainTabControl.SelectedTabFont = new System.Drawing.Font("B Yekan+", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainTabControl.SelectedTabFont = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTabControl.SelectedTabIndex = 7;
             this.mainTabControl.Size = new System.Drawing.Size(1400, 801);
             this.mainTabControl.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Right;
-            this.mainTabControl.TabFont = new System.Drawing.Font("B Yekan+", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.mainTabControl.TabFont = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.mainTabControl.TabHorizontalSpacing = 0;
             this.mainTabControl.TabIndex = 0;
             this.mainTabControl.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.homeTab,
@@ -195,7 +199,7 @@
             this.superTabControlPanel8.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel8.Name = "superTabControlPanel8";
-            this.superTabControlPanel8.Size = new System.Drawing.Size(1119, 801);
+            this.superTabControlPanel8.Size = new System.Drawing.Size(1141, 801);
             this.superTabControlPanel8.TabIndex = 0;
             this.superTabControlPanel8.TabItem = this.logTab;
             // 
@@ -214,7 +218,7 @@
             this.superTabControlPanel7.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(1119, 801);
+            this.superTabControlPanel7.Size = new System.Drawing.Size(1173, 801);
             this.superTabControlPanel7.TabIndex = 0;
             this.superTabControlPanel7.TabItem = this.personalSettingsTab;
             // 
@@ -271,7 +275,7 @@
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1119, 801);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1173, 801);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.manageUserTab;
             // 
@@ -290,7 +294,7 @@
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1119, 801);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1173, 801);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.searchProposalTab;
             // 
@@ -305,12 +309,12 @@
             // 
             // superTabControlPanel2
             // 
-            this.superTabControlPanel2.Controls.Add(this.addProposal);
+            this.superTabControlPanel2.Controls.Add(this.addProposalPanel);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1119, 801);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1173, 801);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.addProposalTab;
             // 
@@ -342,12 +346,55 @@
             this.homeTab.Name = "homeTab";
             this.homeTab.Text = "خانه";
             // 
-            // addProposal
+            // addProposalAddGp
             // 
-            this.addProposal.Location = new System.Drawing.Point(3, 3);
-            this.addProposal.Name = "addProposal";
-            this.addProposal.Size = new System.Drawing.Size(1113, 779);
-            this.addProposal.TabIndex = 0;
+            this.addProposalAddGp.CanvasColor = System.Drawing.SystemColors.Control;
+            this.addProposalAddGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.addProposalAddGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.addProposalAddGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.addProposalAddGp.Location = new System.Drawing.Point(9, 65);
+            this.addProposalAddGp.Name = "addProposalAddGp";
+            this.addProposalAddGp.Size = new System.Drawing.Size(1077, 188);
+            // 
+            // 
+            // 
+            this.addProposalAddGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.addProposalAddGp.Style.BackColorGradientAngle = 90;
+            this.addProposalAddGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.addProposalAddGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.addProposalAddGp.Style.BorderBottomWidth = 1;
+            this.addProposalAddGp.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.addProposalAddGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.addProposalAddGp.Style.BorderLeftWidth = 1;
+            this.addProposalAddGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.addProposalAddGp.Style.BorderRightWidth = 1;
+            this.addProposalAddGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.addProposalAddGp.Style.BorderTopWidth = 1;
+            this.addProposalAddGp.Style.CornerDiameter = 4;
+            this.addProposalAddGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.addProposalAddGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.addProposalAddGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.addProposalAddGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.addProposalAddGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.addProposalAddGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.addProposalAddGp.TabIndex = 0;
+            this.addProposalAddGp.Text = "اطلاعات پروپوزال";
+            // 
+            // addProposalPanel
+            // 
+            this.addProposalPanel.BackColor = System.Drawing.Color.White;
+            this.addProposalPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.addProposalPanel.Controls.Add(this.addProposalAddGp);
+            this.addProposalPanel.Location = new System.Drawing.Point(12, 3);
+            this.addProposalPanel.Name = "addProposalPanel";
+            this.addProposalPanel.Size = new System.Drawing.Size(1133, 779);
+            this.addProposalPanel.TabIndex = 0;
             // 
             // Form1
             // 
@@ -364,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).EndInit();
             this.mainTabControl.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
+            this.addProposalPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,7 +443,8 @@
         private DevComponents.DotNetBar.SuperTabItem manageProposalTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel4;
         private DevComponents.DotNetBar.SuperTabItem manageUserTab;
-        private System.Windows.Forms.Panel addProposal;
+        private DevComponents.DotNetBar.Controls.GroupPanel addProposalAddGp;
+        private System.Windows.Forms.Panel addProposalPanel;
     }
 }
 
