@@ -11,13 +11,13 @@ namespace ProposalReportingSystem
         private string persianTitle;
         private string engTitle;
         private string keyWord;
-        private long executer;
-        private string executer2;
-        private string coExecuter;
+        private long executor;
+        private string executor2;
+        private string coExecutor;
         private DateTime startDate;
         private int duration;
         private string procedureType;
-        private string propertyTyoe;
+        private string propertyType;
         private string registerType;
         private string proposalType;
         private long employer;
@@ -77,42 +77,42 @@ namespace ProposalReportingSystem
             }
         }
 
-        public long Executer
+        public long Executor
         {
             get
             {
-                return executer;
+                return executor;
             }
 
             set
             {
-                executer = value;
+                executor = value;
             }
         }
 
-        public string Executer2
+        public string Executor2
         {
             get
             {
-                return executer2;
+                return executor2;
             }
 
             set
             {
-                executer2 = value;
+                executor2 = value;
             }
         }
 
-        public string CoExecuter
+        public string CoExecutor
         {
             get
             {
-                return coExecuter;
+                return coExecutor;
             }
 
             set
             {
-                coExecuter = value;
+                coExecutor = value;
             }
         }
 
@@ -155,16 +155,16 @@ namespace ProposalReportingSystem
             }
         }
 
-        public string PropertyTyoe
+        public string PropertyType
         {
             get
             {
-                return propertyTyoe;
+                return propertyType;
             }
 
             set
             {
-                propertyTyoe = value;
+                propertyType = value;
             }
         }
 
@@ -246,19 +246,19 @@ namespace ProposalReportingSystem
             }
         }
 
-        public Proposal(long index, string persianTitle, string engTitle, string keyWord, long executer, string executer2, string coExecuter, DateTime startDate, int duration, string procedureType, string propertyTyoe, string registerType, string proposalType, long employer, string value, string status, long registrant)
+        public Proposal(long index, string persianTitle, string engTitle, string keyWord, long executor, string executor2, string coExecutor, DateTime startDate, int duration, string procedureType, string propertyType, string registerType, string proposalType, long employer, string value, string status, long registrant)
         {
             this.Index = index;
             this.PersianTitle = persianTitle;
             this.EngTitle = engTitle;
             this.KeyWord = keyWord;
-            this.Executer = executer;
-            this.Executer2 = executer2;
-            this.CoExecuter = coExecuter;
+            this.Executor = executor;
+            this.Executor2 = executor2;
+            this.CoExecutor = coExecutor;
             this.StartDate = startDate;
             this.Duration = duration;
             this.ProcedureType = procedureType;
-            this.PropertyTyoe = propertyTyoe;
+            this.PropertyType = propertyType;
             this.RegisterType = registerType;
             this.ProposalType = proposalType;
             this.Employer = employer;
