@@ -15,6 +15,7 @@ namespace ProposalReportingSystem
         {
             InitializeComponent();
         }
+
         
     }
 }
