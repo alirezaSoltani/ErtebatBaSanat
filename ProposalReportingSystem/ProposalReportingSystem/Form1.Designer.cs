@@ -56,11 +56,9 @@
             this.addPoroposal = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.mainTabControl.SuspendLayout();
-            this.superTabControlPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // home_tab
@@ -323,7 +321,6 @@
             // 
             // superTabControlPanel1
             // 
-            this.superTabControlPanel1.Controls.Add(this.comboBox1);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -341,14 +338,6 @@
             this.homeTab.Name = "homeTab";
             this.homeTab.Text = "خانه";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(313, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -362,7 +351,6 @@
             this.superTabControlPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).EndInit();
             this.mainTabControl.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,7 +382,6 @@
         private DevComponents.DotNetBar.SuperTabItem managePoroposalTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel4;
         private DevComponents.DotNetBar.SuperTabItem manageUsersTab;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
