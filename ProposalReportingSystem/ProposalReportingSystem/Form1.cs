@@ -24,7 +24,7 @@ namespace ProposalReportingSystem
             systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
             this.SetBounds(0, 0, systemWidth, ((955 * systemHeight) / 1000));  //related to setSize
 
-            gl.setSize(mainTabControl, 0, 0, 1000, 1000);
+            gl.setSize(mainTabControl, 0, 0, 998, 1000);
         }
     }
 }
