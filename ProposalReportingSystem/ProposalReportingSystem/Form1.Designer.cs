@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.sideNav1 = new DevComponents.DotNetBar.Controls.SideNav();
+            this.sideNavPanel1 = new DevComponents.DotNetBar.Controls.SideNavPanel();
             this.sideNavItem1 = new DevComponents.DotNetBar.Controls.SideNavItem();
             this.separator1 = new DevComponents.DotNetBar.Separator();
             this.Home_tab = new DevComponents.DotNetBar.Controls.SideNavItem();
-            this.sideNavPanel1 = new DevComponents.DotNetBar.Controls.SideNavPanel();
             this.sideNav1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,15 @@
             this.sideNav1.Size = new System.Drawing.Size(1045, 673);
             this.sideNav1.TabIndex = 0;
             this.sideNav1.Text = "sideNav1";
+            // 
+            // sideNavPanel1
+            // 
+            this.sideNavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sideNavPanel1.Location = new System.Drawing.Point(87, 36);
+            this.sideNavPanel1.Name = "sideNavPanel1";
+            this.sideNavPanel1.Size = new System.Drawing.Size(953, 636);
+            this.sideNavPanel1.TabIndex = 2;
+            this.sideNavPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sideNavPanel1_Paint);
             // 
             // sideNavItem1
             // 
@@ -77,14 +86,6 @@
             this.Home_tab.Panel = this.sideNavPanel1;
             this.Home_tab.Symbol = "";
             this.Home_tab.Text = "خانه";
-            // 
-            // sideNavPanel1
-            // 
-            this.sideNavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sideNavPanel1.Location = new System.Drawing.Point(87, 36);
-            this.sideNavPanel1.Name = "sideNavPanel1";
-            this.sideNavPanel1.Size = new System.Drawing.Size(953, 636);
-            this.sideNavPanel1.TabIndex = 2;
             // 
             // Form1
             // 

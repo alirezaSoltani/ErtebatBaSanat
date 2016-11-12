@@ -10,14 +10,23 @@ namespace ProposalReportingSystem
     {
         
         private string orgName;
-        public Employers(string orgName) {
-            this.orgName = orgName;
+
+        public Employers(string orgName)
+        {
+            this.OrgName = orgName;
         }
-        public string getOrgName() {
-            return orgName;
-        }
-        public void setOrgName(String orgName) {
-            this.orgName = orgName;
+
+        public string OrgName
+        {
+            get
+            {
+                return orgName;
+            }
+
+            set
+            {
+                orgName = value;
+            }
         }
     }
 }

@@ -16,6 +16,11 @@ namespace ProposalReportingSystem
             InitializeComponent();
         }
 
-       
+        private void sideNavPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            Employers p = new Employers("s");
+            p.OrgName="dad";
+            string s = p.OrgName;
+        }
     }
 }
