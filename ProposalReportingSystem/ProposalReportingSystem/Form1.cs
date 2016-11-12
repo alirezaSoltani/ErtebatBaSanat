@@ -26,5 +26,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(mainTabControl, 0, 0, 998, 1000);
         }
+
+       
     }
 }
