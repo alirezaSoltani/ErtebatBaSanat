@@ -80,11 +80,11 @@
             this.superTabControl2.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl2.ControlBox.CloseBox,
             this.superTabControl2.ControlBox.MenuBox});
+            this.superTabControl2.Controls.Add(this.superTabControlPanel4);
             this.superTabControl2.Controls.Add(this.superTabControlPanel9);
             this.superTabControl2.Controls.Add(this.superTabControlPanel8);
             this.superTabControl2.Controls.Add(this.superTabControlPanel2);
             this.superTabControl2.Controls.Add(this.superTabControlPanel3);
-            this.superTabControl2.Controls.Add(this.superTabControlPanel4);
             this.superTabControl2.Controls.Add(this.superTabControlPanel5);
             this.superTabControl2.Controls.Add(this.superTabControlPanel1);
             this.superTabControl2.Cursor = System.Windows.Forms.Cursors.No;
@@ -147,6 +147,7 @@
             this.home_tab.AttachedControl = this.superTabControlPanel2;
             this.home_tab.GlobalItem = false;
             this.home_tab.Icon = ((System.Drawing.Icon)(resources.GetObject("home_tab.Icon")));
+            this.home_tab.Image = ((System.Drawing.Image)(resources.GetObject("home_tab.Image")));
             this.home_tab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
             this.home_tab.Name = "home_tab";
             this.home_tab.Text = "صفحه اصلی";
@@ -173,7 +174,7 @@
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(768, 673);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(729, 673);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.superTabItem3;
             // 
@@ -252,6 +253,7 @@
             this.superTabItem9.AttachedControl = this.superTabControlPanel9;
             this.superTabItem9.GlobalItem = false;
             this.superTabItem9.Icon = ((System.Drawing.Icon)(resources.GetObject("superTabItem9.Icon")));
+            this.superTabItem9.Image = ((System.Drawing.Image)(resources.GetObject("superTabItem9.Image")));
             this.superTabItem9.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
             this.superTabItem9.Name = "superTabItem9";
             this.superTabItem9.Text = "مشاهده و جست ";
@@ -286,6 +288,7 @@
             this.superTabItem8.AttachedControl = this.superTabControlPanel8;
             this.superTabItem8.GlobalItem = false;
             this.superTabItem8.Icon = ((System.Drawing.Icon)(resources.GetObject("superTabItem8.Icon")));
+            this.superTabItem8.Image = ((System.Drawing.Image)(resources.GetObject("superTabItem8.Image")));
             this.superTabItem8.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
             this.superTabItem8.Name = "superTabItem8";
             this.superTabItem8.Text = "ثبت پروپوزال";
