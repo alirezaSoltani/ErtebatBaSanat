@@ -47,18 +47,20 @@
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.managePoroposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.manageUsersTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.searchPoroposal = new DevComponents.DotNetBar.SuperTabItem();
+            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.addPoroposal = new DevComponents.DotNetBar.SuperTabItem();
+            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.addProposal = new System.Windows.Forms.Panel();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.mainTabControl.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // home_tab
@@ -156,14 +158,14 @@
             this.mainTabControl.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainTabControl.ControlBox.MenuBox,
             this.mainTabControl.ControlBox.CloseBox});
-            this.mainTabControl.Controls.Add(this.superTabControlPanel2);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel3);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
             this.mainTabControl.Controls.Add(this.superTabControlPanel7);
             this.mainTabControl.Controls.Add(this.superTabControlPanel6);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel5);
             this.mainTabControl.Controls.Add(this.superTabControlPanel4);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel3);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel5);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel2);
             this.mainTabControl.Controls.Add(this.superTabControlPanel1);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
             this.mainTabControl.Location = new System.Drawing.Point(0, 14);
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTabControl.Name = "mainTabControl";
@@ -176,10 +178,10 @@
             this.mainTabControl.TabIndex = 0;
             this.mainTabControl.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.homeTab,
-            this.addPoroposal,
-            this.searchPoroposal,
-            this.manageUsersTab,
-            this.managePoroposalTab,
+            this.addProposalTab,
+            this.searchProposalTab,
+            this.manageUserTab,
+            this.manageProposalTab,
             this.appSettingsTab,
             this.personalSettingsTab,
             this.logTab});
@@ -193,7 +195,7 @@
             this.superTabControlPanel8.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel8.Name = "superTabControlPanel8";
-            this.superTabControlPanel8.Size = new System.Drawing.Size(1119, 828);
+            this.superTabControlPanel8.Size = new System.Drawing.Size(1119, 801);
             this.superTabControlPanel8.TabIndex = 0;
             this.superTabControlPanel8.TabItem = this.logTab;
             // 
@@ -252,16 +254,16 @@
             this.superTabControlPanel5.Name = "superTabControlPanel5";
             this.superTabControlPanel5.Size = new System.Drawing.Size(1119, 801);
             this.superTabControlPanel5.TabIndex = 0;
-            this.superTabControlPanel5.TabItem = this.managePoroposalTab;
+            this.superTabControlPanel5.TabItem = this.manageProposalTab;
             // 
-            // managePoroposalTab
+            // manageProposalTab
             // 
-            this.managePoroposalTab.AttachedControl = this.superTabControlPanel5;
-            this.managePoroposalTab.GlobalItem = false;
-            this.managePoroposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
-            this.managePoroposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.managePoroposalTab.Name = "managePoroposalTab";
-            this.managePoroposalTab.Text = "مدیریت اطلاعات پروپوزال";
+            this.manageProposalTab.AttachedControl = this.superTabControlPanel5;
+            this.manageProposalTab.GlobalItem = false;
+            this.manageProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
+            this.manageProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageProposalTab.Name = "manageProposalTab";
+            this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
             // 
             // superTabControlPanel4
             // 
@@ -271,16 +273,16 @@
             this.superTabControlPanel4.Name = "superTabControlPanel4";
             this.superTabControlPanel4.Size = new System.Drawing.Size(1119, 801);
             this.superTabControlPanel4.TabIndex = 0;
-            this.superTabControlPanel4.TabItem = this.manageUsersTab;
+            this.superTabControlPanel4.TabItem = this.manageUserTab;
             // 
-            // manageUsersTab
+            // manageUserTab
             // 
-            this.manageUsersTab.AttachedControl = this.superTabControlPanel4;
-            this.manageUsersTab.GlobalItem = false;
-            this.manageUsersTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
-            this.manageUsersTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageUsersTab.Name = "manageUsersTab";
-            this.manageUsersTab.Text = "مدیریت اطلاعات کاربران";
+            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
+            this.manageUserTab.GlobalItem = false;
+            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
+            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageUserTab.Name = "manageUserTab";
+            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
             // 
             // superTabControlPanel3
             // 
@@ -290,35 +292,36 @@
             this.superTabControlPanel3.Name = "superTabControlPanel3";
             this.superTabControlPanel3.Size = new System.Drawing.Size(1119, 801);
             this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.searchPoroposal;
+            this.superTabControlPanel3.TabItem = this.searchProposalTab;
             // 
-            // searchPoroposal
+            // searchProposalTab
             // 
-            this.searchPoroposal.AttachedControl = this.superTabControlPanel3;
-            this.searchPoroposal.GlobalItem = false;
-            this.searchPoroposal.Image = global::ProposalReportingSystem.Properties.Resources.search;
-            this.searchPoroposal.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.searchPoroposal.Name = "searchPoroposal";
-            this.searchPoroposal.Text = "مشاهده و جستجوی پروپوزال";
+            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
+            this.searchProposalTab.GlobalItem = false;
+            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
+            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.searchProposalTab.Name = "searchProposalTab";
+            this.searchProposalTab.Text = "مشاهده و جستجوی پروپوزال";
             // 
             // superTabControlPanel2
             // 
+            this.superTabControlPanel2.Controls.Add(this.addProposal);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
             this.superTabControlPanel2.Size = new System.Drawing.Size(1119, 801);
             this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.addPoroposal;
+            this.superTabControlPanel2.TabItem = this.addProposalTab;
             // 
-            // addPoroposal
+            // addProposalTab
             // 
-            this.addPoroposal.AttachedControl = this.superTabControlPanel2;
-            this.addPoroposal.GlobalItem = false;
-            this.addPoroposal.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
-            this.addPoroposal.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.addPoroposal.Name = "addPoroposal";
-            this.addPoroposal.Text = "افزودن پروپوزال";
+            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
+            this.addProposalTab.GlobalItem = false;
+            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
+            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.addProposalTab.Name = "addProposalTab";
+            this.addProposalTab.Text = "افزودن پروپوزال";
             // 
             // superTabControlPanel1
             // 
@@ -339,6 +342,13 @@
             this.homeTab.Name = "homeTab";
             this.homeTab.Text = "خانه";
             // 
+            // addProposal
+            // 
+            this.addProposal.Location = new System.Drawing.Point(3, 3);
+            this.addProposal.Name = "addProposal";
+            this.addProposal.Size = new System.Drawing.Size(1113, 779);
+            this.addProposal.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,6 +363,7 @@
             this.superTabControlPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).EndInit();
             this.mainTabControl.ResumeLayout(false);
+            this.superTabControlPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -369,9 +380,9 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.SuperTabControl mainTabControl;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel3;
-        private DevComponents.DotNetBar.SuperTabItem searchPoroposal;
+        private DevComponents.DotNetBar.SuperTabItem searchProposalTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel2;
-        private DevComponents.DotNetBar.SuperTabItem addPoroposal;
+        private DevComponents.DotNetBar.SuperTabItem addProposalTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.DotNetBar.SuperTabItem homeTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel8;
@@ -381,9 +392,10 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel6;
         private DevComponents.DotNetBar.SuperTabItem appSettingsTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel5;
-        private DevComponents.DotNetBar.SuperTabItem managePoroposalTab;
+        private DevComponents.DotNetBar.SuperTabItem manageProposalTab;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel4;
-        private DevComponents.DotNetBar.SuperTabItem manageUsersTab;
+        private DevComponents.DotNetBar.SuperTabItem manageUserTab;
+        private System.Windows.Forms.Panel addProposal;
     }
 }
 
