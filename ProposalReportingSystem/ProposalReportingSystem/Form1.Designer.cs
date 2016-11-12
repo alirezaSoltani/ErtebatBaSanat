@@ -155,14 +155,14 @@
             this.mainTabControl.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainTabControl.ControlBox.MenuBox,
             this.mainTabControl.ControlBox.CloseBox});
-            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel7);
-            this.mainTabControl.Controls.Add(this.superTabControlPanel6);
             this.mainTabControl.Controls.Add(this.superTabControlPanel5);
             this.mainTabControl.Controls.Add(this.superTabControlPanel4);
             this.mainTabControl.Controls.Add(this.superTabControlPanel3);
             this.mainTabControl.Controls.Add(this.superTabControlPanel2);
             this.mainTabControl.Controls.Add(this.superTabControlPanel1);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel8);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel7);
+            this.mainTabControl.Controls.Add(this.superTabControlPanel6);
             this.mainTabControl.Location = new System.Drawing.Point(10, 11);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.ReorderTabsEnabled = true;
@@ -181,7 +181,7 @@
             this.appSettingsTab,
             this.personalSettingsTab,
             this.logTab});
-            this.mainTabControl.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.WinMediaPlayer12;
+            this.mainTabControl.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.Office2010BackstageBlue;
             this.mainTabControl.Text = "superTabControl1";
             this.mainTabControl.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
             // 
@@ -190,7 +190,7 @@
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(796, 651);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.homeTab;
             // 
@@ -208,7 +208,7 @@
             this.superTabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel8.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel8.Name = "superTabControlPanel8";
-            this.superTabControlPanel8.Size = new System.Drawing.Size(767, 651);
+            this.superTabControlPanel8.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel8.TabIndex = 0;
             this.superTabControlPanel8.TabItem = this.logTab;
             // 
@@ -262,7 +262,7 @@
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(767, 651);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel5.TabIndex = 0;
             this.superTabControlPanel5.TabItem = this.managePoroposalTab;
             // 
@@ -280,7 +280,7 @@
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(767, 651);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.manageUsersTab;
             // 
@@ -298,7 +298,7 @@
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(767, 651);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.searchPoroposal;
             // 
@@ -316,7 +316,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(796, 651);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(762, 651);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.addPoroposal;
             // 
