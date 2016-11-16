@@ -166,6 +166,43 @@ namespace ProposalReportingSystem
 
             //////////////edit proposal design///////////////
             //********************************************//
+
+
+
+            /////////////manage users design/////////////////
+            //*********************************************//
+            gl.setSize(manageUserPanel, 0, 1, 875, 1000);
+            gl.setSize(manageUserShowGp, 22, 450, 826, 450);
+            gl.setSize(manageUserDgv, 3, 5, 817, 410);
+            gl.setSize(manageUserManageGp, 22, 15, 826, 425);
+            gl.setSize(menageUserAccessLevelGp, 40, 15, 350, 305);
+
+            gl.setSize(manageUserPersonalInfoGp, 430, 15, 360, 370);
+            gl.setSize(manageUserFnameTxtbx, 45, 20, 160, 25);
+            gl.setSize(manageUserLnameTxtbx, 45, 65, 160, 25);
+            gl.setSize(manageUserNcodTxtbx, 45, 115, 160, 25);
+            gl.setSize(manageUserPasswordTxtbx, 45, 165, 160, 25);
+            gl.setSize(manageUserEmailTxtbx, 45, 215, 160, 25);
+            gl.setSize(manageUserTellTxtbx, 45, 263, 160, 25);
+
+            gl.setSize(manageUserFnameLb, 275, 20, 40, 40);
+            gl.setSize(manageUserLnameLb, 205, 65, 110, 35);
+            gl.setSize(manageUserNcodLb, 205, 115, 110, 35);
+            gl.setSize(manageUserPasswordLb, 205, 165, 110, 35);
+            gl.setSize(manageUserEmailLb, 205, 215, 110, 35);
+            gl.setSize(manageUserTellLb, 205, 265, 110, 35);
+
+            gl.setSize(manageUserEditBtn, 40, 340, 80, 45);
+            gl.setSize(manageUserAddBtn, 125, 340, 80, 45);
+
+            gl.setSize(manageUserAddProCb, 155, 30, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 90, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 145, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 30, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 90, 150, 35);
+            gl.setSize(manageUserDeletUserCb, 20, 145, 150, 35);
+            //*********************************************//
+            /////////////manage users design/////////////////
         }
     }
 }
