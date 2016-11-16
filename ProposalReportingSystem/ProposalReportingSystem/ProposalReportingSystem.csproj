@@ -39,17 +39,10 @@
     <StartupObject>ProposalReportingSystem.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DateTimeSelector">
-      <HintPath>E:\programing\C#\Source\Repos\Second4\Second\Second\bin\Debug\DateTimeSelector.dll</HintPath>
-    </Reference>
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
-    <Reference Include="PersianDate">
-      <HintPath>E:\programing\C#\Source\Repos\Second4\Second\Second\bin\Debug\PersianDate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />

@@ -10,6 +10,7 @@ namespace ProposalReportingSystem
     {
         
         private string orgName;
+        private long index;
 
         public Employers(string orgName)
         {
@@ -26,6 +27,19 @@ namespace ProposalReportingSystem
             set
             {
                 orgName = value;
+            }
+        }
+
+        public long Index
+        {
+            get
+            {
+                return index;
+            }
+
+            set
+            {
+                index = value;
             }
         }
     }
