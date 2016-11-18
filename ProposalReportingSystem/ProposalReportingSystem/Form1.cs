@@ -24,8 +24,8 @@ namespace ProposalReportingSystem
             systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
             MessageBox.Show(systemWidth + "*" + systemHeight);
             this.SetBounds(0, 0, systemWidth, ((955 * systemHeight) / 1000));  //related to setSize
-            gl.setSize(mainTabControl, 0, 0, 990, 900);                       //related to setSize
-            mainTabControl.TabHorizontalSpacing = (systemWidth / 200);
+            gl.setSize(systemSetting, 0, 0, 992, 900);                       //related to setSize
+            //mainTabControl.TabHorizontalSpacing = (systemWidth / 200);
 
             //********************************************//
             //////////////add proposal design///////////////
@@ -33,7 +33,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalAddGp, 22, 15, 826, 425);
             gl.setSize(addProposalShowGp, 22, 450, 826, 450);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(addProposalShowDgv, 3, 5, 817, 425);
+            gl.setSize(addProposalShowDgv, 3, 5, 817, 423);
 
             //Labels
             gl.setSize(addProposalPersianTitleLbl, 720, 25, 60, 25);
@@ -104,7 +104,7 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalEditGp, 22, 15, 826, 425);
             gl.setSize(editProposalShowGp, 22, 450, 826, 450);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(editProposalShowDgv, 3, 5, 817, 425);
+            gl.setSize(editProposalShowDgv, 3, 5, 817, 423);
 
             //Labels
             gl.setSize(editProposalPersianTitleLbl, 720, 25, 60, 25);
@@ -201,8 +201,102 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserAddUserCb, 20, 30, 150, 35);
             gl.setSize(manageUserEditUserCb, 20, 90, 150, 35);
             gl.setSize(manageUserDeletUserCb, 20, 145, 150, 35);
+
+
+            ////test the gridview by excel///
+            System.Data.OleDb.OleDbConnection MyConnection2;
+            System.Data.DataSet DtSet2;
+            System.Data.OleDb.OleDbDataAdapter MyCommand2;
+            MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
+            MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
+            MyCommand.TableMappings.Add("Table", "Net-informations.com");
+            DtSet = new System.Data.DataSet();
+            MyCommand.Fill(DtSet);
+            manageUserDgv.DataSource = DtSet.Tables[0];
+            MyConnection.Close();
+            ////test the gridview by excel///
+
             //*********************************************//
             /////////////manage users design/////////////////
+
+
+
+
+            //********************************************//
+            ///////////////log design///////////////
+            gl.setSize(logPanel, 0, 1, 875, 930);
+            gl.setSize(logGp, 22, 15, 826, 850);
+            gl.setSize(logDgv, 3, 5, 817, 800);
+
+            ////test the gridview by excel///
+            MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
+            MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
+            MyCommand.TableMappings.Add("Table", "Net-informations.com");
+            DtSet = new System.Data.DataSet();
+            MyCommand.Fill(DtSet);
+            logDgv.DataSource = DtSet.Tables[0];
+            MyConnection.Close();
+            ////test the gridview by excel///
+
+            ///////////////log design///////////////
+            //********************************************//
+
+
+
+            //********************************************//
+            ///////////////////App Setting design//////////
+            gl.setSize(appSettingPanel, 0, 1, 875, 930);
+            gl.setSize(appSettingGp, 22, 15, 826, 425);
+            gl.setSize(appSettingCoGp, 20, 15, 240, 135);
+            gl.setSize(appSettingStatusGp, 20, 185, 240, 135);
+            gl.setSize(appSettingRegTypeGp, 290, 15, 240, 135);
+            gl.setSize(appSettingProTypeGp, 290, 185, 240, 135);
+            gl.setSize(appSettingTypeJobGp, 560, 15, 240, 135);
+            gl.setSize(appSettingPropertyGp, 560, 185, 240, 135);
+            gl.setSize(appSettingShowDv, 3, 5, 817, 408);
+            gl.setSize(appSettingJobTypeRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingPropertyRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingRegTypeRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingProTypeRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingCoRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingStatusRbtn, 205, 5, 23, 18);
+
+            gl.setSize(appSettingCoTxtbx, 45, 30, 170, 35);
+            gl.setSize(appSettingStatusTxtbx, 45, 30, 170, 35);
+            gl.setSize(appSettingRegTypeTxtbx, 45, 30, 170, 35);
+            gl.setSize(appSettingProTypeTxtbx, 45, 30, 170, 35);
+            gl.setSize(appSettingPropertyTxtbx, 45, 30, 170, 35);
+            gl.setSize(appSettingJobTypeTxtbx, 45, 30, 170, 35);
+
+            gl.setSize(appSettingAddBtn, 20, 335, 80, 45);
+            gl.setSize(appSettingEditBtn, 110, 335, 80, 45);
+            gl.setSize(appSettingDeleteBtn, 200, 335, 80, 45);
+
+            gl.setSize(appSettingShowGp, 22, 450, 826, 450);
+            ///////////////////App Setting design//////////
+            //********************************************//
+
+
+
+
+
+            //*************************************************//
+            ///////////////personal setting design///////////////
+            gl.setSize(personalSettingPanel, 0, 1, 875, 930);
+            gl.setSize(personalSettingGp, 22, 15, 826, 400);
+
+            gl.setSize(currentPasswordLbl, 450, 35, 110, 25);
+            gl.setSize(newPasswordLbl, 450, 75, 110, 25);
+            gl.setSize(confirmNewPasswordLbl, 450, 115, 110, 25);
+
+            gl.setSize(currentPasswordTxtbx, 230, 35, 210, 25);
+            gl.setSize(newPasswordTxtbx, 230, 75, 210, 25);
+            gl.setSize(confirmNewPasswordTxtbx, 230, 115, 210, 25);
+
+            gl.setSize(personalSettingRegisterBtn, 250, 180, 80, 45);
+            gl.setSize(personalSettingClearBtn, 345, 180, 80, 45);
+            ///////////////personal setting design///////////////
+            //*************************************************//
         }
     }
 }
