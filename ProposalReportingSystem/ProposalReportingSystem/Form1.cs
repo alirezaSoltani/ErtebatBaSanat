@@ -88,9 +88,9 @@ namespace ProposalReportingSystem
             MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
             MyCommand.TableMappings.Add("Table", "Net-informations.com");
             DtSet = new System.Data.DataSet();
-            MyCommand.Fill(DtSet);
-            addProposalShowDgv.DataSource = DtSet.Tables[0];
-            MyConnection.Close();
+            //MyCommand.Fill(DtSet);
+            //addProposalShowDgv.DataSource = DtSet.Tables[0];
+            //MyConnection.Close();
             ////test the gridview by excel///
 
             //////////////add proposal design///////////////
@@ -159,9 +159,9 @@ namespace ProposalReportingSystem
             MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
             MyCommand.TableMappings.Add("Table", "Net-informations.com");
             DtSet = new System.Data.DataSet();
-            MyCommand.Fill(DtSet);
-            editProposalShowDgv.DataSource = DtSet.Tables[0];
-            MyConnection.Close();
+            //MyCommand.Fill(DtSet);
+            //editProposalShowDgv.DataSource = DtSet.Tables[0];
+            //MyConnection.Close();
             ////test the gridview by excel///
 
             //////////////edit proposal design///////////////
@@ -203,6 +203,48 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserDeletUserCb, 20, 145, 150, 35);
             //*********************************************//
             /////////////manage users design/////////////////
+
+
+
+            /////////////search proposal design/////////////////
+            //*********************************************//
+            gl.setSize(searchTabBackPanel, 0, 1, 875, 930);
+
+            gl.setSize(searchTabSearchElemetsFp, 22, 15, 826, 175);
+
+            gl.setSize(searchTabProcedureCb, 20, 2, 143, 25);
+            gl.setSize(searchTabProcedureLbl, 153, 2, 71, 25);
+            gl.setSize(searchTabFacultyCb, 296, 2, 143, 25);
+            gl.setSize(searchTabFacultyLbl, 439, 2, 71, 25);
+            gl.setSize(searchTabOrgazinationCb, 582, 2, 143, 25);
+            gl.setSize(searchTabOrgazinationLbl, 725, 2, 71, 25);
+
+            gl.setSize(searchTabTypeLblCb, 20, 42, 143, 25);
+            gl.setSize(searchTabTypeLbl, 153, 42, 71, 25);
+            //gl.setSize(searchTabFacultyCb, 296, 42, 143, 25);
+            gl.setSize(searchTabSendDateLbl, 439, 42, 71, 25);
+            gl.setSize(searchTabNameTxtbx, 582, 42, 143, 25);
+            gl.setSize(searchTabNameLbl, 725, 42, 71, 25);
+
+            gl.setSize(comboBoxEx3, 20, 82, 143, 25);
+            gl.setSize(labelX2, 153, 82, 71, 25);
+            gl.setSize(searchStatusCb, 296, 82, 143, 25);
+            gl.setSize(searchStatusLbl, 439, 82, 71, 25);
+            gl.setSize(searchTabLNameTxtbx, 582, 82, 143, 25);
+            gl.setSize(searchTabLNameLbl, 725, 82, 71, 25);
+
+            gl.setSize(searchTabSearchBtn, 20, 122, 143, 25);
+            //gl.setSize(labelX2, 153, 82, 71, 25);
+            gl.setSize(searchTabPriceTxtbx, 296, 122, 143, 25);
+            gl.setSize(searchTabPriceLbl, 439, 122, 71, 25);
+            gl.setSize(searchTabGroupTxtbx, 582, 122, 143, 25);
+            gl.setSize(searchTabGroupLbl, 725, 122, 71, 25);
+
+
+            gl.setSize(searchProposalShowGP, 22, 205, 826, 700);
+
+            gl.setSize(searchTabResultDgv, 0, 0, 826, 700);
+            
         }
     }
 }
