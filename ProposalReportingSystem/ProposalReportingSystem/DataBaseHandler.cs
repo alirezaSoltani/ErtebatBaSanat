@@ -15,6 +15,8 @@ namespace ProposalReportingSystem
                 "User id=rayanpro_rayan; " +
                 "Password=P@hn1395;";
 
+
+
         /// <summary>
         /// querry for proposals
         /// </summary>
