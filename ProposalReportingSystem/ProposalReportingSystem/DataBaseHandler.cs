@@ -305,6 +305,179 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
+        /// <summary>
+        /// procedure query
+        /// </summary>
+        /// <param name="procedure"></param>
+        public void AddProcedureType(String procedure)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType) VALUES " + procedure + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditProcedureType(String newProcedureType , String lastProcedureType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = " + lastProcedureType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        /////////////////end of procedure query
+
+
+        /// <summary>
+        /// property query
+        /// </summary>
+        /// <param name=property></param>
+        public void AddPropertyType(String property)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType) VALUES " + property + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditPropertyType(String newPropertyType, String lastPropertyType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = " + lastPropertyType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+
+        ///////////end query property
+
+        /// <summary>
+        /// proposalType query
+        /// </summary>
+        /// <param name=proposalType></param>
+        public void AddProposalType(String proposalType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType) VALUES " + proposalType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditProposalType(String newProposalType, String lastProposalType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = " + lastProposalType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        /////////////////end proposal type query
+
+        /// <summary>
+        /// registerType query
+        /// </summary>
+        /// <param name=proposalType></param>
+        public void AddRegisterType(String registerType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO registerTypeTable (registerType) VALUES " + registerType  + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditRegisterType(String newRegisterType, String lastRegisterType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = " + lastRegisterType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        //////////////end of registerType query
+
+
+        /// <summary>
+        /// statusType query
+        /// </summary>
+        /// <param name=statusType></param>
+        public void AddStatusType(String statusType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES " + statusType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditStatusType(String newStatusType, String lastStatusType)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = " + lastStatusType + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        ///////////end query of statusType
+
     }
 
 }
