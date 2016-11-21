@@ -87,7 +87,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
 
             gl.setSize(addProposalProcedureTypeLbl, 200, 50, 60, 25);
-            gl.setSize(addProposalProposalTypeCb, 30, 50, 160, 25);
+            gl.setSize(addProposalProcedureTypeCb, 30, 50, 160, 25);
 
             gl.setSize(addProposalPropertyTypeLbl, 200, 90, 60, 25);
             gl.setSize(addProposalPropertyTypeCb, 30, 90, 160, 25);
@@ -261,7 +261,7 @@ namespace ProposalReportingSystem
             gl.setSize(logGp, 22, 15, 826, 850);
             gl.setSize(logDgv, 3, 5, 817, 800);
 
-            ////test the gridview by excel///
+            /*///test the gridview by excel///
             MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
             MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
             MyCommand.TableMappings.Add("Table", "Net-informations.com");
@@ -269,7 +269,7 @@ namespace ProposalReportingSystem
             MyCommand.Fill(DtSet);
             logDgv.DataSource = DtSet.Tables[0];
             MyConnection.Close();
-            ////test the gridview by excel///
+            ////test the gridview by excel//*/
 
             ///////////////log design///////////////
             //********************************************//

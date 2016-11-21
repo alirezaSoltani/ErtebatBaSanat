@@ -73,7 +73,6 @@
             this.addProposalValueTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalValueLbl = new System.Windows.Forms.Label();
             this.addProposalOrganizationLbl = new System.Windows.Forms.Label();
-            this.addProposalStatusCb = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.addProposalStatusLbl = new System.Windows.Forms.Label();
             this.addProposalTypeLbl = new System.Windows.Forms.Label();
             this.addProposalRegisterTypeLbl = new System.Windows.Forms.Label();
@@ -233,6 +232,7 @@
             this.addProposalRegisterTypeCb = new System.Windows.Forms.ComboBox();
             this.addProposalProposalTypeCb = new System.Windows.Forms.ComboBox();
             this.addProposalOrganizationCb = new System.Windows.Forms.ComboBox();
+            this.addProposalStatusCb = new System.Windows.Forms.ComboBox();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemSetting)).BeginInit();
             this.systemSetting.SuspendLayout();
@@ -342,10 +342,10 @@
             this.systemSetting.ControlBox.MenuBox,
             this.systemSetting.ControlBox.CloseBox});
             this.systemSetting.Controls.Add(this.superTabControlPanel2);
+            this.systemSetting.Controls.Add(this.superTabControlPanel3);
             this.systemSetting.Controls.Add(this.superTabControlPanel5);
             this.systemSetting.Controls.Add(this.superTabControlPanel4);
             this.systemSetting.Controls.Add(this.superTabControlPanel1);
-            this.systemSetting.Controls.Add(this.superTabControlPanel3);
             this.systemSetting.Controls.Add(this.superTabControlPanel8);
             this.systemSetting.Controls.Add(this.superTabControlPanel7);
             this.systemSetting.Controls.Add(this.superTabControlPanel6);
@@ -482,6 +482,7 @@
             // 
             this.addProposalAddGp.CanvasColor = System.Drawing.SystemColors.Control;
             this.addProposalAddGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.addProposalAddGp.Controls.Add(this.addProposalStatusCb);
             this.addProposalAddGp.Controls.Add(this.addProposalOrganizationCb);
             this.addProposalAddGp.Controls.Add(this.addProposalProposalTypeCb);
             this.addProposalAddGp.Controls.Add(this.addProposalRegisterTypeCb);
@@ -510,7 +511,6 @@
             this.addProposalAddGp.Controls.Add(this.addProposalValueTxtbx);
             this.addProposalAddGp.Controls.Add(this.addProposalValueLbl);
             this.addProposalAddGp.Controls.Add(this.addProposalOrganizationLbl);
-            this.addProposalAddGp.Controls.Add(this.addProposalStatusCb);
             this.addProposalAddGp.Controls.Add(this.addProposalStatusLbl);
             this.addProposalAddGp.Controls.Add(this.addProposalTypeLbl);
             this.addProposalAddGp.Controls.Add(this.addProposalRegisterTypeLbl);
@@ -789,19 +789,6 @@
             this.addProposalOrganizationLbl.TabIndex = 27;
             this.addProposalOrganizationLbl.Text = "سازمان کارفرما";
             this.addProposalOrganizationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // addProposalStatusCb
-            // 
-            this.addProposalStatusCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.addProposalStatusCb.DisplayMember = "Text";
-            this.addProposalStatusCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.addProposalStatusCb.FormattingEnabled = true;
-            this.addProposalStatusCb.ItemHeight = 24;
-            this.addProposalStatusCb.Location = new System.Drawing.Point(92, 268);
-            this.addProposalStatusCb.Name = "addProposalStatusCb";
-            this.addProposalStatusCb.Size = new System.Drawing.Size(184, 30);
-            this.addProposalStatusCb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.addProposalStatusCb.TabIndex = 26;
             // 
             // addProposalStatusLbl
             // 
@@ -3143,6 +3130,14 @@
             this.addProposalOrganizationCb.Size = new System.Drawing.Size(184, 29);
             this.addProposalOrganizationCb.TabIndex = 57;
             // 
+            // addProposalStatusCb
+            // 
+            this.addProposalStatusCb.FormattingEnabled = true;
+            this.addProposalStatusCb.Location = new System.Drawing.Point(92, 271);
+            this.addProposalStatusCb.Name = "addProposalStatusCb";
+            this.addProposalStatusCb.Size = new System.Drawing.Size(184, 29);
+            this.addProposalStatusCb.TabIndex = 58;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3322,7 +3317,6 @@
         private System.Windows.Forms.TextBox addProposalValueTxtbx;
         private System.Windows.Forms.Label addProposalValueLbl;
         private System.Windows.Forms.Label addProposalOrganizationLbl;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx addProposalStatusCb;
         private System.Windows.Forms.Label addProposalStatusLbl;
         private System.Windows.Forms.Label addProposalTypeLbl;
         private System.Windows.Forms.Label addProposalRegisterTypeLbl;
@@ -3403,6 +3397,7 @@
         private System.Windows.Forms.ComboBox addProposalRegisterTypeCb;
         private System.Windows.Forms.ComboBox addProposalOrganizationCb;
         private System.Windows.Forms.ComboBox addProposalProposalTypeCb;
+        private System.Windows.Forms.ComboBox addProposalStatusCb;
     }
 }
 
