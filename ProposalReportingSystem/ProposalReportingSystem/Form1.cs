@@ -87,7 +87,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
 
             gl.setSize(addProposalProcedureTypeLbl, 200, 50, 60, 25);
-            gl.setSize(addProposalProcedureTypeCb, 30, 50, 160, 25);
+            gl.setSize(addProposalProposalTypeCb, 30, 50, 160, 25);
 
             gl.setSize(addProposalPropertyTypeLbl, 200, 90, 60, 25);
             gl.setSize(addProposalPropertyTypeCb, 30, 90, 160, 25);
@@ -96,7 +96,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalRegisterTypeCb, 30, 130, 160, 25);
 
             gl.setSize(addProposalTypeLbl, 200, 170, 60, 25);
-            gl.setSize(addProposalTypeCb, 30, 170, 160, 25);
+            gl.setSize(addProposalProposalTypeCb, 30, 170, 160, 25);
 
             gl.setSize(addProposalOrganizationLbl, 200, 210, 60, 25);
             gl.setSize(addProposalOrganizationCb, 30, 210, 160, 25);
@@ -113,7 +113,7 @@ namespace ProposalReportingSystem
 
 
 
-            ////test the gridview by excel///
+            /*///test the gridview by excel///
             System.Data.OleDb.OleDbConnection MyConnection;
             System.Data.DataSet DtSet;
             System.Data.OleDb.OleDbDataAdapter MyCommand;
@@ -124,7 +124,7 @@ namespace ProposalReportingSystem
             MyCommand.Fill(DtSet);
             addProposalShowDgv.DataSource = DtSet.Tables[0];
             MyConnection.Close();
-            ////test the gridview by excel///
+            ////test the gridview by excel//*/
 
             //////////////add proposal design///////////////
             //********************************************//
@@ -132,7 +132,7 @@ namespace ProposalReportingSystem
 
 
             //********************************************//
-            //////////////edit proposal design///////////////
+            /*/////////////edit proposal design///////////////
             gl.setSize(editProposalPanel, 0, 1, 875, 930);
             gl.setSize(editProposalEditGp, 22, 15, 826, 425);
             gl.setSize(editProposalShowGp, 22, 450, 826, 450);
@@ -180,11 +180,11 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalStatusCb, 30, 145, 160, 25);
 
             gl.setSize(editProposalRegisterBtn, 30, 290, 80, 45);
-            gl.setSize(editProposalClearBtn, 120, 290, 80, 45);
+            gl.setSize(editProposalClearBtn, 120, 290, 80, 45);*/
 
 
 
-            ////test the gridview by excel///
+            /*///test the gridview by excel///
             System.Data.OleDb.OleDbConnection MyConnection1;
             System.Data.DataSet DtSet1;
             System.Data.OleDb.OleDbDataAdapter MyCommand1;
@@ -195,7 +195,7 @@ namespace ProposalReportingSystem
             MyCommand.Fill(DtSet);
             editProposalShowDgv.DataSource = DtSet.Tables[0];
             MyConnection.Close();
-            ////test the gridview by excel///
+            ////test the gridview by excel//*/
 
             //////////////edit proposal design///////////////
             //********************************************//
@@ -236,7 +236,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserDeletUserCb, 20, 145, 150, 35);
 
 
-            ////test the gridview by excel///
+            /*///test the gridview by excel///
             System.Data.OleDb.OleDbConnection MyConnection2;
             System.Data.DataSet DtSet2;
             System.Data.OleDb.OleDbDataAdapter MyCommand2;
@@ -247,7 +247,7 @@ namespace ProposalReportingSystem
             MyCommand.Fill(DtSet);
             manageUserDgv.DataSource = DtSet.Tables[0];
             MyConnection.Close();
-            ////test the gridview by excel///
+            ////test the gridview by excel//*/
 
             //*********************************************//
             /////////////manage users design/////////////////
