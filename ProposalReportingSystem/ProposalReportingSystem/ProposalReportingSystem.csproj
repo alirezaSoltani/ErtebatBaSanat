@@ -41,8 +41,15 @@
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="FarsiCalendarComponent">
+      <HintPath>FarsiCalendarComponent\bin\Release\FarsiCalendarComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Win">
+      <HintPath>C:\Users\ASUS\Desktop\FarsiLibrary\FarsiLibrary.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -116,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete-dust-bin-erase-eraser-remove-icon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about-us.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

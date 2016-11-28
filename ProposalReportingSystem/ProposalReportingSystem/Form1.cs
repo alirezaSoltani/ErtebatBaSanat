@@ -24,8 +24,24 @@ namespace ProposalReportingSystem
             systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
             //MessageBox.Show(systemWidth + "*" + systemHeight);
             this.SetBounds(0, 0, systemWidth, ((955 * systemHeight) / 1000));  //related to setSize
-            gl.setSize(searchProposalExecuterEDegCb, 0, 0, 992, 900);                       //related to setSize
-            //mainTabControl.TabHorizontalSpacing = (systemWidth / 200);
+            gl.setSize(mainPage, 0, 0, 995, 925);                       //related to setSize
+
+
+
+            //********************************************//
+            ////////////////////////Home////////////////////
+            gl.setSize(homeAapInfoGp, 175, 70, 500, 300);
+            gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
+            gl.setSize(homeAppNameLbl, 90, 15, 425, 30);
+            gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
+            gl.setSize(homeUserNameLbl, 210, 160, 125, 30);
+            gl.setSize(homeWellcomeLbl, 225, 195, 85, 25);
+            gl.setSize(analogClockControl1, 70, 25, 180, 180);
+            gl.setSize(monthCalendar1, 370, 80, 360, 165);
+            ///////////////////////Home/////////////////////
+
+
+
 
             //********************************************//
             //////////////add proposal design///////////////
@@ -111,7 +127,6 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalFileLbl, 200, 330, 60, 25);
             gl.setSize(addProposalFileLinkLbl, 30, 330, 160, 25);
 
-
             gl.setSize(addProposalRegisterBtn, 30, 370, 70, 30);
             gl.setSize(addProposalClearBtn, 120, 370, 70, 30);
 
@@ -139,99 +154,70 @@ namespace ProposalReportingSystem
             //////////////search proposal design///////////////
             gl.setSize(searchProposalPanel, 0, 1, 875, 930);
             gl.setSize(searchProposalSearchGp, 22, 15, 826, 445);
+            gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
+            gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
             gl.setSize(searchProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
             gl.setSize(searchProposalShowDgv, 3, 5, 817, 380);
 
-            gl.setSize(searchProposalExecutorNCodeLbl, 720, 10, 60, 25);
-            gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 10, 160, 25);
+            gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
+            gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
 
-            gl.setSize(searchProposalExecutorFNameLbl, 720, 50, 60, 25);
-            gl.setSize(searchProposalExecutorFNameTxtbx, 550, 50, 160, 25);
+            gl.setSize(searchProposalExecutorFNameLbl, 720, 110, 60, 25);
+            gl.setSize(searchProposalExecutorFNameTxtbx, 550, 110, 160, 25);
 
-            gl.setSize(searchProposalExecutorLNameLbl, 720, 90, 60, 25);
-            gl.setSize(searchProposalExecutorLNameTxtbx, 550, 90, 160, 25);
+            gl.setSize(searchProposalExecutorLNameLbl, 720, 150, 60, 25);
+            gl.setSize(searchProposalExecutorLNameTxtbx, 550, 150, 160, 25);
 
-            gl.setSize(searchProposalExecutorFacultyLbl, 720, 130, 60, 25);
-            gl.setSize(searchProposalExecutorFacultyTxtbx, 550, 130, 160, 25);
+            gl.setSize(searchProposalExecutorFacultyLbl, 720, 190, 60, 25);
+            gl.setSize(searchProposalExecutorFacultyTxtbx, 550, 190, 160, 25);
 
-            gl.setSize(searchProposalExecutorEGroupLbl, 720, 170, 60, 25);
-            gl.setSize(searchProposalExecutorEGroupTxtbx, 550, 170, 160, 25);
+            gl.setSize(searchProposalExecutorEGroupLbl, 720, 230, 60, 25);
+            gl.setSize(searchProposalExecutorEGroupTxtbx, 550, 230, 160, 25);
 
-            gl.setSize(searchProposalExecutorEDegLbl, 720, 210, 60, 25);
-            gl.setSize(searchProposalExecutorEDegCb, 550, 210, 160, 25);
+            gl.setSize(searchProposalExecutorMobileLbl, 720, 270, 60, 25);
+            gl.setSize(searchProposalExecutorMobileTxtbx, 550, 270, 160, 25);
 
-            gl.setSize(searchProposalExecutorEmailLbl, 720, 250, 60, 25);
-            gl.setSize(searchProposalExecutorEmailTxtbx, 550, 250, 160, 25);
+            gl.setSize(searchProposalPersianTitleLbl, 420, 70, 60, 25);
+            gl.setSize(searchProposalPersianTitleTxtbx, 260, 70, 160, 25);
 
-            gl.setSize(searchProposalExecutorMobileLbl, 720, 290, 60, 25);
-            gl.setSize(searchProposalExecutorMobileTxtbx, 550, 290, 160, 25);
+            gl.setSize(searchProposalEnglishTitleLbl, 420, 110, 60, 25);
+            gl.setSize(searchProposalEnglishTitleTxtbx, 260, 110, 160, 25);
 
-            gl.setSize(searchProposalExecutorTel1Lbl, 720, 330, 60, 25);
-            gl.setSize(searchProposalExecutorTel1Txtbx, 550, 330, 160, 25);
+            gl.setSize(searchProposalStartDateFromLbl, 420, 150, 60, 25);
+            gl.setSize(searchProposalStartDateFromTimeInput, 260, 150, 160, 25);
+            gl.setSize(searchProposalStartDateFromChbx, 245, 155, 30, 30);
 
-            gl.setSize(searchProposalExecutorTel2Lbl, 720, 370, 60, 25);
-            gl.setSize(searchProposalExecutorTel2Txtbx, 550, 370, 160, 25);
+            gl.setSize(searchProposalStartDateToLbl, 420, 190, 60, 25);
+            gl.setSize(searchProposalStartDateToTimeInput, 260, 190, 160, 25);
+            gl.setSize(searchProposalStartDateToChbx, 245, 195, 30, 30);
 
-            gl.setSize(searchProposalPersianTitleLbl, 460, 10, 60, 25);
-            gl.setSize(searchProposalPersianTitleTxtbx, 290, 10, 160, 25);
+            gl.setSize(searchProposalValueFromLbl, 420, 230, 60, 25);
+            gl.setSize(searchProposalValueFromTxtbx, 260, 230, 160, 25);
+            gl.setSize(searchProposalValueToLbl, 420, 270, 60, 25);
+            gl.setSize(searchProposalValueToTxtbx, 260, 270, 160, 25);
 
-            gl.setSize(searchProposalEnglishTitleLbl, 460, 50, 60, 25);
-            gl.setSize(searchProposalEnglishTitleTxtbx, 290, 50, 160, 25);
+            gl.setSize(searchProposalProcedureTypeLbl, 175, 70, 60, 25);
+            gl.setSize(searchProposalProcedureTypeCb, 45, 70, 120, 25);
 
-            gl.setSize(searchProposalKeywordsLbl, 460, 90, 60, 25);
-            gl.setSize(searchProposalKeywordsTxtbx, 290, 90, 160, 75);
+            gl.setSize(searchProposalPropertyTypeLbl, 175, 110, 60, 25);
+            gl.setSize(searchProposalPropertyTypeCb, 45, 110, 120, 25);
 
-            gl.setSize(searchProposalExecutor2Lbl, 460, 180, 60, 25);
-            gl.setSize(searchProposalExecutor2Txtbx, 290, 180, 160, 75);
+            gl.setSize(searchProposalRegisterTypeLbl, 175, 150, 60, 25);
+            gl.setSize(searchProposalRegisterTypeCb, 45, 150, 120, 25);
 
-            gl.setSize(searchProposalStartDateFromLbl, 460, 290, 60, 25);
-            gl.setSize(searchProposalStartDateToLbl, 460, 330, 60, 25);
-            gl.setSize(searchProposalStartDateFromTimeInput, 290, 290, 160, 25);
-            gl.setSize(searchProposalStartDateToTimeInput, 290, 330, 160, 25);
+            gl.setSize(searchProposalTypeLbl, 175, 190, 60, 25);
+            gl.setSize(searchProposalTypeCb, 45, 190, 120, 25);
 
-            gl.setSize(searchProposalDurationLbl, 200, 10, 60, 25);
-            gl.setSize(searchProposalDurationTxtbx, 30, 10, 160, 25);
+            gl.setSize(searchProposalOrganizationLbl, 175, 230, 60, 25);
+            gl.setSize(searchProposalOrganizationNameCb, 45, 230, 75, 25);
+            gl.setSize(searchProposalOrganizationNumberCb, 125, 230, 40, 25);
 
-            gl.setSize(searchProposalProcedureTypeLbl, 200, 50, 60, 25);
-            gl.setSize(searchProposalProcedureTypeCb, 30, 50, 160, 25);
+            gl.setSize(searchProposalStatusLbl, 175, 270, 60, 25);
+            gl.setSize(searchProposalStatusCb, 45, 270, 120, 25);
 
-            gl.setSize(searchProposalPropertyTypeLbl, 200, 90, 60, 25);
-            gl.setSize(searchProposalPropertyTypeCb, 30, 90, 160, 25);
-
-            gl.setSize(searchProposalRegisterTypeLbl, 200, 130, 60, 25);
-            gl.setSize(searchProposalRegisterTypeCb, 30, 130, 160, 25);
-
-            gl.setSize(searchProposalTypeLbl, 200, 170, 60, 25);
-            gl.setSize(searchProposalTypeCb, 30, 170, 160, 25);
-
-            gl.setSize(searchProposalOrganizationLbl, 200, 210, 60, 25);
-            gl.setSize(searchProposalOrganizationNameCb, 30, 210, 120, 25);
-            gl.setSize(searchProposalOrganizationNumberCb, 155, 210, 35, 25);
-
-            gl.setSize(searchProposalValueFromLbl, 200, 250, 60, 25);
-            gl.setSize(searchProposalValueFromTxtbx, 30, 250, 160, 25);
-            gl.setSize(searchProposalValueToLbl, 200, 290, 60, 25);
-            gl.setSize(searchProposalValueToTxtbx, 30, 290, 160, 25);
-
-            gl.setSize(searchProposalStatusLbl, 200, 330, 60, 25);
-            gl.setSize(searchProposalStatusCb, 30, 330, 160, 25);
-
-            gl.setSize(searchProposalSearchBtn, 30, 370, 70, 30);
-            gl.setSize(searchProposalClearBtn, 120, 370, 70, 30);
-
-
-            //********************************************//
-            ////////////////////////Home////////////////////
-            gl.setSize(homeAapInfoGp, 175, 70, 500, 300);
-            gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
-            gl.setSize(homeAppNameLbl, 90, 15, 425, 30);
-            gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
-            gl.setSize(homeUserNameLbl, 210, 160, 125, 30);
-            gl.setSize(homeWellcomeLbl, 225, 195, 85, 25);
-            gl.setSize(analogClockControl1, 70, 25, 180, 180);
-            gl.setSize(monthCalendar1, 370, 80, 360, 165);
-            ///////////////////////Home/////////////////////
+            gl.setSize(searchProposalSearchBtn, 20, 370, 130, 30);
+            gl.setSize(searchProposalClearBtn, 160, 370, 70, 30);
 
 
 
