@@ -16,6 +16,7 @@ namespace ProposalReportingSystem
 
         private Global gl = new Global();
 
+
         public Form1()
         {
             InitializeComponent();
@@ -24,28 +25,46 @@ namespace ProposalReportingSystem
             systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
             //MessageBox.Show(systemWidth + "*" + systemHeight);
             this.SetBounds(0, 0, systemWidth, ((955 * systemHeight) / 1000));  //related to setSize
-            gl.setSize(mainPage, 0, 0, 995, 925);                       //related to setSize
+            gl.setSize(mainPage, 0, 0, 995, 925);                              //related to setSize
+
+
+            /*PopUp p = new PopUp("title", "context", "left", "right", "error");
+            p.ShowDialog();
+            if(p.DialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("yes baby");
+            }
+
+            else
+            {
+                MessageBox.Show("no baby");
+            }*/
+
+
+            
 
 
 
-            //********************************************//
-            ////////////////////////Home////////////////////
+            //*****************************************************************************************************//
+            //                                               DESIGN                                                //
+            //*****************************************************************************************************//
+
+
+            ////////////////////////Home design////////////////////
+            gl.setSize(homePanel, 0, 1, 900, 930);
             gl.setSize(homeAapInfoGp, 175, 70, 500, 300);
             gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
-            gl.setSize(homeAppNameLbl, 90, 15, 425, 30);
+            gl.setSize(homeAppNameLbl, 100, 15, 425, 30);
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
             gl.setSize(homeUserNameLbl, 210, 160, 125, 30);
-            gl.setSize(homeWellcomeLbl, 225, 195, 85, 25);
+            gl.setSize(homeWelcomeLbl, 225, 195, 85, 25);
             gl.setSize(analogClockControl1, 70, 25, 180, 180);
-            gl.setSize(monthCalendar1, 370, 80, 360, 165);
-            ///////////////////////Home/////////////////////
+            gl.setSize(monthCalendar1, 300, 50, 320, 250);
+            ///////////////////////Home design/////////////////////
 
 
-
-
-            //********************************************//
-            //////////////add proposal design///////////////
-            gl.setSize(addProposalPanel, 0, 1, 875, 930);
+            //////////////Add proposal design///////////////
+            gl.setSize(addProposalPanel, 0, 1, 900, 930);
             gl.setSize(addProposalAddGp, 22, 15, 826, 445);
             gl.setSize(addProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
@@ -97,7 +116,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalCoexecutorTxtbx, 290, 270, 160, 85);
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 60, 25);
-            gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 25);
+            gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
 
             gl.setSize(addProposalDurationLbl, 200, 10, 60, 25);
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
@@ -132,7 +151,7 @@ namespace ProposalReportingSystem
 
 
 
-            /*///test the gridview by excel///
+            ////test the gridview by excel///
             System.Data.OleDb.OleDbConnection MyConnection;
             System.Data.DataSet DtSet;
             System.Data.OleDb.OleDbDataAdapter MyCommand;
@@ -151,8 +170,8 @@ namespace ProposalReportingSystem
 
 
             //********************************************//
-            //////////////search proposal design///////////////
-            gl.setSize(searchProposalPanel, 0, 1, 875, 930);
+            //////////////Search proposal design///////////////
+            gl.setSize(searchProposalPanel, 0, 1, 900, 930);
             gl.setSize(searchProposalSearchGp, 22, 15, 826, 445);
             gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
@@ -185,11 +204,11 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalEnglishTitleTxtbx, 260, 110, 160, 25);
 
             gl.setSize(searchProposalStartDateFromLbl, 420, 150, 60, 25);
-            gl.setSize(searchProposalStartDateFromTimeInput, 260, 150, 160, 25);
+            gl.setSize(searchProposalStartDateFromTimeInput, 260, 150, 160, 35);
             gl.setSize(searchProposalStartDateFromChbx, 245, 155, 30, 30);
 
             gl.setSize(searchProposalStartDateToLbl, 420, 190, 60, 25);
-            gl.setSize(searchProposalStartDateToTimeInput, 260, 190, 160, 25);
+            gl.setSize(searchProposalStartDateToTimeInput, 260, 190, 160, 35);
             gl.setSize(searchProposalStartDateToChbx, 245, 195, 30, 30);
 
             gl.setSize(searchProposalValueFromLbl, 420, 230, 60, 25);
@@ -222,29 +241,25 @@ namespace ProposalReportingSystem
 
 
 
-            /*///test the gridview by excel///
-            System.Data.OleDb.OleDbConnection MyConnection;
-            System.Data.DataSet DtSet;
-            System.Data.OleDb.OleDbDataAdapter MyCommand;
+            ////test the gridview by excel///
+            //System.Data.OleDb.OleDbConnection MyConnection;
+            //System.Data.DataSet DtSet;
+           // System.Data.OleDb.OleDbDataAdapter MyCommand;
             MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
             MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
             MyCommand.TableMappings.Add("Table", "Net-informations.com");
             DtSet = new System.Data.DataSet();
             MyCommand.Fill(DtSet);
-            addProposalShowDgv.DataSource = DtSet.Tables[0];
+            searchProposalShowDgv.DataSource = DtSet.Tables[0];
             MyConnection.Close();
             ////test the gridview by excel//*/
-
             //////////////add proposal design///////////////
             //********************************************//
 
 
-
-
-
             //********************************************//
             //////////////edit proposal design///////////////
-            gl.setSize(editProposalPanel, 0, 1, 875, 930);
+            gl.setSize(editProposalPanel, 0, 1, 900, 930);
             gl.setSize(editProposalEditGp, 22, 15, 826, 445);
             gl.setSize(editProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
@@ -296,7 +311,7 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalCoexecutorTxtbx, 290, 270, 160, 85);
 
             gl.setSize(editProposalStartdateLbl, 460, 370, 60, 25);
-            gl.setSize(editProposalStartdateTimeInput, 290, 370, 160, 25);
+            gl.setSize(editProposalStartdateTimeInput, 290, 370, 160, 35);
 
             gl.setSize(editProposalDurationLbl, 200, 10, 60, 25);
             gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
@@ -345,43 +360,44 @@ namespace ProposalReportingSystem
             MyConnection.Close();
             ////test the gridview by excel//*/
 
-            //////////////add proposal design///////////////
+            //////////////edit proposal design///////////////
             //********************************************//
 
 
 
             /////////////manage users design/////////////////
             //*********************************************//
-            gl.setSize(manageUserPanel, 0, 1, 875, 1000);
-            gl.setSize(manageUserShowGp, 22, 450, 826, 450);
+            gl.setSize(manageUserPanel, 0, 1, 900, 1000);
+            gl.setSize(manageUserShowGp, 22, 470, 826, 425);
             gl.setSize(manageUserDgv, 3, 5, 817, 410);
-            gl.setSize(manageUserManageGp, 22, 15, 826, 425);
-            gl.setSize(menageUserAccessLevelGp, 40, 15, 350, 305);
+            gl.setSize(manageUserManageGp, 22, 15, 826, 445);
 
-            gl.setSize(manageUserPersonalInfoGp, 430, 15, 360, 370);
-            gl.setSize(manageUserFnameTxtbx, 45, 20, 160, 25);
-            gl.setSize(manageUserLnameTxtbx, 45, 65, 160, 25);
-            gl.setSize(manageUserNcodTxtbx, 45, 115, 160, 25);
-            gl.setSize(manageUserPasswordTxtbx, 45, 165, 160, 25);
-            gl.setSize(manageUserEmailTxtbx, 45, 215, 160, 25);
-            gl.setSize(manageUserTellTxtbx, 45, 263, 160, 25);
+            gl.setSize(menageUserAccessLevelGp, 40, 50, 350, 250);
+            gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
+            gl.setSize(manageUserFnameTxtbx, 45, 20, 160, 28);
+            gl.setSize(manageUserLnameTxtbx, 45, 60, 160, 28);
+            gl.setSize(manageUserNcodTxtbx, 45, 100, 160, 28);
+            gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
+            gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
+            gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
 
-            gl.setSize(manageUserFnameLb, 275, 20, 40, 40);
-            gl.setSize(manageUserLnameLb, 205, 65, 110, 35);
-            gl.setSize(manageUserNcodLb, 205, 115, 110, 35);
-            gl.setSize(manageUserPasswordLb, 205, 165, 110, 35);
-            gl.setSize(manageUserEmailLb, 205, 215, 110, 35);
-            gl.setSize(manageUserTellLb, 205, 265, 110, 35);
+            gl.setSize(manageUserFnameLb, 275, 20, 40, 25);
+            gl.setSize(manageUserLnameLb, 205, 60, 110, 25);
+            gl.setSize(manageUserNcodLb, 205, 100, 110, 25);
+            gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
+            gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
+            gl.setSize(manageUserTellLb, 205, 220, 110, 25);
 
-            gl.setSize(manageUserEditBtn, 40, 340, 80, 45);
-            gl.setSize(manageUserAddBtn, 125, 340, 80, 45);
+            gl.setSize(manageUserEditBtn, 40, 360, 80, 30);
+            gl.setSize(manageUserAddBtn, 130, 360, 80, 30);
+            gl.setSize(manageUserClearBtn, 220, 360, 80, 30);
 
-            gl.setSize(manageUserAddProCb, 155, 30, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 90, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 145, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 30, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 90, 150, 35);
-            gl.setSize(manageUserDeletUserCb, 20, 145, 150, 35);
+            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 140, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
+            gl.setSize(manageUserDeletUserCb, 20, 140, 150, 35);
 
 
             /*///test the gridview by excel///
@@ -406,8 +422,8 @@ namespace ProposalReportingSystem
 
             //********************************************//
             ///////////////////App Setting design//////////
-            gl.setSize(appSettingPanel, 0, 1, 875, 930);
-            gl.setSize(appSettingGp, 22, 15, 826, 425);
+            gl.setSize(appSettingPanel, 0, 1, 900, 930);
+            gl.setSize(appSettingGp, 22, 15, 826, 445);
             gl.setSize(appSettingShowDv, 3, 5, 817, 408);
             gl.setSize(appSettingJobTypeRbtn, 205, 5, 23, 18);
             gl.setSize(appSettingPropertyRbtn, 205, 5, 23, 18);
@@ -437,11 +453,11 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingProTypeLbl, 445, 190, 75, 35);
             gl.setSize(appSettingPropertyLbl, 695, 190, 75, 35);
 
-            gl.setSize(appSettingAddBtn, 20, 335, 80, 45);
-            gl.setSize(appSettingEditBtn, 110, 335, 80, 45);
-            gl.setSize(appSettingDeleteBtn, 200, 335, 80, 45);
+            gl.setSize(appSettingAddBtn, 20, 335, 80, 30);
+            gl.setSize(appSettingEditBtn, 110, 335, 80, 30);
+            gl.setSize(appSettingDeleteBtn, 200, 335, 80, 30);
 
-            gl.setSize(appSettingShowGp, 22, 450, 826, 450);
+            gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             ///////////////////App Setting design//////////
             //********************************************//
 
@@ -451,33 +467,75 @@ namespace ProposalReportingSystem
 
             //*************************************************/
             ///////////////personal setting design///////////////
-            gl.setSize(personalSettingPanel, 0, 1, 875, 930);
-            gl.setSize(personalSettingGp, 22, 15, 826, 400);
+            gl.setSize(personalSettingPanel, 0, 1, 900, 930);
+            gl.setSize(personalSettingGp, 22, 15, 826, 445);
 
             gl.setSize(currentPasswordLbl, 450, 35, 110, 25);
             gl.setSize(newPasswordLbl, 450, 75, 110, 25);
             gl.setSize(confirmNewPasswordLbl, 450, 115, 110, 25);
 
-            gl.setSize(currentPasswordTxtbx, 230, 35, 210, 25);
-            gl.setSize(newPasswordTxtbx, 230, 75, 210, 25);
-            gl.setSize(confirmNewPasswordTxtbx, 230, 115, 210, 25);
+            gl.setSize(currentPasswordTxtbx, 230, 35, 220, 25);
+            gl.setSize(newPasswordTxtbx, 230, 75, 220, 25);
+            gl.setSize(confirmNewPasswordTxtbx, 230, 115, 220, 25);
 
-            gl.setSize(personalSettingRegisterBtn, 250, 180, 80, 45);
-            gl.setSize(personalSettingClearBtn, 345, 180, 80, 45);
+            gl.setSize(personalSettingRegisterBtn, 230, 180, 100, 30);
+            gl.setSize(personalSettingClearBtn, 350, 180, 100, 30);
             ///////////////personal setting design///////////////
             //*************************************************//
 
 
 
             /////////////////about us///////////////////////////
+            gl.setSize(aboutUsPanel, 0, 1, 900, 930);
             gl.setSize(aboutUsGp, 210, 250, 450, 340);
-            gl.setSize(aboutUsTitleLbl, 300, 10, 180, 25);
-            gl.setSize(AboutUsArshinLbl, 350, 60, 90, 20);
-            gl.setSize(aboutUsPeymanLbl, 367, 110, 90, 20);
-            gl.setSize(aboutUsHoseinLbl, 330, 160, 100, 20);
-            gl.setSize(aboutUsNimaLbl, 375, 210, 90, 20);
-            gl.setSize(aboutUsAlirezaLbl, 360, 260, 90, 20);
+            gl.setSize(aboutUsTitleLbl, 280, 10, 150, 35);
+            gl.setSize(AboutUsArshinLbl, 280, 60, 150, 30);
+            gl.setSize(aboutUsPeymanLbl, 280, 110, 150, 30);
+            gl.setSize(aboutUsHoseinLbl, 280, 160, 150, 30);
+            gl.setSize(aboutUsNimaLbl, 280, 210, 150, 30);
+            gl.setSize(aboutUsAlirezaLbl, 280, 260, 150, 30);
             //////////////////about us///////////////////////////
+
+
+            /////////////////log design///////////////////////////
+            gl.setSize(logPanel, 0, 1, 900, 930);
+            gl.setSize(logDgv, 20, 20, 840, 870);
+            //////////////////log design///////////////////////////
+
+            //*****************************************************************************************************//
+            //                                               DESIGN                                                //
+            //*****************************************************************************************************//
+        }// end of Form 1
+
+
+
+
+        //*****************************************************************************************************//
+        //                                               LISTENERS                                             //
+        //*****************************************************************************************************//
+
+        private void searchProposalStartDateFromChbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if(searchProposalStartDateFromChbx.Checked == true)
+            {
+                searchProposalStartDateFromTimeInput.Enabled = true;
+            }
+            else
+            {
+                searchProposalStartDateFromTimeInput.Enabled = false;
+            }
+        }
+
+        private void searchProposalStartDateToChbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (searchProposalStartDateToChbx.Checked == true)
+            {
+                searchProposalStartDateToTimeInput.Enabled = true;
+            }
+            else
+            {
+                searchProposalStartDateToTimeInput.Enabled = false;
+            }
         }
     }
 }
