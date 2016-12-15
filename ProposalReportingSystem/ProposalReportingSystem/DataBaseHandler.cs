@@ -25,14 +25,13 @@ namespace ProposalReportingSystem
         public void AddProposal(Proposal proposal)
         {
             //String persianTitle, String engTitle , String keyword, long executor, String executor2 , String coExecutor, String startDate , int duration, String procedureType , String propertyType, String registerType , String proposalType, long employer, String value , String status, long registrant
-            try
-            {
+          
 
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO proposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant)"
+                sc.CommandText = "INSERT INTO proposalTable (index,persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,deleted)"
                                 + "VALUES ('" + proposal.PersianTitle + "'"
                                          + "'" + proposal.EngTitle + "'"
                                          + "'" + proposal.KeyWord + "'"
@@ -48,18 +47,15 @@ namespace ProposalReportingSystem
                                          + "'" + proposal.Employer + "'"
                                          + "'" + proposal.Value + "'"
                                          + "'" + proposal.Status + "'"
-                                         + "'" + proposal.Registrant + "'";
+                                         + "'" + proposal.Registrant + "'"
+                                         + "'" + 0 + "')"; // 0 for deleted 
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch
-            {
-
-            }
+          
         }
         
         public void EditProposal (Proposal proposal)
@@ -100,13 +96,16 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "DELETE FROM proposalTable WHERE index = " + index + "";
+            sc.CommandText = "UPDATE proposalTable SET deleted = " + "'" + 1 + "'"
+                           + "WHERE index = " + index + "";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
             reader = sc.ExecuteReader();
             conn.Close();
         }
+      
+
 
         ///////////end query for proposals
 
@@ -119,31 +118,26 @@ namespace ProposalReportingSystem
         public void AddUser(User user)
         {
             
-            try
-            {
-
+           
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel)"
+                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , deleted)"
                                 + "VALUES ('" + user.U_FName + "'"
                                          + "'" + user.U_LName  + "'"
                                          + "'" + user.U_NCode+ "'"
                                          + "'" + user.U_Password + "'"
                                          + "'" + user.U_Email+ "'"
-                                         + "'" + user.U_Tel + "'";
+                                         + "'" + user.U_Tel + "'"
+                                         +"'" + 0 + "')";
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch
-            {
-
-            }
+           
         }
         public void EditUsers(User user,long currentNCode)
         {
@@ -173,7 +167,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "DELETE FROM UsersTable WHERE u_NCode = " + NCode + "";
+            sc.CommandText = "UPDATE UsersTable SET deleted = " + "'" + 1 + "'" + " WHERE u_NCode = " + NCode + "";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -191,14 +185,13 @@ namespace ProposalReportingSystem
         public void AddTeacher(Teachers teacher)
         {
 
-            try
-            {
+           
 
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO TeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty)"
+                sc.CommandText = "INSERT INTO TeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , deleted)"
                                 + "VALUES ('" + teacher.T_FName + "'"
                                          + "'" +teacher.T_LName + "'"
                                          + "'" + teacher.T_NCode + "'"
@@ -208,18 +201,15 @@ namespace ProposalReportingSystem
                                          + "'" + teacher.T_Mobile + "'"
                                          + "'" + teacher.T_Tel1+ "'"
                                          + "'" + teacher.T_Tel2 + "'"
-                                         + "'" + teacher.T_Faculty + "'";
+                                         + "'" + teacher.T_Faculty + "'"
+                                         +"'" + 0 + "')";
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch
-            {
-
-            }
+           
         }
         public void EditTeacher(Teachers teacher)
         {
@@ -252,7 +242,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "DELETE FROM TeacherTable WHERE t_NCode = " + NCode + "";
+            sc.CommandText = "UPDATE TeacherTable SET deleted = " + "'" + 1 + "'" +" WHERE t_NCode = " + NCode + "";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -273,27 +263,24 @@ namespace ProposalReportingSystem
         public void AddEmployer(Employers employer)
         {
 
-            try
-            {
+           
 
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO employersTable (orgName , index)"
+                sc.CommandText = "INSERT INTO employersTable (orgName , index, deleted)"
                                 + "VALUES ('" + employer.OrgName + "'"
-                                         + "'" + employer.Index + "'";
+                                         + "'" + employer.Index + "'"
+                                         +"'" + 0 + "')";
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch
-            {
-
-            }
+          
+            
         }
         public void UpdateEmployer(Employers employer)
         {
@@ -316,7 +303,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM employersTable";
+            sc.CommandText = "SELECT * FROM employersTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -332,6 +319,19 @@ namespace ProposalReportingSystem
 
             return list;
         }
+        public void DeleteEmployers(long index)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE employersTable SET deleted = " + "'" + 1 + "'" + " WHERE index = " + index + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
 
         ////////////////////end of employer querry
         /// <summary>
@@ -344,7 +344,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType) VALUES " + procedure + "";
+            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType,deleted) VALUES (" + procedure + ", 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -372,7 +372,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM procedureTypeTable";
+            sc.CommandText = "SELECT * FROM procedureTypeTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -385,6 +385,20 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return list;
+        }
+
+        public void DeleteProcedureType(String procedure)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE procedureTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE procedureType = " + procedure + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
 
         /////////////////end of procedure query
@@ -400,7 +414,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType) VALUES " + property + "";
+            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType , deleted) VALUES (" + property + ", 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -428,7 +442,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM propertyTypeTable";
+            sc.CommandText = "SELECT * FROM propertyTypeTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -441,6 +455,20 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return list;
+        }
+
+        public void DeletePropertyeType(String property)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE propertyTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE propertyType = " + property + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
 
 
@@ -456,7 +484,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType) VALUES " + proposalType + "";
+            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType , deleted) VALUES (" + proposalType + " , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -484,7 +512,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM proposalTypeTable";
+            sc.CommandText = "SELECT * FROM proposalTypeTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -497,6 +525,19 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return list;
+        }
+        public void DeleteProposalType(String proposal)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE proposalTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE proposalType = " + proposal + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
 
         /////////////////end proposal type query
@@ -511,7 +552,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO registerTypeTable (registerType) VALUES " + registerType  + "";
+            sc.CommandText = "INSERT INTO registerTypeTable (registerType , deleted) VALUES (" + registerType  + " , 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -539,7 +580,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM registerTypeTable";
+            sc.CommandText = "SELECT * FROM registerTypeTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -552,6 +593,20 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return list;
+        }
+
+        public void DeleteRegisterType(String register)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE registerTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE registerType = " + register + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
 
         //////////////end of registerType query
@@ -567,7 +622,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES " + statusType + "";
+            sc.CommandText = "INSERT INTO statusTypeTable (statusType , deleted) VALUES( " + statusType + " , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -595,7 +650,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM statusTypeTable";
+            sc.CommandText = "SELECT * FROM statusTypeTable WHERE deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -608,6 +663,20 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return list;
+        }
+
+        public void DeleteStatusType(String status)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE statusTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE statusType = " + status + "";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
 
         ///////////end query of statusType
