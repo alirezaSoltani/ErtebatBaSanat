@@ -16,14 +16,20 @@ namespace ProposalReportingSystem
         {
             InitializeComponent();
         }
-        public PopUp(string title, string context, string leftBtnText, string rightBtnText, string icon)
+        public PopUp(string title, string context, string leftBtnText, string centerBtnText, string rightBtnText, string icon)
         {
             InitializeComponent();
 
             this.Text = title;
             popUpContextLbl.Text = context;
-            popUpConfirmBtn.Text = leftBtnText;
-            popUpCancelBtn.Text = rightBtnText;
+            popUpLeftBtn.Text = leftBtnText;
+            popUpCenterBtn.Text = centerBtnText;
+            popUpRightBtn.Text = rightBtnText;
+
+            if(rightBtnText.Equals(""))
+            {
+                popUpRightBtn.Visible = false;
+            }
 
             if(icon.Equals("error"))
             {
@@ -47,9 +53,21 @@ namespace ProposalReportingSystem
             this.Close();
         }
 
-        private void popUpConfirmBtn_Click(object sender, EventArgs e)
+        private void popUpLeftBtn_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void popUpCenterBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
+        }
+
+        private void popUpRightBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

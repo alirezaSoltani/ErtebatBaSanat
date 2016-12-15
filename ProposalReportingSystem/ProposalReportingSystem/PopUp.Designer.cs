@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.popUpPanel = new System.Windows.Forms.Panel();
+            this.popUpRightBtn = new DevComponents.DotNetBar.ButtonX();
             this.popUpContextLbl = new System.Windows.Forms.Label();
             this.popUpIconPbx = new System.Windows.Forms.PictureBox();
-            this.popUpCancelBtn = new DevComponents.DotNetBar.ButtonX();
-            this.popUpConfirmBtn = new DevComponents.DotNetBar.ButtonX();
+            this.popUpCenterBtn = new DevComponents.DotNetBar.ButtonX();
+            this.popUpLeftBtn = new DevComponents.DotNetBar.ButtonX();
             this.popUpPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popUpIconPbx)).BeginInit();
             this.SuspendLayout();
@@ -42,14 +43,28 @@
             this.popUpPanel.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login3;
             this.popUpPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.popUpPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.popUpPanel.Controls.Add(this.popUpRightBtn);
             this.popUpPanel.Controls.Add(this.popUpContextLbl);
             this.popUpPanel.Controls.Add(this.popUpIconPbx);
-            this.popUpPanel.Controls.Add(this.popUpCancelBtn);
-            this.popUpPanel.Controls.Add(this.popUpConfirmBtn);
+            this.popUpPanel.Controls.Add(this.popUpCenterBtn);
+            this.popUpPanel.Controls.Add(this.popUpLeftBtn);
             this.popUpPanel.Location = new System.Drawing.Point(1, -1);
             this.popUpPanel.Name = "popUpPanel";
             this.popUpPanel.Size = new System.Drawing.Size(644, 231);
             this.popUpPanel.TabIndex = 0;
+            // 
+            // popUpRightBtn
+            // 
+            this.popUpRightBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.popUpRightBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.popUpRightBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.popUpRightBtn.Location = new System.Drawing.Point(290, 186);
+            this.popUpRightBtn.Name = "popUpRightBtn";
+            this.popUpRightBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpRightBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.popUpRightBtn.TabIndex = 36;
+            this.popUpRightBtn.Text = "لغو";
+            this.popUpRightBtn.Click += new System.EventHandler(this.popUpRightBtn_Click);
             // 
             // popUpContextLbl
             // 
@@ -75,31 +90,31 @@
             this.popUpIconPbx.TabIndex = 34;
             this.popUpIconPbx.TabStop = false;
             // 
-            // popUpCancelBtn
+            // popUpCenterBtn
             // 
-            this.popUpCancelBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.popUpCancelBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.popUpCancelBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpCancelBtn.Location = new System.Drawing.Point(158, 186);
-            this.popUpCancelBtn.Name = "popUpCancelBtn";
-            this.popUpCancelBtn.Size = new System.Drawing.Size(126, 29);
-            this.popUpCancelBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.popUpCancelBtn.TabIndex = 33;
-            this.popUpCancelBtn.Text = "لغو";
-            this.popUpCancelBtn.Click += new System.EventHandler(this.popUpCancelBtn_Click);
+            this.popUpCenterBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.popUpCenterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.popUpCenterBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.popUpCenterBtn.Location = new System.Drawing.Point(158, 186);
+            this.popUpCenterBtn.Name = "popUpCenterBtn";
+            this.popUpCenterBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpCenterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.popUpCenterBtn.TabIndex = 33;
+            this.popUpCenterBtn.Text = "خیر";
+            this.popUpCenterBtn.Click += new System.EventHandler(this.popUpCenterBtn_Click);
             // 
-            // popUpConfirmBtn
+            // popUpLeftBtn
             // 
-            this.popUpConfirmBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.popUpConfirmBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.popUpConfirmBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpConfirmBtn.Location = new System.Drawing.Point(26, 186);
-            this.popUpConfirmBtn.Name = "popUpConfirmBtn";
-            this.popUpConfirmBtn.Size = new System.Drawing.Size(126, 29);
-            this.popUpConfirmBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.popUpConfirmBtn.TabIndex = 32;
-            this.popUpConfirmBtn.Text = "تایید";
-            this.popUpConfirmBtn.Click += new System.EventHandler(this.popUpConfirmBtn_Click);
+            this.popUpLeftBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.popUpLeftBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.popUpLeftBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.popUpLeftBtn.Location = new System.Drawing.Point(26, 186);
+            this.popUpLeftBtn.Name = "popUpLeftBtn";
+            this.popUpLeftBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpLeftBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.popUpLeftBtn.TabIndex = 32;
+            this.popUpLeftBtn.Text = "بله";
+            this.popUpLeftBtn.Click += new System.EventHandler(this.popUpLeftBtn_Click);
             // 
             // PopUp
             // 
@@ -120,8 +135,9 @@
 
         private System.Windows.Forms.Panel popUpPanel;
         private System.Windows.Forms.PictureBox popUpIconPbx;
-        private DevComponents.DotNetBar.ButtonX popUpCancelBtn;
-        private DevComponents.DotNetBar.ButtonX popUpConfirmBtn;
+        private DevComponents.DotNetBar.ButtonX popUpCenterBtn;
+        private DevComponents.DotNetBar.ButtonX popUpLeftBtn;
         private System.Windows.Forms.Label popUpContextLbl;
+        private DevComponents.DotNetBar.ButtonX popUpRightBtn;
     }
 }

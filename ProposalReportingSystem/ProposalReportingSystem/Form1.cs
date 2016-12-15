@@ -13,6 +13,7 @@ namespace ProposalReportingSystem
     {
         private int systemWidth;    //related to setSize
         private int systemHeight;   //related to setSize
+        private int count;   //related to color of textbox
 
         private Global gl = new Global();
 
@@ -28,16 +29,16 @@ namespace ProposalReportingSystem
             gl.setSize(mainPage, 0, 0, 995, 925);                              //related to setSize
 
 
-            /*PopUp p = new PopUp("title", "context", "left", "right", "error");
+            /*PopUp p = new PopUp("title", "context", "left", "center", "right" , "error");
             p.ShowDialog();
             if(p.DialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("yes baby");
+                MessageBox.Show("yes");
             }
 
             else
             {
-                MessageBox.Show("no baby");
+                MessageBox.Show("no");
             }*/
 
 
@@ -80,10 +81,10 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalExecutorLNameTxtbx, 550, 90, 160, 25);
 
             gl.setSize(addProposalExecutorFacultyLbl, 720, 130, 60, 25);
-            gl.setSize(addProposalExecutorFacultyTxtbx, 550, 130, 160, 25);
+            gl.setSize(addProposalExecutorFacultyCb, 550, 130, 160, 25);
 
             gl.setSize(addProposalExecutorEGroupLbl, 720, 170, 60, 25);
-            gl.setSize(addProposalExecutorEGroupTxtbx, 550, 170, 160, 25);
+            gl.setSize(addProposalExecutorEGroupCb, 550, 170, 160, 25);
 
             gl.setSize(addProposalExecutorEDegLbl, 720, 210, 60, 25);
             gl.setSize(addProposalExecutorEDegCb, 550, 210, 160, 25);
@@ -189,10 +190,10 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalExecutorLNameTxtbx, 550, 150, 160, 25);
 
             gl.setSize(searchProposalExecutorFacultyLbl, 720, 190, 60, 25);
-            gl.setSize(searchProposalExecutorFacultyTxtbx, 550, 190, 160, 25);
+            gl.setSize(searchProposalExecutorFacultyCb, 550, 190, 160, 25);
 
             gl.setSize(searchProposalExecutorEGroupLbl, 720, 230, 60, 25);
-            gl.setSize(searchProposalExecutorEGroupTxtbx, 550, 230, 160, 25);
+            gl.setSize(searchProposalExecutorEGroupCb, 550, 230, 160, 25);
 
             gl.setSize(searchProposalExecutorMobileLbl, 720, 270, 60, 25);
             gl.setSize(searchProposalExecutorMobileTxtbx, 550, 270, 160, 25);
@@ -275,10 +276,10 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalExecutorLNameTxtbx, 550, 90, 160, 25);
 
             gl.setSize(editProposalExecutorFacultyLbl, 720, 130, 60, 25);
-            gl.setSize(editProposalExecutorFacultyTxtbx, 550, 130, 160, 25);
+            gl.setSize(editProposalExecutorFacultyCb, 550, 130, 160, 25);
 
             gl.setSize(editProposalExecutorEGroupLbl, 720, 170, 60, 25);
-            gl.setSize(editProposalExecutorEGroupTxtbx, 550, 170, 160, 25);
+            gl.setSize(editProposalExecutorEGroupCb, 550, 170, 160, 25);
 
             gl.setSize(editProposalExecutorEDegLbl, 720, 210, 60, 25);
             gl.setSize(editProposalExecutorEDegCb, 550, 210, 160, 25);
@@ -433,29 +434,37 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingStatusRbtn, 205, 5, 23, 18);
 
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 35);
-            gl.setSize(appSettingStatusTxtbx, 55, 230, 170, 35);
+            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 35);
             gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
-            gl.setSize(appSettingProTypeTxtbx, 350, 230, 170, 35);
-            gl.setSize(appSettingPropertyTxtbx, 605, 230, 170, 35);
+            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 35);
+            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 35);
             gl.setSize(appSettingJobTypeTxtbx, 605, 60, 170, 35);
 
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
             gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
             gl.setSize(appSettingJobTypeRbtn, 765, 20, 18, 23);
-            gl.setSize(appSettingStatusRbtn, 218, 190, 18, 23);
-            gl.setSize(appSettingProTypeRbtn, 512, 190, 18, 23);
-            gl.setSize(appSettingPropertyRbtn, 765, 190, 18, 23);
+            gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
+            gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
+            gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
 
             gl.setSize(aapSettingCoLbl, 150, 20, 75, 35);
             gl.setSize(appSettingRegTypeLbl, 445, 20, 75, 35);
             gl.setSize(appSettingJobTypeLbl, 695, 20, 75, 35);
-            gl.setSize(appSettingStatusLbl, 150, 190, 75, 35);
-            gl.setSize(appSettingProTypeLbl, 445, 190, 75, 35);
-            gl.setSize(appSettingPropertyLbl, 695, 190, 75, 35);
+            gl.setSize(appSettingStatusLbl, 150, 130, 75, 35);
+            gl.setSize(appSettingProTypeLbl, 445, 130, 75, 35);
+            gl.setSize(appSettingPropertyLbl, 695, 130, 75, 35);
 
-            gl.setSize(appSettingAddBtn, 20, 335, 80, 30);
-            gl.setSize(appSettingEditBtn, 110, 335, 80, 30);
-            gl.setSize(appSettingDeleteBtn, 200, 335, 80, 30);
+            gl.setSize(appSettingFacultyLbl, 695, 250, 75, 35);
+            gl.setSize(appSettingEgroupLbl, 445, 250, 75, 35);
+            gl.setSize(appSettingFacultyRbtn, 765, 250, 18, 23);
+            gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
+            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 35);
+            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 35);
+
+            gl.setSize(appSettingAddBtn, 20, 365, 80, 30);
+            gl.setSize(appSettingEditBtn, 110, 365, 80, 30);
+            gl.setSize(appSettingDeleteBtn, 200, 365, 80, 30);
+            gl.setSize(appSettingBackBtn, 290, 365, 80, 30);
 
             gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             ///////////////////App Setting design//////////
@@ -502,6 +511,41 @@ namespace ProposalReportingSystem
             gl.setSize(logDgv, 20, 20, 840, 870);
             //////////////////log design///////////////////////////
 
+
+
+            //////////////////manageTeacher//////////////////////
+            gl.setSize(manageTeacherPanel, 0, 1, 900, 930);
+            gl.setSize(manageTeacherInfoGp, 22, 15, 826, 445);
+            gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
+            gl.setSize(manageTeacherShowDgv, 3, 5, 817, 408);
+
+            gl.setSize(manageTeacherExecutorNcodeLbl, 740, 15, 60, 25);
+            gl.setSize(manageTeacherFnameLbl, 740, 130, 60, 25);
+            gl.setSize(manageTeacherLnameLbl, 740, 260, 60, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyLbl, 485, 15, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 485, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 485, 260, 60, 25);
+            gl.setSize(manageTeacherExecutorTelLbl, 230, 15, 60, 25);
+            gl.setSize(manageTeacherExecutorEmailLbl, 230, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 230, 260, 60, 25);
+
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 560, 15, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 560, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 560, 260, 160, 25);
+            gl.setSize(manageTeacherExecutorEGroupTxtbx, 300, 15, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 300, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorFacultyTxtbx, 300, 260, 160, 25);
+            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 15, 160, 25);
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 260, 160, 25);
+
+            gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
+            gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
+            gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
+
+            //////////////////manageTeacher//////////////////////
+
             //*****************************************************************************************************//
             //                                               DESIGN                                                //
             //*****************************************************************************************************//
@@ -537,5 +581,134 @@ namespace ProposalReportingSystem
                 searchProposalStartDateToTimeInput.Enabled = false;
             }
         }
+
+        private void addProposalFileLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog op1 = new OpenFileDialog();
+            op1.Multiselect = false;
+            op1.ShowDialog();
+            op1.Filter = "allfiles|*.doc|*.docx|*.pdf";
+
+            addProposalFileLinkLbl.Text = op1.FileName;
+
+            /*int count = 0;
+
+            string[] FName;
+
+            foreach (string s in op1.FileNames)
+
+            {
+
+                FName = s.Split('\\');
+
+                File.Copy(s, "C:\\file\\" + FName[FName.Length - 1]);
+
+                count++;
+
+            }*/
+
+            MessageBox.Show("File uploaded");
+        }
+
+
+        private void addProposalClearBtn_Click(object sender, EventArgs e)
+        {
+            addProposalExecutorNcodeTxtbx.Clear();
+            addProposalExecutorFNameTxtbx.Clear();
+            addProposalExecutorLNameTxtbx.Clear();
+            addProposalExecutorFacultyCb.SelectedIndex = 0;
+            addProposalExecutorEGroupCb.SelectedIndex = 0;
+            addProposalExecutorEDegCb.SelectedIndex = 0;
+            addProposalExecutorEmailTxtbx.Clear();
+            addProposalExecutorMobileTxtbx.Clear();
+            addProposalExecutorTel1Txtbx.Clear();
+            addProposalExecutorTel2Txtbx.Clear();
+            addProposalPersianTitleTxtbx.Clear();
+            addProposalEnglishTitleTxtbx.Clear();
+            addProposalKeywordsTxtbx.Clear();
+            addProposalExecutor2Txtbx.Clear();
+            addProposalCoexecutorTxtbx.Clear();
+            addProposalStartdateTimeInput.ResetText();
+            addProposalDurationTxtbx.Clear();
+            addProposalProcedureTypeCb.SelectedIndex = 0;
+            addProposalPropertyTypeCb.SelectedIndex = 0;
+            addProposalRegisterTypeCb.SelectedIndex = 0;
+            addProposalProposalTypeCb.SelectedIndex = 0;
+            addProposalOrganizationNameCb.SelectedIndex = 0;
+            addProposalOrganizationNumberCb.SelectedIndex = 0;
+            addProposalValueTxtbx.Clear();
+            addProposalStatusCb.SelectedIndex = 0;
+            //addProposalFileLinkLbl, 30, 330, 160, 25);
+        }
+
+
+        private void addProposalRegisterBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                homePanel.BackColor = dlg.Color;
+                addProposalPanel.BackColor = dlg.Color;
+                searchProposalPanel.BackColor = dlg.Color;
+                manageUserPanel.BackColor = dlg.Color;
+                editProposalPanel.BackColor = dlg.Color;
+                appSettingPanel.BackColor = dlg.Color;
+                personalSettingPanel.BackColor = dlg.Color;
+                aboutUsPanel.BackColor = dlg.Color;
+                logPanel.BackColor = dlg.Color;
+            }
+        }
+
+        //////////////color of textbox///////////////
+
+        private void manageTeacherExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            count = manageTeacherExecutorNcodeTxtbx.Text.Length;
+            if (count == 10)
+            {
+                manageTeacherExecutorNcodeTxtbx.BackColor = Color.Green;
+            }
+            else if (count == 0)
+            {
+                manageTeacherExecutorNcodeTxtbx.BackColor = Color.White;
+            }
+            else
+            {
+                manageTeacherExecutorNcodeTxtbx.BackColor = Color.Red;
+            }
+        }
+        //////////////color of textbox///////////////
+
+        //////////////just int///////////////
+        private void manageTeacherExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+        //////////////just int///////////////
+
+        //////////////check email///////////////
+        private void manageTeacherExecutorEmailTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (!manageTeacherExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(manageTeacherExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                manageTeacherExecutorEmailTxtbx.BackColor = Color.Red;
+                MessageBox.Show("email is invalid");
+            }
+            else if(System.Text.RegularExpressions.Regex.IsMatch(manageTeacherExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void manageTeacherExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
+        }
+        //////////////check email///////////////
     }
 }
