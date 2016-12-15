@@ -52,70 +52,6 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxX2
-            // 
-            textBoxX2.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            textBoxX2.Border.BackColor = System.Drawing.Color.Black;
-            textBoxX2.Border.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-            textBoxX2.Border.BackColorGradientAngle = 65;
-            textBoxX2.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX2.Border.BackgroundImage")));
-            textBoxX2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderBottomWidth = 1;
-            textBoxX2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderLeftWidth = 1;
-            textBoxX2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderRightWidth = 1;
-            textBoxX2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderTopWidth = 1;
-            textBoxX2.Border.Class = "RibbonGalleryContainer";
-            textBoxX2.Border.CornerDiameter = 6;
-            textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            textBoxX2.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX2.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX2.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            textBoxX2.Location = new System.Drawing.Point(19, 158);
-            textBoxX2.MaxLength = 12;
-            textBoxX2.Multiline = true;
-            textBoxX2.Name = "textBoxX2";
-            textBoxX2.PasswordChar = '•';
-            textBoxX2.PreventEnterBeep = true;
-            textBoxX2.Size = new System.Drawing.Size(227, 35);
-            textBoxX2.TabIndex = 5;
-            // 
-            // textBoxX1
-            // 
-            textBoxX1.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            textBoxX1.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-            textBoxX1.Border.BackColor2 = System.Drawing.Color.Black;
-            textBoxX1.Border.BackColorGradientAngle = 65;
-            textBoxX1.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX1.Border.BackgroundImage")));
-            textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderBottomWidth = 1;
-            textBoxX1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderLeftWidth = 1;
-            textBoxX1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderRightWidth = 1;
-            textBoxX1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderTopWidth = 1;
-            textBoxX1.Border.Class = "RibbonGalleryContainer";
-            textBoxX1.Border.CornerDiameter = 6;
-            textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            textBoxX1.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX1.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX1.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            textBoxX1.Location = new System.Drawing.Point(19, 117);
-            textBoxX1.Multiline = true;
-            textBoxX1.Name = "textBoxX1";
-            textBoxX1.PreventEnterBeep = true;
-            textBoxX1.Size = new System.Drawing.Size(227, 35);
-            textBoxX1.TabIndex = 4;
-            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -150,7 +86,7 @@
             this.loginMinimizePbx.BackColor = System.Drawing.Color.Transparent;
             this.loginMinimizePbx.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login_minimize_black;
             this.loginMinimizePbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loginMinimizePbx.Location = new System.Drawing.Point(407, 3);
+            this.loginMinimizePbx.Location = new System.Drawing.Point(406, 3);
             this.loginMinimizePbx.Name = "loginMinimizePbx";
             this.loginMinimizePbx.Size = new System.Drawing.Size(25, 25);
             this.loginMinimizePbx.TabIndex = 10;
@@ -257,6 +193,70 @@
             this.loginEnterBtn.TabIndex = 8;
             this.loginEnterBtn.Text = "ورود";
             this.loginEnterBtn.UseVisualStyleBackColor = false;
+            // 
+            // textBoxX2
+            // 
+            textBoxX2.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            textBoxX2.Border.BackColor = System.Drawing.Color.Black;
+            textBoxX2.Border.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
+            textBoxX2.Border.BackColorGradientAngle = 65;
+            textBoxX2.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX2.Border.BackgroundImage")));
+            textBoxX2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX2.Border.BorderBottomWidth = 1;
+            textBoxX2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX2.Border.BorderLeftWidth = 1;
+            textBoxX2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX2.Border.BorderRightWidth = 1;
+            textBoxX2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX2.Border.BorderTopWidth = 1;
+            textBoxX2.Border.Class = "RibbonGalleryContainer";
+            textBoxX2.Border.CornerDiameter = 6;
+            textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            textBoxX2.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
+            textBoxX2.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
+            textBoxX2.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            textBoxX2.Location = new System.Drawing.Point(19, 158);
+            textBoxX2.MaxLength = 12;
+            textBoxX2.Multiline = true;
+            textBoxX2.Name = "textBoxX2";
+            textBoxX2.PasswordChar = '•';
+            textBoxX2.PreventEnterBeep = true;
+            textBoxX2.Size = new System.Drawing.Size(227, 35);
+            textBoxX2.TabIndex = 5;
+            // 
+            // textBoxX1
+            // 
+            textBoxX1.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            textBoxX1.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
+            textBoxX1.Border.BackColor2 = System.Drawing.Color.Black;
+            textBoxX1.Border.BackColorGradientAngle = 65;
+            textBoxX1.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX1.Border.BackgroundImage")));
+            textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX1.Border.BorderBottomWidth = 1;
+            textBoxX1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX1.Border.BorderLeftWidth = 1;
+            textBoxX1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX1.Border.BorderRightWidth = 1;
+            textBoxX1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            textBoxX1.Border.BorderTopWidth = 1;
+            textBoxX1.Border.Class = "RibbonGalleryContainer";
+            textBoxX1.Border.CornerDiameter = 6;
+            textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            textBoxX1.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
+            textBoxX1.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
+            textBoxX1.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            textBoxX1.Location = new System.Drawing.Point(19, 117);
+            textBoxX1.Multiline = true;
+            textBoxX1.Name = "textBoxX1";
+            textBoxX1.PreventEnterBeep = true;
+            textBoxX1.Size = new System.Drawing.Size(227, 35);
+            textBoxX1.TabIndex = 4;
             // 
             // label2
             // 
