@@ -260,6 +260,8 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
+
+
         //////////////////end query Teachers
 
 
@@ -306,7 +308,32 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
+        public List<Employers> getEmployers()
+        {
+            Employers employer = new Employers();
+            List<Employers> list = new List<Employers>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM employersTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                
+                employer.Index = ((long)reader["index"]);
+                employer.OrgName = ((string)reader["orgName"]);
 
+            }
+            conn.Close();
+
+            return list;
+        }
+
+        ////////////////////end of employer querry
         /// <summary>
         /// procedure query
         /// </summary>
@@ -337,6 +364,27 @@ namespace ProposalReportingSystem
             conn.Open();
             reader = sc.ExecuteReader();
             conn.Close();
+        }
+        public List<string> getProcedureType()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM procedureTypeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
         }
 
         /////////////////end of procedure query
@@ -373,6 +421,27 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
+        public List<string> getPropertyType()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM propertyTypeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
+        }
 
 
         ///////////end query property
@@ -408,6 +477,27 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
+        public List<string> getProposalType()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM proposalTypeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
+        }
 
         /////////////////end proposal type query
 
@@ -441,6 +531,27 @@ namespace ProposalReportingSystem
             conn.Open();
             reader = sc.ExecuteReader();
             conn.Close();
+        }
+        public List<string> getRegisterType()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM registerTypeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
         }
 
         //////////////end of registerType query
@@ -477,9 +588,31 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
+        public List<string> getStatusType()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM statusTypeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+               list.Add( reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
+        }
 
         ///////////end query of statusType
 
     }
+    
 
 }

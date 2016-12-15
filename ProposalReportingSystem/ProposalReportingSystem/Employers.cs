@@ -17,6 +17,10 @@ namespace ProposalReportingSystem
             this.OrgName = orgName;
         }
 
+        public Employers()
+        {
+        }
+
         public string OrgName
         {
             get
