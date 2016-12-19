@@ -178,7 +178,7 @@ namespace ProposalReportingSystem
 
 
             ////test the gridview by excel///
-            System.Data.OleDb.OleDbConnection MyConnection;
+            /*System.Data.OleDb.OleDbConnection MyConnection;
             System.Data.DataSet DtSet;
             System.Data.OleDb.OleDbDataAdapter MyCommand;
             MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
@@ -187,7 +187,7 @@ namespace ProposalReportingSystem
             DtSet = new System.Data.DataSet();
             MyCommand.Fill(DtSet);
             addProposalShowDgv.DataSource = DtSet.Tables[0];
-            MyConnection.Close();
+            MyConnection.Close();*/
             ////test the gridview by excel//*/
 
             //////////////add proposal design///////////////
@@ -271,13 +271,13 @@ namespace ProposalReportingSystem
             //System.Data.OleDb.OleDbConnection MyConnection;
             //System.Data.DataSet DtSet;
            // System.Data.OleDb.OleDbDataAdapter MyCommand;
-            MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
+            /*MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='d:/temp/test.xlsx';Extended Properties=Excel 8.0;");
             MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
             MyCommand.TableMappings.Add("Table", "Net-informations.com");
             DtSet = new System.Data.DataSet();
             MyCommand.Fill(DtSet);
             searchProposalShowDgv.DataSource = DtSet.Tables[0];
-            MyConnection.Close();
+            MyConnection.Close();*/
             ////test the gridview by excel//*/
             //////////////add proposal design///////////////
             //********************************************//
