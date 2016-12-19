@@ -107,7 +107,7 @@ namespace ProposalReportingSystem
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
             sc.CommandText = "UPDATE proposalTable SET deleted = " + "'" + 1 + "'"
-                           + "WHERE index = " + index + "";
+                           + "WHERE index = '" + index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -177,7 +177,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE UsersTable SET deleted = " + "'" + 1 + "'" + " WHERE u_NCode = " + NCode + "";
+            sc.CommandText = "UPDATE UsersTable SET deleted = " + "'" + 1 + "'" + " WHERE u_NCode = '" + NCode + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -252,7 +252,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE TeacherTable SET deleted = " + "'" + 1 + "'" +" WHERE t_NCode = " + NCode + "";
+            sc.CommandText = "UPDATE TeacherTable SET deleted = " + "'" + 1 + "'" +" WHERE t_NCode = '" + NCode + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -298,7 +298,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE employersTable SET orgName = " + "'" + employer.OrgName + "' WHERE index = "+employer.Index+"";
+            sc.CommandText = "UPDATE employersTable SET orgName = " + "'" + employer.OrgName + "' WHERE index = '"+employer.Index+"'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -335,7 +335,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE employersTable SET deleted = " + "'" + 1 + "'" + " WHERE index = " + index + "";
+            sc.CommandText = "UPDATE employersTable SET deleted = " + "'" + 1 + "'" + " WHERE index = '" + index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -368,7 +368,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = " + lastProcedureType + "";
+            sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = '" + lastProcedureType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -690,6 +690,146 @@ namespace ProposalReportingSystem
 
         ///////////end query of statusType
 
+        /// <summary>
+        /// statusType query
+        /// </summary>
+        /// <param name=Faculty></param>
+        public void AddFaculty(String faculty)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO facultyTable (facultyName , deleted) VALUES( '" + faculty + "' , 0)";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditFaculty(String newFaculty, String lastFaculty)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE statusTypeTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+        public List<string> getFaculty()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM facultyTable WHERE deleted = 0";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
+        }
+
+        public void DeleteFaculty(String faculty)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE facultyTable SET deleted = " + "'" + 1 + "'" + " WHERE facultyName = '" + faculty + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        ///////////end query of FacultyTable
+
+
+        /// <summary>
+        /// statusType query
+        /// </summary>
+        /// <param name=Faculty></param>
+        public void AddEGroup(String faculty,String group)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO EGroupTable (groupName ,facultyName , deleted) VALUES( '"+group+"', '" + faculty + "' , 0)";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        public void EditEGroup(String newEGroup, String lastEGroup)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+        public List<string> getEGroup()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM EGroupTable WHERE deleted = 0";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+
+            }
+            conn.Close();
+
+            return list;
+        }
+
+        public void DeleteEGroup(String groupName)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE EGroupTable SET deleted = " + "'" + 1 + "'" + " WHERE groupName = '" + groupName + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+        }
+
+        ///////////end query of EducationalGroup
+
+
 
 
 
@@ -698,8 +838,7 @@ namespace ProposalReportingSystem
         ///////////////////////////////////////////////////////////////////////////
         private void GetData(string selectCommand, BindingSource bindingSourceObj, DataGridViewX dataGridview)
         {
-            try
-            {
+           
                 // Create a new data adapter based on the specified query.
                 dataAdapter = new SqlDataAdapter(selectCommand, conString);
 
@@ -720,12 +859,7 @@ namespace ProposalReportingSystem
                 dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-            }
-            catch (SqlException)
-            {
-                //DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
-                //show some error
-            }
+          
         }
 
         ////////////////////////////////////////////////////////////////////////////
@@ -740,51 +874,16 @@ namespace ProposalReportingSystem
         ///////////////////////////////////////////////////////////////////////////
         public void dataGridViewUpdate(DataGridViewX dgv, BindingSource bindingSource, String query)
         {
-            try
-            {
+           
                 /// <summary>
                 /// datagridview reintialization
                 /// </summary>
                 dgv.DataSource = bindingSource;
                 GetData(query, bindingSource, dgv);
-
-                /*//***change mode of columns to Fill
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.RowHeadersWidth = (width / 25);
-                dataGridView1.Columns[0].HeaderText = "شماره استاد";
-                dataGridView1.Columns[1].HeaderText = "نام استاد";
-                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-                dataGridView1.Columns[3].HeaderText = "رمز عبور";
-                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
-                dataGridView1.Columns[4].Width = (width / 5);
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[0].Value.ToString() == "-1")
-                    {
-                        dataGridView1.Rows.Remove(row);
-                    }
-                }
-
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    dataGridView1.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
-                }
-                /// <summary>
-                /// datagridview reintialization
-                /// </summary>*/
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                //DialogForm dialog = new DialogForm("اشکال در ارتباط با پایگاه داده", "خطا", "error", this);
-                //show some error
-            }
+           
+          
         }
+
 
 
         ////////////////////////////////////////////////////////////////////////////
