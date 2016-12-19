@@ -17,7 +17,9 @@ namespace ProposalReportingSystem
         private int systemHeight;   //related to setSize
         private int count;   //related to color of textbox
         private Global gl = new Global();   //related to setBounds
+
         private List<string> comboList = new List<string>();
+        private List<Employers> emp = new List<Employers>();
 
         /// <summary>
         /// Current Values
@@ -1183,6 +1185,53 @@ namespace ProposalReportingSystem
             currentPasswordTxtbx.Clear();
             newPasswordTxtbx.Clear();
             confirmNewPasswordTxtbx.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+
+            comboList = dbh.getProcedureType();
+
+            foreach (String ProcedureType in comboList)
+            {
+                addProposalProcedureTypeCb.Items.Add(ProcedureType);
+                //MessageBox.Show(ProcedureType);
+            }
+
+            comboList = dbh.getPropertyType();
+
+            foreach (String PropertyType in comboList)
+            {
+                addProposalPropertyTypeCb.Items.Add(PropertyType);
+                MessageBox.Show(PropertyType);
+            }
+
+            comboList = dbh.getRegisterType();
+            foreach (String RegisterType in comboList)
+            {
+                addProposalRegisterTypeCb.Items.Add(RegisterType);
+            }
+
+            comboList = dbh.getProposalType();
+
+            foreach (String ProposalType in comboList)
+            {
+                addProposalProposalTypeCb.Items.Add(ProposalType);
+            }
+
+            emp = dbh.getEmployers();
+            foreach (Employers employer in emp)
+            {
+                addProposalOrganizationNumberCb.Items.Add(employer.Index);
+                addProposalOrganizationNameCb.Items.Add(employer.OrgName);
+            }
+
+            comboList = dbh.getStatusType();
+            foreach (String statusType in comboList)
+            {
+                addProposalStatusCb.Items.Add(statusType);
+            }
         }
     }
 }

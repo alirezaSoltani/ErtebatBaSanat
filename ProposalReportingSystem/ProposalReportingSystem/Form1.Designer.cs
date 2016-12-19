@@ -30,37 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
             FarsiCalendarComponent.FarsiDate farsiDate2 = new FarsiCalendarComponent.FarsiDate();
-            DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData4 = new DevComponents.DotNetBar.Controls.ClockStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData25 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData26 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData27 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData10 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData28 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData29 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData11 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData30 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData12 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData31 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData32 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData6 = new DevComponents.DotNetBar.Controls.ClockStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData41 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData42 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData43 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData16 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData44 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData45 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData17 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData46 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData18 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData47 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData48 = new DevComponents.DotNetBar.Controls.ColorData();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle106 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle107 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
@@ -486,6 +486,7 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
+            this.mainPage.Controls.Add(this.superTabControlPanel2);
             this.mainPage.Controls.Add(this.superTabControlPanel6);
             this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel10);
@@ -493,7 +494,6 @@
             this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel4);
             this.mainPage.Controls.Add(this.superTabControlPanel3);
-            this.mainPage.Controls.Add(this.superTabControlPanel2);
             this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel12);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -590,39 +590,39 @@
             // 
             this.appSettingShowDv.AllowUserToAddRows = false;
             this.appSettingShowDv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle91.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle91.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle91.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle91.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle91.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle91;
             this.appSettingShowDv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.appSettingShowDv.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle92.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle92.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.appSettingShowDv.DefaultCellStyle = dataGridViewCellStyle92;
             this.appSettingShowDv.EnableHeadersVisualStyles = false;
             this.appSettingShowDv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.appSettingShowDv.Location = new System.Drawing.Point(9, 0);
             this.appSettingShowDv.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingShowDv.Name = "appSettingShowDv";
             this.appSettingShowDv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.Format = "3";
-            dataGridViewCellStyle57.NullValue = "1";
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle93.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle93.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle93.Format = "3";
+            dataGridViewCellStyle93.NullValue = "1";
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.RowHeadersDefaultCellStyle = dataGridViewCellStyle93;
             this.appSettingShowDv.RowHeadersWidth = 60;
             this.appSettingShowDv.RowTemplate.DividerHeight = 1;
             this.appSettingShowDv.RowTemplate.ReadOnly = true;
@@ -1146,73 +1146,73 @@
             this.analogClockControl1.AutomaticMode = true;
             this.analogClockControl1.BackColor = System.Drawing.Color.Transparent;
             this.analogClockControl1.ClockStyle = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            colorData25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            colorData25.BorderWidth = 0.01F;
-            colorData25.BrushSBSScale = 1F;
-            colorData25.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData25.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData25.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            clockStyleData4.BezelColor = colorData25;
-            colorData26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData26.BorderWidth = 0.01F;
-            colorData26.BrushSBSScale = 1F;
-            colorData26.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData26.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockStyleData4.CapColor = colorData26;
-            colorData27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(145)))), ((int)(((byte)(161)))));
-            colorData27.BorderWidth = 0.01F;
-            colorData27.BrushAngle = 45F;
-            colorData27.BrushSBSScale = 1F;
-            colorData27.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData27.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
-            colorData27.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            clockStyleData4.FaceColor = colorData27;
-            clockStyleData4.GlassAngle = -20;
-            colorData28.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData28.BorderWidth = 0.01F;
-            colorData28.BrushSBSScale = 1F;
-            colorData28.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData28.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData10.HandColor = colorData28;
-            clockHandStyleData10.Length = 0.55F;
-            clockHandStyleData10.Width = 0.015F;
-            clockStyleData4.HourHandStyle = clockHandStyleData10;
-            colorData29.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData29.BorderWidth = 0.01F;
-            colorData29.BrushSBSScale = 1F;
-            colorData29.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData29.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData29.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData4.LargeTickColor = colorData29;
-            colorData30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData30.BorderWidth = 0.01F;
-            colorData30.BrushSBSScale = 1F;
-            colorData30.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData30.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData11.HandColor = colorData30;
-            clockHandStyleData11.Length = 0.8F;
-            clockHandStyleData11.Width = 0.01F;
-            clockStyleData4.MinuteHandStyle = clockHandStyleData11;
-            clockStyleData4.NumberFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            colorData31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData31.BorderWidth = 0.01F;
-            colorData31.BrushSBSScale = 1F;
-            colorData31.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData31.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData12.HandColor = colorData31;
-            clockHandStyleData12.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
-            clockHandStyleData12.Length = 0.8F;
-            clockHandStyleData12.Width = 0.005F;
-            clockStyleData4.SecondHandStyle = clockHandStyleData12;
-            colorData32.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData32.BorderWidth = 0.01F;
-            colorData32.BrushSBSScale = 1F;
-            colorData32.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData32.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData32.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData4.SmallTickColor = colorData32;
-            clockStyleData4.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            this.analogClockControl1.ClockStyleData = clockStyleData4;
+            colorData41.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            colorData41.BorderWidth = 0.01F;
+            colorData41.BrushSBSScale = 1F;
+            colorData41.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData41.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData41.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            clockStyleData6.BezelColor = colorData41;
+            colorData42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData42.BorderWidth = 0.01F;
+            colorData42.BrushSBSScale = 1F;
+            colorData42.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData42.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockStyleData6.CapColor = colorData42;
+            colorData43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(145)))), ((int)(((byte)(161)))));
+            colorData43.BorderWidth = 0.01F;
+            colorData43.BrushAngle = 45F;
+            colorData43.BrushSBSScale = 1F;
+            colorData43.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData43.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
+            colorData43.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            clockStyleData6.FaceColor = colorData43;
+            clockStyleData6.GlassAngle = -20;
+            colorData44.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData44.BorderWidth = 0.01F;
+            colorData44.BrushSBSScale = 1F;
+            colorData44.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData44.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData16.HandColor = colorData44;
+            clockHandStyleData16.Length = 0.55F;
+            clockHandStyleData16.Width = 0.015F;
+            clockStyleData6.HourHandStyle = clockHandStyleData16;
+            colorData45.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData45.BorderWidth = 0.01F;
+            colorData45.BrushSBSScale = 1F;
+            colorData45.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData45.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            colorData45.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            clockStyleData6.LargeTickColor = colorData45;
+            colorData46.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData46.BorderWidth = 0.01F;
+            colorData46.BrushSBSScale = 1F;
+            colorData46.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData46.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData17.HandColor = colorData46;
+            clockHandStyleData17.Length = 0.8F;
+            clockHandStyleData17.Width = 0.01F;
+            clockStyleData6.MinuteHandStyle = clockHandStyleData17;
+            clockStyleData6.NumberFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            colorData47.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData47.BorderWidth = 0.01F;
+            colorData47.BrushSBSScale = 1F;
+            colorData47.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData47.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData18.HandColor = colorData47;
+            clockHandStyleData18.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
+            clockHandStyleData18.Length = 0.8F;
+            clockHandStyleData18.Width = 0.005F;
+            clockStyleData6.SecondHandStyle = clockHandStyleData18;
+            colorData48.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData48.BorderWidth = 0.01F;
+            colorData48.BrushSBSScale = 1F;
+            colorData48.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData48.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            colorData48.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            clockStyleData6.SmallTickColor = colorData48;
+            clockStyleData6.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
+            this.analogClockControl1.ClockStyleData = clockStyleData6;
             this.analogClockControl1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.analogClockControl1.Location = new System.Drawing.Point(100, 48);
             this.analogClockControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -2597,23 +2597,23 @@
             this.editProposalShowDgv.AllowUserToAddRows = false;
             this.editProposalShowDgv.AllowUserToDeleteRows = false;
             this.editProposalShowDgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle94.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle94.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle94.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle94.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle94.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle94;
             this.editProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.editProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle95.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle95.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle95.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle95.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.editProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle95;
             this.editProposalShowDgv.EnableHeadersVisualStyles = false;
             this.editProposalShowDgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.editProposalShowDgv.Location = new System.Drawing.Point(9, 3);
@@ -2621,14 +2621,14 @@
             this.editProposalShowDgv.Name = "editProposalShowDgv";
             this.editProposalShowDgv.ReadOnly = true;
             this.editProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle96.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle96.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle96.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle96.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle96;
             this.editProposalShowDgv.RowTemplate.Height = 24;
             this.editProposalShowDgv.ScrollBarAppearance = DevComponents.DotNetBar.eScrollBarAppearance.Default;
             this.editProposalShowDgv.Size = new System.Drawing.Size(1105, 303);
@@ -3120,36 +3120,36 @@
             // 
             // manageUserDgv
             // 
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle97.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle97;
             this.manageUserDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.manageUserDgv.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle98.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.manageUserDgv.DefaultCellStyle = dataGridViewCellStyle98;
             this.manageUserDgv.EnableHeadersVisualStyles = false;
             this.manageUserDgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.manageUserDgv.Location = new System.Drawing.Point(13, 3);
             this.manageUserDgv.Name = "manageUserDgv";
             this.manageUserDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle99.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle99;
             this.manageUserDgv.RowTemplate.Height = 24;
             this.manageUserDgv.Size = new System.Drawing.Size(1109, 335);
             this.manageUserDgv.TabIndex = 0;
@@ -3184,35 +3184,35 @@
             // 
             // logDgv
             // 
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.logDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle100.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle100.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle100.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle100.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle100.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle100;
             this.logDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.logDgv.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle101.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle101.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle101.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle101.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle101.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.logDgv.DefaultCellStyle = dataGridViewCellStyle101;
             this.logDgv.EnableHeadersVisualStyles = false;
             this.logDgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.logDgv.Location = new System.Drawing.Point(13, 12);
             this.logDgv.Name = "logDgv";
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.logDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle102.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle102;
             this.logDgv.RowTemplate.Height = 24;
             this.logDgv.Size = new System.Drawing.Size(1146, 753);
             this.logDgv.TabIndex = 0;
@@ -3293,23 +3293,23 @@
             this.addProposalShowDgv.AllowUserToAddRows = false;
             this.addProposalShowDgv.AllowUserToDeleteRows = false;
             this.addProposalShowDgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle103.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle103.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle103;
             this.addProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.addProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle104.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.addProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle104;
             this.addProposalShowDgv.EnableHeadersVisualStyles = false;
             this.addProposalShowDgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.addProposalShowDgv.Location = new System.Drawing.Point(3, 12);
@@ -3317,14 +3317,14 @@
             this.addProposalShowDgv.Name = "addProposalShowDgv";
             this.addProposalShowDgv.ReadOnly = true;
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle105.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle105.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle105.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle105.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle105.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle105;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.ScrollBarAppearance = DevComponents.DotNetBar.eScrollBarAppearance.Default;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1117, 303);
@@ -3427,11 +3427,6 @@
             // 
             this.addProposalExecutorEGroupCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.addProposalExecutorEGroupCb.FormattingEnabled = true;
-            this.addProposalExecutorEGroupCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalExecutorEGroupCb.Location = new System.Drawing.Point(787, 146);
             this.addProposalExecutorEGroupCb.Name = "addProposalExecutorEGroupCb";
             this.addProposalExecutorEGroupCb.Size = new System.Drawing.Size(184, 29);
@@ -3441,11 +3436,6 @@
             // 
             this.addProposalExecutorFacultyCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.addProposalExecutorFacultyCb.FormattingEnabled = true;
-            this.addProposalExecutorFacultyCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalExecutorFacultyCb.Location = new System.Drawing.Point(787, 111);
             this.addProposalExecutorFacultyCb.Name = "addProposalExecutorFacultyCb";
             this.addProposalExecutorFacultyCb.Size = new System.Drawing.Size(184, 29);
@@ -3489,11 +3479,6 @@
             // 
             this.addProposalOrganizationNumberCb.FormattingEnabled = true;
             this.addProposalOrganizationNumberCb.ItemHeight = 21;
-            this.addProposalOrganizationNumberCb.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.addProposalOrganizationNumberCb.Location = new System.Drawing.Point(224, 194);
             this.addProposalOrganizationNumberCb.Name = "addProposalOrganizationNumberCb";
             this.addProposalOrganizationNumberCb.Size = new System.Drawing.Size(52, 29);
@@ -3503,11 +3488,6 @@
             // 
             this.addProposalStatusCb.FormattingEnabled = true;
             this.addProposalStatusCb.ItemHeight = 21;
-            this.addProposalStatusCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalStatusCb.Location = new System.Drawing.Point(92, 271);
             this.addProposalStatusCb.Name = "addProposalStatusCb";
             this.addProposalStatusCb.Size = new System.Drawing.Size(184, 29);
@@ -3517,11 +3497,6 @@
             // 
             this.addProposalOrganizationNameCb.FormattingEnabled = true;
             this.addProposalOrganizationNameCb.ItemHeight = 21;
-            this.addProposalOrganizationNameCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalOrganizationNameCb.Location = new System.Drawing.Point(92, 194);
             this.addProposalOrganizationNameCb.Name = "addProposalOrganizationNameCb";
             this.addProposalOrganizationNameCb.Size = new System.Drawing.Size(126, 29);
@@ -3530,11 +3505,6 @@
             // addProposalProposalTypeCb
             // 
             this.addProposalProposalTypeCb.FormattingEnabled = true;
-            this.addProposalProposalTypeCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalProposalTypeCb.Location = new System.Drawing.Point(92, 155);
             this.addProposalProposalTypeCb.Name = "addProposalProposalTypeCb";
             this.addProposalProposalTypeCb.Size = new System.Drawing.Size(184, 29);
@@ -3544,11 +3514,6 @@
             // 
             this.addProposalRegisterTypeCb.FormattingEnabled = true;
             this.addProposalRegisterTypeCb.ItemHeight = 21;
-            this.addProposalRegisterTypeCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalRegisterTypeCb.Location = new System.Drawing.Point(92, 118);
             this.addProposalRegisterTypeCb.Name = "addProposalRegisterTypeCb";
             this.addProposalRegisterTypeCb.Size = new System.Drawing.Size(184, 29);
@@ -3558,11 +3523,6 @@
             // 
             this.addProposalPropertyTypeCb.FormattingEnabled = true;
             this.addProposalPropertyTypeCb.ItemHeight = 21;
-            this.addProposalPropertyTypeCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalPropertyTypeCb.Location = new System.Drawing.Point(92, 78);
             this.addProposalPropertyTypeCb.Name = "addProposalPropertyTypeCb";
             this.addProposalPropertyTypeCb.Size = new System.Drawing.Size(184, 29);
@@ -3572,11 +3532,6 @@
             // 
             this.addProposalProcedureTypeCb.FormattingEnabled = true;
             this.addProposalProcedureTypeCb.ItemHeight = 21;
-            this.addProposalProcedureTypeCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalProcedureTypeCb.Location = new System.Drawing.Point(92, 42);
             this.addProposalProcedureTypeCb.Name = "addProposalProcedureTypeCb";
             this.addProposalProcedureTypeCb.Size = new System.Drawing.Size(184, 29);
@@ -3586,11 +3541,6 @@
             // 
             this.addProposalExecutorEDegCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.addProposalExecutorEDegCb.FormattingEnabled = true;
-            this.addProposalExecutorEDegCb.Items.AddRange(new object[] {
-            "مهندسی",
-            "اقتصاد",
-            "الهیات",
-            "علوم"});
             this.addProposalExecutorEDegCb.Location = new System.Drawing.Point(787, 181);
             this.addProposalExecutorEDegCb.Name = "addProposalExecutorEDegCb";
             this.addProposalExecutorEDegCb.Size = new System.Drawing.Size(184, 29);
@@ -4073,23 +4023,23 @@
             this.searchProposalShowDgv.AllowUserToAddRows = false;
             this.searchProposalShowDgv.AllowUserToDeleteRows = false;
             this.searchProposalShowDgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle106.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle106.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle106.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle106.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle106.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle106.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle106.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle106;
             this.searchProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle71.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.searchProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle107.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle107.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle107.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.searchProposalShowDgv.DefaultCellStyle = dataGridViewCellStyle107;
             this.searchProposalShowDgv.EnableHeadersVisualStyles = false;
             this.searchProposalShowDgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.searchProposalShowDgv.Location = new System.Drawing.Point(3, 12);
@@ -4097,14 +4047,14 @@
             this.searchProposalShowDgv.Name = "searchProposalShowDgv";
             this.searchProposalShowDgv.ReadOnly = true;
             this.searchProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle108.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle108.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle108;
             this.searchProposalShowDgv.RowTemplate.Height = 24;
             this.searchProposalShowDgv.ScrollBarAppearance = DevComponents.DotNetBar.eScrollBarAppearance.Default;
             this.searchProposalShowDgv.Size = new System.Drawing.Size(1117, 303);
@@ -4884,6 +4834,7 @@
             this.Name = "Form1";
             this.Text = "سامانه ثبت و گزارش گیری قراردادهای دانشگاه شهید چمران اهواز";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.superTabControlPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainPage)).EndInit();
             this.mainPage.ResumeLayout(false);
