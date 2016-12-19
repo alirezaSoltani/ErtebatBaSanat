@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevComponents.DotNetBar.Controls;
 
 namespace ProposalReportingSystem
 {
@@ -770,6 +771,9 @@ namespace ProposalReportingSystem
             appSettingStatusTxtbx.Enabled = false;
 
             dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
+
+            appSettingShowDv.Columns[0].HeaderText = "نوع کار";
+            
         }
 
         private void appSettingPropertyRbtn_Click(object sender, EventArgs e)
@@ -943,6 +947,17 @@ namespace ProposalReportingSystem
         private void appSettingPropertyRbtn_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void appSettingEditBtn_Click(object sender, EventArgs e)
+        {
+            if (appSettingJobTypeTxtbx.Enabled == true)
+            {
+                if (!appSettingJobTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.EditProcedureType(appSettingJobTypeTxtbx.Text, "نوع کار 1");
+                }
+            }
         }
     }
 }
