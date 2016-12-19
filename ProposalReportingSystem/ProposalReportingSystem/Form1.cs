@@ -19,6 +19,16 @@ namespace ProposalReportingSystem
         private Global gl = new Global();   //related to setBounds
         private List<string> comboList = new List<string>();
 
+        /// <summary>
+        /// Current Values
+        /// </summary>
+        private string currentFaculty;
+        private string currentJobType;
+        private string currentEmployer;
+        /// <summary>
+        /// Current Values
+        /// </summary>
+
 
 
         /// <summary>
@@ -454,7 +464,7 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingPanel, 0, 1, 900, 930);
             gl.setSize(appSettingGp, 22, 15, 826, 445);
             gl.setSize(appSettingShowDv, 3, 5, 817, 408);
-            gl.setSize(appSettingJobTypeRbtn, 205, 5, 23, 18);
+            gl.setSize(appSettingProcedureTypeRbtn, 205, 5, 23, 18);
             gl.setSize(appSettingPropertyRbtn, 205, 5, 23, 18);
             gl.setSize(appSettingRegTypeRbtn, 205, 5, 23, 18);
             gl.setSize(appSettingProTypeRbtn, 205, 5, 23, 18);
@@ -466,18 +476,18 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
             gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 35);
             gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 35);
-            gl.setSize(appSettingJobTypeTxtbx, 605, 60, 170, 35);
+            gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
 
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
             gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
-            gl.setSize(appSettingJobTypeRbtn, 765, 20, 18, 23);
+            gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
             gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
             gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
             gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
 
             gl.setSize(aapSettingCoLbl, 150, 20, 75, 35);
             gl.setSize(appSettingRegTypeLbl, 445, 20, 75, 35);
-            gl.setSize(appSettingJobTypeLbl, 695, 20, 75, 35);
+            gl.setSize(appSettingProcedureTypeLbl, 695, 20, 75, 35);
             gl.setSize(appSettingStatusLbl, 150, 130, 75, 35);
             gl.setSize(appSettingProTypeLbl, 445, 130, 75, 35);
             gl.setSize(appSettingPropertyLbl, 695, 130, 75, 35);
@@ -570,7 +580,8 @@ namespace ProposalReportingSystem
 
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
-            gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
+            gl.setSize(manageTeacherClearBtn, 230, 365, 80, 30);
+            gl.setSize(manageTeacherDeleteBtn, 320, 365, 80, 30);
 
             //////////////////manageTeacher//////////////////////
 
@@ -695,11 +706,13 @@ namespace ProposalReportingSystem
 
         private void appSettingAddBtn_Click(object sender, EventArgs e)
         {
-            if(appSettingJobTypeTxtbx.Enabled == true)
+            if(appSettingProcedureTypeTxtbx.Enabled == true)
             {
-                if(!appSettingJobTypeTxtbx.Text.Equals(""))
+                if(!appSettingProcedureTypeTxtbx.Text.Equals(""))
                 {
-                    dbh.AddProcedureType(appSettingJobTypeTxtbx.Text);
+                    dbh.AddProcedureType(appSettingProcedureTypeTxtbx.Text);
+                    appSettingProcedureTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
                 }
             }
 
@@ -708,11 +721,78 @@ namespace ProposalReportingSystem
                 if (!appSettingPropertyTxtbx.Text.Equals(""))
                 {
                     dbh.AddPropertyType(appSettingPropertyTxtbx.Text);
+                    appSettingPropertyTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType from propertyTypeTable WHERE deleted = 0");
+                }
+            }
+
+            else if (appSettingFacultyTxtbx.Enabled == true)
+            {
+                if (!appSettingFacultyTxtbx.Text.Equals(""))
+                {
+                    dbh.AddFaculty(appSettingFacultyTxtbx.Text);
+                    appSettingFacultyTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName from facultyTable WHERE deleted = 0");
+                }
+            }
+
+            else if (appSettingRegTypeTxtbx.Enabled == true)
+            {
+                if (!appSettingRegTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.AddRegisterType(appSettingRegTypeTxtbx.Text);
+                    appSettingRegTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType from registerTypeTable WHERE deleted = 0");
+                }
+            }
+
+            else if (appSettingProTypeTxtbx.Enabled == true)
+            {
+                if (!appSettingProTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.AddProposalType(appSettingProTypeTxtbx.Text);
+                    appSettingProTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable WHERE deleted = 0");
+                }
+            }
+
+            /*else if (appSettingEgroupTxtbx.Enabled == true)
+            {
+                if (!appSettingEgroupTxtbx.Text.Equals(""))
+                {
+                    dbh.AddEgroup(appSettingEgroupTxtbx.Text);
+                    appSettingEgroupTxtbx.Clear();
+                    //dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT orgName from facultyTable WHERE deleted = 0");
+                }
+            }*/
+
+            else if (appSettingCoTxtbx.Enabled == true)
+            {
+                if (!appSettingCoTxtbx.Text.Equals(""))
+                {
+                    dbh.AddEmployer(appSettingCoTxtbx.Text);
+                    appSettingCoTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * from employersTable WHERE deleted = 0");
+                    appSettingShowDv.Columns[0].HeaderText = "نام سازمان";
+                    appSettingShowDv.Columns[1].HeaderText = "کد سازمان";
+                    appSettingShowDv.Columns[2].Visible = false;
+                }
+            }
+
+            else if (appSettingStatusTxtbx.Enabled == true)
+            {
+                if (!appSettingStatusTxtbx.Text.Equals(""))
+                {
+                    dbh.AddStatusType(appSettingStatusTxtbx.Text);
+                    appSettingStatusTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType from statusTypeTable WHERE deleted = 0");
                 }
             }
         }
-        //////////////color of textbox///////////////
 
+
+
+        //////////////color of textbox///////////////
         private void manageTeacherExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
         {
             count = manageTeacherExecutorNcodeTxtbx.Text.Length;
@@ -731,12 +811,17 @@ namespace ProposalReportingSystem
         }
         //////////////color of textbox///////////////
 
+
+
         //////////////only int///////////////
         private void manageTeacherExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
         }
         //////////////only int///////////////
+
+
+
 
         //////////////check email///////////////
         private void manageTeacherExecutorEmailTxtbx_Leave(object sender, EventArgs e)
@@ -754,14 +839,16 @@ namespace ProposalReportingSystem
         //////////////check email///////////////
 
 
+
+
         private void manageTeacherExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
         {
             manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
         }
 
-        private void appSettingJobTypeRbtn_Click(object sender, EventArgs e)
+        private void appSettingProcedureTypeRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = true;
+            appSettingProcedureTypeTxtbx.Enabled = true;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -770,15 +857,15 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
+            appSettingAddBtn.Enabled = true;
 
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
             appSettingShowDv.Columns[0].HeaderText = "نوع کار";
-            
         }
 
         private void appSettingPropertyRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = true;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -787,12 +874,15 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
 
+            appSettingAddBtn.Enabled = true;
+
             dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType from propertyTypeTable WHERE deleted = 0");
+            appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
         }
 
         private void appSettingFacultyRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = true;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -800,11 +890,16 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
+
+            appSettingAddBtn.Enabled = true;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName from facultyTable WHERE deleted = 0");
+            appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
         }
 
         private void appSettingRegTypeRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = true;
@@ -813,12 +908,15 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
 
+            appSettingAddBtn.Enabled = true;
+
             dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType from registerTypeTable WHERE deleted = 0");
+            appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
         }
 
         private void appSettingProTypeRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -827,7 +925,10 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
 
+            appSettingAddBtn.Enabled = true;
+
             dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable WHERE deleted = 0");
+            appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
         }
 
         private void appSettingEgroupRbtn_Click(object sender, EventArgs e)
@@ -837,7 +938,7 @@ namespace ProposalReportingSystem
 
         private void appSettingCoRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -846,12 +947,17 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = true;
             appSettingStatusTxtbx.Enabled = false;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT orgName from employersTable WHERE deleted = 0");
+            appSettingAddBtn.Enabled = true;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable WHERE deleted = 0");
+            appSettingShowDv.Columns[0].HeaderText = "نام سازمان";
+            appSettingShowDv.Columns[1].HeaderText = "کد سازمان";
+            appSettingShowDv.Columns[2].Visible = false;
         }
 
         private void appSettingStatusRbtn_Click(object sender, EventArgs e)
         {
-            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -860,80 +966,11 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = true;
 
+            appSettingAddBtn.Enabled = true;
+
             dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType from statusTypeTable WHERE deleted = 0");
-
-
+            appSettingShowDv.Columns[0].HeaderText = "وضعیت";
         }
-
-
-
-        ////////////////////////////////////////////////////////////////////////////
-        /***********************************GET DATA******************************/
-        ///////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////
-        /***********************************GET DATA******************************/
-        ///////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-        ////////////////////////////////////////////////////////////////////////////
-        /***********************************GridView Update***********************/
-        ///////////////////////////////////////////////////////////////////////////
-        private void appSettingShowDgvUpdate()
-        {
-            try
-            {
-                /// <summary>
-                /// datagridview reintialization
-                /// </summary>
-                appSettingShowDv.DataSource = appSettingBindingSource;
-                //GetData("SELECT * FROM procedureTypeTable");
-
-                /*//***change mode of columns to Fill
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.RowHeadersWidth = (width / 25);
-                dataGridView1.Columns[0].HeaderText = "شماره استاد";
-                dataGridView1.Columns[1].HeaderText = "نام استاد";
-                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-                dataGridView1.Columns[3].HeaderText = "رمز عبور";
-                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
-                dataGridView1.Columns[4].Width = (width / 5);
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[0].Value.ToString() == "-1")
-                    {
-                        dataGridView1.Rows.Remove(row);
-                    }
-                }
-
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    dataGridView1.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
-                }
-                /// <summary>
-                /// datagridview reintialization
-                /// </summary>*/
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                //DialogForm dialog = new DialogForm("اشکال در ارتباط با پایگاه داده", "خطا", "error", this);
-                //show some error
-            }
-        }
-
-
-        ////////////////////////////////////////////////////////////////////////////
-        /***********************************GridView Update***********************/
-        ///////////////////////////////////////////////////////////////////////////
 
         private void addProposalTab_Click(object sender, EventArgs e)
         {
@@ -944,20 +981,208 @@ namespace ProposalReportingSystem
             }
         }
 
-        private void appSettingPropertyRbtn_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void appSettingEditBtn_Click(object sender, EventArgs e)
         {
-            if (appSettingJobTypeTxtbx.Enabled == true)
+            if (appSettingProcedureTypeTxtbx.Enabled == true)
             {
-                if (!appSettingJobTypeTxtbx.Text.Equals(""))
+                if (!appSettingProcedureTypeTxtbx.Text.Equals(""))
                 {
-                    dbh.EditProcedureType(appSettingJobTypeTxtbx.Text, "نوع کار 1");
+                    dbh.EditProcedureType(appSettingProcedureTypeTxtbx.Text, currentJobType);
+                    appSettingProcedureTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع کار";
+                }
+                else
+                {
+                    PopUp popUp = new PopUp("خطا", ".نوع کار را مشخص کنید", "تایید", "", "", "error");
+                    popUp.ShowDialog();
                 }
             }
+        }
+
+        private void appSettingShowDv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (appSettingProcedureTypeTxtbx.Enabled == true)
+            {
+                appSettingEditBtn.Enabled = true;
+                appSettingDeleteBtn.Enabled = true;
+
+                currentJobType = appSettingShowDv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                appSettingProcedureTypeTxtbx.Text = currentJobType;
+            }
+
+            else if (appSettingPropertyTxtbx.Enabled == true)
+            {
+                appSettingEditBtn.Enabled = true;
+                appSettingDeleteBtn.Enabled = true;
+            }
+
+            else if (appSettingFacultyTxtbx.Enabled == true)
+            {
+                if (!appSettingFacultyTxtbx.Text.Equals(""))
+                {
+                    dbh.AddFaculty(appSettingFacultyTxtbx.Text);
+                    appSettingFacultyTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName from facultyTable WHERE deleted = 0");
+                }
+            }
+
+            else if (appSettingRegTypeTxtbx.Enabled == true)
+            {
+                if (!appSettingRegTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.AddRegisterType(appSettingRegTypeTxtbx.Text);
+                    appSettingRegTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType from registerTypeTable WHERE deleted = 0");
+                }
+            }
+
+            else if (appSettingProTypeTxtbx.Enabled == true)
+            {
+                if (!appSettingProTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.AddProposalType(appSettingProTypeTxtbx.Text);
+                    appSettingProTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable WHERE deleted = 0");
+                }
+            }
+
+            /*else if (appSettingEgroupTxtbx.Enabled == true)
+            {
+                if (!appSettingEgroupTxtbx.Text.Equals(""))
+                {
+                    dbh.AddEgroup(appSettingEgroupTxtbx.Text);
+                    appSettingEgroupTxtbx.Clear();
+                    //dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT orgName from facultyTable WHERE deleted = 0");
+                }
+            }*/
+
+            /*else if (appSettingCoTxtbx.Enabled == true)
+            {
+                if (!appSettingCoTxtbx.Text.Equals(""))
+                {
+                    dbh.AddEmployer(appSettingCoTxtbx.Text);
+                    appSettingCoTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT orgName from facultyTable WHERE deleted = 0");
+                }
+            }*/
+
+            else if (appSettingStatusTxtbx.Enabled == true)
+            {
+                if (!appSettingStatusTxtbx.Text.Equals(""))
+                {
+                    dbh.AddStatusType(appSettingStatusTxtbx.Text);
+                    appSettingStatusTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType from statusTypeTable WHERE deleted = 0");
+                }
+            }
+        }
+
+        private void appSettingDeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (appSettingProcedureTypeTxtbx.Enabled == true)
+            {
+                dbh.DeleteProcedureType(currentJobType);
+                appSettingProcedureTypeTxtbx.Clear();
+                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
+                appSettingShowDv.Columns[0].HeaderText = "نوع کار";
+                appSettingDeleteBtn.Enabled = false;
+            }
+        }
+
+        private void appSettingShowDv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(appSettingFacultyTxtbx.Enabled == true)
+            {
+                if (!appSettingFacultyTxtbx.Text.Equals(""))
+                {
+                    dbh.AddFaculty(appSettingFacultyTxtbx.Text);
+                    appSettingFacultyTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName from facultyTable WHERE deleted = 0");
+                }
+            }
+        }
+
+        private void searchProposalClearBtn_Click(object sender, EventArgs e)
+        {
+            searchProposalExecutorNCodeTxtbx.Clear();
+            searchProposalExecutorFNameTxtbx.Clear();
+            searchProposalExecutorLNameTxtbx.Clear();
+            searchProposalExecutorFacultyCb.SelectedIndex = 0;
+            searchProposalExecutorEGroupCb.SelectedIndex = 0;
+            searchProposalExecutorMobileTxtbx.Clear();
+            searchProposalPersianTitleTxtbx.Clear();
+            searchProposalEnglishTitleTxtbx.Clear();
+            searchProposalStartDateFromTimeInput.ResetText();
+            searchProposalStartDateToTimeInput.ResetText();
+            searchProposalValueFromTxtbx.Clear();
+            searchProposalValueToTxtbx.Clear();
+            searchProposalProcedureTypeCb.SelectedIndex = 0;
+            searchProposalPropertyTypeCb.SelectedIndex = 0;
+            searchProposalRegisterTypeCb.SelectedIndex = 0;
+            searchProposalTypeCb.SelectedIndex = 0;
+            searchProposalOrganizationNumberCb.SelectedIndex = 0;
+            searchProposalOrganizationNameCb.SelectedIndex = 0;
+            searchProposalStatusCb.SelectedIndex = 0;
+        }
+
+        private void manageUserClearBtn_Click(object sender, EventArgs e)
+        {
+            manageUserFnameTxtbx.Clear();
+            manageUserLnameTxtbx.Clear();
+            manageUserNcodTxtbx.Clear();
+            manageUserPasswordTxtbx.Clear();
+            manageUserEmailTxtbx.Clear();
+            manageUserTellTxtbx.Clear();
+        }
+
+        private void editProposalClearBtn_Click(object sender, EventArgs e)
+        {
+            editProposalExecutorNcodeTxtbx.Clear();
+            editProposalExecutorFNameTxtbx.Clear();
+            editProposalExecutorLNameTxtbx.Clear();
+            editProposalExecutorFacultyCb.SelectedIndex = 0;
+            editProposalExecutorEGroupCb.SelectedIndex = 0;
+            editProposalExecutorEDegCb.SelectedIndex = 0;
+            editProposalExecutorEmailTxtbx.Clear();
+            editProposalExecutorMobileTxtbx.Clear();
+            editProposalExecutorTel1Txtbx.Clear();
+            editProposalExecutorTel2Txtbx.Clear();
+            editProposalPersianTitleTxtbx.Clear();
+            editProposalEnglishTitleTxtbx.Clear();
+            editProposalKeywordsTxtbx.Clear();
+            editProposalExecutor2Txtbx.Clear();
+            editProposalCoexecutorTxtbx.Clear();
+            editProposalStartdateTimeInput.ResetText();
+            editProposalDurationTxtbx.Clear();
+            editProposalProcedureTypeCb.SelectedIndex = 0;
+            editProposalPropertyTypeCb.SelectedIndex = 0;
+            editProposalRegisterTypeCb.SelectedIndex = 0;
+            editProposalTypeCb.SelectedIndex = 0;
+            editProposalOrganizationNameCb.SelectedIndex = 0;
+            editProposalOrganizationNumberCb.SelectedIndex = 0;
+            editProposalValueTxtbx.Clear();
+            editProposalStatusCb.SelectedIndex = 0;
+        }
+
+        private void manageTeacherClearBtn_Click(object sender, EventArgs e)
+        {
+            manageTeacherExecutorNcodeTxtbx.Clear();
+            manageTeacherFnameTxtbx.Clear();
+            manageTeacherLnameTxtbx.Clear();
+            manageTeacherExecutorEGroupTxtbx.Clear();
+            manageTeacherExecutorEDegCb.SelectedIndex = 0;
+            manageTeacherExecutorFacultyCb.SelectedIndex = 0;
+            manageTeacherExecutorTelTxtbx.Clear();
+            manageTeacherExecutorEmailTxtbx.Clear();
+            manageTeacherExecutorMobileTxtbx.Clear();
+        }
+
+        private void personalSettingClearBtn_Click(object sender, EventArgs e)
+        {
+            currentPasswordTxtbx.Clear();
+            newPasswordTxtbx.Clear();
+            confirmNewPasswordTxtbx.Clear();
         }
     }
 }

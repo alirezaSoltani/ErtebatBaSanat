@@ -124,6 +124,7 @@
             this.Controls.Add(this.popUpPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اطلاعات";
             this.popUpPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popUpIconPbx)).EndInit();

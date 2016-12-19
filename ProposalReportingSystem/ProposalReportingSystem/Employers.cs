@@ -8,7 +8,6 @@ namespace ProposalReportingSystem
    
     class Employers
     {
-        
         private string orgName;
         private long index;
 

@@ -270,27 +270,21 @@ namespace ProposalReportingSystem
         /// querry for employers
         /// </summary>
         /// <param name="Emloyers"></param>
-        public void AddEmployer(Employers employer)
+        public void AddEmployer(string employer)
         {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "INSERT INTO employersTable (orgName , deleted)"
+                            + "VALUES ('" + employer + "',"
+                                        +"'" + 0 + "')";
 
-           
-
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "INSERT INTO employersTable (orgName , index, deleted)"
-                                + "VALUES ('" + employer.OrgName + "'"
-                                         + "'" + employer.Index + "'"
-                                         +"'" + 0 + "')";
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-          
-            
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
         }
         public void UpdateEmployer(Employers employer)
         {
@@ -319,11 +313,9 @@ namespace ProposalReportingSystem
             conn.Open();
             reader = sc.ExecuteReader();
             while (reader.Read())
-            {
-                
+            {   
                 employer.Index = ((long)reader["index"]);
                 employer.OrgName = ((string)reader["orgName"]);
-
             }
             conn.Close();
 
@@ -375,6 +367,8 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
+
+
         public List<string> getProcedureType()
         {
             List<string> list = new List<string>();
@@ -493,7 +487,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType , deleted) VALUES ('" + proposalType + "' , 0)";
+            sc.CommandText = "INSERT INTO proposalTypeTable (proposalType , deleted) VALUES ('" + proposalType + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -839,27 +833,41 @@ namespace ProposalReportingSystem
         private void GetData(string selectCommand, BindingSource bindingSourceObj, DataGridViewX dataGridview)
         {
            
-                // Create a new data adapter based on the specified query.
-                dataAdapter = new SqlDataAdapter(selectCommand, conString);
+            // Create a new data adapter based on the specified query.
+            dataAdapter = new SqlDataAdapter(selectCommand, conString);
 
-                // Create a command builder to generate SQL update, insert, and
-                // delete commands based on selectCommand. These are used to
-                // update the database.
+            // Create a command builder to generate SQL update, insert, and
+            // delete commands based on selectCommand. These are used to
+            // update the database.
 
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
-                // Populate a new data table and bind it to the BindingSource.
-                DataTable table = new DataTable();
-                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table);
-                bindingSourceObj.DataSource = table;
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            bindingSourceObj.DataSource = table;
 
 
-                // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            // Resize the DataGridView columns to fit the newly loaded content.
+            dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-          
+            int i = 0;
+            while (true)
+            {
+                try
+                {
+                    dataGridview.Rows[i].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+
+
         }
 
         ////////////////////////////////////////////////////////////////////////////

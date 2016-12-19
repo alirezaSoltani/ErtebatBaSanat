@@ -31,7 +31,12 @@ namespace ProposalReportingSystem
                 popUpRightBtn.Visible = false;
             }
 
-            if(icon.Equals("error"))
+            if (centerBtnText.Equals(""))
+            {
+                popUpCenterBtn.Visible = false;
+            }
+
+            if (icon.Equals("error"))
             {
                 popUpIconPbx.BackgroundImage = ProposalReportingSystem.Properties.Resources.error;
             }
