@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DevComponents.DotNetBar.Controls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProposalReportingSystem
 {
@@ -14,6 +16,14 @@ namespace ProposalReportingSystem
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
                 "Password=P@hn1395;";
+
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
 
 
 
@@ -344,7 +354,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType,deleted) VALUES (" + procedure + ", 0 )";
+            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType,deleted) VALUES ('" + procedure + "', 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -379,8 +389,7 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             while (reader.Read())
             {
-                list.Add(reader.GetString(0));
-
+                list.Add(reader.GetString(0));                               
             }
             conn.Close();
 
@@ -393,7 +402,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE procedureTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE procedureType = " + procedure + "";
+            sc.CommandText = "UPDATE procedureTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE procedureType = '" + procedure + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -414,7 +423,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType , deleted) VALUES (" + property + ", 0)";
+            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType , deleted) VALUES ('" + property + "', 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -428,7 +437,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = " + lastPropertyType + "";
+            sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = '" + lastPropertyType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -463,7 +472,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE propertyTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE propertyType = " + property + "";
+            sc.CommandText = "UPDATE propertyTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE propertyType = '" + property + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -484,7 +493,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType , deleted) VALUES (" + proposalType + " , 0)";
+            sc.CommandText = "INSERT INTO proposalTypeTable (proposaltyType , deleted) VALUES ('" + proposalType + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -498,7 +507,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = " + lastProposalType + "";
+            sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = '" + lastProposalType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -532,7 +541,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE proposalType = " + proposal + "";
+            sc.CommandText = "UPDATE proposalTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE proposalType = '" + proposal + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -552,7 +561,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO registerTypeTable (registerType , deleted) VALUES (" + registerType  + " , 0 )";
+            sc.CommandText = "INSERT INTO registerTypeTable (registerType , deleted) VALUES ('" + registerType  + "' , 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -566,7 +575,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = " + lastRegisterType + "";
+            sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = '" + lastRegisterType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -601,7 +610,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE registerTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE registerType = " + register + "";
+            sc.CommandText = "UPDATE registerTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE registerType = '" + register + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -622,7 +631,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO statusTypeTable (statusType , deleted) VALUES( " + statusType + " , 0)";
+            sc.CommandText = "INSERT INTO statusTypeTable (statusType , deleted) VALUES( '" + statusType + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -636,7 +645,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = " + lastStatusType + "";
+            sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -671,7 +680,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE statusTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE statusType = " + status + "";
+            sc.CommandText = "UPDATE statusTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE statusType = '" + status + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -681,7 +690,107 @@ namespace ProposalReportingSystem
 
         ///////////end query of statusType
 
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GET DATA******************************/
+        ///////////////////////////////////////////////////////////////////////////
+        private void GetData(string selectCommand, BindingSource bindingSourceObj, DataGridViewX dataGridview)
+        {
+            try
+            {
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, conString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSourceObj.DataSource = table;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                //DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                //show some error
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GET DATA******************************/
+        ///////////////////////////////////////////////////////////////////////////
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GridView Update***********************/
+        ///////////////////////////////////////////////////////////////////////////
+        public void dataGridViewUpdate(DataGridViewX dgv, BindingSource bindingSource, String query)
+        {
+            try
+            {
+                /// <summary>
+                /// datagridview reintialization
+                /// </summary>
+                dgv.DataSource = bindingSource;
+                GetData(query, bindingSource, dgv);
+
+                /*//***change mode of columns to Fill
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.RowHeadersWidth = (width / 25);
+                dataGridView1.Columns[0].HeaderText = "شماره استاد";
+                dataGridView1.Columns[1].HeaderText = "نام استاد";
+                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+                dataGridView1.Columns[3].HeaderText = "رمز عبور";
+                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+                dataGridView1.Columns[4].Width = (width / 5);
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[0].Value.ToString() == "-1")
+                    {
+                        dataGridView1.Rows.Remove(row);
+                    }
+                }
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    dataGridView1.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                }
+                /// <summary>
+                /// datagridview reintialization
+                /// </summary>*/
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //DialogForm dialog = new DialogForm("اشکال در ارتباط با پایگاه داده", "خطا", "error", this);
+                //show some error
+            }
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GridView Update***********************/
+        ///////////////////////////////////////////////////////////////////////////
     }
-    
+
 
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,32 @@ namespace ProposalReportingSystem
         private int systemWidth;    //related to setSize
         private int systemHeight;   //related to setSize
         private int count;   //related to color of textbox
+        private Global gl = new Global();   //related to setBounds
+        private List<string> comboList = new List<string>();
 
-        private Global gl = new Global();
+
+
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+         
+
+
+
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+        private DataBaseHandler dbh = new DataBaseHandler();
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+
+
+
 
 
         public Form1()
@@ -666,6 +691,25 @@ namespace ProposalReportingSystem
             }
         }
 
+
+        private void appSettingAddBtn_Click(object sender, EventArgs e)
+        {
+            if(appSettingJobTypeTxtbx.Enabled == true)
+            {
+                if(!appSettingJobTypeTxtbx.Text.Equals(""))
+                {
+                    dbh.AddProcedureType(appSettingJobTypeTxtbx.Text);
+                }
+            }
+
+            else if (appSettingPropertyTxtbx.Enabled == true)
+            {
+                if (!appSettingPropertyTxtbx.Text.Equals(""))
+                {
+                    dbh.AddPropertyType(appSettingPropertyTxtbx.Text);
+                }
+            }
+        }
         //////////////color of textbox///////////////
 
         private void manageTeacherExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
@@ -686,12 +730,12 @@ namespace ProposalReportingSystem
         }
         //////////////color of textbox///////////////
 
-        //////////////just int///////////////
+        //////////////only int///////////////
         private void manageTeacherExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
         }
-        //////////////just int///////////////
+        //////////////only int///////////////
 
         //////////////check email///////////////
         private void manageTeacherExecutorEmailTxtbx_Leave(object sender, EventArgs e)
@@ -706,11 +750,199 @@ namespace ProposalReportingSystem
                 manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
             }
         }
+        //////////////check email///////////////
+
 
         private void manageTeacherExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
         {
             manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
         }
-        //////////////check email///////////////
+
+        private void appSettingJobTypeRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = true;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType from procedureTypeTable WHERE deleted = 0");
+        }
+
+        private void appSettingPropertyRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = true;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType from propertyTypeTable WHERE deleted = 0");
+        }
+
+        private void appSettingFacultyRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = true;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+        }
+
+        private void appSettingRegTypeRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = true;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType from registerTypeTable WHERE deleted = 0");
+        }
+
+        private void appSettingProTypeRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = true;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable WHERE deleted = 0");
+        }
+
+        private void appSettingEgroupRbtn_Click(object sender, EventArgs e)
+        {
+            //There is no actions yet, maybe later.
+        }
+
+        private void appSettingCoRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = true;
+            appSettingStatusTxtbx.Enabled = false;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT orgName from employersTable WHERE deleted = 0");
+        }
+
+        private void appSettingStatusRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingJobTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = true;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType from statusTypeTable WHERE deleted = 0");
+
+
+        }
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GET DATA******************************/
+        ///////////////////////////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GET DATA******************************/
+        ///////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GridView Update***********************/
+        ///////////////////////////////////////////////////////////////////////////
+        private void appSettingShowDgvUpdate()
+        {
+            try
+            {
+                /// <summary>
+                /// datagridview reintialization
+                /// </summary>
+                appSettingShowDv.DataSource = appSettingBindingSource;
+                //GetData("SELECT * FROM procedureTypeTable");
+
+                /*//***change mode of columns to Fill
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.RowHeadersWidth = (width / 25);
+                dataGridView1.Columns[0].HeaderText = "شماره استاد";
+                dataGridView1.Columns[1].HeaderText = "نام استاد";
+                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+                dataGridView1.Columns[3].HeaderText = "رمز عبور";
+                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+                dataGridView1.Columns[4].Width = (width / 5);
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[0].Value.ToString() == "-1")
+                    {
+                        dataGridView1.Rows.Remove(row);
+                    }
+                }
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    dataGridView1.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                }
+                /// <summary>
+                /// datagridview reintialization
+                /// </summary>*/
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //DialogForm dialog = new DialogForm("اشکال در ارتباط با پایگاه داده", "خطا", "error", this);
+                //show some error
+            }
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        /***********************************GridView Update***********************/
+        ///////////////////////////////////////////////////////////////////////////
+
+        private void addProposalTab_Click(object sender, EventArgs e)
+        {
+            comboList = dbh.getProcedureType();
+            foreach(String procedureType in comboList)
+            {
+                addProposalProcedureTypeCb.Items.Add(procedureType);
+            }
+        }
+
+        private void appSettingPropertyRbtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
