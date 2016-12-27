@@ -40,7 +40,7 @@
             // 
             // popUpPanel
             // 
-            this.popUpPanel.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login3;
+            this.popUpPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(236)))), ((int)(((byte)(253)))));
             this.popUpPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.popUpPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.popUpPanel.Controls.Add(this.popUpRightBtn);

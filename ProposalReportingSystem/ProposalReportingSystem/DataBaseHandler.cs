@@ -286,13 +286,14 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
-        public void UpdateEmployer(Employers employer)
+        public void EditEmployer(Employers employer)
         {
+            //MessageBox.Show("UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '" + employer.Index + "'");
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE employersTable SET orgName = " + "'" + employer.OrgName + "' WHERE index = '"+employer.Index+"'";
+            sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '"+employer.Index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -316,6 +317,8 @@ namespace ProposalReportingSystem
             {   
                 employer.Index = ((long)reader["index"]);
                 employer.OrgName = ((string)reader["orgName"]);
+                //MessageBox.Show((long)reader["index"] + "-" + (string)reader["orgName"]);
+                list.Add(employer);
             }
             conn.Close();
 
@@ -335,13 +338,21 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
-        ////////////////////end of employer querry
+        ////////////////////end of employer query
         /// <summary>
         /// procedure query
         /// </summary>
         /// <param name="procedure"></param>
         public void AddProcedureType(String procedure)
         {
+            /*
+
+            string conString = "Data Source= 185.159.152.2;" +
+                "Initial Catalog=rayanpro_EBS;" +
+                "User id=*************; " +
+                "Password=************;";
+
+            */
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
@@ -460,7 +471,7 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeletePropertyeType(String property)
+        public void DeletePropertyType(String property)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -785,14 +796,15 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             conn.Close();
         }
-        public List<string> getEGroup()
+
+        public List<string> getEGroup(string faculty)
         {
             List<string> list = new List<string>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM EGroupTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty + "' AND deleted = 0";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -800,11 +812,10 @@ namespace ProposalReportingSystem
             while (reader.Read())
             {
                 list.Add(reader.GetString(0));
-
             }
             conn.Close();
-
             return list;
+
         }
 
         public void DeleteEGroup(String groupName)
@@ -832,7 +843,6 @@ namespace ProposalReportingSystem
         ///////////////////////////////////////////////////////////////////////////
         private void GetData(string selectCommand, BindingSource bindingSourceObj, DataGridViewX dataGridview)
         {
-           
             // Create a new data adapter based on the specified query.
             dataAdapter = new SqlDataAdapter(selectCommand, conString);
 
@@ -869,7 +879,6 @@ namespace ProposalReportingSystem
 
 
         }
-
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GET DATA******************************/
         ///////////////////////////////////////////////////////////////////////////
@@ -882,18 +891,12 @@ namespace ProposalReportingSystem
         ///////////////////////////////////////////////////////////////////////////
         public void dataGridViewUpdate(DataGridViewX dgv, BindingSource bindingSource, String query)
         {
-           
                 /// <summary>
                 /// datagridview reintialization
                 /// </summary>
                 dgv.DataSource = bindingSource;
                 GetData(query, bindingSource, dgv);
-           
-          
         }
-
-
-
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GridView Update***********************/
         ///////////////////////////////////////////////////////////////////////////
