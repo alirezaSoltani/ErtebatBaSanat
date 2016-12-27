@@ -1604,10 +1604,12 @@ namespace ProposalReportingSystem
             }
 
             emp = dbh.getEmployers();
+            
             foreach (Employers employer in emp)
             {
                 addProposalOrganizationNumberCb.Items.Add(employer.Index);
                 addProposalOrganizationNameCb.Items.Add(employer.OrgName);
+             //   MessageBox.Show(employer.Index.ToString() + "" + employer.OrgName);
             }
 
             comboList = dbh.getStatusType();

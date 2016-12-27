@@ -302,7 +302,7 @@ namespace ProposalReportingSystem
         }
         public List<Employers> getEmployers()
         {
-            Employers employer = new Employers();
+            Employers employers = new Employers();
             List<Employers> list = new List<Employers>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -315,11 +315,22 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             while (reader.Read())
             {   
-                employer.Index = ((long)reader["index"]);
-                employer.OrgName = ((string)reader["orgName"]);
-                //MessageBox.Show((long)reader["index"] + "-" + (string)reader["orgName"]);
-                list.Add(employer);
+                
+                employers.Index = ((long)reader["index"]);
+                employers.OrgName = ((string)reader["orgName"]);
+               // MessageBox.Show(employer.Index + "-" + employer.OrgName);
+                list.Add(employers);
+                MessageBox.Show(employers.Index + "-" + employers.OrgName);
+                foreach (Employers emp in list)
+                {
+
+                    MessageBox.Show(emp.Index.ToString() + "" + emp.OrgName);
+                }
             }
+           
+
+           
+           
             conn.Close();
 
             return list;
