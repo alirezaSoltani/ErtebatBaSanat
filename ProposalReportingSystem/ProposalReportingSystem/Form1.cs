@@ -1558,6 +1558,80 @@ namespace ProposalReportingSystem
             appSettingFacultyTxtbx.Clear();
         }
 
+        private void addProposalOrganizationNumberCb_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (addProposalOrganizationNumberCb.Text == "0")
+                {
+                    addProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    addProposalOrganizationNameCb.SelectedIndex = (int.Parse(addProposalOrganizationNumberCb.Text) - 1);
+                    addProposalOrganizationNumberCb.BackColor = Color.White;
+                }
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch(FormatException)
+            {
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            
+            if(addProposalOrganizationNumberCb.Text == "")
+            {
+
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalOrganizationNameCb_TextChanged(object sender, EventArgs e)
+        {
+            /*if(addProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    addProposalCoexecutorTxtbx.Text += addProposalOrganizationNameCb.SelectedIndex.ToString() + " ";
+                    addProposalOrganizationNumberCb.SelectedIndex = addProposalOrganizationNameCb.SelectedIndex;
+                    if(addProposalOrganizationNameCb.Items.Contains(addProposalOrganizationNameCb.Text))
+                    {
+                        addProposalCoexecutorTxtbx.Text += " hello ";
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("arg");
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("for");
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (addProposalOrganizationNameCb.Text == "")
+                {
+
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }*/
+        }
+
         private void form_initializer()
         {
             addProposalExecutorFacultyCb.Items.Clear();

@@ -312,7 +312,6 @@ namespace ProposalReportingSystem
             sc.Connection = conn;
             conn.Open();
             reader = sc.ExecuteReader();
-            int i = 0;
             while (reader.Read())
             {
                 Employers employers = new Employers();
