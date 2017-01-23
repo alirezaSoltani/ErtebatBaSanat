@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.Controls;
+using System.Globalization;
 
 namespace ProposalReportingSystem
 {
@@ -515,18 +516,28 @@ namespace ProposalReportingSystem
             //*************************************************/
             ///////////////personal setting design///////////////
             gl.setSize(personalSettingPanel, 0, 1, 900, 930);
-            gl.setSize(personalSettingGp, 22, 15, 826, 445);
+            gl.setSize(personalSettingPasswordGp, 22, 15, 826, 290);
+            gl.setSize(personalSettingThemeGp, 22, 325, 826, 290);
+
 
             gl.setSize(currentPasswordLbl, 450, 35, 110, 25);
             gl.setSize(newPasswordLbl, 450, 75, 110, 25);
             gl.setSize(confirmNewPasswordLbl, 450, 115, 110, 25);
+            
+            gl.setSize(appSettingBackgroundChangeLbl, 605, 30, 110, 25);
+            gl.setSize(appSettingBackgroundChangeGp, 610, 70, 100, 160);
+            gl.setSize(appSettingBackgroundColorLbl, 10, 15, 75, 118);
 
-            gl.setSize(currentPasswordTxtbx, 230, 35, 220, 25);
-            gl.setSize(newPasswordTxtbx, 230, 75, 220, 25);
-            gl.setSize(confirmNewPasswordTxtbx, 230, 115, 220, 25);
+            gl.setSize(appSettingFontSizeLbl, 325, 35, 110, 25);
+            gl.setSize(appSettingMediumFontSizeLbl, 355, 110, 110, 25);
+            gl.setSize(appSettingLargeFontSizeLbl, 350, 160, 110, 25);
 
-            gl.setSize(personalSettingRegisterBtn, 230, 180, 100, 30);
-            gl.setSize(personalSettingClearBtn, 350, 180, 100, 30);
+            gl.setSize(currentPasswordTxtbx, 275, 35, 220, 25);
+            gl.setSize(newPasswordTxtbx, 275, 75, 220, 25);
+            gl.setSize(confirmNewPasswordTxtbx, 275, 115, 220, 25);
+
+            gl.setSize(personalSettingRegisterBtn, 275, 180, 100, 30);
+            gl.setSize(personalSettingClearBtn, 395, 180, 100, 30);
             ///////////////personal setting design///////////////
             //*************************************************//
 
@@ -655,9 +666,9 @@ namespace ProposalReportingSystem
             addProposalExecutorNcodeTxtbx.Clear();
             addProposalExecutorFNameTxtbx.Clear();
             addProposalExecutorLNameTxtbx.Clear();
-            addProposalExecutorFacultyCb.SelectedIndex = 0;
-            addProposalExecutorEGroupCb.SelectedIndex = 0;
-            addProposalExecutorEDegCb.SelectedIndex = 0;
+            addProposalExecutorFacultyCb.ResetText();
+            addProposalExecutorEGroupCb.ResetText();
+            addProposalExecutorEDegCb.ResetText();
             addProposalExecutorEmailTxtbx.Clear();
             addProposalExecutorMobileTxtbx.Clear();
             addProposalExecutorTel1Txtbx.Clear();
@@ -669,21 +680,30 @@ namespace ProposalReportingSystem
             addProposalCoexecutorTxtbx.Clear();
             addProposalStartdateTimeInput.ResetText();
             addProposalDurationTxtbx.Clear();
-            addProposalProcedureTypeCb.SelectedIndex = 0;
-            addProposalPropertyTypeCb.SelectedIndex = 0;
-            addProposalRegisterTypeCb.SelectedIndex = 0;
-            addProposalProposalTypeCb.SelectedIndex = 0;
-            addProposalOrganizationNameCb.SelectedIndex = 0;
-            addProposalOrganizationNumberCb.SelectedIndex = 0;
+            addProposalProcedureTypeCb.ResetText();
+            addProposalPropertyTypeCb.ResetText();
+            addProposalRegisterTypeCb.ResetText();
+            addProposalProposalTypeCb.ResetText();
+            addProposalOrganizationNameCb.ResetText();
+            addProposalOrganizationNumberCb.ResetText();
             addProposalValueTxtbx.Clear();
-            addProposalStatusCb.SelectedIndex = 0;
+            addProposalStatusCb.ResetText();
             //addProposalFileLinkLbl, 30, 330, 160, 25);
         }
 
 
         private void addProposalRegisterBtn_Click(object sender, EventArgs e)
         {
+            /***************************Convert time*******************************************\
+             string geo = addProposalStartdateTimeInput.GeoDate.ToString();
+             MessageBox.Show(geo.Substring(0, 10));//---> shamsi to miladi
 
+             string GregorianDate = geo.Substring(0, 10);
+             DateTime d = DateTime.Parse(GregorianDate);
+             PersianCalendar pc = new PersianCalendar();
+             MessageBox.Show(string.Format("{0}-{1:00}-{2:00}", pc.GetYear(d), pc.GetMonth(d), pc.GetDayOfMonth(d)));//---> miladi to shamsi
+
+           /***************************Convert time*******************************************\*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -695,6 +715,7 @@ namespace ProposalReportingSystem
                 addProposalPanel.BackColor = dlg.Color;
                 searchProposalPanel.BackColor = dlg.Color;
                 manageUserPanel.BackColor = dlg.Color;
+                manageTeacherPanel.BackColor = dlg.Color;
                 editProposalPanel.BackColor = dlg.Color;
                 appSettingPanel.BackColor = dlg.Color;
                 personalSettingPanel.BackColor = dlg.Color;
@@ -1596,15 +1617,18 @@ namespace ProposalReportingSystem
 
         private void addProposalOrganizationNameCb_TextChanged(object sender, EventArgs e)
         {
-            /*if(addProposalOrganizationNameCb.Focused)
+            if(addProposalOrganizationNameCb.Focused)
             {
                 try
                 {
-                    addProposalCoexecutorTxtbx.Text += addProposalOrganizationNameCb.SelectedIndex.ToString() + " ";
                     addProposalOrganizationNumberCb.SelectedIndex = addProposalOrganizationNameCb.SelectedIndex;
-                    if(addProposalOrganizationNameCb.Items.Contains(addProposalOrganizationNameCb.Text))
+                    if(!addProposalOrganizationNameCb.Items.Contains(addProposalOrganizationNameCb.Text))
                     {
-                        addProposalCoexecutorTxtbx.Text += " hello ";
+                        addProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        addProposalOrganizationNameCb.BackColor = Color.White;
                     }
                 }
                 catch (ArgumentOutOfRangeException)
@@ -1629,7 +1653,184 @@ namespace ProposalReportingSystem
                     addProposalOrganizationNumberCb.SelectedIndex = -1;
                     addProposalOrganizationNameCb.BackColor = Color.White;
                 }
-            }*/
+            }
+        }
+
+        private void addProposalOrganizationNameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (addProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    addProposalOrganizationNumberCb.SelectedIndex = addProposalOrganizationNameCb.SelectedIndex;
+                    if (!addProposalOrganizationNameCb.Items.Contains(addProposalOrganizationNameCb.Text))
+                    {
+                        addProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        addProposalOrganizationNameCb.BackColor = Color.White;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("arg");
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("for");
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (addProposalOrganizationNameCb.Text == "")
+                {
+
+                    addProposalOrganizationNumberCb.Text = "";
+                    addProposalOrganizationNumberCb.SelectedIndex = -1;
+                    addProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void addProposalValueTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(addProposalValueTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                addProposalValueTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                addProposalValueTxtbx.BackColor = Color.Pink;
+            }
+            if (addProposalValueTxtbx.Text == "")
+            {
+                addProposalValueTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalDurationTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int onlyDigit = int.Parse(addProposalDurationTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                addProposalDurationTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                addProposalDurationTxtbx.BackColor = Color.Pink;
+            }
+            if (addProposalDurationTxtbx.Text == "")
+            {
+                addProposalDurationTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorTel1Txtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(addProposalExecutorTel1Txtbx.Text);
+            }
+            catch (FormatException)
+            {
+                addProposalExecutorTel1Txtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                addProposalExecutorTel1Txtbx.BackColor = Color.Pink;
+            }
+            if (addProposalExecutorTel1Txtbx.Text == "")
+            {
+                addProposalExecutorTel1Txtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorTel2Txtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(addProposalExecutorTel2Txtbx.Text);
+            }
+            catch (FormatException)
+            {
+                addProposalExecutorTel2Txtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                addProposalExecutorTel2Txtbx.BackColor = Color.Pink;
+            }
+            if (addProposalExecutorTel2Txtbx.Text == "")
+            {
+                addProposalExecutorTel2Txtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorMobileTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(addProposalExecutorMobileTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                addProposalExecutorMobileTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                addProposalExecutorMobileTxtbx.BackColor = Color.Pink;
+            }
+            if (addProposalExecutorMobileTxtbx.Text == "")
+            {
+                addProposalExecutorMobileTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (!addProposalExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                addProposalExecutorEmailTxtbx.BackColor = Color.Pink;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                addProposalExecutorEmailTxtbx.BackColor = Color.White;
+            }
+            if(addProposalExecutorEmailTxtbx.Text == "")
+            {
+                addProposalExecutorEmailTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                homePanel.BackColor = dlg.Color;
+                addProposalPanel.BackColor = dlg.Color;
+                searchProposalPanel.BackColor = dlg.Color;
+                manageUserPanel.BackColor = dlg.Color;
+                manageTeacherPanel.BackColor = dlg.Color;
+                editProposalPanel.BackColor = dlg.Color;
+                appSettingPanel.BackColor = dlg.Color;
+                personalSettingPanel.BackColor = dlg.Color;
+                aboutUsPanel.BackColor = dlg.Color;
+                logPanel.BackColor = dlg.Color;
+
+                appSettingBackgroundColorLbl.BackColor = dlg.Color;
+            }
         }
 
         private void form_initializer()

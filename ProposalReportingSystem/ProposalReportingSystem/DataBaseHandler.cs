@@ -715,6 +715,7 @@ namespace ProposalReportingSystem
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
             sc.CommandText = "UPDATE statusTypeTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
