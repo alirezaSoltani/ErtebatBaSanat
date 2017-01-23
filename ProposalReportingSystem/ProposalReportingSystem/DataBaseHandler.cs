@@ -630,7 +630,7 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '" + employer.Index + "'";
+                sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE [index] = '" + employer.Index + "'";
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastOrgName + " to " + employer.OrgName + "','" + "employersTable'" + ")";
                 sc.ExecuteNonQuery();
@@ -694,9 +694,9 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = " DELETE FROM employersTable WHERE index = '" + index + "'";
+                sc.CommandText = " DELETE FROM employersTable WHERE [index] = '" + index + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEmployersTable (index , employers , date , username) VALUES('"+index+"','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
+                sc.CommandText = " INSERT INTO deletedEmployersTable ([index] , orgName , date , username) VALUES('" + index+"','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + index +"-"+employers + "','" + "employersTable'" + ")";
                 sc.ExecuteNonQuery();
@@ -1598,9 +1598,9 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "UPDATE facultyTypeTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
+                sc.CommandText = "UPDATE facultyTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTypeTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
