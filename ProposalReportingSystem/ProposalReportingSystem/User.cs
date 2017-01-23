@@ -15,15 +15,6 @@ namespace ProposalReportingSystem
         private string u_Email;
         private string u_Tel;
 
-        public User(long u_NCode, string u_Password, string u_FName, string u_LName, string u_Email, string u_Tel)
-        {
-            this.u_NCode = u_NCode;
-            this.u_Password = u_Password;
-            this.u_FName = u_FName;
-            this.u_LName = u_LName;
-            this.u_Email = u_Email;
-            this.u_Tel = u_Tel;
-        }
 
         public long U_NCode
         {
