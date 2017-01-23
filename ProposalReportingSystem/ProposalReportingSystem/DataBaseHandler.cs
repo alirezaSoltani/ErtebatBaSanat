@@ -16,6 +16,7 @@ namespace ProposalReportingSystem
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
                 "Password=P@hn1395;";
+        
 
         /// <summary>
         /// Data gridview attributes
@@ -32,16 +33,27 @@ namespace ProposalReportingSystem
         /// </summary>
         /// <param name="proposal"></param>
 
-        public void AddProposal(Proposal proposal)
+        public void AddProposal(Proposal proposal,long NCode , DateTime dateTime)
         {
             //String persianTitle, String engTitle , String keyword, long executor, String executor2 , String coExecutor, String startDate , int duration, String procedureType , String propertyType, String registerType , String proposalType, long employer, String value , String status, long registrant
-          
 
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "INSERT INTO proposalTable (index,persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,deleted)"
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO proposalTable (persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant)"
                                 + "VALUES ('" + proposal.PersianTitle + "'"
                                          + "'" + proposal.EngTitle + "'"
                                          + "'" + proposal.KeyWord + "'"
@@ -57,24 +69,51 @@ namespace ProposalReportingSystem
                                          + "'" + proposal.Employer + "'"
                                          + "'" + proposal.Value + "'"
                                          + "'" + proposal.Status + "'"
-                                         + "'" + proposal.Registrant + "'"
-                                         + "'" + 0 + "')"; // 0 for deleted 
+                                         + "'" + proposal.Registrant + "')";
 
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-          
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+
         }
         
-        public void EditProposal (Proposal proposal)
+        public void EditProposal (Proposal proposal,long NCode,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "'"
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "'"
                                                     + "engTitle =" + "'" + proposal.EngTitle + "'"
                                                     + "keyword =" + "'" + proposal.KeyWord + "'"
                                                     + "executor =" + "'" + proposal.Executor + "'"
@@ -91,28 +130,96 @@ namespace ProposalReportingSystem
                                                     + " status = " + "'" + proposal.Status + "'"
                                                     + "registrant=" + "'" + proposal.Registrant + "'"
                                                     + "WHERE index = " + proposal.Index + "";
-                
-                         
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited ','" + "proposalTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
       
-        public void DeleteProposal(long index)
+        public void DeleteProposal(Proposal proposal , long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTable SET deleted = " + "'" + 1 + "'"
-                           + "WHERE index = '" + index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM proposalTable WHERE index = '" + proposal.Index + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedProposalTable (index,persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,dateTime)"
+                                + "VALUES ('" + proposal.Index + "'"
+                                         + "'" + proposal.PersianTitle + "'"
+                                         + "'" + proposal.EngTitle + "'"
+                                         + "'" + proposal.KeyWord + "'"
+                                         + "'" + proposal.Executor + "'"
+                                         + "'" + proposal.Executor2 + "'"
+                                         + "'" + proposal.CoExecutor + "'"
+                                         + "'" + proposal.StartDate + "'"
+                                         + "'" + proposal.Duration + "'"
+                                         + "'" + proposal.ProcedureType + "'"
+                                         + "'" + proposal.PropertyType + "'"
+                                         + "'" + proposal.RegisterType + "'"
+                                         + "'" + proposal.ProposalType + "'"
+                                         + "'" + proposal.Employer + "'"
+                                         + "'" + proposal.Value + "'"
+                                         + "'" + proposal.Status + "'"
+                                         + "'" + proposal.Registrant + "'"
+                                         + "'" + NCode + "'"
+                                         + "'" + dateTime + "')"; 
+
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "'proposalTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
       
 
@@ -125,37 +232,74 @@ namespace ProposalReportingSystem
         /// <param name="Users"></param>
 
 
-        public void AddUser(User user)
+        public void AddUser(User user,long NCode , DateTime dateTime)
         {
-            
-           
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , deleted)"
-                                + "VALUES ('" + user.U_FName + "'"
-                                         + "'" + user.U_LName  + "'"
-                                         + "'" + user.U_NCode+ "'"
-                                         + "'" + user.U_Password + "'"
-                                         + "'" + user.U_Email+ "'"
-                                         + "'" + user.U_Tel + "'"
-                                         +"'" + 0 + "')";
 
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-           
-        }
-        public void EditUsers(User user,long currentNCode)
-        {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE UsersTable SET u_FName = " + "'" + user.U_FName + "'"
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+               sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel)"
+                            + "VALUES ('" + user.U_FName + "'"
+                                     + "'" + user.U_LName + "'"
+                                     + "'" + user.U_NCode + "'"
+                                     + "'" + user.U_Password + "'"
+                                     + "'" + user.U_Email + "'"
+                                     + "'" + user.U_Tel + "')";
+
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + user.U_NCode + "','" + "UsersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+        }
+        public void EditUsers(User user,long currentNCode,long NCode ,DateTime dateTime)
+        {
+
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE UsersTable SET u_FName = " + "'" + user.U_FName + "'"
                                                     + "u_LName =" + "'" + user.U_LName + "'"
                                                     + "u_NCode =" + "'" + user.U_NCode + "'"
                                                     + "u_Password =" + "'" + user.U_Password + "'"
@@ -163,26 +307,82 @@ namespace ProposalReportingSystem
                                                     + " u_Tel = " + "'" + user.U_Tel + "'"
                                                     + " WHERE u_NCode = " + currentNCode + "";
 
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited ','" + "UsersTable'" + ")";
+                sc.ExecuteNonQuery();
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
         }
 
-        public void DeleteUser(long NCode)
+        public void DeleteUser(User user , long NCode ,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE UsersTable SET deleted = " + "'" + 1 + "'" + " WHERE u_NCode = '" + NCode + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , username , dateTime)"
+                                + "VALUES ('" + user.U_FName + "'"
+                                         + "'" + user.U_LName + "'"
+                                         + "'" + user.U_NCode + "'"
+                                         + "'" + user.U_Password + "'"
+                                         + "'" + user.U_Email + "'"
+                                         + "'" + user.U_Tel + "'"
+                                         + "'" + NCode + "'"
+                                         + "'" + dateTime + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " +user.U_NCode + "','" + "'UsersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
         //////////////////end query Users
@@ -192,72 +392,173 @@ namespace ProposalReportingSystem
         /// querry for teachers
         /// </summary>
         /// <param name="Teachers"></param>
-        public void AddTeacher(Teachers teacher)
+        public void AddTeacher(Teachers teacher,long NCode , DateTime dateTime)
         {
 
-           
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
 
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "INSERT INTO TeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , deleted)"
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO TeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty)"
                                 + "VALUES ('" + teacher.T_FName + "'"
-                                         + "'" +teacher.T_LName + "'"
+                                         + "'" + teacher.T_LName + "'"
                                          + "'" + teacher.T_NCode + "'"
                                          + "'" + teacher.T_EDeg + "'"
                                          + "'" + teacher.T_Email + "'"
                                          + "'" + teacher.T_Group + "'"
                                          + "'" + teacher.T_Mobile + "'"
-                                         + "'" + teacher.T_Tel1+ "'"
+                                         + "'" + teacher.T_Tel1 + "'"
                                          + "'" + teacher.T_Tel2 + "'"
-                                         + "'" + teacher.T_Faculty + "'"
-                                         +"'" + 0 + "')";
+                                         + "'" + teacher.T_Faculty + "')";
 
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-           
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + teacher.T_NCode + "','" + "TeacherTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+
+
         }
-        public void EditTeacher(Teachers teacher)
+        public void EditTeacher(Teachers teacher,long lastT_NCode ,long NCode,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE TeacherTable SET t_FName = " + "'" + teacher.T_FName + "'"
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE TeacherTable SET t_FName = " + "'" + teacher.T_FName + "'"
                                                     + "t_LName =" + "'" + teacher.T_LName + "'"
                                                     + "t_NCode =" + "'" + teacher.T_NCode + "'"
                                                     + "t_EDeg =" + "'" + teacher.T_EDeg + "'"
                                                     + "t_Email = " + "'" + teacher.T_Email + "'"
                                                     + " t_Group = " + "'" + teacher.T_Group + "'"
                                                     + "  t_Mobile=" + "'" + teacher.T_Mobile + "'"
-                                                    + "t_Tel1=" + "'" + teacher.T_Tel1+ "'"
+                                                    + "t_Tel1=" + "'" + teacher.T_Tel1 + "'"
                                                     + "t_Tel2 =" + "'" + teacher.T_Tel2 + "'"
-                                                    + " t_Faculty = " + "'" + teacher.T_Faculty + "'";
+                                                    + " t_Faculty = " + "'" + teacher.T_Faculty + "'"
+                                                    + " WHERE t_NCode = '" + lastT_NCode + "'";
 
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited ','" + "TeacherTable'" + ")";
+                sc.ExecuteNonQuery();
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void DeleteTeacher(long NCode)
+        public void DeleteTeacher(Teachers teacher,long NCode,DateTime dateTime)
         {
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE TeacherTable SET deleted = " + "'" + 1 + "'" +" WHERE t_NCode = '" + NCode + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM TeacherTable WHERE t_NCode = '" + teacher.T_NCode + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedTeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , username , date)"
+                                + "VALUES ('" + teacher.T_FName + "'"
+                                         + "'" + teacher.T_LName + "'"
+                                         + "'" + teacher.T_NCode + "'"
+                                         + "'" + teacher.T_EDeg + "'"
+                                         + "'" + teacher.T_Email + "'"
+                                         + "'" + teacher.T_Group + "'"
+                                         + "'" + teacher.T_Mobile + "'"
+                                         + "'" + teacher.T_Tel1 + "'"
+                                         + "'" + teacher.T_Tel2 + "'"
+                                         + "'" + teacher.T_Faculty + "'"
+                                          + "'" + NCode + "'"
+                                         + "'" + dateTime + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " +teacher.T_NCode + "','" + "'TeachersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
+
         }
 
 
@@ -270,35 +571,92 @@ namespace ProposalReportingSystem
         /// querry for employers
         /// </summary>
         /// <param name="Emloyers"></param>
-        public void AddEmployer(string employer)
+        public void AddEmployer(string employer,long NCode , DateTime dateTime)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO employersTable (orgName , deleted)"
-                            + "VALUES ('" + employer + "',"
-                                        +"'" + 0 + "')";
+           
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
-        }
-        public void EditEmployer(Employers employer)
-        {
-            //MessageBox.Show("UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '" + employer.Index + "'");
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '"+employer.Index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO employersTable (orgName) VALUES ('" + employer + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + employer + "','" + "employersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
+
+        }
+        public void EditEmployer(Employers employer,string lastOrgName ,long NCode,DateTime dateTime)
+        {
+
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE index = '" + employer.Index + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastOrgName + " to " + employer.OrgName + "','" + "employersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
         }
         public List<Employers> getEmployers()
         {
@@ -307,7 +665,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM employersTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM employersTable";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -322,18 +680,49 @@ namespace ProposalReportingSystem
             conn.Close();
             return list;
         }
-        public void DeleteEmployers(long index)
+        public void DeleteEmployers(long index,String employers , long NCode , DateTime dateTime)
         {
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE employersTable SET deleted = " + "'" + 1 + "'" + " WHERE index = '" + index + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = " DELETE FROM employersTable WHERE index = '" + index + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedEmployersTable (index , employers , date , username) VALUES('"+index+"','" + employers + "' ,'" + dateTime + "' ,'" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + index +"-"+employers + "','" + "employersTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
         ////////////////////end of employer query
@@ -341,40 +730,91 @@ namespace ProposalReportingSystem
         /// procedure query
         /// </summary>
         /// <param name="procedure"></param>
-        public void AddProcedureType(String procedure)
+        public void AddProcedureType(String procedure,long NCode , DateTime dateTime)
         {
-            /*
-
-            string conString = "Data Source= 185.159.152.2;" +
-                "Initial Catalog=rayanpro_EBS;" +
-                "User id=*************; " +
-                "Password=************;";
-
-            */
+          
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO procedureTypeTable (procedureType,deleted) VALUES ('" + procedure + "', 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO procedureTypeTable (procedureType) VALUES ('" + procedure + "' )";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + procedure + "','" + "procedureTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void EditProcedureType(String newProcedureType , String lastProcedureType)
+        public void EditProcedureType(String newProcedureType , String lastProcedureType,long NCode , DateTime dateTime)
         {
+         
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = '" + lastProcedureType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = '" + lastProcedureType + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastProcedureType + " to " + newProcedureType + "','" + "procedureTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
 
@@ -385,7 +825,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM procedureTypeTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM procedureTypeTable";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -399,18 +839,51 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteProcedureType(String procedure)
+        public void DeleteProcedureType(String procedure,long NCode,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE procedureTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE procedureType = '" + procedure + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM procedureTypeTable WHERE procedureType = '" + procedure + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedProcedureTypeTable (procedureType , date , username) VALUES( '" + procedure + "' ,'" + dateTime + "' ,'" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + procedure + "','" + "procedureTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
         /////////////////end of procedure query
@@ -420,32 +893,91 @@ namespace ProposalReportingSystem
         /// property query
         /// </summary>
         /// <param name=property></param>
-        public void AddPropertyType(String property)
+        public void AddPropertyType(String property,long NCode ,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO propertyTypeTable (propertyType , deleted) VALUES ('" + property + "', 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO propertyTypeTable (propertyType) VALUES ('" + property + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + property + "','" + "propertyTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void EditPropertyType(String newPropertyType, String lastPropertyType)
+        public void EditPropertyType(String newPropertyType, String lastPropertyType,long NCode,DateTime dateTime)
         {
+      
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = '" + lastPropertyType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = '" + lastPropertyType + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastPropertyType + " to " + newPropertyType + "','" + "propertyTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
         public List<string> getPropertyType()
         {
@@ -454,7 +986,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM propertyTypeTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM propertyTypeTable";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -469,18 +1001,51 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeletePropertyType(String property)
+        public void DeletePropertyType(String property,long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE propertyTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE propertyType = '" + property + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM propertyTypeTable WHERE propertyType = '" + property + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedPropertyTypeTable  (propertyType , date , username) VALUES( '" + property + "' ,'" + dateTime + "' ,'" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + property + "','" + "propertyTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
 
@@ -490,32 +1055,90 @@ namespace ProposalReportingSystem
         /// proposalType query
         /// </summary>
         /// <param name=proposalType></param>
-        public void AddProposalType(String proposalType)
+        public void AddProposalType(String proposalType,long NCode , DateTime dateTime)
         {
+     
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO proposalTypeTable (proposalType , deleted) VALUES ('" + proposalType + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO proposalTypeTable (proposalType) VALUES ('" + proposalType + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + proposalType + "','" + "proposalTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void EditProposalType(String newProposalType, String lastProposalType)
+        public void EditProposalType(String newProposalType, String lastProposalType,long NCode,DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = '" + lastProposalType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = '" + lastProposalType + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastProposalType + " to " + newProposalType + "','" + "proposalTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
         public List<string> getProposalType()
         {
@@ -524,7 +1147,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM proposalTypeTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM proposalTypeTable ";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -538,18 +1161,51 @@ namespace ProposalReportingSystem
 
             return list;
         }
-        public void DeleteProposalType(String proposal)
+        public void DeleteProposalType(String proposal,long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE proposalTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE proposalType = '" + proposal + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM proposalTypeTable WHERE proposalType = '" + proposal + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedProposalTypeTable  (proposalType , date , username) VALUES( '" + proposal + "' ,'" + dateTime + "' ,'" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + proposal + "','" + "proposalTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
         /////////////////end proposal type query
@@ -558,32 +1214,89 @@ namespace ProposalReportingSystem
         /// registerType query
         /// </summary>
         /// <param name=proposalType></param>
-        public void AddRegisterType(String registerType)
+        public void AddRegisterType(String registerType,long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO registerTypeTable (registerType , deleted) VALUES ('" + registerType  + "' , 0 )";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO registerTypeTable (registerType) VALUES ('" + registerType + "' )";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + registerType + "','" + "registerTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void EditRegisterType(String newRegisterType, String lastRegisterType)
+        public void EditRegisterType(String newRegisterType, String lastRegisterType,long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = '" + lastRegisterType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = '" + lastRegisterType + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastRegisterType + " to " + newRegisterType + "','" + "registerTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
         public List<string> getRegisterType()
         {
@@ -592,7 +1305,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM registerTypeTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM registerTypeTable";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -607,18 +1320,52 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteRegisterType(String register)
+        public void DeleteRegisterType(String register,long NCode , DateTime dateTime)
         {
+          
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE registerTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE registerType = '" + register + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM registerTypeTable WHERE registerType = '" + register + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedRegisterTypeTable  (registerType , date , username) VALUES( '" + register + "' ,'" + dateTime + "' ,'" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + register + "','" + "registerTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
         //////////////end of registerType query
@@ -628,32 +1375,96 @@ namespace ProposalReportingSystem
         /// statusType query
         /// </summary>
         /// <param name=statusType></param>
-        public void AddStatusType(String statusType)
+        public void AddStatusType(String statusType, long NCode , DateTime dateTime)
         {
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO statusTypeTable (statusType , deleted) VALUES( '" + statusType + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            
+            try
+            {
+                sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES('" + statusType + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + statusType + "','" + "statusTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
         }
 
-        public void EditStatusType(String newStatusType, String lastStatusType)
+        public void EditStatusType(String newStatusType, String lastStatusType, long NCode ,DateTime dateTime)
         {
+           
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastStatusType+" to "+ newStatusType + "','" + "statusTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
+
+
+
         }
         public List<string> getStatusType()
         {
@@ -662,7 +1473,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM statusTypeTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM statusTypeTable ";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -677,17 +1488,51 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteStatusType(String status)
+        public void DeleteStatusType(String status,long NCode,DateTime dateTime)
         {
+
+           
+            
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE statusTypeTable SET deleted = " + "'" + 1 + "'" + " WHERE statusType = '" + status + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction=transaction;
+
+
+           
+
+            try
+            {
+                sc.CommandText = " DELETE FROM statusTypeTable WHERE statusType = '" + status + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedStatusTypeTable  (statusType , date , username) VALUES( '" + status + "' ,'"+dateTime+"' ,'"+ NCode +"')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime +"','"+ "deleted "+ status +"','"+"statusTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+           
             conn.Close();
         }
 
@@ -697,31 +1542,87 @@ namespace ProposalReportingSystem
         /// statusType query
         /// </summary>
         /// <param name=Faculty></param>
-        public void AddFaculty(String faculty)
+        public void AddFaculty(String faculty,long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO facultyTable (facultyName , deleted) VALUES( '" + faculty + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO facultyTable (facultyName) VALUES( '" + faculty + "' )";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + faculty + "','" + "facultyTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
         }
 
-        public void EditFaculty(String newFaculty, String lastFaculty)
-        {
+        public void EditFaculty(String newFaculty, String lastFaculty,long NCode ,DateTime dateTime)
+        { 
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE statusTypeTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE facultyTypeTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTypeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
         }
         public List<string> getFaculty()
@@ -731,7 +1632,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM facultyTable WHERE deleted = 0";
+            sc.CommandText = "SELECT * FROM facultyTable ";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -746,18 +1647,54 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteFaculty(String faculty)
+        public void DeleteFaculty(String faculty,long NCode,DateTime dateTime)
         {
+           
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE facultyTable SET deleted = " + "'" + 1 + "'" + " WHERE facultyName = '" + faculty + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = "DELETE FROM facultyTable WHERE facultyName = '" + faculty + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedFacultyTable  (facultyName , date , username) VALUES( '" + faculty + "','" + dateTime + "','" + NCode + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + faculty + "','" + "facultyTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+
+
+
         }
 
         ///////////end query of FacultyTable
@@ -767,31 +1704,87 @@ namespace ProposalReportingSystem
         /// statusType query
         /// </summary>
         /// <param name=Faculty></param>
-        public void AddEGroup(String faculty,String group)
+        public void AddEGroup(String faculty,String group,long NCode , DateTime dateTime)
         {
+          
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO EGroupTable (groupName ,facultyName , deleted) VALUES( '"+group+"', '" + faculty + "' , 0)";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+          
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO EGroupTable (groupName, facultyName) VALUES('"+group+"', '" + faculty + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Added " + group +"-"+ faculty + "','" + "EGroupTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
         }
 
-        public void EditEGroup(String newEGroup, String lastEGroup)
+        public void EditEGroup(String newEGroup, String lastEGroup,long NCode , DateTime dateTime)
         {
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = " UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + "','" + "EGroupTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
         }
 
@@ -802,7 +1795,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty + "' AND deleted = 0";
+            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty +"" ;
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -816,18 +1809,52 @@ namespace ProposalReportingSystem
 
         }
 
-        public void DeleteEGroup(String groupName)
+        public void DeleteEGroup(String groupName , String facultyName , long NCode , DateTime dateTime)
         {
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
+            conn.Open();
             SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE EGroupTable SET deleted = " + "'" + 1 + "'" + " WHERE groupName = '" + groupName + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " DELETE FROM EGroupTable WHERE groupName = '" + groupName + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','"+ facultyName +"' ,'"+ dateTime+ "','"+ NCode +"')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + NCode + "','" + dateTime + "','" + "deleted " + groupName+"-"+facultyName + "','" + "EGroupTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
             conn.Close();
+           
+
         }
 
         ///////////end query of EducationalGroup
