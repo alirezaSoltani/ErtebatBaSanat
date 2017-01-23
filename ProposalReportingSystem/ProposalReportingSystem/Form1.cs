@@ -1514,8 +1514,22 @@ namespace ProposalReportingSystem
                 }
                 else
                 {
-                    addProposalOrganizationNameCb.SelectedIndex = (int.Parse(addProposalOrganizationNumberCb.Text) - 1);
-                    addProposalOrganizationNumberCb.BackColor = Color.White;
+                    emp = dbh.getEmployers();
+                    int counter = -2;
+                    foreach (Employers employer in emp)
+                    {
+                        counter++;
+                        if(int.Parse(addProposalOrganizationNumberCb.Text) - 1 == employer.Index)
+                        {
+                            break;
+                        }
+                    }
+                    
+                    if(counter >-2)
+                    {
+                        addProposalOrganizationNameCb.SelectedIndex = (counter + 2);
+                        addProposalOrganizationNumberCb.BackColor = Color.White;
+                    }
                 }
             }
             catch(ArgumentOutOfRangeException)
