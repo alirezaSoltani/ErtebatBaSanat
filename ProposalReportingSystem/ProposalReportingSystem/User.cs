@@ -14,6 +14,7 @@ namespace ProposalReportingSystem
         private string u_LName;
         private string u_Email;
         private string u_Tel;
+        private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser;
 
 
         public long U_NCode
@@ -91,6 +92,84 @@ namespace ProposalReportingSystem
             set
             {
                 u_Tel = value;
+            }
+        }
+
+        public short CanAddProposal
+        {
+            get
+            {
+                return canAddProposal;
+            }
+
+            set
+            {
+                canAddProposal = value;
+            }
+        }
+
+        public short CanEditProposal
+        {
+            get
+            {
+                return canEditProposal;
+            }
+
+            set
+            {
+                canEditProposal = value;
+            }
+        }
+
+        public short CanDeleteProposal
+        {
+            get
+            {
+                return canDeleteProposal;
+            }
+
+            set
+            {
+                canDeleteProposal = value;
+            }
+        }
+
+        public short CanAddUser
+        {
+            get
+            {
+                return canAddUser;
+            }
+
+            set
+            {
+                canAddUser = value;
+            }
+        }
+
+        public short CanEditUser
+        {
+            get
+            {
+                return canEditUser;
+            }
+
+            set
+            {
+                canEditUser = value;
+            }
+        }
+
+        public short CanDeleteUser
+        {
+            get
+            {
+                return canDeleteUser;
+            }
+
+            set
+            {
+                canDeleteUser = value;
             }
         }
     }

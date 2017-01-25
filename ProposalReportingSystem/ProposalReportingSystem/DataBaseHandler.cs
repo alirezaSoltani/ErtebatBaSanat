@@ -16,7 +16,7 @@ namespace ProposalReportingSystem
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
                 "Password=P@hn1395;";
-        
+
 
         /// <summary>
         /// Data gridview attributes
@@ -33,7 +33,7 @@ namespace ProposalReportingSystem
         /// </summary>
         /// <param name="proposal"></param>
 
-        public void AddProposal(Proposal proposal,long username , String dateTime)
+        public void AddProposal(Proposal proposal, long username, String dateTime)
         {
             //String persianTitle, String engTitle , String keyword, long executor, String executor2 , String coExecutor, String startDate , int duration, String procedureType , String propertyType, String registerType , String proposalType, long employer, String value , String status, long registrant
 
@@ -54,21 +54,21 @@ namespace ProposalReportingSystem
             try
             {
                 sc.CommandText = "INSERT INTO proposalTable (persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant)"
-                                + "VALUES ('" + proposal.PersianTitle + "'"
-                                         + "'" + proposal.EngTitle + "'"
-                                         + "'" + proposal.KeyWord + "'"
-                                         + "'" + proposal.Executor + "'"
-                                         + "'" + proposal.Executor2 + "'"
-                                         + "'" + proposal.CoExecutor + "'"
-                                         + "'" + proposal.StartDate + "'"
-                                         + "'" + proposal.Duration + "'"
-                                         + "'" + proposal.ProcedureType + "'"
-                                         + "'" + proposal.PropertyType + "'"
-                                         + "'" + proposal.RegisterType + "'"
-                                         + "'" + proposal.ProposalType + "'"
-                                         + "'" + proposal.Employer + "'"
-                                         + "'" + proposal.Value + "'"
-                                         + "'" + proposal.Status + "'"
+                                + "VALUES ('" + proposal.PersianTitle + "',"
+                                         + "'" + proposal.EngTitle + "',"
+                                         + "'" + proposal.KeyWord + "',"
+                                         + "'" + proposal.Executor + "',"
+                                         + "'" + proposal.Executor2 + "',"
+                                         + "'" + proposal.CoExecutor + "',"
+                                         + "'" + proposal.StartDate + "',"
+                                         + "'" + proposal.Duration + "',"
+                                         + "'" + proposal.ProcedureType + "',"
+                                         + "'" + proposal.PropertyType + "',"
+                                         + "'" + proposal.RegisterType + "',"
+                                         + "'" + proposal.ProposalType + "',"
+                                         + "'" + proposal.Employer + "',"
+                                         + "'" + proposal.Value + "',"
+                                         + "'" + proposal.Status + "',"
                                          + "'" + proposal.Registrant + "')";
 
                 sc.ExecuteNonQuery();
@@ -93,8 +93,8 @@ namespace ProposalReportingSystem
 
             conn.Close();
         }
-        
-        public void EditProposal (Proposal proposal,long username, String dateTime)
+
+        public void EditProposal(Proposal proposal, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -152,8 +152,8 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
-      
-        public void DeleteProposal(Proposal proposal , long username, String dateTime)
+
+        public void DeleteProposal(Proposal proposal, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -176,25 +176,25 @@ namespace ProposalReportingSystem
                 sc.CommandText = " DELETE FROM proposalTable WHERE index = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO deletedProposalTable (index,persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,dateTime)"
-                                + "VALUES ('" + proposal.Index + "'"
-                                         + "'" + proposal.PersianTitle + "'"
-                                         + "'" + proposal.EngTitle + "'"
-                                         + "'" + proposal.KeyWord + "'"
-                                         + "'" + proposal.Executor + "'"
-                                         + "'" + proposal.Executor2 + "'"
-                                         + "'" + proposal.CoExecutor + "'"
-                                         + "'" + proposal.StartDate + "'"
-                                         + "'" + proposal.Duration + "'"
-                                         + "'" + proposal.ProcedureType + "'"
-                                         + "'" + proposal.PropertyType + "'"
-                                         + "'" + proposal.RegisterType + "'"
-                                         + "'" + proposal.ProposalType + "'"
-                                         + "'" + proposal.Employer + "'"
-                                         + "'" + proposal.Value + "'"
-                                         + "'" + proposal.Status + "'"
-                                         + "'" + proposal.Registrant + "'"
-                                         + "'" + username + "'"
-                                         + "'" + dateTime + "')"; 
+                                + "VALUES ('" + proposal.Index + "',"
+                                         + "'" + proposal.PersianTitle + "',"
+                                         + "'" + proposal.EngTitle + "',"
+                                         + "'" + proposal.KeyWord + "',"
+                                         + "'" + proposal.Executor + "',"
+                                         + "'" + proposal.Executor2 + "',"
+                                         + "'" + proposal.CoExecutor + "',"
+                                         + "'" + proposal.StartDate + "',"
+                                         + "'" + proposal.Duration + "',"
+                                         + "'" + proposal.ProcedureType + "',"
+                                         + "'" + proposal.PropertyType + "',"
+                                         + "'" + proposal.RegisterType + "',"
+                                         + "'" + proposal.ProposalType + "',"
+                                         + "'" + proposal.Employer + "',"
+                                         + "'" + proposal.Value + "',"
+                                         + "'" + proposal.Status + "',"
+                                         + "'" + proposal.Registrant + "',"
+                                         + "'" + username + "',"
+                                         + "'" + dateTime + "')";
 
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "'proposalTable'" + ")";
@@ -219,7 +219,7 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
-      
+
 
 
         ///////////end query for proposals
@@ -230,7 +230,7 @@ namespace ProposalReportingSystem
         /// <param name="Users"></param>
 
 
-        public void AddUser(User user,long username, String dateTime)
+        public void AddUser(User user, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -248,13 +248,19 @@ namespace ProposalReportingSystem
 
             try
             {
-               sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel)"
-                            + "VALUES ('" + user.U_FName + "'"
-                                     + "'" + user.U_LName + "'"
-                                     + "'" + user.U_NCode + "'"
-                                     + "'" + user.U_Password + "'"
-                                     + "'" + user.U_Email + "'"
-                                     + "'" + user.U_Tel + "')";
+                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser)"
+                             + " VALUES ('" + user.U_FName + "',"
+                                      + "'" + user.U_LName + "',"
+                                      + "'" + user.U_NCode + "',"
+                                      + "'" + user.U_Password + "',"
+                                      + "'" + user.U_Email + "',"
+                                      + "'" + user.U_Tel + "',"
+                                      + "'" + user.CanAddProposal + "',"
+                                      + "'" + user.CanEditProposal + "',"
+                                      + "'" + user.CanDeleteProposal + "',"
+                                      + "'" + user.CanAddUser + "',"
+                                      + "'" + user.CanEditUser + "',"
+                                      + "'" + user.CanDeleteUser + "')";
 
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + user.U_NCode + "','" + "UsersTable'" + ")";
@@ -279,7 +285,7 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
-        public void EditUsers(User user,long currentUsername,long username, String dateTime)
+        public void EditUsers(User user, long NCode, long username, String dateTime)
         {
 
 
@@ -297,13 +303,19 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "UPDATE UsersTable SET u_FName = " + "'" + user.U_FName + "'"
-                                                    + "u_LName =" + "'" + user.U_LName + "'"
-                                                    + "u_NCode =" + "'" + user.U_NCode + "'"
-                                                    + "u_Password =" + "'" + user.U_Password + "'"
-                                                    + "u_Email = " + "'" + user.U_Email + "'"
-                                                    + " u_Tel = " + "'" + user.U_Tel + "'"
-                                                    + " WHERE u_NCode = " + currentUsername + "";
+                sc.CommandText = "UPDATE UsersTable SET u_FName = " + "'" + user.U_FName + "',"
+                                                    + "u_LName =" + "'" + user.U_LName + "',"
+                                                    + "u_NCode =" + "'" + user.U_NCode + "',"
+                                                    + "u_Password =" + "'" + user.U_Password + "',"
+                                                    + "u_Email = " + "'" + user.U_Email + "',"
+                                                    + " u_Tel = " + "'" + user.U_Tel + "',"
+                                                    + " u_canAddProposal = " + "'" + user.CanAddProposal + "',"
+                                                    + " u_canEditProposal = " + "'" + user.CanEditProposal + "',"
+                                                    + " u_canDeleteProposal = " + "'" + user.CanDeleteProposal + "',"
+                                                    + " u_canAddUser = " + "'" + user.CanAddUser + "',"
+                                                    + " u_canEditUser = " + "'" + user.CanEditUser + "',"
+                                                    + " u_canDeleteUser = " + "'" + user.CanDeleteUser + "'"
+                                                    + " WHERE u_NCode = " + NCode + "";
 
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited ','" + "UsersTable'" + ")";
@@ -328,7 +340,7 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
-        public void DeleteUser(User user , long username, String dateTime)
+        public void DeleteUser(User user, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -350,17 +362,23 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , username , dateTime)"
-                                + "VALUES ('" + user.U_FName + "'"
-                                         + "'" + user.U_LName + "'"
-                                         + "'" + user.U_NCode + "'"
-                                         + "'" + user.U_Password + "'"
-                                         + "'" + user.U_Email + "'"
-                                         + "'" + user.U_Tel + "'"
-                                         + "'" + username + "'"
-                                         + "'" + dateTime + "')";
+                sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser , username ,date)"
+                            + " VALUES ('" + user.U_FName + "',"
+                                     + "'" + user.U_LName + "',"
+                                     + "'" + user.U_NCode + "',"
+                                     + "'" + user.U_Password + "',"
+                                     + "'" + user.U_Email + "',"
+                                     + "'" + user.U_Tel + "',"
+                                     + "'" + user.CanAddProposal + "',"
+                                     + "'" + user.CanEditProposal + "',"
+                                     + "'" + user.CanDeleteProposal + "',"
+                                     + "'" + user.CanAddUser + "',"
+                                     + "'" + user.CanEditUser + "',"
+                                     + "'" + user.CanDeleteUser + "',"
+                                     + "'" + username + "',"
+                                     + "'" + dateTime + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " +user.U_NCode + "','" + "'UsersTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + user.U_NCode + "','" + "UsersTable" + "')";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -390,7 +408,7 @@ namespace ProposalReportingSystem
         /// querry for teachers
         /// </summary>
         /// <param name="Teachers"></param>
-        public void AddTeacher(Teachers teacher,long username, String dateTime)
+        public void AddTeacher(Teachers teacher, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -409,15 +427,15 @@ namespace ProposalReportingSystem
             try
             {
                 sc.CommandText = "INSERT INTO TeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty)"
-                                + "VALUES ('" + teacher.T_FName + "'"
-                                         + "'" + teacher.T_LName + "'"
-                                         + "'" + teacher.T_NCode + "'"
-                                         + "'" + teacher.T_EDeg + "'"
-                                         + "'" + teacher.T_Email + "'"
-                                         + "'" + teacher.T_Group + "'"
-                                         + "'" + teacher.T_Mobile + "'"
-                                         + "'" + teacher.T_Tel1 + "'"
-                                         + "'" + teacher.T_Tel2 + "'"
+                                + "VALUES ('" + teacher.T_FName + "',"
+                                         + "'" + teacher.T_LName + "',"
+                                         + "'" + teacher.T_NCode + "',"
+                                         + "'" + teacher.T_EDeg + "',"
+                                         + "'" + teacher.T_Email + "',"
+                                         + "'" + teacher.T_Group + "',"
+                                         + "'" + teacher.T_Mobile + "',"
+                                         + "'" + teacher.T_Tel1 + "',"
+                                         + "'" + teacher.T_Tel2 + "',"
                                          + "'" + teacher.T_Faculty + "')";
 
                 sc.ExecuteNonQuery();
@@ -445,7 +463,7 @@ namespace ProposalReportingSystem
 
 
         }
-        public void EditTeacher(Teachers teacher,long lastT_NCode ,long username, String dateTime)
+        public void EditTeacher(Teachers teacher, long lastT_NCode, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -498,7 +516,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void DeleteTeacher(Teachers teacher,long username, String dateTime)
+        public void DeleteTeacher(Teachers teacher, long username, String dateTime)
         {
 
 
@@ -522,20 +540,20 @@ namespace ProposalReportingSystem
                 sc.CommandText = " DELETE FROM TeacherTable WHERE t_NCode = '" + teacher.T_NCode + "'";
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO deletedTeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , username , date)"
-                                + "VALUES ('" + teacher.T_FName + "'"
-                                         + "'" + teacher.T_LName + "'"
-                                         + "'" + teacher.T_NCode + "'"
-                                         + "'" + teacher.T_EDeg + "'"
-                                         + "'" + teacher.T_Email + "'"
-                                         + "'" + teacher.T_Group + "'"
-                                         + "'" + teacher.T_Mobile + "'"
-                                         + "'" + teacher.T_Tel1 + "'"
-                                         + "'" + teacher.T_Tel2 + "'"
-                                         + "'" + teacher.T_Faculty + "'"
-                                          + "'" + username + "'"
+                                + "VALUES ('" + teacher.T_FName + "',"
+                                         + "'" + teacher.T_LName + "',"
+                                         + "'" + teacher.T_NCode + "',"
+                                         + "'" + teacher.T_EDeg + "',"
+                                         + "'" + teacher.T_Email + "',"
+                                         + "'" + teacher.T_Group + "',"
+                                         + "'" + teacher.T_Mobile + "',"
+                                         + "'" + teacher.T_Tel1 + "',"
+                                         + "'" + teacher.T_Tel2 + "',"
+                                         + "'" + teacher.T_Faculty + "',"
+                                          + "'" + username + "',"
                                          + "'" + dateTime + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " +teacher.T_NCode + "','" + "'TeachersTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + teacher.T_NCode + "','" + "'TeachersTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -567,9 +585,9 @@ namespace ProposalReportingSystem
         /// querry for employers
         /// </summary>
         /// <param name="Emloyers"></param>
-        public void AddEmployer(string employer,long username, String dateTime)
+        public void AddEmployer(string employer, long username, String dateTime)
         {
-           
+
 
 
             SqlConnection conn = new SqlConnection();
@@ -612,7 +630,7 @@ namespace ProposalReportingSystem
 
 
         }
-        public void EditEmployer(Employers employer,string lastOrgName ,long username, String dateTime)
+        public void EditEmployer(Employers employer, string lastOrgName, long username, String dateTime)
         {
 
 
@@ -676,7 +694,7 @@ namespace ProposalReportingSystem
             conn.Close();
             return list;
         }
-        public void DeleteEmployers(long index,String employers , long username, String dateTime)
+        public void DeleteEmployers(long index, String employers, long username, String dateTime)
         {
 
 
@@ -696,9 +714,9 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = " DELETE FROM employersTable WHERE [index] = '" + index + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEmployersTable ([index] , orgName , date , username) VALUES('" + index+"','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
+                sc.CommandText = " INSERT INTO deletedEmployersTable ([index] , orgName , date , username) VALUES('" + index + "','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + index +"-"+employers + "','" + "employersTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + index + "-" + employers + "','" + "employersTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -726,9 +744,9 @@ namespace ProposalReportingSystem
         /// procedure query
         /// </summary>
         /// <param name="procedure"></param>
-        public void AddProcedureType(String procedure,long username, String dateTime)
+        public void AddProcedureType(String procedure, long username, String dateTime)
         {
-          
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -769,9 +787,9 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditProcedureType(String newProcedureType , String lastProcedureType, long username, String dateTime)
+        public void EditProcedureType(String newProcedureType, String lastProcedureType, long username, String dateTime)
         {
-         
+
 
 
             SqlConnection conn = new SqlConnection();
@@ -828,14 +846,14 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             while (reader.Read())
             {
-                list.Add(reader.GetString(0));                               
+                list.Add(reader.GetString(0));
             }
             conn.Close();
 
             return list;
         }
 
-        public void DeleteProcedureType(String procedure,long username, String dateTime)
+        public void DeleteProcedureType(String procedure, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -889,7 +907,7 @@ namespace ProposalReportingSystem
         /// property query
         /// </summary>
         /// <param name=property></param>
-        public void AddPropertyType(String property,long username, String dateTime)
+        public void AddPropertyType(String property, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -932,9 +950,9 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditPropertyType(String newPropertyType, String lastPropertyType,long username, String dateTime)
+        public void EditPropertyType(String newPropertyType, String lastPropertyType, long username, String dateTime)
         {
-      
+
 
 
             SqlConnection conn = new SqlConnection();
@@ -997,7 +1015,7 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeletePropertyType(String property,long username, String dateTime)
+        public void DeletePropertyType(String property, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1051,9 +1069,9 @@ namespace ProposalReportingSystem
         /// proposalType query
         /// </summary>
         /// <param name=proposalType></param>
-        public void AddProposalType(String proposalType,long username, String dateTime)
+        public void AddProposalType(String proposalType, long username, String dateTime)
         {
-     
+
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -1095,7 +1113,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditProposalType(String newProposalType, String lastProposalType,long username, String dateTime)
+        public void EditProposalType(String newProposalType, String lastProposalType, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1157,7 +1175,7 @@ namespace ProposalReportingSystem
 
             return list;
         }
-        public void DeleteProposalType(String proposal,long username, String dateTime)
+        public void DeleteProposalType(String proposal, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1210,7 +1228,7 @@ namespace ProposalReportingSystem
         /// registerType query
         /// </summary>
         /// <param name=proposalType></param>
-        public void AddRegisterType(String registerType,long username, String dateTime)
+        public void AddRegisterType(String registerType, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1253,7 +1271,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditRegisterType(String newRegisterType, String lastRegisterType,long username, String dateTime)
+        public void EditRegisterType(String newRegisterType, String lastRegisterType, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1316,9 +1334,9 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteRegisterType(String register,long username, String dateTime)
+        public void DeleteRegisterType(String register, long username, String dateTime)
         {
-          
+
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -1387,7 +1405,7 @@ namespace ProposalReportingSystem
             transaction = conn.BeginTransaction("new");
             sc.Transaction = transaction;
 
-            
+
             try
             {
                 sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES('" + statusType + "')";
@@ -1416,7 +1434,7 @@ namespace ProposalReportingSystem
 
         public void EditStatusType(String newStatusType, String lastStatusType, long username, String dateTime)
         {
-           
+
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -1437,7 +1455,7 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastStatusType+" to "+ newStatusType + "','" + "statusTypeTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastStatusType + " to " + newStatusType + "','" + "statusTypeTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -1476,7 +1494,7 @@ namespace ProposalReportingSystem
             reader = sc.ExecuteReader();
             while (reader.Read())
             {
-               list.Add( reader.GetString(0));
+                list.Add(reader.GetString(0));
 
             }
             conn.Close();
@@ -1484,11 +1502,11 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteStatusType(String status,long username, String dateTime)
+        public void DeleteStatusType(String status, long username, String dateTime)
         {
 
-           
-            
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -1499,18 +1517,18 @@ namespace ProposalReportingSystem
 
             SqlTransaction transaction;
             transaction = conn.BeginTransaction("new");
-            sc.Transaction=transaction;
+            sc.Transaction = transaction;
 
 
-           
+
 
             try
             {
                 sc.CommandText = " DELETE FROM statusTypeTable WHERE statusType = '" + status + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedStatusTypeTable  (statusType , date , username) VALUES( '" + status + "' ,'"+dateTime+"' ,'"+ username + "')";
+                sc.CommandText = " INSERT INTO deletedStatusTypeTable  (statusType , date , username) VALUES( '" + status + "' ,'" + dateTime + "' ,'" + username + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime +"','"+ "deleted "+ status +"','"+"statusTypeTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + status + "','" + "statusTypeTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -1528,7 +1546,7 @@ namespace ProposalReportingSystem
                     MessageBox.Show("خطا در برقراری ارتباط");
                 }
             }
-           
+
             conn.Close();
         }
 
@@ -1538,7 +1556,7 @@ namespace ProposalReportingSystem
         /// statusType query
         /// </summary>
         /// <param name=Faculty></param>
-        public void AddFaculty(String faculty,long username, String dateTime)
+        public void AddFaculty(String faculty, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1581,8 +1599,8 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditFaculty(String newFaculty, String lastFaculty,long username, String dateTime)
-        { 
+        public void EditFaculty(String newFaculty, String lastFaculty, long username, String dateTime)
+        {
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -1643,9 +1661,9 @@ namespace ProposalReportingSystem
             return list;
         }
 
-        public void DeleteFaculty(String faculty,long username, String dateTime)
+        public void DeleteFaculty(String faculty, long username, String dateTime)
         {
-           
+
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
@@ -1700,9 +1718,9 @@ namespace ProposalReportingSystem
         /// statusType query
         /// </summary>
         /// <param name=Faculty></param>
-        public void AddEGroup(String faculty,String group,long username, String dateTime)
+        public void AddEGroup(String faculty, String group, long username, String dateTime)
         {
-          
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -1710,7 +1728,7 @@ namespace ProposalReportingSystem
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
 
-          
+
             SqlTransaction transaction;
             transaction = conn.BeginTransaction("new");
             sc.Transaction = transaction;
@@ -1718,9 +1736,9 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "INSERT INTO EGroupTable (groupName, facultyName) VALUES('"+group+"', '" + faculty + "')";
+                sc.CommandText = "INSERT INTO EGroupTable (groupName, facultyName) VALUES('" + group + "', '" + faculty + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + group +"-"+ faculty + "','" + "EGroupTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + group + "-" + faculty + "','" + "EGroupTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -1742,7 +1760,7 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
-        public void EditEGroup(String newEGroup, String lastEGroup,long username, String dateTime)
+        public void EditEGroup(String newEGroup, String lastEGroup, long username, String dateTime)
         {
 
 
@@ -1791,7 +1809,7 @@ namespace ProposalReportingSystem
             conn.ConnectionString = conString;
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty +"'" ;
+            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty + "'";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -1805,7 +1823,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void DeleteEGroup(String groupName , String facultyName , long username, String dateTime)
+        public void DeleteEGroup(String groupName, String facultyName, long username, String dateTime)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -1827,9 +1845,9 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = " DELETE FROM EGroupTable WHERE groupName = '" + groupName + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','"+ facultyName +"' ,'"+ dateTime+ "','"+ username + "')";
+                sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','" + facultyName + "' ,'" + dateTime + "','" + username + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + groupName+"-"+facultyName + "','" + "EGroupTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + groupName + "-" + facultyName + "','" + "EGroupTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -1849,7 +1867,7 @@ namespace ProposalReportingSystem
             }
 
             conn.Close();
-           
+
 
         }
 
@@ -1910,11 +1928,11 @@ namespace ProposalReportingSystem
         ///////////////////////////////////////////////////////////////////////////
         public void dataGridViewUpdate(DataGridViewX dgv, BindingSource bindingSource, String query)
         {
-                /// <summary>
-                /// datagridview reintialization
-                /// </summary>
-                dgv.DataSource = bindingSource;
-                GetData(query, bindingSource, dgv);
+            /// <summary>
+            /// datagridview reintialization
+            /// </summary>
+            dgv.DataSource = bindingSource;
+            GetData(query, bindingSource, dgv);
         }
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GridView Update***********************/

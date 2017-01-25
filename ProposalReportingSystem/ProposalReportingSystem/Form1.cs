@@ -388,7 +388,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserDeleteProCb, 155, 140, 150, 35);
             gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
             gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
-            gl.setSize(manageUserDeletUserCb, 20, 140, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 140, 150, 35);
 
 
 
@@ -398,20 +398,14 @@ namespace ProposalReportingSystem
             ///////////////////App Setting design//////////
             gl.setSize(appSettingPanel, 0, 1, 900, 930);
             gl.setSize(appSettingGp, 22, 15, 826, 445);
-            gl.setSize(appSettingShowDv, 3, 5, 817, 408);
-            gl.setSize(appSettingProcedureTypeRbtn, 205, 5, 23, 18);
-            gl.setSize(appSettingPropertyRbtn, 205, 5, 23, 18);
-            gl.setSize(appSettingRegTypeRbtn, 205, 5, 23, 18);
-            gl.setSize(appSettingProTypeRbtn, 205, 5, 23, 18);
-            gl.setSize(appSettingCoRbtn, 205, 5, 23, 18);
-            gl.setSize(appSettingStatusRbtn, 205, 5, 23, 18);
-
-            gl.setSize(appSettingCoTxtbx, 55, 60, 170, 35);
-            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 35);
-            gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
-            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 35);
-            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 35);
-            gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
+            gl.setSize(appSettingShowDv, 3, 5, 817, 350);
+            
+            gl.setSize(appSettingCoTxtbx, 55, 60, 170, 25);
+            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 25);
+            gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 25);
+            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 25);
+            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 25);
+            gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 25);
 
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
             gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
@@ -431,13 +425,13 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingEgroupLbl, 445, 250, 75, 35);
             gl.setSize(appSettingFacultyRbtn, 765, 250, 18, 23);
             gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
-            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 35);
-            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 35);
+            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 25);
+            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 25);
 
-            gl.setSize(appSettingAddBtn, 20, 365, 80, 30);
-            gl.setSize(appSettingEditBtn, 110, 365, 80, 30);
-            gl.setSize(appSettingDeleteBtn, 200, 365, 80, 30);
-            gl.setSize(appSettingBackBtn, 290, 365, 80, 30);
+            gl.setSize(appSettingAddBtn, 55, 365, 80, 30);
+            gl.setSize(appSettingEditBtn, 145, 365, 80, 30);
+            gl.setSize(appSettingDeleteBtn, 235, 365, 80, 30);
+            gl.setSize(appSettingBackBtn, 325, 365, 80, 30);
 
             gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             ///////////////////App Setting design//////////
@@ -502,26 +496,26 @@ namespace ProposalReportingSystem
             gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
             gl.setSize(manageTeacherShowDgv, 3, 5, 817, 408);
 
-            gl.setSize(manageTeacherExecutorNcodeLbl, 740, 20, 60, 25);
-            gl.setSize(manageTeacherFnameLbl, 740, 90, 60, 25);
-            gl.setSize(manageTeacherLnameLbl, 740, 160, 60, 25);
+            gl.setSize(manageTeacherExecutorNcodeLbl, 740, 60, 60, 25);
+            gl.setSize(manageTeacherFnameLbl, 740, 130, 60, 25);
+            gl.setSize(manageTeacherLnameLbl, 740, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorFacultyLbl, 485, 20, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 485, 90, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 485, 160, 60, 25);
-            gl.setSize(manageTeacherExecutorTelLbl, 230, 20, 60, 25);
-            gl.setSize(manageTeacherExecutorEmailLbl, 230, 90, 60, 25);
-            gl.setSize(manageTeacherExecutorMobileLbl, 230, 160, 60, 25);
+            gl.setSize(manageTeacherExecutorFacultyLbl, 485, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 485, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 485, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorTelLbl, 230, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEmailLbl, 230, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 230, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 560, 20, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 560, 90, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 560, 160, 160, 25);
-            gl.setSize(manageTeacherExecutorEGroupTxtbx, 300, 20, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 300, 90, 160, 25);
-            gl.setSize(manageTeacherExecutorFacultyCb, 300, 160, 160, 25);
-            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 20, 160, 25);
-            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 90, 160, 25);
-            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 160, 160, 25);
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 560, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 560, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 560, 210, 160, 25);
+            gl.setSize(manageTeacherExecutorEGroupTxtbx, 300, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 300, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorFacultyCb, 300, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 200, 160, 25);
 
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
@@ -600,9 +594,9 @@ namespace ProposalReportingSystem
             addProposalExecutorNcodeTxtbx.Clear();
             addProposalExecutorFNameTxtbx.Clear();
             addProposalExecutorLNameTxtbx.Clear();
-            addProposalExecutorFacultyCb.ResetText();
-            addProposalExecutorEGroupCb.ResetText();
-            addProposalExecutorEDegCb.ResetText();
+            addProposalExecutorFacultyCb.SelectedIndex = -1;
+            addProposalExecutorEGroupCb.SelectedIndex = -1;
+            addProposalExecutorEDegCb.SelectedIndex = -1;
             addProposalExecutorEmailTxtbx.Clear();
             addProposalExecutorMobileTxtbx.Clear();
             addProposalExecutorTel1Txtbx.Clear();
@@ -613,15 +607,16 @@ namespace ProposalReportingSystem
             addProposalExecutor2Txtbx.Clear();
             addProposalCoexecutorTxtbx.Clear();
             addProposalStartdateTimeInput.ResetText();
+            //MessageBox.Show(addProposalStartdateTimeInput.CalendarControl
             addProposalDurationTxtbx.Clear();
-            addProposalProcedureTypeCb.ResetText();
-            addProposalPropertyTypeCb.ResetText();
-            addProposalRegisterTypeCb.ResetText();
-            addProposalProposalTypeCb.ResetText();
-            addProposalOrganizationNameCb.ResetText();
-            addProposalOrganizationNumberCb.ResetText();
+            addProposalProcedureTypeCb.SelectedIndex = -1;
+            addProposalPropertyTypeCb.SelectedIndex = -1;
+            addProposalRegisterTypeCb.SelectedIndex = -1;
+            addProposalProposalTypeCb.SelectedIndex = -1;
+            addProposalOrganizationNameCb.SelectedIndex = -1;
+            addProposalOrganizationNumberCb.SelectedIndex = -1;
             addProposalValueTxtbx.Clear();
-            addProposalStatusCb.ResetText();
+            addProposalStatusCb.SelectedIndex = -1;
             //addProposalFileLinkLbl, 30, 330, 160, 25);
         }
 
@@ -1393,11 +1388,14 @@ namespace ProposalReportingSystem
 
         private void searchProposalClearBtn_Click(object sender, EventArgs e)
         {
+            searchProposalStartDateFromChbx.Checked = false;
+            searchProposalStartDateToChbx.Checked = false;
+
             searchProposalExecutorNCodeTxtbx.Clear();
             searchProposalExecutorFNameTxtbx.Clear();
             searchProposalExecutorLNameTxtbx.Clear();
-            searchProposalExecutorFacultyCb.SelectedIndex = 0;
-            searchProposalExecutorEGroupCb.SelectedIndex = 0;
+            searchProposalExecutorFacultyCb.SelectedIndex = -1;
+            searchProposalExecutorEGroupCb.SelectedIndex = -1;
             searchProposalExecutorMobileTxtbx.Clear();
             searchProposalPersianTitleTxtbx.Clear();
             searchProposalEnglishTitleTxtbx.Clear();
@@ -1405,13 +1403,13 @@ namespace ProposalReportingSystem
             searchProposalStartDateToTimeInput.ResetText();
             searchProposalValueFromTxtbx.Clear();
             searchProposalValueToTxtbx.Clear();
-            searchProposalProcedureTypeCb.SelectedIndex = 0;
-            searchProposalPropertyTypeCb.SelectedIndex = 0;
-            searchProposalRegisterTypeCb.SelectedIndex = 0;
-            searchProposalTypeCb.SelectedIndex = 0;
-            searchProposalOrganizationNumberCb.SelectedIndex = 0;
-            searchProposalOrganizationNameCb.SelectedIndex = 0;
-            searchProposalStatusCb.SelectedIndex = 0;
+            searchProposalProcedureTypeCb.SelectedIndex = -1;
+            searchProposalPropertyTypeCb.SelectedIndex = -1;
+            searchProposalRegisterTypeCb.SelectedIndex = -1;
+            searchProposalTypeCb.SelectedIndex = -1;
+            searchProposalOrganizationNumberCb.SelectedIndex = -1;
+            searchProposalOrganizationNameCb.SelectedIndex = -1;
+            searchProposalStatusCb.SelectedIndex = -1;
         }
 
         private void manageUserClearBtn_Click(object sender, EventArgs e)
@@ -1480,11 +1478,14 @@ namespace ProposalReportingSystem
 
         private void addProposalExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addProposalExecutorEGroupCb.Items.Clear();
-            comboList = dbh.getEGroup(addProposalExecutorFacultyCb.SelectedItem.ToString());
-            foreach (String eGroup in comboList)
+            if(addProposalExecutorFacultyCb.SelectedIndex >-1)
             {
-                addProposalExecutorEGroupCb.Items.Add(eGroup);
+                addProposalExecutorEGroupCb.Items.Clear();
+                comboList = dbh.getEGroup(addProposalExecutorFacultyCb.SelectedItem.ToString());
+                foreach (String eGroup in comboList)
+                {
+                    addProposalExecutorEGroupCb.Items.Add(eGroup);
+                }
             }
         }
 
@@ -1508,6 +1509,7 @@ namespace ProposalReportingSystem
         {
             try
             {
+                searchProposalOrganizationNumberCb.BackColor = Color.White;
                 if (addProposalOrganizationNumberCb.Text == "0")
                 {
                     addProposalOrganizationNumberCb.BackColor = Color.Pink;
@@ -1757,6 +1759,436 @@ namespace ProposalReportingSystem
             dbh.dataGridViewUpdate(logDgv, logBindingSource, "SELECT * FROM logTable");
         }
 
+        private void searchProposalExecutorNCodeTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalExecutorNCodeTxtbx.Text);
+
+                if (searchProposalExecutorNCodeTxtbx.Text.Length == 10)
+                {
+                    MessageBox.Show("چک موجود بودن استاد");
+                }
+                else
+                {
+                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                }
+            }
+            catch (FormatException)
+            {
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalExecutorNCodeTxtbx.Text == "")
+            {
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(addProposalExecutorNcodeTxtbx.Text);
+
+                if(addProposalExecutorNcodeTxtbx.Text.Length == 10)
+                {
+                    MessageBox.Show("چک موجود بودن استاد");
+                }
+                else
+                {
+                    addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                }
+            }
+            catch (FormatException)
+            {
+                addProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
+            }
+            if (addProposalExecutorNcodeTxtbx.Text == "")
+            {
+                addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void addProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void addProposalTab_Click(object sender, EventArgs e)
+        {
+            addProposalExecutorNcodeTxtbx.Focus();
+        }
+
+        private void searchProposalExecutorMobileTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalExecutorMobileTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                searchProposalExecutorMobileTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                searchProposalExecutorMobileTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalExecutorMobileTxtbx.Text == "")
+            {
+                searchProposalExecutorMobileTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalValueFromTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalValueFromTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalValueFromTxtbx.Text == "")
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalValueToTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalValueToTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                searchProposalValueToTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                searchProposalValueToTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalValueToTxtbx.Text == "")
+            {
+                searchProposalValueToTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(searchProposalExecutorEGroupCb.SelectedIndex > -1)
+            {
+                searchProposalExecutorEGroupCb.Items.Clear();
+                comboList = dbh.getEGroup(searchProposalExecutorFacultyCb.SelectedItem.ToString());
+                foreach (String eGroup in comboList)
+                {
+                    searchProposalExecutorEGroupCb.Items.Add(eGroup);
+                }
+            }  
+        }
+
+        private void searchProposalOrganizationNumberCb_TextChanged(object sender, EventArgs e)
+        {
+            searchProposalOrganizationNumberCb.BackColor = Color.White;
+            try
+            {
+                if (searchProposalOrganizationNumberCb.Text == "0")
+                {
+                    searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    bool isFound = false;
+                    foreach (Employers employer in emp)
+                    {
+                        if (int.Parse(searchProposalOrganizationNumberCb.Text) == employer.Index)
+                        {
+                            searchProposalOrganizationNameCb.Text = employer.OrgName;
+                            isFound = true;
+                        }
+
+                    }
+
+                    if (!isFound)
+                    {
+                        searchProposalOrganizationNameCb.SelectedIndex = -1;
+                        searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch (FormatException)
+            {
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+
+            if (searchProposalOrganizationNumberCb.Text == "")
+            {
+
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalOrganizationNameCb_TextChanged(object sender, EventArgs e)
+        {
+            if (searchProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    searchProposalOrganizationNumberCb.SelectedIndex = searchProposalOrganizationNameCb.SelectedIndex;
+                    if (!searchProposalOrganizationNameCb.Items.Contains(searchProposalOrganizationNameCb.Text))
+                    {
+                        searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        searchProposalOrganizationNameCb.BackColor = Color.White;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("arg");
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("for");
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (searchProposalOrganizationNameCb.Text == "")
+                {
+
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void searchProposalOrganizationNameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (searchProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    searchProposalOrganizationNumberCb.SelectedIndex = searchProposalOrganizationNameCb.SelectedIndex;
+                    if (!searchProposalOrganizationNameCb.Items.Contains(searchProposalOrganizationNameCb.Text))
+                    {
+                        searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        searchProposalOrganizationNameCb.BackColor = Color.White;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("arg");
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("for");
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (searchProposalOrganizationNameCb.Text == "")
+                {
+                    searchProposalOrganizationNumberCb.Text = "";
+                    searchProposalOrganizationNumberCb.SelectedIndex = -1;
+                    searchProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void addProposalOrganizationNumberCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                addProposalOrganizationNumberCb.BackColor = Color.White;
+                if (addProposalOrganizationNumberCb.Text == "0")
+                {
+                    addProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    bool isFound = false;
+                    foreach (Employers employer in emp)
+                    {
+                        if (int.Parse(addProposalOrganizationNumberCb.Text) == employer.Index)
+                        {
+                            addProposalOrganizationNameCb.Text = employer.OrgName;
+                            isFound = true;
+                        }
+                    }
+
+                    if (!isFound)
+                    {
+                        addProposalOrganizationNameCb.SelectedIndex = -1;
+                        addProposalOrganizationNumberCb.BackColor = Color.Pink;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch (FormatException)
+            {
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+
+            if (addProposalOrganizationNumberCb.Text == "")
+            {
+                addProposalOrganizationNameCb.Text = "";
+                addProposalOrganizationNameCb.SelectedIndex = -1;
+                addProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalOrganizationNumberCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                searchProposalOrganizationNumberCb.BackColor = Color.White;
+                if (searchProposalOrganizationNumberCb.Text == "0")
+                {
+                    searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    bool isFound = false;
+                    foreach (Employers employer in emp)
+                    {
+                        if (int.Parse(searchProposalOrganizationNumberCb.Text) == employer.Index)
+                        {
+                            searchProposalOrganizationNameCb.Text = employer.OrgName;
+                            isFound = true;
+                        }
+
+                    }
+
+                    if (!isFound)
+                    {
+                        searchProposalOrganizationNameCb.SelectedIndex = -1;
+                        searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch (FormatException)
+            {
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+
+            if (searchProposalOrganizationNumberCb.Text == "")
+            {
+                searchProposalOrganizationNameCb.Text = "";
+                searchProposalOrganizationNameCb.SelectedIndex = -1;
+                searchProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void manageUserAddBtn_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.U_FName = manageUserFnameTxtbx.Text;
+            user.U_LName = manageUserLnameTxtbx.Text;
+            user.U_NCode = long.Parse(manageUserNcodTxtbx.Text);
+            user.U_Email = manageUserEmailTxtbx.Text;
+            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Password = manageUserPasswordTxtbx.Text;
+
+            if (manageUserAddProCb.Checked == true)
+            {
+                user.CanAddProposal = 1;
+            }
+            else
+            {
+                user.CanAddProposal = 0;
+            }
+
+            if (manageUserEditProCb.Checked == true)
+            {
+                user.CanEditProposal = 1;
+            }
+            else
+            {
+                user.CanEditProposal = 0;
+            }
+            if (manageUserDeleteProCb.Checked == true)
+            {
+                user.CanDeleteProposal = 1;
+            }
+            else
+            {
+                user.CanDeleteProposal = 0;
+            }
+            if (manageUserAddUserCb.Checked == true)
+            {
+                user.CanAddUser = 1;
+            }
+            else
+            {
+                user.CanAddUser = 0;
+            }
+            if (manageUserEditUserCb.Checked == true)
+            {
+                user.CanEditUser = 1;
+            }
+            else
+            {
+                user.CanEditUser = 0;
+            }
+            if (manageUserDeleteUserCb.Checked == true)
+            {
+                user.CanDeleteUser = 1;
+            }
+            else
+            {
+                user.CanDeleteUser = 0;
+            }
+
+            dbh.AddUser(user, 9999, myDateTime.ToString());
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
+
+            manageUserClearBtn.PerformClick();
+        }
+
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
         {
             ColorDialog dlg = new ColorDialog();
@@ -1787,7 +2219,6 @@ namespace ProposalReportingSystem
             addProposalPropertyTypeCb.Items.Clear();
             addProposalRegisterTypeCb.Items.Clear();
             addProposalProposalTypeCb.Items.Clear();
-            addProposalProcedureTypeCb.Items.Clear();
             addProposalOrganizationNumberCb.Items.Clear();
             addProposalOrganizationNameCb.Items.Clear();
             addProposalStatusCb.Items.Clear();
@@ -1831,7 +2262,6 @@ namespace ProposalReportingSystem
             {
                 addProposalOrganizationNumberCb.Items.Add(employer.Index);
                 addProposalOrganizationNameCb.Items.Add(employer.OrgName);
-             //   MessageBox.Show(employer.Index.ToString() + "" + employer.OrgName);
             }
 
             comboList = dbh.getStatusType();
@@ -1844,6 +2274,65 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
 
 
+            //*************************************************************************\\
+            //                                Search Proposal                          \\
+            //*************************************************************************\\
+            searchProposalExecutorFacultyCb.Items.Clear();
+            searchProposalExecutorEGroupCb.Items.Clear();
+            searchProposalPropertyTypeCb.Items.Clear();
+            searchProposalRegisterTypeCb.Items.Clear();
+            searchProposalTypeCb.Items.Clear();
+            searchProposalProcedureTypeCb.Items.Clear();
+            searchProposalOrganizationNumberCb.Items.Clear();
+            searchProposalOrganizationNameCb.Items.Clear();
+            searchProposalStatusCb.Items.Clear();
+
+            comboList = dbh.getFaculty();
+            foreach (String faculty in comboList)
+            {
+                searchProposalExecutorFacultyCb.Items.Add(faculty);
+            }
+
+            comboList = dbh.getProcedureType();
+            foreach (String ProcedureType in comboList)
+            {
+                searchProposalProcedureTypeCb.Items.Add(ProcedureType);
+            }
+
+            comboList = dbh.getPropertyType();
+            foreach (String PropertyType in comboList)
+            {
+                searchProposalPropertyTypeCb.Items.Add(PropertyType);
+            }
+
+            comboList = dbh.getRegisterType();
+            foreach (String RegisterType in comboList)
+            {
+                searchProposalRegisterTypeCb.Items.Add(RegisterType);
+            }
+
+            comboList = dbh.getProposalType();
+            foreach (String ProposalType in comboList)
+            {
+                searchProposalTypeCb.Items.Add(ProposalType);
+            }
+
+            emp = dbh.getEmployers();
+            foreach (Employers employer in emp)
+            {
+                searchProposalOrganizationNumberCb.Items.Add(employer.Index);
+                searchProposalOrganizationNameCb.Items.Add(employer.OrgName);
+            }
+
+            comboList = dbh.getStatusType();
+            foreach (String statusType in comboList)
+            {
+                searchProposalStatusCb.Items.Add(statusType);
+            }
+            //*************************************************************************\\
+            //                                Search Proposal                          \\
+            //*************************************************************************\\
+
 
             //*************************************************************************\\
             //                                Edit Proposal                            \\
@@ -1851,6 +2340,16 @@ namespace ProposalReportingSystem
             ///// CODE SHOULD BE HERE
             //*************************************************************************\\
             //                                Edit Proposal                             \\
+            //*************************************************************************\\
+
+
+
+            //*************************************************************************\\
+            //                                manage Users                           \\
+            //*************************************************************************\\
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");         
+            //*************************************************************************\\
+            //                                manage Users                            \\
             //*************************************************************************\\
         }
     }
