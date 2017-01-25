@@ -496,26 +496,31 @@ namespace ProposalReportingSystem
             gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
             gl.setSize(manageTeacherShowDgv, 3, 5, 817, 408);
 
-            gl.setSize(manageTeacherExecutorNcodeLbl, 740, 60, 60, 25);
-            gl.setSize(manageTeacherFnameLbl, 740, 130, 60, 25);
-            gl.setSize(manageTeacherLnameLbl, 740, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
+            gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
+            gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorFacultyLbl, 485, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 485, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 485, 200, 60, 25);
-            gl.setSize(manageTeacherExecutorTelLbl, 230, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEmailLbl, 230, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorMobileLbl, 230, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorFacultyLbl, 455, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 455, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 455, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 580, 60, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 580, 130, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 580, 210, 160, 25);
-            gl.setSize(manageTeacherExecutorEgroupCb, 320, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 320, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorFacultyCb, 320, 200, 160, 25);
-            gl.setSize(manageTeacherExecutorTelTxtbx, 70, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEmailTxtbx, 70, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorMobileTxtbx, 70, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorTelLbl, 200, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorTel2Lbl, 200, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEmailLbl, 200, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 200, 270, 60, 25);
+
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyCb, 310, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEgroupCb, 310, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 310, 200, 160, 25);
+            
+            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 270, 160, 25);
 
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
@@ -1420,6 +1425,13 @@ namespace ProposalReportingSystem
             manageUserPasswordTxtbx.Clear();
             manageUserEmailTxtbx.Clear();
             manageUserTellTxtbx.Clear();
+
+            manageUserAddProCb.Checked = false;
+            manageUserEditProCb.Checked = false;
+            manageUserDeleteProCb.Checked = false;
+            manageUserAddUserCb.Checked = false;
+            manageUserEditUserCb.Checked = false;
+            manageUserDeleteUserCb.Checked = false;
         }
 
         private void editProposalClearBtn_Click(object sender, EventArgs e)
@@ -2189,6 +2201,151 @@ namespace ProposalReportingSystem
             manageUserClearBtn.PerformClick();
         }
 
+        private void manageUserEditBtn_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.U_FName = manageUserFnameTxtbx.Text;
+            user.U_LName = manageUserLnameTxtbx.Text;
+            user.U_NCode = long.Parse(manageUserNcodTxtbx.Text);
+            user.U_Email = manageUserEmailTxtbx.Text;
+            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Password = manageUserPasswordTxtbx.Text;
+
+            if (manageUserAddProCb.Checked == true)
+            {
+                user.CanAddProposal = 1;
+            }
+            else
+            {
+                user.CanAddProposal = 0;
+            }
+
+            if (manageUserEditProCb.Checked == true)
+            {
+                user.CanEditProposal = 1;
+            }
+            else
+            {
+                user.CanEditProposal = 0;
+            }
+            if (manageUserDeleteProCb.Checked == true)
+            {
+                user.CanDeleteProposal = 1;
+            }
+            else
+            {
+                user.CanDeleteProposal = 0;
+            }
+            if (manageUserAddUserCb.Checked == true)
+            {
+                user.CanAddUser = 1;
+            }
+            else
+            {
+                user.CanAddUser = 0;
+            }
+            if (manageUserEditUserCb.Checked == true)
+            {
+                user.CanEditUser = 1;
+            }
+            else
+            {
+                user.CanEditUser = 0;
+            }
+            if (manageUserDeleteUserCb.Checked == true)
+            {
+                user.CanDeleteUser = 1;
+            }
+            else
+            {
+                user.CanDeleteUser = 0;
+            }
+
+            dbh.EditUsers(user, long.Parse(currentSelectedOption), 9999, myDateTime.ToString());
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
+
+            manageUserClearBtn.PerformClick();
+        }
+
+        private void manageUserDeleteBtn_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+
+            user.U_NCode = long.Parse(currentSelectedOption);
+            user.U_FName = manageUserFnameTxtbx.Text;
+            user.U_LName = manageUserLnameTxtbx.Text;
+            user.U_Email = manageUserEmailTxtbx.Text;
+            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Password = manageUserPasswordTxtbx.Text;
+
+            if (manageUserAddProCb.Checked == true)
+            {
+                user.CanAddProposal = 1;
+            }
+            else
+            {
+                user.CanAddProposal = 0;
+            }
+
+            if (manageUserEditProCb.Checked == true)
+            {
+                user.CanEditProposal = 1;
+            }
+            else
+            {
+                user.CanEditProposal = 0;
+            }
+            if (manageUserDeleteProCb.Checked == true)
+            {
+                user.CanDeleteProposal = 1;
+            }
+            else
+            {
+                user.CanDeleteProposal = 0;
+            }
+            if (manageUserAddUserCb.Checked == true)
+            {
+                user.CanAddUser = 1;
+            }
+            else
+            {
+                user.CanAddUser = 0;
+            }
+            if (manageUserEditUserCb.Checked == true)
+            {
+                user.CanEditUser = 1;
+            }
+            else
+            {
+                user.CanEditUser = 0;
+            }
+            if (manageUserDeleteUserCb.Checked == true)
+            {
+                user.CanDeleteUser = 1;
+            }
+            else
+            {
+                user.CanDeleteUser = 0;
+            }
+
+            dbh.DeleteUser(user, 9999, myDateTime.ToString());
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
+            manageUserClearBtn.PerformClick();
+        }
+
+        private void manageTeacherExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (manageTeacherExecutorFacultyCb.SelectedIndex > -1)
+            {
+                manageTeacherExecutorEgroupCb.Items.Clear();
+                comboList = dbh.getEGroup(manageTeacherExecutorFacultyCb.SelectedItem.ToString());
+                foreach (String eGroup in comboList)
+                {
+                    manageTeacherExecutorEgroupCb.Items.Add(eGroup);
+                }
+            }
+        }
+
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
         {
             ColorDialog dlg = new ColorDialog();
@@ -2352,9 +2509,24 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                manage Users                           \\
             //*************************************************************************\\
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");         
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
+            
             //*************************************************************************\\
             //                                manage Users                            \\
+            //*************************************************************************\\
+
+
+
+            //*************************************************************************\\
+            //                                manage Teacher                             \\
+            //*************************************************************************\\
+            comboList = dbh.getFaculty();
+            foreach (String faculty in comboList)
+            {
+                manageTeacherExecutorFacultyCb.Items.Add(faculty);
+            }
+            //*************************************************************************\\
+            //                                manage Teacher                             \\
             //*************************************************************************\\
         }
     }
