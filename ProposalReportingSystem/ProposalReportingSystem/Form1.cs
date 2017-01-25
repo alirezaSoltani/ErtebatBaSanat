@@ -507,15 +507,15 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherExecutorEmailLbl, 230, 130, 60, 25);
             gl.setSize(manageTeacherExecutorMobileLbl, 230, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 560, 60, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 560, 130, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 560, 210, 160, 25);
-            gl.setSize(manageTeacherExecutorEGroupTxtbx, 300, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 300, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorFacultyCb, 300, 200, 160, 25);
-            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 580, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 580, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 580, 210, 160, 25);
+            gl.setSize(manageTeacherExecutorEgroupCb, 320, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 320, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorFacultyCb, 320, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorTelTxtbx, 70, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 70, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 70, 200, 160, 25);
 
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
@@ -1350,7 +1350,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteStatusType(currentSelectedOption, 9999 /*admin*/, myDateTime.ToString());
                 appSettingStatusTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM  statusTypeTable");
+                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -1399,8 +1399,8 @@ namespace ProposalReportingSystem
             searchProposalExecutorMobileTxtbx.Clear();
             searchProposalPersianTitleTxtbx.Clear();
             searchProposalEnglishTitleTxtbx.Clear();
-            searchProposalStartDateFromTimeInput.ResetText();
-            searchProposalStartDateToTimeInput.ResetText();
+            searchProposalStartDateFromTimeInput.GeoDate = DateTime.Now;
+            searchProposalStartDateToTimeInput.GeoDate = DateTime.Now;
             searchProposalValueFromTxtbx.Clear();
             searchProposalValueToTxtbx.Clear();
             searchProposalProcedureTypeCb.SelectedIndex = -1;
@@ -1427,9 +1427,9 @@ namespace ProposalReportingSystem
             editProposalExecutorNcodeTxtbx.Clear();
             editProposalExecutorFNameTxtbx.Clear();
             editProposalExecutorLNameTxtbx.Clear();
-            editProposalExecutorFacultyCb.SelectedIndex = 0;
-            editProposalExecutorEGroupCb.SelectedIndex = 0;
-            editProposalExecutorEDegCb.SelectedIndex = 0;
+            editProposalExecutorFacultyCb.SelectedIndex = -1;
+            editProposalExecutorEGroupCb.SelectedIndex = -1;
+            editProposalExecutorEDegCb.SelectedIndex = -1;
             editProposalExecutorEmailTxtbx.Clear();
             editProposalExecutorMobileTxtbx.Clear();
             editProposalExecutorTel1Txtbx.Clear();
@@ -1441,14 +1441,14 @@ namespace ProposalReportingSystem
             editProposalCoexecutorTxtbx.Clear();
             editProposalStartdateTimeInput.ResetText();
             editProposalDurationTxtbx.Clear();
-            editProposalProcedureTypeCb.SelectedIndex = 0;
-            editProposalPropertyTypeCb.SelectedIndex = 0;
-            editProposalRegisterTypeCb.SelectedIndex = 0;
-            editProposalTypeCb.SelectedIndex = 0;
-            editProposalOrganizationNameCb.SelectedIndex = 0;
-            editProposalOrganizationNumberCb.SelectedIndex = 0;
+            editProposalProcedureTypeCb.SelectedIndex = -1;
+            editProposalPropertyTypeCb.SelectedIndex = -1;
+            editProposalRegisterTypeCb.SelectedIndex = -1;
+            editProposalTypeCb.SelectedIndex = -1;
+            editProposalOrganizationNameCb.SelectedIndex = -1;
+            editProposalOrganizationNumberCb.SelectedIndex = -1;
             editProposalValueTxtbx.Clear();
-            editProposalStatusCb.SelectedIndex = 0;
+            editProposalStatusCb.SelectedIndex = -1;
         }
 
         private void manageTeacherClearBtn_Click(object sender, EventArgs e)
@@ -1456,9 +1456,9 @@ namespace ProposalReportingSystem
             manageTeacherExecutorNcodeTxtbx.Clear();
             manageTeacherFnameTxtbx.Clear();
             manageTeacherLnameTxtbx.Clear();
-            manageTeacherExecutorEGroupTxtbx.Clear();
-            manageTeacherExecutorEDegCb.SelectedIndex = 0;
-            manageTeacherExecutorFacultyCb.SelectedIndex = 0;
+            manageTeacherExecutorEgroupCb.SelectedIndex = -1;
+            manageTeacherExecutorEDegCb.SelectedIndex = -1;
+            manageTeacherExecutorFacultyCb.SelectedIndex = -1;
             manageTeacherExecutorTelTxtbx.Clear();
             manageTeacherExecutorEmailTxtbx.Clear();
             manageTeacherExecutorMobileTxtbx.Clear();
@@ -2214,6 +2214,8 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                Add Proposal                             \\
             //*************************************************************************\\
+            addProposalStartdateTimeInput.GeoDate = DateTime.Now;
+
             addProposalExecutorFacultyCb.Items.Clear();
             addProposalProcedureTypeCb.Items.Clear();
             addProposalPropertyTypeCb.Items.Clear();
@@ -2277,6 +2279,9 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                Search Proposal                          \\
             //*************************************************************************\\
+            searchProposalStartDateFromTimeInput.GeoDate = DateTime.Now;
+            searchProposalStartDateToTimeInput.GeoDate = DateTime.Now;
+
             searchProposalExecutorFacultyCb.Items.Clear();
             searchProposalExecutorEGroupCb.Items.Clear();
             searchProposalPropertyTypeCb.Items.Clear();
@@ -2337,7 +2342,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                Edit Proposal                            \\
             //*************************************************************************\\
-            ///// CODE SHOULD BE HERE
+            editProposalStartdateTimeInput.GeoDate = DateTime.Now;
             //*************************************************************************\\
             //                                Edit Proposal                             \\
             //*************************************************************************\\
