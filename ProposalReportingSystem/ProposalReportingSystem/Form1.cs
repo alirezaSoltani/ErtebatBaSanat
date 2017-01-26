@@ -371,9 +371,9 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
             gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
 
-            gl.setSize(manageUserFnameLb, 275, 20, 40, 25);
-            gl.setSize(manageUserLnameLb, 205, 60, 110, 25);
-            gl.setSize(manageUserNcodLb, 205, 100, 110, 25);
+            gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
+            gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
+            gl.setSize(manageUserLnameLb, 205, 100, 110, 25);
             gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
             gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
             gl.setSize(manageUserTellLb, 205, 220, 110, 25);
@@ -1674,6 +1674,7 @@ namespace ProposalReportingSystem
         {
             try
             {
+                addProposalDurationTxtbx.BackColor = Color.White;
                 int onlyDigit = int.Parse(addProposalDurationTxtbx.Text);
             }
             catch (FormatException)
@@ -1752,18 +1753,7 @@ namespace ProposalReportingSystem
 
         private void addProposalExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
         {
-            if (!addProposalExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
-            {
-                addProposalExecutorEmailTxtbx.BackColor = Color.Pink;
-            }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
-            {
-                addProposalExecutorEmailTxtbx.BackColor = Color.White;
-            }
-            if(addProposalExecutorEmailTxtbx.Text == "")
-            {
-                addProposalExecutorEmailTxtbx.BackColor = Color.White;
-            }
+            addProposalExecutorEmailTxtbx.BackColor = Color.White;
         }
 
         private void sysLogTab_Click(object sender, EventArgs e)
@@ -1798,32 +1788,15 @@ namespace ProposalReportingSystem
 
         private void addProposalExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
         {
-            try
+            if(addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
-                long onlyDigit = long.Parse(addProposalExecutorNcodeTxtbx.Text);
-
-                if(addProposalExecutorNcodeTxtbx.Text.Length == 10)
-                {
-                    MessageBox.Show("چک موجود بودن استاد");
-                }
-                else
-                {
-                    addProposalExecutorNcodeTxtbx.BackColor = Color.White;
-                }
+                addProposalExecutorNcodeTxtbx.BackColor = Color.LightGreen;
+                MessageBox.Show("چک موجود بودن استاد");
             }
-            catch (FormatException)
-            {
-                addProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
-            }
-            if (addProposalExecutorNcodeTxtbx.Text == "")
+            else
             {
                 addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             }
-        }
-
-        private void addProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
-        {
-            
         }
 
         private void addProposalTab_Click(object sender, EventArgs e)
@@ -2344,6 +2317,28 @@ namespace ProposalReportingSystem
                     manageTeacherExecutorEgroupCb.Items.Add(eGroup);
                 }
             }
+        }
+
+        private void addProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void addProposalExecutorEmailTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (!addProposalExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                addProposalExecutorEmailTxtbx.BackColor = Color.Pink;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                addProposalExecutorEmailTxtbx.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void editProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
         }
 
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
