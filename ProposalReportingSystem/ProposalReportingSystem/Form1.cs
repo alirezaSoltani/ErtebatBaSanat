@@ -596,6 +596,7 @@ namespace ProposalReportingSystem
 
         private void addProposalClearBtn_Click(object sender, EventArgs e)
         {
+            addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             addProposalExecutorNcodeTxtbx.Clear();
             addProposalExecutorFNameTxtbx.Clear();
             addProposalExecutorLNameTxtbx.Clear();
@@ -603,6 +604,7 @@ namespace ProposalReportingSystem
             addProposalExecutorEGroupCb.SelectedIndex = -1;
             addProposalExecutorEDegCb.SelectedIndex = -1;
             addProposalExecutorEmailTxtbx.Clear();
+            addProposalExecutorEmailTxtbx.BackColor = Color.White;
             addProposalExecutorMobileTxtbx.Clear();
             addProposalExecutorTel1Txtbx.Clear();
             addProposalExecutorTel2Txtbx.Clear();
@@ -613,13 +615,17 @@ namespace ProposalReportingSystem
             addProposalCoexecutorTxtbx.Clear();
             addProposalStartdateTimeInput.GeoDate = DateTime.Now;
             addProposalDurationTxtbx.Clear();
+            addProposalDurationTxtbx.BackColor = Color.White;
             addProposalProcedureTypeCb.SelectedIndex = -1;
             addProposalPropertyTypeCb.SelectedIndex = -1;
             addProposalRegisterTypeCb.SelectedIndex = -1;
             addProposalProposalTypeCb.SelectedIndex = -1;
             addProposalOrganizationNameCb.SelectedIndex = -1;
             addProposalOrganizationNumberCb.SelectedIndex = -1;
+            addProposalOrganizationNameCb.BackColor = Color.White;
+            addProposalOrganizationNumberCb.BackColor = Color.White;
             addProposalValueTxtbx.Clear();
+            addProposalValueTxtbx.BackColor = Color.White;
             addProposalStatusCb.SelectedIndex = -1;
         }
 
@@ -1395,6 +1401,7 @@ namespace ProposalReportingSystem
             searchProposalStartDateToChbx.Checked = false;
 
             searchProposalExecutorNCodeTxtbx.Clear();
+            searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
             searchProposalExecutorFNameTxtbx.Clear();
             searchProposalExecutorLNameTxtbx.Clear();
             searchProposalExecutorFacultyCb.SelectedIndex = -1;
@@ -1406,6 +1413,8 @@ namespace ProposalReportingSystem
             searchProposalStartDateToTimeInput.GeoDate = DateTime.Now;
             searchProposalValueFromTxtbx.Clear();
             searchProposalValueToTxtbx.Clear();
+            searchProposalValueFromTxtbx.BackColor = Color.White;
+            searchProposalValueToTxtbx.BackColor = Color.White;
             searchProposalProcedureTypeCb.SelectedIndex = -1;
             searchProposalPropertyTypeCb.SelectedIndex = -1;
             searchProposalRegisterTypeCb.SelectedIndex = -1;
@@ -1420,10 +1429,10 @@ namespace ProposalReportingSystem
             manageUserFnameTxtbx.Clear();
             manageUserLnameTxtbx.Clear();
             manageUserNcodTxtbx.Clear();
+            manageUserNcodTxtbx.BackColor = Color.White;
             manageUserPasswordTxtbx.Clear();
             manageUserEmailTxtbx.Clear();
             manageUserTellTxtbx.Clear();
-
             manageUserAddProCb.Checked = false;
             manageUserEditProCb.Checked = false;
             manageUserDeleteProCb.Checked = false;
@@ -1434,6 +1443,7 @@ namespace ProposalReportingSystem
 
         private void editProposalClearBtn_Click(object sender, EventArgs e)
         {
+            editProposalExecutorNcodeTxtbx.BackColor = Color.White;
             editProposalExecutorNcodeTxtbx.Clear();
             editProposalExecutorFNameTxtbx.Clear();
             editProposalExecutorLNameTxtbx.Clear();
@@ -1441,6 +1451,7 @@ namespace ProposalReportingSystem
             editProposalExecutorEGroupCb.SelectedIndex = -1;
             editProposalExecutorEDegCb.SelectedIndex = -1;
             editProposalExecutorEmailTxtbx.Clear();
+            editProposalExecutorEmailTxtbx.BackColor = Color.White;
             editProposalExecutorMobileTxtbx.Clear();
             editProposalExecutorTel1Txtbx.Clear();
             editProposalExecutorTel2Txtbx.Clear();
@@ -1451,13 +1462,17 @@ namespace ProposalReportingSystem
             editProposalCoexecutorTxtbx.Clear();
             editProposalStartdateTimeInput.GeoDate = DateTime.Now;
             editProposalDurationTxtbx.Clear();
+            editProposalDurationTxtbx.BackColor = Color.White;
             editProposalProcedureTypeCb.SelectedIndex = -1;
             editProposalPropertyTypeCb.SelectedIndex = -1;
             editProposalRegisterTypeCb.SelectedIndex = -1;
             editProposalTypeCb.SelectedIndex = -1;
             editProposalOrganizationNameCb.SelectedIndex = -1;
             editProposalOrganizationNumberCb.SelectedIndex = -1;
+            editProposalOrganizationNameCb.BackColor = Color.White;
+            editProposalOrganizationNumberCb.BackColor = Color.White;
             editProposalValueTxtbx.Clear();
+            editProposalValueTxtbx.BackColor = Color.White;
             editProposalStatusCb.SelectedIndex = -1;
         }
 
@@ -1852,7 +1867,7 @@ namespace ProposalReportingSystem
 
         private void searchProposalExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(searchProposalExecutorEGroupCb.SelectedIndex > -1)
+            if(searchProposalExecutorFacultyCb.SelectedIndex > -1)
             {
                 searchProposalExecutorEGroupCb.Items.Clear();
                 comboList = dbh.getEGroup(searchProposalExecutorFacultyCb.SelectedItem.ToString());
@@ -2704,6 +2719,14 @@ namespace ProposalReportingSystem
         private void addProposalTab_LostFocus(object sender, EventArgs e)
         {
             addProposalClearBtn.PerformClick();
+        }
+
+        private void searchProposalExecutorNCodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (searchProposalExecutorNCodeTxtbx.Text.Length < 10)
+            {
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
+            }
         }
 
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
