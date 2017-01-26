@@ -364,9 +364,9 @@ namespace ProposalReportingSystem
 
             gl.setSize(menageUserAccessLevelGp, 40, 50, 350, 250);
             gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
-            gl.setSize(manageUserFnameTxtbx, 45, 20, 160, 28);
-            gl.setSize(manageUserLnameTxtbx, 45, 60, 160, 28);
-            gl.setSize(manageUserNcodTxtbx, 45, 100, 160, 28);
+            gl.setSize(manageUserNcodTxtbx, 45, 20, 160, 28);
+            gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
+            gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
             gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
             gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
             gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
@@ -611,8 +611,7 @@ namespace ProposalReportingSystem
             addProposalKeywordsTxtbx.Clear();
             addProposalExecutor2Txtbx.Clear();
             addProposalCoexecutorTxtbx.Clear();
-            addProposalStartdateTimeInput.ResetText();
-            //MessageBox.Show(addProposalStartdateTimeInput.CalendarControl
+            addProposalStartdateTimeInput.GeoDate = DateTime.Now;
             addProposalDurationTxtbx.Clear();
             addProposalProcedureTypeCb.SelectedIndex = -1;
             addProposalPropertyTypeCb.SelectedIndex = -1;
@@ -622,7 +621,6 @@ namespace ProposalReportingSystem
             addProposalOrganizationNumberCb.SelectedIndex = -1;
             addProposalValueTxtbx.Clear();
             addProposalStatusCb.SelectedIndex = -1;
-            //addProposalFileLinkLbl, 30, 330, 160, 25);
         }
 
 
@@ -1451,7 +1449,7 @@ namespace ProposalReportingSystem
             editProposalKeywordsTxtbx.Clear();
             editProposalExecutor2Txtbx.Clear();
             editProposalCoexecutorTxtbx.Clear();
-            editProposalStartdateTimeInput.ResetText();
+            editProposalStartdateTimeInput.GeoDate = DateTime.Now;
             editProposalDurationTxtbx.Clear();
             editProposalProcedureTypeCb.SelectedIndex = -1;
             editProposalPropertyTypeCb.SelectedIndex = -1;
@@ -1521,7 +1519,7 @@ namespace ProposalReportingSystem
         {
             try
             {
-                searchProposalOrganizationNumberCb.BackColor = Color.White;
+                addProposalOrganizationNumberCb.BackColor = Color.White;
                 if (addProposalOrganizationNumberCb.Text == "0")
                 {
                     addProposalOrganizationNumberCb.BackColor = Color.Pink;
@@ -1763,24 +1761,12 @@ namespace ProposalReportingSystem
 
         private void searchProposalExecutorNCodeTxtbx_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (searchProposalExecutorNCodeTxtbx.Text.Length == 10)
             {
-                long onlyDigit = long.Parse(searchProposalExecutorNCodeTxtbx.Text);
-
-                if (searchProposalExecutorNCodeTxtbx.Text.Length == 10)
-                {
-                    MessageBox.Show("چک موجود بودن استاد");
-                }
-                else
-                {
-                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
-                }
+                MessageBox.Show("چک موجود بودن استاد");
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
             }
-            catch (FormatException)
-            {
-                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
-            }
-            if (searchProposalExecutorNCodeTxtbx.Text == "")
+            else
             {
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
             }
@@ -2319,11 +2305,6 @@ namespace ProposalReportingSystem
             }
         }
 
-        private void addProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
-        }
-
         private void addProposalExecutorEmailTxtbx_Leave(object sender, EventArgs e)
         {
             if (!addProposalExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(addProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
@@ -2336,9 +2317,393 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void addProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
         private void editProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void searchProposalExecutorNCodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void searchProposalValueFromTxtbx_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalValueFromTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalValueFromTxtbx.Text == "")
+            {
+                searchProposalValueFromTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void searchProposalValueToTxtbx_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                long onlyDigit = long.Parse(searchProposalValueToTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                searchProposalValueToTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                searchProposalValueToTxtbx.BackColor = Color.Pink;
+            }
+            if (searchProposalValueToTxtbx.Text == "")
+            {
+                searchProposalValueToTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void manageUserNcodTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void manageUserEmailTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            manageUserEmailTxtbx.BackColor = Color.White;
+        }
+
+        private void manageUserEmailTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (!manageUserEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(manageUserEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                manageUserEmailTxtbx.BackColor = Color.Pink;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(manageUserEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                manageUserEmailTxtbx.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void manageUserNcodTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (manageUserNcodTxtbx.Text.Length == 10)
+            {
+                manageUserNcodTxtbx.BackColor = Color.LightGreen;
+                MessageBox.Show("چک موجود بودن استاد");
+            }
+            else
+            {
+                manageUserNcodTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void manageUserNcodTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (manageUserNcodTxtbx.Text.Length < 10)
+            {
+                manageUserNcodTxtbx.BackColor = Color.Pink;
+            }
+        }
+
+        private void addProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (addProposalExecutorNcodeTxtbx.Text.Length < 10)
+            {
+                addProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
+            }
+        }
+
+        private void editProposalExecutorNcodeTxtbx_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void editProposalExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (editProposalExecutorNcodeTxtbx.Text.Length == 10)
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.LightGreen;
+                MessageBox.Show("چک موجود بودن استاد");
+            }
+            else
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
+            }
+        }
+
+        private void editProposalExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            editProposalExecutorEmailTxtbx.BackColor = Color.White;
+
+        }
+
+        private void editProposalExecutorEmailTxtbx_Leave(object sender, EventArgs e)
+        {
+            if (!editProposalExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(editProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                editProposalExecutorEmailTxtbx.BackColor = Color.Pink;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(editProposalExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            {
+                editProposalExecutorEmailTxtbx.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void editProposalDurationTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                editProposalDurationTxtbx.BackColor = Color.White;
+                int onlyDigit = int.Parse(editProposalDurationTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                editProposalDurationTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                editProposalDurationTxtbx.BackColor = Color.Pink;
+            }
+            if (editProposalDurationTxtbx.Text == "")
+            {
+                editProposalDurationTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void editProposalValueTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                editProposalValueTxtbx.BackColor = Color.White;
+                int onlyDigit = int.Parse(editProposalValueTxtbx.Text);
+            }
+            catch (FormatException)
+            {
+                editProposalValueTxtbx.BackColor = Color.Pink;
+            }
+            catch (OverflowException)
+            {
+                editProposalValueTxtbx.BackColor = Color.Pink;
+            }
+            if (editProposalValueTxtbx.Text == "")
+            {
+                editProposalValueTxtbx.BackColor = Color.White;
+            }
+        }
+
+        private void editProposalOrganizationNumberCb_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                editProposalOrganizationNumberCb.BackColor = Color.White;
+                if (editProposalOrganizationNumberCb.Text == "0")
+                {
+                    editProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    bool isFound = false;
+                    foreach (Employers employer in emp)
+                    {
+                        if (int.Parse(editProposalOrganizationNumberCb.Text) == employer.Index)
+                        {
+                            editProposalOrganizationNameCb.Text = employer.OrgName;
+                            isFound = true;
+                        }
+
+                    }
+
+                    if (!isFound)
+                    {
+                        editProposalOrganizationNameCb.SelectedIndex = -1;
+                        editProposalOrganizationNumberCb.BackColor = Color.Pink;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch (FormatException)
+            {
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+
+            if (editProposalOrganizationNumberCb.Text == "")
+            {
+
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void editProposalOrganizationNumberCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                editProposalOrganizationNumberCb.BackColor = Color.White;
+                if (editProposalOrganizationNumberCb.Text == "0")
+                {
+                    editProposalOrganizationNumberCb.BackColor = Color.Pink;
+                }
+                else
+                {
+                    bool isFound = false;
+                    foreach (Employers employer in emp)
+                    {
+                        if (int.Parse(editProposalOrganizationNumberCb.Text) == employer.Index)
+                        {
+                            editProposalOrganizationNameCb.Text = employer.OrgName;
+                            isFound = true;
+                        }
+                    }
+
+                    if (!isFound)
+                    {
+                        editProposalOrganizationNameCb.SelectedIndex = -1;
+                        editProposalOrganizationNumberCb.BackColor = Color.Pink;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+            catch (FormatException)
+            {
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.Pink;
+            }
+
+            if (editProposalOrganizationNumberCb.Text == "")
+            {
+                editProposalOrganizationNameCb.Text = "";
+                editProposalOrganizationNameCb.SelectedIndex = -1;
+                editProposalOrganizationNumberCb.BackColor = Color.White;
+            }
+        }
+
+        private void editProposalOrganizationNameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (editProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    editProposalOrganizationNumberCb.SelectedIndex = editProposalOrganizationNameCb.SelectedIndex;
+                    if (!editProposalOrganizationNameCb.Items.Contains(editProposalOrganizationNameCb.Text))
+                    {
+                        editProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        editProposalOrganizationNameCb.BackColor = Color.White;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("arg");
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("for");
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (editProposalOrganizationNameCb.Text == "")
+                {
+
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void editProposalOrganizationNameCb_TextChanged(object sender, EventArgs e)
+        {
+            if (editProposalOrganizationNameCb.Focused)
+            {
+                try
+                {
+                    editProposalOrganizationNumberCb.SelectedIndex = editProposalOrganizationNameCb.SelectedIndex;
+                    if (!editProposalOrganizationNameCb.Items.Contains(editProposalOrganizationNameCb.Text))
+                    {
+                        editProposalOrganizationNameCb.BackColor = Color.Pink;
+                    }
+                    else
+                    {
+                        editProposalOrganizationNameCb.BackColor = Color.White;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+                catch (FormatException)
+                {
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.Pink;
+                }
+
+                if (editProposalOrganizationNameCb.Text == "")
+                {
+                    editProposalOrganizationNumberCb.Text = "";
+                    editProposalOrganizationNumberCb.SelectedIndex = -1;
+                    editProposalOrganizationNameCb.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void editProposalExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (editProposalExecutorFacultyCb.SelectedIndex > -1)
+            {
+                editProposalExecutorEGroupCb.Items.Clear();
+                comboList = dbh.getEGroup(editProposalExecutorFacultyCb.SelectedItem.ToString());
+                foreach (String eGroup in comboList)
+                {
+                    editProposalExecutorEGroupCb.Items.Add(eGroup);
+                }
+            }
+        }
+
+        private void addProposalTab_LostFocus(object sender, EventArgs e)
+        {
+            addProposalClearBtn.PerformClick();
         }
 
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
@@ -2367,7 +2732,7 @@ namespace ProposalReportingSystem
             //                                Add Proposal                             \\
             //*************************************************************************\\
             addProposalStartdateTimeInput.GeoDate = DateTime.Now;
-
+            
             addProposalExecutorFacultyCb.Items.Clear();
             addProposalProcedureTypeCb.Items.Clear();
             addProposalPropertyTypeCb.Items.Clear();
@@ -2376,8 +2741,6 @@ namespace ProposalReportingSystem
             addProposalOrganizationNumberCb.Items.Clear();
             addProposalOrganizationNameCb.Items.Clear();
             addProposalStatusCb.Items.Clear();
-
-
 
 
             comboList = dbh.getFaculty();
@@ -2492,11 +2855,65 @@ namespace ProposalReportingSystem
 
 
             //*************************************************************************\\
-            //                                Edit Proposal                            \\
+            //                                edit Proposal                             \\
             //*************************************************************************\\
             editProposalStartdateTimeInput.GeoDate = DateTime.Now;
+
+            editProposalExecutorFacultyCb.Items.Clear();
+            editProposalProcedureTypeCb.Items.Clear();
+            editProposalPropertyTypeCb.Items.Clear();
+            editProposalRegisterTypeCb.Items.Clear();
+            editProposalTypeCb.Items.Clear();
+            editProposalOrganizationNumberCb.Items.Clear();
+            editProposalOrganizationNameCb.Items.Clear();
+            editProposalStatusCb.Items.Clear();
+
+
+            comboList = dbh.getFaculty();
+            foreach (String faculty in comboList)
+            {
+                editProposalExecutorFacultyCb.Items.Add(faculty);
+            }
+
+            comboList = dbh.getProcedureType();
+            foreach (String ProcedureType in comboList)
+            {
+                editProposalProcedureTypeCb.Items.Add(ProcedureType);
+            }
+
+            comboList = dbh.getPropertyType();
+            foreach (String PropertyType in comboList)
+            {
+                editProposalPropertyTypeCb.Items.Add(PropertyType);
+            }
+
+            comboList = dbh.getRegisterType();
+            foreach (String RegisterType in comboList)
+            {
+                editProposalRegisterTypeCb.Items.Add(RegisterType);
+            }
+
+            comboList = dbh.getProposalType();
+            foreach (String ProposalType in comboList)
+            {
+                editProposalTypeCb.Items.Add(ProposalType);
+            }
+
+            emp = dbh.getEmployers();
+
+            foreach (Employers employer in emp)
+            {
+                editProposalOrganizationNumberCb.Items.Add(employer.Index);
+                editProposalOrganizationNameCb.Items.Add(employer.OrgName);
+            }
+
+            comboList = dbh.getStatusType();
+            foreach (String statusType in comboList)
+            {
+                editProposalStatusCb.Items.Add(statusType);
+            }
             //*************************************************************************\\
-            //                                Edit Proposal                             \\
+            //                                edit Proposal                             \\
             //*************************************************************************\\
 
 
