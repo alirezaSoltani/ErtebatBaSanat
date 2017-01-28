@@ -1915,6 +1915,22 @@ namespace ProposalReportingSystem
                     break;
                 }
             }
+            
+            if(selectCommand.Contains("UsersTable"))
+            {
+                dataGridview.Columns[0].HeaderText = "کد ملی";
+                dataGridview.Columns[1].HeaderText = "رمز عبور";
+                dataGridview.Columns[2].HeaderText = "نام";
+                dataGridview.Columns[3].HeaderText = "نام خانوادگی";
+                dataGridview.Columns[4].HeaderText = "ایمیل";
+                dataGridview.Columns[5].HeaderText = "تلفن تماس";
+                dataGridview.Columns[6].HeaderText = "افزودن پروپوزال";
+                dataGridview.Columns[7].HeaderText = "تغییر اطلاعات پروپوزال";
+                dataGridview.Columns[8].HeaderText = "حذف پروپوزال";
+                dataGridview.Columns[9].HeaderText = "افزودن کاربر";
+                dataGridview.Columns[10].HeaderText = "تغییر اطلاعات کاربر";
+                dataGridview.Columns[11].HeaderText = "حذف کاربر";
+            }
         }
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GET DATA******************************/

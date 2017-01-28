@@ -108,7 +108,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalAddGp, 22, 15, 826, 445);
             gl.setSize(addProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(addProposalShowDgv, 3, 5, 817, 380);
+            gl.setSize(addProposalShowDgv, 5, 5, 810, 380);
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 550, 10, 160, 25);
@@ -200,7 +200,7 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
             gl.setSize(searchProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(searchProposalShowDgv, 3, 5, 817, 380);
+            gl.setSize(searchProposalShowDgv, 5, 5, 810, 380);
 
             gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
             gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
@@ -264,16 +264,95 @@ namespace ProposalReportingSystem
 
 
 
+            /////////////manage users design/////////////////
+            //*********************************************//
+            gl.setSize(manageUserPanel, 0, 1, 900, 1000);
+            gl.setSize(manageUserShowGp, 22, 470, 826, 425);
+            gl.setSize(manageUserDgv, 5, 5, 810, 380);
+            gl.setSize(manageUserManageGp, 22, 15, 826, 445);
+
+            gl.setSize(menageUserAccessLevelGp, 40, 50, 350, 250);
+            gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
+            gl.setSize(manageUserNcodTxtbx, 45, 20, 160, 28);
+            gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
+            gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
+            gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
+            gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
+            gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
+
+            gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
+            gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
+            gl.setSize(manageUserLnameLb, 205, 100, 110, 25);
+            gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
+            gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
+            gl.setSize(manageUserTellLb, 205, 220, 110, 25);
+
+            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 140, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 140, 150, 35);
+
+            gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
+            gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
+            gl.setSize(manageUserDeleteBtn, 220, 360, 80, 30);
+            gl.setSize(manageUserClearBtn, 310, 360, 80, 30);
+            gl.setSize(manageUserShowBtn, 430, 360, 80, 30);
+
+
+            //////////////////manageTeacher//////////////////////
+            gl.setSize(manageTeacherPanel, 0, 1, 900, 930);
+            gl.setSize(manageTeacherInfoGp, 22, 15, 826, 445);
+            gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
+            gl.setSize(manageTeacherShowDgv, 5, 5, 810, 380);
+
+            gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
+            gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
+            gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyLbl, 455, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 455, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 455, 200, 60, 25);
+
+            gl.setSize(manageTeacherExecutorTelLbl, 200, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorTel2Lbl, 200, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEmailLbl, 200, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 200, 270, 60, 25);
+
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyCb, 310, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEgroupCb, 310, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 310, 200, 160, 25);
+
+            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 270, 160, 25);
+
+            gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
+            gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
+            gl.setSize(manageTeacherClearBtn, 230, 365, 80, 30);
+            gl.setSize(manageTeacherDeleteBtn, 320, 365, 80, 30);
+
+            //////////////////manageTeacher//////////////////////
+
+
+
             //********************************************//
             //////////////edit proposal design///////////////
             gl.setSize(editProposalPanel, 0, 1, 900, 930);
             gl.setSize(editProposalEditGp, 22, 15, 826, 445);
             gl.setSize(editProposalShowGp, 22, 470, 826, 425);
             gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
-            gl.setSize(editProposalShowDgv, 3, 5, 817, 380);
+            gl.setSize(editProposalShowDgv, 5, 5, 810, 380);
 
             gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 60, 25);
-            gl.setSize(editProposalExecutorNcodeTxtbx, 550, 10, 160, 25);
+            gl.setSize(editProposalExecutorNcodeTxtbx, 600, 10, 110, 25);
+            gl.setSize(editProposalSearchBtn, 550, 10, 45, 25);
 
             gl.setSize(editProposalExecutorFNameLbl, 720, 50, 60, 25);
             gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
@@ -355,50 +434,12 @@ namespace ProposalReportingSystem
 
 
 
-            /////////////manage users design/////////////////
-            //*********************************************//
-            gl.setSize(manageUserPanel, 0, 1, 900, 1000);
-            gl.setSize(manageUserShowGp, 22, 470, 826, 425);
-            gl.setSize(manageUserDgv, 3, 5, 817, 410);
-            gl.setSize(manageUserManageGp, 22, 15, 826, 445);
-
-            gl.setSize(menageUserAccessLevelGp, 40, 50, 350, 250);
-            gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
-            gl.setSize(manageUserNcodTxtbx, 45, 20, 160, 28);
-            gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
-            gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
-            gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
-            gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
-            gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
-
-            gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
-            gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
-            gl.setSize(manageUserLnameLb, 205, 100, 110, 25);
-            gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
-            gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
-            gl.setSize(manageUserTellLb, 205, 220, 110, 25);
-
-            gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
-            gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
-            gl.setSize(manageUserClearBtn, 310, 360, 80, 30);
-            gl.setSize(manageUserDeleteBtn, 220, 360, 80, 30);
-
-            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 140, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
-            gl.setSize(manageUserDeleteUserCb, 20, 140, 150, 35);
-
-
-
-
-
+            
             //********************************************//
             ///////////////////App Setting design//////////
             gl.setSize(appSettingPanel, 0, 1, 900, 930);
             gl.setSize(appSettingGp, 22, 15, 826, 445);
-            gl.setSize(appSettingShowDv, 3, 5, 817, 350);
+            gl.setSize(appSettingShowDv, 5, 5, 810, 380);
             
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 25);
             gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 25);
@@ -489,45 +530,6 @@ namespace ProposalReportingSystem
             //////////////////log design///////////////////////////
 
 
-
-            //////////////////manageTeacher//////////////////////
-            gl.setSize(manageTeacherPanel, 0, 1, 900, 930);
-            gl.setSize(manageTeacherInfoGp, 22, 15, 826, 445);
-            gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
-            gl.setSize(manageTeacherShowDgv, 3, 5, 817, 408);
-
-            gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
-            gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
-            gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
-
-            gl.setSize(manageTeacherExecutorFacultyLbl, 455, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 455, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 455, 200, 60, 25);
-
-            gl.setSize(manageTeacherExecutorTelLbl, 200, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorTel2Lbl, 200, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEmailLbl, 200, 200, 60, 25);
-            gl.setSize(manageTeacherExecutorMobileLbl, 200, 270, 60, 25);
-
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
-
-            gl.setSize(manageTeacherExecutorFacultyCb, 310, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEgroupCb, 310, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 310, 200, 160, 25);
-            
-            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 200, 160, 25);
-            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 270, 160, 25);
-
-            gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
-            gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
-            gl.setSize(manageTeacherClearBtn, 230, 365, 80, 30);
-            gl.setSize(manageTeacherDeleteBtn, 320, 365, 80, 30);
-
-            //////////////////manageTeacher//////////////////////
 
             //*****************************************************************************************************//
             //                                               DESIGN                                                //
@@ -2729,6 +2731,12 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void manageUserShowBtn_Click(object sender, EventArgs e)
+        {
+            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
+            manageUserShowBtn.Enabled = false;
+        }
+
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
         {
             ColorDialog dlg = new ColorDialog();
@@ -2944,8 +2952,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                manage Users                           \\
             //*************************************************************************\\
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable");
-            
+
             //*************************************************************************\\
             //                                manage Users                            \\
             //*************************************************************************\\
@@ -2963,6 +2970,11 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                manage Teacher                             \\
             //*************************************************************************\\
+        }
+
+        private void show_waiting()
+        {
+
         }
     }
 }
