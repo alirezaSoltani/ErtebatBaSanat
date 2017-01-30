@@ -14,6 +14,9 @@ namespace ProposalReportingSystem
 {
     public partial class Form1 : Form
     {
+
+        Waiting w = new Waiting();
+
         private int systemWidth;    //related to setSize
         private int systemHeight;   //related to setSize
         private int count;   //related to color of textbox
@@ -52,6 +55,16 @@ namespace ProposalReportingSystem
         /// <summary>
         /// Data gridview attributes
         /// </summary>
+        /// 
+
+
+        /// <summary>
+        /// username
+        /// </summary>
+        private long username = 1741936683;
+        /// <summary>
+        /// username
+        /// </summary>
 
 
 
@@ -59,14 +72,18 @@ namespace ProposalReportingSystem
 
         public Form1()
         {
+            
             InitializeComponent();
+
+            homePanel.Visible = false;
+            this.Enabled = false;
 
             systemWidth = SystemInformation.PrimaryMonitorSize.Width;          //related to setSize
             systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
-            //MessageBox.Show(systemWidth + "*" + systemHeight);
             this.SetBounds(0, 0, systemWidth, ((955 * systemHeight) / 1000));  //related to setSize
             gl.setSize(mainPage, 0, 0, 995, 925);                              //related to setSize
 
+            
 
             /*PopUp p = new PopUp("title", "context", "left", "center", "right" , "error");
             p.ShowDialog();
@@ -529,8 +546,6 @@ namespace ProposalReportingSystem
             gl.setSize(logDgv, 20, 20, 840, 870);
             //////////////////log design///////////////////////////
 
-
-
             //*****************************************************************************************************//
             //                                               DESIGN                                                //
             //*****************************************************************************************************//
@@ -634,16 +649,40 @@ namespace ProposalReportingSystem
 
         private void addProposalRegisterBtn_Click(object sender, EventArgs e)
         {
-            /***************************Convert time*******************************************\
-             string geo = addProposalStartdateTimeInput.GeoDate.ToString();
-             MessageBox.Show(geo.Substring(0, 10));//---> shamsi to miladi
+            //***************************Convert time*******************************************\
+            /*string geo = addProposalStartdateTimeInput.GeoDate.ToString();
+            MessageBox.Show(geo.Substring(0, 10));//---> shamsi to miladi
 
-             string GregorianDate = geo.Substring(0, 10);
-             DateTime d = DateTime.Parse(GregorianDate);
-             PersianCalendar pc = new PersianCalendar();
-             MessageBox.Show(string.Format("{0}-{1:00}-{2:00}", pc.GetYear(d), pc.GetMonth(d), pc.GetDayOfMonth(d)));//---> miladi to shamsi
+            string GregorianDate = geo.Substring(0, 10);
+            DateTime d = DateTime.Parse(GregorianDate);
+            PersianCalendar pc = new PersianCalendar();
+            MessageBox.Show(string.Format("{0}-{1:00}-{2:00}", pc.GetYear(d), pc.GetMonth(d), pc.GetDayOfMonth(d)));//---> miladi to shamsi*/
 
-           /***************************Convert time*******************************************\*/
+            //***************************Convert time*******************************************\
+
+            Proposal proposal = new Proposal();
+            proposal.PersianTitle = addProposalPersianTitleTxtbx.Text;
+            proposal.EngTitle = addProposalEnglishTitleTxtbx.Text;
+            proposal.KeyWord = addProposalKeywordsTxtbx.Text;
+            proposal.CoExecutor = addProposalCoexecutorTxtbx.Text;
+            proposal.Executor2 = addProposalExecutor2Txtbx.Text;
+            proposal.Duration = int.Parse(addProposalDurationTxtbx.Text);
+            proposal.ProcedureType = addProposalProcedureTypeCb.Text;
+            proposal.PropertyType = addProposalPropertyTypeCb.Text;
+            proposal.ProposalType = addProposalProposalTypeCb.Text;
+            proposal.Status = addProposalStatusCb.Text;
+            proposal.RegisterType = addProposalRegisterTypeCb.Text;
+            proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
+            proposal.Value = addProposalValueTxtbx.Text;
+            proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
+            proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
+
+
+
+            proposal.Registrant = username;
+
+
+            dbh.AddProposal(proposal, username, myDateTime.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -731,7 +770,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingEgroupTxtbx.Text.Equals(""))
                 {
-                    //dbh.AddEGroup(appSettingFacultyTxtbx.Text,appSettingEgroupTxtbx.Text);
+                    dbh.AddEGroup(appSettingFacultyTxtbx.Text,appSettingEgroupTxtbx.Text, 9999, DateTime.Now.ToString());
                     appSettingEgroupTxtbx.Clear();
                     dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
 
@@ -2742,13 +2781,17 @@ namespace ProposalReportingSystem
             ColorDialog dlg = new ColorDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+                Color color = new Color();
+                
+                MessageBox.Show(dlg.Color.A.ToString() + " - " + dlg.Color.R.ToString() + " - " + dlg.Color.G.ToString() + " - " + dlg.Color.B.ToString());
+                //appSettingPanel.BackColor.Name = Color [A = 120, R = 255, G = 25, B = 36];
                 homePanel.BackColor = dlg.Color;
                 addProposalPanel.BackColor = dlg.Color;
                 searchProposalPanel.BackColor = dlg.Color;
                 manageUserPanel.BackColor = dlg.Color;
                 manageTeacherPanel.BackColor = dlg.Color;
                 editProposalPanel.BackColor = dlg.Color;
-                appSettingPanel.BackColor = dlg.Color;
+                //appSettingPanel.BackColor = dlg.Color;
                 personalSettingPanel.BackColor = dlg.Color;
                 aboutUsPanel.BackColor = dlg.Color;
                 logPanel.BackColor = dlg.Color;
@@ -2757,8 +2800,105 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void wait_bgw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            w.ShowDialog();
+        }
+
+        private void manageTeacherAddBtn_Click(object sender, EventArgs e)
+        {
+            Teachers teacher = new Teachers();
+            teacher.T_FName = manageTeacherFnameTxtbx.Text;
+            teacher.T_LName = manageTeacherLnameTxtbx.Text;
+            teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
+            teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
+            teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
+            teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+            teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
+            teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
+            teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+
+            dbh.AddTeacher(teacher, 9999, myDateTime.ToString());
+
+
+            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+        }
+
+        private void manageTeacherDeleteBtn_Click(object sender, EventArgs e)
+        {
+            Teachers teacher = new Teachers();
+            teacher.T_FName = manageTeacherFnameTxtbx.Text;
+            teacher.T_LName = manageTeacherLnameTxtbx.Text;
+            teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
+            teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
+            teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
+            teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+            teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
+            teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
+            teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+
+            dbh.DeleteTeacher(teacher, 9999, myDateTime.ToString());
+
+
+            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+        }
+
+        private void manageTeacherEditBtn_Click(object sender, EventArgs e)
+        {
+            Teachers teacher = new Teachers();
+            teacher.T_FName = manageTeacherFnameTxtbx.Text;
+            teacher.T_LName = manageTeacherLnameTxtbx.Text;
+            teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
+            teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
+            teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
+            teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+            teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
+            teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
+            teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
+            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+
+            dbh.EditTeacher(teacher, long.Parse(currentSelectedOption), 9999, myDateTime.ToString());
+
+
+            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+        }
+
+        private void manageTeacherShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                manageTeacherFnameTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_FName"].Value.ToString();
+                manageTeacherLnameTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_LName"].Value.ToString();
+                manageTeacherExecutorNcodeTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
+                manageTeacherExecutorMobileTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Mobile"].Value.ToString();
+                manageTeacherExecutorEmailTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Email"].Value.ToString();
+                manageTeacherExecutorTelTxtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Tel1"].Value.ToString();
+                manageTeacherExecutorTel2Txtbx.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Tel2"].Value.ToString();
+                manageTeacherExecutorFacultyCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Faculty"].Value.ToString();
+                manageTeacherExecutorEgroupCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Group"].Value.ToString();
+
+                manageTeacherExecutorEDegCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_EDeg"].Value.ToString();
+                currentSelectedOption = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException) { }
+        }
+
+        private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            w.Hide();
+        }
+
         private void form_initializer()
         {
+            
+
+            waitBw.RunWorkerAsync();
+
             //*************************************************************************\\
             //                                Add Proposal                             \\
             //*************************************************************************\\
@@ -2968,13 +3108,12 @@ namespace ProposalReportingSystem
                 manageTeacherExecutorFacultyCb.Items.Add(faculty);
             }
             //*************************************************************************\\
-            //                                manage Teacher                             \\
+            //                                manage Teacher                           \\
             //*************************************************************************\\
-        }
 
-        private void show_waiting()
-        {
-
+            this.Enabled = true;
+            homePanel.Visible = true;
+            w.i = -1;
         }
     }
 }

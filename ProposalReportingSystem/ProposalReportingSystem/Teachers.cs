@@ -149,18 +149,6 @@ namespace ProposalReportingSystem
             }
         }
 
-        public Teachers(string t_FName, string t_LName, long t_NCode, string t_EDeg, string t_Email, string t_Mobile, string t_Tel1, string t_Tel2, string t_Faculty, string t_Group)
-        {
-            this.T_FName = t_FName;
-            this.T_LName = t_LName;
-            this.T_NCode = t_NCode;
-            this.T_EDeg = t_EDeg;
-            this.T_Email = t_Email;
-            this.T_Mobile = t_Mobile;
-            this.T_Tel1 = t_Tel1;
-            this.T_Tel2 = t_Tel2;
-            this.T_Faculty = t_Faculty;
-            this.T_Group = t_Group;
-        }
+
     }
 }

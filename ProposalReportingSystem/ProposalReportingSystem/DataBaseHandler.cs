@@ -111,21 +111,21 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "'"
-                                                    + "engTitle =" + "'" + proposal.EngTitle + "'"
-                                                    + "keyword =" + "'" + proposal.KeyWord + "'"
-                                                    + "executor =" + "'" + proposal.Executor + "'"
-                                                    + "executor2 = " + "'" + proposal.Executor2 + "'"
-                                                    + " coExecutor = " + "'" + proposal.CoExecutor + "'"
-                                                    + "  startDate=" + "'" + proposal.StartDate + "'"
-                                                    + "duration=" + "'" + proposal.Duration + "'"
-                                                    + "procedureType =" + "'" + proposal.ProcedureType + "'"
-                                                    + " propertyType = " + "'" + proposal.PropertyType + "'"
-                                                    + "registerType =" + "'" + proposal.RegisterType + "'"
-                                                    + "proposalType =" + "'" + proposal.ProposalType + "'"
-                                                    + " employer = " + "'" + proposal.Employer + "'"
-                                                    + " value = " + "'" + proposal.Value + "'"
-                                                    + " status = " + "'" + proposal.Status + "'"
+                sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
+                                                    + "engTitle =" + "'" + proposal.EngTitle + "',"
+                                                    + "keyword =" + "'" + proposal.KeyWord + "',"
+                                                    + "executor =" + "'" + proposal.Executor + "',"
+                                                    + "executor2 = " + "'" + proposal.Executor2 + "',"
+                                                    + " coExecutor = " + "'" + proposal.CoExecutor + "',"
+                                                    + "  startDate=" + "'" + proposal.StartDate + "',"
+                                                    + "duration=" + "'" + proposal.Duration + "',"
+                                                    + "procedureType =" + "'" + proposal.ProcedureType + "',"
+                                                    + " propertyType = " + "'" + proposal.PropertyType + "',"
+                                                    + "registerType =" + "'" + proposal.RegisterType + "',"
+                                                    + "proposalType =" + "'" + proposal.ProposalType + "',"
+                                                    + " employer = " + "'" + proposal.Employer + "',"
+                                                    + " value = " + "'" + proposal.Value + "',"
+                                                    + " status = " + "'" + proposal.Status + "',"
                                                     + "registrant=" + "'" + proposal.Registrant + "'"
                                                     + "WHERE index = " + proposal.Index + "";
 
@@ -197,7 +197,7 @@ namespace ProposalReportingSystem
                                          + "'" + dateTime + "')";
 
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "'proposalTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -480,16 +480,16 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "UPDATE TeacherTable SET t_FName = " + "'" + teacher.T_FName + "'"
-                                                    + "t_LName =" + "'" + teacher.T_LName + "'"
-                                                    + "t_NCode =" + "'" + teacher.T_NCode + "'"
-                                                    + "t_EDeg =" + "'" + teacher.T_EDeg + "'"
-                                                    + "t_Email = " + "'" + teacher.T_Email + "'"
-                                                    + " t_Group = " + "'" + teacher.T_Group + "'"
-                                                    + "  t_Mobile=" + "'" + teacher.T_Mobile + "'"
-                                                    + "t_Tel1=" + "'" + teacher.T_Tel1 + "'"
-                                                    + "t_Tel2 =" + "'" + teacher.T_Tel2 + "'"
-                                                    + " t_Faculty = " + "'" + teacher.T_Faculty + "'"
+                sc.CommandText = "UPDATE TeacherTable SET t_FName = " + "'" + teacher.T_FName + "',"
+                                                    + "t_LName =" + "'" + teacher.T_LName + "',"
+                                                    + "t_NCode =" + "'" + teacher.T_NCode + "',"
+                                                    + "t_EDeg =" + "'" + teacher.T_EDeg + "',"
+                                                    + "t_Email = " + "'" + teacher.T_Email + "',"
+                                                    + " t_Group = " + "'" + teacher.T_Group + "',"
+                                                    + "  t_Mobile=" + "'" + teacher.T_Mobile + "',"
+                                                    + "t_Tel1=" + "'" + teacher.T_Tel1 + "',"
+                                                    + "t_Tel2 =" + "'" + teacher.T_Tel2 + "',"
+                                                    + " t_Faculty = " + "'" + teacher.T_Faculty + "' "
                                                     + " WHERE t_NCode = '" + lastT_NCode + "'";
 
                 sc.ExecuteNonQuery();
@@ -553,7 +553,7 @@ namespace ProposalReportingSystem
                                           + "'" + username + "',"
                                          + "'" + dateTime + "')";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + teacher.T_NCode + "','" + "'TeachersTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + teacher.T_NCode + "','" + "TeachersTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -1875,6 +1875,27 @@ namespace ProposalReportingSystem
 
 
 
+        public List<string> getEDeg()
+        {
+            List<string> list = new List<string>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM EDegreeTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+            }
+            conn.Close();
+            return list;
+
+        }
+
 
 
         ////////////////////////////////////////////////////////////////////////////
@@ -1915,8 +1936,8 @@ namespace ProposalReportingSystem
                     break;
                 }
             }
-            
-            if(selectCommand.Contains("UsersTable"))
+
+            if (selectCommand.Contains("UsersTable"))
             {
                 dataGridview.Columns[0].HeaderText = "کد ملی";
                 dataGridview.Columns[1].HeaderText = "رمز عبور";
@@ -1931,6 +1952,8 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[10].HeaderText = "تغییر اطلاعات کاربر";
                 dataGridview.Columns[11].HeaderText = "حذف کاربر";
             }
+
+
         }
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GET DATA******************************/

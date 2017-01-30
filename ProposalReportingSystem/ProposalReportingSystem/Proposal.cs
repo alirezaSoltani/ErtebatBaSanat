@@ -6,7 +6,7 @@ using System.Text;
 namespace ProposalReportingSystem
 {
     class Proposal
-    { 
+    {
         private long index;
         private string persianTitle;
         private string engTitle;
@@ -14,7 +14,7 @@ namespace ProposalReportingSystem
         private long executor;
         private string executor2;
         private string coExecutor;
-        private DateTime startDate;
+        private string startDate;
         private int duration;
         private string procedureType;
         private string propertyType;
@@ -116,18 +116,7 @@ namespace ProposalReportingSystem
             }
         }
 
-        public DateTime StartDate
-        {
-            get
-            {
-                return startDate;
-            }
 
-            set
-            {
-                startDate = value;
-            }
-        }
 
         public int Duration
         {
@@ -246,25 +235,17 @@ namespace ProposalReportingSystem
             }
         }
 
-        public Proposal(long index, string persianTitle, string engTitle, string keyWord, long executor, string executor2, string coExecutor, DateTime startDate, int duration, string procedureType, string propertyType, string registerType, string proposalType, long employer, string value, string status, long registrant)
+        public string StartDate
         {
-            this.Index = index;
-            this.PersianTitle = persianTitle;
-            this.EngTitle = engTitle;
-            this.KeyWord = keyWord;
-            this.Executor = executor;
-            this.Executor2 = executor2;
-            this.CoExecutor = coExecutor;
-            this.StartDate = startDate;
-            this.Duration = duration;
-            this.ProcedureType = procedureType;
-            this.PropertyType = propertyType;
-            this.RegisterType = registerType;
-            this.ProposalType = proposalType;
-            this.Employer = employer;
-            this.Value = value;
-            this.Status = status;
-            this.Registrant = registrant;
+            get
+            {
+                return startDate;
+            }
+
+            set
+            {
+                startDate = value;
+            }
         }
     }
 }

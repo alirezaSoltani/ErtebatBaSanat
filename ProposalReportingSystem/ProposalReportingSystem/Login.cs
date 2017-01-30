@@ -12,6 +12,8 @@ namespace ProposalReportingSystem
 {
     public partial class Login : Form
     {
+        private string username, password;
+
         public Login()
         {
             InitializeComponent();
@@ -54,6 +56,11 @@ namespace ProposalReportingSystem
         private void loginMinimizePbx_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void loginEnterBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

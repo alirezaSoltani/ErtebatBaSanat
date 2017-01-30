@@ -28,23 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.loginMinimizePbx = new System.Windows.Forms.PictureBox();
             this.loginClosePbx = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.passwordTxtbx = new System.Windows.Forms.TextBox();
+            this.usernameTxtBx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.loginEnterBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginMinimizePbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginClosePbx)).BeginInit();
@@ -125,18 +122,35 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.passwordTxtbx);
+            this.panel2.Controls.Add(this.usernameTxtBx);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.checkBoxX2);
             this.panel2.Controls.Add(this.checkBoxX1);
             this.panel2.Controls.Add(this.loginEnterBtn);
-            this.panel2.Controls.Add(textBoxX2);
-            this.panel2.Controls.Add(textBoxX1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(49, 189);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(373, 367);
             this.panel2.TabIndex = 7;
+            // 
+            // passwordTxtbx
+            // 
+            this.passwordTxtbx.Location = new System.Drawing.Point(65, 163);
+            this.passwordTxtbx.Multiline = true;
+            this.passwordTxtbx.Name = "passwordTxtbx";
+            this.passwordTxtbx.PasswordChar = '•';
+            this.passwordTxtbx.Size = new System.Drawing.Size(181, 28);
+            this.passwordTxtbx.TabIndex = 11;
+            // 
+            // usernameTxtBx
+            // 
+            this.usernameTxtBx.Location = new System.Drawing.Point(65, 122);
+            this.usernameTxtBx.Multiline = true;
+            this.usernameTxtBx.Name = "usernameTxtBx";
+            this.usernameTxtBx.Size = new System.Drawing.Size(181, 28);
+            this.usernameTxtBx.TabIndex = 10;
             // 
             // label3
             // 
@@ -193,70 +207,7 @@
             this.loginEnterBtn.TabIndex = 8;
             this.loginEnterBtn.Text = "ورود";
             this.loginEnterBtn.UseVisualStyleBackColor = false;
-            // 
-            // textBoxX2
-            // 
-            textBoxX2.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            textBoxX2.Border.BackColor = System.Drawing.Color.Black;
-            textBoxX2.Border.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-            textBoxX2.Border.BackColorGradientAngle = 65;
-            textBoxX2.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX2.Border.BackgroundImage")));
-            textBoxX2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderBottomWidth = 1;
-            textBoxX2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderLeftWidth = 1;
-            textBoxX2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderRightWidth = 1;
-            textBoxX2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX2.Border.BorderTopWidth = 1;
-            textBoxX2.Border.Class = "RibbonGalleryContainer";
-            textBoxX2.Border.CornerDiameter = 6;
-            textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            textBoxX2.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX2.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX2.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            textBoxX2.Location = new System.Drawing.Point(19, 158);
-            textBoxX2.MaxLength = 12;
-            textBoxX2.Multiline = true;
-            textBoxX2.Name = "textBoxX2";
-            textBoxX2.PasswordChar = '•';
-            textBoxX2.PreventEnterBeep = true;
-            textBoxX2.Size = new System.Drawing.Size(227, 35);
-            textBoxX2.TabIndex = 5;
-            // 
-            // textBoxX1
-            // 
-            textBoxX1.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            textBoxX1.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-            textBoxX1.Border.BackColor2 = System.Drawing.Color.Black;
-            textBoxX1.Border.BackColorGradientAngle = 65;
-            textBoxX1.Border.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxX1.Border.BackgroundImage")));
-            textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderBottomWidth = 1;
-            textBoxX1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderLeftWidth = 1;
-            textBoxX1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderRightWidth = 1;
-            textBoxX1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            textBoxX1.Border.BorderTopWidth = 1;
-            textBoxX1.Border.Class = "RibbonGalleryContainer";
-            textBoxX1.Border.CornerDiameter = 6;
-            textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            textBoxX1.Border.CornerTypeBottomLeft = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX1.Border.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Square;
-            textBoxX1.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            textBoxX1.Location = new System.Drawing.Point(19, 117);
-            textBoxX1.Multiline = true;
-            textBoxX1.Name = "textBoxX1";
-            textBoxX1.PreventEnterBeep = true;
-            textBoxX1.Size = new System.Drawing.Size(227, 35);
-            textBoxX1.TabIndex = 4;
+            this.loginEnterBtn.Click += new System.EventHandler(this.loginEnterBtn_Click);
             // 
             // label2
             // 
@@ -299,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.loginClosePbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +270,7 @@
         private System.Windows.Forms.PictureBox loginClosePbx;
         private System.Windows.Forms.PictureBox loginMinimizePbx;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox passwordTxtbx;
+        private System.Windows.Forms.TextBox usernameTxtBx;
     }
 }
