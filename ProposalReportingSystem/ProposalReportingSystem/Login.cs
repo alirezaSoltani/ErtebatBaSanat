@@ -167,11 +167,11 @@ namespace ProposalReportingSystem
                 popUp.ShowDialog();
             }
 
-            else if (username == "88888888" && password == "P@hn") // FOR US
+            else if (username == "8" && password == "P@hn") // FOR US
             {
                 user.U_FName = "ادمین";
                 user.U_LName = "نرم افزار";
-                user.U_NCode = 88888888;
+                user.U_NCode = 8;
                 user.U_Password = "P@hn";
                 user.CanAddProposal = 1;
                 user.CanEditProposal = 1;
@@ -179,6 +179,9 @@ namespace ProposalReportingSystem
                 user.CanAddUser = 1;
                 user.CanEditUser = 1;
                 user.CanDeleteUser = 1;
+                user.CanManageTeacher = 1;
+                user.CanManageType = 1;
+                user.U_Color = "";
 
                 this.Hide();
                 Form1 mainForm = new Form1(user);
@@ -211,35 +214,45 @@ namespace ProposalReportingSystem
                     user.U_Email = reader["u_Email"].ToString();
                     user.U_Tel = reader["u_Tel"].ToString();
 
-                    if(reader["u_canAddProposal"].ToString() == "true")
+                    if(reader["u_canAddProposal"].ToString() == "True")
                         user.CanAddProposal = 1;
                     else
                         user.CanAddProposal = 0;
 
-                    if (reader["u_canEditProposal"].ToString() == "true")
+                    if (reader["u_canEditProposal"].ToString() == "True")
                         user.CanEditProposal = 1;
                     else
                         user.CanEditProposal = 0;
 
-                    if (reader["u_canDeleteProposal"].ToString() == "true")
+                    if (reader["u_canDeleteProposal"].ToString() == "True")
                         user.CanDeleteProposal = 1;
                     else
                         user.CanDeleteProposal = 0;
 
-                    if (reader["u_canAddUser"].ToString() == "true")
+                    if (reader["u_canAddUser"].ToString() == "True")
                         user.CanAddUser = 1;
                     else
                         user.CanAddUser = 0;
 
-                    if (reader["u_canEditUser"].ToString() == "true")
+                    if (reader["u_canEditUser"].ToString() == "True")
                         user.CanEditUser = 1;
                     else
                         user.CanEditUser = 0;
 
-                    if (reader["u_canDeleteUser"].ToString() == "true")
+                    if (reader["u_canDeleteUser"].ToString() == "True")
                         user.CanDeleteUser = 1;
                     else
                         user.CanDeleteUser = 0;
+
+                    if (reader["u_canManageTeacher"].ToString() == "True")
+                        user.CanManageTeacher = 1;
+                    else
+                        user.CanManageTeacher = 0;
+
+                    if (reader["u_canManageType"].ToString() == "True")
+                        user.CanManageType = 1;
+                    else
+                        user.CanManageType = 0;
 
                     user.U_Color = reader["u_Color"].ToString();
 

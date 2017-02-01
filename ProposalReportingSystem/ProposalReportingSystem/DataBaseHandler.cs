@@ -281,7 +281,7 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser)"
+                sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser,u_canManageTeacher,u_canManageType,u_Color)"
                              + " VALUES ('" + user.U_FName + "',"
                                       + "'" + user.U_LName + "',"
                                       + "'" + user.U_NCode + "',"
@@ -293,7 +293,10 @@ namespace ProposalReportingSystem
                                       + "'" + user.CanDeleteProposal + "',"
                                       + "'" + user.CanAddUser + "',"
                                       + "'" + user.CanEditUser + "',"
-                                      + "'" + user.CanDeleteUser + "')";
+                                      + "'" + user.CanDeleteUser + "',"
+                                      + "'" + user.CanManageTeacher + "',"
+                                      + "'" + user.CanManageType + "',"
+                                      + "'" + user.U_Color + "')";
 
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + user.U_NCode + "','" + "UsersTable'" + ")";
@@ -347,7 +350,10 @@ namespace ProposalReportingSystem
                                                     + " u_canDeleteProposal = " + "'" + user.CanDeleteProposal + "',"
                                                     + " u_canAddUser = " + "'" + user.CanAddUser + "',"
                                                     + " u_canEditUser = " + "'" + user.CanEditUser + "',"
-                                                    + " u_canDeleteUser = " + "'" + user.CanDeleteUser + "'"
+                                                    + " u_canDeleteUser = " + "'" + user.CanDeleteUser + "',"
+                                                    + " u_canManageTeacher = " + "'" + user.CanManageTeacher + "',"
+                                                    + " u_canManageType = " + "'" + user.CanManageType + "',"
+                                                    + " u_Color = " + "'" + user.U_Color + "' "
                                                     + " WHERE u_NCode = " + NCode + "";
 
                 sc.ExecuteNonQuery();
@@ -395,7 +401,7 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser , username ,date)"
+                sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser, u_canEditUser , u_canDeleteUser ,u_canManageTeacher, u_canManageType, u_Color , username ,date)"
                             + " VALUES ('" + user.U_FName + "',"
                                      + "'" + user.U_LName + "',"
                                      + "'" + user.U_NCode + "',"
@@ -408,6 +414,9 @@ namespace ProposalReportingSystem
                                      + "'" + user.CanAddUser + "',"
                                      + "'" + user.CanEditUser + "',"
                                      + "'" + user.CanDeleteUser + "',"
+                                     + "'" + user.CanManageTeacher + "',"
+                                     + "'" + user.CanManageTeacher + "',"
+                                     + "'" + user.U_Color + "',"
                                      + "'" + username + "',"
                                      + "'" + dateTime + "')";
                 sc.ExecuteNonQuery();
@@ -2034,18 +2043,21 @@ namespace ProposalReportingSystem
 
             if (selectCommand.Contains("UsersTable"))
             {
-                dataGridview.Columns[0].HeaderText = "کد ملی";
+                dataGridview.Columns[0].HeaderText = "کد ملي";
                 dataGridview.Columns[1].HeaderText = "رمز عبور";
                 dataGridview.Columns[2].HeaderText = "نام";
-                dataGridview.Columns[3].HeaderText = "نام خانوادگی";
-                dataGridview.Columns[4].HeaderText = "ایمیل";
+                dataGridview.Columns[3].HeaderText = "نام خانوادگي";
+                dataGridview.Columns[4].HeaderText = "ايميل";
                 dataGridview.Columns[5].HeaderText = "تلفن تماس";
                 dataGridview.Columns[6].HeaderText = "افزودن پروپوزال";
-                dataGridview.Columns[7].HeaderText = "تغییر اطلاعات پروپوزال";
+                dataGridview.Columns[7].HeaderText = "تغيير اطلاعات پروپوزال";
                 dataGridview.Columns[8].HeaderText = "حذف پروپوزال";
                 dataGridview.Columns[9].HeaderText = "افزودن کاربر";
-                dataGridview.Columns[10].HeaderText = "تغییر اطلاعات کاربر";
+                dataGridview.Columns[10].HeaderText = "تغيير اطلاعات کاربر";
                 dataGridview.Columns[11].HeaderText = "حذف کاربر";
+                dataGridview.Columns[12].HeaderText = "مديريت اطلاعات اساتيد";
+                dataGridview.Columns[13].HeaderText = "تغيير تنظيمات برنامه";
+                dataGridview.Columns[14].Visible = false;
             }
 
 

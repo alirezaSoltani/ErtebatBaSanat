@@ -75,6 +75,7 @@
             this.waitLbl.TabIndex = 0;
             this.waitLbl.Text = "...لطفا کمی صبر کنید";
             this.waitLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.waitLbl.UseWaitCursor = true;
             // 
             // Waiting
             // 
