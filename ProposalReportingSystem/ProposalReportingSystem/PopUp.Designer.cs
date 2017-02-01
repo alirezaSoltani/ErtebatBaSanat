@@ -49,8 +49,9 @@
             this.popUpPanel.Controls.Add(this.popUpCenterBtn);
             this.popUpPanel.Controls.Add(this.popUpLeftBtn);
             this.popUpPanel.Location = new System.Drawing.Point(1, -1);
+            this.popUpPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popUpPanel.Name = "popUpPanel";
-            this.popUpPanel.Size = new System.Drawing.Size(644, 231);
+            this.popUpPanel.Size = new System.Drawing.Size(644, 274);
             this.popUpPanel.TabIndex = 0;
             // 
             // popUpRightBtn
@@ -58,9 +59,10 @@
             this.popUpRightBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.popUpRightBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.popUpRightBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpRightBtn.Location = new System.Drawing.Point(290, 186);
+            this.popUpRightBtn.Location = new System.Drawing.Point(375, 221);
+            this.popUpRightBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popUpRightBtn.Name = "popUpRightBtn";
-            this.popUpRightBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpRightBtn.Size = new System.Drawing.Size(129, 34);
             this.popUpRightBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.popUpRightBtn.TabIndex = 36;
             this.popUpRightBtn.Text = "لغو";
@@ -69,12 +71,12 @@
             // popUpContextLbl
             // 
             this.popUpContextLbl.BackColor = System.Drawing.Color.Transparent;
-            this.popUpContextLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpContextLbl.Location = new System.Drawing.Point(26, 49);
+            this.popUpContextLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.popUpContextLbl.Location = new System.Drawing.Point(26, 58);
             this.popUpContextLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.popUpContextLbl.Name = "popUpContextLbl";
             this.popUpContextLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.popUpContextLbl.Size = new System.Drawing.Size(482, 112);
+            this.popUpContextLbl.Size = new System.Drawing.Size(482, 118);
             this.popUpContextLbl.TabIndex = 35;
             this.popUpContextLbl.Text = "متن خطا در این بخش قرار میگیرد-متن خطا در این بخش قرار میگیرد-متن خطا در این بخش " +
     "قرار میگیرد-متن خطا در این بخش قرار میگیرد-متن خطا در این بخش قرار میگیرد-";
@@ -84,7 +86,8 @@
             this.popUpIconPbx.BackColor = System.Drawing.Color.Transparent;
             this.popUpIconPbx.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.success;
             this.popUpIconPbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.popUpIconPbx.Location = new System.Drawing.Point(525, 35);
+            this.popUpIconPbx.Location = new System.Drawing.Point(525, 42);
+            this.popUpIconPbx.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popUpIconPbx.Name = "popUpIconPbx";
             this.popUpIconPbx.Size = new System.Drawing.Size(64, 64);
             this.popUpIconPbx.TabIndex = 34;
@@ -95,9 +98,10 @@
             this.popUpCenterBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.popUpCenterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.popUpCenterBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpCenterBtn.Location = new System.Drawing.Point(158, 186);
+            this.popUpCenterBtn.Location = new System.Drawing.Point(199, 221);
+            this.popUpCenterBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popUpCenterBtn.Name = "popUpCenterBtn";
-            this.popUpCenterBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpCenterBtn.Size = new System.Drawing.Size(170, 34);
             this.popUpCenterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.popUpCenterBtn.TabIndex = 33;
             this.popUpCenterBtn.Text = "خیر";
@@ -108,9 +112,10 @@
             this.popUpLeftBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.popUpLeftBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.popUpLeftBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpLeftBtn.Location = new System.Drawing.Point(26, 186);
+            this.popUpLeftBtn.Location = new System.Drawing.Point(26, 221);
+            this.popUpLeftBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popUpLeftBtn.Name = "popUpLeftBtn";
-            this.popUpLeftBtn.Size = new System.Drawing.Size(126, 29);
+            this.popUpLeftBtn.Size = new System.Drawing.Size(167, 34);
             this.popUpLeftBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.popUpLeftBtn.TabIndex = 32;
             this.popUpLeftBtn.Text = "بله";
@@ -118,11 +123,13 @@
             // 
             // PopUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 228);
+            this.ClientSize = new System.Drawing.Size(641, 271);
             this.Controls.Add(this.popUpPanel);
+            this.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اطلاعات";

@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,9 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
+
+
+
         string conString = "Data Source= 185.159.152.2;" +
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
@@ -28,12 +33,13 @@ namespace ProposalReportingSystem
 
 
 
+
         /// <summary>
         /// querry for proposals
         /// </summary>
         /// <param name="proposal"></param>
 
-        public void AddProposal(Proposal proposal, long username, String dateTime)
+        public void AddProposal(Proposal proposal, long username, String dateTime, FTPSetting _inputParameter)
         {
             //String persianTitle, String engTitle , String keyword, long executor, String executor2 , String coExecutor, String startDate , int duration, String procedureType , String propertyType, String registerType , String proposalType, long employer, String value , String status, long registrant
 
@@ -44,6 +50,7 @@ namespace ProposalReportingSystem
             SqlCommand sc = new SqlCommand();
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
+            SqlDataReader reader;
 
 
             SqlTransaction transaction;
@@ -73,6 +80,32 @@ namespace ProposalReportingSystem
 
                 sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                sc.ExecuteNonQuery();
+                sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
+                reader = sc.ExecuteReader();
+                reader.Read();
+                proposal.Index = reader.GetInt64(0);
+
+
+                if (_inputParameter.FileName.Contains(".docx"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                }
+                else if (_inputParameter.FileName.Contains(".doc"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                }
+                if (_inputParameter.FileName.Contains(".pdf"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                }
+
+
+                uploadFile(_inputParameter);
+
+                reader.Close();
+
+                sc.CommandText = "UPDATE proposalTable SET URL = '" + _inputParameter.Server + @"/Nima/" + _inputParameter.FileName + "' WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -125,12 +158,11 @@ namespace ProposalReportingSystem
                                                     + "proposalType =" + "'" + proposal.ProposalType + "',"
                                                     + " employer = " + "'" + proposal.Employer + "',"
                                                     + " value = " + "'" + proposal.Value + "',"
-                                                    + " status = " + "'" + proposal.Status + "',"
-                                                    + "registrant=" + "'" + proposal.Registrant + "'"
-                                                    + "WHERE index = " + proposal.Index + "";
+                                                    + " status = " + "'" + proposal.Status + "' "
+                                                    + " WHERE [index] = " + proposal.Index + "";
 
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited ','" + "proposalTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.Index + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -173,9 +205,9 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = " DELETE FROM proposalTable WHERE index = '" + proposal.Index + "'";
+                sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedProposalTable (index,persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,dateTime)"
+                sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
                                 + "VALUES ('" + proposal.Index + "',"
                                          + "'" + proposal.PersianTitle + "',"
                                          + "'" + proposal.EngTitle + "',"
@@ -219,6 +251,7 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
+
 
 
 
@@ -400,6 +433,68 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
+
+        public void changeColor(long username, string color)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " UPDATE UsersTable SET u_color = " + "'" + color + "' WHERE u_NCode = '" + username + "'";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+        }
+        public string getColor(long username)
+        {
+            string color;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT u_color FROM UsersTable WHERE u_NCode = '" + username + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+
+            reader.Read();
+            color = reader.GetString(0);
+            conn.Close();
+            return color;
+        }
+
+
+
 
         //////////////////end query Users
 
@@ -1976,6 +2071,66 @@ namespace ProposalReportingSystem
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GridView Update***********************/
         ///////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        public void uploadFile(FTPSetting _inputParameter)
+        {
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://185.159.152.5", _inputParameter.FileName)));
+            request.Method = WebRequestMethods.Ftp.UploadFile;
+            request.Credentials = new NetworkCredential(_inputParameter.Username, _inputParameter.Password);
+            Stream FtpStream = request.GetRequestStream();
+            FileStream fs = File.OpenRead(_inputParameter.FullName);
+            byte[] buffer = new byte[1024];
+            double total = (double)fs.Length;
+            int byteRead = 0;
+            double read = 0;
+            do
+            {
+
+                byteRead = fs.Read(buffer, 0, 1024);
+                FtpStream.Write(buffer, 0, byteRead);
+                read += (double)byteRead;
+                double percentage = read / total * 100;
+            }
+            while (byteRead != 0);
+            fs.Close();
+            FtpStream.Close();
+        }
+
+        public static string downloadFile(string FtpUrl, string FileNameToDownload,
+                     string userName, string password, string tempDirPath)
+        {
+            string ResponseDescription = "";
+            string PureFileName = new FileInfo(FileNameToDownload).Name;
+            string DownloadedFilePath = tempDirPath + "/" + PureFileName;
+            string downloadUrl = String.Format("{0}/{1}", FtpUrl, FileNameToDownload);
+            FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
+            req.Method = WebRequestMethods.Ftp.DownloadFile;
+            req.Credentials = new NetworkCredential(userName, password);
+            req.UseBinary = true;
+            req.Proxy = null;
+
+            FtpWebResponse response = (FtpWebResponse)req.GetResponse();
+            Stream stream = response.GetResponseStream();
+            byte[] buffer = new byte[2048];
+            FileStream fs = new FileStream(DownloadedFilePath, FileMode.Create);
+            int ReadCount = stream.Read(buffer, 0, buffer.Length);
+            while (ReadCount > 0)
+            {
+                fs.Write(buffer, 0, ReadCount);
+                ReadCount = stream.Read(buffer, 0, buffer.Length);
+            }
+            ResponseDescription = response.StatusDescription;
+            fs.Close();
+            stream.Close();
+
+
+            return ResponseDescription;
+        }
+
     }
 
 

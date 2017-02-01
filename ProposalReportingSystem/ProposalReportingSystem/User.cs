@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProposalReportingSystem
 {
-    class User
+    public class User
     {
         private long u_NCode;
         private string u_Password;
@@ -14,7 +14,8 @@ namespace ProposalReportingSystem
         private string u_LName;
         private string u_Email;
         private string u_Tel;
-        private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser;
+        private string u_Color;
+        private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser, canManageTeacher, canManageType;
 
 
         public long U_NCode
@@ -170,6 +171,46 @@ namespace ProposalReportingSystem
             set
             {
                 canDeleteUser = value;
+            }
+        }
+
+        public short CanManageTeacher
+        {
+            get
+            {
+                return canManageTeacher;
+            }
+
+            set
+            {
+                canManageTeacher = value;
+            }
+        }
+
+        public short CanManageType
+        {
+            get
+            {
+                return canManageType;
+            }
+
+            set
+            {
+                canManageType = value;
+            }
+        }
+
+
+        public string U_Color
+        {
+            get
+            {
+                return u_Color;
+            }
+
+            set
+            {
+                u_Color = value;
             }
         }
     }

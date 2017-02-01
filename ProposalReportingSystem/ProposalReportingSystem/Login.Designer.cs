@@ -34,14 +34,14 @@
             this.loginClosePbx = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.passwordTxtbx = new System.Windows.Forms.TextBox();
-            this.usernameTxtBx = new System.Windows.Forms.TextBox();
+            this.loginRememberUsername = new System.Windows.Forms.CheckBox();
+            this.loginShowPasswordChb = new System.Windows.Forms.CheckBox();
+            this.loginPasswordTxtbx = new System.Windows.Forms.TextBox();
+            this.loginUsernameTxtBx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.loginEnterBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginMinimizePbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginClosePbx)).BeginInit();
@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.loginClosePbx);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 589);
+            this.panel1.Size = new System.Drawing.Size(467, 593);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -122,35 +122,68 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.passwordTxtbx);
-            this.panel2.Controls.Add(this.usernameTxtBx);
+            this.panel2.Controls.Add(this.loginRememberUsername);
+            this.panel2.Controls.Add(this.loginShowPasswordChb);
+            this.panel2.Controls.Add(this.loginPasswordTxtbx);
+            this.panel2.Controls.Add(this.loginUsernameTxtBx);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.checkBoxX2);
-            this.panel2.Controls.Add(this.checkBoxX1);
             this.panel2.Controls.Add(this.loginEnterBtn);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(49, 189);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(373, 367);
             this.panel2.TabIndex = 7;
             // 
-            // passwordTxtbx
+            // loginRememberUsername
             // 
-            this.passwordTxtbx.Location = new System.Drawing.Point(65, 163);
-            this.passwordTxtbx.Multiline = true;
-            this.passwordTxtbx.Name = "passwordTxtbx";
-            this.passwordTxtbx.PasswordChar = '•';
-            this.passwordTxtbx.Size = new System.Drawing.Size(181, 28);
-            this.passwordTxtbx.TabIndex = 11;
+            this.loginRememberUsername.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.loginRememberUsername.ForeColor = System.Drawing.Color.Navy;
+            this.loginRememberUsername.Location = new System.Drawing.Point(186, 223);
+            this.loginRememberUsername.Name = "loginRememberUsername";
+            this.loginRememberUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.loginRememberUsername.Size = new System.Drawing.Size(170, 24);
+            this.loginRememberUsername.TabIndex = 3;
+            this.loginRememberUsername.Text = "ذخیره کردن نام کاربری";
+            this.loginRememberUsername.UseVisualStyleBackColor = true;
+            this.loginRememberUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginRememberUsername_KeyPress);
             // 
-            // usernameTxtBx
+            // loginShowPasswordChb
             // 
-            this.usernameTxtBx.Location = new System.Drawing.Point(65, 122);
-            this.usernameTxtBx.Multiline = true;
-            this.usernameTxtBx.Name = "usernameTxtBx";
-            this.usernameTxtBx.Size = new System.Drawing.Size(181, 28);
-            this.usernameTxtBx.TabIndex = 10;
+            this.loginShowPasswordChb.Location = new System.Drawing.Point(251, 168);
+            this.loginShowPasswordChb.Name = "loginShowPasswordChb";
+            this.loginShowPasswordChb.Size = new System.Drawing.Size(29, 24);
+            this.loginShowPasswordChb.TabIndex = 12;
+            this.loginShowPasswordChb.UseVisualStyleBackColor = true;
+            this.loginShowPasswordChb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginShowPasswordChb_MouseDown);
+            this.loginShowPasswordChb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.loginShowPasswordChb_MouseUp);
+            // 
+            // loginPasswordTxtbx
+            // 
+            this.loginPasswordTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.loginPasswordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.loginPasswordTxtbx.Location = new System.Drawing.Point(19, 165);
+            this.loginPasswordTxtbx.Multiline = true;
+            this.loginPasswordTxtbx.Name = "loginPasswordTxtbx";
+            this.loginPasswordTxtbx.PasswordChar = '●';
+            this.loginPasswordTxtbx.Size = new System.Drawing.Size(227, 28);
+            this.loginPasswordTxtbx.TabIndex = 2;
+            this.loginPasswordTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTxtbx_KeyPress);
+            // 
+            // loginUsernameTxtBx
+            // 
+            this.loginUsernameTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.loginUsernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.loginUsernameTxtBx.Location = new System.Drawing.Point(19, 124);
+            this.loginUsernameTxtBx.Multiline = true;
+            this.loginUsernameTxtBx.Name = "loginUsernameTxtBx";
+            this.loginUsernameTxtBx.ShortcutsEnabled = false;
+            this.loginUsernameTxtBx.Size = new System.Drawing.Size(227, 28);
+            this.loginUsernameTxtBx.TabIndex = 1;
+            this.loginUsernameTxtBx.Tag = "";
+            this.loginUsernameTxtBx.Click += new System.EventHandler(this.loginUsernameTxtBx_Click);
+            this.loginUsernameTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginUsernameTxtBx_KeyPress);
+            this.loginUsernameTxtBx.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginUsernameTxtBx_MouseDown);
             // 
             // label3
             // 
@@ -164,38 +197,6 @@
             this.label3.Text = "سامانه ثبت و گزارش گیری قرارداد های دانشگاه شهید چمران اهواز";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.checkBoxX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.checkBoxX2.Location = new System.Drawing.Point(191, 240);
-            this.checkBoxX2.Name = "checkBoxX2";
-            this.checkBoxX2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxX2.Size = new System.Drawing.Size(165, 30);
-            this.checkBoxX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX2.TabIndex = 7;
-            this.checkBoxX2.Text = "ذخیره کردن رمز عبور";
-            this.checkBoxX2.TextColor = System.Drawing.Color.Navy;
-            // 
-            // checkBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.checkBoxX1.Location = new System.Drawing.Point(191, 204);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxX1.Size = new System.Drawing.Size(165, 30);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 6;
-            this.checkBoxX1.Text = "ذخیره کردن نام کاربری";
-            this.checkBoxX1.TextColor = System.Drawing.Color.Navy;
-            // 
             // loginEnterBtn
             // 
             this.loginEnterBtn.BackColor = System.Drawing.Color.Snow;
@@ -204,22 +205,10 @@
             this.loginEnterBtn.Location = new System.Drawing.Point(19, 277);
             this.loginEnterBtn.Name = "loginEnterBtn";
             this.loginEnterBtn.Size = new System.Drawing.Size(337, 40);
-            this.loginEnterBtn.TabIndex = 8;
+            this.loginEnterBtn.TabIndex = 4;
             this.loginEnterBtn.Text = "ورود";
             this.loginEnterBtn.UseVisualStyleBackColor = false;
             this.loginEnterBtn.Click += new System.EventHandler(this.loginEnterBtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(252, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 35);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "رمز عبور";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -233,6 +222,18 @@
             this.label1.Text = "نام کاربری";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.Location = new System.Drawing.Point(252, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 35);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "رمز عبور";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,6 +246,7 @@
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.loginMinimizePbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginClosePbx)).EndInit();
@@ -263,14 +265,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button loginEnterBtn;
         private System.Windows.Forms.Panel panel2;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox loginClosePbx;
         private System.Windows.Forms.PictureBox loginMinimizePbx;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox passwordTxtbx;
-        private System.Windows.Forms.TextBox usernameTxtBx;
+        private System.Windows.Forms.TextBox loginPasswordTxtbx;
+        private System.Windows.Forms.TextBox loginUsernameTxtBx;
+        private System.Windows.Forms.CheckBox loginShowPasswordChb;
+        private System.Windows.Forms.CheckBox loginRememberUsername;
     }
 }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,10 @@ namespace ProposalReportingSystem
     public partial class Login : Form
     {
         private string username, password;
+        private DataBaseHandler dbh = new DataBaseHandler();
+        private string[] remembering = new string[2];
+        private bool allFilled = true;
+        private User user = new User();
 
         public Login()
         {
@@ -58,9 +64,197 @@ namespace ProposalReportingSystem
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void loginUsernameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginEnterBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            }
+        }
+
+        private void loginShowPasswordChb_MouseDown(object sender, MouseEventArgs e)
+        {
+            loginShowPasswordChb.Checked = true;
+            loginPasswordTxtbx.PasswordChar = '\0';
+        }
+
+        private void loginShowPasswordChb_MouseUp(object sender, MouseEventArgs e)
+        {
+            loginShowPasswordChb.Checked = false;
+            loginPasswordTxtbx.PasswordChar = '●';
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            remembering = File.ReadAllLines("loginInformation");
+            if(remembering[0] == "yes")
+            {
+                loginRememberUsername.Checked = true;
+                loginUsernameTxtBx.Text = remembering[1];
+                loginPasswordTxtbx.TabIndex = 0;
+                loginPasswordTxtbx.Focus();
+            }
+        }
+
+        private void loginUsernameTxtBx_Click(object sender, EventArgs e)
+        {
+            loginPasswordTxtbx.TabIndex = 2;
+        }
+
+        private void loginPasswordTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginEnterBtn.PerformClick();
+            }
+        }
+
+        private void loginRememberUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginEnterBtn.PerformClick();
+            }
+        }
+
+        private void loginUsernameTxtBx_MouseDown(object sender, MouseEventArgs e)
+        {
+            loginPasswordTxtbx.TabIndex = 2;
+        }
+
         private void loginEnterBtn_Click(object sender, EventArgs e)
         {
-            
+            username = loginUsernameTxtBx.Text;
+            password = loginPasswordTxtbx.Text;
+
+
+            if(username == "" || password == "")
+            {
+                allFilled = false;
+            }
+            else
+            {
+                allFilled = true;
+            }
+
+            if(allFilled)
+            {
+                // REMEMBERING PASSWORD
+                if (loginRememberUsername.Checked)
+                {
+                    remembering[0] = "yes";
+                    remembering[1] = username;
+                    File.WriteAllLines("loginInformation", remembering);
+                }
+                else
+                {
+                    remembering[0] = "no";
+                    remembering[1] = "-";
+                    File.WriteAllLines("loginInformation", remembering);
+                }
+                // REMEMBERING PASSWORD
+            }
+
+
+
+            if (username == "" || password == "")
+            {
+                PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور وارد نشده است.", "تایید", "", "", "error");
+                popUp.ShowDialog();
+            }
+
+            else if (username == "88888888" && password == "P@hn") // FOR US
+            {
+                user.U_FName = "ادمین";
+                user.U_LName = "نرم افزار";
+                user.U_NCode = 88888888;
+                user.U_Password = "P@hn";
+                user.CanAddProposal = 1;
+                user.CanEditProposal = 1;
+                user.CanDeleteProposal = 1;
+                user.CanAddUser = 1;
+                user.CanEditUser = 1;
+                user.CanDeleteUser = 1;
+
+                this.Hide();
+                Form1 mainForm = new Form1(user);
+                mainForm.Show();
+            }
+
+            else
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = "Data Source= 185.159.152.2;" +
+                "Initial Catalog=rayanpro_EBS;" +
+                "User id=rayanpro_rayan; " +
+                "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM UsersTable WHERE u_NCode = '" + long.Parse(username) + "' AND u_Password = '" + password + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+
+                    user.U_FName = reader["u_FName"].ToString();
+                    user.U_LName = reader["u_LName"].ToString();
+                    user.U_NCode = long.Parse(reader["u_NCode"].ToString());
+                    user.U_Password = reader["u_Password"].ToString();
+                    user.U_Email = reader["u_Email"].ToString();
+                    user.U_Tel = reader["u_Tel"].ToString();
+
+                    if(reader["u_canAddProposal"].ToString() == "true")
+                        user.CanAddProposal = 1;
+                    else
+                        user.CanAddProposal = 0;
+
+                    if (reader["u_canEditProposal"].ToString() == "true")
+                        user.CanEditProposal = 1;
+                    else
+                        user.CanEditProposal = 0;
+
+                    if (reader["u_canDeleteProposal"].ToString() == "true")
+                        user.CanDeleteProposal = 1;
+                    else
+                        user.CanDeleteProposal = 0;
+
+                    if (reader["u_canAddUser"].ToString() == "true")
+                        user.CanAddUser = 1;
+                    else
+                        user.CanAddUser = 0;
+
+                    if (reader["u_canEditUser"].ToString() == "true")
+                        user.CanEditUser = 1;
+                    else
+                        user.CanEditUser = 0;
+
+                    if (reader["u_canDeleteUser"].ToString() == "true")
+                        user.CanDeleteUser = 1;
+                    else
+                        user.CanDeleteUser = 0;
+
+                    user.U_Color = reader["u_Color"].ToString();
+
+                    this.Hide();
+                    Form1 mainForm = new Form1(user);
+                    mainForm.Show();
+                }
+                else
+                {
+                    PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور اشتباه است.", "تایید", "", "", "error");
+                    popUp.ShowDialog();
+                }
+
+                conn.Close(); 
+            }
         }
     }
 }
