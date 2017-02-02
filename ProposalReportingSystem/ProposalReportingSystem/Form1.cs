@@ -563,7 +563,7 @@ namespace ProposalReportingSystem
             loginUser = user;
 
             //نمایش نام و نام خانوادگی 
-            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "P@hn")
+            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
             {
                 sysLogTab.Visible = true;
             }

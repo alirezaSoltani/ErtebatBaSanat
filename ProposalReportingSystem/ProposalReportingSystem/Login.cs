@@ -167,12 +167,12 @@ namespace ProposalReportingSystem
                 popUp.ShowDialog();
             }
 
-            else if (username == "8" && password == "P@hn") // FOR US
+            else if (username == "98765" && password == "1") // FOR US
             {
                 user.U_FName = "ادمین";
                 user.U_LName = "نرم افزار";
-                user.U_NCode = 8;
-                user.U_Password = "P@hn";
+                user.U_NCode = 98765;
+                user.U_Password = "1";
                 user.CanAddProposal = 1;
                 user.CanEditProposal = 1;
                 user.CanDeleteProposal = 1;

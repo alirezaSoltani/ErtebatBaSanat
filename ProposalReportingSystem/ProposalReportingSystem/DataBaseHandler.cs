@@ -105,7 +105,7 @@ namespace ProposalReportingSystem
 
                 reader.Close();
 
-                sc.CommandText = "UPDATE proposalTable SET URL = '" + _inputParameter.Server + @"/Nima/" + _inputParameter.FileName + "' WHERE [index] = '" + proposal.Index + "'";
+                sc.CommandText = "UPDATE proposalTable SET fileName = '" + _inputParameter.FileName + "' WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
