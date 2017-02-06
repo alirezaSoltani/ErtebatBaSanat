@@ -24,9 +24,15 @@ namespace ProposalReportingSystem
         private User loginUser = new User();//related to user access and prefrences
         private List<string> comboList = new List<string>();  //related to Loading comboboxes from tables
         private List<Employers> emp = new List<Employers>();  //related to Loading comboboxes from tables
+        
         private bool isNewTeacher = false;  // related to adding proposal when teacher does not exist in the teachers table
         public FTPSetting _inputParameter = new FTPSetting(); //related to upload and download file
         private DateTime myDateTime = DateTime.Now;// Gets the local time, should be replaced by server time
+
+        private const int totalRecords = 43;//related to gridview paging
+        private const int pageSize = 10;//related to gridview paging
+        private string[,] s;//related to gridview paging
+
 
         /// <summary>
         /// Current Values
@@ -650,10 +656,11 @@ namespace ProposalReportingSystem
             gl.setSize(homePanel, 0, 1, 900, 930);
             gl.setSize(homeAapInfoGp, 175, 70, 500, 300);
             gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
-            gl.setSize(homeAppNameLbl, 100, 15, 425, 30);
+            gl.setSize(homeAppNameLbl, 10, 25, 470, 40);
+            gl.setSize(homeEBSLbl, 10, 70, 470, 40);
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
-            gl.setSize(homeUserNameLbl, 190, 160, 125, 30);
-            gl.setSize(homeWelcomeLbl, 190, 200, 125, 30);
+            gl.setSize(homeUserNameLbl, 175, 150, 145, 40);
+            gl.setSize(homeWelcomeLbl, 175, 200, 145, 40);
             gl.setSize(analogClockControl1, 70, 25, 180, 180);
             gl.setSize(monthCalendar1, 300, 50, 320, 250);
             ///////////////////////Home design/////////////////////
@@ -698,19 +705,19 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalExecutorTel2Txtbx, 550, 370, 160, 25);
 
             gl.setSize(addProposalPersianTitleLbl, 460, 10, 60, 25);
-            gl.setSize(addProposalPersianTitleTxtbx, 290, 10, 160, 25);
+            gl.setSize(addProposalPersianTitleTxtbx, 290, 10, 160, 75);
 
-            gl.setSize(addProposalEnglishTitleLbl, 460, 50, 60, 25);
-            gl.setSize(addProposalEnglishTitleTxtbx, 290, 50, 160, 25);
+            gl.setSize(addProposalEnglishTitleLbl, 460, 100, 60, 25);
+            gl.setSize(addProposalEnglishTitleTxtbx, 290, 100, 160, 75);
 
-            gl.setSize(addProposalKeywordsLbl, 460, 90, 60, 25);
-            gl.setSize(addProposalKeywordsTxtbx, 290, 90, 160, 75);
+            gl.setSize(addProposalKeywordsLbl, 460, 190, 60, 25);
+            gl.setSize(addProposalKeywordsTxtbx, 290, 190, 160, 45);
 
-            gl.setSize(addProposalExecutor2Lbl, 460, 180, 60, 25);
-            gl.setSize(addProposalExecutor2Txtbx, 290, 180, 160, 75);
+            gl.setSize(addProposalExecutor2Lbl, 460, 250, 60, 25);
+            gl.setSize(addProposalExecutor2Txtbx, 290, 250, 160, 45);
 
-            gl.setSize(addProposalCoexecutorLbl, 460, 270, 60, 25);
-            gl.setSize(addProposalCoexecutorTxtbx, 290, 270, 160, 85);
+            gl.setSize(addProposalCoexecutorLbl, 460, 310, 60, 25);
+            gl.setSize(addProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 60, 25);
             gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
@@ -745,7 +752,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(addProposalRegisterBtn, 30, 370, 80, 30);
             gl.setSize(addProposalClearBtn, 120, 370, 60, 30);
-            gl.setSize(addProposalShowBtn, 190, 370, 70, 30);
+            gl.setSize(addProposalShowAllBtn, 190, 370, 70, 30);
 
 
 
@@ -818,6 +825,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(searchProposalSearchBtn, 20, 370, 130, 30);
             gl.setSize(searchProposalClearBtn, 160, 370, 70, 30);
+            gl.setSize(searchProposalShowAllBtn, 240, 370, 70, 30);
 
 
 
@@ -827,17 +835,18 @@ namespace ProposalReportingSystem
             //*********************************************//
             gl.setSize(manageUserPanel, 0, 1, 900, 1000);
             gl.setSize(manageUserShowGp, 22, 470, 826, 425);
-            gl.setSize(manageUserDgv, 5, 5, 810, 380);
+            gl.setSize(manageUserShowDgv, 5, 5, 810, 380);
             gl.setSize(manageUserManageGp, 22, 15, 826, 445);
 
             gl.setSize(menageUserAccessLevelGp, 40, 5, 350, 330);
             gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
-            gl.setSize(manageUserNcodTxtbx, 45, 20, 160, 28);
+            gl.setSize(manageUserNcodeTxtbx, 45, 20, 160, 28);
             gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
             gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
             gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
+            gl.setSize(manageUserShowPasswordChb, 210, 140, 25, 25);
             gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
-            gl.setSize(manageUserTellTxtbx, 45, 220, 160, 28);
+            gl.setSize(manageUserTelTxtbx, 45, 220, 160, 28);
 
             gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
             gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
@@ -859,7 +868,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
             gl.setSize(manageUserDeleteBtn, 220, 360, 80, 30);
             gl.setSize(manageUserClearBtn, 310, 360, 80, 30);
-            gl.setSize(manageUserShowBtn, 430, 360, 80, 30);
+            gl.setSize(manageUserShowAllBtn, 430, 360, 80, 30);
 
 
             //////////////////manageTeacher//////////////////////
@@ -896,9 +905,9 @@ namespace ProposalReportingSystem
 
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
-            gl.setSize(manageTeacherClearBtn, 230, 365, 80, 30);
-            gl.setSize(manageTeacherDeleteBtn, 320, 365, 80, 30);
-            gl.setSize(manageTeacherShowBtn, 410, 365, 80, 30);
+            gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
+            gl.setSize(manageTeacherClearBtn, 320, 365, 80, 30);
+            gl.setSize(manageTeacherShowAllBtn, 410, 365, 80, 30);
 
             //////////////////manageTeacher//////////////////////
 
@@ -944,22 +953,22 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalExecutorTel2Txtbx, 550, 370, 160, 25);
 
             gl.setSize(editProposalPersianTitleLbl, 460, 10, 60, 25);
-            gl.setSize(editProposalPersianTitleTxtbx, 290, 10, 160, 25);
+            gl.setSize(editProposalPersianTitleTxtbx, 290, 10, 160, 75);
 
-            gl.setSize(editProposalEnglishTitleLbl, 460, 50, 60, 25);
-            gl.setSize(editProposalEnglishTitleTxtbx, 290, 50, 160, 25);
+            gl.setSize(editProposalEnglishTitleLbl, 460, 100, 60, 25);
+            gl.setSize(editProposalEnglishTitleTxtbx, 290, 100, 160, 75);
 
-            gl.setSize(editProposalKeywordsLbl, 460, 90, 60, 25);
-            gl.setSize(editProposalKeywordsTxtbx, 290, 90, 160, 75);
+            gl.setSize(editProposalKeywordsLbl, 460, 190, 60, 25);
+            gl.setSize(editProposalKeywordsTxtbx, 290, 190, 160, 45);
 
-            gl.setSize(editProposalExecutor2Lbl, 460, 180, 60, 25);
-            gl.setSize(editProposalExecutor2Txtbx, 290, 180, 160, 75);
+            gl.setSize(editProposalExecutor2Lbl, 460, 250, 60, 25);
+            gl.setSize(editProposalExecutor2Txtbx, 290, 250, 160, 45);
 
-            gl.setSize(editProposalCoexecutorLbl, 460, 270, 60, 25);
-            gl.setSize(editProposalCoexecutorTxtbx, 290, 270, 160, 85);
+            gl.setSize(editProposalCoexecutorLbl, 460, 310, 60, 25);
+            gl.setSize(editProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(editProposalStartdateLbl, 460, 370, 60, 25);
-            gl.setSize(editProposalStartdateTimeInput, 290, 370, 160, 35);
+            gl.setSize(editProposalStartdateTimeInput, 370, 370, 80, 35);
 
             gl.setSize(editProposalDurationLbl, 200, 10, 60, 25);
             gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
@@ -991,8 +1000,9 @@ namespace ProposalReportingSystem
 
 
             gl.setSize(editProposalRegisterBtn, 30, 370, 70, 30);
-            gl.setSize(editProposalDeleteBtn, 120, 370, 70, 30);
-            gl.setSize(editProposalClearBtn, 210, 370, 70, 30);
+            gl.setSize(editProposalDeleteBtn, 110, 370, 70, 30);
+            gl.setSize(editProposalClearBtn, 190, 370, 70, 30);
+            gl.setSize(editProposalShowAllBtn, 290, 370, 70, 30);
 
 
 
@@ -1059,13 +1069,12 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingBackgroundChangeGp, 610, 70, 100, 160);
             gl.setSize(appSettingBackgroundColorLbl, 10, 15, 75, 118);
 
-            gl.setSize(appSettingFontSizeLbl, 325, 35, 110, 25);
-            gl.setSize(appSettingMediumFontSizeLbl, 355, 110, 110, 25);
-            gl.setSize(appSettingLargeFontSizeLbl, 350, 160, 110, 25);
-
-            gl.setSize(currentPasswordTxtbx, 275, 35, 220, 25);
-            gl.setSize(newPasswordTxtbx, 275, 75, 220, 25);
-            gl.setSize(confirmNewPasswordTxtbx, 275, 115, 220, 25);
+            gl.setSize(personalSettingOldPasswordTxtbx, 275, 35, 180, 25);
+            gl.setSize(personalSettingOldPasswordChb, 470, 35, 25, 25);
+            gl.setSize(personalSettingNewPasswordTxtbx, 275, 75, 180, 25);
+            gl.setSize(personalSettingNewPasswordChb, 470, 75, 25, 25);
+            gl.setSize(personalSettingRepeatPasswordTxtbx, 275, 115, 180, 25);
+            gl.setSize(personalSettingRepeatPasswordChb, 470, 115, 25, 25);
 
             gl.setSize(personalSettingRegisterBtn, 275, 180, 100, 30);
             gl.setSize(personalSettingClearBtn, 395, 180, 100, 30);
@@ -1131,9 +1140,10 @@ namespace ProposalReportingSystem
         {
             OpenFileDialog op1 = new OpenFileDialog();
             op1.Multiselect = false;
+            op1.Filter = "Word or PDF Files| *.doc; *.docx; *.pdf";
+            op1.FilterIndex = 0;
+            op1.RestoreDirectory = true;
 
-
-            addProposalFileLinkLbl.Text = op1.FileName;
             if (op1.ShowDialog() == DialogResult.OK)
             {
                 FileInfo fi = new FileInfo(op1.FileName);
@@ -1142,6 +1152,10 @@ namespace ProposalReportingSystem
                 _inputParameter.Server = "ftp://185.159.152.5";
                 _inputParameter.FileName = fi.Name;
                 _inputParameter.FullName = fi.FullName;
+            }
+            if(op1.FileName != "")
+            {
+                addProposalFileLinkLbl.Text = op1.FileName;
             }
         }
 
@@ -1181,12 +1195,19 @@ namespace ProposalReportingSystem
             addProposalValueTxtbx.Clear();
             addProposalValueTxtbx.BackColor = Color.White;
             addProposalStatusCb.SelectedIndex = -1;
+            addProposalFileLinkLbl.Text = "افزودن فایل";
+            addProposalExecutorNcodeTxtbx.Focus();
+
+            addProposalShowAllBtn.Enabled = true;
+            addProposalSearchBtn.Enabled = true;
+            addProposalShowDgv.DataSource = null;
         }
 
 
         private void addProposalRegisterBtn_Click(object sender, EventArgs e)
         {
-            if(    addProposalExecutorNcodeTxtbx.BackColor == Color.Pink || addProposalExecutorNcodeTxtbx.Text.Length < 10
+
+            if (    addProposalExecutorNcodeTxtbx.BackColor == Color.Pink || addProposalExecutorNcodeTxtbx.Text.Length < 10
                 || addProposalExecutorFNameTxtbx.Text.Length == 0 || addProposalExecutorLNameTxtbx.Text.Length == 0
                 || addProposalExecutorFacultyCb.SelectedIndex == -1 || addProposalExecutorEGroupCb.SelectedIndex == -1
                 || addProposalExecutorEDegCb.SelectedIndex == -1 || addProposalExecutorEmailTxtbx.Text.Length == 0
@@ -1235,30 +1256,14 @@ namespace ProposalReportingSystem
                 proposal.Status = addProposalStatusCb.Text;
                 proposal.RegisterType = addProposalRegisterTypeCb.Text;
                 proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
-                proposal.Value = addProposalValueTxtbx.Text;
+                proposal.Value = long.Parse(addProposalValueTxtbx.Text);
                 proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
                 proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
                 proposal.Registrant = loginUser.U_NCode;
 
                 dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ColorDialog dlg = new ColorDialog();
-            if(dlg.ShowDialog() == DialogResult.OK)
-            {
-                homePanel.BackColor = dlg.Color;
-                addProposalPanel.BackColor = dlg.Color;
-                searchProposalPanel.BackColor = dlg.Color;
-                manageUserPanel.BackColor = dlg.Color;
-                manageTeacherPanel.BackColor = dlg.Color;
-                editProposalPanel.BackColor = dlg.Color;
-                appSettingPanel.BackColor = dlg.Color;
-                personalSettingPanel.BackColor = dlg.Color;
-                aboutUsPanel.BackColor = dlg.Color;
-                logPanel.BackColor = dlg.Color;
+                dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
+                addProposalClearBtn.PerformClick();
             }
         }
 
@@ -1943,7 +1948,7 @@ namespace ProposalReportingSystem
                 dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                 appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
                 appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
-              // appSettingShowDv.Columns[1].Visible = false;
+                // appSettingShowDv.Columns[1].Visible = false;
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
 
@@ -2017,17 +2022,20 @@ namespace ProposalReportingSystem
             searchProposalOrganizationNumberCb.SelectedIndex = -1;
             searchProposalOrganizationNameCb.SelectedIndex = -1;
             searchProposalStatusCb.SelectedIndex = -1;
+
+            searchProposalShowDgv.DataSource = null;
+            searchProposalShowAllBtn.Enabled = true;
         }
 
         private void manageUserClearBtn_Click(object sender, EventArgs e)
         {
             manageUserFnameTxtbx.Clear();
             manageUserLnameTxtbx.Clear();
-            manageUserNcodTxtbx.Clear();
-            manageUserNcodTxtbx.BackColor = Color.White;
+            manageUserNcodeTxtbx.Clear();
+            manageUserNcodeTxtbx.BackColor = Color.White;
             manageUserPasswordTxtbx.Clear();
             manageUserEmailTxtbx.Clear();
-            manageUserTellTxtbx.Clear();
+            manageUserTelTxtbx.Clear();
             manageUserAddProCb.Checked = false;
             manageUserEditProCb.Checked = false;
             manageUserDeleteProCb.Checked = false;
@@ -2036,6 +2044,11 @@ namespace ProposalReportingSystem
             manageUserDeleteUserCb.Checked = false;
             manageUserManageTeacherCb.Checked = false;
             manageUserManageTypeCb.Checked = false;
+
+            manageUserShowDgv.DataSource = null;
+            manageUserShowAllBtn.Enabled = true;
+            manageUserEditBtn.Enabled = false;
+            manageUserDeleteBtn.Enabled = false;
         }
 
         private void editProposalClearBtn_Click(object sender, EventArgs e)
@@ -2071,6 +2084,10 @@ namespace ProposalReportingSystem
             editProposalValueTxtbx.Clear();
             editProposalValueTxtbx.BackColor = Color.White;
             editProposalStatusCb.SelectedIndex = -1;
+
+            editProposalSearchBtn.Enabled = true;
+            editProposalShowAllBtn.Enabled = true;
+            editProposalShowDgv.DataSource = null;
         }
 
         private void manageTeacherClearBtn_Click(object sender, EventArgs e)
@@ -2086,13 +2103,15 @@ namespace ProposalReportingSystem
             manageTeacherExecutorMobileTxtbx.Clear();
 
             manageTeacherShowDgv.DataSource = null;
+            manageTeacherEditBtn.Enabled = false;
+            manageTeacherDeleteBtn.Enabled = false;
         }
 
         private void personalSettingClearBtn_Click(object sender, EventArgs e)
         {
-            currentPasswordTxtbx.Clear();
-            newPasswordTxtbx.Clear();
-            confirmNewPasswordTxtbx.Clear();
+            personalSettingOldPasswordTxtbx.Clear();
+            personalSettingNewPasswordTxtbx.Clear();
+            personalSettingRepeatPasswordTxtbx.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -2377,12 +2396,80 @@ namespace ProposalReportingSystem
         {
             if (searchProposalExecutorNCodeTxtbx.Text.Length == 10)
             {
-                MessageBox.Show("چک موجود بودن استاد");
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
+
+                Teachers teacher = new Teachers();
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = "Data Source= 185.159.152.2;" +
+                "Initial Catalog=rayanpro_EBS;" +
+                "User id=rayanpro_rayan; " +
+                "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM TeacherTable WHERE t_NCode = '" + searchProposalExecutorNCodeTxtbx.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+
+                    teacher.T_FName = reader["t_FName"].ToString();
+                    teacher.T_LName = reader["t_LName"].ToString();
+                    teacher.T_NCode = long.Parse(reader["t_NCode"].ToString());
+                    teacher.T_EDeg = reader["t_EDeg"].ToString();
+                    teacher.T_Email = reader["t_Email"].ToString();
+                    teacher.T_Mobile = reader["t_Mobile"].ToString();
+                    teacher.T_Tel1 = reader["t_Tel1"].ToString();
+                    teacher.T_Tel2 = reader["t_Tel2"].ToString();
+                    teacher.T_Faculty = reader["t_Faculty"].ToString();
+                    teacher.T_Group = reader["t_Group"].ToString();
+
+
+                    // Fill componenets with existing information
+                    searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                    searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                    searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+                    searchProposalExecutorEGroupCb.Text = teacher.T_Group;
+                    searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+
+                    //make components uneditable
+                    searchProposalExecutorFNameTxtbx.Enabled = false;
+                    searchProposalExecutorLNameTxtbx.Enabled = false;
+                    searchProposalExecutorFacultyCb.Enabled = false;
+                    searchProposalExecutorEGroupCb.Enabled = false;
+                    searchProposalExecutorMobileTxtbx.Enabled = false;
+                }
+
+                else
+                {
+                    PopUp p = new PopUp("خطا", "هیچ رکوردی با کد ملی وارد شده در سیستم ثبت نشده است.", "تایید", "", "", "error");
+                    p.ShowDialog();
+
+                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                    searchProposalExecutorNCodeTxtbx.Clear();
+                }
+                conn.Close();
             }
+
             else
             {
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+
+                searchProposalExecutorFNameTxtbx.Enabled = true;
+                searchProposalExecutorLNameTxtbx.Enabled = true;
+                searchProposalExecutorFacultyCb.Enabled = true;
+                searchProposalExecutorEGroupCb.Enabled = true;
+                searchProposalExecutorMobileTxtbx.Enabled = true;
+
+                searchProposalExecutorFNameTxtbx.Clear();
+                searchProposalExecutorLNameTxtbx.Clear();
+                searchProposalExecutorFacultyCb.SelectedIndex = -1;
+                searchProposalExecutorEGroupCb.SelectedIndex = -1;
+                searchProposalExecutorMobileTxtbx.Clear();
             }
         }
 
@@ -2429,6 +2516,7 @@ namespace ProposalReportingSystem
                     teacher.T_Faculty = reader["t_Faculty"].ToString();
                     teacher.T_Group = reader["t_Group"].ToString();
 
+                    //Fill componenets with existing information
                     addProposalExecutorFNameTxtbx.Text = teacher.T_FName;
                     addProposalExecutorLNameTxtbx.Text = teacher.T_LName;
                     addProposalExecutorFacultyCb.Text = teacher.T_Faculty;
@@ -2440,7 +2528,7 @@ namespace ProposalReportingSystem
                         addProposalExecutorEGroupCb.Items.Add(eGroup);
                     }
 
-                    //Fill componenets with existing information
+                    
                     addProposalExecutorEGroupCb.Text = teacher.T_Group;
                     addProposalExecutorEDegCb.Text = teacher.T_EDeg;
                     addProposalExecutorEmailTxtbx.Text = teacher.T_Email;
@@ -2483,6 +2571,7 @@ namespace ProposalReportingSystem
             {
                 addProposalExecutorNcodeTxtbx.BackColor = Color.White;
 
+                addProposalSearchBtn.Enabled = true;
                 addProposalExecutorFNameTxtbx.Enabled = true;
                 addProposalExecutorLNameTxtbx.Enabled = true;;
                 addProposalExecutorFacultyCb.Enabled = true;
@@ -2817,12 +2906,35 @@ namespace ProposalReportingSystem
 
         private void manageUserAddBtn_Click(object sender, EventArgs e)
         {
+
+            if(manageUserFnameTxtbx.Text == "" || manageUserLnameTxtbx.Text == "" ||
+                manageUserPasswordTxtbx.Text == "" || manageUserNcodeTxtbx.Text == "")
+            {
+                PopUp p = new PopUp("خطا", "پر کردن موارد ستاره دار الزامی است.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (manageUserFnameTxtbx.Text.Length < 10)
+            {
+                PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+                manageUserNcodeTxtbx.Focus();
+            }
+
+            else if (manageUserAddProCb.Checked == false && manageUserEditProCb.Checked == false && manageUserDeleteProCb.Checked == false &&
+                     manageUserAddUserCb.Checked == false && manageUserEditUserCb.Checked == false && manageUserDeleteUserCb.Checked == false &&
+                     manageUserManageTeacherCb.Checked == false && manageUserManageTypeCb.Checked == false)
+            {
+                PopUp p = new PopUp("خطا", "داشتن حداقل یک سطح دسترسی الزامی است.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
             User user = new User();
             user.U_FName = manageUserFnameTxtbx.Text;
             user.U_LName = manageUserLnameTxtbx.Text;
-            user.U_NCode = long.Parse(manageUserNcodTxtbx.Text);
+            user.U_NCode = long.Parse(manageUserNcodeTxtbx.Text);
             user.U_Email = manageUserEmailTxtbx.Text;
-            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Tel = manageUserTelTxtbx.Text;
             user.U_Password = manageUserPasswordTxtbx.Text;
 
             if (manageUserAddProCb.Checked == true)
@@ -2833,7 +2945,6 @@ namespace ProposalReportingSystem
             {
                 user.CanAddProposal = 0;
             }
-
 
             if (manageUserEditProCb.Checked == true)
             {
@@ -2905,7 +3016,7 @@ namespace ProposalReportingSystem
             }
 
             dbh.AddUser(user, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
             manageUserClearBtn.PerformClick();
         }
@@ -2915,9 +3026,9 @@ namespace ProposalReportingSystem
             User user = new User();
             user.U_FName = manageUserFnameTxtbx.Text;
             user.U_LName = manageUserLnameTxtbx.Text;
-            user.U_NCode = long.Parse(manageUserNcodTxtbx.Text);
+            user.U_NCode = long.Parse(manageUserNcodeTxtbx.Text);
             user.U_Email = manageUserEmailTxtbx.Text;
-            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Tel = manageUserTelTxtbx.Text;
             user.U_Password = manageUserPasswordTxtbx.Text;
 
             if (manageUserAddProCb.Checked == true)
@@ -2971,9 +3082,10 @@ namespace ProposalReportingSystem
             }
 
             dbh.EditUsers(user, long.Parse(currentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
             manageUserClearBtn.PerformClick();
+            manageUserShowAllBtn.PerformClick();
         }
 
         private void manageUserDeleteBtn_Click(object sender, EventArgs e)
@@ -2984,7 +3096,7 @@ namespace ProposalReportingSystem
             user.U_FName = manageUserFnameTxtbx.Text;
             user.U_LName = manageUserLnameTxtbx.Text;
             user.U_Email = manageUserEmailTxtbx.Text;
-            user.U_Tel = manageUserTellTxtbx.Text;
+            user.U_Tel = manageUserTelTxtbx.Text;
             user.U_Password = manageUserPasswordTxtbx.Text;
 
             if (manageUserAddProCb.Checked == true)
@@ -3038,8 +3150,9 @@ namespace ProposalReportingSystem
             }
 
             dbh.DeleteUser(user, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
             manageUserClearBtn.PerformClick();
+            manageUserShowAllBtn.PerformClick();
         }
 
         private void manageTeacherExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -3146,22 +3259,21 @@ namespace ProposalReportingSystem
 
         private void manageUserNcodTxtbx_TextChanged(object sender, EventArgs e)
         {
-            if (manageUserNcodTxtbx.Text.Length == 10)
+            if (manageUserNcodeTxtbx.Text.Length == 10)
             {
-                manageUserNcodTxtbx.BackColor = Color.LightGreen;
-                MessageBox.Show("چک موجود بودن استاد");
+                manageUserNcodeTxtbx.BackColor = Color.LightGreen;
             }
             else
             {
-                manageUserNcodTxtbx.BackColor = Color.White;
+                manageUserNcodeTxtbx.BackColor = Color.White;
             }
         }
 
         private void manageUserNcodTxtbx_Leave(object sender, EventArgs e)
         {
-            if (manageUserNcodTxtbx.Text.Length < 10)
+            if (manageUserNcodeTxtbx.Text.Length < 10)
             {
-                manageUserNcodTxtbx.BackColor = Color.Pink;
+                manageUserNcodeTxtbx.BackColor = Color.Pink;
             }
         }
 
@@ -3185,10 +3297,7 @@ namespace ProposalReportingSystem
 
         private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
         {
-            if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
-            {
-                editProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
-            }
+            
         }
 
         private void editProposalExecutorEmailTxtbx_TextChanged(object sender, EventArgs e)
@@ -3384,7 +3493,6 @@ namespace ProposalReportingSystem
 
                 if (editProposalOrganizationNameCb.Text == "")
                 {
-
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.White;
@@ -3410,12 +3518,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
+                    MessageBox.Show("arg");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
+                    MessageBox.Show("for");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -3423,6 +3533,7 @@ namespace ProposalReportingSystem
 
                 if (editProposalOrganizationNameCb.Text == "")
                 {
+                    MessageBox.Show("null");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.White;
@@ -3458,8 +3569,8 @@ namespace ProposalReportingSystem
 
         private void manageUserShowBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(manageUserDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
-            manageUserShowBtn.Enabled = false;
+            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            manageUserShowAllBtn.Enabled = false;
         }
 
         private void appSettingBackgroundColorLbl_Click(object sender, EventArgs e)
@@ -3530,8 +3641,9 @@ namespace ProposalReportingSystem
 
             dbh.DeleteTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
 
-
-            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+            manageTeacherClearBtn.PerformClick();
+            manageTeacherShowAllBtn.PerformClick();
+            manageTeacherShowAllBtn.Enabled = false;
         }
 
         private void manageTeacherEditBtn_Click(object sender, EventArgs e)
@@ -3552,7 +3664,9 @@ namespace ProposalReportingSystem
             dbh.EditTeacher(teacher, long.Parse(currentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
 
 
-            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+            manageTeacherClearBtn.PerformClick();
+            manageTeacherShowAllBtn.PerformClick();
+            manageTeacherShowAllBtn.Enabled = false;
         }
 
         private void manageTeacherShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -3571,6 +3685,9 @@ namespace ProposalReportingSystem
 
                 manageTeacherExecutorEDegCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_EDeg"].Value.ToString();
                 currentSelectedOption = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
+
+                manageTeacherEditBtn.Enabled = true;
+                manageTeacherDeleteBtn.Enabled = true;
             }
             catch (ArgumentOutOfRangeException) { }
         }
@@ -3580,6 +3697,8 @@ namespace ProposalReportingSystem
             dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable");
             addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             addProposalExecutorNcodeTxtbx.Focus();
+
+            addProposalShowAllBtn.Enabled = false;
         }
 
         private void manageTeacherExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
@@ -3595,10 +3714,11 @@ namespace ProposalReportingSystem
             if (addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
                 dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
+                addProposalSearchBtn.Enabled = false;
             }
             else
             {
-                PopUp p = new PopUp("خطا", "کد ملی وارد شده ناقص است.", "تایید", "", "", "error");
+                PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
                 p.ShowDialog();
             }
         }
@@ -3614,6 +3734,7 @@ namespace ProposalReportingSystem
         private void manageTeacherShowBtn_Click(object sender, EventArgs e)
         {
             dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+            manageTeacherShowAllBtn.Enabled = false;
         }
 
         private void addProposalPanel_Leave(object sender, EventArgs e)
@@ -3629,7 +3750,16 @@ namespace ProposalReportingSystem
 
         private void editProposalSearchBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+            if(editProposalExecutorNcodeTxtbx.Text.Length == 10)
+            {
+                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                editProposalSearchBtn.Enabled = false;
+            }
+            else
+            {
+                PopUp popUp = new PopUp("کد ملی ناقص", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
+                popUp.ShowDialog();
+            }
         }
 
         private void editProposalRegisterBtn_Click(object sender, EventArgs e)
@@ -3647,7 +3777,7 @@ namespace ProposalReportingSystem
             proposal.Status = editProposalStatusCb.Text;
             proposal.RegisterType = editProposalRegisterTypeCb.Text;
             proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-            proposal.Value = editProposalValueTxtbx.Text;
+            proposal.Value = long.Parse(editProposalValueTxtbx.Text);
             proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
             proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
 
@@ -3700,38 +3830,280 @@ namespace ProposalReportingSystem
             proposal.Status = editProposalStatusCb.Text;
             proposal.RegisterType = editProposalRegisterTypeCb.Text;
             proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-            proposal.Value = editProposalValueTxtbx.Text;
+            proposal.Value = long.Parse(editProposalValueTxtbx.Text);
             proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
             proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-
             proposal.Index = long.Parse(currentSelectedIndex);
 
             dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
             dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+
+            editProposalClearBtn.PerformClick();
+            editProposalShowAllBtn.PerformClick();
         }
 
         private void manageUserDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                manageUserFnameTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_FName"].Value.ToString();
-                manageUserLnameTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_LName"].Value.ToString();
-                manageUserPasswordTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_Password"].Value.ToString();
-                manageUserNcodTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
-                manageUserEmailTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_Email"].Value.ToString();
-                manageUserTellTxtbx.Text = manageUserDgv.Rows[e.RowIndex].Cells["u_Tel"].Value.ToString();
-                manageUserAddProCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canAddProposal"].Value.ToString());
-                manageUserEditProCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canEditProposal"].Value.ToString());
-                manageUserDeleteProCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canDeleteProposal"].Value.ToString());
-                manageUserAddUserCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canAddUser"].Value.ToString());
-                manageUserEditUserCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canEditUser"].Value.ToString());
-                manageUserDeleteUserCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canDeleteUser"].Value.ToString());
-                manageUserManageTeacherCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canManageTeacher"].Value.ToString());
-                manageUserManageTypeCb.Checked = bool.Parse(manageUserDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
-                currentSelectedOption = manageUserDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserFnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_FName"].Value.ToString();
+                manageUserLnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_LName"].Value.ToString();
+                manageUserPasswordTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Password"].Value.ToString();
+                manageUserNcodeTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserEmailTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Email"].Value.ToString();
+                manageUserTelTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Tel"].Value.ToString();
+                manageUserAddProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canAddProposal"].Value.ToString());
+                manageUserEditProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canEditProposal"].Value.ToString());
+                manageUserDeleteProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canDeleteProposal"].Value.ToString());
+                manageUserAddUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canAddUser"].Value.ToString());
+                manageUserEditUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canEditUser"].Value.ToString());
+                manageUserDeleteUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canDeleteUser"].Value.ToString());
+                manageUserManageTeacherCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageTeacher"].Value.ToString());
+                manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
+                currentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
             }
             catch (ArgumentOutOfRangeException) { }
     }
+
+        private void logBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            // The desired page has changed, so fetch the page of records using the "Current" offset 
+            int offset = (int)logBindingSource.Current;
+            var records = new List<Log>();
+            for (int i = offset; i < offset + pageSize && i < totalRecords; i++)
+                records.Add(new Log { logNumber = long.Parse(s[i, 0]), logUsername = long.Parse(s[i, 1]), logDateTime = s[i, 2], logDescription = s[i, 3], logTableName = s[i, 4] });
+            logDgv.DataSource = records;
+        }
+
+        private void searchProposalShowAllBtn_Click(object sender, EventArgs e)
+        {
+            dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable");
+            searchProposalShowAllBtn.Enabled = false;
+        }
+
+        private void searchProposalSearchBtn_Click(object sender, EventArgs e)
+        {
+            List<long> NCODES = new List<long>();
+
+            string query = "SELECT * FROM proposalTable WHERE ";
+
+            string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
+
+            if (searchProposalExecutorFNameTxtbx.Text != "")
+            {
+                query2 = query2 + " t_FName = '" + searchProposalExecutorFNameTxtbx.Text + "' AND";
+            }
+            if (searchProposalExecutorLNameTxtbx.Text != "")
+            {
+                query2 = query2 + " t_LName = '" + searchProposalExecutorLNameTxtbx.Text + "' AND";
+            }
+            if (searchProposalExecutorFacultyCb.Text != "")
+            {
+                query2 = query2 + " t_Faculty = '" + searchProposalExecutorFacultyCb.Text + "' AND";
+            }
+            if (searchProposalExecutorEGroupCb.Text != "")
+            {
+                query2 = query2 + " t_Group = '" + searchProposalExecutorEGroupCb.Text + "' AND";
+            }
+            if (searchProposalExecutorMobileTxtbx.Text != "")
+            {
+                query2 = query2 + " t_Mobile = '" + searchProposalExecutorMobileTxtbx.Text + "' AND";
+            }
+
+            query2 = query2.Substring(0, query2.Length - 3);
+
+
+            if (query2 != "SELECT t_NCode FROM teacherTable WHE")
+            {
+                NCODES = dbh.getTeachersNCode(query2);
+            }
+
+
+            foreach (long NC in NCODES)
+            {
+                query = query + " executor = '" + NC + "' OR";
+            }
+
+            if (query != "SELECT * FROM proposalTable WHERE ")
+            {
+                query = query.Substring(0, query.Length - 2) + " AND";
+            }
+
+            if (searchProposalExecutorNCodeTxtbx.Text != "")
+            {
+                query = query + " executor = '" + searchProposalExecutorNCodeTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalPersianTitleTxtbx.Text != "")
+            {
+                query = query + " persianTitle = '" + searchProposalPersianTitleTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalEnglishTitleTxtbx.Text != "")
+            {
+                query = query + " engTitle = '" + searchProposalEnglishTitleTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalProcedureTypeCb.Text != "")
+            {
+                query = query + " procedureType = '" + searchProposalProcedureTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalPropertyTypeCb.Text != "")
+            {
+                query = query + " propertyType = '" + searchProposalPropertyTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalRegisterTypeCb.Text != "")
+            {
+                query = query + " registerType = '" + searchProposalRegisterTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalTypeCb.Text != "")
+            {
+                query = query + " proposalType = '" + searchProposalTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalStatusCb.Text != "")
+            {
+                query = query + " status = '" + searchProposalStatusCb.Text + "' AND";
+            }
+
+            if (searchProposalOrganizationNumberCb.Text != "")
+            {
+                query = query + " employer = '" + searchProposalOrganizationNumberCb.Text + "' AND";
+            }
+
+            if (searchProposalValueFromTxtbx.Text != "")
+            {
+                query = query + " value >= '" + searchProposalValueFromTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalValueToTxtbx.Text != "")
+            {
+                query = query + " value <= '" + searchProposalValueToTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalStartDateFromChbx.Checked == true)
+            {
+                query = query + " startDate >= '" + searchProposalStartDateFromTimeInput.GeoDate.ToString() + "' AND";
+            }
+
+            if (searchProposalStartDateToChbx.Checked == true)
+            {
+                query = query + " startDate <= '" + searchProposalStartDateToTimeInput.GeoDate.ToString() + "' AND";
+
+            }
+
+            query = query.Substring(0, query.Length - 3);
+
+            //MessageBox.Show(query);
+
+            if (query != "SELECT * FROM proposalTable WHE")
+            {
+                dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, query);
+            }
+            else
+            {
+                searchProposalShowDgv.DataSource = null;
+            }
+        }
+
+        private void editProposalShowAllBtn_Click(object sender, EventArgs e)
+        {
+            if(loginUser.U_NCode == 98765)
+            {
+                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable");
+            }
+            else
+            {
+                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "'");
+            }
+            editProposalShowAllBtn.Enabled = false;
+        }
+
+        private void editProposalExecutorFNameTxtbx_Enter(object sender, EventArgs e)
+        {
+            if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
+            }
+        }
+
+        private void personalSettingOldPassChb_MouseDown(object sender, MouseEventArgs e)
+        {
+            personalSettingOldPasswordChb.Checked = true;
+            personalSettingOldPasswordTxtbx.PasswordChar = '\0';
+        }
+
+        private void personalSettingOldPassChb_MouseUp(object sender, MouseEventArgs e)
+        {
+            personalSettingOldPasswordChb.Checked = false;
+            personalSettingOldPasswordTxtbx.PasswordChar = '●';
+        }
+
+        private void personalSettingNewPassChb_MouseDown(object sender, MouseEventArgs e)
+        {
+            personalSettingOldPasswordChb.Checked = true;
+            personalSettingOldPasswordTxtbx.PasswordChar = '\0';
+        }
+
+        private void personalSettingNewPassChb_MouseUp(object sender, MouseEventArgs e)
+        {
+            personalSettingOldPasswordChb.Checked = false;
+            personalSettingOldPasswordTxtbx.PasswordChar = '●';
+        }
+
+        private void personalSettingRepeatPassChb_MouseDown(object sender, MouseEventArgs e)
+        {
+            personalSettingRepeatPasswordChb.Checked = true;
+            personalSettingRepeatPasswordTxtbx.PasswordChar = '\0';
+        }
+
+        private void personalSettingRepeatPassChb_MouseUp(object sender, MouseEventArgs e)
+        {
+            personalSettingRepeatPasswordChb.Checked = false;
+            personalSettingRepeatPasswordTxtbx.PasswordChar = '●';
+        }
+
+        private void manageUserShowPasswordChb_MouseDown(object sender, MouseEventArgs e)
+        {
+            manageUserShowPasswordChb.Checked = true;
+            manageUserPasswordTxtbx.PasswordChar = '\0';
+        }
+
+        private void manageUserShowPasswordChb_MouseUp(object sender, MouseEventArgs e)
+        {
+            manageUserShowPasswordChb.Checked = false;
+            manageUserPasswordTxtbx.PasswordChar = '●';
+        }
+
+        private void manageUserShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                currentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserFnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_FName"].Value.ToString();
+                manageUserLnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_LName"].Value.ToString();
+                manageUserNcodeTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserPasswordTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Password"].Value.ToString();
+                manageUserEmailTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Email"].Value.ToString();
+                manageUserTelTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Tel"].Value.ToString();
+
+                manageUserAddProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canAddProposal"].Value.ToString());
+                manageUserEditProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canEditProposal"].Value.ToString());
+                manageUserDeleteProCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canDeleteProposal"].Value.ToString());
+                manageUserAddUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canAddUser"].Value.ToString());
+                manageUserEditUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canEditUser"].Value.ToString());
+                manageUserDeleteUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canDeleteUser"].Value.ToString());
+                manageUserManageTeacherCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageTeacher"].Value.ToString());
+                manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
+
+                manageUserEditBtn.Enabled = true;
+                manageUserDeleteBtn.Enabled = true;
+            }
+            catch (ArgumentOutOfRangeException) { }
+        }
 
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -3740,6 +4112,7 @@ namespace ProposalReportingSystem
 
         private void form_initializer()
         {
+            w.i = 1;
             waitBw.RunWorkerAsync();
 
             //*************************************************************************\\

@@ -17,7 +17,6 @@ namespace ProposalReportingSystem
         private string username, password;
         private DataBaseHandler dbh = new DataBaseHandler();
         private string[] remembering = new string[2];
-        private bool allFilled = true;
         private User user = new User();
 
         public Login()
@@ -126,70 +125,24 @@ namespace ProposalReportingSystem
             loginPasswordTxtbx.TabIndex = 2;
         }
 
+        private void loginPasswordTxtbx_Enter(object sender, EventArgs e)
+        {
+            loginPasswordTxtbx.Text = "1";
+            loginEnterBtn.PerformClick();
+        }
+
         private void loginEnterBtn_Click(object sender, EventArgs e)
         {
-            username = loginUsernameTxtBx.Text;
-            password = loginPasswordTxtbx.Text;
-
-
-            if(username == "" || password == "")
-            {
-                allFilled = false;
-            }
-            else
-            {
-                allFilled = true;
-            }
-
-            if(allFilled)
-            {
-                // REMEMBERING PASSWORD
-                if (loginRememberUsername.Checked)
-                {
-                    remembering[0] = "yes";
-                    remembering[1] = username;
-                    File.WriteAllLines("loginInformation", remembering);
-                }
-                else
-                {
-                    remembering[0] = "no";
-                    remembering[1] = "-";
-                    File.WriteAllLines("loginInformation", remembering);
-                }
-                // REMEMBERING PASSWORD
-            }
-
-
-
-            if (username == "" || password == "")
+            if (loginUsernameTxtBx.Text == "" || loginPasswordTxtbx.Text == "")
             {
                 PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور وارد نشده است.", "تایید", "", "", "error");
                 popUp.ShowDialog();
             }
-
-            else if (username == "98765" && password == "1") // FOR US
-            {
-                user.U_FName = "ادمین";
-                user.U_LName = "نرم افزار";
-                user.U_NCode = 98765;
-                user.U_Password = "1";
-                user.CanAddProposal = 1;
-                user.CanEditProposal = 1;
-                user.CanDeleteProposal = 1;
-                user.CanAddUser = 1;
-                user.CanEditUser = 1;
-                user.CanDeleteUser = 1;
-                user.CanManageTeacher = 1;
-                user.CanManageType = 1;
-                user.U_Color = "";
-
-                this.Hide();
-                Form1 mainForm = new Form1(user);
-                mainForm.Show();
-            }
-
             else
             {
+                username = loginUsernameTxtBx.Text;
+                password = loginPasswordTxtbx.Text;
+
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = "Data Source= 185.159.152.2;" +
                 "Initial Catalog=rayanpro_EBS;" +
@@ -205,6 +158,21 @@ namespace ProposalReportingSystem
                 reader = sc.ExecuteReader();
                 if (reader.HasRows)
                 {
+                    // REMEMBERING PASSWORD
+                    if (loginRememberUsername.Checked)
+                    {
+                        remembering[0] = "yes";
+                        remembering[1] = username;
+                        File.WriteAllLines("loginInformation", remembering);
+                    }
+                    else
+                    {
+                        remembering[0] = "no";
+                        remembering[1] = "-";
+                        File.WriteAllLines("loginInformation", remembering);
+                    }
+                    // REMEMBERING PASSWORD
+
                     reader.Read();
 
                     user.U_FName = reader["u_FName"].ToString();
@@ -214,7 +182,7 @@ namespace ProposalReportingSystem
                     user.U_Email = reader["u_Email"].ToString();
                     user.U_Tel = reader["u_Tel"].ToString();
 
-                    if(reader["u_canAddProposal"].ToString() == "True")
+                    if (reader["u_canAddProposal"].ToString() == "True")
                         user.CanAddProposal = 1;
                     else
                         user.CanAddProposal = 0;
@@ -265,8 +233,7 @@ namespace ProposalReportingSystem
                     PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور اشتباه است.", "تایید", "", "", "error");
                     popUp.ShowDialog();
                 }
-
-                conn.Close(); 
+                conn.Close();
             }
         }
     }

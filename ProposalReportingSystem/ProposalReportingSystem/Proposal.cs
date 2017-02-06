@@ -21,7 +21,7 @@ namespace ProposalReportingSystem
         private string registerType;
         private string proposalType;
         private long employer;
-        private string value;
+        private long value;
         private string status;
         private long registrant;
 
@@ -196,7 +196,7 @@ namespace ProposalReportingSystem
             }
         }
 
-        public string Value
+        public long Value
         {
             get
             {

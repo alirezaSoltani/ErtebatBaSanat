@@ -55,7 +55,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login3;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.loginMinimizePbx);
             this.panel1.Controls.Add(this.loginClosePbx);
@@ -63,7 +63,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 593);
+            this.panel1.Size = new System.Drawing.Size(477, 599);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -163,11 +163,12 @@
             this.loginPasswordTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.loginPasswordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.loginPasswordTxtbx.Location = new System.Drawing.Point(19, 165);
-            this.loginPasswordTxtbx.Multiline = true;
+            this.loginPasswordTxtbx.MaxLength = 12;
             this.loginPasswordTxtbx.Name = "loginPasswordTxtbx";
             this.loginPasswordTxtbx.PasswordChar = '●';
-            this.loginPasswordTxtbx.Size = new System.Drawing.Size(227, 28);
+            this.loginPasswordTxtbx.Size = new System.Drawing.Size(227, 27);
             this.loginPasswordTxtbx.TabIndex = 2;
+            this.loginPasswordTxtbx.Enter += new System.EventHandler(this.loginPasswordTxtbx_Enter);
             this.loginPasswordTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTxtbx_KeyPress);
             // 
             // loginUsernameTxtBx
@@ -175,10 +176,9 @@
             this.loginUsernameTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.loginUsernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.loginUsernameTxtBx.Location = new System.Drawing.Point(19, 124);
-            this.loginUsernameTxtBx.Multiline = true;
             this.loginUsernameTxtBx.Name = "loginUsernameTxtBx";
             this.loginUsernameTxtBx.ShortcutsEnabled = false;
-            this.loginUsernameTxtBx.Size = new System.Drawing.Size(227, 28);
+            this.loginUsernameTxtBx.Size = new System.Drawing.Size(227, 27);
             this.loginUsernameTxtBx.TabIndex = 1;
             this.loginUsernameTxtBx.Tag = "";
             this.loginUsernameTxtBx.Click += new System.EventHandler(this.loginUsernameTxtBx_Click);
