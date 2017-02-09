@@ -24,6 +24,7 @@ namespace ProposalReportingSystem
         private long value;
         private string status;
         private long registrant;
+        private string fileName;
 
         public long Index
         {
@@ -245,6 +246,19 @@ namespace ProposalReportingSystem
             set
             {
                 startDate = value;
+            }
+        }
+
+        public string FileName
+        {
+            get
+            {
+                return fileName;
+            }
+
+            set
+            {
+                fileName = value;
             }
         }
     }
