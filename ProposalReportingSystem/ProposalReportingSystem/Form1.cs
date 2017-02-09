@@ -572,6 +572,7 @@ namespace ProposalReportingSystem
             if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
             {
                 sysLogTab.Visible = true;
+                homeUserNameLbl.Text = loginUser.U_LName + " " + loginUser.U_FName;
             }
             else
             {
@@ -903,6 +904,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherExecutorTelTxtbx, 50, 200, 160, 25);
             gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 270, 160, 25);
 
+            gl.setSize(manageTeacherSearchBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
             gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
@@ -1065,8 +1067,8 @@ namespace ProposalReportingSystem
             gl.setSize(newPasswordLbl, 450, 75, 110, 25);
             gl.setSize(confirmNewPasswordLbl, 450, 115, 110, 25);
 
-            gl.setSize(appSettingBackgroundChangeLbl, 605, 30, 110, 25);
-            gl.setSize(appSettingBackgroundChangeGp, 610, 70, 100, 160);
+            gl.setSize(appSettingBackgroundChangeLbl, 350, 30, 110, 25);
+            gl.setSize(appSettingBackgroundChangeGp, 355, 70, 100, 160);
             gl.setSize(appSettingBackgroundColorLbl, 10, 15, 75, 118);
 
             gl.setSize(personalSettingOldPasswordTxtbx, 275, 35, 180, 25);
@@ -1206,20 +1208,135 @@ namespace ProposalReportingSystem
 
         private void addProposalRegisterBtn_Click(object sender, EventArgs e)
         {
-
-            if (    addProposalExecutorNcodeTxtbx.BackColor == Color.Pink || addProposalExecutorNcodeTxtbx.Text.Length < 10
-                || addProposalExecutorFNameTxtbx.Text.Length == 0 || addProposalExecutorLNameTxtbx.Text.Length == 0
-                || addProposalExecutorFacultyCb.SelectedIndex == -1 || addProposalExecutorEGroupCb.SelectedIndex == -1
-                || addProposalExecutorEDegCb.SelectedIndex == -1 || addProposalExecutorEmailTxtbx.Text.Length == 0
-                || addProposalExecutorMobileTxtbx.Text.Length == 0 || addProposalPersianTitleTxtbx.Text.Length == 0
-                || addProposalEnglishTitleTxtbx.Text.Length == 0 || addProposalKeywordsTxtbx.Text.Length == 0
-                || addProposalFileLinkLbl.Text == "افزودن فایل" || addProposalDurationTxtbx.Text.Length == 0
-                || addProposalProcedureTypeCb.SelectedIndex == -1 || addProposalPropertyTypeCb.SelectedIndex == -1
-                || addProposalRegisterTypeCb.SelectedIndex == -1 || addProposalProposalTypeCb.SelectedIndex == -1
-                || addProposalOrganizationNumberCb.SelectedIndex == -1 || addProposalOrganizationNameCb.SelectedIndex == -1
-                || addProposalValueTxtbx.Text.Length == 0 || addProposalStatusCb.SelectedIndex == -1)
+            if(addProposalExecutorNcodeTxtbx.Text.Length < 10)
             {
-                PopUp p = new PopUp("خطای ورودی", "اطلاعات وارد شده صحیح نیست. پر کردن موارد ستاره دار الزامی می باشد.", "تایید", "", "", "error");
+                PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorEDegCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalExecutorEmailTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
+            {
+                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if (addProposalPersianTitleTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalEnglishTitleTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalKeywordsTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalFileLinkLbl.Text == "افزودن فایل")
+            {
+                PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalDurationTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalProcedureTypeCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalPropertyTypeCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalRegisterTypeCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalProposalTypeCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalOrganizationNumberCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalOrganizationNameCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalValueTxtbx.Text.Length == 0)
+            {
+                PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                p.ShowDialog();
+            }
+
+            else if(addProposalStatusCb.SelectedIndex == -1)
+            {
+                PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
                 p.ShowDialog();
             }
 
@@ -3554,17 +3671,10 @@ namespace ProposalReportingSystem
             }
         }
 
-        private void addProposalTab_LostFocus(object sender, EventArgs e)
-        {
-            addProposalClearBtn.PerformClick();
-        }
 
         private void searchProposalExecutorNCodeTxtbx_Leave(object sender, EventArgs e)
         {
-            if (searchProposalExecutorNCodeTxtbx.Text.Length < 10)
-            {
-                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
-            }
+            
         }
 
         private void manageUserShowBtn_Click(object sender, EventArgs e)
@@ -3735,12 +3845,6 @@ namespace ProposalReportingSystem
         {
             dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
             manageTeacherShowAllBtn.Enabled = false;
-        }
-
-        private void addProposalPanel_Leave(object sender, EventArgs e)
-        {
-            addProposalClearBtn.PerformClick();
-            addProposalShowDgv.DataSource = null;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -4103,6 +4207,19 @@ namespace ProposalReportingSystem
                 manageUserDeleteBtn.Enabled = true;
             }
             catch (ArgumentOutOfRangeException) { }
+        }
+
+        private void addProposalExecutorFNameTxtbx_Click(object sender, EventArgs e)
+        {
+            addProposalExecutorFNameTxtbx.BackColor = Color.LightYellow;
+        }
+
+        private void searchProposalExecutorFNameTxtbx_Enter(object sender, EventArgs e)
+        {
+            if (searchProposalExecutorNCodeTxtbx.Text.Length < 10)
+            {
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
+            }
         }
 
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
