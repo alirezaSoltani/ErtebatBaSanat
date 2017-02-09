@@ -3733,6 +3733,8 @@ namespace ProposalReportingSystem
             catch (ArgumentOutOfRangeException) { }
     }
 
+      
+
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             w.Hide();
@@ -3755,7 +3757,7 @@ namespace ProposalReportingSystem
             addProposalOrganizationNumberCb.Items.Clear();
             addProposalOrganizationNameCb.Items.Clear();
             addProposalStatusCb.Items.Clear();
-
+            
 
             comboList = dbh.getFaculty();
             foreach (String faculty in comboList)
@@ -3987,5 +3989,136 @@ namespace ProposalReportingSystem
             //                        manage color prefrence                           \\
             //*************************************************************************\\
         }
+
+        private void searchProposalSearchBtn_Click(object sender, EventArgs e)
+        {
+
+            List<long> NCODES = new List<long>();
+
+            string query = "SELECT * FROM proposalTable WHERE ";
+
+            string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
+
+            if(searchProposalExecutorFNameTxtbx.Text != "")
+            {
+                query2 = query2 + " t_FName = '" + searchProposalExecutorFNameTxtbx.Text + "' AND";
+            }
+            if (searchProposalExecutorLNameTxtbx.Text != "")
+            {
+                query2 = query2 +  " t_LName = '" + searchProposalExecutorLNameTxtbx.Text + "' AND";
+            }
+            if (searchProposalExecutorFacultyCb.Text != "")
+            {
+                query2 = query2 + " t_Faculty = '" + searchProposalExecutorFacultyCb.Text + "' AND";
+            }
+            if (searchProposalExecutorEGroupCb.Text != "")
+            {
+                query2 = query2 + " t_Group = '" + searchProposalExecutorEGroupCb.Text + "' AND";
+            }
+            if (searchProposalExecutorMobileTxtbx.Text != "")
+            {
+                query2 = query2 + " t_Mobile = '" + searchProposalExecutorMobileTxtbx.Text + "' AND";
+            }
+
+            query2 = query2.Substring(0, query2.Length - 3);
+            
+
+            if (query2 != "SELECT t_NCode FROM teacherTable WHE")
+            {
+                NCODES = dbh.getTeachersNCode(query2);
+            }
+
+
+            foreach(long NC in NCODES)
+            {
+                query = query + " executor = '" + NC + "' OR";
+            }
+
+            if (query != "SELECT * FROM proposalTable WHERE ")
+            {
+                query = query.Substring(0, query.Length - 2) + " AND";
+            }
+
+            if (searchProposalExecutorNCodeTxtbx.Text != "")
+            {
+                query = query + " executor = '" + searchProposalExecutorNCodeTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalPersianTitleTxtbx.Text != "")
+            {
+                query = query + " persianTitle = '" + searchProposalPersianTitleTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalEnglishTitleTxtbx.Text != "")
+            {
+                query = query + " engTitle = '" + searchProposalEnglishTitleTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalProcedureTypeCb.Text != "")
+            {
+                query = query + " procedureType = '" + searchProposalProcedureTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalPropertyTypeCb.Text != "")
+            {
+                query = query + " propertyType = '" + searchProposalPropertyTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalRegisterTypeCb.Text != "")
+            {
+                query = query + " registerType = '" + searchProposalRegisterTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalTypeCb.Text != "")
+            {
+                query = query + " proposalType = '" + searchProposalTypeCb.Text + "' AND";
+            }
+
+            if (searchProposalStatusCb.Text != "")
+            {
+                query = query + " status = '" + searchProposalStatusCb.Text + "' AND";
+            }
+
+            if (searchProposalOrganizationNumberCb.Text != "")
+            {
+                query = query + " employer = '" + searchProposalOrganizationNumberCb.Text + "' AND";
+            }
+
+            if (searchProposalValueFromTxtbx.Text != "")
+            {
+                query = query + " value >= '" + searchProposalValueFromTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalValueToTxtbx.Text != "")
+            {
+                query = query + " value <= '" + searchProposalValueToTxtbx.Text + "' AND";
+            }
+
+            if (searchProposalStartDateFromChbx.Checked == true)
+            {
+                query = query + " startDate >= '" + searchProposalStartDateFromTimeInput.GeoDate.ToString() + "' AND";
+            }
+
+            if (searchProposalStartDateToChbx.Checked == true)
+            {
+                query = query + " startDate <= '" + searchProposalStartDateToTimeInput.GeoDate.ToString() + "' AND";
+
+            }
+
+            query = query.Substring(0, query.Length - 3);
+
+            MessageBox.Show(query);
+
+            if (query != "SELECT * FROM proposalTable WHE")
+            {
+                dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, query);
+            }
+            else
+            {
+                searchProposalShowDgv.DataSource = null;
+            }
+
+        }
+
     }
 }

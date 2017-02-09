@@ -79,6 +79,8 @@ namespace ProposalReportingSystem
                                          + "'" + proposal.Registrant + "')";
 
                 sc.ExecuteNonQuery();
+
+
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
                 sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
@@ -108,6 +110,7 @@ namespace ProposalReportingSystem
                 sc.CommandText = "UPDATE proposalTable SET fileName = '" + _inputParameter.FileName + "' WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
 
+               
                 transaction.Commit();
                 MessageBox.Show("افزودن با موفقیت به پابان رسید");
             }
@@ -251,6 +254,8 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
+       
+
 
 
 
@@ -2142,6 +2147,28 @@ namespace ProposalReportingSystem
 
             return ResponseDescription;
         }
+
+        public List<long> getTeachersNCode(string query)
+        {
+            List<long> list = new List<long>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = query;
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetInt64(0));
+            }
+            conn.Close();
+            return list;
+
+        }
+
 
     }
 
