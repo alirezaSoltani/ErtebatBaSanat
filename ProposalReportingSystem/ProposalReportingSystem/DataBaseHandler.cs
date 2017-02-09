@@ -14,9 +14,6 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
-
-
-
         string conString = "Data Source= 185.159.152.2;" +
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
@@ -51,7 +48,6 @@ namespace ProposalReportingSystem
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             SqlDataReader reader;
-
 
             SqlTransaction transaction;
             transaction = conn.BeginTransaction("new");
@@ -471,7 +467,7 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+             
             }
             catch
             {
@@ -682,6 +678,28 @@ namespace ProposalReportingSystem
             }
 
             conn.Close();
+        }
+
+
+
+        public List<long> getTeachersNCode(string query)
+        {
+            List<long> list = new List<long>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = query;
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetInt64(0));
+            }
+            conn.Close();
+            return list;
         }
 
 
@@ -1061,9 +1079,6 @@ namespace ProposalReportingSystem
 
         public void EditPropertyType(String newPropertyType, String lastPropertyType, long username, String dateTime)
         {
-
-
-
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -1100,8 +1115,8 @@ namespace ProposalReportingSystem
             }
 
             conn.Close();
-
         }
+
         public List<string> getPropertyType()
         {
             List<string> list = new List<string>();
@@ -1261,7 +1276,6 @@ namespace ProposalReportingSystem
             }
 
             conn.Close();
-
         }
         public List<string> getProposalType()
         {
@@ -1976,8 +1990,6 @@ namespace ProposalReportingSystem
             }
 
             conn.Close();
-
-
         }
 
         ///////////end query of EducationalGroup
@@ -2063,6 +2075,42 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[12].HeaderText = "مديريت اطلاعات اساتيد";
                 dataGridview.Columns[13].HeaderText = "تغيير تنظيمات برنامه";
                 dataGridview.Columns[14].Visible = false;
+            }
+
+            else if (selectCommand.Contains("proposalTable"))
+            {
+                dataGridview.Columns[0].Visible = false;
+                dataGridview.Columns[1].HeaderText = "عنوان فارسی";
+                dataGridview.Columns[2].HeaderText = "عنوان لاتین";
+                dataGridview.Columns[3].HeaderText = "کلمه کلیدی";
+                dataGridview.Columns[4].HeaderText = "مجری";
+                dataGridview.Columns[5].HeaderText = "مجریان همکار";
+                dataGridview.Columns[6].HeaderText = "همکاران مجری";
+                dataGridview.Columns[7].HeaderText = "تاریخ شروع";
+                dataGridview.Columns[8].HeaderText = "مدت زمان";
+                dataGridview.Columns[9].HeaderText = "نوع کار";
+                dataGridview.Columns[10].HeaderText = "خاصیت";
+                dataGridview.Columns[11].HeaderText = "نوع ثبت";
+                dataGridview.Columns[12].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns[13].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns[14].HeaderText = "هزینه";
+                dataGridview.Columns[15].HeaderText = "وضعیت";
+                dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+            }
+
+            else if(selectCommand.Contains("TeacherTable"))
+            {
+                dataGridview.Columns[0].HeaderText = "کد ملی";
+                dataGridview.Columns[1].HeaderText = "نام";
+                dataGridview.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridview.Columns[3].HeaderText = "دانشکده";
+                dataGridview.Columns[4].HeaderText = "گروه آموزشی";
+                dataGridview.Columns[5].HeaderText = "درجه علمی";
+                dataGridview.Columns[6].HeaderText = "ایمیل";
+                dataGridview.Columns[7].HeaderText = "تلفن همراه";
+                dataGridview.Columns[8].HeaderText = "تلفن 1";
+                dataGridview.Columns[9].HeaderText = "تلفن 2";
             }
 
 
