@@ -75,6 +75,8 @@ namespace ProposalReportingSystem
                                          + "'" + proposal.Registrant + "')";
 
                 sc.ExecuteNonQuery();
+
+
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
                 sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
@@ -104,6 +106,29 @@ namespace ProposalReportingSystem
                 sc.CommandText = "UPDATE proposalTable SET fileName = '" + _inputParameter.FileName + "' WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
 
+                sc.CommandText = "INSERT INTO editionTable ([index] , persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,fileName , edition)"
+                               + "VALUES ('" + proposal.Index + "',"
+                                        + "'" + proposal.PersianTitle + "',"
+                                         + "'" + proposal.EngTitle + "',"
+                                        + "'" + proposal.KeyWord + "',"
+                                        + "'" + proposal.Executor + "',"
+                                        + "'" + proposal.Executor2 + "',"
+                                        + "'" + proposal.CoExecutor + "',"
+                                        + "'" + proposal.StartDate + "',"
+                                        + "'" + proposal.Duration + "',"
+                                        + "'" + proposal.ProcedureType + "',"
+                                        + "'" + proposal.PropertyType + "',"
+                                        + "'" + proposal.RegisterType + "',"
+                                        + "'" + proposal.ProposalType + "',"
+                                        + "'" + proposal.Employer + "',"
+                                        + "'" + proposal.Value + "',"
+                                        + "'" + proposal.Status + "',"
+                                        + "'" + proposal.Registrant + "',"
+                                        + "'" + _inputParameter.FileName + "',"
+                                        + "'" + 0 + "')";
+                sc.ExecuteNonQuery();
+
+
                 transaction.Commit();
                 MessageBox.Show("افزودن با موفقیت به پابان رسید");
             }
@@ -113,6 +138,7 @@ namespace ProposalReportingSystem
                 try
                 {
                     transaction.Rollback();
+                    DeleteFile(_inputParameter.FileName);
                 }
                 catch
                 {
@@ -247,6 +273,8 @@ namespace ProposalReportingSystem
             conn.Close();
 
         }
+
+
 
 
 
@@ -462,7 +490,7 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-             
+
             }
             catch
             {
@@ -2011,6 +2039,137 @@ namespace ProposalReportingSystem
             return list;
 
         }
+        public void DeleteEDegree(String EDegree, long username, String dateTime)
+        {
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = " DELETE FROM EDegreeTable WHERE EDegree = '" + EDegree + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedEDegreeTable  (EDegree , date , username) VALUES ( '" + EDegree + "' ,'" + dateTime + "' ,'" + username + "')";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + EDegree + "','" + "EDegreeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+        }
+
+        public void EditEDegree(String newEDegree, String lastEDegree, long username, String dateTime)
+        {
+
+
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+                sc.CommandText = "UPDATE EDegreeTable SET EDegree = " + "'" + newEDegree + "' WHERE EDegree = '" + lastEDegree + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEDegree + " to " + newEDegree + "','" + "EDegree'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+        }
+
+        public void AddEDegree(String EDegree, long username, String dateTime)
+        {
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "INSERT INTO EDegreeTable (EDegree) VALUES ('" + EDegree + "' )";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + EDegree + "','" + "EDegreeTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+        }
+
 
 
 
@@ -2094,7 +2253,7 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
             }
 
-            else if(selectCommand.Contains("TeacherTable"))
+            else if (selectCommand.Contains("TeacherTable"))
             {
                 dataGridview.Columns[0].HeaderText = "کد ملی";
                 dataGridview.Columns[1].HeaderText = "نام";
@@ -2191,7 +2350,29 @@ namespace ProposalReportingSystem
             return ResponseDescription;
         }
 
+        private string DeleteFile(string fileName)
+        {
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+            request.Method = WebRequestMethods.Ftp.DeleteFile;
+            request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+
+            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            {
+                return response.StatusDescription;
+            }
+        }
+
+        private string MoveFileToDeleted(string fileName)
+        {
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+            request.Method = WebRequestMethods.Ftp.Rename;
+            request.RenameTo = "Deleted/" + fileName;
+            request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+
+            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            {
+                return response.StatusDescription;
+            }
+        }
     }
-
-
 }

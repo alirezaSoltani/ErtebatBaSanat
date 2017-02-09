@@ -33,6 +33,8 @@ namespace ProposalReportingSystem
         private const int pageSize = 10;//related to gridview paging
         private string[,] s;//related to gridview paging
 
+        private string editProposalCurrentFileName;
+
 
         /// <summary>
         /// Current Values
@@ -676,7 +678,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 600, 10, 110, 25);
-            gl.setSize(addProposalSearchBtn, 550, 10, 45, 25);
+            gl.setSize(addProposalSearchBtn, 550, 10, 45, 27);
 
             gl.setSize(addProposalExecutorFNameLbl, 720, 50, 60, 25);
             gl.setSize(addProposalExecutorFNameTxtbx, 550, 50, 160, 25);
@@ -904,12 +906,12 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherExecutorTelTxtbx, 50, 200, 160, 25);
             gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 270, 160, 25);
 
-            gl.setSize(manageTeacherSearchBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
             gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
             gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
             gl.setSize(manageTeacherClearBtn, 320, 365, 80, 30);
             gl.setSize(manageTeacherShowAllBtn, 410, 365, 80, 30);
+            gl.setSize(manageTeacherSearchBtn, 500, 365, 120, 30);
 
             //////////////////manageTeacher//////////////////////
 
@@ -925,7 +927,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(editProposalExecutorNcodeTxtbx, 600, 10, 110, 25);
-            gl.setSize(editProposalSearchBtn, 550, 10, 45, 25);
+            gl.setSize(editProposalSearchBtn, 550, 10, 45, 27);
 
             gl.setSize(editProposalExecutorFNameLbl, 720, 50, 60, 25);
             gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
@@ -1013,42 +1015,50 @@ namespace ProposalReportingSystem
             ///////////////////App Setting design//////////
             gl.setSize(appSettingPanel, 0, 1, 900, 930);
             gl.setSize(appSettingGp, 22, 15, 826, 445);
+            gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             gl.setSize(appSettingShowDv, 5, 5, 810, 380);
 
+            gl.setSize(aapSettingCoLbl, 150, 20, 75, 35);
+            gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 25);
-            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 25);
+
+            gl.setSize(appSettingRegTypeLbl, 445, 20, 75, 35);
+            gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
             gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 25);
-            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 25);
-            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 25);
+
+            gl.setSize(appSettingProcedureTypeLbl, 695, 20, 75, 35);
+            gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
             gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 25);
 
-            gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
-            gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
-            gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
-            gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
-            gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
-            gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
-
-            gl.setSize(aapSettingCoLbl, 150, 20, 75, 35);
-            gl.setSize(appSettingRegTypeLbl, 445, 20, 75, 35);
-            gl.setSize(appSettingProcedureTypeLbl, 695, 20, 75, 35);
             gl.setSize(appSettingStatusLbl, 150, 130, 75, 35);
+            gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
+            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 25);
+
             gl.setSize(appSettingProTypeLbl, 445, 130, 75, 35);
+            gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
+            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 25);
+
             gl.setSize(appSettingPropertyLbl, 695, 130, 75, 35);
+            gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
+            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 25);
 
             gl.setSize(appSettingFacultyLbl, 695, 250, 75, 35);
-            gl.setSize(appSettingEgroupLbl, 445, 250, 75, 35);
             gl.setSize(appSettingFacultyRbtn, 765, 250, 18, 23);
-            gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
             gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 25);
+
+            gl.setSize(appSettingEgroupLbl, 445, 250, 75, 35);
+            gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
             gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 25);
+
+            gl.setSize(appSettingEdegreeLbl, 150, 250, 75, 35);
+            gl.setSize(appSettingEdegreeRbtn, 218, 250, 18, 23);
+            gl.setSize(appSettingEdegreeTxtbx, 55, 290, 170, 25);
 
             gl.setSize(appSettingAddBtn, 55, 365, 80, 30);
             gl.setSize(appSettingEditBtn, 145, 365, 80, 30);
             gl.setSize(appSettingDeleteBtn, 235, 365, 80, 30);
             gl.setSize(appSettingBackBtn, 325, 365, 80, 30);
 
-            gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             ///////////////////App Setting design//////////
             //********************************************//
 
@@ -1600,6 +1610,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingPropertyTxtbx.Clear();
@@ -1625,6 +1637,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingPropertyTxtbx.Clear();
@@ -1650,6 +1664,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingPropertyTxtbx.Clear();
@@ -1680,6 +1696,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = true;
             appSettingStatusTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingPropertyTxtbx.Clear();
@@ -1707,6 +1725,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = true;
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingPropertyTxtbx.Clear();
@@ -1872,6 +1892,24 @@ namespace ProposalReportingSystem
                     popUp.ShowDialog();
                 }
             }
+
+            else if (appSettingEdegreeTxtbx.Enabled == true)
+            {
+                if (!appSettingEdegreeTxtbx.Text.Equals(""))
+                {
+                    dbh.EditEDegree(appSettingEdegreeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingEdegreeTxtbx.Clear();
+                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
+
+                    form_initializer(); // To Reset items of comboBoxes and others
+                }
+                else
+                {
+                    PopUp popUp = new PopUp("خطا", "نوع وضعیت را مشخص کنید.", "تایید", "", "", "error");
+                    popUp.ShowDialog();
+                }
+            }
         }
 
         private void appSettingShowDv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1981,6 +2019,19 @@ namespace ProposalReportingSystem
                 catch (ArgumentOutOfRangeException) { }
             }
 
+            else if (appSettingEdegreeTxtbx.Enabled == true)
+            {
+                appSettingEditBtn.Enabled = true;
+                appSettingDeleteBtn.Enabled = true;
+
+                try
+                {
+                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["EDegree"].Value.ToString();
+                    appSettingEdegreeTxtbx.Text = currentSelectedOption;
+                }
+                catch (ArgumentOutOfRangeException) { }
+            }
+
         }
 
         private void appSettingDeleteBtn_Click(object sender, EventArgs e)
@@ -2078,6 +2129,18 @@ namespace ProposalReportingSystem
                 appSettingStatusTxtbx.Clear();
                 dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
+                appSettingEditBtn.Enabled = false;
+                appSettingDeleteBtn.Enabled = false;
+
+                form_initializer(); // To Reset items of comboBoxes and others
+            }
+
+            else if (appSettingEdegreeTxtbx.Enabled == true)
+            {
+                dbh.DeleteEDegree(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                appSettingEdegreeTxtbx.Clear();
+                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
 
@@ -3886,10 +3949,7 @@ namespace ProposalReportingSystem
             proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
 
             proposal.Index = long.Parse(currentSelectedIndex);
-
-
-
-
+            proposal.FileName = editProposalCurrentFileName;
 
             dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
             dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
@@ -3915,6 +3975,7 @@ namespace ProposalReportingSystem
                 editProposalOrganizationNumberCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
                 editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
                 editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
             }
             catch (ArgumentOutOfRangeException) { }
         }
@@ -3938,6 +3999,7 @@ namespace ProposalReportingSystem
             proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
             proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
             proposal.Index = long.Parse(currentSelectedIndex);
+            proposal.FileName = editProposalCurrentFileName;
 
             dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
             dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
@@ -4101,8 +4163,6 @@ namespace ProposalReportingSystem
 
             query = query.Substring(0, query.Length - 3);
 
-            //MessageBox.Show(query);
-
             if (query != "SELECT * FROM proposalTable WHE")
             {
                 dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, query);
@@ -4222,6 +4282,38 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void appSettingEdegreeRbtn_Click(object sender, EventArgs e)
+        {
+            appSettingProcedureTypeTxtbx.Enabled = false;
+            appSettingPropertyTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Enabled = true;
+            appSettingRegTypeTxtbx.Enabled = false;
+            appSettingProTypeTxtbx.Enabled = false;
+            appSettingEgroupTxtbx.Enabled = false;
+            appSettingCoTxtbx.Enabled = false;
+            appSettingStatusTxtbx.Enabled = false;
+            appSettingFacultyTxtbx.Enabled = false;
+
+            appSettingProcedureTypeTxtbx.Clear();
+            appSettingPropertyTxtbx.Clear();
+            appSettingRegTypeTxtbx.Clear();
+            appSettingProTypeTxtbx.Clear();
+            appSettingEgroupTxtbx.Clear();
+            appSettingCoTxtbx.Clear();
+            appSettingStatusTxtbx.Clear();
+            appSettingFacultyTxtbx.Clear();
+
+            appSettingAddBtn.Enabled = true;
+
+            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+            appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
+        }
+
+        private void appSettingEdegreeRbtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             w.Hide();
@@ -4251,6 +4343,13 @@ namespace ProposalReportingSystem
             foreach (String faculty in comboList)
             {
                 addProposalExecutorFacultyCb.Items.Add(faculty);
+            }
+
+            addProposalExecutorEDegCb.Items.Clear();
+            comboList = dbh.getEDeg();
+            foreach (String eDegree in comboList)
+            {
+                addProposalExecutorEDegCb.Items.Add(eDegree);
             }
 
             comboList = dbh.getProcedureType();
@@ -4377,6 +4476,13 @@ namespace ProposalReportingSystem
             foreach (String faculty in comboList)
             {
                 editProposalExecutorFacultyCb.Items.Add(faculty);
+            }
+
+            editProposalExecutorEDegCb.Items.Clear();
+            comboList = dbh.getEDeg();
+            foreach (String eDegree in comboList)
+            {
+                editProposalExecutorEDegCb.Items.Add(eDegree);
             }
 
             comboList = dbh.getProcedureType();
