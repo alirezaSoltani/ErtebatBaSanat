@@ -725,6 +725,80 @@ namespace ProposalReportingSystem
             return list;
         }
 
+        private List<Teachers> getTeachers()
+        {
+            List<Teachers> list = new List<Teachers>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT * FROM TeacherTable";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                Teachers teacher = new Teachers();
+                teacher.T_FName = ((String)reader["t_FName"]);
+                teacher.T_LName = ((string)reader["t_LName"]);
+                teacher.T_NCode = ((long)reader["y_NCode"]);
+                teacher.T_EDeg = ((string)reader["t_EDeg"]);
+                teacher.T_Email = ((String)reader["t_Email"]);
+                teacher.T_Group = ((string)reader["t_Group"]);
+                teacher.T_Mobile = ((String)reader["y_Mobile"]);
+                teacher.T_Tel1 = ((string)reader["t_Tel1"]);
+                teacher.T_Tel2 = ((String)reader["t_Tel2"]);
+                teacher.T_Faculty = ((string)reader["t_Faculty"]);
+
+                list.Add(teacher);
+            }
+            conn.Close();
+
+            return list;
+
+
+        }
+
+        // End Of getAll
+        /////////////////////////////////
+
+        private List<Teachers> searchTeachers(String query)
+        {
+            List<Teachers> list = new List<Teachers>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = query;
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            while (reader.Read())
+            {
+                Teachers teacher = new Teachers();
+                teacher.T_FName = ((String)reader["t_FName"]);
+                teacher.T_LName = ((string)reader["t_LName"]);
+                teacher.T_NCode = ((long)reader["t_NCode"]);
+                teacher.T_EDeg = ((string)reader["t_EDeg"]);
+                teacher.T_Email = ((String)reader["t_Email"]);
+                teacher.T_Group = ((string)reader["t_Group"]);
+                teacher.T_Mobile = ((String)reader["t_Mobile"]);
+                teacher.T_Tel1 = ((string)reader["t_Tel1"]);
+                teacher.T_Tel2 = ((String)reader["t_Tel2"]);
+                teacher.T_Faculty = ((string)reader["t_Faculty"]);
+
+                list.Add(teacher);
+            }
+            conn.Close();
+
+            return list;
+
+
+        }
+        //Search Teachers
+
 
 
         //////////////////end query Teachers
