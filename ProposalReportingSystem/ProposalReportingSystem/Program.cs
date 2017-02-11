@@ -18,7 +18,7 @@ namespace ProposalReportingSystem
             //Application.Run(new Waiting());
             //Application.Run(new Form1());
             Application.Run(new Login());
-            //Application.Run(new PopUp());
+            //Application.Run(new Detail());
             
         }
     }
