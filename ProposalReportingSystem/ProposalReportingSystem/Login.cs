@@ -22,6 +22,8 @@ namespace ProposalReportingSystem
         public Login()
         {
             InitializeComponent();
+            this.Show();
+            //this.TopMost = true;
         }
 
         private void loginEnterBtn_MouseEnter(object sender, EventArgs e)
@@ -127,8 +129,8 @@ namespace ProposalReportingSystem
 
         private void loginPasswordTxtbx_Enter(object sender, EventArgs e)
         {
-            loginPasswordTxtbx.Text = "1";
-            loginEnterBtn.PerformClick();
+            /*loginPasswordTxtbx.Text = "1";
+            loginEnterBtn.PerformClick();*/
         }
 
         private void loginEnterBtn_Click(object sender, EventArgs e)
@@ -138,7 +140,7 @@ namespace ProposalReportingSystem
                 PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور وارد نشده است.", "تایید", "", "", "error");
                 popUp.ShowDialog();
             }
-            else if(loginUsernameTxtBx.Text == "98765" || loginPasswordTxtbx.Text == "1")
+            else if(loginUsernameTxtBx.Text == "98765" && loginPasswordTxtbx.Text == "1")
             {
                 username = loginUsernameTxtBx.Text;
                 password = loginPasswordTxtbx.Text;
@@ -171,7 +173,7 @@ namespace ProposalReportingSystem
                 user.CanDeleteUser = 1;
                 user.CanManageTeacher = 1;
                 user.CanManageType = 1;
-
+                user.U_Color = "#D3EFFC";
 
                 this.Hide();
                 Form1 mainForm = new Form1(user);

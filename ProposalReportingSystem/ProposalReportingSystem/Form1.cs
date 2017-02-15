@@ -16,7 +16,7 @@ namespace ProposalReportingSystem
     public partial class Form1 : Form
     {
 
-        Waiting w = new Waiting();
+        Waiting w;
 
         private int systemWidth;    //related to setSize
         private int systemHeight;   //related to setSize
@@ -572,7 +572,7 @@ namespace ProposalReportingSystem
             }
             else
             {
-                homeUserNameLbl.Text = loginUser.U_LName + " " + loginUser.U_FName;
+                homeUserNameLbl.Text = loginUser.U_FName + " " + loginUser.U_LName;
 
                 //MANAGE ACCESS LEVELS
                 if (loginUser.CanAddProposal == 0)
@@ -655,13 +655,13 @@ namespace ProposalReportingSystem
 
             ////////////////////////Home design////////////////////
             gl.setSize(homePanel, 0, 1, 900, 930);
-            gl.setSize(homeAapInfoGp, 175, 70, 500, 300);
+            gl.setSize(homeAapInfoGp, 80, 70, 700, 300);
             gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
-            gl.setSize(homeAppNameLbl, 10, 25, 470, 40);
-            gl.setSize(homeEBSLbl, 10, 70, 470, 40);
+            gl.setSize(homeAppNameLbl, 10, 25, 680, 40);
+            gl.setSize(homeEBSLbl, 10, 70, 680, 40);
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
-            gl.setSize(homeUserNameLbl, 175, 150, 145, 40);
-            gl.setSize(homeWelcomeLbl, 175, 200, 145, 40);
+            gl.setSize(homeUserNameLbl, 280 ,150, 145, 40);
+            gl.setSize(homeWelcomeLbl, 280, 200, 145, 40);
             gl.setSize(analogClockControl1, 70, 25, 180, 180);
             gl.setSize(monthCalendar1, 300, 50, 320, 250);
             ///////////////////////Home design/////////////////////
@@ -882,9 +882,9 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
             gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorFacultyLbl, 455, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 455, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 455, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorFacultyLbl, 465, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 465, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 465, 200, 60, 25);
 
             gl.setSize(manageTeacherExecutorEmailLbl, 200, 60, 60, 25);
             gl.setSize(manageTeacherExecutorMobileLbl, 200, 130, 60, 25);
@@ -1016,39 +1016,39 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingShowGp, 22, 470, 826, 425);
             gl.setSize(appSettingShowDv, 5, 5, 810, 380);
 
-            gl.setSize(aapSettingCoLbl, 150, 20, 75, 35);
+            gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 25);
 
-            gl.setSize(appSettingRegTypeLbl, 445, 20, 75, 35);
+            gl.setSize(appSettingRegTypeLbl, 440, 20, 75, 35);
             gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
-            gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 25);
+            gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
 
-            gl.setSize(appSettingProcedureTypeLbl, 695, 20, 75, 35);
+            gl.setSize(appSettingProcedureTypeLbl, 690, 20, 75, 35);
             gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
-            gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 25);
+            gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
 
-            gl.setSize(appSettingStatusLbl, 150, 130, 75, 35);
+            gl.setSize(appSettingStatusLbl, 145, 130, 75, 35);
             gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
-            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 25);
+            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 35);
 
-            gl.setSize(appSettingProTypeLbl, 445, 130, 75, 35);
+            gl.setSize(appSettingProTypeLbl, 440, 130, 75, 35);
             gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
-            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 25);
+            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 35);
 
-            gl.setSize(appSettingPropertyLbl, 695, 130, 75, 35);
+            gl.setSize(appSettingPropertyLbl, 690, 130, 75, 35);
             gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
-            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 25);
+            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 35);
 
-            gl.setSize(appSettingFacultyLbl, 695, 250, 75, 35);
+            gl.setSize(appSettingFacultyLbl, 690, 250, 75, 35);
             gl.setSize(appSettingFacultyRbtn, 765, 250, 18, 23);
-            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 25);
+            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 35);
 
-            gl.setSize(appSettingEgroupLbl, 445, 250, 75, 35);
+            gl.setSize(appSettingEgroupLbl, 440, 250, 75, 35);
             gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
             gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 25);
 
-            gl.setSize(appSettingEdegreeLbl, 150, 250, 75, 35);
+            gl.setSize(appSettingEdegreeLbl, 145, 250, 75, 35);
             gl.setSize(appSettingEdegreeRbtn, 218, 250, 18, 23);
             gl.setSize(appSettingEdegreeTxtbx, 55, 290, 170, 25);
 
@@ -1409,7 +1409,7 @@ namespace ProposalReportingSystem
                 proposal.Registrant = loginUser.U_NCode;
 
                 dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-                dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
+                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
                 addProposalClearBtn.PerformClick();
             }
         }
@@ -1423,7 +1423,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddProcedureType(appSettingProcedureTypeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProcedureTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingProcedureTypeTxtbx.Focus();
@@ -1436,7 +1436,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddPropertyType(appSettingPropertyTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingPropertyTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingPropertyTxtbx.Focus();
@@ -1449,7 +1449,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddFaculty(appSettingFacultyTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingFacultyTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingFacultyTxtbx.Focus();
@@ -1462,7 +1462,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddRegisterType(appSettingRegTypeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingRegTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingRegTypeTxtbx.Focus();
@@ -1475,7 +1475,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddProposalType(appSettingProTypeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingProTypeTxtbx.Focus();
@@ -1488,7 +1488,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddEGroup(appSettingFacultyTxtbx.Text,appSettingEgroupTxtbx.Text, loginUser.U_NCode, DateTime.Now.ToString());
                     appSettingEgroupTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingEgroupTxtbx.Focus();
@@ -1501,7 +1501,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddEmployer(appSettingCoTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingCoTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                     appSettingShowDv.Columns[0].HeaderText = "نام سازمان";
                     appSettingShowDv.Columns[1].HeaderText = "کد سازمان";
                    // appSettingShowDv.Columns[2].Visible = false;
@@ -1517,7 +1517,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddStatusType(appSettingStatusTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingStatusTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingStatusTxtbx.Focus();
@@ -1530,7 +1530,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddEDegree(appSettingEdegreeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEdegreeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
 
                     form_initializer(); // To Reset items of comboBoxes and others
                     appSettingEdegreeTxtbx.Focus();
@@ -1559,12 +1559,11 @@ namespace ProposalReportingSystem
         {
             if (!manageTeacherExecutorEmailTxtbx.Text.Equals("") && !System.Text.RegularExpressions.Regex.IsMatch(manageTeacherExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
             {
-                manageTeacherExecutorEmailTxtbx.BackColor = Color.Red;
-                MessageBox.Show("email is invalid");
+                manageTeacherExecutorEmailTxtbx.BackColor = Color.Pink;
             }
-            else if(System.Text.RegularExpressions.Regex.IsMatch(manageTeacherExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
+            else if (System.Text.RegularExpressions.Regex.IsMatch(manageTeacherExecutorEmailTxtbx.Text, @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"))
             {
-                manageTeacherExecutorEmailTxtbx.BackColor = Color.White;
+                manageTeacherExecutorEmailTxtbx.BackColor = Color.LightGreen;
             }
         }
 
@@ -1594,7 +1593,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
             appSettingShowDv.Columns[0].HeaderText = "نوع کار";
         }
 
@@ -1619,7 +1618,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
             appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
         }
 
@@ -1646,7 +1645,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
             appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
         }
 
@@ -1673,7 +1672,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
             appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
         }
 
@@ -1700,7 +1699,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
             appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
         }
 
@@ -1732,7 +1731,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
             appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
             appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
            // appSettingShowDv.Columns[2].Visible = false;
@@ -1761,7 +1760,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
             appSettingShowDv.Columns[0].HeaderText = "وضعیت";
         }
 
@@ -1773,7 +1772,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditProcedureType(appSettingProcedureTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProcedureTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع کار";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1792,7 +1791,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditPropertyType(appSettingPropertyTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingPropertyTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1812,7 +1811,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditFaculty(appSettingFacultyTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingFacultyTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
                     appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1832,7 +1831,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditRegisterType(appSettingRegTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingRegTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1852,7 +1851,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditProposalType(appSettingProTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProTypeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1872,7 +1871,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditEGroup(appSettingEgroupTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEgroupTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
                     appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1895,7 +1894,7 @@ namespace ProposalReportingSystem
                     employer.OrgName = appSettingCoTxtbx.Text;
                     dbh.EditEmployer(employer,currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingCoTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                     appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
                     appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
                 //    appSettingShowDv.Columns[2].Visible = false;
@@ -1917,7 +1916,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditStatusType(appSettingStatusTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingStatusTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -1937,7 +1936,7 @@ namespace ProposalReportingSystem
                 {
                     dbh.EditEDegree(appSettingEdegreeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEdegreeTxtbx.Clear();
-                    dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
 
                     form_initializer(); // To Reset items of comboBoxes and others
@@ -2080,7 +2079,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteProcedureType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingProcedureTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع کار";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2093,7 +2092,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeletePropertyType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingPropertyTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2106,7 +2105,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteFaculty(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingFacultyTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
                 appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2119,7 +2118,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteRegisterType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingRegTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2132,7 +2131,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteProposalType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingProTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2145,7 +2144,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteEGroup(currentSelectedOption, currentSelectedOption_2 /*faculty*/, loginUser.U_NCode, myDateTime.ToString());
                 appSettingEgroupTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName = '" + appSettingFacultyTxtbx.Text + "'");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName = '" + appSettingFacultyTxtbx.Text + "'");
                 appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2159,7 +2158,7 @@ namespace ProposalReportingSystem
                 
                 dbh.DeleteEmployers(long.Parse(currentSelectedIndex), currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingCoTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                 appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
                 appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
                 // appSettingShowDv.Columns[1].Visible = false;
@@ -2174,7 +2173,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteStatusType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingStatusTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                 appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2187,7 +2186,7 @@ namespace ProposalReportingSystem
             {
                 dbh.DeleteEDegree(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                 appSettingEdegreeTxtbx.Clear();
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
                 appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
@@ -2219,7 +2218,7 @@ namespace ProposalReportingSystem
                 appSettingEgroupTxtbx.Enabled = true;
 
                 MessageBox.Show(appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString());
-                dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString() + "'");
+                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString() + "'");
                 appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
             }
         }
@@ -2336,6 +2335,8 @@ namespace ProposalReportingSystem
             manageTeacherShowDgv.DataSource = null;
             manageTeacherEditBtn.Enabled = false;
             manageTeacherDeleteBtn.Enabled = false;
+            manageTeacherShowAllBtn.Enabled = true;
+            manageTeacherSearchBtn.Enabled = true;
         }
 
         private void personalSettingClearBtn_Click(object sender, EventArgs e)
@@ -2620,7 +2621,7 @@ namespace ProposalReportingSystem
 
         private void sysLogTab_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(logDgv, logBindingSource, "SELECT * FROM logTable");
+            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");
         }
 
         private void searchProposalExecutorNCodeTxtbx_TextChanged(object sender, EventArgs e)
@@ -3261,14 +3262,14 @@ namespace ProposalReportingSystem
                 }
 
                 dbh.AddUser(user, loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
                 manageUserClearBtn.PerformClick();
             }
         }
 
         private void manageUserEditBtn_Click(object sender, EventArgs e)
         {
-            if (manageUserFnameTxtbx.Text.Length < 10)
+            if (manageUserNcodeTxtbx.Text.Length < 10)
             {
                 PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "error");
                 p.ShowDialog();
@@ -3362,9 +3363,25 @@ namespace ProposalReportingSystem
                 {
                     user.CanDeleteUser = 0;
                 }
+                if (manageUserManageTypeCb.Checked == true)
+                {
+                    user.CanManageType = 1;
+                }
+                else
+                {
+                    user.CanManageType = 0;
+                }
+                if (manageUserManageTeacherCb.Checked == true)
+                {
+                    user.CanManageTeacher = 1;
+                }
+                else
+                {
+                    user.CanManageTeacher = 0;
+                }
 
                 dbh.EditUsers(user, long.Parse(currentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
                 manageUserClearBtn.PerformClick();
                 manageUserShowAllBtn.PerformClick();
@@ -3433,7 +3450,7 @@ namespace ProposalReportingSystem
             }
 
             dbh.DeleteUser(user, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
             manageUserClearBtn.PerformClick();
             manageUserShowAllBtn.PerformClick();
         }
@@ -3902,7 +3919,7 @@ namespace ProposalReportingSystem
 
         private void manageUserShowBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+            dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
             manageUserShowAllBtn.Enabled = false;
         }
 
@@ -3914,6 +3931,7 @@ namespace ProposalReportingSystem
                 Color c = new Color();
                 c = dlg.Color;
                 string myColor = "#" + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
+                //MessageBox.Show(myColor);
                 dbh.changeColor(loginUser.U_NCode, myColor);
                 
                 homePanel.BackColor = dlg.Color;
@@ -3954,7 +3972,7 @@ namespace ProposalReportingSystem
             dbh.AddTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
 
 
-            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + manageTeacherExecutorNcodeTxtbx + "'");
+            dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + manageTeacherExecutorNcodeTxtbx + "'");
         }
 
         private void manageTeacherDeleteBtn_Click(object sender, EventArgs e)
@@ -4027,7 +4045,7 @@ namespace ProposalReportingSystem
 
         private void addProposalShowBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable");
+            dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable");
             addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             addProposalExecutorNcodeTxtbx.Focus();
 
@@ -4046,7 +4064,7 @@ namespace ProposalReportingSystem
         {
             if (addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
-                dbh.dataGridViewUpdate(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
+                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
                 addProposalSearchBtn.Enabled = false;
             }
             else
@@ -4066,20 +4084,21 @@ namespace ProposalReportingSystem
 
         private void manageTeacherShowBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
+            dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable");
             manageTeacherShowAllBtn.Enabled = false;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            //Application.Run(new Login());
         }
 
         private void editProposalSearchBtn_Click(object sender, EventArgs e)
         {
             if(editProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
-                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
                 editProposalSearchBtn.Enabled = false;
             }
             else
@@ -4267,7 +4286,7 @@ namespace ProposalReportingSystem
                 proposal.FileName = editProposalCurrentFileName;
 
                 dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
             }
         }
 
@@ -4321,7 +4340,7 @@ namespace ProposalReportingSystem
             proposal.FileName = editProposalCurrentFileName;
 
             dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+            dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
 
             editProposalClearBtn.PerformClick();
             editProposalShowAllBtn.PerformClick();
@@ -4362,7 +4381,7 @@ namespace ProposalReportingSystem
 
         private void searchProposalShowAllBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable");
+            dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable");
             searchProposalShowAllBtn.Enabled = false;
         }
 
@@ -4484,7 +4503,7 @@ namespace ProposalReportingSystem
 
             if (query != "SELECT * FROM proposalTable WHE")
             {
-                dbh.dataGridViewUpdate(searchProposalShowDgv, searchProposalBindingSource, query);
+                dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, query);
             }
             else
             {
@@ -4496,11 +4515,11 @@ namespace ProposalReportingSystem
         {
             if(loginUser.U_NCode == 98765)
             {
-                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable");
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable");
             }
             else
             {
-                dbh.dataGridViewUpdate(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "'");
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "'");
             }
             editProposalShowAllBtn.Enabled = false;
         }
@@ -4624,7 +4643,7 @@ namespace ProposalReportingSystem
 
             appSettingAddBtn.Enabled = true;
 
-            dbh.dataGridViewUpdate(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+            dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
             appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
         }
         private void editProposalFileLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -4650,6 +4669,91 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void manageTeacherSearchBtn_Click(object sender, EventArgs e)
+        {
+            string query2 = "SELECT * FROM teacherTable WHERE ";
+
+            bool searchByeNCode = false;
+
+            if (manageTeacherExecutorNcodeTxtbx.Text != "")
+            {
+                query2 = query2 + " t_NCode = '" + manageTeacherExecutorNcodeTxtbx.Text + "' AND";
+                searchByeNCode = true;
+            }
+
+            if (!searchByeNCode)
+            {
+                if (manageTeacherFnameTxtbx.Text != "")
+                {
+                    query2 = query2 + " t_FName = '" + manageTeacherFnameTxtbx.Text + "' AND";
+                }
+                if (manageTeacherLnameTxtbx.Text != "")
+                {
+                    query2 = query2 + " t_LName = '" + manageTeacherLnameTxtbx.Text + "' AND";
+                }
+                if (manageTeacherExecutorFacultyCb.Text != "")
+                {
+                    query2 = query2 + " t_Faculty = '" + manageTeacherExecutorFacultyCb.Text + "' AND";
+                }
+                if (manageTeacherExecutorEgroupCb.Text != "")
+                {
+                    query2 = query2 + " t_Group = '" + manageTeacherExecutorEgroupCb.Text + "' AND";
+                }
+                if (manageTeacherExecutorEDegCb.Text != "")
+                {
+                    query2 = query2 + " t_EDeg = '" + manageTeacherExecutorEDegCb.Text + "' AND";
+                }
+                if (manageTeacherExecutorMobileTxtbx.Text != "")
+                {
+                    query2 = query2 + " t_Mobile = '" + manageTeacherExecutorMobileTxtbx.Text + "' AND";
+                }
+                if (manageTeacherExecutorEmailTxtbx.Text != "")
+                {
+                    query2 = query2 + " t_Email = '" + manageTeacherExecutorEmailTxtbx.Text + "' AND";
+                }
+                if (manageTeacherExecutorTelTxtbx.Text != "")
+                {
+                    query2 = query2 + " t_Tel1 = '" + manageTeacherExecutorTelTxtbx.Text + "' AND";
+                }
+                if (manageTeacherExecutorTel2Txtbx.Text != "")
+                {
+                    query2 = query2 + " t_Tel2 = '" + manageTeacherExecutorTel2Txtbx.Text + "' AND";
+                }
+
+
+            }
+
+            query2 = query2.Substring(0, query2.Length - 3);
+
+
+            if (query2 != "SELECT t_NCode FROM teacherTable WHE")
+            {
+                dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, query2);
+            }
+        }
+
+        private void Form1_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Login l = new Login();
+            this.Hide();
+        }
+
+        private void exitTab_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            this.Hide();
+        }
+
+        private void currentPasswordLbl_MouseEnter(object sender, EventArgs e)
+        {
+            mainPage.TabsVisible = false;
+        }
+
+        private void confirmNewPasswordLbl_MouseEnter(object sender, EventArgs e)
+        {
+            mainPage.TabsVisible = true;
+        }
+
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             w.Hide();
@@ -4657,7 +4761,8 @@ namespace ProposalReportingSystem
 
         private void form_initializer()
         {
-            w.i = 1;
+            w = new Waiting();
+            //w.i = 1;
             waitBw.RunWorkerAsync();
 
             //*************************************************************************\\

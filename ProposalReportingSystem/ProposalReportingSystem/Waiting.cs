@@ -25,10 +25,10 @@ namespace ProposalReportingSystem
             int systemWidth = SystemInformation.PrimaryMonitorSize.Width;   
             int systemHeight = SystemInformation.PrimaryMonitorSize.Height;
             this.StartPosition = FormStartPosition.Manual;
-            this.SetBounds((40 * systemWidth) / 100, (25 * systemHeight) / 100, (13* systemWidth) / 100, (14 * systemHeight) / 100);
+            this.SetBounds((35 * systemWidth) / 100, (15 * systemHeight) / 100, (25* systemWidth) / 100, (20 * systemHeight) / 100);
             
-            gl.setSize(circularProgress1, 13, 20, 100, 55);
-            gl.setSize(waitLbl, 3, 70, 100, 50);
+            gl.setSize(circularProgress1, 75, 20, 100, 55);
+            gl.setSize(waitLbl, 15, 90, 150, 80);
         }
 
         private void Waiting_Load(object sender, EventArgs e)
