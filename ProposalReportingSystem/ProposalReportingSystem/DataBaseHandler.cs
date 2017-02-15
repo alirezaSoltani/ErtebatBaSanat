@@ -2361,6 +2361,111 @@ namespace ProposalReportingSystem
             dgv.DataSource = bindingSource;
             GetData(query, bindingSource, dgv);
         }
+
+
+        /////////JUST TEST
+        public void dataGridViewUpdate2(DataGridView dgvv, BindingSource bindingSource, String query)
+        {
+            /// <summary>
+            /// datagridview reintialization
+            /// </summary>
+            dgvv.DataSource = bindingSource;
+            GetData2(query, bindingSource, dgvv);
+        }
+        private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
+        {
+            // Create a new data adapter based on the specified query.
+            dataAdapter = new SqlDataAdapter(selectCommand, conString);
+
+            // Create a command builder to generate SQL update, insert, and
+            // delete commands based on selectCommand. These are used to
+            // update the database.
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            bindingSourceObj.DataSource = table;
+
+
+            // Resize the DataGridView columns to fit the newly loaded content.
+            dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+            int i = 0;
+            while (true)
+            {
+                try
+                {
+                    dataGridview.Rows[i].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+
+            if (selectCommand.Contains("UsersTable"))
+            {
+                dataGridview.Columns[0].HeaderText = "کد ملي";
+                dataGridview.Columns[1].HeaderText = "رمز عبور";
+                dataGridview.Columns[2].HeaderText = "نام";
+                dataGridview.Columns[3].HeaderText = "نام خانوادگي";
+                dataGridview.Columns[4].HeaderText = "ايميل";
+                dataGridview.Columns[5].HeaderText = "تلفن تماس";
+                dataGridview.Columns[6].HeaderText = "افزودن پروپوزال";
+                dataGridview.Columns[7].HeaderText = "تغيير اطلاعات پروپوزال";
+                dataGridview.Columns[8].HeaderText = "حذف پروپوزال";
+                dataGridview.Columns[9].HeaderText = "افزودن کاربر";
+                dataGridview.Columns[10].HeaderText = "تغيير اطلاعات کاربر";
+                dataGridview.Columns[11].HeaderText = "حذف کاربر";
+                dataGridview.Columns[12].HeaderText = "مديريت اطلاعات اساتيد";
+                dataGridview.Columns[13].HeaderText = "تغيير تنظيمات برنامه";
+                dataGridview.Columns[14].Visible = false;
+            }
+
+            else if (selectCommand.Contains("proposalTable"))
+            {
+                dataGridview.Columns[0].Visible = false;
+                dataGridview.Columns[1].HeaderText = "عنوان فارسی";
+                dataGridview.Columns[2].HeaderText = "عنوان لاتین";
+                dataGridview.Columns[3].HeaderText = "کلمه کلیدی";
+                dataGridview.Columns[4].HeaderText = "مجری";
+                dataGridview.Columns[5].HeaderText = "مجریان همکار";
+                dataGridview.Columns[6].HeaderText = "همکاران مجری";
+                dataGridview.Columns[7].HeaderText = "تاریخ شروع";
+                dataGridview.Columns[8].HeaderText = "مدت زمان";
+                dataGridview.Columns[9].HeaderText = "نوع کار";
+                dataGridview.Columns[10].HeaderText = "خاصیت";
+                dataGridview.Columns[11].HeaderText = "نوع ثبت";
+                dataGridview.Columns[12].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns[13].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns[14].HeaderText = "هزینه";
+                dataGridview.Columns[15].HeaderText = "وضعیت";
+                dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+            }
+
+            else if (selectCommand.Contains("TeacherTable"))
+            {
+                dataGridview.Columns[0].HeaderText = "کد ملی";
+                dataGridview.Columns[1].HeaderText = "نام";
+                dataGridview.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridview.Columns[3].HeaderText = "دانشکده";
+                dataGridview.Columns[4].HeaderText = "گروه آموزشی";
+                dataGridview.Columns[5].HeaderText = "درجه علمی";
+                dataGridview.Columns[6].HeaderText = "ایمیل";
+                dataGridview.Columns[7].HeaderText = "تلفن همراه";
+                dataGridview.Columns[8].HeaderText = "تلفن 1";
+                dataGridview.Columns[9].HeaderText = "تلفن 2";
+            }
+
+
+        }
+        /////////JUST TEST
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GridView Update***********************/
         ///////////////////////////////////////////////////////////////////////////

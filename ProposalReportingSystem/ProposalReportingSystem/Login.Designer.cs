@@ -75,7 +75,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(373, 31);
             this.label4.TabIndex = 11;
-            this.label4.Text = "طراحی و توسعه توسط رایان پردازش نوین آریا جوان";
+            this.label4.Text = "-------------------------------------------";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginMinimizePbx
@@ -176,6 +176,7 @@
             this.loginUsernameTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.loginUsernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.loginUsernameTxtBx.Location = new System.Drawing.Point(19, 124);
+            this.loginUsernameTxtBx.MaxLength = 10;
             this.loginUsernameTxtBx.Name = "loginUsernameTxtBx";
             this.loginUsernameTxtBx.ShortcutsEnabled = false;
             this.loginUsernameTxtBx.Size = new System.Drawing.Size(227, 27);
@@ -194,7 +195,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(395, 67);
             this.label3.TabIndex = 9;
-            this.label3.Text = "سامانه ثبت و گزارش گیری قرارداد های دانشگاه شهید چمران اهواز";
+            this.label3.Text = "سامانه ثبت و گزارش گیری پروپوزال های دانشگاه شهید چمران اهواز";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginEnterBtn
