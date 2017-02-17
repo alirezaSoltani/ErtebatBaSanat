@@ -5082,6 +5082,7 @@ namespace ProposalReportingSystem
         private void menuSysLogBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 9;
+            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");
         }
 
         private void menuExitBtn_Click(object sender, EventArgs e)
