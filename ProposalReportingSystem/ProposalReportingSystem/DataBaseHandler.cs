@@ -184,7 +184,27 @@ namespace ProposalReportingSystem
                                                     + " WHERE [index] = " + proposal.Index + "";
 
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.Index + "','" + "proposalTable'" + ")";
+
+                sc.CommandText = "UPDATE editionTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
+                                                   + "engTitle =" + "'" + proposal.EngTitle + "',"
+                                                   + "keyword =" + "'" + proposal.KeyWord + "',"
+                                                   + "executor =" + "'" + proposal.Executor + "',"
+                                                   + "executor2 = " + "'" + proposal.Executor2 + "',"
+                                                   + " coExecutor = " + "'" + proposal.CoExecutor + "',"
+                                                   + " startDate=" + "'" + proposal.StartDate + "',"
+                                                   + "duration=" + "'" + proposal.Duration + "',"
+                                                   + "procedureType =" + "'" + proposal.ProcedureType + "',"
+                                                   + " propertyType = " + "'" + proposal.PropertyType + "',"
+                                                   + "registerType =" + "'" + proposal.RegisterType + "',"
+                                                   + "proposalType =" + "'" + proposal.ProposalType + "',"
+                                                   + " employer = " + "'" + proposal.Employer + "',"
+                                                   + " value = " + "'" + proposal.Value + "',"
+                                                   + " status = " + "'" + proposal.Status + "' "
+                                                   + " WHERE  [index] = " + proposal.Index + " AND edition = 0 ";
+
+                sc.ExecuteNonQuery();
+
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -272,6 +292,101 @@ namespace ProposalReportingSystem
 
             conn.Close();
 
+        }
+
+        public void AddEdition(Proposal proposal, long username, String dateTime, FTPSetting _inputParameter)
+        {
+            //String persianTitle, String engTitle , String keyword, long executor, String executor2 , String coExecutor, String startDate , int duration, String procedureType , String propertyType, String registerType , String proposalType, long employer, String value , String status, long registrant
+
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            SqlDataReader reader;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                sc.CommandText = "SELECT COUNT(*) FROM editionTable WHERE [index] = " + proposal.Index + " ";
+                reader = sc.ExecuteReader();
+                reader.Read();
+                int EditionNumber = reader.GetInt32(0);
+
+
+
+                if (_inputParameter.FileName.Contains(".docx"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".docx";
+                }
+                else if (_inputParameter.FileName.Contains(".doc"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".doc";
+                }
+                if (_inputParameter.FileName.Contains(".pdf"))
+                {
+                    _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".pdf";
+                }
+
+
+
+
+                sc.CommandText = "INSERT INTO editionTable ([index] , persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,fileName , edition)"
+                               + "VALUES ('" + proposal.Index + "',"
+                                        + "'" + proposal.PersianTitle + "',"
+                                         + "'" + proposal.EngTitle + "',"
+                                        + "'" + proposal.KeyWord + "',"
+                                        + "'" + proposal.Executor + "',"
+                                        + "'" + proposal.Executor2 + "',"
+                                        + "'" + proposal.CoExecutor + "',"
+                                        + "'" + proposal.StartDate + "',"
+                                        + "'" + proposal.Duration + "',"
+                                        + "'" + proposal.ProcedureType + "',"
+                                        + "'" + proposal.PropertyType + "',"
+                                        + "'" + proposal.RegisterType + "',"
+                                        + "'" + proposal.ProposalType + "',"
+                                        + "'" + proposal.Employer + "',"
+                                        + "'" + proposal.Value + "',"
+                                        + "'" + proposal.Status + "',"
+                                        + "'" + proposal.Registrant + "',"
+                                        + "'" + _inputParameter.FileName + "',"
+                                        + "'" + EditionNumber + "')";
+                sc.ExecuteNonQuery();
+
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added edition " + EditionNumber + " of proposal " + proposal.PersianTitle + " ',' EditionTable ' )";
+                sc.ExecuteNonQuery();
+
+
+                uploadFile(_inputParameter);
+
+                reader.Close();
+
+
+                transaction.Commit();
+                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                    DeleteFile(_inputParameter.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
         }
 
 
@@ -524,6 +639,50 @@ namespace ProposalReportingSystem
             color = reader.GetString(0);
             conn.Close();
             return color;
+        }
+
+        public void changePassword(long username, string Password, String dateTime)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+                sc.CommandText = " UPDATE UsersTable SET u_Password = " + "'" + Password + "' WHERE u_NCode = '" + username + "'";
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "change Password to  " + Password + "','" + "UsersTable" + "')";
+                sc.ExecuteNonQuery();
+
+
+                transaction.Commit();
+
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
         }
 
 
