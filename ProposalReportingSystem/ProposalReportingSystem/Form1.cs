@@ -656,8 +656,8 @@ namespace ProposalReportingSystem
 
             ////////////////////////Home design////////////////////
             gl.setSize(homePanel, 0, 1, 1000, 930);
-            gl.setSize(homeAapInfoGp, 110, 70, 700, 300);
-            gl.setSize(homeTimeDateGp, 110, 400, 700, 400);
+            gl.setSize(homeAapInfoGp, 80, 70, 700, 300);
+            gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
             gl.setSize(homeAppNameLbl, 10, 25, 680, 40);
             gl.setSize(homeEBSLbl, 10, 70, 680, 40);
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
@@ -670,14 +670,14 @@ namespace ProposalReportingSystem
 
             //////////////Add proposal design///////////////
             gl.setSize(addProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(addProposalAddGp, 47, 15, 826, 445);
-            gl.setSize(addProposalShowGp, 47, 470, 826, 425);
+            gl.setSize(addProposalAddGp, 20, 15, 826, 470);
+            gl.setSize(addProposalShowGp, 20, 495, 826, 400);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(addProposalShowDgv, 5, 5, 810, 380);
+            gl.setSize(addProposalShowDgv, 5, 5, 810, 355);
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
-            gl.setSize(addProposalExecutorNcodeTxtbx, 600, 10, 110, 25);
-            gl.setSize(addProposalSearchBtn, 550, 10, 45, 27);
+            gl.setSize(addProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
+            gl.setSize(addProposalSearchBtn, 550, 10, 65, 30);
 
             gl.setSize(addProposalExecutorFNameLbl, 720, 50, 60, 25);
             gl.setSize(addProposalExecutorFNameTxtbx, 550, 50, 160, 25);
@@ -762,12 +762,12 @@ namespace ProposalReportingSystem
             //********************************************//
             //////////////Search proposal design///////////////
             gl.setSize(searchProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(searchProposalSearchGp, 47, 15, 826, 445);
+            gl.setSize(searchProposalSearchGp, 20, 15, 826, 445);
             gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
-            gl.setSize(searchProposalShowGp, 47, 470, 826, 425);
+            gl.setSize(searchProposalShowGp, 22, 495, 826, 400);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(searchProposalShowDgv, 5, 5, 810, 380);
+            gl.setSize(searchProposalShowDgv, 5, 5, 810, 355);
 
             gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
             gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
@@ -836,9 +836,9 @@ namespace ProposalReportingSystem
             /////////////manage users design/////////////////
             //*********************************************//
             gl.setSize(manageUserPanel, 0, 1, 1000, 1000);
-            gl.setSize(manageUserShowGp, 47, 470, 826, 425);
+            gl.setSize(manageUserShowGp, 20, 470, 826, 425);
             gl.setSize(manageUserShowDgv, 5, 5, 810, 380);
-            gl.setSize(manageUserManageGp, 47, 15, 826, 445);
+            gl.setSize(manageUserManageGp, 20, 15, 826, 445);
 
             gl.setSize(menageUserAccessLevelGp, 22, 5, 350, 330);
             gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
@@ -875,30 +875,30 @@ namespace ProposalReportingSystem
 
             //////////////////manageTeacher//////////////////////
             gl.setSize(manageTeacherPanel, 0, 1, 1000, 930);
-            gl.setSize(manageTeacherInfoGp, 47, 15, 826, 445);
-            gl.setSize(teacherManageShowGp, 47, 470, 826, 425);
+            gl.setSize(manageTeacherInfoGp, 20, 15, 826, 445);
+            gl.setSize(teacherManageShowGp, 20, 470, 826, 425);
             gl.setSize(manageTeacherShowDgv, 5, 5, 810, 380);
 
             gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
             gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
             gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorFacultyLbl, 465, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 465, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 465, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorFacultyLbl, 470, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 470, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 470, 200, 60, 25);
 
-            gl.setSize(manageTeacherExecutorEmailLbl, 200, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorMobileLbl, 200, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorTelLbl, 200, 200, 60, 25);
-            gl.setSize(manageTeacherExecutorTel2Lbl, 200, 270, 60, 25);
+            gl.setSize(manageTeacherExecutorEmailLbl, 215, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 215, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorTelLbl, 215, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorTel2Lbl, 215, 270, 60, 25);
 
             gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
             gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
             gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
 
-            gl.setSize(manageTeacherExecutorFacultyCb, 310, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEgroupCb, 310, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 310, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorFacultyCb, 300, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEgroupCb, 300, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 300, 200, 160, 25);
 
             gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 60, 160, 25);
             gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 130, 160, 25);
@@ -919,14 +919,14 @@ namespace ProposalReportingSystem
             //********************************************//
             //////////////edit proposal design///////////////
             gl.setSize(editProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(editProposalEditGp, 47, 15, 826, 445);
-            gl.setSize(editProposalShowGp, 47, 470, 826, 425);
+            gl.setSize(editProposalEditGp, 20, 15, 826, 445);
+            gl.setSize(editProposalShowGp, 20, 470, 826, 425);
             gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
             gl.setSize(editProposalShowDgv, 5, 5, 810, 380);
 
             gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 60, 25);
-            gl.setSize(editProposalExecutorNcodeTxtbx, 600, 10, 110, 25);
-            gl.setSize(editProposalSearchBtn, 550, 10, 45, 27);
+            gl.setSize(editProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
+            gl.setSize(editProposalSearchBtn, 550, 10, 65, 30);
 
             gl.setSize(editProposalExecutorFNameLbl, 720, 50, 60, 25);
             gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
@@ -1013,8 +1013,8 @@ namespace ProposalReportingSystem
             //********************************************//
             ///////////////////App Setting design//////////
             gl.setSize(appSettingPanel, 0, 1, 1000, 930);
-            gl.setSize(appSettingGp, 47, 15, 826, 445);
-            gl.setSize(appSettingShowGp, 47, 470, 826, 425);
+            gl.setSize(appSettingGp, 20, 15, 826, 445);
+            gl.setSize(appSettingShowGp, 20, 470, 826, 425);
             gl.setSize(appSettingShowDv, 5, 5, 810, 380);
 
             gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
@@ -1068,8 +1068,8 @@ namespace ProposalReportingSystem
             //*************************************************/
             ///////////////personal setting design///////////////
             gl.setSize(personalSettingPanel, 0, 1, 1000, 930);
-            gl.setSize(personalSettingPasswordGp, 47, 15, 826, 290);
-            gl.setSize(personalSettingThemeGp, 47, 325, 826, 290);
+            gl.setSize(personalSettingPasswordGp, 20, 15, 826, 290);
+            gl.setSize(personalSettingThemeGp, 20, 325, 826, 290);
 
 
             gl.setSize(currentPasswordLbl, 450, 35, 110, 25);
@@ -1112,7 +1112,7 @@ namespace ProposalReportingSystem
             //////////////////log design///////////////////////////
 
             /////////////////iconMenu design///////////////////////////
-            iconMenu();
+            iconMenu();//sets menu bounds
             //////////////////log design///////////////////////////
 
             //*****************************************************************************************************//
@@ -5082,8 +5082,7 @@ namespace ProposalReportingSystem
         private void menuSysLogBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 9;
-            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");
-        }
+            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");        }
 
         private void menuExitBtn_Click(object sender, EventArgs e)
         {
@@ -5142,50 +5141,50 @@ namespace ProposalReportingSystem
 
         private void detailedMenu()
         {
-            gl.setSize(iconMenuPanel, 878, 1, 300, 930);
+            gl.setSize(iconMenuPanel, 865, 1, 313, 930);
 
-            gl.setSize(menuHomeBtn, 1, 35, 120, 75);
+            gl.setSize(menuHomeBtn, 1, 35, 133, 75);
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuHomeBtn.Text = "خانه";
 
 
-            gl.setSize(menuAddProposalBtn, 1, 110, 120, 75);
+            gl.setSize(menuAddProposalBtn, 1, 110, 133, 75);
             menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAddProposalBtn.Text = "افزودن پروپوزال";
 
-            gl.setSize(menuSearchProposalBtn, 1, 185, 120, 75);
+            gl.setSize(menuSearchProposalBtn, 1, 185, 133, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuSearchProposalBtn.Text = "جستجوی پروپوزال";
 
-            gl.setSize(menuManageProposalBtn, 1, 260, 120, 75);
+            gl.setSize(menuManageProposalBtn, 1, 260, 133, 75);
             menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageProposalBtn.Text = "مدیریت پروپوزال";
 
-            gl.setSize(menuManageTeacherBtn, 1, 335, 120, 75);
+            gl.setSize(menuManageTeacherBtn, 1, 335, 133, 75);
             menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageTeacherBtn.Text = "اساتید";
 
-            gl.setSize(menuManageUserBtn, 1, 410, 120, 75);
+            gl.setSize(menuManageUserBtn, 1, 410, 133, 75);
             menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageUserBtn.Text = "کاربران";
 
-            gl.setSize(menuAppSettingBtn, 1, 485, 120, 75);
+            gl.setSize(menuAppSettingBtn, 1, 485, 133, 75);
             menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAppSettingBtn.Text = "تنظیمات برنامه";
 
-            gl.setSize(menuPersonalSettingBtn, 1, 560, 120, 75);
+            gl.setSize(menuPersonalSettingBtn, 1, 560, 133, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuPersonalSettingBtn.Text = "تنظیمات شخصی";
 
-            gl.setSize(menuAboutUsBtn, 1, 635, 120, 75);
+            gl.setSize(menuAboutUsBtn, 1, 635, 133, 75);
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAboutUsBtn.Text = "درباره ما";
 
-            gl.setSize(menuSysLogBtn, 1, 710, 120, 75);
+            gl.setSize(menuSysLogBtn, 1, 710, 133, 75);
             menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuSysLogBtn.Text = "System Log";
 
-            gl.setSize(menuExitBtn, 1, 785, 120, 75);
+            gl.setSize(menuExitBtn, 1, 785, 133, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuExitBtn.Text = "خروج";
         }
