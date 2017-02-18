@@ -623,6 +623,7 @@ namespace ProposalReportingSystem
 
 
             homePanel.Visible = false;
+            iconMenuPanel.Visible = false;
             this.Enabled = false;
 
             systemWidth = SystemInformation.PrimaryMonitorSize.Width;          //related to setSize
@@ -654,9 +655,9 @@ namespace ProposalReportingSystem
 
 
             ////////////////////////Home design////////////////////
-            gl.setSize(homePanel, 0, 1, 900, 930);
-            gl.setSize(homeAapInfoGp, 80, 70, 700, 300);
-            gl.setSize(homeTimeDateGp, 80, 400, 700, 400);
+            gl.setSize(homePanel, 0, 1, 1000, 930);
+            gl.setSize(homeAapInfoGp, 110, 70, 700, 300);
+            gl.setSize(homeTimeDateGp, 110, 400, 700, 400);
             gl.setSize(homeAppNameLbl, 10, 25, 680, 40);
             gl.setSize(homeEBSLbl, 10, 70, 680, 40);
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
@@ -668,9 +669,9 @@ namespace ProposalReportingSystem
 
 
             //////////////Add proposal design///////////////
-            gl.setSize(addProposalPanel, 0, 1, 900, 930);
-            gl.setSize(addProposalAddGp, 22, 15, 826, 445);
-            gl.setSize(addProposalShowGp, 22, 470, 826, 425);
+            gl.setSize(addProposalPanel, 0, 1, 1000, 930);
+            gl.setSize(addProposalAddGp, 47, 15, 826, 445);
+            gl.setSize(addProposalShowGp, 47, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
             gl.setSize(addProposalShowDgv, 5, 5, 810, 380);
 
@@ -760,11 +761,11 @@ namespace ProposalReportingSystem
 
             //********************************************//
             //////////////Search proposal design///////////////
-            gl.setSize(searchProposalPanel, 0, 1, 900, 930);
-            gl.setSize(searchProposalSearchGp, 22, 15, 826, 445);
+            gl.setSize(searchProposalPanel, 0, 1, 1000, 930);
+            gl.setSize(searchProposalSearchGp, 47, 15, 826, 445);
             gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
-            gl.setSize(searchProposalShowGp, 22, 470, 826, 425);
+            gl.setSize(searchProposalShowGp, 47, 470, 826, 425);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
             gl.setSize(searchProposalShowDgv, 5, 5, 810, 380);
 
@@ -834,12 +835,12 @@ namespace ProposalReportingSystem
 
             /////////////manage users design/////////////////
             //*********************************************//
-            gl.setSize(manageUserPanel, 0, 1, 900, 1000);
-            gl.setSize(manageUserShowGp, 22, 470, 826, 425);
+            gl.setSize(manageUserPanel, 0, 1, 1000, 1000);
+            gl.setSize(manageUserShowGp, 47, 470, 826, 425);
             gl.setSize(manageUserShowDgv, 5, 5, 810, 380);
-            gl.setSize(manageUserManageGp, 22, 15, 826, 445);
+            gl.setSize(manageUserManageGp, 47, 15, 826, 445);
 
-            gl.setSize(menageUserAccessLevelGp, 40, 5, 350, 330);
+            gl.setSize(menageUserAccessLevelGp, 22, 5, 350, 330);
             gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
             gl.setSize(manageUserNcodeTxtbx, 45, 20, 160, 28);
             gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
@@ -873,9 +874,9 @@ namespace ProposalReportingSystem
 
 
             //////////////////manageTeacher//////////////////////
-            gl.setSize(manageTeacherPanel, 0, 1, 900, 930);
-            gl.setSize(manageTeacherInfoGp, 22, 15, 826, 445);
-            gl.setSize(teacherManageShowGp, 22, 470, 826, 425);
+            gl.setSize(manageTeacherPanel, 0, 1, 1000, 930);
+            gl.setSize(manageTeacherInfoGp, 47, 15, 826, 445);
+            gl.setSize(teacherManageShowGp, 47, 470, 826, 425);
             gl.setSize(manageTeacherShowDgv, 5, 5, 810, 380);
 
             gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
@@ -917,9 +918,9 @@ namespace ProposalReportingSystem
 
             //********************************************//
             //////////////edit proposal design///////////////
-            gl.setSize(editProposalPanel, 0, 1, 900, 930);
-            gl.setSize(editProposalEditGp, 22, 15, 826, 445);
-            gl.setSize(editProposalShowGp, 22, 470, 826, 425);
+            gl.setSize(editProposalPanel, 0, 1, 1000, 930);
+            gl.setSize(editProposalEditGp, 47, 15, 826, 445);
+            gl.setSize(editProposalShowGp, 47, 470, 826, 425);
             gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
             gl.setSize(editProposalShowDgv, 5, 5, 810, 380);
 
@@ -1011,9 +1012,9 @@ namespace ProposalReportingSystem
 
             //********************************************//
             ///////////////////App Setting design//////////
-            gl.setSize(appSettingPanel, 0, 1, 900, 930);
-            gl.setSize(appSettingGp, 22, 15, 826, 445);
-            gl.setSize(appSettingShowGp, 22, 470, 826, 425);
+            gl.setSize(appSettingPanel, 0, 1, 1000, 930);
+            gl.setSize(appSettingGp, 47, 15, 826, 445);
+            gl.setSize(appSettingShowGp, 47, 470, 826, 425);
             gl.setSize(appSettingShowDv, 5, 5, 810, 380);
 
             gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
@@ -1066,9 +1067,9 @@ namespace ProposalReportingSystem
 
             //*************************************************/
             ///////////////personal setting design///////////////
-            gl.setSize(personalSettingPanel, 0, 1, 900, 930);
-            gl.setSize(personalSettingPasswordGp, 22, 15, 826, 290);
-            gl.setSize(personalSettingThemeGp, 22, 325, 826, 290);
+            gl.setSize(personalSettingPanel, 0, 1, 1000, 930);
+            gl.setSize(personalSettingPasswordGp, 47, 15, 826, 290);
+            gl.setSize(personalSettingThemeGp, 47, 325, 826, 290);
 
 
             gl.setSize(currentPasswordLbl, 450, 35, 110, 25);
@@ -1094,7 +1095,7 @@ namespace ProposalReportingSystem
 
 
             /////////////////about us///////////////////////////
-            gl.setSize(aboutUsPanel, 0, 1, 900, 930);
+            gl.setSize(aboutUsPanel, 0, 1, 1000, 930);
             gl.setSize(aboutUsGp, 210, 250, 450, 340);
             gl.setSize(aboutUsTitleLbl, 280, 10, 150, 35);
             gl.setSize(AboutUsArshinLbl, 280, 60, 150, 30);
@@ -1104,10 +1105,14 @@ namespace ProposalReportingSystem
             gl.setSize(aboutUsAlirezaLbl, 280, 260, 150, 30);
             //////////////////about us///////////////////////////
 
-
+                
             /////////////////log design///////////////////////////
-            gl.setSize(logPanel, 0, 1, 900, 930);
+            gl.setSize(logPanel, 0, 1, 1000, 930);
             gl.setSize(logDgv, 20, 20, 840, 870);
+            //////////////////log design///////////////////////////
+
+            /////////////////iconMenu design///////////////////////////
+            iconMenu();
             //////////////////log design///////////////////////////
 
             //*****************************************************************************************************//
@@ -3946,6 +3951,7 @@ namespace ProposalReportingSystem
                 logPanel.BackColor = dlg.Color;
 
                 appSettingBackgroundColorLbl.BackColor = dlg.Color;
+                iconMenuPanel.BackColor = dlg.Color;
             }
         }
 
@@ -4744,14 +4750,14 @@ namespace ProposalReportingSystem
             this.Hide();
         }
 
-        private void currentPasswordLbl_MouseEnter(object sender, EventArgs e)
+        private void iconMenuPanel_MouseEnter(object sender, EventArgs e)
         {
-            mainPage.TabsVisible = false;
+            detailedMenu();
         }
 
-        private void confirmNewPasswordLbl_MouseEnter(object sender, EventArgs e)
+        private void homePanel_MouseEnter(object sender, EventArgs e)
         {
-            mainPage.TabsVisible = true;
+            iconMenu();
         }
 
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -4999,6 +5005,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
 
             this.Enabled = true;
+            iconMenuPanel.Visible = true;
             homePanel.Visible = true;
             w.i = -1;
 
@@ -5019,10 +5026,168 @@ namespace ProposalReportingSystem
                 logPanel.BackColor = System.Drawing.ColorTranslator.FromHtml(loginUser.U_Color);
 
                 appSettingBackgroundColorLbl.BackColor = System.Drawing.ColorTranslator.FromHtml(loginUser.U_Color);
+                iconMenuPanel.BackColor = System.Drawing.ColorTranslator.FromHtml(loginUser.U_Color);
+                // iconMenuPanel.BackColor = System.Drawing.ColorTranslator.FromHtml(loginUser.U_Color);
             }
             //*************************************************************************\\
             //                        manage color prefrence                           \\
             //*************************************************************************\\
+        }
+
+        private void menuHomeBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 0;
+        }
+
+        private void menuAddProposalBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 1;
+        }
+
+        private void menuSearchProposalBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 2;
+        }
+
+        private void menuManageProposalBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 3;
+        }
+
+        private void menuManageTeacherBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 4;
+        }
+
+        private void menuManageUserBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 5;
+        }
+
+        private void menuAppSettingBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 6;
+        }
+
+        private void menuPersonalSettingBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 7;
+        }
+
+        private void menuAboutUsBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 8;
+        }
+
+        private void menuSysLogBtn_Click(object sender, EventArgs e)
+        {
+            mainPage.SelectedTabIndex = 9;
+            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");
+        }
+
+        private void menuExitBtn_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            this.Hide();
+        }
+
+        private void iconMenu()
+        {
+            gl.setSize(iconMenuPanel, 965, 1, 250, 930);
+
+            gl.setSize(menuHomeBtn, 0, 35, 35, 75);
+            menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuHomeBtn.Text = "";
+
+            gl.setSize(menuAddProposalBtn, 0, 110, 35, 75);
+            menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuAddProposalBtn.Text = "";
+
+            gl.setSize(menuSearchProposalBtn, 0, 185, 35, 75);
+            menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuSearchProposalBtn.Text = "";
+
+            gl.setSize(menuManageProposalBtn, 0, 260, 35, 75);
+            menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuManageProposalBtn.Text = "";
+
+            gl.setSize(menuManageTeacherBtn, 0, 335, 35, 75);
+            menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuManageTeacherBtn.Text = "";
+
+            gl.setSize(menuManageUserBtn, 0, 410, 35, 75);
+            menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuManageUserBtn.Text = "";
+
+            gl.setSize(menuAppSettingBtn, 0, 485, 35, 75);
+            menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuAppSettingBtn.Text = "";
+
+            gl.setSize(menuPersonalSettingBtn, 0, 560, 35, 75);
+            menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuPersonalSettingBtn.Text = "";
+
+            gl.setSize(menuAboutUsBtn, 0, 635, 35, 75);
+            menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuAboutUsBtn.Text = "";
+
+            gl.setSize(menuSysLogBtn, 0, 710, 35, 75);
+            menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuSysLogBtn.Text = "";
+
+            gl.setSize(menuExitBtn, 0, 785, 35, 75);
+            menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+            menuExitBtn.Text = "";
+        }
+
+        private void detailedMenu()
+        {
+            gl.setSize(iconMenuPanel, 878, 1, 300, 930);
+
+            gl.setSize(menuHomeBtn, 1, 35, 120, 75);
+            menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuHomeBtn.Text = "خانه";
+
+
+            gl.setSize(menuAddProposalBtn, 1, 110, 120, 75);
+            menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuAddProposalBtn.Text = "افزودن پروپوزال";
+
+            gl.setSize(menuSearchProposalBtn, 1, 185, 120, 75);
+            menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuSearchProposalBtn.Text = "جستجوی پروپوزال";
+
+            gl.setSize(menuManageProposalBtn, 1, 260, 120, 75);
+            menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuManageProposalBtn.Text = "مدیریت پروپوزال";
+
+            gl.setSize(menuManageTeacherBtn, 1, 335, 120, 75);
+            menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuManageTeacherBtn.Text = "اساتید";
+
+            gl.setSize(menuManageUserBtn, 1, 410, 120, 75);
+            menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuManageUserBtn.Text = "کاربران";
+
+            gl.setSize(menuAppSettingBtn, 1, 485, 120, 75);
+            menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuAppSettingBtn.Text = "تنظیمات برنامه";
+
+            gl.setSize(menuPersonalSettingBtn, 1, 560, 120, 75);
+            menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuPersonalSettingBtn.Text = "تنظیمات شخصی";
+
+            gl.setSize(menuAboutUsBtn, 1, 635, 120, 75);
+            menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuAboutUsBtn.Text = "درباره ما";
+
+            gl.setSize(menuSysLogBtn, 1, 710, 120, 75);
+            menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuSysLogBtn.Text = "System Log";
+
+            gl.setSize(menuExitBtn, 1, 785, 120, 75);
+            menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+            menuExitBtn.Text = "خروج";
         }
     }
 }
