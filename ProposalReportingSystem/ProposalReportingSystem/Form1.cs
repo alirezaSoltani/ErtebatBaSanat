@@ -4570,14 +4570,14 @@ namespace ProposalReportingSystem
 
         private void personalSettingNewPassChb_MouseDown(object sender, MouseEventArgs e)
         {
-            personalSettingOldPasswordChb.Checked = true;
-            personalSettingOldPasswordTxtbx.PasswordChar = '\0';
+            personalSettingNewPasswordChb.Checked = true;
+            personalSettingNewPasswordTxtbx.PasswordChar = '\0';
         }
 
         private void personalSettingNewPassChb_MouseUp(object sender, MouseEventArgs e)
         {
-            personalSettingOldPasswordChb.Checked = false;
-            personalSettingOldPasswordTxtbx.PasswordChar = '●';
+            personalSettingNewPasswordChb.Checked = false;
+            personalSettingNewPasswordTxtbx.PasswordChar = '●';
         }
 
         private void personalSettingRepeatPassChb_MouseDown(object sender, MouseEventArgs e)
