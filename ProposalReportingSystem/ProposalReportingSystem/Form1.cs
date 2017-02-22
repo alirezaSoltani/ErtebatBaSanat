@@ -35,6 +35,8 @@ namespace ProposalReportingSystem
 
         private string editProposalCurrentFileName;
 
+        private Boolean isIconMenu = true, isDetailedMenu = true;
+
 
         /// <summary>
         /// Current Values
@@ -672,8 +674,9 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalPanel, 0, 1, 1000, 930);
             gl.setSize(addProposalAddGp, 20, 15, 826, 470);
             gl.setSize(addProposalShowGp, 20, 495, 826, 400);
-            gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
             gl.setSize(addProposalShowDgv, 5, 5, 810, 355);
+            gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
+            
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
@@ -762,12 +765,12 @@ namespace ProposalReportingSystem
             //********************************************//
             //////////////Search proposal design///////////////
             gl.setSize(searchProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(searchProposalSearchGp, 20, 15, 826, 445);
+            gl.setSize(searchProposalSearchGp, 20, 15, 826, 470);
+            gl.setSize(searchProposalShowGp, 20, 495, 826, 400);
+            gl.setSize(searchProposalShowDgv, 5, 5, 810, 355);
             gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
-            gl.setSize(searchProposalShowGp, 22, 495, 826, 400);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            gl.setSize(searchProposalShowDgv, 5, 5, 810, 355);
 
             gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
             gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
@@ -833,96 +836,13 @@ namespace ProposalReportingSystem
 
 
 
-            /////////////manage users design/////////////////
-            //*********************************************//
-            gl.setSize(manageUserPanel, 0, 1, 1000, 1000);
-            gl.setSize(manageUserShowGp, 20, 470, 826, 425);
-            gl.setSize(manageUserShowDgv, 5, 5, 810, 380);
-            gl.setSize(manageUserManageGp, 20, 15, 826, 445);
-
-            gl.setSize(menageUserAccessLevelGp, 22, 5, 350, 330);
-            gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
-            gl.setSize(manageUserNcodeTxtbx, 45, 20, 160, 28);
-            gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
-            gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
-            gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
-            gl.setSize(manageUserShowPasswordChb, 210, 140, 25, 25);
-            gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
-            gl.setSize(manageUserTelTxtbx, 45, 220, 160, 28);
-
-            gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
-            gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
-            gl.setSize(manageUserLnameLb, 205, 100, 110, 25);
-            gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
-            gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
-            gl.setSize(manageUserTellLb, 205, 220, 110, 25);
-
-            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 145, 150, 35);
-            gl.setSize(manageUserManageTeacherCb, 155, 205, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
-            gl.setSize(manageUserDeleteUserCb, 20, 145, 150, 35);
-            gl.setSize(manageUserManageTypeCb, 20, 205, 150, 35);
-
-            gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
-            gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
-            gl.setSize(manageUserDeleteBtn, 220, 360, 80, 30);
-            gl.setSize(manageUserClearBtn, 310, 360, 80, 30);
-            gl.setSize(manageUserShowAllBtn, 430, 360, 80, 30);
-
-
-            //////////////////manageTeacher//////////////////////
-            gl.setSize(manageTeacherPanel, 0, 1, 1000, 930);
-            gl.setSize(manageTeacherInfoGp, 20, 15, 826, 445);
-            gl.setSize(teacherManageShowGp, 20, 470, 826, 425);
-            gl.setSize(manageTeacherShowDgv, 5, 5, 810, 380);
-
-            gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
-            gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
-            gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
-
-            gl.setSize(manageTeacherExecutorFacultyLbl, 470, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorEGroupLbl, 470, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorEDegLbl, 470, 200, 60, 25);
-
-            gl.setSize(manageTeacherExecutorEmailLbl, 215, 60, 60, 25);
-            gl.setSize(manageTeacherExecutorMobileLbl, 215, 130, 60, 25);
-            gl.setSize(manageTeacherExecutorTelLbl, 215, 200, 60, 25);
-            gl.setSize(manageTeacherExecutorTel2Lbl, 215, 270, 60, 25);
-
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
-
-            gl.setSize(manageTeacherExecutorFacultyCb, 300, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorEgroupCb, 300, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorEDegCb, 300, 200, 160, 25);
-
-            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 60, 160, 25);
-            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 130, 160, 25);
-            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 200, 160, 25);
-            gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 270, 160, 25);
-
-            gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
-            gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
-            gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
-            gl.setSize(manageTeacherClearBtn, 320, 365, 80, 30);
-            gl.setSize(manageTeacherShowAllBtn, 410, 365, 80, 30);
-            gl.setSize(manageTeacherSearchBtn, 500, 365, 120, 30);
-
-            //////////////////manageTeacher//////////////////////
-
-
-
             //********************************************//
             //////////////edit proposal design///////////////
             gl.setSize(editProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(editProposalEditGp, 20, 15, 826, 445);
-            gl.setSize(editProposalShowGp, 20, 470, 826, 425);
+            gl.setSize(editProposalEditGp, 20, 15, 826, 470);
+            gl.setSize(editProposalShowGp, 20, 495, 826, 400);
             gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
-            gl.setSize(editProposalShowDgv, 5, 5, 810, 380);
+            gl.setSize(editProposalShowDgv, 5, 5, 810, 355);
 
             gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(editProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
@@ -1010,12 +930,110 @@ namespace ProposalReportingSystem
 
 
 
+
+
+            //////////////////manageTeacher//////////////////////
+            gl.setSize(manageTeacherPanel, 0, 1, 1000, 930);
+            gl.setSize(manageTeacherInfoGp, 20, 15, 826, 470);
+            gl.setSize(teacherManageShowGp, 20, 495, 826, 400);
+            gl.setSize(manageTeacherShowDgv, 5, 5, 810, 355);
+
+            gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
+            gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
+            gl.setSize(manageTeacherLnameLbl, 720, 200, 60, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyLbl, 470, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorEGroupLbl, 470, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorEDegLbl, 470, 200, 60, 25);
+
+            gl.setSize(manageTeacherExecutorEmailLbl, 215, 60, 60, 25);
+            gl.setSize(manageTeacherExecutorMobileLbl, 215, 130, 60, 25);
+            gl.setSize(manageTeacherExecutorTelLbl, 215, 200, 60, 25);
+            gl.setSize(manageTeacherExecutorTel2Lbl, 215, 270, 60, 25);
+
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
+
+            gl.setSize(manageTeacherExecutorFacultyCb, 300, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorEgroupCb, 300, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorEDegCb, 300, 200, 160, 25);
+
+            gl.setSize(manageTeacherExecutorEmailTxtbx, 50, 60, 160, 25);
+            gl.setSize(manageTeacherExecutorMobileTxtbx, 50, 130, 160, 25);
+            gl.setSize(manageTeacherExecutorTelTxtbx, 50, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorTel2Txtbx, 50, 270, 160, 25);
+
+            gl.setSize(manageTeacherAddBtn, 50, 365, 80, 30);
+            gl.setSize(manageTeacherEditBtn, 140, 365, 80, 30);
+            gl.setSize(manageTeacherDeleteBtn, 230, 365, 80, 30);
+            gl.setSize(manageTeacherClearBtn, 320, 365, 80, 30);
+            gl.setSize(manageTeacherShowAllBtn, 410, 365, 80, 30);
+            gl.setSize(manageTeacherSearchBtn, 500, 365, 120, 30);
+
+            //////////////////manageTeacher//////////////////////
+
+
+
+
+
+
+            /////////////manage users design/////////////////
+            //*********************************************//
+            gl.setSize(manageUserPanel, 0, 1, 1000, 1000);
+            gl.setSize(manageUserShowGp, 20, 495, 826, 400);
+            gl.setSize(manageUserShowDgv, 5, 5, 810, 355);
+            gl.setSize(manageUserManageGp, 20, 15, 826, 470);
+
+
+            gl.setSize(menageUserAccessLevelGp, 22, 5, 350, 330);
+            gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
+            gl.setSize(manageUserNcodeTxtbx, 45, 20, 160, 28);
+            gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
+            gl.setSize(manageUserLnameTxtbx, 45, 100, 160, 28);
+            gl.setSize(manageUserPasswordTxtbx, 45, 140, 160, 28);
+            gl.setSize(manageUserShowPasswordChb, 210, 140, 25, 25);
+            gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
+            gl.setSize(manageUserTelTxtbx, 45, 220, 160, 28);
+
+            gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
+            gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
+            gl.setSize(manageUserLnameLb, 205, 100, 110, 25);
+            gl.setSize(manageUserPasswordLb, 205, 140, 110, 25);
+            gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
+            gl.setSize(manageUserTellLb, 205, 220, 110, 25);
+
+            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 145, 150, 35);
+            gl.setSize(manageUserManageTeacherCb, 155, 205, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 145, 150, 35);
+            gl.setSize(manageUserManageTypeCb, 20, 205, 150, 35);
+
+            gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
+            gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
+            gl.setSize(manageUserDeleteBtn, 220, 360, 80, 30);
+            gl.setSize(manageUserClearBtn, 310, 360, 80, 30);
+            gl.setSize(manageUserShowAllBtn, 430, 360, 80, 30);
+
+
+            
+
+
+
+            
+
+
+
+
             //********************************************//
             ///////////////////App Setting design//////////
             gl.setSize(appSettingPanel, 0, 1, 1000, 930);
-            gl.setSize(appSettingGp, 20, 15, 826, 445);
-            gl.setSize(appSettingShowGp, 20, 470, 826, 425);
-            gl.setSize(appSettingShowDv, 5, 5, 810, 380);
+            gl.setSize(appSettingGp, 20, 15, 826, 470);
+            gl.setSize(appSettingShowGp, 20, 495, 826, 400);
+            gl.setSize(appSettingShowDv, 5, 5, 810, 355);
 
             gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
@@ -1112,7 +1130,7 @@ namespace ProposalReportingSystem
             //////////////////log design///////////////////////////
 
             /////////////////iconMenu design///////////////////////////
-            iconMenu();//sets menu bounds
+            detailedMenu();//sets menu bounds
             //////////////////log design///////////////////////////
 
             //*****************************************************************************************************//
@@ -3143,7 +3161,7 @@ namespace ProposalReportingSystem
 
         private void manageUserAddBtn_Click(object sender, EventArgs e)
         {
-            if (manageUserFnameTxtbx.Text.Length < 10)
+            if (manageUserNcodeTxtbx.Text.Length < 10)
             {
                 PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "error");
                 p.ShowDialog();
@@ -4552,14 +4570,14 @@ namespace ProposalReportingSystem
 
         private void personalSettingNewPassChb_MouseDown(object sender, MouseEventArgs e)
         {
-            personalSettingOldPasswordChb.Checked = true;
-            personalSettingOldPasswordTxtbx.PasswordChar = '\0';
+            personalSettingNewPasswordChb.Checked = true;
+            personalSettingNewPasswordTxtbx.PasswordChar = '\0';
         }
 
         private void personalSettingNewPassChb_MouseUp(object sender, MouseEventArgs e)
         {
-            personalSettingOldPasswordChb.Checked = false;
-            personalSettingOldPasswordTxtbx.PasswordChar = '●';
+            personalSettingNewPasswordChb.Checked = false;
+            personalSettingNewPasswordTxtbx.PasswordChar = '●';
         }
 
         private void personalSettingRepeatPassChb_MouseDown(object sender, MouseEventArgs e)
@@ -4752,12 +4770,14 @@ namespace ProposalReportingSystem
 
         private void iconMenuPanel_MouseEnter(object sender, EventArgs e)
         {
-            detailedMenu();
+            if(menuSlideRb.Checked)
+                detailedMenu();
         }
 
         private void homePanel_MouseEnter(object sender, EventArgs e)
         {
-            iconMenu();
+            if (menuSlideRb.Checked)
+                iconMenu();
         }
 
         private void wait_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -5037,156 +5057,343 @@ namespace ProposalReportingSystem
         private void menuHomeBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 0;
+            menuHomeBtn.Checked = true;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuAddProposalBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 1;
+            
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = true;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuSearchProposalBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 2;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = true;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuManageProposalBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 3;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = true;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuManageTeacherBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 4;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = true;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuManageUserBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 5;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = true;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuAppSettingBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 6;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = true;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuPersonalSettingBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 7;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = true;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuAboutUsBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 8;
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = true;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = false;
         }
 
         private void menuSysLogBtn_Click(object sender, EventArgs e)
         {
             mainPage.SelectedTabIndex = 9;
-            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");        }
+            dbh.dataGridViewUpdate2(logDgv, logBindingSource, "SELECT * FROM logTable");
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = true;
+            menuExitBtn.Checked = false;
+        }
 
         private void menuExitBtn_Click(object sender, EventArgs e)
         {
             Login l = new Login();
             this.Hide();
+
+            menuHomeBtn.Checked = false;
+            menuAddProposalBtn.Checked = false;
+            menuSearchProposalBtn.Checked = false;
+            menuManageProposalBtn.Checked = false;
+            menuManageTeacherBtn.Checked = false;
+            menuManageUserBtn.Checked = false;
+            menuAppSettingBtn.Checked = false;
+            menuPersonalSettingBtn.Checked = false;
+            menuAboutUsBtn.Checked = false;
+            menuSysLogBtn.Checked = false;
+            menuExitBtn.Checked = true;
+        }
+
+        private void menuIconRb_Click(object sender, EventArgs e)
+        {
+            iconMenu();
+        }
+
+        private void personalSettingRegisterBtn_Click(object sender, EventArgs e)
+        {
+            if (loginUser.U_Password == personalSettingOldPasswordTxtbx.Text)
+            {
+                if (personalSettingNewPasswordTxtbx.Text == personalSettingRepeatPasswordTxtbx.Text)
+                {
+                    dbh.changePassword(loginUser.U_NCode, personalSettingNewPasswordTxtbx.Text, myDateTime.ToString());
+                }
+                else
+                {
+                    PopUp p1 = new PopUp("خطا", "رمز جدید و تکرار آن یکسان نیستند.", "تایید", "", "", "error");
+                    p1.ShowDialog();
+                    personalSettingRepeatPasswordTxtbx.Focus();
+                }
+            }
+            PopUp p = new PopUp("خطا", "رمز فعلی شما نادرست است .", "تایید", "", "", "error");
+            p.ShowDialog();
+            personalSettingOldPasswordTxtbx.Focus();
+        }
+
+        private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
+        {
+            detailedMenu();
         }
 
         private void iconMenu()
         {
-            gl.setSize(iconMenuPanel, 965, 1, 250, 930);
-
-            gl.setSize(menuHomeBtn, 0, 35, 35, 75);
+            if(isDetailedMenu)
+            {
+                for (int i = 865; i < 946; i++)
+                {
+                    gl.setSize(iconMenuPanel, i, -2, 313, 1000);
+                }
+            }
+            
+            gl.setSize(menuHomeBtn, 0, 5, 55, 75);
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuHomeBtn.Text = "";
 
-            gl.setSize(menuAddProposalBtn, 0, 110, 35, 75);
+            gl.setSize(menuAddProposalBtn, 0, 80, 55, 75);
             menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuAddProposalBtn.Text = "";
 
-            gl.setSize(menuSearchProposalBtn, 0, 185, 35, 75);
+            gl.setSize(menuSearchProposalBtn, 0, 155, 55, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuSearchProposalBtn.Text = "";
 
-            gl.setSize(menuManageProposalBtn, 0, 260, 35, 75);
+            gl.setSize(menuManageProposalBtn, 0, 230, 55, 75);
             menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuManageProposalBtn.Text = "";
 
-            gl.setSize(menuManageTeacherBtn, 0, 335, 35, 75);
+            gl.setSize(menuManageTeacherBtn, 0, 305, 55, 75);
             menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuManageTeacherBtn.Text = "";
 
-            gl.setSize(menuManageUserBtn, 0, 410, 35, 75);
+            gl.setSize(menuManageUserBtn, 0, 380, 55, 75);
             menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuManageUserBtn.Text = "";
 
-            gl.setSize(menuAppSettingBtn, 0, 485, 35, 75);
+            gl.setSize(menuAppSettingBtn, 0, 455, 55, 75);
             menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuAppSettingBtn.Text = "";
 
-            gl.setSize(menuPersonalSettingBtn, 0, 560, 35, 75);
+            gl.setSize(menuPersonalSettingBtn, 0, 530, 55, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuPersonalSettingBtn.Text = "";
 
-            gl.setSize(menuAboutUsBtn, 0, 635, 35, 75);
+            gl.setSize(menuAboutUsBtn, 0, 605, 55, 75);
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuAboutUsBtn.Text = "";
 
-            gl.setSize(menuSysLogBtn, 0, 710, 35, 75);
+            gl.setSize(menuSysLogBtn, 0, 680, 55, 75);
             menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuSysLogBtn.Text = "";
 
-            gl.setSize(menuExitBtn, 0, 785, 35, 75);
+            gl.setSize(menuExitBtn, 0, 755, 55, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuExitBtn.Text = "";
+
+            gl.setSize(menuIconRb, 0, 845, 50, 25);
+            gl.setSize(menuDetailRb, 0, 870, 50, 25);
+            gl.setSize(menuSlideRb, 0, 895, 50, 25);
+
+            isIconMenu = true;
+            isDetailedMenu = false;
         }
 
         private void detailedMenu()
         {
-            gl.setSize(iconMenuPanel, 865, 1, 313, 930);
-
-            gl.setSize(menuHomeBtn, 1, 35, 133, 75);
+            if(isIconMenu)
+            {
+                for (int i = 945; i > 864; i--)
+                {
+                    gl.setSize(iconMenuPanel, i, -2, 313, 1000);
+                }
+            }
+            
+            gl.setSize(menuHomeBtn, 1, 5, 133, 75);
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuHomeBtn.Text = "خانه";
 
-
-            gl.setSize(menuAddProposalBtn, 1, 110, 133, 75);
+            gl.setSize(menuAddProposalBtn, 1, 80, 133, 75);
             menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAddProposalBtn.Text = "افزودن پروپوزال";
 
-            gl.setSize(menuSearchProposalBtn, 1, 185, 133, 75);
+            gl.setSize(menuSearchProposalBtn, 1, 155, 133, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuSearchProposalBtn.Text = "جستجوی پروپوزال";
 
-            gl.setSize(menuManageProposalBtn, 1, 260, 133, 75);
+            gl.setSize(menuManageProposalBtn, 1, 230, 133, 75);
             menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageProposalBtn.Text = "مدیریت پروپوزال";
 
-            gl.setSize(menuManageTeacherBtn, 1, 335, 133, 75);
+            gl.setSize(menuManageTeacherBtn, 1, 305, 133, 75);
             menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageTeacherBtn.Text = "اساتید";
 
-            gl.setSize(menuManageUserBtn, 1, 410, 133, 75);
+            gl.setSize(menuManageUserBtn, 1, 380, 133, 75);
             menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuManageUserBtn.Text = "کاربران";
 
-            gl.setSize(menuAppSettingBtn, 1, 485, 133, 75);
+            gl.setSize(menuAppSettingBtn, 1, 455, 133, 75);
             menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAppSettingBtn.Text = "تنظیمات برنامه";
 
-            gl.setSize(menuPersonalSettingBtn, 1, 560, 133, 75);
+            gl.setSize(menuPersonalSettingBtn, 1, 530, 133, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuPersonalSettingBtn.Text = "تنظیمات شخصی";
 
-            gl.setSize(menuAboutUsBtn, 1, 635, 133, 75);
+            gl.setSize(menuAboutUsBtn, 1, 605, 133, 75);
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAboutUsBtn.Text = "درباره ما";
 
-            gl.setSize(menuSysLogBtn, 1, 710, 133, 75);
+            gl.setSize(menuSysLogBtn, 1, 680, 133, 75);
             menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuSysLogBtn.Text = "System Log";
 
-            gl.setSize(menuExitBtn, 1, 785, 133, 75);
+            gl.setSize(menuExitBtn, 1, 755, 133, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuExitBtn.Text = "خروج";
+
+            gl.setSize(menuIconRb, 45, 845, 50, 25);
+            gl.setSize(menuDetailRb, 45, 870, 50, 25);
+            gl.setSize(menuSlideRb, 45, 895, 50, 25);
+
+            isDetailedMenu = true;
+            isIconMenu = false;
         }
     }
 }
