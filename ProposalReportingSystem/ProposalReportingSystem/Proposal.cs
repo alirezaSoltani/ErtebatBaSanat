@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProposalReportingSystem
 {
-    class Proposal
+    public class Proposal
     {
         private long index;
         private string persianTitle;

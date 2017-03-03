@@ -28,161 +28,592 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail));
             this.detailPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.detailPrintBtn = new System.Windows.Forms.Button();
+            this.detailOutputBtn = new System.Windows.Forms.Button();
+            this.detailCloseBtn = new System.Windows.Forms.Button();
+            this.detailValueLbl2 = new System.Windows.Forms.Label();
+            this.detailRegisterTypeLbl2 = new System.Windows.Forms.Label();
+            this.detailDurationLbl2 = new System.Windows.Forms.Label();
+            this.detailOrganizationLbl2 = new System.Windows.Forms.Label();
+            this.detailPropertyLbl2 = new System.Windows.Forms.Label();
+            this.detailStartDateLbl2 = new System.Windows.Forms.Label();
+            this.detailStatusLbl2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailStatusLbl = new System.Windows.Forms.Label();
+            this.detailValueLbl = new System.Windows.Forms.Label();
+            this.detailOrganizationLbl = new System.Windows.Forms.Label();
+            this.detailProposalTypeLbl2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailProposalTypeLbl = new System.Windows.Forms.Label();
+            this.detailRegisterTypeLbl = new System.Windows.Forms.Label();
+            this.detailPropertyLbl = new System.Windows.Forms.Label();
+            this.detailProcedureTypeLbl2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailProcedureTypeLbl = new System.Windows.Forms.Label();
+            this.detailDurationLbl = new System.Windows.Forms.Label();
+            this.detailStartDateLbl = new System.Windows.Forms.Label();
+            this.detailCoExecutorTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailCoExecutorLbl = new System.Windows.Forms.Label();
+            this.detailExecutor2Txtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailExecutor2Lbl = new System.Windows.Forms.Label();
+            this.detailKeywordTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailLatinTitleTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailPersianTitleTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.detailKeywordLbl = new System.Windows.Forms.Label();
+            this.detailLatinTitleLbl = new System.Windows.Forms.Label();
+            this.detailPersianTitleLbl = new System.Windows.Forms.Label();
+            this.detailRegistrantLbl2 = new System.Windows.Forms.Label();
+            this.detailRegistrantLbl = new System.Windows.Forms.Label();
             this.detailPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // detailPanel
             // 
             this.detailPanel.AutoScroll = true;
-            this.detailPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.detailPanel.Controls.Add(this.label12);
-            this.detailPanel.Controls.Add(this.label11);
-            this.detailPanel.Controls.Add(this.label10);
-            this.detailPanel.Controls.Add(this.label9);
-            this.detailPanel.Controls.Add(this.label8);
-            this.detailPanel.Controls.Add(this.label7);
-            this.detailPanel.Controls.Add(this.label6);
-            this.detailPanel.Controls.Add(this.label5);
-            this.detailPanel.Controls.Add(this.label4);
-            this.detailPanel.Controls.Add(this.label3);
-            this.detailPanel.Controls.Add(this.label2);
-            this.detailPanel.Controls.Add(this.label1);
+            this.detailPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.detailPanel.Controls.Add(this.detailRegistrantLbl2);
+            this.detailPanel.Controls.Add(this.detailRegistrantLbl);
+            this.detailPanel.Controls.Add(this.detailPrintBtn);
+            this.detailPanel.Controls.Add(this.detailOutputBtn);
+            this.detailPanel.Controls.Add(this.detailCloseBtn);
+            this.detailPanel.Controls.Add(this.detailValueLbl2);
+            this.detailPanel.Controls.Add(this.detailRegisterTypeLbl2);
+            this.detailPanel.Controls.Add(this.detailDurationLbl2);
+            this.detailPanel.Controls.Add(this.detailOrganizationLbl2);
+            this.detailPanel.Controls.Add(this.detailPropertyLbl2);
+            this.detailPanel.Controls.Add(this.detailStartDateLbl2);
+            this.detailPanel.Controls.Add(this.detailStatusLbl2);
+            this.detailPanel.Controls.Add(this.detailStatusLbl);
+            this.detailPanel.Controls.Add(this.detailValueLbl);
+            this.detailPanel.Controls.Add(this.detailOrganizationLbl);
+            this.detailPanel.Controls.Add(this.detailProposalTypeLbl2);
+            this.detailPanel.Controls.Add(this.detailProposalTypeLbl);
+            this.detailPanel.Controls.Add(this.detailRegisterTypeLbl);
+            this.detailPanel.Controls.Add(this.detailPropertyLbl);
+            this.detailPanel.Controls.Add(this.detailProcedureTypeLbl2);
+            this.detailPanel.Controls.Add(this.detailProcedureTypeLbl);
+            this.detailPanel.Controls.Add(this.detailDurationLbl);
+            this.detailPanel.Controls.Add(this.detailStartDateLbl);
+            this.detailPanel.Controls.Add(this.detailCoExecutorTxtbx);
+            this.detailPanel.Controls.Add(this.detailCoExecutorLbl);
+            this.detailPanel.Controls.Add(this.detailExecutor2Txtbx);
+            this.detailPanel.Controls.Add(this.detailExecutor2Lbl);
+            this.detailPanel.Controls.Add(this.detailKeywordTxtbx);
+            this.detailPanel.Controls.Add(this.detailLatinTitleTxtbx);
+            this.detailPanel.Controls.Add(this.detailPersianTitleTxtbx);
+            this.detailPanel.Controls.Add(this.detailKeywordLbl);
+            this.detailPanel.Controls.Add(this.detailLatinTitleLbl);
+            this.detailPanel.Controls.Add(this.detailPersianTitleLbl);
             this.detailPanel.Location = new System.Drawing.Point(0, 0);
             this.detailPanel.Name = "detailPanel";
-            this.detailPanel.Size = new System.Drawing.Size(986, 751);
+            this.detailPanel.Size = new System.Drawing.Size(987, 714);
             this.detailPanel.TabIndex = 0;
             // 
-            // label1
+            // detailPrintBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(866, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.detailPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailPrintBtn.Location = new System.Drawing.Point(380, 618);
+            this.detailPrintBtn.Name = "detailPrintBtn";
+            this.detailPrintBtn.Size = new System.Drawing.Size(145, 42);
+            this.detailPrintBtn.TabIndex = 3;
+            this.detailPrintBtn.Text = "چاپ نامه";
+            this.detailPrintBtn.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // detailOutputBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(866, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.detailOutputBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailOutputBtn.Location = new System.Drawing.Point(222, 618);
+            this.detailOutputBtn.Name = "detailOutputBtn";
+            this.detailOutputBtn.Size = new System.Drawing.Size(145, 42);
+            this.detailOutputBtn.TabIndex = 2;
+            this.detailOutputBtn.Text = "فایل خروجی";
+            this.detailOutputBtn.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // detailCloseBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(866, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.detailCloseBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailCloseBtn.Location = new System.Drawing.Point(63, 618);
+            this.detailCloseBtn.Name = "detailCloseBtn";
+            this.detailCloseBtn.Size = new System.Drawing.Size(145, 42);
+            this.detailCloseBtn.TabIndex = 1;
+            this.detailCloseBtn.Text = "خروج";
+            this.detailCloseBtn.UseVisualStyleBackColor = true;
+            this.detailCloseBtn.Click += new System.EventHandler(this.detailCloseBtn_Click);
             // 
-            // label4
+            // detailValueLbl2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(866, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.detailValueLbl2.BackColor = System.Drawing.Color.White;
+            this.detailValueLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailValueLbl2.Location = new System.Drawing.Point(380, 557);
+            this.detailValueLbl2.Name = "detailValueLbl2";
+            this.detailValueLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailValueLbl2.TabIndex = 11;
+            this.detailValueLbl2.Text = "label18";
+            this.detailValueLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // detailRegisterTypeLbl2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(866, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.detailRegisterTypeLbl2.BackColor = System.Drawing.Color.White;
+            this.detailRegisterTypeLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailRegisterTypeLbl2.Location = new System.Drawing.Point(380, 513);
+            this.detailRegisterTypeLbl2.Name = "detailRegisterTypeLbl2";
+            this.detailRegisterTypeLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegisterTypeLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailRegisterTypeLbl2.TabIndex = 10;
+            this.detailRegisterTypeLbl2.Text = "label19";
+            this.detailRegisterTypeLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // detailDurationLbl2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(866, 313);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
+            this.detailDurationLbl2.BackColor = System.Drawing.Color.White;
+            this.detailDurationLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailDurationLbl2.Location = new System.Drawing.Point(380, 466);
+            this.detailDurationLbl2.Name = "detailDurationLbl2";
+            this.detailDurationLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailDurationLbl2.TabIndex = 9;
+            this.detailDurationLbl2.Text = "label20";
+            this.detailDurationLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // detailOrganizationLbl2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(866, 369);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.detailOrganizationLbl2.BackColor = System.Drawing.Color.White;
+            this.detailOrganizationLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailOrganizationLbl2.Location = new System.Drawing.Point(669, 555);
+            this.detailOrganizationLbl2.Name = "detailOrganizationLbl2";
+            this.detailOrganizationLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailOrganizationLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailOrganizationLbl2.TabIndex = 8;
+            this.detailOrganizationLbl2.Text = "label17";
+            this.detailOrganizationLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // detailPropertyLbl2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(866, 416);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
+            this.detailPropertyLbl2.BackColor = System.Drawing.Color.White;
+            this.detailPropertyLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailPropertyLbl2.Location = new System.Drawing.Point(669, 511);
+            this.detailPropertyLbl2.Name = "detailPropertyLbl2";
+            this.detailPropertyLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailPropertyLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailPropertyLbl2.TabIndex = 7;
+            this.detailPropertyLbl2.Text = "label16";
+            this.detailPropertyLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // detailStartDateLbl2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(866, 451);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
+            this.detailStartDateLbl2.BackColor = System.Drawing.Color.White;
+            this.detailStartDateLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailStartDateLbl2.Location = new System.Drawing.Point(669, 464);
+            this.detailStartDateLbl2.Name = "detailStartDateLbl2";
+            this.detailStartDateLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailStartDateLbl2.TabIndex = 6;
+            this.detailStartDateLbl2.Text = "label15";
+            this.detailStartDateLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // detailStatusLbl2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(858, 495);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "label10";
             // 
-            // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(858, 545);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 17);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "label11";
             // 
-            // label12
+            this.detailStatusLbl2.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailStatusLbl2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailStatusLbl2.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailStatusLbl2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailStatusLbl2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailStatusLbl2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailStatusLbl2.Border.Class = "TextBoxBorder";
+            this.detailStatusLbl2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailStatusLbl2.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailStatusLbl2.Location = new System.Drawing.Point(63, 555);
+            this.detailStatusLbl2.Multiline = true;
+            this.detailStatusLbl2.Name = "detailStatusLbl2";
+            this.detailStatusLbl2.PreventEnterBeep = true;
+            this.detailStatusLbl2.ReadOnly = true;
+            this.detailStatusLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailStatusLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailStatusLbl2.TabIndex = 25;
+            this.detailStatusLbl2.Text = "تاریخ";
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(858, 638);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 17);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "label12";
+            // detailStatusLbl
+            // 
+            this.detailStatusLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailStatusLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailStatusLbl.Location = new System.Drawing.Point(226, 549);
+            this.detailStatusLbl.Name = "detailStatusLbl";
+            this.detailStatusLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailStatusLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailStatusLbl.TabIndex = 26;
+            this.detailStatusLbl.Text = "وضعیت";
+            this.detailStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailValueLbl
+            // 
+            this.detailValueLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailValueLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailValueLbl.Location = new System.Drawing.Point(531, 548);
+            this.detailValueLbl.Name = "detailValueLbl";
+            this.detailValueLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailValueLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailValueLbl.TabIndex = 24;
+            this.detailValueLbl.Text = "مبلغ";
+            this.detailValueLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailOrganizationLbl
+            // 
+            this.detailOrganizationLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailOrganizationLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailOrganizationLbl.Location = new System.Drawing.Point(833, 557);
+            this.detailOrganizationLbl.Name = "detailOrganizationLbl";
+            this.detailOrganizationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailOrganizationLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailOrganizationLbl.TabIndex = 22;
+            this.detailOrganizationLbl.Text = "سازمان کارفرما";
+            this.detailOrganizationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailProposalTypeLbl2
+            // 
+            // 
+            // 
+            // 
+            this.detailProposalTypeLbl2.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailProposalTypeLbl2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProposalTypeLbl2.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailProposalTypeLbl2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProposalTypeLbl2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProposalTypeLbl2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProposalTypeLbl2.Border.Class = "TextBoxBorder";
+            this.detailProposalTypeLbl2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailProposalTypeLbl2.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailProposalTypeLbl2.Location = new System.Drawing.Point(63, 511);
+            this.detailProposalTypeLbl2.Multiline = true;
+            this.detailProposalTypeLbl2.Name = "detailProposalTypeLbl2";
+            this.detailProposalTypeLbl2.PreventEnterBeep = true;
+            this.detailProposalTypeLbl2.ReadOnly = true;
+            this.detailProposalTypeLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailProposalTypeLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailProposalTypeLbl2.TabIndex = 19;
+            this.detailProposalTypeLbl2.Text = "تاریخ";
+            // 
+            // detailProposalTypeLbl
+            // 
+            this.detailProposalTypeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailProposalTypeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailProposalTypeLbl.Location = new System.Drawing.Point(226, 508);
+            this.detailProposalTypeLbl.Name = "detailProposalTypeLbl";
+            this.detailProposalTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailProposalTypeLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailProposalTypeLbl.TabIndex = 20;
+            this.detailProposalTypeLbl.Text = "نوع پروپوزال";
+            this.detailProposalTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailRegisterTypeLbl
+            // 
+            this.detailRegisterTypeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailRegisterTypeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailRegisterTypeLbl.Location = new System.Drawing.Point(531, 507);
+            this.detailRegisterTypeLbl.Name = "detailRegisterTypeLbl";
+            this.detailRegisterTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegisterTypeLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailRegisterTypeLbl.TabIndex = 18;
+            this.detailRegisterTypeLbl.Text = "نوع ثبت";
+            this.detailRegisterTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailPropertyLbl
+            // 
+            this.detailPropertyLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailPropertyLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailPropertyLbl.Location = new System.Drawing.Point(833, 513);
+            this.detailPropertyLbl.Name = "detailPropertyLbl";
+            this.detailPropertyLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailPropertyLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailPropertyLbl.TabIndex = 16;
+            this.detailPropertyLbl.Text = "خاصیت";
+            this.detailPropertyLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailProcedureTypeLbl2
+            // 
+            // 
+            // 
+            // 
+            this.detailProcedureTypeLbl2.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailProcedureTypeLbl2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProcedureTypeLbl2.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailProcedureTypeLbl2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProcedureTypeLbl2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProcedureTypeLbl2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailProcedureTypeLbl2.Border.Class = "TextBoxBorder";
+            this.detailProcedureTypeLbl2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailProcedureTypeLbl2.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailProcedureTypeLbl2.Location = new System.Drawing.Point(63, 465);
+            this.detailProcedureTypeLbl2.Multiline = true;
+            this.detailProcedureTypeLbl2.Name = "detailProcedureTypeLbl2";
+            this.detailProcedureTypeLbl2.PreventEnterBeep = true;
+            this.detailProcedureTypeLbl2.ReadOnly = true;
+            this.detailProcedureTypeLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailProcedureTypeLbl2.Size = new System.Drawing.Size(145, 35);
+            this.detailProcedureTypeLbl2.TabIndex = 13;
+            this.detailProcedureTypeLbl2.Text = "تاریخ";
+            // 
+            // detailProcedureTypeLbl
+            // 
+            this.detailProcedureTypeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailProcedureTypeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailProcedureTypeLbl.Location = new System.Drawing.Point(226, 465);
+            this.detailProcedureTypeLbl.Name = "detailProcedureTypeLbl";
+            this.detailProcedureTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailProcedureTypeLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailProcedureTypeLbl.TabIndex = 14;
+            this.detailProcedureTypeLbl.Text = "نوع کار";
+            this.detailProcedureTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailDurationLbl
+            // 
+            this.detailDurationLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailDurationLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailDurationLbl.Location = new System.Drawing.Point(531, 464);
+            this.detailDurationLbl.Name = "detailDurationLbl";
+            this.detailDurationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailDurationLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailDurationLbl.TabIndex = 12;
+            this.detailDurationLbl.Text = "مدت زمان";
+            this.detailDurationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailStartDateLbl
+            // 
+            this.detailStartDateLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailStartDateLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailStartDateLbl.Location = new System.Drawing.Point(833, 466);
+            this.detailStartDateLbl.Name = "detailStartDateLbl";
+            this.detailStartDateLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailStartDateLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailStartDateLbl.TabIndex = 10;
+            this.detailStartDateLbl.Text = "تاریخ ارسال";
+            this.detailStartDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailCoExecutorTxtbx
+            // 
+            // 
+            // 
+            // 
+            this.detailCoExecutorTxtbx.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailCoExecutorTxtbx.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailCoExecutorTxtbx.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailCoExecutorTxtbx.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailCoExecutorTxtbx.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailCoExecutorTxtbx.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailCoExecutorTxtbx.Border.Class = "TextBoxBorder";
+            this.detailCoExecutorTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailCoExecutorTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailCoExecutorTxtbx.Location = new System.Drawing.Point(63, 391);
+            this.detailCoExecutorTxtbx.Multiline = true;
+            this.detailCoExecutorTxtbx.Name = "detailCoExecutorTxtbx";
+            this.detailCoExecutorTxtbx.PreventEnterBeep = true;
+            this.detailCoExecutorTxtbx.ReadOnly = true;
+            this.detailCoExecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailCoExecutorTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.detailCoExecutorTxtbx.Size = new System.Drawing.Size(751, 59);
+            this.detailCoExecutorTxtbx.TabIndex = 5;
+            this.detailCoExecutorTxtbx.TabStop = false;
+            this.detailCoExecutorTxtbx.Text = resources.GetString("detailCoExecutorTxtbx.Text");
+            // 
+            // detailCoExecutorLbl
+            // 
+            this.detailCoExecutorLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailCoExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailCoExecutorLbl.Location = new System.Drawing.Point(833, 391);
+            this.detailCoExecutorLbl.Name = "detailCoExecutorLbl";
+            this.detailCoExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailCoExecutorLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailCoExecutorLbl.TabIndex = 8;
+            this.detailCoExecutorLbl.Text = "همکاران مجری";
+            this.detailCoExecutorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailExecutor2Txtbx
+            // 
+            // 
+            // 
+            // 
+            this.detailExecutor2Txtbx.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailExecutor2Txtbx.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailExecutor2Txtbx.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailExecutor2Txtbx.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailExecutor2Txtbx.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailExecutor2Txtbx.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailExecutor2Txtbx.Border.Class = "TextBoxBorder";
+            this.detailExecutor2Txtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailExecutor2Txtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailExecutor2Txtbx.Location = new System.Drawing.Point(63, 316);
+            this.detailExecutor2Txtbx.Multiline = true;
+            this.detailExecutor2Txtbx.Name = "detailExecutor2Txtbx";
+            this.detailExecutor2Txtbx.PreventEnterBeep = true;
+            this.detailExecutor2Txtbx.ReadOnly = true;
+            this.detailExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailExecutor2Txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.detailExecutor2Txtbx.Size = new System.Drawing.Size(751, 59);
+            this.detailExecutor2Txtbx.TabIndex = 4;
+            this.detailExecutor2Txtbx.TabStop = false;
+            this.detailExecutor2Txtbx.Text = resources.GetString("detailExecutor2Txtbx.Text");
+            // 
+            // detailExecutor2Lbl
+            // 
+            this.detailExecutor2Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailExecutor2Lbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailExecutor2Lbl.Location = new System.Drawing.Point(833, 316);
+            this.detailExecutor2Lbl.Name = "detailExecutor2Lbl";
+            this.detailExecutor2Lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailExecutor2Lbl.Size = new System.Drawing.Size(89, 30);
+            this.detailExecutor2Lbl.TabIndex = 6;
+            this.detailExecutor2Lbl.Text = "مجریان همکار";
+            this.detailExecutor2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailKeywordTxtbx
+            // 
+            // 
+            // 
+            // 
+            this.detailKeywordTxtbx.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailKeywordTxtbx.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailKeywordTxtbx.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailKeywordTxtbx.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailKeywordTxtbx.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailKeywordTxtbx.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailKeywordTxtbx.Border.Class = "TextBoxBorder";
+            this.detailKeywordTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailKeywordTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailKeywordTxtbx.Location = new System.Drawing.Point(63, 241);
+            this.detailKeywordTxtbx.Multiline = true;
+            this.detailKeywordTxtbx.Name = "detailKeywordTxtbx";
+            this.detailKeywordTxtbx.PreventEnterBeep = true;
+            this.detailKeywordTxtbx.ReadOnly = true;
+            this.detailKeywordTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailKeywordTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.detailKeywordTxtbx.Size = new System.Drawing.Size(751, 59);
+            this.detailKeywordTxtbx.TabIndex = 3;
+            this.detailKeywordTxtbx.TabStop = false;
+            this.detailKeywordTxtbx.Text = resources.GetString("detailKeywordTxtbx.Text");
+            // 
+            // detailLatinTitleTxtbx
+            // 
+            // 
+            // 
+            // 
+            this.detailLatinTitleTxtbx.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailLatinTitleTxtbx.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailLatinTitleTxtbx.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailLatinTitleTxtbx.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailLatinTitleTxtbx.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailLatinTitleTxtbx.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailLatinTitleTxtbx.Border.Class = "TextBoxBorder";
+            this.detailLatinTitleTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailLatinTitleTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailLatinTitleTxtbx.Location = new System.Drawing.Point(63, 136);
+            this.detailLatinTitleTxtbx.Multiline = true;
+            this.detailLatinTitleTxtbx.Name = "detailLatinTitleTxtbx";
+            this.detailLatinTitleTxtbx.PreventEnterBeep = true;
+            this.detailLatinTitleTxtbx.ReadOnly = true;
+            this.detailLatinTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.detailLatinTitleTxtbx.Size = new System.Drawing.Size(751, 91);
+            this.detailLatinTitleTxtbx.TabIndex = 2;
+            this.detailLatinTitleTxtbx.TabStop = false;
+            this.detailLatinTitleTxtbx.Text = resources.GetString("detailLatinTitleTxtbx.Text");
+            // 
+            // detailPersianTitleTxtbx
+            // 
+            // 
+            // 
+            // 
+            this.detailPersianTitleTxtbx.Border.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.TopLeft;
+            this.detailPersianTitleTxtbx.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailPersianTitleTxtbx.Border.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.detailPersianTitleTxtbx.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailPersianTitleTxtbx.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailPersianTitleTxtbx.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.detailPersianTitleTxtbx.Border.Class = "TextBoxBorder";
+            this.detailPersianTitleTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.detailPersianTitleTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailPersianTitleTxtbx.Location = new System.Drawing.Point(63, 32);
+            this.detailPersianTitleTxtbx.Multiline = true;
+            this.detailPersianTitleTxtbx.Name = "detailPersianTitleTxtbx";
+            this.detailPersianTitleTxtbx.PreventEnterBeep = true;
+            this.detailPersianTitleTxtbx.ReadOnly = true;
+            this.detailPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailPersianTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.detailPersianTitleTxtbx.Size = new System.Drawing.Size(751, 91);
+            this.detailPersianTitleTxtbx.TabIndex = 1;
+            this.detailPersianTitleTxtbx.TabStop = false;
+            this.detailPersianTitleTxtbx.Text = resources.GetString("detailPersianTitleTxtbx.Text");
+            // 
+            // detailKeywordLbl
+            // 
+            this.detailKeywordLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailKeywordLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailKeywordLbl.Location = new System.Drawing.Point(833, 241);
+            this.detailKeywordLbl.Name = "detailKeywordLbl";
+            this.detailKeywordLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailKeywordLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailKeywordLbl.TabIndex = 4;
+            this.detailKeywordLbl.Text = "کلمات کلیدی";
+            this.detailKeywordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailLatinTitleLbl
+            // 
+            this.detailLatinTitleLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailLatinTitleLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailLatinTitleLbl.Location = new System.Drawing.Point(833, 136);
+            this.detailLatinTitleLbl.Name = "detailLatinTitleLbl";
+            this.detailLatinTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailLatinTitleLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailLatinTitleLbl.TabIndex = 2;
+            this.detailLatinTitleLbl.Text = "عنوان لاتین";
+            this.detailLatinTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailPersianTitleLbl
+            // 
+            this.detailPersianTitleLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailPersianTitleLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailPersianTitleLbl.Location = new System.Drawing.Point(833, 32);
+            this.detailPersianTitleLbl.Name = "detailPersianTitleLbl";
+            this.detailPersianTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailPersianTitleLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailPersianTitleLbl.TabIndex = 0;
+            this.detailPersianTitleLbl.Text = "عنوان فارسی";
+            this.detailPersianTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailRegistrantLbl2
+            // 
+            this.detailRegistrantLbl2.BackColor = System.Drawing.Color.White;
+            this.detailRegistrantLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailRegistrantLbl2.Location = new System.Drawing.Point(564, 618);
+            this.detailRegistrantLbl2.Name = "detailRegistrantLbl2";
+            this.detailRegistrantLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegistrantLbl2.Size = new System.Drawing.Size(250, 42);
+            this.detailRegistrantLbl2.TabIndex = 27;
+            this.detailRegistrantLbl2.Text = "label17";
+            this.detailRegistrantLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailRegistrantLbl
+            // 
+            this.detailRegistrantLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailRegistrantLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailRegistrantLbl.Location = new System.Drawing.Point(833, 620);
+            this.detailRegistrantLbl.Name = "detailRegistrantLbl";
+            this.detailRegistrantLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegistrantLbl.Size = new System.Drawing.Size(89, 37);
+            this.detailRegistrantLbl.TabIndex = 28;
+            this.detailRegistrantLbl.Text = "کاربر ثبت کننده";
+            this.detailRegistrantLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 603);
+            this.ClientSize = new System.Drawing.Size(985, 707);
             this.Controls.Add(this.detailPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Detail";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detail";
             this.detailPanel.ResumeLayout(false);
-            this.detailPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -190,17 +621,38 @@
         #endregion
 
         private System.Windows.Forms.Panel detailPanel;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label detailPersianTitleLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailPersianTitleTxtbx;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailLatinTitleTxtbx;
+        private System.Windows.Forms.Label detailLatinTitleLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailKeywordTxtbx;
+        private System.Windows.Forms.Label detailKeywordLbl;
+        private System.Windows.Forms.Label detailStartDateLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailCoExecutorTxtbx;
+        private System.Windows.Forms.Label detailCoExecutorLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailExecutor2Txtbx;
+        private System.Windows.Forms.Label detailExecutor2Lbl;
+        private System.Windows.Forms.Label detailDurationLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailProcedureTypeLbl2;
+        private System.Windows.Forms.Label detailProcedureTypeLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailProposalTypeLbl2;
+        private System.Windows.Forms.Label detailProposalTypeLbl;
+        private System.Windows.Forms.Label detailRegisterTypeLbl;
+        private System.Windows.Forms.Label detailPropertyLbl;
+        private DevComponents.DotNetBar.Controls.TextBoxX detailStatusLbl2;
+        private System.Windows.Forms.Label detailStatusLbl;
+        private System.Windows.Forms.Label detailValueLbl;
+        private System.Windows.Forms.Label detailOrganizationLbl;
+        private System.Windows.Forms.Label detailOrganizationLbl2;
+        private System.Windows.Forms.Label detailPropertyLbl2;
+        private System.Windows.Forms.Label detailStartDateLbl2;
+        private System.Windows.Forms.Label detailValueLbl2;
+        private System.Windows.Forms.Label detailRegisterTypeLbl2;
+        private System.Windows.Forms.Label detailDurationLbl2;
+        private System.Windows.Forms.Button detailPrintBtn;
+        private System.Windows.Forms.Button detailOutputBtn;
+        private System.Windows.Forms.Button detailCloseBtn;
+        private System.Windows.Forms.Label detailRegistrantLbl2;
+        private System.Windows.Forms.Label detailRegistrantLbl;
     }
 }

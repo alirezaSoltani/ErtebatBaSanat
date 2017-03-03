@@ -5274,7 +5274,9 @@ namespace ProposalReportingSystem
 
         private void iconMenu()
         {
-            if(isDetailedMenu)
+            int numberOfMenuOptions = 0;
+
+            if (isDetailedMenu)
             {
                 for (int i = 865; i < 946; i++)
                 {
@@ -5286,29 +5288,70 @@ namespace ProposalReportingSystem
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuHomeBtn.Text = "";
 
-            gl.setSize(menuAddProposalBtn, 0, 80, 55, 75);
-            menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuAddProposalBtn.Text = "";
+            if (loginUser.CanAddProposal == 1)
+            {
+                gl.setSize(menuAddProposalBtn, 0, 80, 55, 75);
+                menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuAddProposalBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAddProposalBtn.Visible = false;
+            }
+            
 
             gl.setSize(menuSearchProposalBtn, 0, 155, 55, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuSearchProposalBtn.Text = "";
 
-            gl.setSize(menuManageProposalBtn, 0, 230, 55, 75);
-            menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageProposalBtn.Text = "";
+            if (loginUser.CanEditProposal == 1)
+            {
+                gl.setSize(menuManageProposalBtn, 0, 230, 55, 75);
+                menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageProposalBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageProposalBtn.Visible = false;
+            }
 
-            gl.setSize(menuManageTeacherBtn, 0, 305, 55, 75);
-            menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageTeacherBtn.Text = "";
+            if (loginUser.CanManageTeacher == 1)
+            {
+                gl.setSize(menuManageTeacherBtn, 0, 305, 55, 75);
+                menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageTeacherBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageTeacherBtn.Visible = false;
+            }
 
-            gl.setSize(menuManageUserBtn, 0, 380, 55, 75);
-            menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageUserBtn.Text = "";
+            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1)
+            {
+                gl.setSize(menuManageUserBtn, 0, 380, 55, 75);
+                menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageUserBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageUserBtn.Visible = false;
+            }
 
-            gl.setSize(menuAppSettingBtn, 0, 455, 55, 75);
-            menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuAppSettingBtn.Text = "";
+            if (loginUser.CanManageType == 1)
+            {
+                gl.setSize(menuAppSettingBtn, 0, 455, 55, 75);
+                menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuAppSettingBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAppSettingBtn.Visible = false;
+            }
 
             gl.setSize(menuPersonalSettingBtn, 0, 530, 55, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -5318,9 +5361,17 @@ namespace ProposalReportingSystem
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuAboutUsBtn.Text = "";
 
-            gl.setSize(menuSysLogBtn, 0, 680, 55, 75);
-            menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuSysLogBtn.Text = "";
+            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            {
+                gl.setSize(menuSysLogBtn, 0, 680, 55, 75);
+                menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuSysLogBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuSysLogBtn.Visible = false;
+            }
 
             gl.setSize(menuExitBtn, 0, 755, 55, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;

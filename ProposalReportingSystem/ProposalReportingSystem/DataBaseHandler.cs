@@ -27,7 +27,7 @@ namespace ProposalReportingSystem
         /// <summary>
         /// Data gridview attributes
         /// </summary>
-
+        /// 
 
 
 
@@ -2533,6 +2533,9 @@ namespace ProposalReportingSystem
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
         {
+            
+
+
             // Create a new data adapter based on the specified query.
             dataAdapter = new SqlDataAdapter(selectCommand, conString);
 
