@@ -249,6 +249,8 @@ namespace ProposalReportingSystem
             {
                 sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                 sc.ExecuteNonQuery();
+                sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "'";
+                sc.ExecuteNonQuery();
                 sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
                                 + "VALUES ('" + proposal.Index + "',"
                                          + "'" + proposal.PersianTitle + "',"
@@ -274,6 +276,7 @@ namespace ProposalReportingSystem
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
 
+                MoveFileToDeleted(proposal.FileName);
                 transaction.Commit();
                 MessageBox.Show("حذف با موفقیت به پابان رسید");
             }
@@ -389,7 +392,136 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
+        public void EditEdition(Proposal proposal, int EditionNumber, long username, String dateTime)
+        {
 
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+            try
+            {
+
+                sc.CommandText = "UPDATE editionTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
+                                                   + "engTitle =" + "'" + proposal.EngTitle + "',"
+                                                   + "keyword =" + "'" + proposal.KeyWord + "',"
+                                                   + "executor =" + "'" + proposal.Executor + "',"
+                                                   + "executor2 = " + "'" + proposal.Executor2 + "',"
+                                                   + " coExecutor = " + "'" + proposal.CoExecutor + "',"
+                                                   + " startDate=" + "'" + proposal.StartDate + "',"
+                                                   + "duration=" + "'" + proposal.Duration + "',"
+                                                   + "procedureType =" + "'" + proposal.ProcedureType + "',"
+                                                   + " propertyType = " + "'" + proposal.PropertyType + "',"
+                                                   + "registerType =" + "'" + proposal.RegisterType + "',"
+                                                   + "proposalType =" + "'" + proposal.ProposalType + "',"
+                                                   + " employer = " + "'" + proposal.Employer + "',"
+                                                   + " value = " + "'" + proposal.Value + "',"
+                                                   + " status = " + "'" + proposal.Status + "' "
+                                                   + " WHERE  [index] = " + proposal.Index + " AND edition = " + EditionNumber;
+
+                sc.ExecuteNonQuery();
+
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + " Edition " + EditionNumber + " ','" + "EditionTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                transaction.Commit();
+                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+        }
+
+        public void DeleteEdition(Proposal proposal, int EditionNumber, long username, String dateTime)
+        {
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+
+
+            try
+            {
+
+                sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = " + EditionNumber;
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO deletedEditionTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,edition,username,date)"
+                                + "VALUES ('" + proposal.Index + "',"
+                                         + "'" + proposal.PersianTitle + "',"
+                                         + "'" + proposal.EngTitle + "',"
+                                         + "'" + proposal.KeyWord + "',"
+                                         + "'" + proposal.Executor + "',"
+                                         + "'" + proposal.Executor2 + "',"
+                                         + "'" + proposal.CoExecutor + "',"
+                                         + "'" + proposal.StartDate + "',"
+                                         + "'" + proposal.Duration + "',"
+                                         + "'" + proposal.ProcedureType + "',"
+                                         + "'" + proposal.PropertyType + "',"
+                                         + "'" + proposal.RegisterType + "',"
+                                         + "'" + proposal.ProposalType + "',"
+                                         + "'" + proposal.Employer + "',"
+                                         + "'" + proposal.Value + "',"
+                                         + "'" + proposal.Status + "',"
+                                         + "'" + proposal.Registrant + "',"
+                                         + "'" + EditionNumber + "',"
+                                         + "'" + username + "',"
+                                         + "'" + dateTime + "')";
+
+                sc.ExecuteNonQuery();
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + " edition " + EditionNumber + " ','" + "EditionTable'" + ")";
+                sc.ExecuteNonQuery();
+
+                MoveFileToDeleted(proposal.FileName);
+
+                transaction.Commit();
+                MessageBox.Show("حذف با موفقیت به پابان رسید");
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+        }
 
 
 
@@ -496,7 +628,7 @@ namespace ProposalReportingSystem
                                                     + " WHERE u_NCode = " + NCode + "";
 
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited ','" + "UsersTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + user.U_NCode + " ','" + "UsersTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
@@ -780,7 +912,7 @@ namespace ProposalReportingSystem
                                                     + " WHERE t_NCode = '" + lastT_NCode + "'";
 
                 sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited ','" + "TeacherTable'" + ")";
+                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + teacher.T_NCode + "','" + "TeacherTable'" + ")";
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();

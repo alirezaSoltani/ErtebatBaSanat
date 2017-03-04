@@ -5254,6 +5254,9 @@ namespace ProposalReportingSystem
                 if (personalSettingNewPasswordTxtbx.Text == personalSettingRepeatPasswordTxtbx.Text)
                 {
                     dbh.changePassword(loginUser.U_NCode, personalSettingNewPasswordTxtbx.Text, myDateTime.ToString());
+                    personalSettingClearBtn.PerformClick();
+                    PopUp p1 = new PopUp("تغییر رمز عبور", "رمز عبور با موفقیت تغییر یافت", "تایید", "", "", "success");
+                    p1.ShowDialog();
                 }
                 else
                 {
@@ -5262,9 +5265,13 @@ namespace ProposalReportingSystem
                     personalSettingRepeatPasswordTxtbx.Focus();
                 }
             }
-            PopUp p = new PopUp("خطا", "رمز فعلی شما نادرست است .", "تایید", "", "", "error");
-            p.ShowDialog();
-            personalSettingOldPasswordTxtbx.Focus();
+            else
+            {
+                PopUp p = new PopUp("خطا", "رمز فعلی شما نادرست است .", "تایید", "", "", "error");
+                p.ShowDialog();
+                personalSettingOldPasswordTxtbx.Focus();
+            }
+            loginUser.U_Password = personalSettingNewPasswordTxtbx.Text;
         }
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
@@ -5274,7 +5281,9 @@ namespace ProposalReportingSystem
 
         private void iconMenu()
         {
-            if(isDetailedMenu)
+            int numberOfMenuOptions = 0;
+
+            if (isDetailedMenu)
             {
                 for (int i = 865; i < 946; i++)
                 {
@@ -5285,46 +5294,100 @@ namespace ProposalReportingSystem
             gl.setSize(menuHomeBtn, 0, 5, 55, 75);
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuHomeBtn.Text = "";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuAddProposalBtn, 0, 80, 55, 75);
-            menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuAddProposalBtn.Text = "";
+            if (loginUser.CanAddProposal == 1)
+            {
+                gl.setSize(menuAddProposalBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuAddProposalBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAddProposalBtn.Visible = false;
+            }
+            
 
-            gl.setSize(menuSearchProposalBtn, 0, 155, 55, 75);
+            gl.setSize(menuSearchProposalBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuSearchProposalBtn.Text = "";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuManageProposalBtn, 0, 230, 55, 75);
-            menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageProposalBtn.Text = "";
+            if (loginUser.CanEditProposal == 1)
+            {
+                gl.setSize(menuManageProposalBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageProposalBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageProposalBtn.Visible = false;
+            }
 
-            gl.setSize(menuManageTeacherBtn, 0, 305, 55, 75);
-            menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageTeacherBtn.Text = "";
+            if (loginUser.CanManageTeacher == 1)
+            {
+                gl.setSize(menuManageTeacherBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageTeacherBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageTeacherBtn.Visible = false;
+            }
 
-            gl.setSize(menuManageUserBtn, 0, 380, 55, 75);
-            menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuManageUserBtn.Text = "";
+            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1)
+            {
+                gl.setSize(menuManageUserBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuManageUserBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageUserBtn.Visible = false;
+            }
 
-            gl.setSize(menuAppSettingBtn, 0, 455, 55, 75);
-            menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuAppSettingBtn.Text = "";
+            if (loginUser.CanManageType == 1)
+            {
+                gl.setSize(menuAppSettingBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuAppSettingBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAppSettingBtn.Visible = false;
+            }
 
-            gl.setSize(menuPersonalSettingBtn, 0, 530, 55, 75);
+            gl.setSize(menuPersonalSettingBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuPersonalSettingBtn.Text = "";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuAboutUsBtn, 0, 605, 55, 75);
+            gl.setSize(menuAboutUsBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuAboutUsBtn.Text = "";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuSysLogBtn, 0, 680, 55, 75);
-            menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
-            menuSysLogBtn.Text = "";
+            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            {
+                gl.setSize(menuSysLogBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
+                menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
+                menuSysLogBtn.Text = "";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuSysLogBtn.Visible = false;
+            }
 
-            gl.setSize(menuExitBtn, 0, 755, 55, 75);
+            gl.setSize(menuExitBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
             menuExitBtn.Text = "";
+            numberOfMenuOptions++;
 
             gl.setSize(menuIconRb, 0, 845, 50, 25);
             gl.setSize(menuDetailRb, 0, 870, 50, 25);
@@ -5336,6 +5399,8 @@ namespace ProposalReportingSystem
 
         private void detailedMenu()
         {
+            int numberOfMenuOptions = 0;
+
             if(isIconMenu)
             {
                 for (int i = 945; i > 864; i--)
@@ -5347,44 +5412,102 @@ namespace ProposalReportingSystem
             gl.setSize(menuHomeBtn, 1, 5, 133, 75);
             menuHomeBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuHomeBtn.Text = "خانه";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuAddProposalBtn, 1, 80, 133, 75);
-            menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuAddProposalBtn.Text = "افزودن پروپوزال";
+            if(loginUser.CanAddProposal == 1)
+            {
+                gl.setSize(menuAddProposalBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuAddProposalBtn.Text = "افزودن پروپوزال";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAddProposalBtn.Visible = false;
+            }
+            
 
-            gl.setSize(menuSearchProposalBtn, 1, 155, 133, 75);
+            gl.setSize(menuSearchProposalBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
             menuSearchProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuSearchProposalBtn.Text = "جستجوی پروپوزال";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuManageProposalBtn, 1, 230, 133, 75);
-            menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuManageProposalBtn.Text = "مدیریت پروپوزال";
 
-            gl.setSize(menuManageTeacherBtn, 1, 305, 133, 75);
-            menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuManageTeacherBtn.Text = "اساتید";
+            if (loginUser.CanEditProposal == 1)
+            {
+                gl.setSize(menuManageProposalBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuManageProposalBtn.Text = "مدیریت پروپوزال";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageProposalBtn.Visible = false;
+            }
 
-            gl.setSize(menuManageUserBtn, 1, 380, 133, 75);
-            menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuManageUserBtn.Text = "کاربران";
 
-            gl.setSize(menuAppSettingBtn, 1, 455, 133, 75);
-            menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuAppSettingBtn.Text = "تنظیمات برنامه";
+            if (loginUser.CanManageTeacher == 1)
+            {
+                gl.setSize(menuManageTeacherBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuManageTeacherBtn.Text = "اساتید";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageTeacherBtn.Visible = false;
+            }
 
-            gl.setSize(menuPersonalSettingBtn, 1, 530, 133, 75);
+
+            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1)
+            {
+                gl.setSize(menuManageUserBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuManageUserBtn.Text = "کاربران";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuManageUserBtn.Visible = false;
+            }
+
+
+            if(loginUser.CanManageType == 1)
+            {
+                gl.setSize(menuAppSettingBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuAppSettingBtn.Text = "تنظیمات برنامه";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuAppSettingBtn.Visible = false;
+            }
+           
+
+            gl.setSize(menuPersonalSettingBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
             menuPersonalSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuPersonalSettingBtn.Text = "تنظیمات شخصی";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuAboutUsBtn, 1, 605, 133, 75);
+            gl.setSize(menuAboutUsBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
             menuAboutUsBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuAboutUsBtn.Text = "درباره ما";
+            numberOfMenuOptions++;
 
-            gl.setSize(menuSysLogBtn, 1, 680, 133, 75);
-            menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
-            menuSysLogBtn.Text = "System Log";
+            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            {
+                gl.setSize(menuSysLogBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
+                menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
+                menuSysLogBtn.Text = "System Log";
+                numberOfMenuOptions++;
+            }
+            else
+            {
+                menuSysLogBtn.Visible = false;
+            }
 
-            gl.setSize(menuExitBtn, 1, 755, 133, 75);
+            gl.setSize(menuExitBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuExitBtn.Text = "خروج";
 
