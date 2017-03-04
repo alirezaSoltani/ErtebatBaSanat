@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail));
             this.detailPanel = new System.Windows.Forms.Panel();
+            this.detailRegistrantLbl2 = new System.Windows.Forms.Label();
+            this.detailRegistrantLbl = new System.Windows.Forms.Label();
             this.detailPrintBtn = new System.Windows.Forms.Button();
             this.detailOutputBtn = new System.Windows.Forms.Button();
             this.detailCloseBtn = new System.Windows.Forms.Button();
@@ -61,8 +63,7 @@
             this.detailKeywordLbl = new System.Windows.Forms.Label();
             this.detailLatinTitleLbl = new System.Windows.Forms.Label();
             this.detailPersianTitleLbl = new System.Windows.Forms.Label();
-            this.detailRegistrantLbl2 = new System.Windows.Forms.Label();
-            this.detailRegistrantLbl = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.detailPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,8 +106,32 @@
             this.detailPanel.Controls.Add(this.detailPersianTitleLbl);
             this.detailPanel.Location = new System.Drawing.Point(0, 0);
             this.detailPanel.Name = "detailPanel";
-            this.detailPanel.Size = new System.Drawing.Size(987, 714);
+            this.detailPanel.Size = new System.Drawing.Size(988, 709);
             this.detailPanel.TabIndex = 0;
+            // 
+            // detailRegistrantLbl2
+            // 
+            this.detailRegistrantLbl2.BackColor = System.Drawing.Color.White;
+            this.detailRegistrantLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailRegistrantLbl2.Location = new System.Drawing.Point(564, 618);
+            this.detailRegistrantLbl2.Name = "detailRegistrantLbl2";
+            this.detailRegistrantLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegistrantLbl2.Size = new System.Drawing.Size(250, 42);
+            this.detailRegistrantLbl2.TabIndex = 27;
+            this.detailRegistrantLbl2.Text = "label17";
+            this.detailRegistrantLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // detailRegistrantLbl
+            // 
+            this.detailRegistrantLbl.BackColor = System.Drawing.Color.Transparent;
+            this.detailRegistrantLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailRegistrantLbl.Location = new System.Drawing.Point(833, 620);
+            this.detailRegistrantLbl.Name = "detailRegistrantLbl";
+            this.detailRegistrantLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailRegistrantLbl.Size = new System.Drawing.Size(89, 37);
+            this.detailRegistrantLbl.TabIndex = 28;
+            this.detailRegistrantLbl.Text = "کاربر ثبت کننده";
+            this.detailRegistrantLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // detailPrintBtn
             // 
@@ -127,6 +152,7 @@
             this.detailOutputBtn.TabIndex = 2;
             this.detailOutputBtn.Text = "فایل خروجی";
             this.detailOutputBtn.UseVisualStyleBackColor = true;
+            this.detailOutputBtn.Click += new System.EventHandler(this.detailOutputBtn_Click);
             // 
             // detailCloseBtn
             // 
@@ -154,6 +180,7 @@
             // 
             this.detailRegisterTypeLbl2.BackColor = System.Drawing.Color.White;
             this.detailRegisterTypeLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailRegisterTypeLbl2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailRegisterTypeLbl2.Location = new System.Drawing.Point(380, 513);
             this.detailRegisterTypeLbl2.Name = "detailRegisterTypeLbl2";
             this.detailRegisterTypeLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -189,6 +216,7 @@
             // 
             this.detailPropertyLbl2.BackColor = System.Drawing.Color.White;
             this.detailPropertyLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailPropertyLbl2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailPropertyLbl2.Location = new System.Drawing.Point(669, 511);
             this.detailPropertyLbl2.Name = "detailPropertyLbl2";
             this.detailPropertyLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -577,30 +605,6 @@
             this.detailPersianTitleLbl.Text = "عنوان فارسی";
             this.detailPersianTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // detailRegistrantLbl2
-            // 
-            this.detailRegistrantLbl2.BackColor = System.Drawing.Color.White;
-            this.detailRegistrantLbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.detailRegistrantLbl2.Location = new System.Drawing.Point(564, 618);
-            this.detailRegistrantLbl2.Name = "detailRegistrantLbl2";
-            this.detailRegistrantLbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegistrantLbl2.Size = new System.Drawing.Size(250, 42);
-            this.detailRegistrantLbl2.TabIndex = 27;
-            this.detailRegistrantLbl2.Text = "label17";
-            this.detailRegistrantLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // detailRegistrantLbl
-            // 
-            this.detailRegistrantLbl.BackColor = System.Drawing.Color.Transparent;
-            this.detailRegistrantLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRegistrantLbl.Location = new System.Drawing.Point(833, 620);
-            this.detailRegistrantLbl.Name = "detailRegistrantLbl";
-            this.detailRegistrantLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegistrantLbl.Size = new System.Drawing.Size(89, 37);
-            this.detailRegistrantLbl.TabIndex = 28;
-            this.detailRegistrantLbl.Text = "کاربر ثبت کننده";
-            this.detailRegistrantLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -654,5 +658,6 @@
         private System.Windows.Forms.Button detailCloseBtn;
         private System.Windows.Forms.Label detailRegistrantLbl2;
         private System.Windows.Forms.Label detailRegistrantLbl;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

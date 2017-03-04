@@ -12,15 +12,18 @@ namespace ProposalReportingSystem
 {
     public partial class Detail : Form
     {
+        private DataBaseHandler dbh = new DataBaseHandler();
+        private static string fileName;
         public Detail()
         {
             InitializeComponent();
+
         }
 
         public Detail(Proposal proposal)
         {
             InitializeComponent();
-
+            fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
             detailLatinTitleTxtbx.Text = proposal.EngTitle;
             detailKeywordTxtbx.Text = proposal.KeyWord;
@@ -40,11 +43,52 @@ namespace ProposalReportingSystem
             detailStatusLbl2.Text = proposal.Status;
 
             detailRegistrantLbl2.Text = proposal.Registrant.ToString();
+
+
         }
 
         private void detailCloseBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void detailOutputBtn_Click(object sender, EventArgs e)
+        {
+
+
+            if (fileName.Contains(".docx"))
+            {
+                saveFileDialog1.Filter = "Word File|*.docx";
+
+            }
+            else if (fileName.Contains(".doc"))
+            {
+                saveFileDialog1.Filter = "Word File|*.doc";
+
+            }
+            if (fileName.Contains(".pdf"))
+            {
+                saveFileDialog1.Filter = "PDF File|*.pdf";
+
+            }
+            saveFileDialog1.Title = "انتخاب مسیر دانلود فایل";
+            saveFileDialog1.FileName = detailPersianTitleTxtbx.Text;
+
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (saveFileDialog1.FileName != "")
+                {
+                    dbh.downloadFile(fileName, saveFileDialog1.FileName);
+                    System.Diagnostics.Process.Start(saveFileDialog1.FileName);
+
+                    MessageBox.Show("دانلود شد.");
+                }
+                else
+                {
+                    MessageBox.Show("نام فایل را وارد کنید .");
+                }
+            }
         }
     }
 }

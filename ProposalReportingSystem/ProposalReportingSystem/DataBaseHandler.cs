@@ -2720,11 +2720,28 @@ namespace ProposalReportingSystem
 
             else if (selectCommand.Contains("proposalTable"))
             {
+                DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn);
+                btn.HeaderText = "جزییات";
+                btn.Text = "نمایش جزییات";
+                btn.Name = "btn";
+
+                btn.UseColumnTextForLinkValue = true;
+
+
+
                 dataGridview.Columns[0].Visible = false;
-                dataGridview.Columns[1].HeaderText = "عنوان فارسی";
-                dataGridview.Columns[2].HeaderText = "عنوان لاتین";
-                dataGridview.Columns[3].HeaderText = "کلمه کلیدی";
-                dataGridview.Columns[4].HeaderText = "مجری";
+                dataGridview.Columns["btn"].DisplayIndex = 0;
+                dataGridview.Columns["btn"].Frozen = true;
+                dataGridview.Columns["executor"].HeaderText = "مجری";
+                dataGridview.Columns["executor"].DisplayIndex = 1;
+                dataGridview.Columns["executor"].Frozen = true;
+                dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
+                dataGridview.Columns["persianTitle"].DisplayIndex = 2;
+                dataGridview.Columns["persianTitle"].Frozen = true;
+
+                dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
+                dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
                 dataGridview.Columns[5].HeaderText = "مجریان همکار";
                 dataGridview.Columns[6].HeaderText = "همکاران مجری";
                 dataGridview.Columns[7].HeaderText = "تاریخ شروع";
@@ -2738,6 +2755,10 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[15].HeaderText = "وضعیت";
                 dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
                 dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+
+
+
+
             }
 
             else if (selectCommand.Contains("TeacherTable"))
@@ -2789,16 +2810,18 @@ namespace ProposalReportingSystem
             FtpStream.Close();
         }
 
-        public static string downloadFile(string FtpUrl, string FileNameToDownload,
-                     string userName, string password, string tempDirPath)
+        public string downloadFile(string FileNameToDownload, string tempDirPath)
         {
+            string DownloadedFilePath = "";
             string ResponseDescription = "";
             string PureFileName = new FileInfo(FileNameToDownload).Name;
-            string DownloadedFilePath = tempDirPath + "/" + PureFileName;
-            string downloadUrl = String.Format("{0}/{1}", FtpUrl, FileNameToDownload);
+
+
+            DownloadedFilePath = tempDirPath;
+            string downloadUrl = String.Format("{0}/{1}", "ftp://185.159.152.5/", FileNameToDownload);
             FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
             req.Method = WebRequestMethods.Ftp.DownloadFile;
-            req.Credentials = new NetworkCredential(userName, password);
+            req.Credentials = new NetworkCredential("Nima", "P@hn1395");
             req.UseBinary = true;
             req.Proxy = null;
 
