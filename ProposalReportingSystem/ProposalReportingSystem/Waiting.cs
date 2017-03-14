@@ -12,8 +12,6 @@ namespace ProposalReportingSystem
 {
     public partial class Waiting : Form
     {
-       
-
         private Global gl = new Global();
         public int i = 0;
 

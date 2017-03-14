@@ -17,7 +17,6 @@ namespace ProposalReportingSystem
     {
 
         Waiting w;
-
         private int systemWidth;    //related to setSize
         private int systemHeight;   //related to setSize
         private Global gl = new Global();   //related to setBounds
@@ -159,6 +158,8 @@ namespace ProposalReportingSystem
             //mainPage.FixedTabSize 
             //mainPage
 
+            
+
             //*****************************************************************************************************//
             //                                               DESIGN                                                //
             //*****************************************************************************************************//
@@ -194,9 +195,16 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalPanel, 0, 1, 1000, 930);
             gl.setSize(addProposalAddGp, 20, 15, 826, 470);
             gl.setSize(addProposalShowGp, 20, 495, 826, 400);
-            gl.setSize(addProposalShowDgv, 5, 5, 810, 355);
+            gl.setSize(addProposalShowDgv, 5, 5, 810, 285);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
-            
+
+            gl.setSize(addProposalNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(addProposalNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(addProposalNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(addProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(addProposalNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(addProposalNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(addProposalNavigationLastPageBtn, 440, 10, 85, 40);
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
@@ -287,10 +295,18 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalPanel, 0, 1, 1000, 930);
             gl.setSize(searchProposalSearchGp, 20, 15, 826, 470);
             gl.setSize(searchProposalShowGp, 20, 495, 826, 400);
-            gl.setSize(searchProposalShowDgv, 5, 5, 810, 355);
+            gl.setSize(searchProposalShowDgv, 5, 5, 810, 285);
             gl.setSize(searchProposalExecutorInfoGp, 525, 5, 270, 350);
             gl.setSize(searchProposalProposalInfoGp, 20, 5, 480, 350);
             gl.setSize(superTabControlPanel2, 0, 1, 880, 1000);
+
+            gl.setSize(searchProposalNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(searchProposalNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(searchProposalNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(searchProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(searchProposalNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(searchProposalNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(searchProposalNavigationLastPageBtn, 440, 10, 85, 40);
 
             gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
             gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
@@ -468,7 +484,15 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherPanel, 0, 1, 1000, 930);
             gl.setSize(manageTeacherInfoGp, 20, 15, 826, 470);
             gl.setSize(teacherManageShowGp, 20, 495, 826, 400);
-            gl.setSize(manageTeacherShowDgv, 5, 5, 810, 355);
+            gl.setSize(manageTeacherShowDgv, 5, 5, 810, 285);
+
+            gl.setSize(manageTeacherNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(manageTeacherNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(manageTeacherNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(manageTeacherNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(manageTeacherNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(manageTeacherNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(manageTeacherNavigationLastPageBtn, 440, 10, 85, 40);
 
             gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
             gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
@@ -514,11 +538,18 @@ namespace ProposalReportingSystem
             //*********************************************//
             gl.setSize(manageUserPanel, 0, 1, 1000, 1000);
             gl.setSize(manageUserShowGp, 20, 495, 826, 400);
-            gl.setSize(manageUserShowDgv, 5, 5, 810, 355);
+            gl.setSize(manageUserShowDgv, 5, 5, 810, 285);
             gl.setSize(manageUserManageGp, 20, 15, 826, 470);
 
+            gl.setSize(manageUserNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(manageUserNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(manageUserNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(manageUserNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(manageUserNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(manageUserNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(manageUserNavigationLastPageBtn, 440, 10, 85, 40);
 
-            gl.setSize(menageUserAccessLevelGp, 22, 5, 350, 330);
+            gl.setSize(menageUserAccessLevelGp, 40, 5, 350, 330);
             gl.setSize(manageUserPersonalInfoGp, 430, 5, 360, 330);
             gl.setSize(manageUserNcodeTxtbx, 45, 20, 160, 28);
             gl.setSize(manageUserFnameTxtbx, 45, 60, 160, 28);
@@ -565,7 +596,15 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingPanel, 0, 1, 1000, 930);
             gl.setSize(appSettingGp, 20, 15, 826, 470);
             gl.setSize(appSettingShowGp, 20, 495, 826, 400);
-            gl.setSize(appSettingShowDv, 5, 5, 810, 355);
+            gl.setSize(appSettingShowDv, 5, 5, 810, 285);
+
+            gl.setSize(appSettingNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(appSettingNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(appSettingNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(appSettingNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(appSettingNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(appSettingNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(appSettingNavigationLastPageBtn, 440, 10, 85, 40);
 
             gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
@@ -658,7 +697,15 @@ namespace ProposalReportingSystem
                 
             /////////////////log design///////////////////////////
             gl.setSize(logPanel, 0, 1, 1000, 930);
-            gl.setSize(logDgv, 20, 20, 840, 870);
+            gl.setSize(logDgv, 20, 20, 825, 800);
+
+            gl.setSize(logNavigationPanel, 125, 850, 630, 60);
+            gl.setSize(logNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(logNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(logNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(logNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(logNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(logNavigationLastPageBtn, 440, 10, 85, 40);
             //////////////////log design///////////////////////////
 
             /////////////////iconMenu design///////////////////////////
@@ -4902,6 +4949,12 @@ namespace ProposalReportingSystem
                 }
             }
             catch (ArgumentOutOfRangeException) { }
+        }
+
+        private void homeAapInfoGp_Click(object sender, EventArgs e)
+        {
+            Toast t = new Toast("متن پیام", 0.1, 0.3, 30, "error");
+            t.Show();
         }
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
