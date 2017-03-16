@@ -33,8 +33,16 @@ namespace ProposalReportingSystem
         private string[,] s;//related to gridview paging
 
         private string editProposalCurrentFileName;
+        private bool isIconMenu = true, isDetailedMenu = true;// menu variables
 
-        private Boolean isIconMenu = true, isDetailedMenu = true;
+        private bool addProposalIsWatchingEdition = false;//related to editions of proposals
+        private bool searchProposalIsWatchingEdition = false;//related to editions of proposals
+        private bool manageProposalIsWatchingEdition = false;//related to editions of proposals
+        private int proposalEdition;//related to editions of proposals
+        ////
+
+        ////
+        private long editionProposalIndex;
 
 
         /// <summary>
@@ -775,6 +783,7 @@ namespace ProposalReportingSystem
         private void addProposalClearBtn_Click(object sender, EventArgs e)
         {
             isNewTeacher = false;
+            addProposalIsWatchingEdition = false;
 
             addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             addProposalExecutorNcodeTxtbx.Clear();
@@ -812,185 +821,374 @@ namespace ProposalReportingSystem
 
             addProposalShowAllBtn.Enabled = true;
             addProposalSearchBtn.Enabled = true;
+
+            addProposalShowDgv.Columns.Clear();
             addProposalShowDgv.DataSource = null;
+
         }
 
 
         private void addProposalRegisterBtn_Click(object sender, EventArgs e)
         {
-            if(addProposalExecutorNcodeTxtbx.Text.Length < 10)
+            if (!addProposalIsWatchingEdition)
             {
-                PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorNcodeTxtbx.Focus();
-            }
-
-            else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorFNameTxtbx.Focus();
-            }
-
-            else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorLNameTxtbx.Focus();
-            }
-
-            else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorFacultyCb.Focus();
-            }
-
-            else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorEGroupCb.Focus();
-            }
-
-            else if (addProposalExecutorEDegCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorEDegCb.Focus();
-            }
-
-            else if(addProposalExecutorEmailTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorEmailTxtbx.Focus();
-            }
-
-            else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
-            {
-                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorEmailTxtbx.Focus();
-            }
-
-            else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalExecutorMobileTxtbx.Focus();
-            }
-
-            else if (addProposalPersianTitleTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalPersianTitleTxtbx.Focus();
-            }
-
-            else if(addProposalEnglishTitleTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalEnglishTitleTxtbx.Focus();
-            }
-
-            else if(addProposalKeywordsTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalKeywordsTxtbx.Focus();
-            }
-
-            else if(addProposalFileLinkLbl.Text == "افزودن فایل")
-            {
-                PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalFileLinkLbl.Focus();
-            }
-
-            else if(addProposalDurationTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalDurationTxtbx.Focus();
-            }
-
-            else if(addProposalProcedureTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalProcedureTypeCb.Focus();
-            }
-
-            else if(addProposalPropertyTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalPropertyTypeCb.Focus();
-            }
-
-            else if(addProposalRegisterTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalRegisterTypeCb.Focus();
-            }
-
-            else if(addProposalProposalTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalProposalTypeCb.Focus();
-            }
-
-            else if(addProposalOrganizationNumberCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalOrganizationNumberCb.Focus();
-            }
-
-            else if(addProposalOrganizationNameCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalOrganizationNameCb.Focus();
-            }
-
-            else if(addProposalValueTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalValueTxtbx.Focus();
-            }
-
-            else if(addProposalStatusCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                addProposalStatusCb.Focus();
-            }
-
-            else
-            {
-                if (isNewTeacher)
+                if (addProposalExecutorNcodeTxtbx.Text.Length < 10)
                 {
-                    Teachers teacher = new Teachers();
-
-                    teacher.T_NCode = long.Parse(addProposalExecutorNcodeTxtbx.Text);
-                    teacher.T_FName = addProposalExecutorFNameTxtbx.Text;
-                    teacher.T_LName = addProposalExecutorLNameTxtbx.Text;
-                    teacher.T_Faculty = addProposalExecutorFacultyCb.Text;
-                    teacher.T_Group = addProposalExecutorEGroupCb.Text;
-                    teacher.T_EDeg = addProposalExecutorEDegCb.Text;
-                    teacher.T_Email = addProposalExecutorEmailTxtbx.Text;
-                    teacher.T_Mobile = addProposalExecutorMobileTxtbx.Text;
-                    teacher.T_Tel1 = addProposalExecutorTel1Txtbx.Text;
-                    teacher.T_Tel2 = addProposalExecutorTel2Txtbx.Text;
-
-                    dbh.AddTeacher(teacher, loginUser.U_NCode, DateTime.Now.ToString());
+                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorNcodeTxtbx.Focus();
                 }
+
+                else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorFNameTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorLNameTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorFacultyCb.Focus();
+                }
+
+                else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEGroupCb.Focus();
+                }
+
+                else if (addProposalExecutorEDegCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEDegCb.Focus();
+                }
+
+                else if (addProposalExecutorEmailTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorMobileTxtbx.Focus();
+                }
+
+                else if (addProposalPersianTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalPersianTitleTxtbx.Focus();
+                }
+
+                else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalEnglishTitleTxtbx.Focus();
+                }
+
+                else if (addProposalKeywordsTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalKeywordsTxtbx.Focus();
+                }
+
+               
+                else if (addProposalFileLinkLbl.Text == "افزودن فایل")
+                {
+                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalFileLinkLbl.Focus();
+                }
+
+                else if (addProposalDurationTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalDurationTxtbx.Focus();
+                }
+
+                else if (addProposalProcedureTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalProcedureTypeCb.Focus();
+                }
+
+                else if (addProposalPropertyTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalPropertyTypeCb.Focus();
+                }
+
+                else if (addProposalRegisterTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalRegisterTypeCb.Focus();
+                }
+
+                else if (addProposalProposalTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalProposalTypeCb.Focus();
+                }
+
+                else if (addProposalOrganizationNumberCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalOrganizationNumberCb.Focus();
+                }
+
+                else if (addProposalOrganizationNameCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalOrganizationNameCb.Focus();
+                }
+
+                else if (addProposalValueTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalValueTxtbx.Focus();
+                }
+
+                else if (addProposalStatusCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalStatusCb.Focus();
+                }
+
+                else
+                {
+                    if (isNewTeacher)
+                    {
+                        Teachers teacher = new Teachers();
+                        teacher.T_NCode = long.Parse(addProposalExecutorNcodeTxtbx.Text);
+                        teacher.T_FName = addProposalExecutorFNameTxtbx.Text;
+                        teacher.T_LName = addProposalExecutorLNameTxtbx.Text;
+                        teacher.T_Faculty = addProposalExecutorFacultyCb.Text;
+                        teacher.T_Group = addProposalExecutorEGroupCb.Text;
+                        teacher.T_EDeg = addProposalExecutorEDegCb.Text;
+                        teacher.T_Email = addProposalExecutorEmailTxtbx.Text;
+                        teacher.T_Mobile = addProposalExecutorMobileTxtbx.Text;
+                        teacher.T_Tel1 = addProposalExecutorTel1Txtbx.Text;
+                        teacher.T_Tel2 = addProposalExecutorTel2Txtbx.Text;
+
+                        dbh.AddTeacher(teacher, loginUser.U_NCode, DateTime.Now.ToString());
+                    }
+
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = addProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = addProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = addProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = addProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = addProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(addProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = addProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = addProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = addProposalProposalTypeCb.Text;
+                    proposal.Status = addProposalStatusCb.Text;
+                    proposal.RegisterType = addProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(addProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
+                    proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.Registrant = loginUser.U_NCode;
+
+                    dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                    dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
+                    addProposalClearBtn.PerformClick();
+                }
+            }
+            else if (addProposalIsWatchingEdition)
+            {
+
+                if (addProposalExecutorNcodeTxtbx.Text.Length < 10)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorNcodeTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorFNameTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorLNameTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorFacultyCb.Focus();
+                }
+
+                
+                else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEGroupCb.Focus();
+                }
+
+                else if (addProposalExecutorEDegCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEDegCb.Focus();
+                }
+
+                else if (addProposalExecutorEmailTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalExecutorMobileTxtbx.Focus();
+                }
+
+                else if (addProposalPersianTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalPersianTitleTxtbx.Focus();
+                }
+
+                else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalEnglishTitleTxtbx.Focus();
+                }
+
+                else if (addProposalKeywordsTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalKeywordsTxtbx.Focus();
+                }
+
+                else if (addProposalFileLinkLbl.Text == "افزودن فایل")
+                {
+                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalFileLinkLbl.Focus();
+                }
+
+                else if (addProposalDurationTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalDurationTxtbx.Focus();
+                }
+
+                else if (addProposalProcedureTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalProcedureTypeCb.Focus();
+                }
+
+                else if (addProposalPropertyTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalPropertyTypeCb.Focus();
+                }
+
+               
+                else if (addProposalRegisterTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalRegisterTypeCb.Focus();
+                }
+
+                else if (addProposalProposalTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalProposalTypeCb.Focus();
+                }
+
+                else if (addProposalOrganizationNumberCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalOrganizationNumberCb.Focus();
+                }
+
+                else if (addProposalOrganizationNameCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalOrganizationNameCb.Focus();
+                }
+
+                else if (addProposalValueTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalValueTxtbx.Focus();
+                }
+
+                else if (addProposalStatusCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    addProposalStatusCb.Focus();
+                }
+
+
 
                 Proposal proposal = new Proposal();
                 proposal.PersianTitle = addProposalPersianTitleTxtbx.Text;
@@ -1009,10 +1207,11 @@ namespace ProposalReportingSystem
                 proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
                 proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
                 proposal.Registrant = loginUser.U_NCode;
+                proposal.Index = editionProposalIndex;
 
-                dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
-                addProposalClearBtn.PerformClick();
+
+                dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
             }
         }
 
@@ -1827,6 +2026,7 @@ namespace ProposalReportingSystem
 
         private void searchProposalClearBtn_Click(object sender, EventArgs e)
         {
+            searchProposalIsWatchingEdition = false;
             searchProposalStartDateFromChbx.Checked = false;
             searchProposalStartDateToChbx.Checked = false;
 
@@ -1853,6 +2053,7 @@ namespace ProposalReportingSystem
             searchProposalOrganizationNameCb.SelectedIndex = -1;
             searchProposalStatusCb.SelectedIndex = -1;
 
+            searchProposalShowDgv.Columns.Clear();
             searchProposalShowDgv.DataSource = null;
             searchProposalShowAllBtn.Enabled = true;
         }
@@ -1883,6 +2084,8 @@ namespace ProposalReportingSystem
 
         private void editProposalClearBtn_Click(object sender, EventArgs e)
         {
+            manageProposalIsWatchingEdition = false;
+
             editProposalExecutorNcodeTxtbx.BackColor = Color.White;
             editProposalExecutorNcodeTxtbx.Clear();
             editProposalExecutorFNameTxtbx.Clear();
@@ -1919,6 +2122,7 @@ namespace ProposalReportingSystem
             editProposalShowAllBtn.Enabled = true;
             editProposalRegisterBtn.Enabled = false;
             editProposalDeleteBtn.Enabled = false;
+            editProposalShowDgv.Columns.Clear();
             editProposalShowDgv.DataSource = null;
         }
 
@@ -3713,160 +3917,508 @@ namespace ProposalReportingSystem
 
         private void editProposalRegisterBtn_Click(object sender, EventArgs e)
         {
-            if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
+            if (!manageProposalIsWatchingEdition)
             {
-                PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorNcodeTxtbx.Focus();
-            }
+                if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorNcodeTxtbx.Focus();
+                }
 
-            else if (editProposalExecutorFNameTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorFNameTxtbx.Focus();
-            }
+                else if (editProposalExecutorFNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorFNameTxtbx.Focus();
+                }
 
-            else if (editProposalExecutorLNameTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorLNameTxtbx.Focus();
-            }
+                else if (editProposalExecutorLNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorLNameTxtbx.Focus();
+                }
 
-            else if (editProposalExecutorFacultyCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorFacultyCb.Focus();
-            }
+                else if (editProposalExecutorFacultyCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorFacultyCb.Focus();
+                }
 
-            else if (editProposalExecutorEGroupCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorEGroupCb.Focus();
-            }
+                else if (editProposalExecutorEGroupCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEGroupCb.Focus();
+                }
 
-            else if (editProposalExecutorEDegCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorEDegCb.Focus();
-            }
+                else if (editProposalExecutorEDegCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEDegCb.Focus();
+                }
 
-            else if (editProposalExecutorEmailTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorEmailTxtbx.Focus();
-            }
+                else if (editProposalExecutorEmailTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEmailTxtbx.Focus();
+                }
 
-            else if (editProposalExecutorEmailTxtbx.BackColor == Color.Pink)
-            {
-                PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorEmailTxtbx.Focus();
-            }
+                else if (editProposalExecutorEmailTxtbx.BackColor == Color.Pink)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEmailTxtbx.Focus();
+                }
 
-            else if (editProposalExecutorMobileTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalExecutorMobileTxtbx.Focus();
-            }
+                else if (editProposalExecutorMobileTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorMobileTxtbx.Focus();
+                }
 
-            else if (editProposalPersianTitleTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalPersianTitleTxtbx.Focus();
-            }
+                else if (editProposalPersianTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalPersianTitleTxtbx.Focus();
+                }
 
-            else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalEnglishTitleTxtbx.Focus();
-            }
+                else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalEnglishTitleTxtbx.Focus();
+                }
 
-            else if (editProposalKeywordsTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalKeywordsTxtbx.Focus();
-            }
+                else if (editProposalKeywordsTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalKeywordsTxtbx.Focus();
+                }
 
-            else if (editProposalFileLinkLbl.Text == "افزودن فایل")
-            {
-                PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalFileLinkLbl.Focus();
-            }
+                else if (editProposalFileLinkLbl.Text == "افزودن فایل")
+                {
+                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalFileLinkLbl.Focus();
+                }
 
-            else if (editProposalDurationTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalDurationTxtbx.Focus();
-            }
+                else if (editProposalDurationTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalDurationTxtbx.Focus();
+                }
 
-            else if (editProposalProcedureTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalProcedureTypeCb.Focus();
-            }
+                else if (editProposalProcedureTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalProcedureTypeCb.Focus();
+                }
 
-            else if (editProposalPropertyTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalPropertyTypeCb.Focus();
-            }
+                else if (editProposalPropertyTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalPropertyTypeCb.Focus();
+                }
 
-            else if (editProposalRegisterTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalRegisterTypeCb.Focus();
-            }
+                else if (editProposalRegisterTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalRegisterTypeCb.Focus();
+                }
 
-            else if (editProposalTypeCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalTypeCb.Focus();
-            }
+                else if (editProposalTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalTypeCb.Focus();
+                }
 
-            else if (editProposalOrganizationNumberCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalOrganizationNumberCb.Focus();
-            }
+                else if (editProposalOrganizationNumberCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalOrganizationNumberCb.Focus();
+                }
 
-            else if (editProposalOrganizationNameCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalOrganizationNameCb.Focus();
-            }
+                else if (editProposalOrganizationNameCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalOrganizationNameCb.Focus();
+                }
 
-            else if (editProposalValueTxtbx.Text.Length == 0)
-            {
-                PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalValueTxtbx.Focus();
-            }
+                else if (editProposalValueTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalValueTxtbx.Focus();
+                }
 
-            else if (editProposalStatusCb.SelectedIndex == -1)
-            {
-                PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
-                p.ShowDialog();
-                editProposalStatusCb.Focus();
+                else if (editProposalStatusCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalStatusCb.Focus();
+                }
+                else
+                {
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = editProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = editProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = editProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = editProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = editProposalTypeCb.Text;
+                    proposal.Status = editProposalStatusCb.Text;
+                    proposal.RegisterType = editProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
+                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+
+                    proposal.Index = long.Parse(currentSelectedIndex);
+                    proposal.FileName = editProposalCurrentFileName;
+
+                    dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                }
             }
-            else
+            else if (manageProposalIsWatchingEdition)
+            {
+                if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorNcodeTxtbx.Focus();
+                }
+
+                else if (editProposalExecutorFNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorFNameTxtbx.Focus();
+                }
+
+                else if (editProposalExecutorLNameTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorLNameTxtbx.Focus();
+                }
+
+                else if (editProposalExecutorFacultyCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorFacultyCb.Focus();
+                }
+
+                else if (editProposalExecutorEGroupCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEGroupCb.Focus();
+                }
+
+                else if (editProposalExecutorEDegCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEDegCb.Focus();
+                }
+
+                else if (editProposalExecutorEmailTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (editProposalExecutorEmailTxtbx.BackColor == Color.Pink)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorEmailTxtbx.Focus();
+                }
+
+                else if (editProposalExecutorMobileTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalExecutorMobileTxtbx.Focus();
+                }
+
+                else if (editProposalPersianTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalPersianTitleTxtbx.Focus();
+                }
+
+                else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalEnglishTitleTxtbx.Focus();
+                }
+
+                else if (editProposalKeywordsTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalKeywordsTxtbx.Focus();
+                }
+
+                else if (editProposalFileLinkLbl.Text == "افزودن فایل")
+                {
+                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalFileLinkLbl.Focus();
+                }
+
+                else if (editProposalDurationTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalDurationTxtbx.Focus();
+                }
+
+                else if (editProposalProcedureTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalProcedureTypeCb.Focus();
+                }
+
+                else if (editProposalPropertyTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalPropertyTypeCb.Focus();
+                }
+
+                else if (editProposalRegisterTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalRegisterTypeCb.Focus();
+                }
+
+                else if (editProposalTypeCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalTypeCb.Focus();
+                }
+
+                else if (editProposalOrganizationNumberCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalOrganizationNumberCb.Focus();
+                }
+
+                else if (editProposalOrganizationNameCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalOrganizationNameCb.Focus();
+                }
+
+                else if (editProposalValueTxtbx.Text.Length == 0)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalValueTxtbx.Focus();
+                }
+
+                else if (editProposalStatusCb.SelectedIndex == -1)
+                {
+                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    p.ShowDialog();
+                    editProposalStatusCb.Focus();
+                }
+                else
+                {
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = editProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = editProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = editProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = editProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = editProposalTypeCb.Text;
+                    proposal.Status = editProposalStatusCb.Text;
+                    proposal.RegisterType = editProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
+                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+
+                    proposal.Index = long.Parse(currentSelectedIndex);
+                    proposal.FileName = editProposalCurrentFileName;
+
+                    dbh.EditEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                }
+            }
+        }
+
+        private void editProposalShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!manageProposalIsWatchingEdition)
+                {
+                    if (e.ColumnIndex == 18)
+                    {
+
+                        Proposal proposal = new Proposal();
+                        proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+
+
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
+                    }
+                    if (e.ColumnIndex == 19)
+                    {
+
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+
+
+                        dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                        editProposalShowDgv.Columns["editionBtn"].Visible = false;
+
+                        editionProposalIndex = proposal.Index;
+                        manageProposalIsWatchingEdition = true;
+
+                    }
+                    else
+                    {
+
+                        currentSelectedIndex = editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString();
+                        editProposalPersianTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        editProposalEnglishTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
+                        editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        editProposalPropertyTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        editProposalRegisterTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        editProposalOrganizationNumberCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
+                        editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
+                        editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
+                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+
+                        editProposalRegisterBtn.Enabled = true;
+                        editProposalDeleteBtn.Enabled = true;
+                    }
+                }
+                else if (manageProposalIsWatchingEdition)
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        Proposal proposal = new Proposal();
+                        proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Edition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
+                        proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+
+
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
+                    }
+                    else
+                    {
+                        currentSelectedIndex = editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString();
+                        editProposalPersianTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        editProposalEnglishTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
+                        editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        editProposalPropertyTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        editProposalRegisterTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        editProposalOrganizationNumberCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
+                        editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
+                        editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
+                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                        proposalEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
+
+
+
+                        editProposalRegisterBtn.Enabled = true;
+                        editProposalDeleteBtn.Enabled = true;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException) { }
+        }
+
+        private void editProposalDeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (!manageProposalIsWatchingEdition)
             {
                 Proposal proposal = new Proposal();
                 proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
@@ -3884,99 +4436,42 @@ namespace ProposalReportingSystem
                 proposal.Value = long.Parse(editProposalValueTxtbx.Text);
                 proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                 proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-
                 proposal.Index = long.Parse(currentSelectedIndex);
                 proposal.FileName = editProposalCurrentFileName;
 
-                dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
+                dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
                 dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
-            }
-        }
 
-        private void editProposalShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
+                editProposalClearBtn.PerformClick();
+                editProposalShowAllBtn.PerformClick();
+            }
+            else if (manageProposalIsWatchingEdition)
             {
-                if (e.ColumnIndex == 18)
-                {
+                Proposal proposal = new Proposal();
+                proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
+                proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
+                proposal.KeyWord = editProposalKeywordsTxtbx.Text;
+                proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
+                proposal.Executor2 = editProposalExecutor2Txtbx.Text;
+                proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
+                proposal.ProcedureType = editProposalProcedureTypeCb.Text;
+                proposal.PropertyType = editProposalPropertyTypeCb.Text;
+                proposal.ProposalType = editProposalTypeCb.Text;
+                proposal.Status = editProposalStatusCb.Text;
+                proposal.RegisterType = editProposalRegisterTypeCb.Text;
+                proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
+                proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
+                proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                proposal.Index = long.Parse(currentSelectedIndex);
+                proposal.FileName = editProposalCurrentFileName;
 
-                    Proposal proposal = new Proposal();
-                    proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
-                    proposal.PersianTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
-                    proposal.EngTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
-                    proposal.KeyWord = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
-                    proposal.Executor2 = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
-                    proposal.CoExecutor = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                    proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
-                    proposal.Duration = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
-                    proposal.ProcedureType = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
-                    proposal.ProposalType = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
-                    proposal.PropertyType = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
-                    proposal.RegisterType = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
-                    proposal.Employer = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
-                    proposal.Value = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
-                    proposal.Status = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                    proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
-                    proposal.Executor = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
 
-
-                    Detail detail = new Detail(proposal);
-                    detail.ShowDialog();
-                }
-                else
-                {
-
-                    currentSelectedIndex = editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString();
-                    editProposalPersianTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
-                    editProposalEnglishTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
-                    editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
-                    editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
-                    editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                    editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
-                    editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
-                    editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
-                    editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
-                    editProposalPropertyTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
-                    editProposalRegisterTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
-                    editProposalOrganizationNumberCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
-                    editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
-                    editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                    editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
-                    editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
-
-                    editProposalRegisterBtn.Enabled = true;
-                    editProposalDeleteBtn.Enabled = true;
-                }
+                editProposalClearBtn.PerformClick();
+                editProposalShowAllBtn.PerformClick();
             }
-            catch (ArgumentOutOfRangeException) { }
-        }
-
-        private void editProposalDeleteBtn_Click(object sender, EventArgs e)
-        {
-            Proposal proposal = new Proposal();
-            proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
-            proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
-            proposal.KeyWord = editProposalKeywordsTxtbx.Text;
-            proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
-            proposal.Executor2 = editProposalExecutor2Txtbx.Text;
-            proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
-            proposal.ProcedureType = editProposalProcedureTypeCb.Text;
-            proposal.PropertyType = editProposalPropertyTypeCb.Text;
-            proposal.ProposalType = editProposalTypeCb.Text;
-            proposal.Status = editProposalStatusCb.Text;
-            proposal.RegisterType = editProposalRegisterTypeCb.Text;
-            proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-            proposal.Value = long.Parse(editProposalValueTxtbx.Text);
-            proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-            proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-            proposal.Index = long.Parse(currentSelectedIndex);
-            proposal.FileName = editProposalCurrentFileName;
-
-            dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
-
-            editProposalClearBtn.PerformClick();
-            editProposalShowAllBtn.PerformClick();
         }
 
         private void manageUserDgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -4140,6 +4635,7 @@ namespace ProposalReportingSystem
             }
             else
             {
+                searchProposalShowDgv.Columns.Clear();
                 searchProposalShowDgv.DataSource = null;
             }
         }
@@ -4885,33 +5381,102 @@ namespace ProposalReportingSystem
 
         private void addProposalShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
-                if (e.ColumnIndex == 18)
+                if (!addProposalIsWatchingEdition)
                 {
-                    Proposal proposal = new Proposal();
+                    if (e.ColumnIndex == 18)
+                    {
+                        Proposal proposal = new Proposal();
 
-                    proposal.Index = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
-                    proposal.PersianTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
-                    proposal.EngTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
-                    proposal.KeyWord = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
-                    proposal.Executor2 = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
-                    proposal.CoExecutor = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                    proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
-                    proposal.Duration = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
-                    proposal.ProcedureType = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
-                    proposal.ProposalType = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
-                    proposal.PropertyType = addProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
-                    proposal.RegisterType = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
-                    proposal.Employer = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
-                    proposal.Value = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
-                    proposal.Status = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                    proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
-                    proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Index = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = addProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                    Detail detail = new Detail(proposal);
-                    detail.ShowDialog();
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
 
+                    }
+                    if (e.ColumnIndex == 19)
+                    {
+
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+
+                        addProposalPersianTitleTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        addProposalEnglishTitleTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        addProposalKeywordsTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        addProposalExecutor2Txtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        addProposalCoexecutorTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        addProposalDurationTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
+                        addProposalProcedureTypeCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        addProposalProposalTypeCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        addProposalPropertyTypeCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        addProposalRegisterTypeCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        addProposalOrganizationNumberCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
+                        addProposalValueTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
+                        addProposalStatusCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        addProposalExecutorNcodeTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
+                        addProposalStartdateTimeInput.GeoDate = DateTime.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+
+                        dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                        addProposalShowDgv.Columns["editionBtn"].Visible = false;
+
+                        editionProposalIndex = proposal.Index;
+                        addProposalIsWatchingEdition = true;
+
+
+
+
+                    }
+
+                }
+                else if (addProposalIsWatchingEdition)
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = addProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
+
+                    }
                 }
             }
             catch (ArgumentOutOfRangeException) { }
@@ -4921,31 +5486,81 @@ namespace ProposalReportingSystem
         {
             try
             {
-                if (e.ColumnIndex == 18)
+                if (!searchProposalIsWatchingEdition)
                 {
+                    if (e.ColumnIndex == 18)
+                    {
 
-                    Proposal proposal = new Proposal();
+                        Proposal proposal = new Proposal();
 
-                    proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
-                    proposal.PersianTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
-                    proposal.EngTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
-                    proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
-                    proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
-                    proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                    proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
-                    proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
-                    proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
-                    proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
-                    proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
-                    proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
-                    proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
-                    proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
-                    proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                    proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
-                    proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                    Detail detail = new Detail(proposal);
-                    detail.ShowDialog();
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
+                    }
+                    if (e.ColumnIndex == 19)
+                    {
+
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+
+
+                        dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                        searchProposalShowDgv.Columns["editionBtn"].Visible = false;
+
+                        editionProposalIndex = proposal.Index;
+                        searchProposalIsWatchingEdition = true;
+
+                    }
+
+                }
+                else if (searchProposalIsWatchingEdition)
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+
+                        Detail detail = new Detail(proposal);
+                        detail.ShowDialog();
+
+                    }
                 }
             }
             catch (ArgumentOutOfRangeException) { }
@@ -4955,6 +5570,9 @@ namespace ProposalReportingSystem
         {
             Toast t = new Toast("متن پیام", 0.1, 0.3, 30, "error");
             t.Show();
+
+            balloonTip1.SetBalloonCaption(addProposalSearchBtn, "راهنما");
+            balloonTip1.SetBalloonText(addProposalSearchBtn, "برای جستجو کلیک کنید");
         }
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)

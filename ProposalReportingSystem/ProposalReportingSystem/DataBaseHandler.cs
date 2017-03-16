@@ -318,11 +318,11 @@ namespace ProposalReportingSystem
 
             try
             {
-                sc.CommandText = "SELECT COUNT(*) FROM editionTable WHERE [index] = " + proposal.Index + " ";
+                sc.CommandText = "SELECT edition From editionTable WHERE [index] = '" + proposal.Index + "' ORDER BY edition DESC";
                 reader = sc.ExecuteReader();
                 reader.Read();
-                int EditionNumber = reader.GetInt32(0);
-
+                int EditionNumber = reader.GetInt32(0) + 1;
+                reader.Close();
 
 
                 if (_inputParameter.FileName.Contains(".docx"))
@@ -466,9 +466,6 @@ namespace ProposalReportingSystem
             SqlTransaction transaction;
             transaction = conn.BeginTransaction("new");
             sc.Transaction = transaction;
-
-
-
 
             try
             {
@@ -2724,20 +2721,34 @@ namespace ProposalReportingSystem
                 dataGridview.Columns.Add(btn);
                 btn.HeaderText = "جزییات";
                 btn.Text = "نمایش جزییات";
-                btn.Name = "btn";
+                btn.Name = "detailBtn";
+
+                DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn2);
+                btn2.HeaderText = "اصلاحیه";
+                btn2.Text = "نمایش اصلاحیه ها";
+                btn2.Name = "editionBtn";
+
+
 
                 btn.UseColumnTextForLinkValue = true;
+                btn2.UseColumnTextForLinkValue = true;
 
+                dataGridview.Columns["editionBtn"].Visible = true;
+                dataGridview.Columns["detailBtn"].Visible = true;
 
 
                 dataGridview.Columns[0].Visible = false;
-                dataGridview.Columns["btn"].DisplayIndex = 0;
-                dataGridview.Columns["btn"].Frozen = true;
+                dataGridview.Columns["detailBtn"].DisplayIndex = 0;
+                dataGridview.Columns["detailBtn"].Frozen = true;
+                dataGridview.Columns["editionBtn"].DisplayIndex = 1;
+                dataGridview.Columns["editionBtn"].Frozen = true;
+
                 dataGridview.Columns["executor"].HeaderText = "مجری";
-                dataGridview.Columns["executor"].DisplayIndex = 1;
+                dataGridview.Columns["executor"].DisplayIndex = 2;
                 dataGridview.Columns["executor"].Frozen = true;
                 dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
-                dataGridview.Columns["persianTitle"].DisplayIndex = 2;
+                dataGridview.Columns["persianTitle"].DisplayIndex = 3;
                 dataGridview.Columns["persianTitle"].Frozen = true;
 
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
@@ -2755,9 +2766,6 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[15].HeaderText = "وضعیت";
                 dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
                 dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
-
-
-
 
             }
 

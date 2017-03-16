@@ -25,6 +25,7 @@ namespace ProposalReportingSystem
         private string status;
         private long registrant;
         private string fileName;
+        private int edition;
 
         public long Index
         {
@@ -259,6 +260,19 @@ namespace ProposalReportingSystem
             set
             {
                 fileName = value;
+            }
+        }
+
+        public int Edition
+        {
+            get
+            {
+                return edition;
+            }
+
+            set
+            {
+                edition = value;
             }
         }
     }
