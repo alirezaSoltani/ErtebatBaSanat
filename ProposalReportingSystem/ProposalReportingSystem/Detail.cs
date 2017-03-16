@@ -23,6 +23,7 @@ namespace ProposalReportingSystem
         public Detail(Proposal proposal)
         {
             InitializeComponent();
+
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
             detailLatinTitleTxtbx.Text = proposal.EngTitle;
