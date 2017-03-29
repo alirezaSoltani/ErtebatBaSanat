@@ -12,17 +12,21 @@ namespace ProposalReportingSystem
 {
     public partial class Detail : Form
     {
-        private DataBaseHandler dbh = new DataBaseHandler();
+        private DataBaseHandler dbh; 
         private static string fileName;
+        private long loginUserNCode;
+
         public Detail()
         {
             InitializeComponent();
-
         }
 
-        public Detail(Proposal proposal)
+        public Detail(Proposal proposal, long loginUserNCode)
         {
             InitializeComponent();
+
+            this.loginUserNCode = loginUserNCode;
+            dbh = new DataBaseHandler(this.loginUserNCode);
 
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;

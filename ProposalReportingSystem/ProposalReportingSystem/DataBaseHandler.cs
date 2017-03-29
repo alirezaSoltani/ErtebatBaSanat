@@ -14,6 +14,11 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
+        private Toast tst = new Toast();//related to show success and error messages
+        private long loginUserNCode;
+
+
+
         string conString = "Data Source= 185.159.152.2;" +
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=rayanpro_rayan; " +
@@ -35,6 +40,13 @@ namespace ProposalReportingSystem
         /// querry for proposals
         /// </summary>
         /// <param name="proposal"></param>
+
+
+        public DataBaseHandler(long loginUserNCode)
+        {
+            this.loginUserNCode = loginUserNCode;
+        }
+
 
         public void AddProposal(Proposal proposal, long username, String dateTime, FTPSetting _inputParameter)
         {
@@ -130,19 +142,35 @@ namespace ProposalReportingSystem
 
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                tst.showToast("افزودن پروپوزال با موفقیت انجام شد.", 0.1, 0.1, 25, "success");
             }
-            catch
+            catch(Exception e)
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
                 try
                 {
                     transaction.Rollback();
                     DeleteFile(_inputParameter.FileName);
                 }
-                catch
+                catch(Exception ee)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    if (loginUserNCode == 98765)
+                    {
+                        PopUp p = new PopUp("خطا",ee.Message.ToString(), "تایید", "", "", "error");
+                        p.ShowDialog();
+                    }
+                }
+
+
+                if(loginUserNCode == 98765)
+                {
+                    PopUp p = new PopUp("خطا",e.Message.ToString() ,"تایید","", "", "error");
+                    p.ShowDialog();
+                }
+
+                else
+                {
+                    PopUp p = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    p.ShowDialog();
                 }
             }
 
@@ -2796,26 +2824,36 @@ namespace ProposalReportingSystem
 
         public void uploadFile(FTPSetting _inputParameter)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://185.159.152.5", _inputParameter.FileName)));
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential(_inputParameter.Username, _inputParameter.Password);
-            Stream FtpStream = request.GetRequestStream();
-            FileStream fs = File.OpenRead(_inputParameter.FullName);
-            byte[] buffer = new byte[1024];
-            double total = (double)fs.Length;
-            int byteRead = 0;
-            double read = 0;
-            do
+            try
             {
-
-                byteRead = fs.Read(buffer, 0, 1024);
-                FtpStream.Write(buffer, 0, byteRead);
-                read += (double)byteRead;
-                double percentage = read / total * 100;
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://185.159.152.5", _inputParameter.FileName)));
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+                request.Credentials = new NetworkCredential(_inputParameter.Username, _inputParameter.Password);
+                Stream FtpStream = request.GetRequestStream();
+                FileStream fs = File.OpenRead(_inputParameter.FullName);
+                byte[] buffer = new byte[1024];
+                double total = (double)fs.Length;
+                int byteRead = 0;
+                double read = 0;
+                do
+                {
+                    byteRead = fs.Read(buffer, 0, 1024);
+                    FtpStream.Write(buffer, 0, byteRead);
+                    read += (double)byteRead;
+                    double percentage = read / total * 100;
+                }
+                while (byteRead != 0);
+                fs.Close();
+                FtpStream.Close();
             }
-            while (byteRead != 0);
-            fs.Close();
-            FtpStream.Close();
+            catch(Exception e)
+            {
+                if (loginUserNCode == 98765)
+                {
+                    PopUp p = new PopUp("خطا", e.Message.ToString(), "تایید", "", "", "error");
+                    p.ShowDialog();
+                }
+            }
         }
 
         public string downloadFile(string FileNameToDownload, string tempDirPath)

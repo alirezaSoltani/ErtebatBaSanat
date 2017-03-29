@@ -623,11 +623,11 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel13);
+            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel2);
+            this.mainPage.Controls.Add(this.superTabControlPanel13);
             this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel11);
-            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel10);
             this.mainPage.Controls.Add(this.superTabControlPanel6);
@@ -674,7 +674,7 @@
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(1132, 869);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(1142, 869);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.homeTab;
             // 

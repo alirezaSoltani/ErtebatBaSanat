@@ -56,6 +56,39 @@ namespace ProposalReportingSystem
             gl.setSize(toastContextLbl, 10, 15, 335, 70);
         }
 
+        public void showToast(string context, double fadeUpSpeed, double fadeDownSpeed, int mainTainTime, string icon)
+        {
+            toastContextLbl.Text = context;
+            fadingUpSpeed = fadeUpSpeed;
+            fadingDownSpeed = fadeDownSpeed;
+            this.mainTainTime = mainTainTime;
+
+            if (icon == "error")
+            {
+                toastIconPb.BackgroundImage = ProposalReportingSystem.Properties.Resources.error;
+            }
+
+            else if (icon == "info")
+            {
+                toastIconPb.BackgroundImage = ProposalReportingSystem.Properties.Resources.information;
+            }
+
+            this.Opacity = 0;
+            i = 0;
+            timer.Start();
+            //MessageBox.Show("hello");
+
+            int systemWidth = SystemInformation.PrimaryMonitorSize.Width;          //related to setSize
+            int systemHeight = SystemInformation.PrimaryMonitorSize.Height;        //related to setSize
+            this.SetBounds(((235 * systemWidth) / 1000), ((840 * systemHeight) / 1000), ((400 * systemWidth) / 1000), ((100 * systemHeight) / 1000));      //related to setSize
+
+            gl.setSize(toastPanel, 0, 0, 400, 100);
+            gl.setSize(toastIconPb, 352, 16, 35, 65);
+            gl.setSize(toastContextLbl, 10, 15, 335, 70);
+
+            this.Show();
+        }
+
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -69,7 +102,7 @@ namespace ProposalReportingSystem
                 toastUp = false;
                 i++;
 
-                if(i>this.mainTainTime)
+                if (i > this.mainTainTime)
                 {
                     toastDown = true;
                 }
