@@ -20,6 +20,18 @@ namespace ProposalReportingSystem
                 "Password=P@hn1395;";
 
 
+
+        ////
+        public int PgSize = 5;
+        /////
+
+        ////// string queries
+
+        public string addProposalQuery ; // "SELECT TOP " + PgSize + " * FROM proposalTable"
+        public string searchProposalQuery;
+
+
+
         /// <summary>
         /// Data gridview attributes
         /// </summary>
@@ -2533,7 +2545,7 @@ namespace ProposalReportingSystem
         }
 
 
-
+        
 
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GET DATA******************************/
@@ -2652,6 +2664,269 @@ namespace ProposalReportingSystem
 
 
         /////////JUST TEST
+        public void dataGridViewUpdate3(DataGridView dgvv, BindingSource bindingSource, String query, int PgSize,int page)
+        {
+            /// <summary>
+            /// datagridview reintialization
+            /// </summary>
+
+            int PreviousPageOffSet= (page - 1) * PgSize;
+            dgvv.DataSource = bindingSource;
+            GetData3(query, bindingSource, dgvv,  PgSize, PreviousPageOffSet);
+        }
+        private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview,int PgSize, int PreviousPageOffSet)
+        {
+            //// Create a new data adapter based on the specified query.
+            //dataAdapter = new SqlDataAdapter(selectCommand, conString);
+
+            //// Create a command builder to generate SQL update, insert, and
+            //// delete commands based on selectCommand. These are used to
+            //// update the database.
+
+            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            //// Populate a new data table and bind it to the BindingSource.
+            //DataTable table = new DataTable();
+            //table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            //dataAdapter.Fill(table);
+            //bindingSourceObj.DataSource = table;
+
+
+            // Resize the DataGridView columns to fit the newly loaded content.
+            dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+            int i = 0;
+            while (true)
+            {
+                try
+                {
+                    dataGridview.Rows[i].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+
+            if (selectCommand.Contains("UsersTable"))
+            {
+                string q = "Select TOP " + PgSize +
+                           " * from UsersTable WHERE [index] NOT IN " +
+                           "(Select TOP " + PreviousPageOffSet +
+                           " [index] from UsersTable ORDER BY [index] ) ";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(q, conString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSourceObj.DataSource = table;
+
+
+                dataGridview.Columns[0].HeaderText = "کد ملي";
+                dataGridview.Columns[1].HeaderText = "رمز عبور";
+                dataGridview.Columns[2].HeaderText = "نام";
+                dataGridview.Columns[3].HeaderText = "نام خانوادگي";
+                dataGridview.Columns[4].HeaderText = "ايميل";
+                dataGridview.Columns[5].HeaderText = "تلفن تماس";
+                dataGridview.Columns[6].HeaderText = "افزودن پروپوزال";
+                dataGridview.Columns[7].HeaderText = "تغيير اطلاعات پروپوزال";
+                dataGridview.Columns[8].HeaderText = "حذف پروپوزال";
+                dataGridview.Columns[9].HeaderText = "افزودن کاربر";
+                dataGridview.Columns[10].HeaderText = "تغيير اطلاعات کاربر";
+                dataGridview.Columns[11].HeaderText = "حذف کاربر";
+                dataGridview.Columns[12].HeaderText = "مديريت اطلاعات اساتيد";
+                dataGridview.Columns[13].HeaderText = "تغيير تنظيمات برنامه";
+                dataGridview.Columns[14].Visible = false;
+            }
+
+            else if (selectCommand.Contains("proposalTable"))
+            {
+                string q = addProposalQuery +" AND  [index] NOT IN " +
+                           "(SELECT TOP " + PreviousPageOffSet +
+                           " [index] FROM proposalTable ORDER BY startDate ) ";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(q, conString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSourceObj.DataSource = table;
+
+
+
+                ////////////////
+               
+
+
+
+                dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
+                dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
+                dataGridview.Columns[5].HeaderText = "مجریان همکار";
+                dataGridview.Columns[6].HeaderText = "همکاران مجری";
+                dataGridview.Columns[7].HeaderText = "تاریخ شروع";
+                dataGridview.Columns[8].HeaderText = "مدت زمان";
+                dataGridview.Columns[9].HeaderText = "نوع کار";
+                dataGridview.Columns[10].HeaderText = "خاصیت";
+                dataGridview.Columns[11].HeaderText = "نوع ثبت";
+                dataGridview.Columns[12].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns[13].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns[14].HeaderText = "هزینه";
+                dataGridview.Columns[15].HeaderText = "وضعیت";
+                dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+
+
+                ///////////
+                DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn);
+                btn.HeaderText = "جزییات";
+                btn.Text = "نمایش جزییات";
+                btn.Name = "detailBtn";
+
+                DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn2);
+                btn2.HeaderText = "اصلاحیه";
+                btn2.Text = "نمایش اصلاحیه ها";
+                btn2.Name = "editionBtn";
+
+
+
+                btn.UseColumnTextForLinkValue = true;
+                btn2.UseColumnTextForLinkValue = true;
+
+                dataGridview.Columns["editionBtn"].Visible = true;
+                dataGridview.Columns["detailBtn"].Visible = true;
+
+
+                dataGridview.Columns[0].Visible = false;
+                dataGridview.Columns["detailBtn"].DisplayIndex = 0;
+                dataGridview.Columns["detailBtn"].Frozen = true;
+                dataGridview.Columns["editionBtn"].DisplayIndex = 1;
+                dataGridview.Columns["editionBtn"].Frozen = true;
+
+                dataGridview.Columns["executor"].HeaderText = "مجری";
+                dataGridview.Columns["executor"].DisplayIndex = 2;
+                dataGridview.Columns["executor"].Frozen = true;
+
+                dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
+                dataGridview.Columns["persianTitle"].DisplayIndex = 3;
+                dataGridview.Columns["persianTitle"].Frozen = true;
+                ///////////////////////
+            }
+
+            else if (selectCommand.Contains("TeacherTable"))
+            {
+
+                string q = "Select TOP " + PgSize +
+                           " * from TeacherTable WHERE [index] NOT IN " +
+                           "(Select TOP " + PreviousPageOffSet +
+                           " [index] from TeacherTable ORDER BY [index] ) ";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(q, conString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSourceObj.DataSource = table;
+
+
+                dataGridview.Columns[0].HeaderText = "کد ملی";
+                dataGridview.Columns[1].HeaderText = "نام";
+                dataGridview.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridview.Columns[3].HeaderText = "دانشکده";
+                dataGridview.Columns[4].HeaderText = "گروه آموزشی";
+                dataGridview.Columns[5].HeaderText = "درجه علمی";
+                dataGridview.Columns[6].HeaderText = "ایمیل";
+                dataGridview.Columns[7].HeaderText = "تلفن همراه";
+                dataGridview.Columns[8].HeaderText = "تلفن 1";
+                dataGridview.Columns[9].HeaderText = "تلفن 2";
+            }
+
+
+        }
+
+        public int totalPage(string query)
+        {
+            int totalPages = 0;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            SqlDataReader reader;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+                
+                sc.CommandText = query;
+                reader = sc.ExecuteReader();
+                reader.Read();
+                int rowCount = reader.GetInt32(0);
+                reader.Close();
+                totalPages = rowCount / PgSize;
+                transaction.Commit();
+
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+            return totalPages+1;
+        }
+
+
+        /// <summary>
+        /// neeeeeeeeew
+        /// </summary>
+        /// <param name="dgvv"></param>
+        /// <param name="bindingSource"></param>
+        /// <param name="query"></param>
+
         public void dataGridViewUpdate2(DataGridView dgvv, BindingSource bindingSource, String query)
         {
             /// <summary>
@@ -2785,6 +3060,7 @@ namespace ProposalReportingSystem
 
 
         }
+
         /////////JUST TEST
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GridView Update***********************/

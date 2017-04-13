@@ -28,9 +28,7 @@ namespace ProposalReportingSystem
         public FTPSetting _inputParameter = new FTPSetting(); //related to upload and download file
         private DateTime myDateTime = DateTime.Now;// Gets the local time, should be replaced by server time
 
-        private const int totalRecords = 43;//related to gridview paging
-        private const int pageSize = 10;//related to gridview paging
-        private string[,] s;//related to gridview paging
+
 
         private string editProposalCurrentFileName;
         private bool isIconMenu = true, isDetailedMenu = true;// menu variables
@@ -40,6 +38,15 @@ namespace ProposalReportingSystem
         private bool manageProposalIsWatchingEdition = false;//related to editions of proposals
         private int proposalEdition;//related to editions of proposals
         ////
+
+
+        /// <summary>
+        /// datagridview Paging
+        /// </summary>
+        private int pageSize = 5;
+        private int CurrentPageIndex = 1;
+        private int TotalPage = 0;
+
 
         ////
         private long editionProposalIndex;
@@ -819,6 +826,14 @@ namespace ProposalReportingSystem
             addProposalFileLinkLbl.Text = "افزودن فایل";
             addProposalExecutorNcodeTxtbx.Focus();
 
+            addProposalNavigationCurrentPageTxtbx.Clear();
+            addProposalNavigationFirstPageBtn.Enabled = false;
+            addProposalNavigationNextPageBtn.Enabled = false;
+            addProposalNavigationLastPageBtn.Enabled = false;
+            addProposalNavigationPreviousPageBtn.Enabled = false;
+            addProposalNavigationCurrentPageTxtbx.Enabled = false;
+            addProposalNavigationReturnBtn.Enabled = false;
+
             addProposalShowAllBtn.Enabled = true;
             addProposalSearchBtn.Enabled = true;
 
@@ -1024,8 +1039,15 @@ namespace ProposalReportingSystem
                     proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
                     proposal.Registrant = loginUser.U_NCode;
 
+
+
+                    //TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
+
+
+                    //CurrentPageIndex = 1;
+                    //addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
                     dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-                    dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'");
+                    //dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, "SELECT TOP "+pageSize+" * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'",pageSize,CurrentPageIndex);
                     addProposalClearBtn.PerformClick();
                 }
             }
@@ -3852,7 +3874,107 @@ namespace ProposalReportingSystem
 
         private void addProposalShowBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable");
+            addProposalShowDgv.Columns.Clear();
+            //addProposalShowDgv.DataSource = null;
+            TotalPage =  dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
+            
+
+            CurrentPageIndex = 1;
+            addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.addProposalQuery = "SELECT TOP "+pageSize+" * FROM proposalTable WHERE 1=1 ";
+            dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize,CurrentPageIndex);
+            addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+            addProposalExecutorNcodeTxtbx.Focus();
+
+            addProposalNavigationFirstPageBtn.Enabled = true;
+            addProposalNavigationNextPageBtn.Enabled = true;
+            addProposalNavigationLastPageBtn.Enabled = true;
+            addProposalNavigationPreviousPageBtn.Enabled = true;
+            addProposalNavigationCurrentPageTxtbx.Enabled = true;
+            addProposalNavigationReturnBtn.Enabled = false;
+          //  addProposalShowAllBtn.Enabled = false;
+        }
+
+        private void addProposalNavigationNextPageBtn_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex < TotalPage)
+            {
+                addProposalShowDgv.Columns.Clear();
+                CurrentPageIndex++;
+                addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                addProposalExecutorNcodeTxtbx.Focus();
+
+                addProposalShowAllBtn.Enabled = false;
+            }
+        }
+        private void addProposalNavigationPreviousPageBtn_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex > 1)
+            {
+                addProposalShowDgv.Columns.Clear();
+                CurrentPageIndex--;
+                addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                addProposalExecutorNcodeTxtbx.Focus();
+
+                addProposalShowAllBtn.Enabled = false;
+            }
+        }
+
+        private void addProposalNavigationCurrentPageTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)13)
+                {
+                    if (int.Parse(addProposalNavigationCurrentPageTxtbx.Text) >= 1 && int.Parse(addProposalNavigationCurrentPageTxtbx.Text) <= TotalPage)
+                    {
+                        addProposalShowDgv.Columns.Clear();
+                        CurrentPageIndex = int.Parse(addProposalNavigationCurrentPageTxtbx.Text);
+                        addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                        dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                        addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                        addProposalExecutorNcodeTxtbx.Focus();
+
+                        addProposalShowAllBtn.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("nist");
+                    }
+                }
+                else
+                {
+                    e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+                }
+            }
+            catch
+            { }
+        }
+
+        private void addProposalNavigationFirstPageBtn_Click(object sender, EventArgs e)
+        {
+            addProposalShowDgv.Columns.Clear();
+            CurrentPageIndex=1;
+            addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+            addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+            addProposalExecutorNcodeTxtbx.Focus();
+
+            addProposalShowAllBtn.Enabled = false;
+        }
+
+
+
+        private void addProposalNavigationLastPageBtn_Click(object sender, EventArgs e)
+        {
+            addProposalShowDgv.Columns.Clear();
+            CurrentPageIndex = TotalPage;
+            addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
             addProposalExecutorNcodeTxtbx.BackColor = Color.White;
             addProposalExecutorNcodeTxtbx.Focus();
 
@@ -3871,8 +3993,21 @@ namespace ProposalReportingSystem
         {
             if (addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
-                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
-                addProposalSearchBtn.Enabled = false;
+                addProposalShowDgv.Columns.Clear();
+                //addProposalShowDgv.DataSource = null;
+                TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
+                CurrentPageIndex = 1;
+                addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.addProposalQuery = "SELECT TOP " + pageSize  + " * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'";
+                dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery,pageSize,CurrentPageIndex);
+
+                addProposalNavigationFirstPageBtn.Enabled = true;
+                addProposalNavigationNextPageBtn.Enabled = true;
+                addProposalNavigationLastPageBtn.Enabled = true;
+                addProposalNavigationPreviousPageBtn.Enabled = true;
+                addProposalNavigationCurrentPageTxtbx.Enabled = true;
+                addProposalNavigationReturnBtn.Enabled = false ;
+              //  addProposalSearchBtn.Enabled = false;
             }
             else
             {
@@ -4497,27 +4632,37 @@ namespace ProposalReportingSystem
             catch (ArgumentOutOfRangeException) { }
     }
 
-        private void logBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            // The desired page has changed, so fetch the page of records using the "Current" offset 
-            int offset = (int)logBindingSource.Current;
-            var records = new List<Log>();
-            for (int i = offset; i < offset + pageSize && i < totalRecords; i++)
-                records.Add(new Log { logNumber = long.Parse(s[i, 0]), logUsername = long.Parse(s[i, 1]), logDateTime = s[i, 2], logDescription = s[i, 3], logTableName = s[i, 4] });
-            logDgv.DataSource = records;
-        }
+      
 
         private void searchProposalShowAllBtn_Click(object sender, EventArgs e)
         {
-            dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable");
-            searchProposalShowAllBtn.Enabled = false;
+           searchProposalShowDgv.Columns.Clear();
+            //addProposalShowDgv.DataSource = null;
+            TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
+
+
+            CurrentPageIndex = 1;
+            addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.searchProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE 1=1 ";
+            dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery, pageSize, CurrentPageIndex);
+            searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+            searchProposalExecutorNCodeTxtbx.Focus();
+
+            searchProposalNavigationFirstPageBtn.Enabled = true;
+            searchProposalNavigationNextPageBtn.Enabled = true;
+            searchProposalNavigationLastPageBtn.Enabled = true;
+            searchProposalNavigationPreviousPageBtn.Enabled = true;
+            searchProposalNavigationCurrentPageTxtbx.Enabled = true;
+            searchProposalNavigationReturnBtn.Enabled = false;
+            //  addProposalShowAllBtn.Enabled = false;
         }
+
 
         private void searchProposalSearchBtn_Click(object sender, EventArgs e)
         {
             List<long> NCODES = new List<long>();
 
-            string query = "SELECT * FROM proposalTable WHERE ";
+            string query = "SELECT TOP "+pageSize+" * FROM proposalTable WHERE ";
 
             string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
 
@@ -4629,9 +4774,11 @@ namespace ProposalReportingSystem
 
             query = query.Substring(0, query.Length - 3);
 
-            if (query != "SELECT * FROM proposalTable WHE")
+            if (query != "SELECT TOP " + pageSize + " * FROM proposalTable WHE")
             {
-                dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, query);
+                CurrentPageIndex = 1; 
+                dbh.searchProposalQuery = query;
+                dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery,pageSize, CurrentPageIndex);
             }
             else
             {
@@ -5439,6 +5586,12 @@ namespace ProposalReportingSystem
                         dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         addProposalShowDgv.Columns["editionBtn"].Visible = false;
 
+                        addProposalNavigationFirstPageBtn.Enabled = false;
+                        addProposalNavigationNextPageBtn.Enabled = false;
+                        addProposalNavigationLastPageBtn.Enabled = false;
+                        addProposalNavigationPreviousPageBtn.Enabled = false;
+                        addProposalNavigationCurrentPageTxtbx.Enabled = false;
+                        addProposalNavigationReturnBtn.Enabled = true;
                         editionProposalIndex = proposal.Index;
                         addProposalIsWatchingEdition = true;
 
@@ -5573,6 +5726,86 @@ namespace ProposalReportingSystem
 
             balloonTip1.SetBalloonCaption(addProposalSearchBtn, "راهنما");
             balloonTip1.SetBalloonText(addProposalSearchBtn, "برای جستجو کلیک کنید");
+        }
+
+        private void searchProposalNavigationFirstPageBtn_Click(object sender, EventArgs e)
+        {
+            searchProposalShowDgv.Columns.Clear();
+            CurrentPageIndex = 1;
+            searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable", pageSize, CurrentPageIndex);
+            searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+            searchProposalExecutorNCodeTxtbx.Focus();
+
+            searchProposalShowAllBtn.Enabled = false;
+        }
+
+        private void searchProposalNavigationLastPageBtn_Click(object sender, EventArgs e)
+        {
+            searchProposalShowDgv.Columns.Clear();
+            CurrentPageIndex = TotalPage;
+            searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+            dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable", pageSize, CurrentPageIndex);
+            searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+            searchProposalExecutorNCodeTxtbx.Focus();
+
+            searchProposalShowAllBtn.Enabled = false;
+        }
+
+        private void searchProposalNavigationPreviousPageBtn_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex > 1)
+            {
+                searchProposalShowDgv.Columns.Clear();
+                CurrentPageIndex--;
+                searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable", pageSize, CurrentPageIndex);
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                searchProposalExecutorNCodeTxtbx.Focus();
+
+                searchProposalShowAllBtn.Enabled = false;
+            }
+        }
+
+        private void searchProposalNavigationNextPageBtn_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex < TotalPage)
+            {
+                searchProposalShowDgv.Columns.Clear();
+                CurrentPageIndex++;
+                searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM proposalTable", pageSize, CurrentPageIndex);
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                searchProposalExecutorNCodeTxtbx.Focus();
+
+                searchProposalShowAllBtn.Enabled = false;
+            }
+        }
+
+        private void addProposalNavigationReturnBtn_Click(object sender, EventArgs e)
+        {
+           
+            if (dbh.addProposalQuery.Contains("executor"))
+            {
+                addProposalIsWatchingEdition = false;
+                addProposalShowDgv.Columns.Clear();
+                //addProposalShowDgv.DataSource = null;
+                TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
+                
+                addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.addProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'";
+                dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+
+                addProposalNavigationFirstPageBtn.Enabled = true;
+                addProposalNavigationNextPageBtn.Enabled = true;
+                addProposalNavigationLastPageBtn.Enabled = true;
+                addProposalNavigationPreviousPageBtn.Enabled = true;
+                addProposalNavigationCurrentPageTxtbx.Enabled = true;
+                addProposalNavigationReturnBtn.Enabled = false;
+                addProposalSearchBtn.Enabled = false;
+            }   
+
+            
         }
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
