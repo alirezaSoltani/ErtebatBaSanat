@@ -31,19 +31,19 @@ namespace ProposalReportingSystem
             detailExecutor2Txtbx.Text = proposal.Executor2;
             detailCoExecutorTxtbx.Text = proposal.CoExecutor;
 
-            detailStartDateLbl2.Text = proposal.StartDate;
-            detailPropertyLbl2.Text = proposal.PropertyType;
-            detailOrganizationLbl2.Text = proposal.Employer.ToString();
+            detailStartDateTxtbx.Text = proposal.StartDate;
+            detailPropertyTxtbx.Text = proposal.PropertyType;
+            detailOrganizationTxtbx.Text = proposal.Employer.ToString();
 
-            detailDurationLbl2.Text = proposal.Duration.ToString();
-            detailRegisterTypeLbl2.Text = proposal.RegisterType;
-            detailValueLbl2.Text = proposal.Value.ToString();
+            detailDurationTxtbx.Text = proposal.Duration.ToString();
+            detailRegisterTypeTxtbx.Text = proposal.RegisterType;
+            detailValueTxtbx.Text = proposal.Value.ToString();
 
-            detailProcedureTypeLbl2.Text = proposal.ProcedureType;
-            detailProposalTypeLbl2.Text = proposal.ProposalType;
-            detailStatusLbl2.Text = proposal.Status;
+            detailProcedureTypeTxtbx.Text = proposal.ProcedureType;
+            detailProposalTypeTxtbx.Text = proposal.ProposalType;
+            detailStatusTxtbx.Text = proposal.Status;
 
-            detailRegistrantLbl2.Text = proposal.Registrant.ToString();
+            detailRegistrantTxtbx.Text = proposal.Registrant.ToString();
 
 
         }

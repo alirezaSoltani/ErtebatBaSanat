@@ -19,8 +19,8 @@ namespace ProposalReportingSystem
                 "User id=rayanpro_rayan; " +
                 "Password=P@hn1395;";
 
-
-
+        private Toast toast;//related to toast messages
+        private PopUp popup;
         ////
         public int PgSize = 5;
         /////
@@ -29,6 +29,7 @@ namespace ProposalReportingSystem
 
         public string addProposalQuery ; // "SELECT TOP " + PgSize + " * FROM proposalTable"
         public string searchProposalQuery;
+        public string editProposalQuery;
 
 
 
@@ -142,11 +143,13 @@ namespace ProposalReportingSystem
 
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
@@ -154,7 +157,8 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -220,18 +224,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -290,18 +297,21 @@ namespace ProposalReportingSystem
 
                 MoveFileToDeleted(proposal.FileName);
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+                popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -385,11 +395,13 @@ namespace ProposalReportingSystem
 
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
@@ -397,7 +409,8 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -445,18 +458,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -513,18 +529,21 @@ namespace ProposalReportingSystem
                 MoveFileToDeleted(proposal.FileName);
 
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+                popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -583,18 +602,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -641,18 +663,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -704,18 +729,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+                popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -750,14 +778,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -812,14 +842,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -871,18 +903,20 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
-                try
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog(); try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -925,18 +959,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -985,18 +1022,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+                popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -1135,18 +1175,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -1178,18 +1221,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -1244,18 +1290,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
+                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -1292,18 +1341,21 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
+                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -1313,9 +1365,6 @@ namespace ProposalReportingSystem
 
         public void EditProcedureType(String newProcedureType, String lastProcedureType, long username, String dateTime)
         {
-
-
-
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -1336,18 +1385,22 @@ namespace ProposalReportingSystem
                 sc.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                popup.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                popup.ShowDialog();
+
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    popup.ShowDialog();
                 }
             }
 
@@ -2752,29 +2805,75 @@ namespace ProposalReportingSystem
 
             else if (selectCommand.Contains("proposalTable"))
             {
-                string q = addProposalQuery +" AND  [index] NOT IN " +
-                           "(SELECT TOP " + PreviousPageOffSet +
-                           " [index] FROM proposalTable ORDER BY startDate ) ";
+                if (dataGridview.Name  == "addProposalShowDgv")
+                {
+                    string q = addProposalQuery + " AND  [index] NOT IN " +
+                               "(SELECT TOP " + PreviousPageOffSet +
+                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                    // Create a new data adapter based on the specified query.
+                    dataAdapter = new SqlDataAdapter(q, conString);
 
-                // Create a new data adapter based on the specified query.
-                dataAdapter = new SqlDataAdapter(q, conString);
+                    // Create a command builder to generate SQL update, insert, and
+                    // delete commands based on selectCommand. These are used to
+                    // update the database.
 
-                // Create a command builder to generate SQL update, insert, and
-                // delete commands based on selectCommand. These are used to
-                // update the database.
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    // Populate a new data table and bind it to the BindingSource.
+                    DataTable table = new DataTable();
+                    table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                    dataAdapter.Fill(table);
+                    bindingSourceObj.DataSource = table;
+                }
 
-                // Populate a new data table and bind it to the BindingSource.
-                DataTable table = new DataTable();
-                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table);
-                bindingSourceObj.DataSource = table;
+                if (dataGridview.Name == "searchProposalShowDgv")
+                {
+                    string q = searchProposalQuery + " AND  [index] NOT IN " +
+                               "(SELECT TOP " + PreviousPageOffSet +
+                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                    // Create a new data adapter based on the specified query.
+                    dataAdapter = new SqlDataAdapter(q, conString);
+
+                    // Create a command builder to generate SQL update, insert, and
+                    // delete commands based on selectCommand. These are used to
+                    // update the database.
+
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                    // Populate a new data table and bind it to the BindingSource.
+                    DataTable table = new DataTable();
+                    table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                    dataAdapter.Fill(table);
+                    bindingSourceObj.DataSource = table;
+                }
+
+                if (dataGridview.Name == "editProposalShowDgv")
+                {
+                    string q = editProposalQuery + " AND  [index] NOT IN " +
+                               "(SELECT TOP " + PreviousPageOffSet +
+                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                    // Create a new data adapter based on the specified query.
+                    dataAdapter = new SqlDataAdapter(q, conString);
+
+                    // Create a command builder to generate SQL update, insert, and
+                    // delete commands based on selectCommand. These are used to
+                    // update the database.
+
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                    // Populate a new data table and bind it to the BindingSource.
+                    DataTable table = new DataTable();
+                    table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                    dataAdapter.Fill(table);
+                    bindingSourceObj.DataSource = table;
+                }
+
+
 
 
 
                 ////////////////
-               
+
 
 
 
@@ -2891,7 +2990,8 @@ namespace ProposalReportingSystem
 
             try
             {
-                
+
+
                 sc.CommandText = query;
                 reader = sc.ExecuteReader();
                 reader.Read();
