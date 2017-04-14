@@ -15,7 +15,7 @@ namespace ProposalReportingSystem
     public partial class Login : Form
     {
         private string username, password;
-        private DataBaseHandler dbh = new DataBaseHandler();
+        private DataBaseHandler dbh = new DataBaseHandler(0);
         private string[] remembering = new string[2];
         private User user = new User();
 

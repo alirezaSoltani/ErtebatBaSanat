@@ -66,7 +66,7 @@ namespace ProposalReportingSystem
         /// Data gridview attributes
         /// </summary>
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        private DataBaseHandler dbh = new DataBaseHandler();
+        private DataBaseHandler dbh;
         /// <summary>
         /// Data gridview attributes
         /// </summary>
@@ -99,6 +99,7 @@ namespace ProposalReportingSystem
 
             
             loginUser = user;
+            dbh = new DataBaseHandler(loginUser.U_NCode);// initialized here so that we can send user Ncode to dbHandler
 
             //نمایش نام و نام خانوادگی 
             if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
@@ -997,7 +998,7 @@ namespace ProposalReportingSystem
 
                 else if (addProposalStatusCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     p.ShowDialog();
                     addProposalStatusCb.Focus();
                 }
@@ -4456,7 +4457,7 @@ namespace ProposalReportingSystem
                         proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
                     }
                     if (e.ColumnIndex == 19)
@@ -4526,7 +4527,7 @@ namespace ProposalReportingSystem
                         proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
                     }
                     else
@@ -5625,7 +5626,7 @@ namespace ProposalReportingSystem
                         proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
 
                     }
@@ -5695,7 +5696,7 @@ namespace ProposalReportingSystem
                         proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
 
                     }
@@ -5734,7 +5735,7 @@ namespace ProposalReportingSystem
                         proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
                     }
                     if (e.ColumnIndex == 19)
@@ -5787,7 +5788,7 @@ namespace ProposalReportingSystem
                         proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
 
-                        Detail detail = new Detail(proposal);
+                        Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
 
                     }
@@ -5798,8 +5799,10 @@ namespace ProposalReportingSystem
 
         private void homeAapInfoGp_Click(object sender, EventArgs e)
         {
-            Toast t = new Toast("متن پیام", 0.1, 0.3, 30, "error");
-            t.Show();
+            /* Toast t = new Toast("متن پیام", 0.1, 0.3, 30, "error");
+             t.Show();  */
+            Toast t = new Toast();
+            t.showToast("متن پیام", 0.1, 0.1, 30, "error");
 
             balloonTip1.SetBalloonCaption(addProposalSearchBtn, "راهنما");
             balloonTip1.SetBalloonText(addProposalSearchBtn, "برای جستجو کلیک کنید");
