@@ -30,6 +30,8 @@ namespace ProposalReportingSystem
         public string addProposalQuery ; // "SELECT TOP " + PgSize + " * FROM proposalTable"
         public string searchProposalQuery;
         public string editProposalQuery;
+        public string manageTeacherQuery;
+        public string logQuery;
 
 
 
@@ -2719,12 +2721,20 @@ namespace ProposalReportingSystem
         /////////JUST TEST
         public void dataGridViewUpdate3(DataGridView dgvv, BindingSource bindingSource, String query, int PgSize,int page)
         {
+            int PreviousPageOffSet;
             /// <summary>
             /// datagridview reintialization
             /// </summary>
-
-            int PreviousPageOffSet= (page - 1) * PgSize;
+            if (query.Contains("logTable"))
+            {
+                PreviousPageOffSet = (page - 1) * 30;
+            }
+            else
+            {
+                PreviousPageOffSet = (page - 1) * PgSize;
+            }
             dgvv.DataSource = bindingSource;
+            
             GetData3(query, bindingSource, dgvv,  PgSize, PreviousPageOffSet);
         }
         private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview,int PgSize, int PreviousPageOffSet)
@@ -2762,6 +2772,8 @@ namespace ProposalReportingSystem
                     break;
                 }
             }
+
+           
 
             if (selectCommand.Contains("UsersTable"))
             {
@@ -2868,6 +2880,9 @@ namespace ProposalReportingSystem
                     bindingSourceObj.DataSource = table;
                 }
 
+                
+
+
 
 
 
@@ -2935,10 +2950,30 @@ namespace ProposalReportingSystem
             else if (selectCommand.Contains("TeacherTable"))
             {
 
-                string q = "Select TOP " + PgSize +
-                           " * from TeacherTable WHERE [index] NOT IN " +
-                           "(Select TOP " + PreviousPageOffSet +
-                           " [index] from TeacherTable ORDER BY [index] ) ";
+                //if (dataGridview.Name == "manageTeacherShowDgv")
+                //{
+                //    string q = manageTeacherQuery + " AND  [index] NOT IN " +
+                //               "(SELECT TOP " + PreviousPageOffSet +
+                //               " [index] FROM proposalTable ORDER BY startDate ) ";
+                //    // Create a new data adapter based on the specified query.
+                //    dataAdapter = new SqlDataAdapter(q, conString);
+
+                //    // Create a command builder to generate SQL update, insert, and
+                //    // delete commands based on selectCommand. These are used to
+                //    // update the database.
+
+                //    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                //    // Populate a new data table and bind it to the BindingSource.
+                //    DataTable table = new DataTable();
+                //    table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                //    dataAdapter.Fill(table);
+                //    bindingSourceObj.DataSource = table;
+                //}
+
+                string q = manageTeacherQuery + " AND  t_NCode NOT IN " +
+                               "(SELECT TOP " + PreviousPageOffSet +
+                               " t_NCode FROM TeacherTable ORDER BY t_NCode ) ";
 
                 // Create a new data adapter based on the specified query.
                 dataAdapter = new SqlDataAdapter(q, conString);
@@ -2966,6 +3001,27 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[7].HeaderText = "تلفن همراه";
                 dataGridview.Columns[8].HeaderText = "تلفن 1";
                 dataGridview.Columns[9].HeaderText = "تلفن 2";
+            }
+            else if (selectCommand.Contains("logTable"))
+            {
+                string q = logQuery + " AND  log# NOT IN " +
+                              "(SELECT TOP " + PreviousPageOffSet +
+                              " log# FROM logTable ORDER BY log# ) ";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(q, conString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSourceObj.DataSource = table;
             }
 
 
@@ -3017,6 +3073,53 @@ namespace ProposalReportingSystem
             conn.Close();
 
             return totalPages+1;
+        }
+
+        public int totalLogPage(string query)
+        {
+            int totalPages = 0;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            conn.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            SqlDataReader reader;
+
+
+            SqlTransaction transaction;
+            transaction = conn.BeginTransaction("new");
+            sc.Transaction = transaction;
+
+
+            try
+            {
+
+                sc.CommandText = query;
+                reader = sc.ExecuteReader();
+                reader.Read();
+                int rowCount = reader.GetInt32(0);
+                reader.Close();
+                totalPages = rowCount / 30;
+                transaction.Commit();
+
+            }
+            catch
+            {
+                MessageBox.Show("خطا در برقراری ارتباط");
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch
+                {
+                    MessageBox.Show("خطا در برقراری ارتباط");
+                }
+            }
+
+            conn.Close();
+
+            return totalPages + 1;
         }
 
 

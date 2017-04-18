@@ -26,7 +26,7 @@ namespace ProposalReportingSystem
             InitializeComponent();
 
             this.loginUserNCode = loginUserNCode;
-            dbh = new DataBaseHandler(this.loginUserNCode);
+            //dbh = new DataBaseHandler(this.loginUserNCode);
 
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
