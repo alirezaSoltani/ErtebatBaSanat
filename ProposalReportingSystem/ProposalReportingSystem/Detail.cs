@@ -142,6 +142,7 @@ namespace ProposalReportingSystem
                     }
                     catch (Exception ee)
                     {
+                        MessageBox.Show(ee.Message.ToString());
                         string context = "خطای نام فرستنده یا گیرنده";
                         Alert alert = new Alert(context, "bluegray", 15);
                     }
