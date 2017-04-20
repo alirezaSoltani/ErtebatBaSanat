@@ -123,7 +123,7 @@
             this.detailPanel.Location = new System.Drawing.Point(0, 0);
             this.detailPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detailPanel.Name = "detailPanel";
-            this.detailPanel.Size = new System.Drawing.Size(988, 797);
+            this.detailPanel.Size = new System.Drawing.Size(990, 802);
             this.detailPanel.TabIndex = 0;
             // 
             // detailSenderGradeTxtbx
@@ -848,13 +848,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 793);
             this.Controls.Add(this.detailPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Detail";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Detail";
+            this.Text = "جزئیات پروپوزال";
             this.detailPanel.ResumeLayout(false);
             this.detailPanel.PerformLayout();
             this.ResumeLayout(false);
