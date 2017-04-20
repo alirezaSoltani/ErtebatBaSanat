@@ -131,7 +131,7 @@
             this.detailSenderGradeTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailSenderGradeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailSenderGradeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailSenderGradeTxtbx.Location = new System.Drawing.Point(63, 696);
+            this.detailSenderGradeTxtbx.Location = new System.Drawing.Point(63, 733);
             this.detailSenderGradeTxtbx.MaxLength = 75;
             this.detailSenderGradeTxtbx.Multiline = true;
             this.detailSenderGradeTxtbx.Name = "detailSenderGradeTxtbx";
@@ -144,7 +144,7 @@
             // 
             this.detailSenderGradeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderGradeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderGradeLbl.Location = new System.Drawing.Point(368, 697);
+            this.detailSenderGradeLbl.Location = new System.Drawing.Point(368, 734);
             this.detailSenderGradeLbl.Name = "detailSenderGradeLbl";
             this.detailSenderGradeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailSenderGradeLbl.Size = new System.Drawing.Size(145, 30);
@@ -158,7 +158,7 @@
             this.detailSenderTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailSenderTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailSenderTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailSenderTxtbx.Location = new System.Drawing.Point(547, 696);
+            this.detailSenderTxtbx.Location = new System.Drawing.Point(547, 733);
             this.detailSenderTxtbx.MaxLength = 75;
             this.detailSenderTxtbx.Multiline = true;
             this.detailSenderTxtbx.Name = "detailSenderTxtbx";
@@ -184,7 +184,7 @@
             // 
             this.detailSenderLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderLbl.Location = new System.Drawing.Point(833, 698);
+            this.detailSenderLbl.Location = new System.Drawing.Point(833, 735);
             this.detailSenderLbl.Name = "detailSenderLbl";
             this.detailSenderLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailSenderLbl.Size = new System.Drawing.Size(89, 30);
@@ -432,7 +432,7 @@
             // detailPrintBtn
             // 
             this.detailPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPrintBtn.Location = new System.Drawing.Point(380, 740);
+            this.detailPrintBtn.Location = new System.Drawing.Point(380, 686);
             this.detailPrintBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detailPrintBtn.Name = "detailPrintBtn";
             this.detailPrintBtn.Size = new System.Drawing.Size(170, 42);
@@ -444,7 +444,7 @@
             // detailOutputBtn
             // 
             this.detailOutputBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailOutputBtn.Location = new System.Drawing.Point(221, 740);
+            this.detailOutputBtn.Location = new System.Drawing.Point(221, 686);
             this.detailOutputBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detailOutputBtn.Name = "detailOutputBtn";
             this.detailOutputBtn.Size = new System.Drawing.Size(145, 42);
@@ -456,7 +456,7 @@
             // detailCloseBtn
             // 
             this.detailCloseBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailCloseBtn.Location = new System.Drawing.Point(63, 740);
+            this.detailCloseBtn.Location = new System.Drawing.Point(63, 686);
             this.detailCloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detailCloseBtn.Name = "detailCloseBtn";
             this.detailCloseBtn.Size = new System.Drawing.Size(145, 42);
