@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -2719,7 +2720,7 @@ namespace ProposalReportingSystem
 
 
         /////////JUST TEST
-        public void dataGridViewUpdate3(DataGridView dgvv, BindingSource bindingSource, String query, int PgSize,int page)
+        public void dataGridViewUpdate3(DataGridView dgvv, BindingSource bindingSource, String query, int PgSize, int page)
         {
             int PreviousPageOffSet;
             /// <summary>
@@ -2734,8 +2735,41 @@ namespace ProposalReportingSystem
                 PreviousPageOffSet = (page - 1) * PgSize;
             }
             dgvv.DataSource = bindingSource;
-            
-            GetData3(query, bindingSource, dgvv,  PgSize, PreviousPageOffSet);
+
+            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+
+            if (query.Contains("proposalTable"))
+            {
+
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                    row.Cells["executorFullName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                    row.Cells["employerName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                    row.Cells["hijriDate"].Value = fullName;
+                }
+            }
+
+
+            dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+            dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
+            //dgvv.Columns.= DataGridViewColumnSortMode.NotSortable;
+            foreach(DataGridViewColumn col in dgvv.Columns)
+            {
+                dgvv.Columns[col.Name].SortMode =DataGridViewColumnSortMode.Programmatic;
+            }
+           // dgvv.RowTemplate.Height = 60;
         }
         private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview,int PgSize, int PreviousPageOffSet)
         {
@@ -2756,23 +2790,10 @@ namespace ProposalReportingSystem
 
 
             // Resize the DataGridView columns to fit the newly loaded content.
-            dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            //dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-            int i = 0;
-            while (true)
-            {
-                try
-                {
-                    dataGridview.Rows[i].HeaderCell.Value = (i + 1) + "";
-                    i++;
-                }
-                catch (ArgumentOutOfRangeException e1)
-                {
-                    break;
-                }
-            }
-
+           
            
 
             if (selectCommand.Contains("UsersTable"))
@@ -2878,9 +2899,10 @@ namespace ProposalReportingSystem
                     table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                     dataAdapter.Fill(table);
                     bindingSourceObj.DataSource = table;
+                    
                 }
 
-                
+
 
 
 
@@ -2894,19 +2916,20 @@ namespace ProposalReportingSystem
 
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
                 dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
-                dataGridview.Columns[5].HeaderText = "مجریان همکار";
-                dataGridview.Columns[6].HeaderText = "همکاران مجری";
-                dataGridview.Columns[7].HeaderText = "تاریخ شروع";
-                dataGridview.Columns[8].HeaderText = "مدت زمان";
-                dataGridview.Columns[9].HeaderText = "نوع کار";
-                dataGridview.Columns[10].HeaderText = "خاصیت";
-                dataGridview.Columns[11].HeaderText = "نوع ثبت";
-                dataGridview.Columns[12].HeaderText = "نوع پروپوزال";
-                dataGridview.Columns[13].HeaderText = "سازمان کارفرما";
-                dataGridview.Columns[14].HeaderText = "هزینه";
-                dataGridview.Columns[15].HeaderText = "وضعیت";
-                dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
-                dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+                dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
+                dataGridview.Columns["coExecutor"].HeaderText = "همکاران مجری";
+                dataGridview.Columns["startDate"].HeaderText = "تاریخ شروع";
+                dataGridview.Columns["duration"].HeaderText = "مدت زمان";
+                dataGridview.Columns["procedureType"].HeaderText = "نوع کار";
+                dataGridview.Columns["propertyType"].HeaderText = "خاصیت";
+                dataGridview.Columns["registerType"].HeaderText = "نوع ثبت";
+                dataGridview.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns["employer"].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns["value"].HeaderText = "هزینه";
+                dataGridview.Columns["status"].HeaderText = "وضعیت";
+                dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
+
 
 
                 ///////////
@@ -2922,7 +2945,12 @@ namespace ProposalReportingSystem
                 btn2.Text = "نمایش اصلاحیه ها";
                 btn2.Name = "editionBtn";
 
-
+                dataGridview.Columns.Add("executorFullName", "مجری");
+                dataGridview.Columns["executorFullName"].DisplayIndex = 20;
+                dataGridview.Columns.Add("hijriDate", "تاریخ");
+                dataGridview.Columns["hijriDate"].DisplayIndex = 21;
+                dataGridview.Columns.Add("employerName", "سازمان کارفرما");
+                dataGridview.Columns["employerName"].DisplayIndex = 22;
 
                 btn.UseColumnTextForLinkValue = true;
                 btn2.UseColumnTextForLinkValue = true;
@@ -2933,18 +2961,24 @@ namespace ProposalReportingSystem
 
                 dataGridview.Columns[0].Visible = false;
                 dataGridview.Columns["detailBtn"].DisplayIndex = 0;
-                dataGridview.Columns["detailBtn"].Frozen = true;
+               // dataGridview.Columns["detailBtn"].Frozen = true;
                 dataGridview.Columns["editionBtn"].DisplayIndex = 1;
                 dataGridview.Columns["editionBtn"].Frozen = true;
 
                 dataGridview.Columns["executor"].HeaderText = "مجری";
-                dataGridview.Columns["executor"].DisplayIndex = 2;
-                dataGridview.Columns["executor"].Frozen = true;
+                dataGridview.Columns["executorFullName"].DisplayIndex = 2;
+                dataGridview.Columns["executorFullName"].Frozen = true;
+                dataGridview.Columns["executor"].Visible = false;
+                //  dataGridview.Columns["executorFullName"].Frozen = true;
 
                 dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
                 dataGridview.Columns["persianTitle"].DisplayIndex = 3;
                 dataGridview.Columns["persianTitle"].Frozen = true;
                 ///////////////////////
+                dataGridview.Columns["startDate"].Visible = false;
+                dataGridview.Columns["employer"].Visible = false;
+                dataGridview.Columns["fileName"].Visible = false;
+
             }
 
             else if (selectCommand.Contains("TeacherTable"))
@@ -3024,7 +3058,23 @@ namespace ProposalReportingSystem
                 bindingSourceObj.DataSource = table;
             }
 
-
+            int i = PreviousPageOffSet;
+            int j = 0;
+            while (true)
+            {
+                try
+                {
+                    
+                    dataGridview.Rows[j].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                    j++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+            
         }
 
         public int totalPage(string query)
@@ -3135,8 +3185,61 @@ namespace ProposalReportingSystem
             /// <summary>
             /// datagridview reintialization
             /// </summary>
+            
             dgvv.DataSource = bindingSource;
             GetData2(query, bindingSource, dgvv);
+
+            if (query.Contains("proposalTable"))
+            {
+               
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                    row.Cells["executorFullName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                    row.Cells["employerName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                    row.Cells["hijriDate"].Value = fullName;
+                }
+            }
+            if (query.Contains("editionTable"))
+            {
+
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                    row.Cells["executorFullName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                    row.Cells["employerName"].Value = fullName;
+                }
+                foreach (DataGridViewRow row in dgvv.Rows)
+                {
+                    string fullName;
+                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                    row.Cells["hijriDate"].Value = fullName;
+                }
+            }
+
+            dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+            dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
+            foreach (DataGridViewColumn col in dgvv.Columns)
+            {
+                dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
+            }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
         {
@@ -3157,8 +3260,7 @@ namespace ProposalReportingSystem
 
 
             // Resize the DataGridView columns to fit the newly loaded content.
-            dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+           
 
             int i = 0;
             while (true)
@@ -3231,19 +3333,24 @@ namespace ProposalReportingSystem
 
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
                 dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
-                dataGridview.Columns[5].HeaderText = "مجریان همکار";
-                dataGridview.Columns[6].HeaderText = "همکاران مجری";
-                dataGridview.Columns[7].HeaderText = "تاریخ شروع";
-                dataGridview.Columns[8].HeaderText = "مدت زمان";
-                dataGridview.Columns[9].HeaderText = "نوع کار";
-                dataGridview.Columns[10].HeaderText = "خاصیت";
-                dataGridview.Columns[11].HeaderText = "نوع ثبت";
-                dataGridview.Columns[12].HeaderText = "نوع پروپوزال";
-                dataGridview.Columns[13].HeaderText = "سازمان کارفرما";
-                dataGridview.Columns[14].HeaderText = "هزینه";
-                dataGridview.Columns[15].HeaderText = "وضعیت";
-                dataGridview.Columns[16].HeaderText = "کاربر ثبت کننده";
-                dataGridview.Columns[17].HeaderText = "فایل پروپوزال";
+                dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
+                dataGridview.Columns["coExecutor"].HeaderText = "همکاران مجری";
+                dataGridview.Columns["startDate"].HeaderText = "تاریخ شروع";
+                dataGridview.Columns["duration"].HeaderText = "مدت زمان";
+                dataGridview.Columns["procedureType"].HeaderText = "نوع کار";
+                dataGridview.Columns["propertyType"].HeaderText = "خاصیت";
+                dataGridview.Columns["registerType"].HeaderText = "نوع ثبت";
+                dataGridview.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns["employer"].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns["value"].HeaderText = "هزینه";
+                dataGridview.Columns["status"].HeaderText = "وضعیت";
+                dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
+                dataGridview.Columns["edition"].HeaderText = "شماره اصلاحیه";
+
+                dataGridview.Columns["startDate"].Visible = false;
+                dataGridview.Columns["employer"].Visible = false;
+                dataGridview.Columns["fileName"].Visible = false;
 
             }
 
@@ -3261,6 +3368,23 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[9].HeaderText = "تلفن 2";
             }
 
+            
+            int j = 0;
+            while (true)
+            {
+                try
+                {
+
+                    dataGridview.Rows[j].HeaderCell.Value = (j + 1) + "";
+                   
+                    j++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+           
 
         }
 
@@ -3354,5 +3478,76 @@ namespace ProposalReportingSystem
                 return response.StatusDescription;
             }
         }
+
+
+        public string getExecutorName(long ncode)
+        {
+            string fullName, fname, lname;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT t_FName , t_LName FROM TeacherTable WHERE t_NCode = '" + ncode + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            fname = reader.GetString(0);
+            lname = reader.GetString(1);
+            fullName = fname + " " + lname;
+            conn.Close();
+            return fullName;
+        }
+
+        public string getEmployerName(long code)
+        {
+            string employerName;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT orgName FROM employersTable WHERE [index] = '" + code + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            employerName = reader.GetString(0);
+            conn.Close();
+            return employerName;
+        }
+        public string getDateHijri(string date)
+        {
+  
+            int len = date.IndexOf(" ");
+            string GregorianDate = date.Substring(0, len);
+           
+            DateTime d = DateTime.Parse(GregorianDate);
+            PersianCalendar pc = new PersianCalendar();
+            return string.Format("{0}/{1:00}/{2:00}", pc.GetYear(d), pc.GetMonth(d), pc.GetDayOfMonth(d));//---> miladi to shamsi*/
+
+        }
+
+       
+        public string getExecutorFaculty(long ncode)
+        {
+            string faculty;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT t_Faculty FROM teacherTable WHERE t_NCode = '" + ncode + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            faculty = reader.GetString(0);
+            conn.Close();
+            return faculty;
+        }
+
+       
     }
 }

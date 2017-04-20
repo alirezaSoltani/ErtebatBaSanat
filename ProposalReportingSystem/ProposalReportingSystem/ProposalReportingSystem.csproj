@@ -48,6 +48,18 @@
     <Reference Include="FarsiLibrary.Win">
       <HintPath>C:\Users\ASUS\Desktop\FarsiLibrary\FarsiLibrary.Win.dll</HintPath>
     </Reference>
+    <Reference Include="Stimulsoft.Base">
+      <HintPath>D:\Programms\Stimulsoft Reports Ultimate Suite\Stimulsoft Reports Ultimate Suite 2015.2 Retail\Net\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win">
+      <HintPath>D:\Programms\Stimulsoft Reports Ultimate Suite\Stimulsoft Reports Ultimate Suite 2015.2 Retail\Net\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report">
+      <HintPath>D:\Programms\Stimulsoft Reports Ultimate Suite\Stimulsoft Reports Ultimate Suite 2015.2 Retail\Net\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win">
+      <HintPath>D:\Programms\Stimulsoft Reports Ultimate Suite\Stimulsoft Reports Ultimate Suite 2015.2 Retail\Net\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -60,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseHandler.cs" />
     <Compile Include="Detail.cs">
       <SubType>Form</SubType>
@@ -107,6 +125,9 @@
     <Compile Include="Waiting.Designer.cs">
       <DependentUpon>Waiting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>

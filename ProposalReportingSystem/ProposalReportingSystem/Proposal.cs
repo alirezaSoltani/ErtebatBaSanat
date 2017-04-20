@@ -26,6 +26,9 @@ namespace ProposalReportingSystem
         private long registrant;
         private string fileName;
         private int edition;
+        private string teacherFullName;
+        private string hijriDate;
+        private string employerName;
 
         public long Index
         {
@@ -273,6 +276,45 @@ namespace ProposalReportingSystem
             set
             {
                 edition = value;
+            }
+        }
+
+        public string TeacherFullName
+        {
+            get
+            {
+                return teacherFullName;
+            }
+
+            set
+            {
+                teacherFullName = value;
+            }
+        }
+
+        public string HijriDate
+        {
+            get
+            {
+                return hijriDate;
+            }
+
+            set
+            {
+                hijriDate = value;
+            }
+        }
+
+        public string EmployerName
+        {
+            get
+            {
+                return employerName;
+            }
+
+            set
+            {
+                employerName = value;
             }
         }
     }

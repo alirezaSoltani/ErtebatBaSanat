@@ -139,8 +139,8 @@ namespace ProposalReportingSystem
             {
                 if (loginUsernameTxtBx.Text == "" || loginPasswordTxtbx.Text == "")
                 {
-                    PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور وارد نشده است.", "تایید", "", "", "error");
-                    popUp.ShowDialog();
+                     string context = "نام کاربری یا رمز عبور وارد نشده است";
+                        Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (loginUsernameTxtBx.Text == "98765" && loginPasswordTxtbx.Text == "1")
                 {
@@ -274,8 +274,10 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور اشتباه است.", "تایید", "", "", "error");
-                        popUp.ShowDialog();
+                        //PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور اشتباه است.", "تایید", "", "", "error");
+                        //popUp.ShowDialog();
+                        string context = "نام کاربری یا رمز عبور اشتباه است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                     conn.Close();
                 }

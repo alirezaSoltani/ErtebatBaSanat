@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stimulsoft.Report;
 
 namespace ProposalReportingSystem
 {
@@ -15,6 +16,7 @@ namespace ProposalReportingSystem
         private DataBaseHandler dbh; 
         private static string fileName;
         private long loginUserNCode;
+        private Proposal prop = new Proposal();
 
         public Detail()
         {
@@ -25,8 +27,12 @@ namespace ProposalReportingSystem
         {
             InitializeComponent();
 
+            prop = proposal;
+
+
+            //MessageBox.Show(prop.RegisterType);
             this.loginUserNCode = loginUserNCode;
-            //dbh = new DataBaseHandler(this.loginUserNCode);
+            dbh = new DataBaseHandler(/*this.loginUserNCode*/);
 
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
@@ -92,6 +98,58 @@ namespace ProposalReportingSystem
                 else
                 {
                     MessageBox.Show("نام فایل را وارد کنید .");
+                }
+            }
+        }
+
+        private void detailPrintBtn_Click(object sender, EventArgs e)
+        {
+            if(detailRecieverTxtbx.Text == "")
+            {
+                string context = "عنوانی برای گیرنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            /*else if (detailSenderTxtbx.Text == "")
+            {
+                string context = "عنوانی برای فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }*/
+            else
+            {
+                try
+                {
+                    StiReport report = new StiReport();
+                    report.Load(Application.StartupPath + @"\Report2.mrt");
+
+                    detailPrintBtn.Enabled = false;
+                    detailPrintBtn.Enabled = true;
+
+                    report.Dictionary.Variables["employer"].Value = detailRecieverTxtbx.Text;
+                    report.Dictionary.Variables["persianTitle"].Value = prop.PersianTitle.ToString();
+                    report.Dictionary.Variables["englishTitle"].Value = prop.EngTitle.ToString();
+                    report.Dictionary.Variables["executorName"].Value = "که توسط " + dbh.getExecutorName(prop.Executor) + " عضو محترم هیات علمی دانشکده "
+                                                                        + dbh.getExecutorFaculty(prop.Executor) + " این دانشگاه ارائه گردیده است، ارسال میگردد."
+                                                                        + " خواهشمند است دستور فرماييد اقدام مقتضي معمول و از نتيجه امر اين معاونت را مطلع فرمايند  " ;
+                    //report.Dictionary.Variables["moderatorName"].Value = detailSenderTxtbx.Text;
+                    //report.Dictionary.Variables["moderatorGrade"].Value = detailSenderGradeTxtbx.Text;
+                    report.Dictionary.Variables["moderatorName"].Value = "افشین قنبرزاده";
+                    report.Dictionary.Variables["moderatorGrade"].Value = "رئيس گروه كارآفريني و ارتباط با صنعت دانشگاه شهید چمران اهواز";
+
+                    try
+                    {
+                        report.Compile();
+                        report.Show();
+                    }
+                    catch (Exception ee)
+                    {
+                        string context = "خطای نام فرستنده یا گیرنده";
+                        Alert alert = new Alert(context, "bluegray", 15);
+                    }
+                }
+                catch(Exception ee)
+                {
+                    string context = "خطای فایل نامه";
+                    Alert alert = new Alert(context, "bluegray", 15);
                 }
             }
         }
