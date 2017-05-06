@@ -853,156 +853,202 @@ namespace ProposalReportingSystem
             {
                 if (addProposalExecutorNcodeTxtbx.Text.Length < 10)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorNcodeTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorFNameTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام خانوادگی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorLNameTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+
+                    string context = "دانشکده را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorFacultyCb.Focus();
                 }
 
                 else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "گروه آموزشی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEGroupCb.Focus();
                 }
 
                 else if (addProposalExecutorEDegCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "درجه علمی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEDegCb.Focus();
                 }
 
                 else if (addProposalExecutorEmailTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره موبایل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorMobileTxtbx.Focus();
                 }
 
                 else if (addProposalPersianTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalPersianTitleTxtbx.Focus();
                 }
 
                 else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
                 else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "کلمات کلیدی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalKeywordsTxtbx.Focus();
                 }
 
                
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
                 {
-                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalFileLinkLbl.Focus();
                 }
 
                 else if (addProposalDurationTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مدت زمان را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalDurationTxtbx.Focus();
                 }
 
                 else if (addProposalProcedureTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalProcedureTypeCb.Focus();
                 }
 
                 else if (addProposalPropertyTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalPropertyTypeCb.Focus();
                 }
 
                 else if (addProposalRegisterTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalRegisterTypeCb.Focus();
                 }
 
                 else if (addProposalProposalTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalProposalTypeCb.Focus();
                 }
 
                 else if (addProposalOrganizationNumberCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalOrganizationNumberCb.Focus();
                 }
 
                 else if (addProposalOrganizationNameCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalOrganizationNameCb.Focus();
                 }
 
                 else if (addProposalValueTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مبلغ را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalValueTxtbx.Focus();
                 }
 
                 else if (addProposalStatusCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalStatusCb.Focus();
                 }
 
@@ -1060,157 +1106,202 @@ namespace ProposalReportingSystem
 
                 if (addProposalExecutorNcodeTxtbx.Text.Length < 10)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorNcodeTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorFNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorFNameTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorLNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام خانوادگی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorLNameTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorFacultyCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+
+                    string context = "دانشکده را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorFacultyCb.Focus();
                 }
 
-                
                 else if (addProposalExecutorEGroupCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "گروه آموزشی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEGroupCb.Focus();
                 }
 
                 else if (addProposalExecutorEDegCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "درجه علمی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEDegCb.Focus();
                 }
 
                 else if (addProposalExecutorEmailTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorEmailTxtbx.BackColor == Color.Pink)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (addProposalExecutorMobileTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره موبایل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorMobileTxtbx.Focus();
                 }
 
                 else if (addProposalPersianTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalPersianTitleTxtbx.Focus();
                 }
 
                 else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
                 else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "کلمات کلیدی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalKeywordsTxtbx.Focus();
                 }
 
+
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
                 {
-                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalFileLinkLbl.Focus();
                 }
 
                 else if (addProposalDurationTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مدت زمان را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalDurationTxtbx.Focus();
                 }
 
                 else if (addProposalProcedureTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalProcedureTypeCb.Focus();
                 }
 
                 else if (addProposalPropertyTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalPropertyTypeCb.Focus();
                 }
 
-               
                 else if (addProposalRegisterTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalRegisterTypeCb.Focus();
                 }
 
                 else if (addProposalProposalTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalProposalTypeCb.Focus();
                 }
 
                 else if (addProposalOrganizationNumberCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalOrganizationNumberCb.Focus();
                 }
 
                 else if (addProposalOrganizationNameCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalOrganizationNameCb.Focus();
                 }
 
                 else if (addProposalValueTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مبلغ را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalValueTxtbx.Focus();
                 }
 
                 else if (addProposalStatusCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     addProposalStatusCb.Focus();
                 }
 
@@ -1252,7 +1343,19 @@ namespace ProposalReportingSystem
                     appSettingProcedureTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    
+                    addProposalProcedureTypeCb.Items.Clear();
+                    editProposalProcedureTypeCb.Items.Clear();
+                    searchProposalProcedureTypeCb.Items.Clear();
+
+                    comboList = dbh.getProcedureType();
+                    foreach (String procedure in comboList)
+                    {
+                        addProposalProcedureTypeCb.Items.Add(procedure);
+                        editProposalProcedureTypeCb.Items.Add(procedure);
+                        searchProposalProcedureTypeCb.Items.Add(procedure);
+                    }
+                
                     appSettingProcedureTypeTxtbx.Focus();
                 }
             }
@@ -1263,9 +1366,21 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddPropertyType(appSettingPropertyTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingPropertyTxtbx.Clear();
-                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                    
+                        dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                        addProposalPropertyTypeCb.Items.Clear();
+                        editProposalPropertyTypeCb.Items.Clear();
+                        searchProposalPropertyTypeCb.Items.Clear();
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                        comboList = dbh.getPropertyType();
+                        foreach (String Property in comboList)
+                        {
+                            addProposalPropertyTypeCb.Items.Add(Property);
+                            editProposalPropertyTypeCb.Items.Add(Property);
+                            searchProposalPropertyTypeCb.Items.Add(Property);
+                        }
+                    
+                   // form_initializer(); // To Reset items of comboBoxes and others
                     appSettingPropertyTxtbx.Focus();
                 }
             }
@@ -1278,7 +1393,19 @@ namespace ProposalReportingSystem
                     appSettingFacultyTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalExecutorFacultyCb.Items.Clear();
+                    editProposalExecutorFacultyCb.Items.Clear();
+                    searchProposalExecutorFacultyCb.Items.Clear();
+
+                    comboList = dbh.getFaculty();
+                    foreach (String ExecutorFaculty in comboList)
+                    {
+                        addProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                    }
+
+                    // form_initializer(); // To Reset items of comboBoxes and others
                     appSettingFacultyTxtbx.Focus();
                 }
             }
@@ -1291,7 +1418,17 @@ namespace ProposalReportingSystem
                     appSettingRegTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalRegisterTypeCb.Items.Clear();
+                    editProposalRegisterTypeCb.Items.Clear();
+                    searchProposalRegisterTypeCb.Items.Clear();
+
+                    comboList = dbh.getRegisterType();
+                    foreach (String RegisterType in comboList)
+                    {
+                        addProposalRegisterTypeCb.Items.Add(RegisterType);
+                        editProposalRegisterTypeCb.Items.Add(RegisterType);
+                        searchProposalRegisterTypeCb.Items.Add(RegisterType);
+                    }
                     appSettingRegTypeTxtbx.Focus();
                 }
             }
@@ -1304,7 +1441,17 @@ namespace ProposalReportingSystem
                     appSettingProTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalProposalTypeCb.Items.Clear();
+                    editProposalTypeCb.Items.Clear();
+                    searchProposalTypeCb.Items.Clear();
+
+                    comboList = dbh.getProposalType();
+                    foreach (String ProposalType in comboList)
+                    {
+                        addProposalProposalTypeCb.Items.Add(ProposalType);
+                        editProposalTypeCb.Items.Add(ProposalType);
+                        searchProposalTypeCb.Items.Add(ProposalType);
+                    }
                     appSettingProTypeTxtbx.Focus();
                 }
             }
@@ -1317,7 +1464,20 @@ namespace ProposalReportingSystem
                     appSettingEgroupTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    comboList = dbh.getEGroup(appSettingFacultyTxtbx.Text);
+
+                    addProposalExecutorEGroupCb.Items.Clear();
+                    editProposalExecutorEGroupCb.Items.Clear();
+                    searchProposalExecutorEGroupCb.Items.Clear();
+
+                    
+                    foreach (String EGroup in comboList)
+                    {
+                        addProposalExecutorEGroupCb.Items.Add(EGroup);
+                        editProposalExecutorEGroupCb.Items.Add(EGroup);
+                        searchProposalExecutorEGroupCb.Items.Add(EGroup);
+                    }
+
                     appSettingEgroupTxtbx.Focus();
                 }
             }
@@ -1331,9 +1491,29 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                     appSettingShowDv.Columns[0].HeaderText = "نام سازمان";
                     appSettingShowDv.Columns[1].HeaderText = "کد سازمان";
-                   // appSettingShowDv.Columns[2].Visible = false;
+                    // appSettingShowDv.Columns[2].Visible = false;
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    emp = dbh.getEmployers();
+                    addProposalOrganizationNameCb.Items.Clear();
+                    addProposalOrganizationNumberCb.Items.Clear();
+                    editProposalOrganizationNameCb.Items.Clear();
+                    editProposalOrganizationNumberCb.Items.Clear();
+                    searchProposalOrganizationNameCb.Items.Clear();
+                    searchProposalOrganizationNumberCb.Items.Clear();
+
+                    editProposalStatusCb.Items.Clear();
+                    searchProposalStatusCb.Items.Clear();
+                    foreach (Employers employer in emp)
+                    {
+                        addProposalOrganizationNameCb.Items.Add(employer.Index);
+                        addProposalOrganizationNumberCb.Items.Add(employer.OrgName);
+
+                        editProposalOrganizationNameCb.Items.Add(employer.Index);
+                        editProposalOrganizationNumberCb.Items.Add(employer.OrgName);
+
+                        searchProposalOrganizationNumberCb.Items.Add(employer.Index);
+                        searchProposalOrganizationNameCb.Items.Add(employer.OrgName);
+                    }
                     appSettingCoTxtbx.Focus();
                 }
             }
@@ -1346,7 +1526,19 @@ namespace ProposalReportingSystem
                     appSettingStatusTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+
+                    comboList = dbh.getStatusType();
+                    addProposalStatusCb.Items.Clear();
+                    editProposalStatusCb.Items.Clear();
+                    searchProposalStatusCb.Items.Clear();
+
+
+                    foreach (String Status in comboList)
+                    {
+                        addProposalStatusCb.Items.Add(Status);
+                        editProposalStatusCb.Items.Add(Status);
+                        searchProposalStatusCb.Items.Add(Status);
+                    }
                     appSettingStatusTxtbx.Focus();
                 }
             }
@@ -1359,7 +1551,18 @@ namespace ProposalReportingSystem
                     appSettingEdegreeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    comboList = dbh.getEDeg();
+                    addProposalExecutorEDegCb.Items.Clear();
+                    editProposalExecutorEDegCb.Items.Clear();
+                    //searchProposalEde.Items.Clear();
+
+
+                    foreach (String ExecutorEDeg in comboList)
+                    {
+                        addProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
+                        editProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
+                      //  searchProposalStatusCb.Items.Add(Status);
+                    }
                     appSettingEdegreeTxtbx.Focus();
                 }
             }
@@ -1559,9 +1762,14 @@ namespace ProposalReportingSystem
             appSettingAddBtn.Enabled = true;
 
             dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
-            appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
-            appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
-           // appSettingShowDv.Columns[2].Visible = false;
+            appSettingShowDv.Columns["index"].HeaderText = "کد سازمان";
+            appSettingShowDv.Columns["orgName"].HeaderText = "نام سازمان";
+            appSettingShowDv.Columns["orgName"].DisplayIndex = 0;
+            
+            //appSettingShowDv.Columns["index"].DisplayIndex = 2;
+
+
+            // appSettingShowDv.Columns[2].Visible = false;
         }
 
         private void appSettingStatusRbtn_Click(object sender, EventArgs e)
@@ -1602,7 +1810,18 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع کار";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalProcedureTypeCb.Items.Clear();
+                    editProposalProcedureTypeCb.Items.Clear();
+                    searchProposalProcedureTypeCb.Items.Clear();
+
+                    comboList = dbh.getProcedureType();
+                    foreach (String procedure in comboList)
+                    {
+                        addProposalProcedureTypeCb.Items.Add(procedure);
+                        editProposalProcedureTypeCb.Items.Add(procedure);
+                        searchProposalProcedureTypeCb.Items.Add(procedure);
+                    }
+
                     appSettingProcedureTypeTxtbx.Focus();
                 }
                 else
@@ -1621,7 +1840,18 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalPropertyTypeCb.Items.Clear();
+                    editProposalPropertyTypeCb.Items.Clear();
+                    searchProposalPropertyTypeCb.Items.Clear();
+
+                    comboList = dbh.getPropertyType();
+                    foreach (String Property in comboList)
+                    {
+                        addProposalPropertyTypeCb.Items.Add(Property);
+                        editProposalPropertyTypeCb.Items.Add(Property);
+                        searchProposalPropertyTypeCb.Items.Add(Property);
+                    }
+
                     appSettingPropertyTxtbx.Focus();
                 }
                 else
@@ -1641,7 +1871,17 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
                     appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalExecutorFacultyCb.Items.Clear();
+                    editProposalExecutorFacultyCb.Items.Clear();
+                    searchProposalExecutorFacultyCb.Items.Clear();
+
+                    comboList = dbh.getFaculty();
+                    foreach (String ExecutorFaculty in comboList)
+                    {
+                        addProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                    }
                     appSettingFacultyTxtbx.Focus();
                 }
                 else
@@ -1661,7 +1901,17 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    addProposalRegisterTypeCb.Items.Clear();
+                    editProposalRegisterTypeCb.Items.Clear();
+                    searchProposalRegisterTypeCb.Items.Clear();
+
+                    comboList = dbh.getRegisterType();
+                    foreach (String RegisterType in comboList)
+                    {
+                        addProposalRegisterTypeCb.Items.Add(RegisterType);
+                        editProposalRegisterTypeCb.Items.Add(RegisterType);
+                        searchProposalRegisterTypeCb.Items.Add(RegisterType);
+                    }
                     appSettingRegTypeTxtbx.Focus();
                 }
                 else
@@ -1681,7 +1931,19 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+
+                    addProposalProposalTypeCb.Items.Clear();
+                    editProposalTypeCb.Items.Clear();
+                    searchProposalTypeCb.Items.Clear();
+
+                    comboList = dbh.getProposalType();
+                    foreach (String ProposalType in comboList)
+                    {
+                        addProposalProposalTypeCb.Items.Add(ProposalType);
+                        editProposalTypeCb.Items.Add(ProposalType);
+                        searchProposalTypeCb.Items.Add(ProposalType);
+                    }
+                   
                     appSettingProTypeTxtbx.Focus();
                 }
                 else
@@ -1701,7 +1963,20 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
                     appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    comboList = dbh.getEGroup(appSettingFacultyTxtbx.Text);
+
+                    addProposalExecutorEGroupCb.Items.Clear();
+                    editProposalExecutorEGroupCb.Items.Clear();
+                    searchProposalExecutorEGroupCb.Items.Clear();
+
+
+                    foreach (String EGroup in comboList)
+                    {
+                        addProposalExecutorEGroupCb.Items.Add(EGroup);
+                        editProposalExecutorEGroupCb.Items.Add(EGroup);
+                        searchProposalExecutorEGroupCb.Items.Add(EGroup);
+                    }
+
                     appSettingEgroupTxtbx.Focus();
                 }
                 else
@@ -1724,9 +1999,30 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                     appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
                     appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
-                //    appSettingShowDv.Columns[2].Visible = false;
+                    //    appSettingShowDv.Columns[2].Visible = false;
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+
+                    emp = dbh.getEmployers();
+                    addProposalOrganizationNameCb.Items.Clear();
+                    addProposalOrganizationNumberCb.Items.Clear();
+                    editProposalOrganizationNameCb.Items.Clear();
+                    editProposalOrganizationNumberCb.Items.Clear();
+                    searchProposalOrganizationNameCb.Items.Clear();
+                    searchProposalOrganizationNumberCb.Items.Clear();
+
+                    editProposalStatusCb.Items.Clear();
+                    searchProposalStatusCb.Items.Clear();
+                    foreach (Employers employer2 in emp)
+                    {
+                        addProposalOrganizationNameCb.Items.Add(employer2.Index);
+                        addProposalOrganizationNumberCb.Items.Add(employer2.OrgName);
+
+                        editProposalOrganizationNameCb.Items.Add(employer2.Index);
+                        editProposalOrganizationNumberCb.Items.Add(employer2.OrgName);
+
+                        searchProposalOrganizationNumberCb.Items.Add(employer2.Index);
+                        searchProposalOrganizationNameCb.Items.Add(employer2.OrgName);
+                    }
                     appSettingCoTxtbx.Focus();
                 }
                 else
@@ -1746,7 +2042,19 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    comboList = dbh.getStatusType();
+                    addProposalStatusCb.Items.Clear();
+                    editProposalStatusCb.Items.Clear();
+                    searchProposalStatusCb.Items.Clear();
+
+
+                    foreach (String Status in comboList)
+                    {
+                        addProposalStatusCb.Items.Add(Status);
+                        editProposalStatusCb.Items.Add(Status);
+                        searchProposalStatusCb.Items.Add(Status);
+                    }
+
                     appSettingStatusTxtbx.Focus();
                 }
                 else
@@ -1766,7 +2074,18 @@ namespace ProposalReportingSystem
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    comboList = dbh.getEDeg();
+                    addProposalExecutorEDegCb.Items.Clear();
+                    editProposalExecutorEDegCb.Items.Clear();
+                    //searchProposalEde.Items.Clear();
+
+
+                    foreach (String ExecutorEDeg in comboList)
+                    {
+                        addProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
+                        editProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
+                        //  searchProposalStatusCb.Items.Add(Status);
+                    }
                     appSettingEdegreeTxtbx.Focus();
                 }
                 else
@@ -2044,7 +2363,7 @@ namespace ProposalReportingSystem
                 appSettingEgroupRbtn.Select();
                 appSettingEgroupTxtbx.Enabled = true;
 
-                MessageBox.Show(appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString());
+               // MessageBox.Show(appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString());
                 dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString() + "'");
                 appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
             }
@@ -2290,14 +2609,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                  //  MessageBox.Show("arg");
                     addProposalOrganizationNumberCb.Text = "";
                     addProposalOrganizationNumberCb.SelectedIndex = -1;
                     addProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                    //MessageBox.Show("for");
                     addProposalOrganizationNumberCb.Text = "";
                     addProposalOrganizationNumberCb.SelectedIndex = -1;
                     addProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -2331,14 +2650,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                   // MessageBox.Show("arg");
                     addProposalOrganizationNumberCb.Text = "";
                     addProposalOrganizationNumberCb.SelectedIndex = -1;
                     addProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                   // MessageBox.Show("for");
                     addProposalOrganizationNumberCb.Text = "";
                     addProposalOrganizationNumberCb.SelectedIndex = -1;
                     addProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -2833,14 +3152,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                   // MessageBox.Show("arg");
                     searchProposalOrganizationNumberCb.Text = "";
                     searchProposalOrganizationNumberCb.SelectedIndex = -1;
                     searchProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                   // MessageBox.Show("for");
                     searchProposalOrganizationNumberCb.Text = "";
                     searchProposalOrganizationNumberCb.SelectedIndex = -1;
                     searchProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -2874,14 +3193,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                  //  MessageBox.Show("arg");
                     searchProposalOrganizationNumberCb.Text = "";
                     searchProposalOrganizationNumberCb.SelectedIndex = -1;
                     searchProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                   // MessageBox.Show("for");
                     searchProposalOrganizationNumberCb.Text = "";
                     searchProposalOrganizationNumberCb.SelectedIndex = -1;
                     searchProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -3699,14 +4018,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                 //   MessageBox.Show("arg");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                   // MessageBox.Show("for");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -3739,14 +4058,14 @@ namespace ProposalReportingSystem
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("arg");
+                   // MessageBox.Show("arg");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("for");
+                  //  MessageBox.Show("for");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.Pink;
@@ -3754,7 +4073,7 @@ namespace ProposalReportingSystem
 
                 if (editProposalOrganizationNameCb.Text == "")
                 {
-                    MessageBox.Show("null");
+                   // MessageBox.Show("null");
                     editProposalOrganizationNumberCb.Text = "";
                     editProposalOrganizationNumberCb.SelectedIndex = -1;
                     editProposalOrganizationNameCb.BackColor = Color.White;
@@ -3993,7 +4312,8 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show("nist");
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
                 else
@@ -4061,8 +4381,10 @@ namespace ProposalReportingSystem
             }
             else
             {
-                PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
-                p.ShowDialog();
+                //PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
+                //p.ShowDialog();
+                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
             }
         }
 
@@ -4702,7 +5024,7 @@ namespace ProposalReportingSystem
                 proposal.FileName = editProposalCurrentFileName;
 
                 dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+               // dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
 
                 editProposalClearBtn.PerformClick();
                 editProposalShowAllBtn.PerformClick();
@@ -6090,7 +6412,8 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show("nist");
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
                 else
@@ -6199,7 +6522,8 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show("nist");
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
                 else
@@ -6349,7 +6673,8 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show("nist");
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
                 else
@@ -6378,7 +6703,8 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show("nist");
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
                 else
@@ -6389,6 +6715,8 @@ namespace ProposalReportingSystem
             catch
             { }
         }
+
+       
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
         {

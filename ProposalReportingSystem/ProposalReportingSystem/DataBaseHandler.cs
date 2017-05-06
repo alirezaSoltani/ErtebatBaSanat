@@ -28,7 +28,7 @@ namespace ProposalReportingSystem
 
         ////// string queries
 
-        public string addProposalQuery ; // "SELECT TOP " + PgSize + " * FROM proposalTable"
+        public string addProposalQuery; // "SELECT TOP " + PgSize + " * FROM proposalTable"
         public string searchProposalQuery;
         public string editProposalQuery;
         public string manageTeacherQuery;
@@ -151,8 +151,10 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                //popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
@@ -160,8 +162,8 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -232,16 +234,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -305,16 +307,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -400,11 +402,15 @@ namespace ProposalReportingSystem
                 transaction.Commit();
                 popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
                 popup.ShowDialog();
+                //string context = "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.";
+                //Alert alert = new Alert(context, "blue", 5);
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                //popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
@@ -412,8 +418,8 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -466,16 +472,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -537,16 +543,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -610,16 +616,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -671,16 +677,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -737,16 +743,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -781,16 +787,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -798,20 +804,29 @@ namespace ProposalReportingSystem
         }
         public string getColor(long username)
         {
-            string color;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT u_color FROM UsersTable WHERE u_NCode = '" + username + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+            string color = "";
+            try
+            {
 
-            reader.Read();
-            color = reader.GetString(0);
-            conn.Close();
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT u_color FROM UsersTable WHERE u_NCode = '" + username + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+
+                reader.Read();
+                color = reader.GetString(0);
+                conn.Close();
+            }
+            catch
+            {
+
+            }
             return color;
         }
 
@@ -845,16 +860,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -911,15 +926,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog(); try
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
+                try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -967,16 +983,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -1030,16 +1046,16 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                string context = "خطا در برقراری ارتباط با سرور.";
+                Alert alert = new Alert(context, "darkred", 5);
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    popup.ShowDialog();
+                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+                    //popup.ShowDialog();
                 }
             }
 
@@ -1051,20 +1067,26 @@ namespace ProposalReportingSystem
         public List<long> getTeachersNCode(string query)
         {
             List<long> list = new List<long>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = query;
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                list.Add(reader.GetInt64(0));
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = query;
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetInt64(0));
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch { }
             return list;
         }
 
@@ -1154,164 +1176,281 @@ namespace ProposalReportingSystem
         /// <param name="Emloyers"></param>
         public void AddEmployer(string employer, long username, String dateTime)
         {
-
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO employersTable (orgName) VALUES ('" + employer + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + employer + "','" + "employersTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                popup.ShowDialog();
-            }
-            catch
-            {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO employersTable (orgName) VALUES ('" + employer + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + employer + "','" + "employersTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
 
-            conn.Close();
-
-
         }
+
         public void EditEmployer(Employers employer, string lastOrgName, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE [index] = '" + employer.Index + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastOrgName + " to " + employer.OrgName + "','" + "employersTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                popup.ShowDialog();
-            }
-            catch
-            {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "UPDATE employersTable SET orgName = '" + employer.OrgName + "' WHERE [index] = '" + employer.Index + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastOrgName + " to " + employer.OrgName + "','" + "employersTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
 
-            conn.Close();
-
         }
+
         public List<Employers> getEmployers()
         {
+
             List<Employers> list = new List<Employers>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM employersTable";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                Employers employers = new Employers();
-                employers.Index = ((long)reader["index"]);
-                employers.OrgName = ((string)reader["orgName"]);
-                list.Add(employers);
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM employersTable";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    Employers employers = new Employers();
+                    employers.Index = ((long)reader["index"]);
+                    employers.OrgName = ((string)reader["orgName"]);
+                    list.Add(employers);
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch
+            {
+
+            }
             return list;
         }
         public void DeleteEmployers(long index, String employers, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = " DELETE FROM employersTable WHERE [index] = '" + index + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEmployersTable ([index] , orgName , date , username) VALUES('" + index + "','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + index + "-" + employers + "','" + "employersTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                popup.ShowDialog();
-            }
-            catch
-            {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM employersTable WHERE [index] = '" + index + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedEmployersTable ([index] , orgName , date , username) VALUES('" + index + "','" + employers + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + index + "-" + employers + "','" + "employersTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
-
-            conn.Close();
 
         }
 
@@ -1322,161 +1461,280 @@ namespace ProposalReportingSystem
         /// <param name="procedure"></param>
         public void AddProcedureType(String procedure, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO procedureTypeTable (procedureType) VALUES ('" + procedure + "' )";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + procedure + "','" + "procedureTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                popup.ShowDialog();
-            }
-            catch
-            {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO procedureTypeTable (procedureType) VALUES ('" + procedure + "' )";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + procedure + "','" + "procedureTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
-
-            conn.Close();
 
         }
 
         public void EditProcedureType(String newProcedureType, String lastProcedureType, long username, String dateTime)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = '" + lastProcedureType + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastProcedureType + " to " + newProcedureType + "','" + "procedureTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                popup.ShowDialog();
-            }
-            catch
-            {
-                popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                popup.ShowDialog();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
 
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "UPDATE procedureTypeTable SET procedureType = " + "'" + newProcedureType + "' WHERE procedureType = '" + lastProcedureType + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastProcedureType + " to " + newProcedureType + "','" + "procedureTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
-
-            conn.Close();
 
         }
 
 
         public List<string> getProcedureType()
         {
-            List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM procedureTypeTable";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(reader.GetString(0));
-            }
-            conn.Close();
 
+            List<string> list = new List<string>();
+            try
+            {
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM procedureTypeTable";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+                }
+                conn.Close();
+            }
+            catch
+            {
+
+            }
             return list;
         }
 
         public void DeleteProcedureType(String procedure, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM procedureTypeTable WHERE procedureType = '" + procedure + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedProcedureTypeTable (procedureType , date , username) VALUES( '" + procedure + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + procedure + "','" + "procedureTypeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM procedureTypeTable WHERE procedureType = '" + procedure + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedProcedureTypeTable (procedureType , date , username) VALUES( '" + procedure + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + procedure + "','" + "procedureTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    // MessageBox.Show("حذف با موفقیت به پایان رسید");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
@@ -1490,152 +1748,283 @@ namespace ProposalReportingSystem
         public void AddPropertyType(String property, long username, String dateTime)
         {
 
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO propertyTypeTable (propertyType) VALUES ('" + property + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + property + "','" + "propertyTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
                 try
                 {
-                    transaction.Rollback();
-                }
-                catch
+
+                    sc.CommandText = "INSERT INTO propertyTypeTable (propertyType) VALUES ('" + property + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + property + "','" + "propertyTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+                }   
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
         public void EditPropertyType(String newPropertyType, String lastPropertyType, long username, String dateTime)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = '" + lastPropertyType + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastPropertyType + " to " + newPropertyType + "','" + "propertyTypeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+                try
+                {
+                    sc.CommandText = "UPDATE propertyTypeTable SET propertyType = " + "'" + newPropertyType + "' WHERE propertyType = '" + lastPropertyType + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastPropertyType + " to " + newPropertyType + "','" + "propertyTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات  با موفقیت  ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
+
+        }
+
+        
+        public List<string> getPropertyType()
+        {
+
+            List<string> list = new List<string>();
+            try
+            {
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM propertyTypeTable";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+
+                }
+                conn.Close();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
-                try
-                {
-                    transaction.Rollback();
-                }
-                catch
-                {
-                    MessageBox.Show("خطا در برقراری ارتباط");
-                }
-            }
-
-            conn.Close();
-        }
-
-        public List<string> getPropertyType()
-        {
-            List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM propertyTypeTable";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(reader.GetString(0));
 
             }
-            conn.Close();
-
             return list;
         }
 
         public void DeletePropertyType(String property, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM propertyTypeTable WHERE propertyType = '" + property + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedPropertyTypeTable  (propertyType , date , username) VALUES( '" + property + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + property + "','" + "propertyTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM propertyTypeTable WHERE propertyType = '" + property + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedPropertyTypeTable  (propertyType , date , username) VALUES( '" + property + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + property + "','" + "propertyTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
@@ -1648,153 +2037,288 @@ namespace ProposalReportingSystem
         /// <param name=proposalType></param>
         public void AddProposalType(String proposalType, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO proposalTypeTable (proposalType) VALUES ('" + proposalType + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposalType + "','" + "proposalTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO proposalTypeTable (proposalType) VALUES ('" + proposalType + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposalType + "','" + "proposalTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
         public void EditProposalType(String newProposalType, String lastProposalType, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = '" + lastProposalType + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastProposalType + " to " + newProposalType + "','" + "proposalTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+                try
+                {
+                    sc.CommandText = "UPDATE proposalTypeTable SET proposalType = " + "'" + newProposalType + "' WHERE proposalType = '" + lastProposalType + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastProposalType + " to " + newProposalType + "','" + "proposalTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
+
+        }
+
+        public List<string> getProposalType()
+        {
+            
+            List<string> list = new List<string>();
+            try
+            {
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM proposalTypeTable ";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+
+                }
+                conn.Close();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
-                try
-                {
-                    transaction.Rollback();
-                }
-                catch
-                {
-                    MessageBox.Show("خطا در برقراری ارتباط");
-                }
-            }
-
-            conn.Close();
-        }
-        public List<string> getProposalType()
-        {
-            List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM proposalTypeTable ";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(reader.GetString(0));
 
             }
-            conn.Close();
 
             return list;
         }
         public void DeleteProposalType(String proposal, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM proposalTypeTable WHERE proposalType = '" + proposal + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedProposalTypeTable  (proposalType , date , username) VALUES( '" + proposal + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal + "','" + "proposalTypeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM proposalTypeTable WHERE proposalType = '" + proposal + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedProposalTypeTable  (proposalType , date , username) VALUES( '" + proposal + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal + "','" + "proposalTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
@@ -1806,155 +2330,290 @@ namespace ProposalReportingSystem
         /// <param name=proposalType></param>
         public void AddRegisterType(String registerType, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO registerTypeTable (registerType) VALUES ('" + registerType + "' )";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + registerType + "','" + "registerTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO registerTypeTable (registerType) VALUES ('" + registerType + "' )";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + registerType + "','" + "registerTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
         public void EditRegisterType(String newRegisterType, String lastRegisterType, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = '" + lastRegisterType + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastRegisterType + " to " + newRegisterType + "','" + "registerTypeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+                try
+                {
+                    sc.CommandText = "UPDATE registerTypeTable SET registerType = " + "'" + newRegisterType + "' WHERE registerType = '" + lastRegisterType + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastRegisterType + " to " + newRegisterType + "','" + "registerTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
+
+        }
+
+        public List<string> getRegisterType()
+        {
+            
+            List<string> list = new List<string>();
+            try
+            {
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM registerTypeTable";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+
+                }
+                conn.Close();
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
-                try
-                {
-                    transaction.Rollback();
-                }
-                catch
-                {
-                    MessageBox.Show("خطا در برقراری ارتباط");
-                }
-            }
-
-            conn.Close();
-
-        }
-        public List<string> getRegisterType()
-        {
-            List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM registerTypeTable";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(reader.GetString(0));
 
             }
-            conn.Close();
-
             return list;
         }
 
         public void DeleteRegisterType(String register, long username, String dateTime)
         {
 
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM registerTypeTable WHERE registerType = '" + register + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedRegisterTypeTable  (registerType , date , username) VALUES( '" + register + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + register + "','" + "registerTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM registerTypeTable WHERE registerType = '" + register + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedRegisterTypeTable  (registerType , date , username) VALUES( '" + register + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + register + "','" + "registerTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
@@ -1967,163 +2626,285 @@ namespace ProposalReportingSystem
         /// <param name=statusType></param>
         public void AddStatusType(String statusType, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES('" + statusType + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + statusType + "','" + "statusTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO statusTypeTable (statusType) VALUES('" + statusType + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + statusType + "','" + "statusTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
 
         public void EditStatusType(String newStatusType, String lastStatusType, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastStatusType + " to " + newStatusType + "','" + "statusTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "UPDATE statusTypeTable SET statusType = " + "'" + newStatusType + "' WHERE statusType = '" + lastStatusType + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastStatusType + " to " + newStatusType + "','" + "statusTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
-
-
-
-
         }
+
         public List<string> getStatusType()
         {
             List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM statusTypeTable ";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                list.Add(reader.GetString(0));
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM statusTypeTable ";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+
+                }
+                conn.Close();
+            }
+            catch
+            {
 
             }
-            conn.Close();
-
             return list;
         }
 
         public void DeleteStatusType(String status, long username, String dateTime)
         {
-
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM statusTypeTable WHERE statusType = '" + status + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedStatusTypeTable  (statusType , date , username) VALUES( '" + status + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + status + "','" + "statusTypeTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM statusTypeTable WHERE statusType = '" + status + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedStatusTypeTable  (statusType , date , username) VALUES( '" + status + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + status + "','" + "statusTypeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
 
         ///////////end query of statusType
@@ -2134,156 +2915,286 @@ namespace ProposalReportingSystem
         /// <param name=Faculty></param>
         public void AddFaculty(String faculty, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO facultyTable (facultyName) VALUES( '" + faculty + "' )";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + faculty + "','" + "facultyTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO facultyTable (facultyName) VALUES( '" + faculty + "' )";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + faculty + "','" + "facultyTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
         public void EditFaculty(String newFaculty, String lastFaculty, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE facultyTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "UPDATE facultyTable SET facultyName = " + "'" + newFaculty + "' WHERE facultyName = '" + lastFaculty + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    MessageBox.Show(e.Message);
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
+
         public List<string> getFaculty()
         {
             List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM facultyTable ";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                list.Add(reader.GetString(0));
+
+
+               
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM facultyTable ";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+
+                }
+                conn.Close();
+            }
+            catch
+            {
 
             }
-            conn.Close();
 
             return list;
         }
 
         public void DeleteFaculty(String faculty, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = "DELETE FROM facultyTable WHERE facultyName = '" + faculty + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedFacultyTable  (facultyName , date , username) VALUES( '" + faculty + "','" + dateTime + "','" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + faculty + "','" + "facultyTable'" + ")";
-                sc.ExecuteNonQuery();
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "DELETE FROM facultyTable WHERE facultyName = '" + faculty + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedFacultyTable  (facultyName , date , username) VALUES( '" + faculty + "','" + dateTime + "','" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + faculty + "','" + "facultyTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
 
-
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
@@ -2296,154 +3207,283 @@ namespace ProposalReportingSystem
         /// <param name=Faculty></param>
         public void AddEGroup(String faculty, String group, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO EGroupTable (groupName, facultyName) VALUES('" + group + "', '" + faculty + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + group + "-" + faculty + "','" + "EGroupTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO EGroupTable (groupName, facultyName) VALUES('" + group + "', '" + faculty + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + group + "-" + faculty + "','" + "EGroupTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
 
         public void EditEGroup(String newEGroup, String lastEGroup, long username, String dateTime)
         {
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = " UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + "','" + "EGroupTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + "','" + "EGroupTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
 
         public List<string> getEGroup(string faculty)
         {
             List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                list.Add(reader.GetString(0));
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM EGroupTable WHERE facultyName='" + faculty + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch
+            {
+
+            }
             return list;
 
         }
 
         public void DeleteEGroup(String groupName, String facultyName, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
-
-
             try
             {
-                sc.CommandText = " DELETE FROM EGroupTable WHERE groupName = '" + groupName + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','" + facultyName + "' ,'" + dateTime + "','" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + groupName + "-" + facultyName + "','" + "EGroupTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM EGroupTable WHERE groupName = '" + groupName + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','" + facultyName + "' ,'" + dateTime + "','" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + groupName + "-" + facultyName + "','" + "EGroupTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
+
 
         ///////////end query of EducationalGroup
 
@@ -2452,156 +3492,280 @@ namespace ProposalReportingSystem
         public List<string> getEDeg()
         {
             List<string> list = new List<string>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT * FROM EDegreeTable";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                list.Add(reader.GetString(0));
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM EDegreeTable";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch
+            {
+
+            }
             return list;
 
         }
         public void DeleteEDegree(String EDegree, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = " DELETE FROM EDegreeTable WHERE EDegree = '" + EDegree + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO deletedEDegreeTable  (EDegree , date , username) VALUES ( '" + EDegree + "' ,'" + dateTime + "' ,'" + username + "')";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + EDegree + "','" + "EDegreeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("حذف با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = " DELETE FROM EDegreeTable WHERE EDegree = '" + EDegree + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO deletedEDegreeTable  (EDegree , date , username) VALUES ( '" + EDegree + "' ,'" + dateTime + "' ,'" + username + "')";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + EDegree + "','" + "EDegreeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
+                }
+
+                conn.Close();
+            }
+
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
                 }
             }
 
-            conn.Close();
         }
 
         public void EditEDegree(String newEDegree, String lastEDegree, long username, String dateTime)
         {
-
-
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
             try
             {
-                sc.CommandText = "UPDATE EDegreeTable SET EDegree = " + "'" + newEDegree + "' WHERE EDegree = '" + lastEDegree + "'";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEDegree + " to " + newEDegree + "','" + "EDegree'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("تغییرات با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "UPDATE EDegreeTable SET EDegree = " + "'" + newEDegree + "' WHERE EDegree = '" + lastEDegree + "'";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEDegree + " to " + newEDegree + "','" + "EDegree'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
         public void AddEDegree(String EDegree, long username, String dateTime)
         {
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
-                sc.CommandText = "INSERT INTO EDegreeTable (EDegree) VALUES ('" + EDegree + "' )";
-                sc.ExecuteNonQuery();
-                sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + EDegree + "','" + "EDegreeTable'" + ")";
-                sc.ExecuteNonQuery();
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
 
-                transaction.Commit();
-                MessageBox.Show("افزودن با موفقیت به پابان رسید");
-            }
-            catch
-            {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+                    sc.CommandText = "INSERT INTO EDegreeTable (EDegree) VALUES ('" + EDegree + "' )";
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + EDegree + "','" + "EDegreeTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
+
+                conn.Close();
             }
 
-            conn.Close();
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
 
         }
 
 
-        
+
 
         ////////////////////////////////////////////////////////////////////////////
         /***********************************GET DATA******************************/
@@ -3109,14 +4273,14 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+                //MessageBox.Show("خطا در برقراری ارتباط");
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                    //MessageBox.Show("خطا در برقراری ارتباط");
                 }
             }
 
@@ -3156,14 +4320,14 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                MessageBox.Show("خطا در برقراری ارتباط");
+               // MessageBox.Show("خطا در برقراری ارتباط");
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    MessageBox.Show("خطا در برقراری ارتباط");
+                   // MessageBox.Show("خطا در برقراری ارتباط");
                 }
             }
 
@@ -3185,60 +4349,68 @@ namespace ProposalReportingSystem
             /// <summary>
             /// datagridview reintialization
             /// </summary>
-            
-            dgvv.DataSource = bindingSource;
-            GetData2(query, bindingSource, dgvv);
-
-            if (query.Contains("proposalTable"))
+            try
             {
-               
-                foreach (DataGridViewRow row in dgvv.Rows)
+
+
+                dgvv.DataSource = bindingSource;
+                GetData2(query, bindingSource, dgvv);
+
+                if (query.Contains("proposalTable"))
                 {
-                    string fullName;
-                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
-                    row.Cells["executorFullName"].Value = fullName;
+
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                        row.Cells["executorFullName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                        row.Cells["employerName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                        row.Cells["hijriDate"].Value = fullName;
+                    }
                 }
-                foreach (DataGridViewRow row in dgvv.Rows)
+                if (query.Contains("editionTable"))
                 {
-                    string fullName;
-                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
-                    row.Cells["employerName"].Value = fullName;
+
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                        row.Cells["executorFullName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                        row.Cells["employerName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                        row.Cells["hijriDate"].Value = fullName;
+                    }
                 }
-                foreach (DataGridViewRow row in dgvv.Rows)
+
+                dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
+                foreach (DataGridViewColumn col in dgvv.Columns)
                 {
-                    string fullName;
-                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
-                    row.Cells["hijriDate"].Value = fullName;
+                    dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
                 }
             }
-            if (query.Contains("editionTable"))
+            catch
             {
 
-                foreach (DataGridViewRow row in dgvv.Rows)
-                {
-                    string fullName;
-                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
-                    row.Cells["executorFullName"].Value = fullName;
-                }
-                foreach (DataGridViewRow row in dgvv.Rows)
-                {
-                    string fullName;
-                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
-                    row.Cells["employerName"].Value = fullName;
-                }
-                foreach (DataGridViewRow row in dgvv.Rows)
-                {
-                    string fullName;
-                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
-                    row.Cells["hijriDate"].Value = fullName;
-                }
-            }
-
-            dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
-            dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
-            foreach (DataGridViewColumn col in dgvv.Columns)
-            {
-                dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
             }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
@@ -3517,6 +4689,26 @@ namespace ProposalReportingSystem
             conn.Close();
             return employerName;
         }
+        public string getRegistrantName(long ncode)
+        {
+            string fullName, fname, lname;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conString;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT u_FName , u_LName FROM UsersTable WHERE t_NCode = '" + ncode + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            fname = reader.GetString(0);
+            lname = reader.GetString(1);
+            fullName = fname + " " + lname;
+            conn.Close();
+            return fullName;
+        }
+
         public string getDateHijri(string date)
         {
   
