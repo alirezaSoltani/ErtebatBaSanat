@@ -3900,7 +3900,7 @@ namespace ProposalReportingSystem
             }
             dgvv.DataSource = bindingSource;
 
-            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet+1);
 
             if (query.Contains("proposalTable"))
             {
@@ -4222,7 +4222,7 @@ namespace ProposalReportingSystem
                 bindingSourceObj.DataSource = table;
             }
 
-            int i = PreviousPageOffSet;
+            int i = PreviousPageOffSet-1;
             int j = 0;
             while (true)
             {
