@@ -1650,6 +1650,9 @@ namespace ProposalReportingSystem
 
         private void appSettingProcedureTypeRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = true;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1675,6 +1678,9 @@ namespace ProposalReportingSystem
 
         private void appSettingPropertyRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = true;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1700,6 +1706,9 @@ namespace ProposalReportingSystem
 
         private void appSettingFacultyRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = true;
@@ -1727,6 +1736,9 @@ namespace ProposalReportingSystem
 
         private void appSettingRegTypeRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1754,6 +1766,8 @@ namespace ProposalReportingSystem
 
         private void appSettingProTypeRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1786,6 +1800,9 @@ namespace ProposalReportingSystem
 
         private void appSettingCoRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1820,6 +1837,9 @@ namespace ProposalReportingSystem
 
         private void appSettingStatusRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -2141,6 +2161,8 @@ namespace ProposalReportingSystem
                     appSettingEdegreeTxtbx.Focus();
                 }
             }
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
         }
 
         private void appSettingShowDv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2386,18 +2408,26 @@ namespace ProposalReportingSystem
                 form_initializer(); // To Reset items of comboBoxes and others
                 appSettingEdegreeTxtbx.Focus();
             }
+
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
         }
 
         private void appSettingShowDv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(appSettingFacultyTxtbx.Enabled == true)
             {
+                appSettingEditBtn.Enabled = false;
+                appSettingDeleteBtn.Enabled = false;
+
                 appSettingBackBtn.Enabled = true;
 
                 appSettingProcedureTypeRbtn.Enabled = false;
                 appSettingPropertyRbtn.Enabled = false;
                 appSettingFacultyRbtn.Enabled = false;
                 appSettingRegTypeRbtn.Enabled = false;
+                appSettingEdegreeRbtn.Enabled = false;
                 appSettingProTypeRbtn.Enabled = false;
                 appSettingCoRbtn.Enabled = false;
                 appSettingStatusRbtn.Enabled = false;
@@ -5483,6 +5513,9 @@ namespace ProposalReportingSystem
 
         private void appSettingEdegreeRbtn_Click(object sender, EventArgs e)
         {
+            appSettingEditBtn.Enabled = false;
+            appSettingDeleteBtn.Enabled = false;
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingEdegreeTxtbx.Enabled = true;
@@ -6788,8 +6821,6 @@ namespace ProposalReportingSystem
             catch
             { }
         }
-
-       
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
         {
