@@ -15,6 +15,10 @@ namespace ProposalReportingSystem
 {
     public partial class Form1 : Form
     {
+        string connectString = "Data Source= 169.254.92.252;" +
+               "Initial Catalog=rayanpro_EBS;" +
+               "User id=test; " +
+               "Password=HoseinNima1234;";
 
         Waiting w;
         private int systemWidth;    //related to setSize
@@ -1086,7 +1090,27 @@ namespace ProposalReportingSystem
                     proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
                     proposal.Value = long.Parse(addProposalValueTxtbx.Text);
                     proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
-                    proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
+
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    proposal.StartDate = temp;
                     proposal.Registrant = loginUser.U_NCode;
 
 
@@ -1097,8 +1121,10 @@ namespace ProposalReportingSystem
                     //CurrentPageIndex = 1;
                     //addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
                     dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-                    //dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, "SELECT TOP "+pageSize+" * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'",pageSize,CurrentPageIndex);
+                    dbh.addProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'";
                     addProposalClearBtn.PerformClick();
+                    dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+
                 }
             }
             else if (addProposalIsWatchingEdition)
@@ -1322,7 +1348,27 @@ namespace ProposalReportingSystem
                 proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
                 proposal.Value = long.Parse(addProposalValueTxtbx.Text);
                 proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
-                proposal.StartDate = addProposalStartdateTimeInput.GeoDate.ToString();
+                //INITIALIZE STARTDATE OF PROPOSAL
+                string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
+                if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                {
+                    temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                }
+                else
+                {
+                    temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                }
+
+                if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                {
+                    temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                }
+                else
+                {
+                    temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                }
+                //INITIALIZE STARTDATE OF PROPOSAL
+                proposal.StartDate = temp;
                 proposal.Registrant = loginUser.U_NCode;
                 proposal.Index = editionProposalIndex;
 
@@ -2457,6 +2503,7 @@ namespace ProposalReportingSystem
             editProposalKeywordsTxtbx.Clear();
             editProposalExecutor2Txtbx.Clear();
             editProposalCoexecutorTxtbx.Clear();
+            editProposalFileLinkLbl.Text = "افزودن فایل";
             editProposalStartdateTimeInput.GeoDate = DateTime.Now;
             editProposalDurationTxtbx.Clear();
             editProposalDurationTxtbx.BackColor = Color.White;
@@ -2811,10 +2858,11 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source= 185.159.152.2;" +
-                "Initial Catalog=rayanpro_EBS;" +
-                "User id=rayanpro_rayan; " +
-                "Password=P@hn1395;";
+                conn.ConnectionString = connectString;
+                //    "Data Source= 185.159.152.2;" +
+                //"Initial Catalog=rayanpro_EBS;" +
+                //"User id=rayanpro_rayan; " +
+                //"Password=P@hn1395;";
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
@@ -2899,10 +2947,11 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source= 185.159.152.2;" +
-                "Initial Catalog=rayanpro_EBS;" +
-                "User id=rayanpro_rayan; " +
-                "Password=P@hn1395;";
+                conn.ConnectionString = connectString;
+                //    "Data Source= 185.159.152.2;" +
+                //"Initial Catalog=rayanpro_EBS;" +
+                //"User id=rayanpro_rayan; " +
+                //"Password=P@hn1395;";
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
@@ -3775,10 +3824,11 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source= 185.159.152.2;" +
-                "Initial Catalog=rayanpro_EBS;" +
-                "User id=rayanpro_rayan; " +
-                "Password=P@hn1395;";
+                conn.ConnectionString = connectString;
+                //    "Data Source= 185.159.152.2;" +
+                //"Initial Catalog=rayanpro_EBS;" +
+                //"User id=rayanpro_rayan; " +
+                //"Password=P@hn1395;";
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
@@ -4580,12 +4630,7 @@ namespace ProposalReportingSystem
                     editProposalKeywordsTxtbx.Focus();
                 }
 
-                else if (editProposalFileLinkLbl.Text == "افزودن فایل")
-                {
-                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
-                    editProposalFileLinkLbl.Focus();
-                }
+               
 
                 else if (editProposalDurationTxtbx.Text.Length == 0)
                 {
@@ -4666,13 +4711,38 @@ namespace ProposalReportingSystem
                     proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
                     proposal.Value = long.Parse(editProposalValueTxtbx.Text);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
 
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    proposal.StartDate = temp;
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
+                    if(editProposalCurrentFileName == editProposalFileLinkLbl.Text)
+                    {
+                        _inputParameter.FileName = "";
+                    }
 
-                    dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                    dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
+                    string exName = editProposalExecutorNcodeTxtbx.Text;
+                    editProposalClearBtn.PerformClick();
+                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + exName + "'");
                 }
             }
             else if (manageProposalIsWatchingEdition)
@@ -4761,12 +4831,6 @@ namespace ProposalReportingSystem
                     editProposalKeywordsTxtbx.Focus();
                 }
 
-                else if (editProposalFileLinkLbl.Text == "افزودن فایل")
-                {
-                    PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
-                    editProposalFileLinkLbl.Focus();
-                }
 
                 else if (editProposalDurationTxtbx.Text.Length == 0)
                 {
@@ -4852,7 +4916,12 @@ namespace ProposalReportingSystem
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
 
-                    dbh.EditEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
+                    if (editProposalCurrentFileName == editProposalFileLinkLbl.Text)
+                    {
+                        _inputParameter.FileName = "";
+                    }
+                    dbh.EditEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
+                    editProposalClearBtn.PerformClick();
                     dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                 }
             }
@@ -4932,6 +5001,7 @@ namespace ProposalReportingSystem
                         editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
                         editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
 
@@ -4986,6 +5056,7 @@ namespace ProposalReportingSystem
                         editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
                         editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                         proposalEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
@@ -5051,7 +5122,9 @@ namespace ProposalReportingSystem
                 proposal.FileName = editProposalCurrentFileName;
 
                 dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                string exNCode = editProposalExecutorNcodeTxtbx.Text;
+                editProposalClearBtn.PerformClick();
+                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + exNCode + "'");
 
                 editProposalClearBtn.PerformClick();
                 editProposalShowAllBtn.PerformClick();

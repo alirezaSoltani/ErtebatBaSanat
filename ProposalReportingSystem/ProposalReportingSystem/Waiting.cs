@@ -37,9 +37,14 @@ namespace ProposalReportingSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            backgroundWorker1.RunWorkerAsync();
-
+            try
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
+            catch
+            {
+              
+            }
             if (i == -1)
             {
                 this.Close();

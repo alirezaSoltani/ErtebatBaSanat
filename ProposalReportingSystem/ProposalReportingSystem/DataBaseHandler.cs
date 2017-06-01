@@ -15,10 +15,15 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
-        string conString = "Data Source= 185.159.152.2;" +
+        string conString = "Data Source= 169.254.92.252;" +
                 "Initial Catalog=rayanpro_EBS;" +
-                "User id=rayanpro_rayan; " +
-                "Password=P@hn1395;";
+                "User id=test; " +
+                "Password=HoseinNima1234;";
+
+        //string conString = "Data Source= 185.159.152.2;" +
+        //       "Initial Catalog=rayanpro_EBS;" +
+        //       "User id=rayanpro_rayan; " +
+        //       "Password=P@hn1395;";
 
         private Toast toast;//related to toast messages
         private PopUp popup;
@@ -170,7 +175,7 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
-        public void EditProposal(Proposal proposal, long username, String dateTime)
+        public void EditProposal(Proposal proposal, long username, String dateTime,FTPSetting _inputParameter,string currentFileName)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -179,6 +184,7 @@ namespace ProposalReportingSystem
             SqlCommand sc = new SqlCommand();
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
+            SqlDataReader reader;
 
 
             SqlTransaction transaction;
@@ -227,13 +233,38 @@ namespace ProposalReportingSystem
 
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                 sc.ExecuteNonQuery();
+                if (_inputParameter.FileName != "")
+                {
+                    sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
+                    reader = sc.ExecuteReader();
+                    reader.Read();
+                    proposal.Index = reader.GetInt64(0);
 
+                    DeleteFile(currentFileName);
+
+                    if (_inputParameter.FileName.Contains(".docx"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                    }
+                    else if (_inputParameter.FileName.Contains(".doc"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                    }
+                    if (_inputParameter.FileName.Contains(".pdf"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                    }
+                    
+                    uploadFile(_inputParameter);
+                    reader.Close();
+                }
                 transaction.Commit();
                 popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                 popup.ShowDialog();
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 string context = "خطا در برقراری ارتباط با سرور.";
                 Alert alert = new Alert(context, "darkred", 5);
                 try
@@ -305,8 +336,9 @@ namespace ProposalReportingSystem
                 popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                 popup.ShowDialog();
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 string context = "خطا در برقراری ارتباط با سرور.";
                 Alert alert = new Alert(context, "darkred", 5);
                 try
@@ -426,7 +458,7 @@ namespace ProposalReportingSystem
             conn.Close();
         }
 
-        public void EditEdition(Proposal proposal, int EditionNumber, long username, String dateTime)
+        public void EditEdition(Proposal proposal, int EditionNumber, long username, String dateTime, FTPSetting _inputParameter, string currentFileName)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -435,7 +467,7 @@ namespace ProposalReportingSystem
             SqlCommand sc = new SqlCommand();
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
-
+           
 
             SqlTransaction transaction;
             transaction = conn.BeginTransaction("new");
@@ -465,6 +497,26 @@ namespace ProposalReportingSystem
 
                 sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + " Edition " + EditionNumber + " ','" + "EditionTable'" + ")";
                 sc.ExecuteNonQuery();
+
+                if (_inputParameter.FileName != "")
+                {
+
+                    DeleteFile(currentFileName);
+
+                    if (_inputParameter.FileName.Contains(".docx"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".docx";
+                    }
+                    else if (_inputParameter.FileName.Contains(".doc"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".doc";
+                    }
+                    if (_inputParameter.FileName.Contains(".pdf"))
+                    {
+                        _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".pdf";
+                    }
+                    uploadFile(_inputParameter);
+                }
 
                 transaction.Commit();
                 popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
@@ -1511,6 +1563,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
+                        MessageBox.Show(e.Message);
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
@@ -3896,11 +3949,11 @@ namespace ProposalReportingSystem
             }
             else
             {
-                PreviousPageOffSet = (page - 1) * PgSize;
+                PreviousPageOffSet = (page - 1) * PgSize ;
             }
             dgvv.DataSource = bindingSource;
 
-            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet+1);
+            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
 
             if (query.Contains("proposalTable"))
             {
@@ -4222,7 +4275,7 @@ namespace ProposalReportingSystem
                 bindingSourceObj.DataSource = table;
             }
 
-            int i = PreviousPageOffSet-1;
+            int i = PreviousPageOffSet;
             int j = 0;
             while (true)
             {
@@ -4244,6 +4297,7 @@ namespace ProposalReportingSystem
         public int totalPage(string query)
         {
             int totalPages = 0;
+            float temp = 0;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = conString;
             conn.Open();
@@ -4268,6 +4322,11 @@ namespace ProposalReportingSystem
                 int rowCount = reader.GetInt32(0);
                 reader.Close();
                 totalPages = rowCount / PgSize;
+                temp = (float)rowCount / (float)PgSize;
+                if(temp == totalPages)
+                {
+                    totalPages = totalPages - 1; 
+                }
                 transaction.Commit();
 
             }
@@ -4569,11 +4628,34 @@ namespace ProposalReportingSystem
 
 
 
+        //public void uploadFile(FTPSetting _inputParameter)
+        //{
+        //    FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://185.159.152.5", _inputParameter.FileName)));
+        //    request.Method = WebRequestMethods.Ftp.UploadFile;
+        //    request.Credentials = new NetworkCredential(_inputParameter.Username, _inputParameter.Password);
+        //    Stream FtpStream = request.GetRequestStream();
+        //    FileStream fs = File.OpenRead(_inputParameter.FullName);
+        //    byte[] buffer = new byte[1024];
+        //    double total = (double)fs.Length;
+        //    int byteRead = 0;
+        //    double read = 0;
+        //    do
+        //    {
+
+        //        byteRead = fs.Read(buffer, 0, 1024);
+        //        FtpStream.Write(buffer, 0, byteRead);
+        //        read += (double)byteRead;
+        //        double percentage = read / total * 100;
+        //    }
+        //    while (byteRead != 0);
+        //    fs.Close();
+        //    FtpStream.Close();
+        //}
         public void uploadFile(FTPSetting _inputParameter)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://185.159.152.5", _inputParameter.FileName)));
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://169.254.92.252", _inputParameter.FileName)));
             request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential(_inputParameter.Username, _inputParameter.Password);
+            request.Credentials = new NetworkCredential("nima", "H-0sein");
             Stream FtpStream = request.GetRequestStream();
             FileStream fs = File.OpenRead(_inputParameter.FullName);
             byte[] buffer = new byte[1024];
@@ -4593,6 +4675,40 @@ namespace ProposalReportingSystem
             FtpStream.Close();
         }
 
+        //169.254.92.252
+
+        //public string downloadFile(string FileNameToDownload, string tempDirPath)
+        //{
+        //    string DownloadedFilePath = "";
+        //    string ResponseDescription = "";
+        //    string PureFileName = new FileInfo(FileNameToDownload).Name;
+
+
+        //    DownloadedFilePath = tempDirPath;
+        //    string downloadUrl = String.Format("{0}/{1}", "ftp://185.159.152.5/", FileNameToDownload);
+        //    FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
+        //    req.Method = WebRequestMethods.Ftp.DownloadFile;
+        //    req.Credentials = new NetworkCredential("Nima", "P@hn1395");
+        //    req.UseBinary = true;
+        //    req.Proxy = null;
+
+        //    FtpWebResponse response = (FtpWebResponse)req.GetResponse();
+        //    Stream stream = response.GetResponseStream();
+        //    byte[] buffer = new byte[2048];
+        //    FileStream fs = new FileStream(DownloadedFilePath, FileMode.Create);
+        //    int ReadCount = stream.Read(buffer, 0, buffer.Length);
+        //    while (ReadCount > 0)
+        //    {
+        //        fs.Write(buffer, 0, ReadCount);
+        //        ReadCount = stream.Read(buffer, 0, buffer.Length);
+        //    }
+        //    ResponseDescription = response.StatusDescription;
+        //    fs.Close();
+        //    stream.Close();
+
+
+        //    return ResponseDescription;
+        //}
         public string downloadFile(string FileNameToDownload, string tempDirPath)
         {
             string DownloadedFilePath = "";
@@ -4601,10 +4717,10 @@ namespace ProposalReportingSystem
 
 
             DownloadedFilePath = tempDirPath;
-            string downloadUrl = String.Format("{0}/{1}", "ftp://185.159.152.5/", FileNameToDownload);
+            string downloadUrl = String.Format("{0}/{1}", "ftp://169.254.92.252/", FileNameToDownload);
             FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
             req.Method = WebRequestMethods.Ftp.DownloadFile;
-            req.Credentials = new NetworkCredential("Nima", "P@hn1395");
+            req.Credentials = new NetworkCredential("nima", "H-0sein");
             req.UseBinary = true;
             req.Proxy = null;
 
@@ -4626,11 +4742,22 @@ namespace ProposalReportingSystem
             return ResponseDescription;
         }
 
-        private string DeleteFile(string fileName)
+        //private string DeleteFile(string fileName)
+        //{
+        //    FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+        //    request.Method = WebRequestMethods.Ftp.DeleteFile;
+        //    request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+
+        //    using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+        //    {
+        //        return response.StatusDescription;
+        //    }
+        //}
+        public string DeleteFile(string fileName)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
             request.Method = WebRequestMethods.Ftp.DeleteFile;
-            request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+            request.Credentials = new NetworkCredential("nima", "H-0sein");
 
             using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
@@ -4638,18 +4765,31 @@ namespace ProposalReportingSystem
             }
         }
 
+        //private string MoveFileToDeleted(string fileName)
+        //{
+        //    FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+        //    request.Method = WebRequestMethods.Ftp.Rename;
+        //    request.RenameTo = "Deleted/" + fileName;
+        //    request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+
+        //    using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+        //    {
+        //        return response.StatusDescription;
+        //    }
+        //}
         private string MoveFileToDeleted(string fileName)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://185.159.152.5/" + fileName);
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
             request.Method = WebRequestMethods.Ftp.Rename;
             request.RenameTo = "Deleted/" + fileName;
-            request.Credentials = new NetworkCredential("Nima", "P@hn1395");
+            request.Credentials = new NetworkCredential("nima", "H-0sein");
 
             using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 return response.StatusDescription;
             }
         }
+
 
 
         public string getExecutorName(long ncode)
