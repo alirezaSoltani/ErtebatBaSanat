@@ -4740,9 +4740,9 @@ namespace ProposalReportingSystem
                     }
 
                     dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
-                    string exName = editProposalExecutorNcodeTxtbx.Text;
+                    dbh.editProposalQuery = "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'";
                     editProposalClearBtn.PerformClick();
-                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + exName + "'");
+                    dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource,dbh.editProposalQuery,pageSize,1);
                 }
             }
             else if (manageProposalIsWatchingEdition)
@@ -5122,9 +5122,9 @@ namespace ProposalReportingSystem
                 proposal.FileName = editProposalCurrentFileName;
 
                 dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
-                string exNCode = editProposalExecutorNcodeTxtbx.Text;
-                editProposalClearBtn.PerformClick();
-                dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + exNCode + "'");
+                //string exNCode = editProposalExecutorNcodeTxtbx.Text;
+                //editProposalClearBtn.PerformClick();
+                //dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
 
                 editProposalClearBtn.PerformClick();
                 editProposalShowAllBtn.PerformClick();
