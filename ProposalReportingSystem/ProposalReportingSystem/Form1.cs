@@ -5000,6 +5000,10 @@ namespace ProposalReportingSystem
 
                         dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         editProposalShowDgv.Columns["editionBtn"].Visible = false;
+                        editProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                        editProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                        editProposalShowDgv.Columns["edition"].Frozen = true;
+
 
                         editionProposalIndex = proposal.Index;
                         manageProposalIsWatchingEdition = true;
@@ -5218,23 +5222,23 @@ namespace ProposalReportingSystem
 
             string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
 
-            if (searchProposalExecutorFNameTxtbx.Text != "")
+            if (searchProposalExecutorFNameTxtbx.Text != "" && searchProposalExecutorFNameTxtbx.Enabled != false)
             {
                 query2 = query2 + " t_FName = '" + searchProposalExecutorFNameTxtbx.Text + "' AND";
             }
-            if (searchProposalExecutorLNameTxtbx.Text != "")
+            if (searchProposalExecutorLNameTxtbx.Text != "" && searchProposalExecutorLNameTxtbx.Enabled != false)
             {
                 query2 = query2 + " t_LName = '" + searchProposalExecutorLNameTxtbx.Text + "' AND";
             }
-            if (searchProposalExecutorFacultyCb.Text != "")
+            if (searchProposalExecutorFacultyCb.Text != "" && searchProposalExecutorFacultyCb.Enabled != false)
             {
                 query2 = query2 + " t_Faculty = '" + searchProposalExecutorFacultyCb.Text + "' AND";
             }
-            if (searchProposalExecutorEGroupCb.Text != "")
+            if (searchProposalExecutorEGroupCb.Text != "" && searchProposalExecutorEGroupCb.Enabled != false)
             {
                 query2 = query2 + " t_Group = '" + searchProposalExecutorEGroupCb.Text + "' AND";
             }
-            if (searchProposalExecutorMobileTxtbx.Text != "")
+            if (searchProposalExecutorMobileTxtbx.Text != "" && searchProposalExecutorMobileTxtbx.Enabled != false)
             {
                 query2 = query2 + " t_Mobile = '" + searchProposalExecutorMobileTxtbx.Text + "' AND";
             }
@@ -6245,6 +6249,9 @@ namespace ProposalReportingSystem
 
                             dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                             addProposalShowDgv.Columns["editionBtn"].Visible = false;
+                            addProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                            addProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                            addProposalShowDgv.Columns["edition"].Frozen = true;
 
                             addProposalNavigationFirstPageBtn.Enabled = false;
                             addProposalNavigationNextPageBtn.Enabled = false;
@@ -6339,6 +6346,9 @@ namespace ProposalReportingSystem
 
                         dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         searchProposalShowDgv.Columns["editionBtn"].Visible = false;
+                        searchProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                        searchProposalShowDgv.Columns["edition"].Frozen = true;
 
                         editionProposalIndex = proposal.Index;
                         searchProposalIsWatchingEdition = true;

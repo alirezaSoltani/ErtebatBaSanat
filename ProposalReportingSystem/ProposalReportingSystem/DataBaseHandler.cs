@@ -4152,14 +4152,14 @@ namespace ProposalReportingSystem
                 ///////////
                 DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
                 dataGridview.Columns.Add(btn);
-                btn.HeaderText = "جزییات";
-                btn.Text = "نمایش جزییات";
+                btn.HeaderText = "اطلاعات";
+                btn.Text = "نمایش کلی";
                 btn.Name = "detailBtn";
 
                 DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
                 dataGridview.Columns.Add(btn2);
-                btn2.HeaderText = "اصلاحیه";
-                btn2.Text = "نمایش اصلاحیه ها";
+                btn2.HeaderText = "نسخه";
+                btn2.Text = "نمایش جزییات";
                 btn2.Name = "editionBtn";
 
                 dataGridview.Columns.Add("executorFullName", "مجری");
@@ -4530,14 +4530,14 @@ namespace ProposalReportingSystem
             {
                 DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
                 dataGridview.Columns.Add(btn);
-                btn.HeaderText = "جزییات";
-                btn.Text = "نمایش جزییات";
+                btn.HeaderText = "اطلاعات کلی";
+                btn.Text = "نمایش کلی";
                 btn.Name = "detailBtn";
 
                 DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
                 dataGridview.Columns.Add(btn2);
-                btn2.HeaderText = "اصلاحیه";
-                btn2.Text = "نمایش اصلاحیه ها";
+                btn2.HeaderText = "نسخه";
+                btn2.Text = "نمایش جزییات";
                 btn2.Name = "editionBtn";
 
 
@@ -4562,6 +4562,8 @@ namespace ProposalReportingSystem
                 dataGridview.Columns["persianTitle"].DisplayIndex = 3;
                 dataGridview.Columns["persianTitle"].Frozen = true;
 
+
+
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
                 dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
                 dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
@@ -4577,7 +4579,8 @@ namespace ProposalReportingSystem
                 dataGridview.Columns["status"].HeaderText = "وضعیت";
                 dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
                 dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
-                dataGridview.Columns["edition"].HeaderText = "شماره اصلاحیه";
+                dataGridview.Columns["edition"].HeaderText = "شماره نسخه";
+
 
                 dataGridview.Columns["startDate"].Visible = false;
                 dataGridview.Columns["employer"].Visible = false;
