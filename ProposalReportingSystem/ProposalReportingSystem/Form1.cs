@@ -4990,6 +4990,7 @@ namespace ProposalReportingSystem
                         proposal.PropertyType = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
                         proposal.RegisterType = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                         proposal.Employer = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = 0;
                         proposal.Value = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
                         proposal.Status = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
@@ -5099,6 +5100,7 @@ namespace ProposalReportingSystem
                         proposal.PropertyType = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
                         proposal.RegisterType = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                         proposal.Employer = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
                         proposal.Value = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
                         proposal.Status = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
@@ -6243,7 +6245,6 @@ namespace ProposalReportingSystem
 
         private void addProposalShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
             //addProposalShowDgv.Columns[e.Column.Index].SortMode = DataGridViewColumnSortMode.NotSortable;
             try
                 {
@@ -6268,6 +6269,7 @@ namespace ProposalReportingSystem
                             proposal.RegisterType = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                             proposal.Employer = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
                             proposal.Value = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                            proposal.Edition = 0;
                             proposal.Status = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                             proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                             proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
@@ -6343,6 +6345,7 @@ namespace ProposalReportingSystem
                             proposal.RegisterType = addProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                             proposal.Employer = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
                             proposal.Value = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                            proposal.Edition = int.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
                             proposal.Status = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                             proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                             proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
@@ -6368,7 +6371,6 @@ namespace ProposalReportingSystem
                 {
                     if (e.ColumnIndex == 18)
                     {
-
                         Proposal proposal = new Proposal();
 
                         proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
@@ -6384,6 +6386,7 @@ namespace ProposalReportingSystem
                         proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
                         proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                         proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = 0;
                         proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
                         proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
@@ -6441,6 +6444,7 @@ namespace ProposalReportingSystem
                         proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
                         proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
                         proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = int.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
                         proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
                         proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                         proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();

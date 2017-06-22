@@ -190,10 +190,10 @@
             // 
             this.detailRecieverGradeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRecieverGradeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRecieverGradeLbl.Location = new System.Drawing.Point(386, 611);
+            this.detailRecieverGradeLbl.Location = new System.Drawing.Point(381, 610);
             this.detailRecieverGradeLbl.Name = "detailRecieverGradeLbl";
             this.detailRecieverGradeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverGradeLbl.Size = new System.Drawing.Size(124, 30);
+            this.detailRecieverGradeLbl.Size = new System.Drawing.Size(141, 30);
             this.detailRecieverGradeLbl.TabIndex = 44;
             this.detailRecieverGradeLbl.Text = "سمت گیرنده نامه";
             this.detailRecieverGradeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,7 +202,7 @@
             // 
             this.detailSenderGradeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderGradeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderGradeLbl.Location = new System.Drawing.Point(369, 654);
+            this.detailSenderGradeLbl.Location = new System.Drawing.Point(381, 653);
             this.detailSenderGradeLbl.Name = "detailSenderGradeLbl";
             this.detailSenderGradeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailSenderGradeLbl.Size = new System.Drawing.Size(145, 30);
@@ -241,10 +241,10 @@
             // 
             this.detailSenderNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderNameLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderNameLbl.Location = new System.Drawing.Point(834, 652);
+            this.detailSenderNameLbl.Location = new System.Drawing.Point(821, 653);
             this.detailSenderNameLbl.Name = "detailSenderNameLbl";
             this.detailSenderNameLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderNameLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailSenderNameLbl.Size = new System.Drawing.Size(118, 30);
             this.detailSenderNameLbl.TabIndex = 39;
             this.detailSenderNameLbl.Text = "فرستنده نامه";
             this.detailSenderNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,10 +253,10 @@
             // 
             this.detailRecieverNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRecieverNameLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRecieverNameLbl.Location = new System.Drawing.Point(833, 607);
+            this.detailRecieverNameLbl.Location = new System.Drawing.Point(820, 608);
             this.detailRecieverNameLbl.Name = "detailRecieverNameLbl";
             this.detailRecieverNameLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverNameLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailRecieverNameLbl.Size = new System.Drawing.Size(118, 30);
             this.detailRecieverNameLbl.TabIndex = 38;
             this.detailRecieverNameLbl.Text = "گیرنده نامه";
             this.detailRecieverNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -477,7 +477,7 @@
             // 
             this.detailRegistrantLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRegistrantLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRegistrantLbl.Location = new System.Drawing.Point(797, 550);
+            this.detailRegistrantLbl.Location = new System.Drawing.Point(813, 551);
             this.detailRegistrantLbl.Name = "detailRegistrantLbl";
             this.detailRegistrantLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailRegistrantLbl.Size = new System.Drawing.Size(126, 58);
@@ -562,22 +562,22 @@
             // 
             this.detailValueLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailValueLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailValueLbl.Location = new System.Drawing.Point(532, 511);
+            this.detailValueLbl.Location = new System.Drawing.Point(532, 517);
             this.detailValueLbl.Name = "detailValueLbl";
             this.detailValueLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailValueLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailValueLbl.Size = new System.Drawing.Size(114, 30);
             this.detailValueLbl.TabIndex = 24;
-            this.detailValueLbl.Text = "مبلغ";
+            this.detailValueLbl.Text = "مبلغ (ریال)";
             this.detailValueLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // detailOrganizationLbl
             // 
             this.detailOrganizationLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailOrganizationLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailOrganizationLbl.Location = new System.Drawing.Point(834, 521);
+            this.detailOrganizationLbl.Location = new System.Drawing.Point(821, 522);
             this.detailOrganizationLbl.Name = "detailOrganizationLbl";
             this.detailOrganizationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailOrganizationLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailOrganizationLbl.Size = new System.Drawing.Size(118, 30);
             this.detailOrganizationLbl.TabIndex = 22;
             this.detailOrganizationLbl.Text = "سازمان کارفرما";
             this.detailOrganizationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -623,10 +623,10 @@
             // 
             this.detailRegisterTypeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRegisterTypeLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRegisterTypeLbl.Location = new System.Drawing.Point(532, 470);
+            this.detailRegisterTypeLbl.Location = new System.Drawing.Point(532, 476);
             this.detailRegisterTypeLbl.Name = "detailRegisterTypeLbl";
             this.detailRegisterTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegisterTypeLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailRegisterTypeLbl.Size = new System.Drawing.Size(114, 30);
             this.detailRegisterTypeLbl.TabIndex = 18;
             this.detailRegisterTypeLbl.Text = "نوع ثبت";
             this.detailRegisterTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -635,10 +635,10 @@
             // 
             this.detailPropertyLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailPropertyLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailPropertyLbl.Location = new System.Drawing.Point(834, 476);
+            this.detailPropertyLbl.Location = new System.Drawing.Point(821, 477);
             this.detailPropertyLbl.Name = "detailPropertyLbl";
             this.detailPropertyLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPropertyLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailPropertyLbl.Size = new System.Drawing.Size(118, 30);
             this.detailPropertyLbl.TabIndex = 16;
             this.detailPropertyLbl.Text = "خاصیت";
             this.detailPropertyLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -684,22 +684,22 @@
             // 
             this.detailDurationLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailDurationLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailDurationLbl.Location = new System.Drawing.Point(532, 427);
+            this.detailDurationLbl.Location = new System.Drawing.Point(532, 433);
             this.detailDurationLbl.Name = "detailDurationLbl";
             this.detailDurationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailDurationLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailDurationLbl.Size = new System.Drawing.Size(114, 30);
             this.detailDurationLbl.TabIndex = 12;
-            this.detailDurationLbl.Text = "مدت زمان";
+            this.detailDurationLbl.Text = "مدت زمان (ماه)";
             this.detailDurationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // detailStartDateLbl
             // 
             this.detailStartDateLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailStartDateLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailStartDateLbl.Location = new System.Drawing.Point(834, 429);
+            this.detailStartDateLbl.Location = new System.Drawing.Point(821, 430);
             this.detailStartDateLbl.Name = "detailStartDateLbl";
             this.detailStartDateLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStartDateLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailStartDateLbl.Size = new System.Drawing.Size(118, 30);
             this.detailStartDateLbl.TabIndex = 10;
             this.detailStartDateLbl.Text = "تاریخ ارسال";
             this.detailStartDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -735,10 +735,10 @@
             // 
             this.detailCoExecutorLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailCoExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailCoExecutorLbl.Location = new System.Drawing.Point(833, 363);
+            this.detailCoExecutorLbl.Location = new System.Drawing.Point(820, 364);
             this.detailCoExecutorLbl.Name = "detailCoExecutorLbl";
             this.detailCoExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailCoExecutorLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailCoExecutorLbl.Size = new System.Drawing.Size(118, 30);
             this.detailCoExecutorLbl.TabIndex = 8;
             this.detailCoExecutorLbl.Text = "همکاران مجری";
             this.detailCoExecutorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -774,10 +774,10 @@
             // 
             this.detailExecutor2Lbl.BackColor = System.Drawing.Color.Transparent;
             this.detailExecutor2Lbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailExecutor2Lbl.Location = new System.Drawing.Point(833, 292);
+            this.detailExecutor2Lbl.Location = new System.Drawing.Point(820, 293);
             this.detailExecutor2Lbl.Name = "detailExecutor2Lbl";
             this.detailExecutor2Lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailExecutor2Lbl.Size = new System.Drawing.Size(89, 30);
+            this.detailExecutor2Lbl.Size = new System.Drawing.Size(118, 30);
             this.detailExecutor2Lbl.TabIndex = 6;
             this.detailExecutor2Lbl.Text = "مجریان همکار";
             this.detailExecutor2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -866,10 +866,10 @@
             // 
             this.detailKeywordLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailKeywordLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailKeywordLbl.Location = new System.Drawing.Point(833, 178);
+            this.detailKeywordLbl.Location = new System.Drawing.Point(820, 179);
             this.detailKeywordLbl.Name = "detailKeywordLbl";
             this.detailKeywordLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailKeywordLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailKeywordLbl.Size = new System.Drawing.Size(118, 30);
             this.detailKeywordLbl.TabIndex = 4;
             this.detailKeywordLbl.Text = "کلمات کلیدی";
             this.detailKeywordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -878,10 +878,10 @@
             // 
             this.detailLatinTitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailLatinTitleLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailLatinTitleLbl.Location = new System.Drawing.Point(833, 106);
+            this.detailLatinTitleLbl.Location = new System.Drawing.Point(820, 107);
             this.detailLatinTitleLbl.Name = "detailLatinTitleLbl";
             this.detailLatinTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailLatinTitleLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailLatinTitleLbl.Size = new System.Drawing.Size(118, 30);
             this.detailLatinTitleLbl.TabIndex = 2;
             this.detailLatinTitleLbl.Text = "عنوان لاتین";
             this.detailLatinTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -890,10 +890,10 @@
             // 
             this.detailPersianTitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailPersianTitleLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailPersianTitleLbl.Location = new System.Drawing.Point(833, 32);
+            this.detailPersianTitleLbl.Location = new System.Drawing.Point(820, 33);
             this.detailPersianTitleLbl.Name = "detailPersianTitleLbl";
             this.detailPersianTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPersianTitleLbl.Size = new System.Drawing.Size(89, 30);
+            this.detailPersianTitleLbl.Size = new System.Drawing.Size(118, 30);
             this.detailPersianTitleLbl.TabIndex = 0;
             this.detailPersianTitleLbl.Text = "عنوان فارسی";
             this.detailPersianTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -902,7 +902,7 @@
             // 
             this.detailExecutorLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailExecutorLbl.Location = new System.Drawing.Point(797, 234);
+            this.detailExecutorLbl.Location = new System.Drawing.Point(813, 235);
             this.detailExecutorLbl.Name = "detailExecutorLbl";
             this.detailExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailExecutorLbl.Size = new System.Drawing.Size(126, 58);

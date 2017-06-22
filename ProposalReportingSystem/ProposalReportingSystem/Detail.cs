@@ -30,7 +30,6 @@ namespace ProposalReportingSystem
             prop = proposal;
 
 
-            //MessageBox.Show(prop.RegisterType);
             this.loginUserNCode = loginUserNCode;
             dbh = new DataBaseHandler(/*this.loginUserNCode*/);
 
@@ -42,6 +41,7 @@ namespace ProposalReportingSystem
             detailExecutor2Txtbx.Text = proposal.Executor2;
             detailCoExecutorTxtbx.Text = proposal.CoExecutor;
 
+            detailEditionNumberTxtbx.Text = proposal.Edition.ToString();
             detailStartDateTxtbx.Text = proposal.StartDate;
             detailPropertyTxtbx.Text = proposal.PropertyType;
             detailOrganizationTxtbx.Text = proposal.Employer.ToString();
