@@ -2174,6 +2174,7 @@ namespace ProposalReportingSystem
         {
             if (appSettingProcedureTypeTxtbx.Enabled == true)
             {
+                
                 appSettingEditBtn.Enabled = true;
                 appSettingDeleteBtn.Enabled = true;
                 try
@@ -2609,7 +2610,7 @@ namespace ProposalReportingSystem
         private void appSettingBackBtn_Click(object sender, EventArgs e)
         {
             appSettingBackBtn.Enabled = false;
-
+            appSettingEdegreeRbtn.Enabled = true;
             appSettingProcedureTypeRbtn.Enabled = true;
             appSettingPropertyRbtn.Enabled = true;
             appSettingFacultyRbtn.Enabled = true;
