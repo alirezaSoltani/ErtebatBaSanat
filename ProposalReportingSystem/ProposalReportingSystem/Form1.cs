@@ -1667,6 +1667,9 @@ namespace ProposalReportingSystem
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
 
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
+
             appSettingPropertyTxtbx.Clear();
             appSettingFacultyTxtbx.Clear();
             appSettingRegTypeTxtbx.Clear();
@@ -1694,6 +1697,9 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
+
+            appSettingEdegreeTxtbx.Enabled = false;
+            appSettingEdegreeTxtbx.Clear();
 
             appSettingProcedureTypeTxtbx.Clear();
             appSettingFacultyTxtbx.Clear();
@@ -2574,7 +2580,7 @@ namespace ProposalReportingSystem
             manageTeacherExecutorTelTxtbx.Clear();
             manageTeacherExecutorEmailTxtbx.Clear();
             manageTeacherExecutorMobileTxtbx.Clear();
-
+            manageTeacherExecutorTel2Txtbx.Clear();
             manageTeacherShowDgv.DataSource = null;
             manageTeacherEditBtn.Enabled = false;
             manageTeacherDeleteBtn.Enabled = false;
@@ -6913,6 +6919,7 @@ namespace ProposalReportingSystem
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
             }
         }
+
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)
         {
