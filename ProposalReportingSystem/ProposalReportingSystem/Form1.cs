@@ -965,7 +965,7 @@ namespace ProposalReportingSystem
                     addProposalKeywordsTxtbx.Focus();
                 }
 
-               
+
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
                 {
                     //PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
@@ -1333,51 +1333,53 @@ namespace ProposalReportingSystem
                     Alert alert = new Alert(context, "darkred", 5);
                     addProposalStatusCb.Focus();
                 }
-
-
-
-                Proposal proposal = new Proposal();
-                proposal.PersianTitle = addProposalPersianTitleTxtbx.Text;
-                proposal.EngTitle = addProposalEnglishTitleTxtbx.Text;
-                proposal.KeyWord = addProposalKeywordsTxtbx.Text;
-                proposal.CoExecutor = addProposalCoexecutorTxtbx.Text;
-                proposal.Executor2 = addProposalExecutor2Txtbx.Text;
-                proposal.Duration = int.Parse(addProposalDurationTxtbx.Text);
-                proposal.ProcedureType = addProposalProcedureTypeCb.Text;
-                proposal.PropertyType = addProposalPropertyTypeCb.Text;
-                proposal.ProposalType = addProposalProposalTypeCb.Text;
-                proposal.Status = addProposalStatusCb.Text;
-                proposal.RegisterType = addProposalRegisterTypeCb.Text;
-                proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
-                proposal.Value = long.Parse(addProposalValueTxtbx.Text);
-                proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
-                //INITIALIZE STARTDATE OF PROPOSAL
-                string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
-                if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
-                {
-                    temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
-                }
                 else
                 {
-                    temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
-                }
-
-                if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
-                {
-                    temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
-                }
-                else
-                {
-                    temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
-                }
-                //INITIALIZE STARTDATE OF PROPOSAL
-                proposal.StartDate = temp;
-                proposal.Registrant = loginUser.U_NCode;
-                proposal.Index = editionProposalIndex;
 
 
-                dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
-                dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = addProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = addProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = addProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = addProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = addProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(addProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = addProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = addProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = addProposalProposalTypeCb.Text;
+                    proposal.Status = addProposalStatusCb.Text;
+                    proposal.RegisterType = addProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(addProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                    }
+
+                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    {
+                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    else
+                    {
+                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                    }
+                    //INITIALIZE STARTDATE OF PROPOSAL
+                    proposal.StartDate = temp;
+                    proposal.Registrant = loginUser.U_NCode;
+                    proposal.Index = editionProposalIndex;
+
+
+                    dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                    dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
+                }
             }
         }
 
@@ -4307,9 +4309,13 @@ namespace ProposalReportingSystem
 
         private void addProposalShowBtn_Click(object sender, EventArgs e)
         {
+
             addProposalShowDgv.Columns.Clear();
             addProposalShowDgv.DataSource = null;
-            
+            if(addProposalIsWatchingEdition)
+            {
+                addProposalClearBtn.PerformClick();
+            }
             TotalPage =  dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
             
 
@@ -5003,6 +5009,31 @@ namespace ProposalReportingSystem
 
                         proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
 
+                        ////////
+                        currentSelectedIndex = editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString();
+                        editProposalPersianTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        editProposalEnglishTitleTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
+                        editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        editProposalPropertyTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        editProposalRegisterTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        editProposalOrganizationNumberCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString();
+                        editProposalValueTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
+                        editProposalStatusCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        editProposalFileLinkLbl.Text = editProposalCurrentFileName;
+                        editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
+                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+
+
+                        editProposalRegisterBtn.Enabled = true;
+                        editProposalDeleteBtn.Enabled = true;
+                        ////////
 
                         dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         editProposalShowDgv.Columns["editionBtn"].Visible = false;
@@ -5203,6 +5234,10 @@ namespace ProposalReportingSystem
         {
             searchProposalShowDgv.Columns.Clear();
             //addProposalShowDgv.DataSource = null;
+            if(searchProposalIsWatchingEdition)
+            {
+                searchProposalClearBtn.PerformClick();
+            }
             TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
 
 
@@ -5380,6 +5415,10 @@ namespace ProposalReportingSystem
             if(loginUser.U_NCode == 98765)
             {
                 editProposalShowDgv.Columns.Clear();
+                if(manageProposalIsWatchingEdition)
+                {
+                    editProposalClearBtn.PerformClick();
+                }
                 TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
 
 
@@ -5402,6 +5441,10 @@ namespace ProposalReportingSystem
             else
             {
                 editProposalShowDgv.Columns.Clear();
+                if (manageProposalIsWatchingEdition)
+                {
+                    editProposalClearBtn.PerformClick();
+                }
                 //addProposalShowDgv.DataSource = null;
                 TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "'");
 

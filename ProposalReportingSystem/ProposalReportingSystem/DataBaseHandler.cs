@@ -155,23 +155,34 @@ namespace ProposalReportingSystem
                     popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
                     b = false;
-                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    //popup.ShowDialog();
-                    string context = "خطا در برقراری ارتباط با سرور.";
-                    Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
                         transaction.Rollback();
-                        DeleteFile(_inputParameter.FileName);
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
                     }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        MessageBox.Show(e.Message);
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+
                 }
 
                 conn.Close();
@@ -181,7 +192,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -290,7 +301,7 @@ namespace ProposalReportingSystem
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -309,7 +320,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -387,7 +398,7 @@ namespace ProposalReportingSystem
                 catch (Exception e)
                 {
                     
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -407,7 +418,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -509,7 +520,7 @@ namespace ProposalReportingSystem
                 {
                     //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
                     //popup.ShowDialog();
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -530,7 +541,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -613,7 +624,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -633,7 +644,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -705,7 +716,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -725,7 +736,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -796,7 +807,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -816,7 +827,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -876,7 +887,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -896,7 +907,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -965,7 +976,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -985,7 +996,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1032,7 +1043,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -1049,7 +1060,7 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                string context = "خطا در برقراری ارتباط با سرور.";
+                string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
             }
         }
@@ -1115,7 +1126,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -1135,7 +1146,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1201,7 +1212,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -1222,7 +1233,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1280,7 +1291,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -1297,7 +1308,7 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                string context = "خطا در برقراری ارتباط با سرور.";
+                string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
             }
         }
@@ -1349,7 +1360,7 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    string context = "خطا در برقراری ارتباط با سرور.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                     try
                     {
@@ -1369,7 +1380,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1553,7 +1564,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -1577,7 +1588,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1635,7 +1646,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -1659,7 +1670,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1751,7 +1762,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -1775,7 +1786,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1839,7 +1850,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -1864,7 +1875,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -1922,7 +1933,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -1946,7 +1957,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2036,7 +2047,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2060,7 +2071,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2126,7 +2137,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2150,7 +2161,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2207,7 +2218,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2231,7 +2242,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2326,7 +2337,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2350,7 +2361,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2418,7 +2429,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2442,7 +2453,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2501,7 +2512,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2525,7 +2536,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2620,7 +2631,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2644,7 +2655,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2710,7 +2721,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2734,7 +2745,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2792,7 +2803,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2816,7 +2827,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -2915,7 +2926,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -2939,7 +2950,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3008,7 +3019,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3032,7 +3043,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3090,7 +3101,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3114,7 +3125,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3205,7 +3216,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3229,7 +3240,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3296,7 +3307,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3320,7 +3331,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3379,7 +3390,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3403,7 +3414,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3496,7 +3507,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3520,7 +3531,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3586,7 +3597,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3610,7 +3621,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3668,7 +3679,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3692,7 +3703,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3782,7 +3793,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3806,7 +3817,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3898,7 +3909,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -3922,7 +3933,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -3980,7 +3991,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -4004,7 +4015,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -4062,7 +4073,7 @@ namespace ProposalReportingSystem
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
-                        string context = "خطا در برقراری ارتباط.";
+                        string context = "خطا در برقراری ارتباط با سرور";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
@@ -4086,7 +4097,7 @@ namespace ProposalReportingSystem
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
-                    string context = "خطا در برقراری ارتباط.";
+                    string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
@@ -4629,14 +4640,14 @@ namespace ProposalReportingSystem
             }
             catch
             {
-                //MessageBox.Show("خطا در برقراری ارتباط");
+                //MessageBox.Show("خطا در برقراری ارتباط با سرور");
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                    //MessageBox.Show("خطا در برقراری ارتباط");
+                    //MessageBox.Show("خطا در برقراری ارتباط با سرور");
                 }
             }
 
@@ -4676,14 +4687,14 @@ namespace ProposalReportingSystem
             }
             catch
             {
-               // MessageBox.Show("خطا در برقراری ارتباط");
+               // MessageBox.Show("خطا در برقراری ارتباط با سرور");
                 try
                 {
                     transaction.Rollback();
                 }
                 catch
                 {
-                   // MessageBox.Show("خطا در برقراری ارتباط");
+                   // MessageBox.Show("خطا در برقراری ارتباط با سرور");
                 }
             }
 
