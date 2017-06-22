@@ -229,81 +229,81 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(addProposalNavigationLastPageBtn, 440, 10, 85, 40);
 
-            gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 60, 25);
+            gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 70, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
             gl.setSize(addProposalSearchBtn, 550, 10, 65, 30);
 
-            gl.setSize(addProposalExecutorFNameLbl, 720, 50, 60, 25);
+            gl.setSize(addProposalExecutorFNameLbl, 720, 50, 70, 25);
             gl.setSize(addProposalExecutorFNameTxtbx, 550, 50, 160, 25);
 
-            gl.setSize(addProposalExecutorLNameLbl, 720, 90, 60, 25);
+            gl.setSize(addProposalExecutorLNameLbl, 720, 90, 70, 25);
             gl.setSize(addProposalExecutorLNameTxtbx, 550, 90, 160, 25);
 
-            gl.setSize(addProposalExecutorFacultyLbl, 720, 130, 60, 25);
+            gl.setSize(addProposalExecutorFacultyLbl, 720, 130, 70, 25);
             gl.setSize(addProposalExecutorFacultyCb, 550, 130, 160, 25);
 
-            gl.setSize(addProposalExecutorEGroupLbl, 720, 170, 60, 25);
+            gl.setSize(addProposalExecutorEGroupLbl, 720, 170, 70, 25);
             gl.setSize(addProposalExecutorEGroupCb, 550, 170, 160, 25);
 
-            gl.setSize(addProposalExecutorEDegLbl, 720, 210, 60, 25);
+            gl.setSize(addProposalExecutorEDegLbl, 720, 210, 70, 25);
             gl.setSize(addProposalExecutorEDegCb, 550, 210, 160, 25);
 
-            gl.setSize(addProposalExecutorEmailLbl, 720, 250, 60, 25);
+            gl.setSize(addProposalExecutorEmailLbl, 720, 250, 70, 25);
             gl.setSize(addProposalExecutorEmailTxtbx, 550, 250, 160, 25);
 
-            gl.setSize(addProposalExecutorMobileLbl, 720, 290, 60, 25);
+            gl.setSize(addProposalExecutorMobileLbl, 720, 290, 70, 25);
             gl.setSize(addProposalExecutorMobileTxtbx, 550, 290, 160, 25);
 
-            gl.setSize(addProposalExecutorTel1Lbl, 720, 330, 60, 25);
+            gl.setSize(addProposalExecutorTel1Lbl, 720, 330, 70, 25);
             gl.setSize(addProposalExecutorTel1Txtbx, 550, 330, 160, 25);
 
-            gl.setSize(addProposalExecutorTel2Lbl, 720, 370, 60, 25);
+            gl.setSize(addProposalExecutorTel2Lbl, 720, 370, 70, 25);
             gl.setSize(addProposalExecutorTel2Txtbx, 550, 370, 160, 25);
 
-            gl.setSize(addProposalPersianTitleLbl, 460, 10, 60, 25);
+            gl.setSize(addProposalPersianTitleLbl, 460, 10, 70, 25);
             gl.setSize(addProposalPersianTitleTxtbx, 290, 10, 160, 75);
 
-            gl.setSize(addProposalEnglishTitleLbl, 460, 100, 60, 25);
+            gl.setSize(addProposalEnglishTitleLbl, 460, 100, 70, 25);
             gl.setSize(addProposalEnglishTitleTxtbx, 290, 100, 160, 75);
 
-            gl.setSize(addProposalKeywordsLbl, 460, 190, 60, 25);
+            gl.setSize(addProposalKeywordsLbl, 460, 190, 70, 25);
             gl.setSize(addProposalKeywordsTxtbx, 290, 190, 160, 45);
 
-            gl.setSize(addProposalExecutor2Lbl, 460, 250, 60, 25);
+            gl.setSize(addProposalExecutor2Lbl, 460, 250, 70, 25);
             gl.setSize(addProposalExecutor2Txtbx, 290, 250, 160, 45);
 
-            gl.setSize(addProposalCoexecutorLbl, 460, 310, 60, 25);
+            gl.setSize(addProposalCoexecutorLbl, 460, 310, 70, 25);
             gl.setSize(addProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
-            gl.setSize(addProposalStartdateLbl, 460, 370, 60, 25);
+            gl.setSize(addProposalStartdateLbl, 460, 370, 70, 25);
             gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
 
-            gl.setSize(addProposalDurationLbl, 200, 10, 60, 25);
+            gl.setSize(addProposalDurationLbl, 200, 10, 80, 25);
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
 
-            gl.setSize(addProposalProcedureTypeLbl, 200, 50, 60, 25);
+            gl.setSize(addProposalProcedureTypeLbl, 200, 50, 80, 25);
             gl.setSize(addProposalProcedureTypeCb, 30, 50, 160, 25);
 
-            gl.setSize(addProposalPropertyTypeLbl, 200, 90, 60, 25);
+            gl.setSize(addProposalPropertyTypeLbl, 200, 90, 80, 25);
             gl.setSize(addProposalPropertyTypeCb, 30, 90, 160, 25);
 
-            gl.setSize(addProposalRegisterTypeLbl, 200, 130, 60, 25);
+            gl.setSize(addProposalRegisterTypeLbl, 200, 130, 80, 25);
             gl.setSize(addProposalRegisterTypeCb, 30, 130, 160, 25);
 
-            gl.setSize(addProposalTypeLbl, 200, 170, 60, 25);
+            gl.setSize(addProposalTypeLbl, 200, 170, 80, 25);
             gl.setSize(addProposalProposalTypeCb, 30, 170, 160, 25);
 
-            gl.setSize(addProposalOrganizationLbl, 200, 210, 60, 25);
+            gl.setSize(addProposalOrganizationLbl, 200, 210, 80, 25);
             gl.setSize(addProposalOrganizationNameCb, 30, 210, 120, 25);
             gl.setSize(addProposalOrganizationNumberCb, 155, 210, 35, 25);
 
-            gl.setSize(addProposalValueLbl, 200, 250, 60, 25);
+            gl.setSize(addProposalValueLbl, 200, 250, 80, 25);
             gl.setSize(addProposalValueTxtbx, 30, 250, 160, 25);
 
-            gl.setSize(addProposalStatusLbl, 200, 290, 60, 25);
+            gl.setSize(addProposalStatusLbl, 200, 290, 80, 25);
             gl.setSize(addProposalStatusCb, 30, 290, 160, 25);
 
-            gl.setSize(addProposalFileLbl, 200, 330, 60, 25);
+            gl.setSize(addProposalFileLbl, 200, 330, 80, 25);
             gl.setSize(addProposalFileLinkLbl, 30, 330, 160, 25);
 
             gl.setSize(addProposalRegisterBtn, 30, 370, 80, 30);
@@ -631,7 +631,7 @@ namespace ProposalReportingSystem
 
             gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
             gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
-            gl.setSize(appSettingCoTxtbx, 55, 60, 170, 25);
+            gl.setSize(appSettingCoTxtbx, 55, 60, 170, 35);
 
             gl.setSize(appSettingRegTypeLbl, 440, 20, 75, 35);
             gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
@@ -659,11 +659,11 @@ namespace ProposalReportingSystem
 
             gl.setSize(appSettingEgroupLbl, 440, 250, 75, 35);
             gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
-            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 25);
+            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 35);
 
             gl.setSize(appSettingEdegreeLbl, 145, 250, 75, 35);
             gl.setSize(appSettingEdegreeRbtn, 218, 250, 18, 23);
-            gl.setSize(appSettingEdegreeTxtbx, 55, 290, 170, 25);
+            gl.setSize(appSettingEdegreeTxtbx, 55, 290, 170, 35);
 
             gl.setSize(appSettingAddBtn, 55, 365, 80, 30);
             gl.setSize(appSettingEditBtn, 145, 365, 80, 30);
