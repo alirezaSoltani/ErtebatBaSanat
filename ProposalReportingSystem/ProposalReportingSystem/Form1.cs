@@ -1120,10 +1120,13 @@ namespace ProposalReportingSystem
 
                     //CurrentPageIndex = 1;
                     //addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-                    dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                    bool b = dbh.AddProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
                     dbh.addProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE persianTitle = '" + addProposalPersianTitleTxtbx.Text + "'";
-                    addProposalClearBtn.PerformClick();
-                    dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                    if (b == true)
+                    {
+                        addProposalClearBtn.PerformClick();
+                        dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                    }
 
                 }
             }
@@ -4305,7 +4308,8 @@ namespace ProposalReportingSystem
         private void addProposalShowBtn_Click(object sender, EventArgs e)
         {
             addProposalShowDgv.Columns.Clear();
-            //addProposalShowDgv.DataSource = null;
+            addProposalShowDgv.DataSource = null;
+            
             TotalPage =  dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
             
 
@@ -4973,7 +4977,7 @@ namespace ProposalReportingSystem
                         proposal.KeyWord = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         proposal.Executor2 = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         proposal.CoExecutor = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                         proposal.Duration = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                         proposal.ProcedureType = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         proposal.ProposalType = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -4985,6 +4989,8 @@ namespace ProposalReportingSystem
                         proposal.FileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         proposal.Executor = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+                        proposal.RegistrantName = editProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
 
                         Detail detail = new Detail(proposal, loginUser.U_NCode);
@@ -5038,6 +5044,7 @@ namespace ProposalReportingSystem
                         editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                    
 
                         editProposalRegisterBtn.Enabled = true;
                         editProposalDeleteBtn.Enabled = true;
@@ -5054,7 +5061,7 @@ namespace ProposalReportingSystem
                         proposal.KeyWord = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         proposal.Executor2 = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         proposal.CoExecutor = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.StartDate = editProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                         proposal.Duration = Int32.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                         proposal.ProcedureType = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         proposal.ProposalType = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -5067,6 +5074,8 @@ namespace ProposalReportingSystem
                         proposal.Executor = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Edition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
                         proposal.Registrant = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+                        proposal.RegistrantName = editProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
 
                         Detail detail = new Detail(proposal, loginUser.U_NCode);
@@ -6168,6 +6177,7 @@ namespace ProposalReportingSystem
                 if (personalSettingNewPasswordTxtbx.Text == personalSettingRepeatPasswordTxtbx.Text)
                 {
                     dbh.changePassword(loginUser.U_NCode, personalSettingNewPasswordTxtbx.Text, myDateTime.ToString());
+                    loginUser.U_Password = personalSettingNewPasswordTxtbx.Text;
                     personalSettingClearBtn.PerformClick();
                     PopUp p1 = new PopUp("تغییر رمز عبور", "رمز عبور با موفقیت تغییر یافت", "تایید", "", "", "success");
                     p1.ShowDialog();
@@ -6185,7 +6195,7 @@ namespace ProposalReportingSystem
                 p.ShowDialog();
                 personalSettingOldPasswordTxtbx.Focus();
             }
-            loginUser.U_Password = personalSettingNewPasswordTxtbx.Text;
+            
         }
 
         private void addProposalShowDgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -6207,7 +6217,7 @@ namespace ProposalReportingSystem
                             proposal.KeyWord = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                             proposal.Executor2 = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                             proposal.CoExecutor = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                            proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                            proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                             proposal.Duration = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                             proposal.ProcedureType = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                             proposal.ProposalType = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -6219,7 +6229,8 @@ namespace ProposalReportingSystem
                             proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                             proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                             proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
-
+                            proposal.RegistrantName =addProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                            proposal.TeacherFullName = addProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
                             Detail detail = new Detail(proposal, loginUser.U_NCode);
                             detail.ShowDialog();
 
@@ -6246,6 +6257,7 @@ namespace ProposalReportingSystem
                             addProposalStatusCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                             addProposalExecutorNcodeTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                             addProposalStartdateTimeInput.GeoDate = DateTime.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                           
 
                             dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                             addProposalShowDgv.Columns["editionBtn"].Visible = false;
@@ -6280,7 +6292,7 @@ namespace ProposalReportingSystem
                             proposal.KeyWord = addProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                             proposal.Executor2 = addProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                             proposal.CoExecutor = addProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                            proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                            proposal.StartDate = addProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                             proposal.Duration = Int32.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                             proposal.ProcedureType = addProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                             proposal.ProposalType = addProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -6292,6 +6304,8 @@ namespace ProposalReportingSystem
                             proposal.FileName = addProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                             proposal.Executor = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                             proposal.Registrant = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+                            proposal.RegistrantName = addProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                            proposal.TeacherFullName = addProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
                             Detail detail = new Detail(proposal, loginUser.U_NCode);
                             detail.ShowDialog();
@@ -6320,7 +6334,7 @@ namespace ProposalReportingSystem
                         proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                         proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                         proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -6332,7 +6346,8 @@ namespace ProposalReportingSystem
                         proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
-
+                        proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
                         Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
                     }
@@ -6376,7 +6391,7 @@ namespace ProposalReportingSystem
                         proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
                         proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
                         proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -6388,7 +6403,8 @@ namespace ProposalReportingSystem
                         proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
                         proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
-
+                        proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
                         Detail detail = new Detail(proposal, loginUser.U_NCode);
                         detail.ShowDialog();
 
@@ -6471,6 +6487,7 @@ namespace ProposalReportingSystem
                 addProposalIsWatchingEdition = false;
                 addProposalShowDgv.Columns.Clear();
                 //addProposalShowDgv.DataSource = null;
+                addProposalClearBtn.PerformClick();
                 TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
                 
                 addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
@@ -6490,6 +6507,7 @@ namespace ProposalReportingSystem
                 addProposalIsWatchingEdition = false;
                 addProposalShowDgv.Columns.Clear();
                 //addProposalShowDgv.DataSource = null;
+                addProposalClearBtn.PerformClick();
                 TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable ");
 
                 addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();

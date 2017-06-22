@@ -29,6 +29,7 @@ namespace ProposalReportingSystem
         private string teacherFullName;
         private string hijriDate;
         private string employerName;
+        private string registrantName;
 
         public long Index
         {
@@ -315,6 +316,19 @@ namespace ProposalReportingSystem
             set
             {
                 employerName = value;
+            }
+        }
+
+        public string RegistrantName
+        {
+            get
+            {
+                return registrantName;
+            }
+
+            set
+            {
+                registrantName = value;
             }
         }
     }

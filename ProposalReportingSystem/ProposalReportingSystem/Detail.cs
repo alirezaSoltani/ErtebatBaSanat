@@ -37,6 +37,7 @@ namespace ProposalReportingSystem
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
             detailLatinTitleTxtbx.Text = proposal.EngTitle;
+            detailExecutorTxtbx.Text = proposal.TeacherFullName;
             detailKeywordTxtbx.Text = proposal.KeyWord;
             detailExecutor2Txtbx.Text = proposal.Executor2;
             detailCoExecutorTxtbx.Text = proposal.CoExecutor;
@@ -53,7 +54,7 @@ namespace ProposalReportingSystem
             detailProposalTypeTxtbx.Text = proposal.ProposalType;
             detailStatusTxtbx.Text = proposal.Status;
 
-            detailRegistrantTxtbx.Text = proposal.Registrant.ToString();
+            detailRegistrantTxtbx.Text = proposal.RegistrantName;
 
 
         }
@@ -93,20 +94,37 @@ namespace ProposalReportingSystem
                     dbh.downloadFile(fileName, saveFileDialog1.FileName);
                     System.Diagnostics.Process.Start(saveFileDialog1.FileName);
 
-                    MessageBox.Show("دانلود شد.");
+                    string context = "فایل پروپوزال در محل مورد نظر ذخیره شد";
+                    Alert alert = new Alert(context, "bluegray", 2);
                 }
                 else
                 {
-                    MessageBox.Show("نام فایل را وارد کنید .");
+                    string context = "نام فایل را وارد کنید ";
+                    Alert alert = new Alert(context, "darkred", 2);
                 }
             }
         }
 
         private void detailPrintBtn_Click(object sender, EventArgs e)
         {
-            if(detailRecieverTxtbx.Text == "")
+            if(detailRecieverNameTxtbx.Text == "")
             {
                 string context = "عنوانی برای گیرنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailRecieverGradeTxtbx.Text == "")
+            {
+                string context = "عنوانی برای سمت گیرنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailSenderNameTxtbx.Text == "")
+            {
+                string context = "عنوانی برای فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailSenderGradeTxtbx.Text == "")
+            {
+                string context = "عنوانی برای سمت فرستنده نامه وارد کنید";
                 Alert alert = new Alert(context, "bluegray", 2);
             }
             /*else if (detailSenderTxtbx.Text == "")
@@ -124,7 +142,8 @@ namespace ProposalReportingSystem
                     detailPrintBtn.Enabled = false;
                     detailPrintBtn.Enabled = true;
 
-                    report.Dictionary.Variables["employer"].Value = detailRecieverTxtbx.Text;
+                    report.Dictionary.Variables["employer"].Value = detailRecieverGradeTxtbx.Text;
+                    report.Dictionary.Variables["recieverName"].Value = detailRecieverNameTxtbx.Text;
                     report.Dictionary.Variables["persianTitle"].Value = prop.PersianTitle.ToString();
                     report.Dictionary.Variables["englishTitle"].Value = prop.EngTitle.ToString();
                     report.Dictionary.Variables["executorName"].Value = "که توسط " + dbh.getExecutorName(prop.Executor) + " عضو محترم هیات علمی دانشکده "
@@ -132,8 +151,8 @@ namespace ProposalReportingSystem
                                                                         + " خواهشمند است دستور فرماييد اقدام مقتضي معمول و از نتيجه امر اين معاونت را مطلع فرمايند  " ;
                     //report.Dictionary.Variables["moderatorName"].Value = detailSenderTxtbx.Text;
                     //report.Dictionary.Variables["moderatorGrade"].Value = detailSenderGradeTxtbx.Text;
-                    report.Dictionary.Variables["moderatorName"].Value = "افشین قنبرزاده";
-                    report.Dictionary.Variables["moderatorGrade"].Value = "رئيس گروه كارآفريني و ارتباط با صنعت دانشگاه شهید چمران اهواز";
+                    report.Dictionary.Variables["moderatorName"].Value = detailSenderNameTxtbx.Text.ToString();
+                    report.Dictionary.Variables["moderatorGrade"].Value = detailSenderGradeTxtbx.Text.ToString();
 
                     try
                     {
