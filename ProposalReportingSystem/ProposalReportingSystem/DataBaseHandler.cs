@@ -1770,6 +1770,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
@@ -2350,6 +2355,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
@@ -2642,6 +2652,11 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
@@ -2939,6 +2954,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
@@ -3227,6 +3247,11 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
@@ -3520,6 +3545,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
@@ -3806,6 +3836,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
@@ -3920,6 +3955,11 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("conflict"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
