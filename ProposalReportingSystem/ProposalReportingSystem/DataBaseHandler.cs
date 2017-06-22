@@ -300,17 +300,29 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
                 conn.Close();
@@ -397,17 +409,29 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -516,21 +540,31 @@ namespace ProposalReportingSystem
                     //string context = "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.";
                     //Alert alert = new Alert(context, "blue", 5);
                 }
-                catch
+                catch (Exception e)
                 {
-                    //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                    //popup.ShowDialog();
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
-                        DeleteFile(_inputParameter.FileName);
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -622,18 +656,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -714,18 +761,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -805,18 +865,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -885,18 +958,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -974,18 +1060,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -1041,18 +1140,31 @@ namespace ProposalReportingSystem
                     transaction.Commit();
 
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -1124,18 +1236,31 @@ namespace ProposalReportingSystem
                     transaction.Commit();
 
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -1210,18 +1335,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch(Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+                   
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+                       
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -1289,18 +1427,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
@@ -1358,18 +1509,31 @@ namespace ProposalReportingSystem
                     popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch
+                catch (Exception e)
                 {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //popup = new PopUp("خطا", "خطا در برقراری ارتباط با سرور", "تایید", "", "", "error");
-                        //popup.ShowDialog();
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
                     }
                 }
 
