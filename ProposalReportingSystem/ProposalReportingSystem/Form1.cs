@@ -3918,10 +3918,10 @@ namespace ProposalReportingSystem
                     editProposalExecutorTel1Txtbx.Enabled = false;
                     editProposalExecutorTel2Txtbx.Enabled = false;
                 }
-                else
-                {
-                    editProposalExecutorNcodeTxtbx.BackColor = Color.White;
-                }
+            }
+            else
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.White;
             }
         }
 
@@ -6891,6 +6891,22 @@ namespace ProposalReportingSystem
             }
             catch
             { }
+        }
+
+        private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            if(editProposalExecutorNcodeTxtbx.Text.Length < 10)
+            {
+                editProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
+            }
+        }
+
+        private void searchProposalExecutorNCodeTxtbx_Leave(object sender, EventArgs e)
+        {
+            if(searchProposalExecutorNCodeTxtbx.Text.Length<10)
+            {
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
+            }
         }
 
         private void menuDetailRb_CheckedChanged(object sender, EventArgs e)

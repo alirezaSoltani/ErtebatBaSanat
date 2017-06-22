@@ -17,17 +17,17 @@ namespace ProposalReportingSystem
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Waiting());
             //Application.Run(new Form1());
-            //try
-            //{
+            try
+            {
                 Application.Run(new Login());
-            //}
-            //catch (ArgumentOutOfRangeException e)
-            //{
-            //    if (e.Message.Contains("'1401'"))
-            //    {
-            //        MessageBox.Show("hi");
-            //    }
-            //}
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                if (e.Message.Contains("'1401'"))
+                {
+                    MessageBox.Show("hi");
+                }
+            }
             //Application.Run(new Toast());
             //Application.Run(new Detail());
 
