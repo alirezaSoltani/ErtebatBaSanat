@@ -44,7 +44,7 @@ namespace ProposalReportingSystem
             detailEditionNumberTxtbx.Text = proposal.Edition.ToString();
             detailStartDateTxtbx.Text = proposal.StartDate;
             detailPropertyTxtbx.Text = proposal.PropertyType;
-            detailOrganizationTxtbx.Text = proposal.Employer.ToString();
+            detailOrganizationTxtbx.Text = dbh.getEmployerName(proposal.Employer);
 
             detailDurationTxtbx.Text = proposal.Duration.ToString();
             detailRegisterTypeTxtbx.Text = proposal.RegisterType;

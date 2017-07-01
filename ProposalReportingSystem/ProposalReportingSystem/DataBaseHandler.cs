@@ -4835,100 +4835,109 @@ namespace ProposalReportingSystem
         {
             int totalPages = 0;
             float temp = 0;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            SqlDataReader reader;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                SqlDataReader reader;
 
 
-                sc.CommandText = query;
-                reader = sc.ExecuteReader();
-                reader.Read();
-                int rowCount = reader.GetInt32(0);
-                reader.Close();
-                totalPages = rowCount / PgSize;
-                temp = (float)rowCount / (float)PgSize;
-                if(temp == totalPages)
-                {
-                    totalPages = totalPages - 1; 
-                }
-                transaction.Commit();
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
 
-            }
-            catch
-            {
-                //MessageBox.Show("خطا در برقراری ارتباط با سرور");
+
                 try
                 {
-                    transaction.Rollback();
+
+
+                    sc.CommandText = query;
+                    reader = sc.ExecuteReader();
+                    reader.Read();
+                    int rowCount = reader.GetInt32(0);
+                    reader.Close();
+                    totalPages = rowCount / PgSize;
+                    temp = (float)rowCount / (float)PgSize;
+                    if (temp == totalPages)
+                    {
+                        totalPages = totalPages - 1;
+                    }
+                    transaction.Commit();
+
                 }
                 catch
                 {
                     //MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+                        //MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    }
                 }
+
+                conn.Close();
             }
-
-            conn.Close();
-
+            catch { }
             return totalPages+1;
         }
 
         public int totalLogPage(string query)
         {
+            
             int totalPages = 0;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            conn.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            SqlDataReader reader;
-
-
-            SqlTransaction transaction;
-            transaction = conn.BeginTransaction("new");
-            sc.Transaction = transaction;
-
-
             try
             {
 
-                sc.CommandText = query;
-                reader = sc.ExecuteReader();
-                reader.Read();
-                int rowCount = reader.GetInt32(0);
-                reader.Close();
-                totalPages = rowCount / 30;
-                transaction.Commit();
 
-            }
-            catch
-            {
-               // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                SqlDataReader reader;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+
                 try
                 {
-                    transaction.Rollback();
+
+                    sc.CommandText = query;
+                    reader = sc.ExecuteReader();
+                    reader.Read();
+                    int rowCount = reader.GetInt32(0);
+                    reader.Close();
+                    totalPages = rowCount / 30;
+                    transaction.Commit();
+
                 }
                 catch
                 {
-                   // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+                        // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    }
                 }
+
+                conn.Close();
             }
-
-            conn.Close();
-
+            catch { }
             return totalPages + 1;
         }
 
@@ -5331,6 +5340,7 @@ namespace ProposalReportingSystem
         //}
         private string MoveFileToDeleted(string fileName)
         {
+
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
             request.Method = WebRequestMethods.Ftp.Rename;
             request.RenameTo = "Deleted/" + fileName;
@@ -5346,59 +5356,74 @@ namespace ProposalReportingSystem
 
         public string getExecutorName(long ncode)
         {
-            string fullName, fname, lname;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT t_FName , t_LName FROM TeacherTable WHERE t_NCode = '" + ncode + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            fname = reader.GetString(0);
-            lname = reader.GetString(1);
-            fullName = fname + " " + lname;
-            conn.Close();
+            string fullName = "";
+            try
+            {
+                string fname, lname;
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT t_FName , t_LName FROM TeacherTable WHERE t_NCode = '" + ncode + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                fname = reader.GetString(0);
+                lname = reader.GetString(1);
+                fullName = fname + " " + lname;
+                conn.Close();
+            }
+            catch { };
             return fullName;
         }
 
         public string getRegistrantName(long ncode)
         {
-            string fullName, fname, lname;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT u_FName , u_LName FROM UsersTable WHERE u_NCode = '" + ncode + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            fname = reader.GetString(0);
-            lname = reader.GetString(1);
-            fullName = fname + " " + lname;
-            conn.Close();
+            string fullName = "";
+            try
+            {
+                string fname, lname;
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT u_FName , u_LName FROM UsersTable WHERE u_NCode = '" + ncode + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                fname = reader.GetString(0);
+                lname = reader.GetString(1);
+                fullName = fname + " " + lname;
+                conn.Close();
+            }
+            catch { }
             return fullName;
         }
 
         public string getEmployerName(long code)
         {
-            string employerName;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT orgName FROM employersTable WHERE [index] = '" + code + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            employerName = reader.GetString(0);
-            conn.Close();
+
+            string employerName="";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT orgName FROM employersTable WHERE [index] = '" + code + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                employerName = reader.GetString(0);
+                conn.Close();
+            }
+            catch { }
             return employerName;
         }
         
@@ -5418,19 +5443,27 @@ namespace ProposalReportingSystem
        
         public string getExecutorFaculty(long ncode)
         {
-            string faculty;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conString;
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT t_Faculty FROM teacherTable WHERE t_NCode = '" + ncode + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            faculty = reader.GetString(0);
-            conn.Close();
+            string faculty= "";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT t_Faculty FROM teacherTable WHERE t_NCode = '" + ncode + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                faculty = reader.GetString(0);
+                conn.Close();
+               
+            }
+            catch
+            {
+
+            }
             return faculty;
         }
 
