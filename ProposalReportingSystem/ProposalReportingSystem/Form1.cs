@@ -15,10 +15,15 @@ namespace ProposalReportingSystem
 {
     public partial class Form1 : Form
     {
-        string connectString = "Data Source= 169.254.92.252;" +
-               "Initial Catalog=rayanpro_EBS;" +
-               "User id=test; " +
-               "Password=HoseinNima1234;";
+        string conString = "Data Source= 169.254.92.252;" +
+                "Initial Catalog=rayanpro_EBS;" +
+                "User id=test; " +
+                "Password=HoseinNima1234;";
+
+        //string conString = "Data Source= 185.159.152.2;" +
+        //       "Initial Catalog=rayanpro_EBS;" +
+        //       "User id=rayanpro_rayan; " +
+        //       "Password=P@hn1395;";
 
         Waiting w;
         private int systemWidth;    //related to setSize
@@ -2900,7 +2905,7 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = connectString;
+                conn.ConnectionString = conString;
                 //    "Data Source= 185.159.152.2;" +
                 //"Initial Catalog=rayanpro_EBS;" +
                 //"User id=rayanpro_rayan; " +
@@ -2989,7 +2994,7 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = connectString;
+                conn.ConnectionString = conString;
                 //    "Data Source= 185.159.152.2;" +
                 //"Initial Catalog=rayanpro_EBS;" +
                 //"User id=rayanpro_rayan; " +
@@ -3866,7 +3871,7 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = connectString;
+                conn.ConnectionString = conString;
                 //    "Data Source= 185.159.152.2;" +
                 //"Initial Catalog=rayanpro_EBS;" +
                 //"User id=rayanpro_rayan; " +

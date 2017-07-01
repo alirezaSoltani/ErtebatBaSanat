@@ -206,7 +206,7 @@ namespace ProposalReportingSystem
                         password = loginPasswordTxtbx.Text;
 
                         SqlConnection conn = new SqlConnection();
-                        //conn2.ConnectionString = "Data Source= 185.159.152.2;" +
+                        //conn.ConnectionString = "Data Source= 185.159.152.2;" +
                         //"Initial Catalog=rayanpro_EBS;" +
                         //"User id=rayanpro_rayan; " +
                         //"Password=P@hn1395;";
