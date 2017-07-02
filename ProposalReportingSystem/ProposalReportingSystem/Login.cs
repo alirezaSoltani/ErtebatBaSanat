@@ -137,8 +137,9 @@ namespace ProposalReportingSystem
         {
             try
             {
-
+               
                 SqlConnection conn2 = new SqlConnection();
+            
                 SqlCommand sc2 = new SqlCommand();
                 //conn2.ConnectionString = "Data Source= 185.159.152.2;" +
                 //"Initial Catalog=rayanpro_EBS;" +
@@ -148,9 +149,10 @@ namespace ProposalReportingSystem
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=test; " +
                 "Password=HoseinNima1234;";
+                
                 sc2.Connection = conn2;
+              
                 conn2.Open();
-
 
                 try
                 {
@@ -194,7 +196,6 @@ namespace ProposalReportingSystem
                         user.CanManageType = 1;
                         user.U_Color = "#D3EFFC";
 
-
                         Form1 mainForm = new Form1(user);
                         this.Hide();
                         mainForm.Show();
@@ -216,6 +217,7 @@ namespace ProposalReportingSystem
                         "Password=HoseinNima1234;";
 
                         SqlCommand sc = new SqlCommand();
+                        sc.CommandTimeout = 5;
                         SqlDataReader reader;
                         sc.CommandText = "SELECT * FROM UsersTable WHERE u_NCode = '" + long.Parse(username) + "' AND u_Password = '" + password + "'";
                         sc.CommandType = CommandType.Text;

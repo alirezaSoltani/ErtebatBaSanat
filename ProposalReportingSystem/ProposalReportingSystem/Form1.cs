@@ -64,7 +64,8 @@ namespace ProposalReportingSystem
         /// <summary>
         /// Current Values
         /// </summary>
-        private string currentSelectedOption ,currentSelectedOption_2, currentSelectedIndex;
+        private string appSettingCurrentSelectedOption ,appSettingCurrentSelectedOption_2, currentSelectedIndex, manageUserCurrentSelectedOption,
+                        manageTeacherCurrentSelectedOption;
         /// <summary>
         /// Current Values
         /// </summary>
@@ -230,7 +231,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(addProposalNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(addProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(addProposalNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(addProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(addProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(addProposalNavigationLastPageBtn, 440, 10, 85, 40);
 
@@ -332,7 +333,7 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(searchProposalNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(searchProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(searchProposalNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(searchProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(searchProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(searchProposalNavigationLastPageBtn, 440, 10, 85, 40);
 
@@ -412,7 +413,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageProposalNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(manageProposalNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(manageProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(manageProposalNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(manageProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(manageProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageProposalNavigationLastPageBtn, 440, 10, 85, 40);
             gl.setSize(buttonX4, 535, 10, 85, 40);
@@ -518,7 +519,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(manageTeacherNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(manageTeacherNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(manageTeacherNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(manageTeacherNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(manageTeacherNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageTeacherNavigationLastPageBtn, 440, 10, 85, 40);
 
@@ -573,7 +574,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(manageUserNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(manageUserNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(manageUserNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(manageUserNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(manageUserNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageUserNavigationLastPageBtn, 440, 10, 85, 40);
 
@@ -594,14 +595,15 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
             gl.setSize(manageUserTellLb, 205, 220, 110, 25);
 
-            gl.setSize(manageUserAddProCb, 155, 25, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 85, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 145, 150, 35);
-            gl.setSize(manageUserManageTeacherCb, 155, 205, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 25, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 85, 150, 35);
-            gl.setSize(manageUserDeleteUserCb, 20, 145, 150, 35);
-            gl.setSize(manageUserManageTypeCb, 20, 205, 150, 35);
+            gl.setSize(manageUserAddProCb, 155, 15, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 75, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 135, 150, 35);
+            gl.setSize(manageUserManageTeacherCb, 155, 195, 150, 35);
+            gl.setSize(manageUserCheckAllCb, 155, 255, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 15, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 75, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 135, 150, 35);
+            gl.setSize(manageUserManageTypeCb, 20, 195, 150, 35);
 
             gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
             gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
@@ -610,27 +612,35 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserShowAllBtn, 430, 360, 80, 30);
 
 
-            
 
 
 
-            
+
+
 
 
 
 
             //********************************************//
             ///////////////////App Setting design//////////
+            gl.setSize(appSettingSenderInfoGp, 20, 15, 826, 100);
             gl.setSize(appSettingPanel, 0, 1, 1000, 930);
-            gl.setSize(appSettingGp, 20, 15, 826, 470);
-            gl.setSize(appSettingShowGp, 20, 495, 826, 400);
-            gl.setSize(appSettingShowDv, 5, 5, 810, 285);
+            gl.setSize(appSettingGp, 20, 125, 826, 400);
+            gl.setSize(appSettingShowGp, 20, 550, 826, 345);
+            gl.setSize(appSettingShowDv, 5, 5, 810, 230);
 
-            gl.setSize(appSettingNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(appSettingSenderInfoEditBtn, 55, 15, 80, 30);
+            gl.setSize(appSettingSenderInfoClearBtn, 145, 15, 80, 30);
+            gl.setSize(appSettingSenderNameLbl, 740, 20, 45, 35);
+            gl.setSize(appSettingSenderNameTxtbx, 600, 15, 120, 35);
+            gl.setSize(appSettingSenderGradeLbl, 510, 20, 65, 35);
+            gl.setSize(appSettingSenderGradeTxtbx, 250, 15, 250, 35);
+
+            gl.setSize(appSettingNavigationPanel, 100, 245, 630, 60);
             gl.setSize(appSettingNavigationReturnBtn, 10, 10, 85, 40);
             gl.setSize(appSettingNavigationFirstPageBtn, 105, 10, 85, 40);
             gl.setSize(appSettingNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(appSettingNavigationCurrentPageTxtbx, 295, 10, 40, 40);
+            gl.setSize(appSettingNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(appSettingNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(appSettingNavigationLastPageBtn, 440, 10, 85, 40);
 
@@ -646,34 +656,34 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
             gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
 
-            gl.setSize(appSettingStatusLbl, 145, 130, 75, 35);
-            gl.setSize(appSettingStatusRbtn, 218, 130, 18, 23);
-            gl.setSize(appSettingStatusTxtbx, 55, 170, 170, 35);
+            gl.setSize(appSettingStatusLbl, 145, 110, 75, 35);
+            gl.setSize(appSettingStatusRbtn, 218, 110, 18, 23);
+            gl.setSize(appSettingStatusTxtbx, 55, 150, 170, 35);
 
-            gl.setSize(appSettingProTypeLbl, 440, 130, 75, 35);
-            gl.setSize(appSettingProTypeRbtn, 512, 130, 18, 23);
-            gl.setSize(appSettingProTypeTxtbx, 350, 170, 170, 35);
+            gl.setSize(appSettingProTypeLbl, 440, 110, 75, 35);
+            gl.setSize(appSettingProTypeRbtn, 512, 110, 18, 23);
+            gl.setSize(appSettingProTypeTxtbx, 350, 150, 170, 35);
 
-            gl.setSize(appSettingPropertyLbl, 690, 130, 75, 35);
-            gl.setSize(appSettingPropertyRbtn, 765, 130, 18, 23);
-            gl.setSize(appSettingPropertyTxtbx, 605, 170, 170, 35);
+            gl.setSize(appSettingPropertyLbl, 690, 110, 75, 35);
+            gl.setSize(appSettingPropertyRbtn, 765, 110, 18, 23);
+            gl.setSize(appSettingPropertyTxtbx, 605, 150, 170, 35);
 
-            gl.setSize(appSettingFacultyLbl, 690, 250, 75, 35);
-            gl.setSize(appSettingFacultyRbtn, 765, 250, 18, 23);
-            gl.setSize(appSettingFacultyTxtbx, 605, 290, 170, 35);
+            gl.setSize(appSettingFacultyLbl, 690, 210, 75, 35);
+            gl.setSize(appSettingFacultyRbtn, 765, 210, 18, 23);
+            gl.setSize(appSettingFacultyTxtbx, 605, 250, 170, 35);
 
-            gl.setSize(appSettingEgroupLbl, 440, 250, 75, 35);
-            gl.setSize(appSettingEgroupRbtn, 512, 250, 18, 23);
-            gl.setSize(appSettingEgroupTxtbx, 350, 290, 170, 35);
+            gl.setSize(appSettingEgroupLbl, 440, 210, 75, 35);
+            gl.setSize(appSettingEgroupRbtn, 512, 210, 18, 23);
+            gl.setSize(appSettingEgroupTxtbx, 350, 250, 170, 35);
 
-            gl.setSize(appSettingEdegreeLbl, 145, 250, 75, 35);
-            gl.setSize(appSettingEdegreeRbtn, 218, 250, 18, 23);
-            gl.setSize(appSettingEdegreeTxtbx, 55, 290, 170, 35);
+            gl.setSize(appSettingEdegreeLbl, 145, 210, 75, 35);
+            gl.setSize(appSettingEdegreeRbtn, 218, 210, 18, 23);
+            gl.setSize(appSettingEdegreeTxtbx, 55, 250, 170, 35);
 
-            gl.setSize(appSettingAddBtn, 55, 365, 80, 30);
-            gl.setSize(appSettingEditBtn, 145, 365, 80, 30);
-            gl.setSize(appSettingDeleteBtn, 235, 365, 80, 30);
-            gl.setSize(appSettingBackBtn, 325, 365, 80, 30);
+            gl.setSize(appSettingAddBtn, 55, 315, 80, 30);
+            gl.setSize(appSettingEditBtn, 145, 315, 80, 30);
+            gl.setSize(appSettingDeleteBtn, 235, 315, 80, 30);
+            gl.setSize(appSettingBackBtn, 325, 315, 80, 30);
 
             ///////////////////App Setting design//////////
             //********************************************//
@@ -1839,6 +1849,7 @@ namespace ProposalReportingSystem
             appSettingStatusTxtbx.Clear();
 
             appSettingAddBtn.Enabled = true;
+            appSettingNavigationPanel.Enabled = true;
 
             dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
             appSettingShowDv.Columns["index"].HeaderText = "کد سازمان";
@@ -1887,7 +1898,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingProcedureTypeTxtbx.Text.Equals(""))
                 {
-                    dbh.EditProcedureType(appSettingProcedureTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditProcedureType(appSettingProcedureTypeTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProcedureTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع کار";
@@ -1917,7 +1928,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingPropertyTxtbx.Text.Equals(""))
                 {
-                    dbh.EditPropertyType(appSettingPropertyTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditPropertyType(appSettingPropertyTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingPropertyTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
@@ -1948,7 +1959,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingFacultyTxtbx.Text.Equals(""))
                 {
-                    dbh.EditFaculty(appSettingFacultyTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditFaculty(appSettingFacultyTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingFacultyTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
                     appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
@@ -1978,7 +1989,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingRegTypeTxtbx.Text.Equals(""))
                 {
-                    dbh.EditRegisterType(appSettingRegTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditRegisterType(appSettingRegTypeTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingRegTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
@@ -2008,7 +2019,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingProTypeTxtbx.Text.Equals(""))
                 {
-                    dbh.EditProposalType(appSettingProTypeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditProposalType(appSettingProTypeTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType FROM proposalTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
@@ -2040,7 +2051,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingEgroupTxtbx.Text.Equals(""))
                 {
-                    dbh.EditEGroup(appSettingEgroupTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditEGroup(appSettingEgroupTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEgroupTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
                     appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
@@ -2076,7 +2087,7 @@ namespace ProposalReportingSystem
                     Employers employer = new Employers();
                     employer.Index = int.Parse(currentSelectedIndex);
                     employer.OrgName = appSettingCoTxtbx.Text;
-                    dbh.EditEmployer(employer,currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditEmployer(employer, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingCoTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
                     appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
@@ -2119,7 +2130,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingStatusTxtbx.Text.Equals(""))
                 {
-                    dbh.EditStatusType(appSettingStatusTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditStatusType(appSettingStatusTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingStatusTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
@@ -2151,7 +2162,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingEdegreeTxtbx.Text.Equals(""))
                 {
-                    dbh.EditEDegree(appSettingEdegreeTxtbx.Text, currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditEDegree(appSettingEdegreeTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEdegreeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
                     appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
@@ -2190,8 +2201,8 @@ namespace ProposalReportingSystem
                 appSettingDeleteBtn.Enabled = true;
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
-                    appSettingProcedureTypeTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                    appSettingProcedureTypeTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2203,8 +2214,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
-                    appSettingPropertyTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                    appSettingPropertyTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2216,8 +2227,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString();
-                    appSettingFacultyTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString();
+                    appSettingFacultyTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
                
@@ -2230,8 +2241,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
-                    appSettingRegTypeTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                    appSettingRegTypeTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2243,8 +2254,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
-                    appSettingProTypeTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                    appSettingProTypeTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2256,8 +2267,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["groupName"].Value.ToString();
-                    appSettingEgroupTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["groupName"].Value.ToString();
+                    appSettingEgroupTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2270,8 +2281,8 @@ namespace ProposalReportingSystem
                 try
                 {
                     currentSelectedIndex = appSettingShowDv.Rows[e.RowIndex].Cells["index"].Value.ToString();
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["orgName"].Value.ToString();
-                    appSettingCoTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["orgName"].Value.ToString();
+                    appSettingCoTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2283,8 +2294,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["statusType"].Value.ToString();
-                    appSettingStatusTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["statusType"].Value.ToString();
+                    appSettingStatusTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2296,8 +2307,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    currentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["EDegree"].Value.ToString();
-                    appSettingEdegreeTxtbx.Text = currentSelectedOption;
+                    appSettingCurrentSelectedOption = appSettingShowDv.Rows[e.RowIndex].Cells["EDegree"].Value.ToString();
+                    appSettingEdegreeTxtbx.Text = appSettingCurrentSelectedOption;
                 }
                 catch (ArgumentOutOfRangeException) { }
             }
@@ -2306,129 +2317,133 @@ namespace ProposalReportingSystem
 
         private void appSettingDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (appSettingProcedureTypeTxtbx.Enabled == true)
+            PopUp p = new PopUp("حذف اطلاعات", "آیا از حذف گزینه مورد نظر مطمئن هستید؟", "بله", "خیر", "", "info");
+            p.ShowDialog();
+            if (p.DialogResult == DialogResult.Yes)
             {
-                dbh.DeleteProcedureType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingProcedureTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
-                appSettingShowDv.Columns[0].HeaderText = "نوع کار";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                if (appSettingProcedureTypeTxtbx.Enabled == true)
+                {
+                    dbh.DeleteProcedureType(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingProcedureTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع کار";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingProcedureTypeTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingProcedureTypeTxtbx.Focus();
+                }
 
-            else if (appSettingPropertyTxtbx.Enabled == true)
-            {
-                dbh.DeletePropertyType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingPropertyTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
-                appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                else if (appSettingPropertyTxtbx.Enabled == true)
+                {
+                    dbh.DeletePropertyType(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingPropertyTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع خاصیت";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingPropertyTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingPropertyTxtbx.Focus();
+                }
 
-            else if (appSettingFacultyTxtbx.Enabled == true)
-            {
-                dbh.DeleteFaculty(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingFacultyTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
-                appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                else if (appSettingFacultyTxtbx.Enabled == true)
+                {
+                    dbh.DeleteFaculty(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingFacultyTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT facultyName FROM facultyTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نام دانشکده";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingFacultyTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingFacultyTxtbx.Focus();
+                }
 
-            else if (appSettingRegTypeTxtbx.Enabled == true)
-            {
-                dbh.DeleteRegisterType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingRegTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
-                appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                else if (appSettingRegTypeTxtbx.Enabled == true)
+                {
+                    dbh.DeleteRegisterType(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingRegTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT registerType FROM registerTypeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع ثبت";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingRegTypeTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingRegTypeTxtbx.Focus();
+                }
 
-            else if (appSettingProTypeTxtbx.Enabled == true)
-            {
-                dbh.DeleteProposalType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingProTypeTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable");
-                appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                else if (appSettingProTypeTxtbx.Enabled == true)
+                {
+                    dbh.DeleteProposalType(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingProTypeTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT proposalType from proposalTypeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع پروپوزال";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingProTypeTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingProTypeTxtbx.Focus();
+                }
 
-            else if (appSettingEgroupTxtbx.Enabled == true)
-            {
-                dbh.DeleteEGroup(currentSelectedOption, currentSelectedOption_2 /*faculty*/, loginUser.U_NCode, myDateTime.ToString());
-                appSettingEgroupTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName = '" + appSettingFacultyTxtbx.Text + "'");
-                appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
+                else if (appSettingEgroupTxtbx.Enabled == true)
+                {
+                    dbh.DeleteEGroup(appSettingCurrentSelectedOption, appSettingCurrentSelectedOption_2 /*faculty*/, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingEgroupTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName = '" + appSettingFacultyTxtbx.Text + "'");
+                    appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
 
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingEgroupTxtbx.Focus();
-            }
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingEgroupTxtbx.Focus();
+                }
 
-            else if (appSettingCoTxtbx.Enabled == true)
-            {
+                else if (appSettingCoTxtbx.Enabled == true)
+                {
                 
-                dbh.DeleteEmployers(long.Parse(currentSelectedIndex), currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingCoTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
-                appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
-                appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
-                // appSettingShowDv.Columns[1].Visible = false;
+                    dbh.DeleteEmployers(long.Parse(currentSelectedIndex), appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingCoTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
+                    appSettingShowDv.Columns[0].HeaderText = "کد سازمان";
+                    appSettingShowDv.Columns[1].HeaderText = "نام سازمان";
+                    // appSettingShowDv.Columns[1].Visible = false;
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
+
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingCoTxtbx.Focus();
+                }
+
+                else if (appSettingStatusTxtbx.Enabled == true)
+                {
+                    dbh.DeleteStatusType(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingStatusTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
+
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingStatusTxtbx.Focus();
+                }
+
+                else if (appSettingEdegreeTxtbx.Enabled == true)
+                {
+                    dbh.DeleteEDegree(appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    appSettingEdegreeTxtbx.Clear();
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
+                    appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
+                    appSettingEditBtn.Enabled = false;
+                    appSettingDeleteBtn.Enabled = false;
+
+                    form_initializer(); // To Reset items of comboBoxes and others
+                    appSettingEdegreeTxtbx.Focus();
+                }
+
                 appSettingEditBtn.Enabled = false;
                 appSettingDeleteBtn.Enabled = false;
-
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingCoTxtbx.Focus();
-            }
-
-            else if (appSettingStatusTxtbx.Enabled == true)
-            {
-                dbh.DeleteStatusType(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingStatusTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT statusType FROM statusTypeTable");
-                appSettingShowDv.Columns[0].HeaderText = "نوع وضعیت";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
-
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingStatusTxtbx.Focus();
-            }
-
-            else if (appSettingEdegreeTxtbx.Enabled == true)
-            {
-                dbh.DeleteEDegree(currentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
-                appSettingEdegreeTxtbx.Clear();
-                dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM EDegreeTable");
-                appSettingShowDv.Columns[0].HeaderText = "درجه علمی";
-                appSettingEditBtn.Enabled = false;
-                appSettingDeleteBtn.Enabled = false;
-
-                form_initializer(); // To Reset items of comboBoxes and others
-                appSettingEdegreeTxtbx.Focus();
-            }
-
-            appSettingEditBtn.Enabled = false;
-            appSettingDeleteBtn.Enabled = false;
-
+             }
         }
 
         private void appSettingShowDv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -2451,7 +2466,7 @@ namespace ProposalReportingSystem
 
                 appSettingFacultyTxtbx.Enabled = false;
                 appSettingFacultyTxtbx.Text = appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString();
-                currentSelectedOption_2 = appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString();
+                appSettingCurrentSelectedOption_2 = appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString();
 
                 appSettingEgroupRbtn.Select();
                 appSettingEgroupTxtbx.Enabled = true;
@@ -2522,11 +2537,20 @@ namespace ProposalReportingSystem
             manageUserDeleteUserCb.Checked = false;
             manageUserManageTeacherCb.Checked = false;
             manageUserManageTypeCb.Checked = false;
+            manageUserCheckAllCb.Checked = false;
 
             manageUserShowDgv.DataSource = null;
             manageUserShowAllBtn.Enabled = true;
             manageUserEditBtn.Enabled = false;
             manageUserDeleteBtn.Enabled = false;
+
+            manageUserNavigationCurrentPageTxtbx.Clear();
+            manageUserNavigationFirstPageBtn.Enabled = false;
+            manageUserNavigationNextPageBtn.Enabled = false;
+            manageUserNavigationLastPageBtn.Enabled = false;
+            manageUserNavigationPreviousPageBtn.Enabled = false;
+            manageUserNavigationCurrentPageTxtbx.Enabled = false;
+            manageUserNavigationReturnBtn.Enabled = false;
         }
 
         private void editProposalClearBtn_Click(object sender, EventArgs e)
@@ -2572,6 +2596,14 @@ namespace ProposalReportingSystem
             editProposalDeleteBtn.Enabled = false;
             editProposalShowDgv.Columns.Clear();
             editProposalShowDgv.DataSource = null;
+
+            manageProposalNavigationCurrentPageTxtbx.Clear();
+            manageProposalNavigationFirstPageBtn.Enabled = false;
+            manageProposalNavigationNextPageBtn.Enabled = false;
+            manageProposalNavigationLastPageBtn.Enabled = false;
+            manageProposalNavigationPreviousPageBtn.Enabled = false;
+            manageProposalNavigationCurrentPageTxtbx.Enabled = false;
+            manageProposalNavigationReturnBtn.Enabled = false;
         }
 
         private void manageTeacherClearBtn_Click(object sender, EventArgs e)
@@ -2591,6 +2623,15 @@ namespace ProposalReportingSystem
             manageTeacherDeleteBtn.Enabled = false;
             manageTeacherShowAllBtn.Enabled = true;
             manageTeacherSearchBtn.Enabled = true;
+
+
+            manageTeacherNavigationCurrentPageTxtbx.Clear();
+            manageTeacherNavigationFirstPageBtn.Enabled = false;
+            manageTeacherNavigationNextPageBtn.Enabled = false;
+            manageTeacherNavigationLastPageBtn.Enabled = false;
+            manageTeacherNavigationPreviousPageBtn.Enabled = false;
+            manageTeacherNavigationCurrentPageTxtbx.Enabled = false;
+            manageTeacherNavigationReturnBtn.Enabled = false;
         }
 
         private void personalSettingClearBtn_Click(object sender, EventArgs e)
@@ -3654,7 +3695,7 @@ namespace ProposalReportingSystem
                     user.CanManageTeacher = 0;
                 }
 
-                dbh.EditUsers(user, long.Parse(currentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
+                dbh.EditUsers(user, long.Parse(manageUserCurrentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
                 dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
                 manageUserClearBtn.PerformClick();
@@ -3664,69 +3705,74 @@ namespace ProposalReportingSystem
 
         private void manageUserDeleteBtn_Click(object sender, EventArgs e)
         {
-            User user = new User();
+            PopUp p = new PopUp("حذف اطلاعات کاربران", "آیا از حذف اطلاعات کاربر مطمئن هستید؟", "بله", "خیر", "", "info");
+            p.ShowDialog();
+            if (p.DialogResult == DialogResult.Yes)
+            {
+                User user = new User();
 
-            user.U_NCode = long.Parse(currentSelectedOption);
-            user.U_FName = manageUserFnameTxtbx.Text;
-            user.U_LName = manageUserLnameTxtbx.Text;
-            user.U_Email = manageUserEmailTxtbx.Text;
-            user.U_Tel = manageUserTelTxtbx.Text;
-            user.U_Password = manageUserPasswordTxtbx.Text;
+                user.U_NCode = long.Parse(manageUserCurrentSelectedOption);
+                user.U_FName = manageUserFnameTxtbx.Text;
+                user.U_LName = manageUserLnameTxtbx.Text;
+                user.U_Email = manageUserEmailTxtbx.Text;
+                user.U_Tel = manageUserTelTxtbx.Text;
+                user.U_Password = manageUserPasswordTxtbx.Text;
 
-            if (manageUserAddProCb.Checked == true)
-            {
-                user.CanAddProposal = 1;
-            }
-            else
-            {
-                user.CanAddProposal = 0;
-            }
+                if (manageUserAddProCb.Checked == true)
+                {
+                    user.CanAddProposal = 1;
+                }
+                else
+                {
+                    user.CanAddProposal = 0;
+                }
 
-            if (manageUserEditProCb.Checked == true)
-            {
-                user.CanEditProposal = 1;
-            }
-            else
-            {
-                user.CanEditProposal = 0;
-            }
-            if (manageUserDeleteProCb.Checked == true)
-            {
-                user.CanDeleteProposal = 1;
-            }
-            else
-            {
-                user.CanDeleteProposal = 0;
-            }
-            if (manageUserAddUserCb.Checked == true)
-            {
-                user.CanAddUser = 1;
-            }
-            else
-            {
-                user.CanAddUser = 0;
-            }
-            if (manageUserEditUserCb.Checked == true)
-            {
-                user.CanEditUser = 1;
-            }
-            else
-            {
-                user.CanEditUser = 0;
-            }
-            if (manageUserDeleteUserCb.Checked == true)
-            {
-                user.CanDeleteUser = 1;
-            }
-            else
-            {
-                user.CanDeleteUser = 0;
-            }
+                if (manageUserEditProCb.Checked == true)
+                {
+                    user.CanEditProposal = 1;
+                }
+                else
+                {
+                    user.CanEditProposal = 0;
+                }
+                if (manageUserDeleteProCb.Checked == true)
+                {
+                    user.CanDeleteProposal = 1;
+                }
+                else
+                {
+                    user.CanDeleteProposal = 0;
+                }
+                if (manageUserAddUserCb.Checked == true)
+                {
+                    user.CanAddUser = 1;
+                }
+                else
+                {
+                    user.CanAddUser = 0;
+                }
+                if (manageUserEditUserCb.Checked == true)
+                {
+                    user.CanEditUser = 1;
+                }
+                else
+                {
+                    user.CanEditUser = 0;
+                }
+                if (manageUserDeleteUserCb.Checked == true)
+                {
+                    user.CanDeleteUser = 1;
+                }
+                else
+                {
+                    user.CanDeleteUser = 0;
+                }
 
-            dbh.DeleteUser(user, loginUser.U_NCode, myDateTime.ToString());
-            dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
-            manageUserClearBtn.PerformClick();
-            manageUserShowAllBtn.PerformClick();
+                dbh.DeleteUser(user, loginUser.U_NCode, myDateTime.ToString());
+                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+                manageUserClearBtn.PerformClick();
+                manageUserShowAllBtn.PerformClick();
+            }
         }
 
         private void manageTeacherExecutorFacultyCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -4253,24 +4299,29 @@ namespace ProposalReportingSystem
 
         private void manageTeacherDeleteBtn_Click(object sender, EventArgs e)
         {
-            Teachers teacher = new Teachers();
-            teacher.T_FName = manageTeacherFnameTxtbx.Text;
-            teacher.T_LName = manageTeacherLnameTxtbx.Text;
-            teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
-            teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
-            teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
-            teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
-            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
-            teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
-            teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
-            teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
-            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+            PopUp p = new PopUp("حذف اطلاعات استاد", "آیا از حذف اطلاعات استاد مطمئن هستید؟", "بله", "خیر", "", "info");
+            p.ShowDialog();
+            if (p.DialogResult == DialogResult.Yes)
+            {
+                Teachers teacher = new Teachers();
+                teacher.T_FName = manageTeacherFnameTxtbx.Text;
+                teacher.T_LName = manageTeacherLnameTxtbx.Text;
+                teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
+                teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
+                teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
+                teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
+                teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+                teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
+                teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
+                teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
+                teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
 
-            dbh.DeleteTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
+                dbh.DeleteTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
 
-            manageTeacherClearBtn.PerformClick();
-            manageTeacherShowAllBtn.PerformClick();
-            manageTeacherShowAllBtn.Enabled = false;
+                manageTeacherClearBtn.PerformClick();
+                manageTeacherShowAllBtn.PerformClick();
+                manageTeacherShowAllBtn.Enabled = false;
+            }
         }
 
         private void manageTeacherEditBtn_Click(object sender, EventArgs e)
@@ -4288,7 +4339,7 @@ namespace ProposalReportingSystem
             teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
             teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
 
-            dbh.EditTeacher(teacher, long.Parse(currentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
+            dbh.EditTeacher(teacher, long.Parse(manageTeacherCurrentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
 
 
             manageTeacherClearBtn.PerformClick();
@@ -4311,7 +4362,7 @@ namespace ProposalReportingSystem
                 manageTeacherExecutorEgroupCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_Group"].Value.ToString();
 
                 manageTeacherExecutorEDegCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_EDeg"].Value.ToString();
-                currentSelectedOption = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
+                manageTeacherCurrentSelectedOption = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
 
                 manageTeacherEditBtn.Enabled = true;
                 manageTeacherDeleteBtn.Enabled = true;
@@ -4363,7 +4414,8 @@ namespace ProposalReportingSystem
             addProposalNavigationPreviousPageBtn.Enabled = true;
             addProposalNavigationCurrentPageTxtbx.Enabled = true;
             addProposalNavigationReturnBtn.Enabled = false;
-          //  addProposalShowAllBtn.Enabled = false;
+            //  addProposalShowAllBtn.Enabled = false;
+
         }
 
         private void addProposalNavigationNextPageBtn_Click(object sender, EventArgs e)
@@ -5161,61 +5213,66 @@ namespace ProposalReportingSystem
 
         private void editProposalDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (!manageProposalIsWatchingEdition)
+            PopUp p = new PopUp("حذف اطلاعات پروپوزال", "آیا از حذف اطلاعات پروپوزال مطمئن هستید؟", "بله", "خیر", "", "info");
+            p.ShowDialog();
+            if (p.DialogResult == DialogResult.Yes)
             {
-                Proposal proposal = new Proposal();
-                proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
-                proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
-                proposal.KeyWord = editProposalKeywordsTxtbx.Text;
-                proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
-                proposal.Executor2 = editProposalExecutor2Txtbx.Text;
-                proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
-                proposal.ProcedureType = editProposalProcedureTypeCb.Text;
-                proposal.PropertyType = editProposalPropertyTypeCb.Text;
-                proposal.ProposalType = editProposalTypeCb.Text;
-                proposal.Status = editProposalStatusCb.Text;
-                proposal.RegisterType = editProposalRegisterTypeCb.Text;
-                proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                proposal.Value = long.Parse(editProposalValueTxtbx.Text);
-                proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-                proposal.Index = long.Parse(currentSelectedIndex);
-                proposal.FileName = editProposalCurrentFileName;
+                if (!manageProposalIsWatchingEdition)
+                {
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = editProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = editProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = editProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = editProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = editProposalTypeCb.Text;
+                    proposal.Status = editProposalStatusCb.Text;
+                    proposal.RegisterType = editProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
+                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.Index = long.Parse(currentSelectedIndex);
+                    proposal.FileName = editProposalCurrentFileName;
 
-                dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
-               // dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
+                    dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
+                    // dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'");
 
-                editProposalClearBtn.PerformClick();
-                editProposalShowAllBtn.PerformClick();
-            }
-            else if (manageProposalIsWatchingEdition)
-            {
-                Proposal proposal = new Proposal();
-                proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
-                proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
-                proposal.KeyWord = editProposalKeywordsTxtbx.Text;
-                proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
-                proposal.Executor2 = editProposalExecutor2Txtbx.Text;
-                proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
-                proposal.ProcedureType = editProposalProcedureTypeCb.Text;
-                proposal.PropertyType = editProposalPropertyTypeCb.Text;
-                proposal.ProposalType = editProposalTypeCb.Text;
-                proposal.Status = editProposalStatusCb.Text;
-                proposal.RegisterType = editProposalRegisterTypeCb.Text;
-                proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                proposal.Value = long.Parse(editProposalValueTxtbx.Text);
-                proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-                proposal.Index = long.Parse(currentSelectedIndex);
-                proposal.FileName = editProposalCurrentFileName;
+                    editProposalClearBtn.PerformClick();
+                    editProposalShowAllBtn.PerformClick();
+                }
+                else if (manageProposalIsWatchingEdition)
+                {
+                    Proposal proposal = new Proposal();
+                    proposal.PersianTitle = editProposalPersianTitleTxtbx.Text;
+                    proposal.EngTitle = editProposalEnglishTitleTxtbx.Text;
+                    proposal.KeyWord = editProposalKeywordsTxtbx.Text;
+                    proposal.CoExecutor = editProposalCoexecutorTxtbx.Text;
+                    proposal.Executor2 = editProposalExecutor2Txtbx.Text;
+                    proposal.Duration = int.Parse(editProposalDurationTxtbx.Text);
+                    proposal.ProcedureType = editProposalProcedureTypeCb.Text;
+                    proposal.PropertyType = editProposalPropertyTypeCb.Text;
+                    proposal.ProposalType = editProposalTypeCb.Text;
+                    proposal.Status = editProposalStatusCb.Text;
+                    proposal.RegisterType = editProposalRegisterTypeCb.Text;
+                    proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
+                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
+                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.Index = long.Parse(currentSelectedIndex);
+                    proposal.FileName = editProposalCurrentFileName;
 
-                dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
-                //string exNCode = editProposalExecutorNcodeTxtbx.Text;
-                //editProposalClearBtn.PerformClick();
-                //dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                    dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
+                    //string exNCode = editProposalExecutorNcodeTxtbx.Text;
+                    //editProposalClearBtn.PerformClick();
+                    //dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
 
-                editProposalClearBtn.PerformClick();
-                editProposalShowAllBtn.PerformClick();
+                    editProposalClearBtn.PerformClick();
+                    editProposalShowAllBtn.PerformClick();
+                }
             }
         }
 
@@ -5237,7 +5294,7 @@ namespace ProposalReportingSystem
                 manageUserDeleteUserCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canDeleteUser"].Value.ToString());
                 manageUserManageTeacherCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageTeacher"].Value.ToString());
                 manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
-                currentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserCurrentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
             }
             catch (ArgumentOutOfRangeException) { }
     }
@@ -5545,7 +5602,7 @@ namespace ProposalReportingSystem
         {
             try
             {
-                currentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserCurrentSelectedOption = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
                 manageUserFnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_FName"].Value.ToString();
                 manageUserLnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_LName"].Value.ToString();
                 manageUserNcodeTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
@@ -6907,6 +6964,64 @@ namespace ProposalReportingSystem
             }
             catch
             { }
+        }
+
+        private void manageUserCheckAllCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(manageUserCheckAllCb.Checked)
+            {
+                manageUserAddProCb.Checked = true;
+                manageUserEditProCb.Checked = true;
+                manageUserDeleteProCb.Checked = true;
+                manageUserManageTeacherCb.Checked = true;
+                manageUserAddUserCb.Checked = true;
+                manageUserEditUserCb.Checked = true;
+                manageUserDeleteUserCb.Checked = true;
+                manageUserManageTypeCb.Checked = true;
+            }
+            else
+            {
+                manageUserAddProCb.Checked = false;
+                manageUserEditProCb.Checked = false;
+                manageUserDeleteProCb.Checked = false;
+                manageUserManageTeacherCb.Checked = false;
+                manageUserAddUserCb.Checked = false;
+                manageUserEditUserCb.Checked = false;
+                manageUserDeleteUserCb.Checked = false;
+                manageUserManageTypeCb.Checked = false;
+            }
+        }
+
+        private void appSettingCoRbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!appSettingCoRbtn.Checked)
+            {
+                appSettingNavigationPanel.Enabled = false;
+            }
+        }
+
+        private void appSettingSenderInfoClearBtn_Click(object sender, EventArgs e)
+        {
+            appSettingSenderNameTxtbx.Clear();
+            appSettingSenderGradeTxtbx.Clear();
+        }
+
+        private void appSettingSenderInfoEditBtn_Click(object sender, EventArgs e)
+        {
+            if (appSettingSenderNameTxtbx.Text == "")
+            {
+                string context = "عنوانی برای نام فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (appSettingSenderGradeTxtbx.Text == "")
+            {
+                string context = "عنوانی برای سمت فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else
+            {
+                
+            }
         }
 
         private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)

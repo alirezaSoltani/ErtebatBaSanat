@@ -4465,60 +4465,68 @@ namespace ProposalReportingSystem
         /////////JUST TEST
         public void dataGridViewUpdate3(DataGridView dgvv, BindingSource bindingSource, String query, int PgSize, int page)
         {
-            int PreviousPageOffSet;
-            /// <summary>
-            /// datagridview reintialization
-            /// </summary>
-            if (query.Contains("logTable"))
-            {
-                PreviousPageOffSet = (page - 1) * 30;
-            }
-            else
-            {
-                PreviousPageOffSet = (page - 1) * PgSize ;
-            }
-            dgvv.DataSource = bindingSource;
-
-            GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
-
-            if (query.Contains("proposalTable"))
+            try
             {
 
-                foreach (DataGridViewRow row in dgvv.Rows)
+                int PreviousPageOffSet;
+                /// <summary>
+                /// datagridview reintialization
+                /// </summary>
+                if (query.Contains("logTable"))
                 {
-                    string fullName;
-                    fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
-                    row.Cells["executorFullName"].Value = fullName;
+                    PreviousPageOffSet = (page - 1) * 30;
                 }
-                foreach (DataGridViewRow row in dgvv.Rows)
+                else
                 {
-                    string fullName;
-                    fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
-                    row.Cells["employerName"].Value = fullName;
+                    PreviousPageOffSet = (page - 1) * PgSize;
                 }
-                foreach (DataGridViewRow row in dgvv.Rows)
+                dgvv.DataSource = bindingSource;
+
+                GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+
+                if (query.Contains("proposalTable"))
                 {
-                    string fullName;
-                    fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
-                    row.Cells["hijriDate"].Value = fullName;
+
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getExecutorName(long.Parse(row.Cells["executor"].Value.ToString()));
+                        row.Cells["executorFullName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getEmployerName(long.Parse(row.Cells["employer"].Value.ToString()));
+                        row.Cells["employerName"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getDateHijri(row.Cells["startDate"].Value.ToString());
+                        row.Cells["hijriDate"].Value = fullName;
+                    }
+                    foreach (DataGridViewRow row in dgvv.Rows)
+                    {
+                        string fullName;
+                        fullName = getRegistrantName(long.Parse(row.Cells["registrant"].Value.ToString()));
+                        row.Cells["registrantBtn"].Value = fullName;
+                    }
                 }
-                foreach (DataGridViewRow row in dgvv.Rows)
+
+
+                dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
+                //dgvv.Columns.= DataGridViewColumnSortMode.NotSortable;
+                foreach (DataGridViewColumn col in dgvv.Columns)
                 {
-                    string fullName;
-                    fullName = getRegistrantName(long.Parse(row.Cells["registrant"].Value.ToString()));
-                    row.Cells["registrantBtn"].Value = fullName;
+                    dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
                 }
+                // dgvv.RowTemplate.Height = 60;
             }
-
-
-            dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
-            dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
-            //dgvv.Columns.= DataGridViewColumnSortMode.NotSortable;
-            foreach(DataGridViewColumn col in dgvv.Columns)
+            catch
             {
-                dgvv.Columns[col.Name].SortMode =DataGridViewColumnSortMode.Programmatic;
+
             }
-           // dgvv.RowTemplate.Height = 60;
         }
         private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview,int PgSize, int PreviousPageOffSet)
         {
@@ -5466,7 +5474,215 @@ namespace ProposalReportingSystem
             }
             return faculty;
         }
+        public string getSenderName()
+        {
+            string senderName = "";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM infoTable WHERE title = 'senderInfo'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                senderName = reader.GetString(1);
+                conn.Close();
 
-       
+            }
+            catch
+            {
+
+            }
+            return senderName;
+        }
+        public string getSenderGrade()
+        {
+            string senderGrade = "";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT * FROM infoTable WHERE title = 'senderInfo'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                senderGrade = reader.GetString(2);
+                conn.Close();
+
+            }
+            catch
+            {
+
+            }
+            return senderGrade;
+        }
+        public void editSenderName(string newName,string lastName,long username,string dateTime)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+                try
+                {
+                    sc.CommandText = "UPDATE infoTable SET col1 = " + "'" + newName + "'"
+                                                        + " WHERE title = 'senderInfo'";
+
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited SenderInfo.Name From  " + lastName + " To " + newName + "  ','" + "infoTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+                }
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط با سرور";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
+        }
+
+        public void editSenderGrade(string newGrade, string lastGrade, long username, string dateTime)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+
+                try
+                {
+                    sc.CommandText = "UPDATE infoTable SET col2 = " + "'" + newGrade + "'"
+                                                        + " WHERE title = 'senderInfo'";
+
+                    sc.ExecuteNonQuery();
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited SenderInfo.Grade From  " + lastGrade + " To " + newGrade + "  ','" + "infoTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup.ShowDialog();
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                    {
+                        string context = "خطا در برقراری ارتباط با سرور";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("PRIMARY KEY"))
+                    {
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else
+                    {
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup.ShowDialog();
+                    }
+                }
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                {
+                    string context = "خطا در برقراری ارتباط با سرور";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else if (e.Message.Contains("PRIMARY KEY"))
+                {
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+                else
+                {
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup.ShowDialog();
+                }
+            }
+        }
+
     }
 }

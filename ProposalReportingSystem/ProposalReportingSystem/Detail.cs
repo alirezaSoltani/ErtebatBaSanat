@@ -56,6 +56,9 @@ namespace ProposalReportingSystem
 
             detailRegistrantTxtbx.Text = proposal.RegistrantName;
 
+            detailSenderNameTxtbx.Text = dbh.getSenderName();
+            detailSenderGradeTxtbx.Text = dbh.getSenderGrade();
+
 
         }
 
