@@ -1479,7 +1479,7 @@ namespace ProposalReportingSystem
             }
         }
 
-        public void DeleteTeacher(Teachers teacher, long username, String dateTime)
+        public void DeleteTeacher(Teachers teacher,long oldNCode, long username, String dateTime)
         {
             try
             {
@@ -1501,7 +1501,7 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = " DELETE FROM TeacherTable WHERE t_NCode = '" + teacher.T_NCode + "'";
+                    sc.CommandText = " DELETE FROM TeacherTable WHERE t_NCode = '" + oldNCode + "'";
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO deletedTeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , username , date)"
                                     + "VALUES ('" + teacher.T_FName + "',"
@@ -1517,7 +1517,7 @@ namespace ProposalReportingSystem
                                               + "'" + username + "',"
                                              + "'" + dateTime + "')";
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + teacher.T_NCode + "','" + "TeachersTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + oldNCode + "','" + "TeachersTable'" + ")";
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
