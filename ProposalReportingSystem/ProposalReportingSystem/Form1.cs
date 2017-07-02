@@ -403,6 +403,107 @@ namespace ProposalReportingSystem
 
             //********************************************//
             //////////////edit proposal design///////////////
+            /*gl.setSize(editProposalPanel, 0, 1, 1000, 930);
+            gl.setSize(editProposalEditGp, 20, 15, 826, 470);
+            gl.setSize(editProposalShowGp, 20, 495, 826, 400);
+            gl.setSize(editProposalShowDgv, 5, 5, 810, 285);
+            gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
+
+            gl.setSize(manageProposalNavigationPanel, 100, 300, 630, 60);
+            gl.setSize(manageProposalNavigationReturnBtn, 10, 10, 85, 40);
+            gl.setSize(manageProposalNavigationFirstPageBtn, 105, 10, 85, 40);
+            gl.setSize(manageProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
+            gl.setSize(manageProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
+            gl.setSize(manageProposalNavigationNextPageBtn, 345, 10, 85, 40);
+            gl.setSize(manageProposalNavigationLastPageBtn, 440, 10, 85, 40);
+            gl.setSize(buttonX4, 535, 10, 85, 40);
+
+            gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 70, 25);
+            gl.setSize(editProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
+            gl.setSize(editProposalSearchBtn, 550, 10, 65, 30);
+
+            gl.setSize(editProposalExecutorFNameLbl, 720, 50, 70, 25);
+            gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
+
+            gl.setSize(editProposalExecutorLNameLbl, 720, 90, 70, 25);
+            gl.setSize(editProposalExecutorLNameTxtbx, 550, 90, 160, 25);
+
+            gl.setSize(editProposalExecutorFacultyLbl, 720, 130, 70, 25);
+            gl.setSize(editProposalExecutorFacultyCb, 550, 130, 160, 25);
+
+            gl.setSize(editProposalExecutorEGroupLbl, 720, 170, 70, 25);
+            gl.setSize(editProposalExecutorEGroupCb, 550, 170, 160, 25);
+
+            gl.setSize(editProposalExecutorEDegLbl, 720, 210, 70, 25);
+            gl.setSize(editProposalExecutorEDegCb, 550, 210, 160, 25);
+
+            gl.setSize(editProposalExecutorEmailLbl, 720, 250, 70, 25);
+            gl.setSize(editProposalExecutorEmailTxtbx, 550, 250, 160, 25);
+
+            gl.setSize(editProposalExecutorMobileLbl, 720, 290, 70, 25);
+            gl.setSize(editProposalExecutorMobileTxtbx, 550, 290, 160, 25);
+
+            gl.setSize(editProposalExecutorTel1Lbl, 720, 330, 70, 25);
+            gl.setSize(editProposalExecutorTel1Txtbx, 550, 330, 160, 25);
+
+            gl.setSize(editProposalExecutorTel2Lbl, 720, 370, 70, 25);
+            gl.setSize(editProposalExecutorTel2Txtbx, 550, 370, 160, 25);
+
+            gl.setSize(editProposalPersianTitleLbl, 460, 10, 70, 25);
+            gl.setSize(editProposalPersianTitleTxtbx, 290, 10, 160, 75);
+
+            gl.setSize(editProposalEnglishTitleLbl, 460, 100, 70, 25);
+            gl.setSize(editProposalEnglishTitleTxtbx, 290, 100, 160, 75);
+
+            gl.setSize(editProposalKeywordsLbl, 460, 190, 70, 25);
+            gl.setSize(editProposalKeywordsTxtbx, 290, 190, 160, 45);
+
+            gl.setSize(editProposalExecutor2Lbl, 460, 250, 70, 25);
+            gl.setSize(editProposalExecutor2Txtbx, 290, 250, 160, 45);
+
+            gl.setSize(editProposalCoexecutorLbl, 460, 310, 70, 25);
+            gl.setSize(editProposalCoexecutorTxtbx, 290, 310, 160, 45);
+
+            gl.setSize(editProposalStartdateLbl, 460, 370, 70, 25);
+            gl.setSize(editProposalStartdateTimeInput, 290, 370, 160, 35);
+
+            gl.setSize(editProposalDurationLbl, 200, 10, 80, 25);
+            gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
+
+            gl.setSize(editProposalProcedureTypeLbl, 200, 50, 80, 25);
+            gl.setSize(editProposalProcedureTypeCb, 30, 50, 160, 25);
+
+            gl.setSize(editProposalPropertyTypeLbl, 200, 90, 80, 25);
+            gl.setSize(editProposalPropertyTypeCb, 30, 90, 160, 25);
+
+            gl.setSize(editProposalRegisterTypeLbl, 200, 130, 80, 25);
+            gl.setSize(editProposalRegisterTypeCb, 30, 130, 160, 25);
+
+            gl.setSize(editProposalTypeLbl, 200, 170, 80, 25);
+            gl.setSize(editProposalTypeCb, 30, 170, 160, 25);
+
+            gl.setSize(editProposalOrganizationLbl, 200, 210, 80, 25);
+            gl.setSize(editProposalOrganizationNameCb, 30, 210, 120, 25);
+            gl.setSize(editProposalOrganizationNumberCb, 155, 210, 35, 25);
+
+            gl.setSize(editProposalValueLbl, 200, 250, 80, 25);
+            gl.setSize(editProposalValueTxtbx, 30, 250, 160, 25);
+
+            gl.setSize(editProposalStatusLbl, 200, 290, 80, 25);
+            gl.setSize(editProposalStatusCb, 30, 290, 160, 25);
+
+            gl.setSize(editProposalFileLbl, 200, 330, 80, 25);
+            gl.setSize(editProposalFileLinkLbl, 30, 330, 160, 25);
+
+            gl.setSize(editProposalRegisterBtn, 30, 370, 70, 30);
+            gl.setSize(editProposalDeleteBtn, 110, 370, 70, 30);
+            gl.setSize(editProposalClearBtn, 190, 370, 70, 30);
+            gl.setSize(editProposalShowAllBtn, 290, 370, 70, 30);*/
+
+
+
+
+            ////////////////////////////////////////////
             gl.setSize(editProposalPanel, 0, 1, 1000, 930);
             gl.setSize(editProposalEditGp, 20, 15, 826, 470);
             gl.setSize(editProposalShowGp, 20, 495, 826, 400);
@@ -417,85 +518,85 @@ namespace ProposalReportingSystem
             gl.setSize(manageProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageProposalNavigationLastPageBtn, 440, 10, 85, 40);
             gl.setSize(buttonX4, 535, 10, 85, 40);
-            
 
 
 
-            gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 60, 25);
+
+            gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 70, 25);
             gl.setSize(editProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
             gl.setSize(editProposalSearchBtn, 550, 10, 65, 30);
 
-            gl.setSize(editProposalExecutorFNameLbl, 720, 50, 60, 25);
+            gl.setSize(editProposalExecutorFNameLbl, 720, 50, 70, 25);
             gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
 
-            gl.setSize(editProposalExecutorLNameLbl, 720, 90, 60, 25);
+            gl.setSize(editProposalExecutorLNameLbl, 720, 90, 70, 25);
             gl.setSize(editProposalExecutorLNameTxtbx, 550, 90, 160, 25);
 
-            gl.setSize(editProposalExecutorFacultyLbl, 720, 130, 60, 25);
+            gl.setSize(editProposalExecutorFacultyLbl, 720, 130, 70, 25);
             gl.setSize(editProposalExecutorFacultyCb, 550, 130, 160, 25);
 
-            gl.setSize(editProposalExecutorEGroupLbl, 720, 170, 60, 25);
+            gl.setSize(editProposalExecutorEGroupLbl, 720, 170, 70, 25);
             gl.setSize(editProposalExecutorEGroupCb, 550, 170, 160, 25);
 
-            gl.setSize(editProposalExecutorEDegLbl, 720, 210, 60, 25);
+            gl.setSize(editProposalExecutorEDegLbl, 720, 210, 70, 25);
             gl.setSize(editProposalExecutorEDegCb, 550, 210, 160, 25);
 
-            gl.setSize(editProposalExecutorEmailLbl, 720, 250, 60, 25);
+            gl.setSize(editProposalExecutorEmailLbl, 720, 250, 70, 25);
             gl.setSize(editProposalExecutorEmailTxtbx, 550, 250, 160, 25);
 
-            gl.setSize(editProposalExecutorMobileLbl, 720, 290, 60, 25);
+            gl.setSize(editProposalExecutorMobileLbl, 720, 290, 70, 25);
             gl.setSize(editProposalExecutorMobileTxtbx, 550, 290, 160, 25);
 
-            gl.setSize(editProposalExecutorTel1Lbl, 720, 330, 60, 25);
+            gl.setSize(editProposalExecutorTel1Lbl, 720, 330, 70, 25);
             gl.setSize(editProposalExecutorTel1Txtbx, 550, 330, 160, 25);
 
-            gl.setSize(editProposalExecutorTel2Lbl, 720, 370, 60, 25);
+            gl.setSize(editProposalExecutorTel2Lbl, 720, 370, 70, 25);
             gl.setSize(editProposalExecutorTel2Txtbx, 550, 370, 160, 25);
 
-            gl.setSize(editProposalPersianTitleLbl, 460, 10, 60, 25);
+            gl.setSize(editProposalPersianTitleLbl, 460, 10, 70, 25);
             gl.setSize(editProposalPersianTitleTxtbx, 290, 10, 160, 75);
 
-            gl.setSize(editProposalEnglishTitleLbl, 460, 100, 60, 25);
+            gl.setSize(editProposalEnglishTitleLbl, 460, 100, 70, 25);
             gl.setSize(editProposalEnglishTitleTxtbx, 290, 100, 160, 75);
 
-            gl.setSize(editProposalKeywordsLbl, 460, 190, 60, 25);
+            gl.setSize(editProposalKeywordsLbl, 460, 190, 70, 25);
             gl.setSize(editProposalKeywordsTxtbx, 290, 190, 160, 45);
 
-            gl.setSize(editProposalExecutor2Lbl, 460, 250, 60, 25);
+            gl.setSize(editProposalExecutor2Lbl, 460, 250, 70, 25);
             gl.setSize(editProposalExecutor2Txtbx, 290, 250, 160, 45);
 
-            gl.setSize(editProposalCoexecutorLbl, 460, 310, 60, 25);
+            gl.setSize(editProposalCoexecutorLbl, 460, 310, 70, 25);
             gl.setSize(editProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
-            gl.setSize(editProposalStartdateLbl, 460, 370, 60, 25);
+            gl.setSize(editProposalStartdateLbl, 460, 370, 70, 25);
             gl.setSize(editProposalStartdateTimeInput, 370, 370, 80, 35);
 
-            gl.setSize(editProposalDurationLbl, 200, 10, 60, 25);
+            gl.setSize(editProposalDurationLbl, 200, 10, 80, 25);
             gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
 
-            gl.setSize(editProposalProcedureTypeLbl, 200, 50, 60, 25);
+            gl.setSize(editProposalProcedureTypeLbl, 200, 50, 80, 25);
             gl.setSize(editProposalProcedureTypeCb, 30, 50, 160, 25);
 
-            gl.setSize(editProposalPropertyTypeLbl, 200, 90, 60, 25);
+            gl.setSize(editProposalPropertyTypeLbl, 200, 90, 80, 25);
             gl.setSize(editProposalPropertyTypeCb, 30, 90, 160, 25);
 
-            gl.setSize(editProposalRegisterTypeLbl, 200, 130, 60, 25);
+            gl.setSize(editProposalRegisterTypeLbl, 200, 130, 80, 25);
             gl.setSize(editProposalRegisterTypeCb, 30, 130, 160, 25);
 
-            gl.setSize(editProposalTypeLbl, 200, 170, 60, 25);
+            gl.setSize(editProposalTypeLbl, 200, 170, 80, 25);
             gl.setSize(editProposalTypeCb, 30, 170, 160, 25);
 
-            gl.setSize(editProposalOrganizationLbl, 200, 210, 60, 25);
+            gl.setSize(editProposalOrganizationLbl, 200, 210, 80, 25);
             gl.setSize(editProposalOrganizationNameCb, 30, 210, 120, 25);
             gl.setSize(editProposalOrganizationNumberCb, 155, 210, 35, 25);
 
-            gl.setSize(editProposalValueLbl, 200, 250, 60, 25);
+            gl.setSize(editProposalValueLbl, 200, 250, 80, 25);
             gl.setSize(editProposalValueTxtbx, 30, 250, 160, 25);
 
-            gl.setSize(editProposalStatusLbl, 200, 290, 60, 25);
+            gl.setSize(editProposalStatusLbl, 200, 290, 80, 25);
             gl.setSize(editProposalStatusCb, 30, 290, 160, 25);
 
-            gl.setSize(editProposalFileLbl, 200, 330, 60, 25);
+            gl.setSize(editProposalFileLbl, 200, 330, 80, 25);
             gl.setSize(editProposalFileLinkLbl, 30, 330, 160, 25);
 
 
@@ -536,9 +637,9 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherExecutorTelLbl, 215, 200, 60, 25);
             gl.setSize(manageTeacherExecutorTel2Lbl, 215, 270, 60, 25);
 
-            gl.setSize(manageTeacherExecutorNcodeTxtbx, 570, 60, 160, 25);
-            gl.setSize(manageTeacherFnameTxtbx, 570, 130, 160, 25);
-            gl.setSize(manageTeacherLnameTxtbx, 570, 200, 160, 25);
+            gl.setSize(manageTeacherExecutorNcodeTxtbx, 550, 60, 160, 25);
+            gl.setSize(manageTeacherFnameTxtbx, 550, 130, 160, 25);
+            gl.setSize(manageTeacherLnameTxtbx, 550, 200, 160, 25);
 
             gl.setSize(manageTeacherExecutorFacultyCb, 300, 60, 160, 25);
             gl.setSize(manageTeacherExecutorEgroupCb, 300, 130, 160, 25);
@@ -3849,41 +3950,53 @@ namespace ProposalReportingSystem
 
         private void searchProposalValueFromTxtbx_TextChanged_1(object sender, EventArgs e)
         {
-            try
-            {
-                long onlyDigit = long.Parse(searchProposalValueFromTxtbx.Text);
-            }
-            catch (FormatException)
-            {
-                searchProposalValueFromTxtbx.BackColor = Color.Pink;
-            }
-            catch (OverflowException)
-            {
-                searchProposalValueFromTxtbx.BackColor = Color.Pink;
-            }
+            //try
+            //{
+            //    long onlyDigit = long.Parse(addProposalValueTxtbx.Text);
+            //}
+            //catch (FormatException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
+            //catch (OverflowException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
             if (searchProposalValueFromTxtbx.Text == "")
             {
                 searchProposalValueFromTxtbx.BackColor = Color.White;
+            }
+            else
+            {
+                searchProposalValueFromTxtbx.Text = string.Format("{0:n0}", double.Parse(searchProposalValueFromTxtbx.Text.ToString()));
+                searchProposalValueFromTxtbx.SelectionStart = searchProposalValueFromTxtbx.Text.Length;
+                searchProposalValueFromTxtbx.SelectionLength = 0;
             }
         }
 
         private void searchProposalValueToTxtbx_TextChanged_1(object sender, EventArgs e)
         {
-            try
-            {
-                long onlyDigit = long.Parse(searchProposalValueToTxtbx.Text);
-            }
-            catch (FormatException)
-            {
-                searchProposalValueToTxtbx.BackColor = Color.Pink;
-            }
-            catch (OverflowException)
-            {
-                searchProposalValueToTxtbx.BackColor = Color.Pink;
-            }
+            //try
+            //{
+            //    long onlyDigit = long.Parse(addProposalValueTxtbx.Text);
+            //}
+            //catch (FormatException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
+            //catch (OverflowException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
             if (searchProposalValueToTxtbx.Text == "")
             {
                 searchProposalValueToTxtbx.BackColor = Color.White;
+            }
+            else
+            {
+                searchProposalValueToTxtbx.Text = string.Format("{0:n0}", double.Parse(searchProposalValueToTxtbx.Text.ToString()));
+                searchProposalValueToTxtbx.SelectionStart = searchProposalValueToTxtbx.Text.Length;
+                searchProposalValueToTxtbx.SelectionLength = 0;
             }
         }
 
@@ -4056,22 +4169,27 @@ namespace ProposalReportingSystem
 
         private void editProposalValueTxtbx_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                editProposalValueTxtbx.BackColor = Color.White;
-                int onlyDigit = int.Parse(editProposalValueTxtbx.Text);
-            }
-            catch (FormatException)
-            {
-                editProposalValueTxtbx.BackColor = Color.Pink;
-            }
-            catch (OverflowException)
-            {
-                editProposalValueTxtbx.BackColor = Color.Pink;
-            }
+            //try
+            //{
+            //    long onlyDigit = long.Parse(addProposalValueTxtbx.Text);
+            //}
+            //catch (FormatException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
+            //catch (OverflowException)
+            //{
+            //    addProposalValueTxtbx.BackColor = Color.Pink;
+            //}
             if (editProposalValueTxtbx.Text == "")
             {
                 editProposalValueTxtbx.BackColor = Color.White;
+            }
+            else
+            {
+                editProposalValueTxtbx.Text = string.Format("{0:n0}", double.Parse(editProposalValueTxtbx.Text.ToString()));
+                editProposalValueTxtbx.SelectionStart = editProposalValueTxtbx.Text.Length;
+                editProposalValueTxtbx.SelectionLength = 0;
             }
         }
 
@@ -5036,7 +5154,9 @@ namespace ProposalReportingSystem
                     proposal.Status = editProposalStatusCb.Text;
                     proposal.RegisterType = editProposalRegisterTypeCb.Text;
                     proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    string tempValue = editProposalValueTxtbx.Text.Replace(",", "");
+                    //addProposalValueTxtbx.Text = tempValue;
+                    proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     //INITIALIZE STARTDATE OF PROPOSAL
                     string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
@@ -5455,7 +5575,9 @@ namespace ProposalReportingSystem
                     proposal.Status = editProposalStatusCb.Text;
                     proposal.RegisterType = editProposalRegisterTypeCb.Text;
                     proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    string tempValue = editProposalValueTxtbx.Text.Replace(",", "");
+                    //addProposalValueTxtbx.Text = tempValue;
+                    proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
                     proposal.Index = long.Parse(currentSelectedIndex);
@@ -5648,12 +5770,16 @@ namespace ProposalReportingSystem
 
             if (searchProposalValueFromTxtbx.Text != "")
             {
-                query = query + " value >= '" + searchProposalValueFromTxtbx.Text + "' AND";
+                string tempValueFrom = searchProposalValueFromTxtbx.Text.Replace(",", "");
+                //MessageBox.Show(tempValueFrom);
+                query = query + " value >= '" + long.Parse(tempValueFrom) + "' AND";
             }
 
             if (searchProposalValueToTxtbx.Text != "")
             {
-                query = query + " value <= '" + searchProposalValueToTxtbx.Text + "' AND";
+                string tempValueTo = searchProposalValueToTxtbx.Text.Replace(",", "");
+                //MessageBox.Show(tempValueTo);
+                query = query + " value <= '" + long.Parse(tempValueTo) + "' AND";
             }
 
             if (searchProposalStartDateFromChbx.Checked == true)
@@ -5677,9 +5803,9 @@ namespace ProposalReportingSystem
                 TotalPage = dbh.totalPage(query);
                
                 query = query.Replace("COUNT(*)", "TOP 5 *");
-              
 
 
+                MessageBox.Show(query);
 
                 //// total page 
                 CurrentPageIndex = 1;
