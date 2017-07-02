@@ -716,7 +716,7 @@
             // 
             this.detailCoExecutorLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailCoExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailCoExecutorLbl.Location = new System.Drawing.Point(820, 432);
+            this.detailCoExecutorLbl.Location = new System.Drawing.Point(820, 431);
             this.detailCoExecutorLbl.Name = "detailCoExecutorLbl";
             this.detailCoExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailCoExecutorLbl.Size = new System.Drawing.Size(117, 35);
