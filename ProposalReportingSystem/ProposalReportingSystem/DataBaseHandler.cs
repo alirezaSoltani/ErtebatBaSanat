@@ -5524,7 +5524,7 @@ namespace ProposalReportingSystem
             }
             return senderGrade;
         }
-        public void editSenderName(string newName,string lastName,long username,string dateTime)
+        public void editSender(string name, string grade, long username, string dateTime)
         {
             try
             {
@@ -5542,11 +5542,12 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = "UPDATE infoTable SET col1 = " + "'" + newName + "'"
+                    sc.CommandText = "UPDATE infoTable SET col1 = " + "'" + name + "' ,"
+                                                        + " col2 = '" + grade + "' "
                                                         + " WHERE title = 'senderInfo'";
 
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited SenderInfo.Name From  " + lastName + " To " + newName + "  ','" + "infoTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited SenderInfo To  " + name + " And " + grade + "  ','" + "infoTable'" + ")";
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
@@ -5603,86 +5604,5 @@ namespace ProposalReportingSystem
                 }
             }
         }
-
-        public void editSenderGrade(string newGrade, string lastGrade, long username, string dateTime)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                conn.Open();
-                SqlCommand sc = new SqlCommand();
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-
-
-                SqlTransaction transaction;
-                transaction = conn.BeginTransaction("new");
-                sc.Transaction = transaction;
-
-                try
-                {
-                    sc.CommandText = "UPDATE infoTable SET col2 = " + "'" + newGrade + "'"
-                                                        + " WHERE title = 'senderInfo'";
-
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited SenderInfo.Grade From  " + lastGrade + " To " + newGrade + "  ','" + "infoTable'" + ")";
-                    sc.ExecuteNonQuery();
-
-                    transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                    popup.ShowDialog();
-                }
-                catch (Exception e)
-                {
-
-                    try
-                    {
-                        transaction.Rollback();
-                    }
-                    catch
-                    {
-
-                    }
-                    if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
-                    {
-                        string context = "خطا در برقراری ارتباط با سرور";
-                        Alert alert = new Alert(context, "darkred", 5);
-                    }
-                    else if (e.Message.Contains("PRIMARY KEY"))
-                    {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
-                        Alert alert = new Alert(context, "darkred", 5);
-                    }
-                    else
-                    {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
-                        popup.ShowDialog();
-                    }
-                }
-
-                conn.Close();
-            }
-            catch (Exception e)
-            {
-
-                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
-                {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
-                }
-                else if (e.Message.Contains("PRIMARY KEY"))
-                {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
-                    Alert alert = new Alert(context, "darkred", 5);
-                }
-                else
-                {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
-                    popup.ShowDialog();
-                }
-            }
-        }
-
     }
 }

@@ -2826,6 +2826,11 @@ namespace ProposalReportingSystem
             {
                 addProposalValueTxtbx.BackColor = Color.White;
             }
+            else
+            {
+                addProposalValueTxtbx.Text = string.Format("{0:n0}", double.Parse(addProposalValueTxtbx.Text.ToString()));
+            }
+            
         }
 
         private void addProposalDurationTxtbx_TextChanged(object sender, EventArgs e)
@@ -6043,6 +6048,20 @@ namespace ProposalReportingSystem
             //                                manage Teacher                           \\
             //*************************************************************************\\
 
+
+
+
+
+            //*************************************************************************\\
+            //                                app setting                              \\
+            //*************************************************************************\\
+            appSettingSenderNameTxtbx.Text = dbh.getSenderName();
+            appSettingSenderGradeTxtbx.Text = dbh.getSenderGrade();
+
+            //*************************************************************************\\
+            //                               app setting                               \\
+            //*************************************************************************\\
+
             this.Enabled = true;
             iconMenuPanel.Visible = true;
             homePanel.Visible = true;
@@ -7020,7 +7039,12 @@ namespace ProposalReportingSystem
             }
             else
             {
-                
+                PopUp p = new PopUp("تغییر اطلاعات", "آیا از تغییر اطلاعات فرستنده نامه مطمئن هستید؟", "بله", "خیر", "", "info");
+                p.ShowDialog();
+                if (p.DialogResult == DialogResult.Yes)
+                {
+                    dbh.editSender(appSettingSenderNameTxtbx.Text, appSettingSenderGradeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
+                }
             }
         }
 
