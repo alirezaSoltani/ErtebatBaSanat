@@ -3582,8 +3582,9 @@ namespace ProposalReportingSystem
                 }
 
                 dbh.AddUser(user, loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
                 manageUserClearBtn.PerformClick();
+                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+
             }
         }
 
@@ -4284,22 +4285,117 @@ namespace ProposalReportingSystem
         private void manageTeacherAddBtn_Click(object sender, EventArgs e)
         {
             Teachers teacher = new Teachers();
-            teacher.T_FName = manageTeacherFnameTxtbx.Text;
-            teacher.T_LName = manageTeacherLnameTxtbx.Text;
-            teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
-            teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
-            teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
-            teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
-            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
-            teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
-            teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
-            teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
-            teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+            if (manageTeacherExecutorNcodeTxtbx.Text.Length < 10)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
 
-            dbh.AddTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
+                string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorNcodeTxtbx.Focus();
+            }
+
+            else if (manageTeacherFnameTxtbx.Text.Length == 0)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "نام را وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherFnameTxtbx.Focus();
+            }
+
+            else if (manageTeacherLnameTxtbx.Text.Length == 0)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "نام خانوادگی را وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherLnameTxtbx.Focus();
+            }
+
+            else if (manageTeacherExecutorFacultyCb.SelectedIndex == -1)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+
+                string context = "دانشکده را انتخاب نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorFacultyCb.Focus();
+            }
+
+            else if (manageTeacherExecutorEgroupCb.SelectedIndex == -1)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "گروه آموزشی را انتخاب نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorEgroupCb.Focus();
+            }
+
+            else if (manageTeacherExecutorEDegCb.SelectedIndex == -1)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "درجه علمی را انتخاب نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorEDegCb.Focus();
+            }
+
+            else if (manageTeacherExecutorEmailTxtbx.Text.Length == 0)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "آدرس ایمیل را وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorEmailTxtbx.Focus();
+            }
+            else if (manageTeacherExecutorEmailTxtbx.Text.Length == 0)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "آدرس ایمیل را وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorEmailTxtbx.Focus();
+            }
+
+            else if (manageTeacherExecutorEmailTxtbx.BackColor == Color.Pink)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorEmailTxtbx.Focus();
+            }
+
+            else if (manageTeacherExecutorMobileTxtbx.Text.Length == 0)
+            {
+                //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                //p.ShowDialog();
+                string context = "شماره موبایل را وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
+                manageTeacherExecutorMobileTxtbx.Focus();
+            }
+            else
+            {
 
 
-            dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + manageTeacherExecutorNcodeTxtbx + "'");
+
+                teacher.T_FName = manageTeacherFnameTxtbx.Text;
+                teacher.T_LName = manageTeacherLnameTxtbx.Text;
+                teacher.T_NCode = long.Parse(manageTeacherExecutorNcodeTxtbx.Text);
+                teacher.T_EDeg = manageTeacherExecutorEDegCb.Text;
+                teacher.T_Faculty = manageTeacherExecutorFacultyCb.Text;
+                teacher.T_Group = manageTeacherExecutorEgroupCb.Text;
+                teacher.T_Email = manageTeacherExecutorEmailTxtbx.Text;
+                teacher.T_Mobile = manageTeacherExecutorMobileTxtbx.Text;
+                teacher.T_Tel1 = manageTeacherExecutorTelTxtbx.Text;
+                teacher.T_Tel2 = manageTeacherExecutorTel2Txtbx.Text;
+
+
+                dbh.AddTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
+
+                dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + manageTeacherExecutorNcodeTxtbx.Text + "'");
+            }
         }
 
         private void manageTeacherDeleteBtn_Click(object sender, EventArgs e)
