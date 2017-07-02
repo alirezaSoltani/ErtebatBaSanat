@@ -130,7 +130,7 @@
             this.detailPanel.Controls.Add(this.detailExecutorLbl);
             this.detailPanel.Location = new System.Drawing.Point(0, 0);
             this.detailPanel.Name = "detailPanel";
-            this.detailPanel.Size = new System.Drawing.Size(991, 900);
+            this.detailPanel.Size = new System.Drawing.Size(867, 758);
             this.detailPanel.TabIndex = 0;
             // 
             // detailSenderGradeTxtbx
@@ -138,12 +138,12 @@
             this.detailSenderGradeTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailSenderGradeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailSenderGradeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailSenderGradeTxtbx.Location = new System.Drawing.Point(63, 744);
+            this.detailSenderGradeTxtbx.Location = new System.Drawing.Point(55, 627);
             this.detailSenderGradeTxtbx.MaxLength = 75;
             this.detailSenderGradeTxtbx.Multiline = true;
             this.detailSenderGradeTxtbx.Name = "detailSenderGradeTxtbx";
             this.detailSenderGradeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderGradeTxtbx.Size = new System.Drawing.Size(419, 37);
+            this.detailSenderGradeTxtbx.Size = new System.Drawing.Size(367, 31);
             this.detailSenderGradeTxtbx.TabIndex = 4;
             // 
             // detailExecutorTxtbx
@@ -160,13 +160,13 @@
             this.detailExecutorTxtbx.Border.Class = "TextBoxBorder";
             this.detailExecutorTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailExecutorTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailExecutorTxtbx.Location = new System.Drawing.Point(64, 264);
+            this.detailExecutorTxtbx.Location = new System.Drawing.Point(56, 222);
             this.detailExecutorTxtbx.Multiline = true;
             this.detailExecutorTxtbx.Name = "detailExecutorTxtbx";
             this.detailExecutorTxtbx.PreventEnterBeep = true;
             this.detailExecutorTxtbx.ReadOnly = true;
             this.detailExecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailExecutorTxtbx.Size = new System.Drawing.Size(749, 49);
+            this.detailExecutorTxtbx.Size = new System.Drawing.Size(655, 41);
             this.detailExecutorTxtbx.TabIndex = 11;
             this.detailExecutorTxtbx.Text = "نام مجری";
             // 
@@ -175,22 +175,22 @@
             this.detailRecieverGradeTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailRecieverGradeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailRecieverGradeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailRecieverGradeTxtbx.Location = new System.Drawing.Point(64, 693);
+            this.detailRecieverGradeTxtbx.Location = new System.Drawing.Point(56, 584);
             this.detailRecieverGradeTxtbx.MaxLength = 150;
             this.detailRecieverGradeTxtbx.Multiline = true;
             this.detailRecieverGradeTxtbx.Name = "detailRecieverGradeTxtbx";
             this.detailRecieverGradeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverGradeTxtbx.Size = new System.Drawing.Size(303, 37);
+            this.detailRecieverGradeTxtbx.Size = new System.Drawing.Size(265, 31);
             this.detailRecieverGradeTxtbx.TabIndex = 2;
             // 
             // detailRecieverGradeLbl
             // 
             this.detailRecieverGradeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRecieverGradeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRecieverGradeLbl.Location = new System.Drawing.Point(381, 693);
+            this.detailRecieverGradeLbl.Location = new System.Drawing.Point(333, 584);
             this.detailRecieverGradeLbl.Name = "detailRecieverGradeLbl";
             this.detailRecieverGradeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverGradeLbl.Size = new System.Drawing.Size(141, 35);
+            this.detailRecieverGradeLbl.Size = new System.Drawing.Size(123, 29);
             this.detailRecieverGradeLbl.TabIndex = 44;
             this.detailRecieverGradeLbl.Text = "سمت گیرنده نامه";
             this.detailRecieverGradeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,10 +199,10 @@
             // 
             this.detailSenderGradeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderGradeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderGradeLbl.Location = new System.Drawing.Point(474, 740);
+            this.detailSenderGradeLbl.Location = new System.Drawing.Point(415, 623);
             this.detailSenderGradeLbl.Name = "detailSenderGradeLbl";
             this.detailSenderGradeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderGradeLbl.Size = new System.Drawing.Size(145, 35);
+            this.detailSenderGradeLbl.Size = new System.Drawing.Size(127, 29);
             this.detailSenderGradeLbl.TabIndex = 42;
             this.detailSenderGradeLbl.Text = "سمت فرستنده نامه";
             this.detailSenderGradeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,12 +212,12 @@
             this.detailSenderNameTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailSenderNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailSenderNameTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailSenderNameTxtbx.Location = new System.Drawing.Point(640, 740);
+            this.detailSenderNameTxtbx.Location = new System.Drawing.Point(560, 623);
             this.detailSenderNameTxtbx.MaxLength = 75;
             this.detailSenderNameTxtbx.Multiline = true;
             this.detailSenderNameTxtbx.Name = "detailSenderNameTxtbx";
             this.detailSenderNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderNameTxtbx.Size = new System.Drawing.Size(175, 37);
+            this.detailSenderNameTxtbx.Size = new System.Drawing.Size(153, 31);
             this.detailSenderNameTxtbx.TabIndex = 3;
             // 
             // detailRecieverNameTxtbx
@@ -225,22 +225,22 @@
             this.detailRecieverNameTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.detailRecieverNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.detailRecieverNameTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailRecieverNameTxtbx.Location = new System.Drawing.Point(548, 689);
+            this.detailRecieverNameTxtbx.Location = new System.Drawing.Point(480, 580);
             this.detailRecieverNameTxtbx.MaxLength = 150;
             this.detailRecieverNameTxtbx.Multiline = true;
             this.detailRecieverNameTxtbx.Name = "detailRecieverNameTxtbx";
             this.detailRecieverNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverNameTxtbx.Size = new System.Drawing.Size(266, 37);
+            this.detailRecieverNameTxtbx.Size = new System.Drawing.Size(233, 31);
             this.detailRecieverNameTxtbx.TabIndex = 1;
             // 
             // detailSenderNameLbl
             // 
             this.detailSenderNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailSenderNameLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailSenderNameLbl.Location = new System.Drawing.Point(821, 744);
+            this.detailSenderNameLbl.Location = new System.Drawing.Point(718, 627);
             this.detailSenderNameLbl.Name = "detailSenderNameLbl";
             this.detailSenderNameLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderNameLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailSenderNameLbl.Size = new System.Drawing.Size(102, 29);
             this.detailSenderNameLbl.TabIndex = 39;
             this.detailSenderNameLbl.Text = "فرستنده نامه";
             this.detailSenderNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,10 +249,10 @@
             // 
             this.detailRecieverNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRecieverNameLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRecieverNameLbl.Location = new System.Drawing.Point(820, 690);
+            this.detailRecieverNameLbl.Location = new System.Drawing.Point(718, 581);
             this.detailRecieverNameLbl.Name = "detailRecieverNameLbl";
             this.detailRecieverNameLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverNameLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailRecieverNameLbl.Size = new System.Drawing.Size(102, 29);
             this.detailRecieverNameLbl.TabIndex = 38;
             this.detailRecieverNameLbl.Text = "گیرنده نامه";
             this.detailRecieverNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,13 +271,13 @@
             this.detailEditionNumberTxtbx.Border.Class = "TextBoxBorder";
             this.detailEditionNumberTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailEditionNumberTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailEditionNumberTxtbx.Location = new System.Drawing.Point(64, 637);
+            this.detailEditionNumberTxtbx.Location = new System.Drawing.Point(56, 536);
             this.detailEditionNumberTxtbx.Multiline = true;
             this.detailEditionNumberTxtbx.Name = "detailEditionNumberTxtbx";
             this.detailEditionNumberTxtbx.PreventEnterBeep = true;
             this.detailEditionNumberTxtbx.ReadOnly = true;
             this.detailEditionNumberTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailEditionNumberTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailEditionNumberTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailEditionNumberTxtbx.TabIndex = 23;
             this.detailEditionNumberTxtbx.Text = "تاریخ";
             // 
@@ -285,10 +285,10 @@
             // 
             this.detailEditionNumberLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailEditionNumberLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailEditionNumberLbl.Location = new System.Drawing.Point(204, 636);
+            this.detailEditionNumberLbl.Location = new System.Drawing.Point(178, 536);
             this.detailEditionNumberLbl.Name = "detailEditionNumberLbl";
             this.detailEditionNumberLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailEditionNumberLbl.Size = new System.Drawing.Size(113, 35);
+            this.detailEditionNumberLbl.Size = new System.Drawing.Size(99, 29);
             this.detailEditionNumberLbl.TabIndex = 36;
             this.detailEditionNumberLbl.Text = "شماره نسخه";
             this.detailEditionNumberLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,13 +307,13 @@
             this.detailRegistrantTxtbx.Border.Class = "TextBoxBorder";
             this.detailRegistrantTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailRegistrantTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailRegistrantTxtbx.Location = new System.Drawing.Point(381, 639);
+            this.detailRegistrantTxtbx.Location = new System.Drawing.Point(333, 538);
             this.detailRegistrantTxtbx.Multiline = true;
             this.detailRegistrantTxtbx.Name = "detailRegistrantTxtbx";
             this.detailRegistrantTxtbx.PreventEnterBeep = true;
             this.detailRegistrantTxtbx.ReadOnly = true;
             this.detailRegistrantTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegistrantTxtbx.Size = new System.Drawing.Size(433, 41);
+            this.detailRegistrantTxtbx.Size = new System.Drawing.Size(379, 35);
             this.detailRegistrantTxtbx.TabIndex = 22;
             this.detailRegistrantTxtbx.Text = "تاریخ";
             // 
@@ -331,13 +331,13 @@
             this.detailOrganizationTxtbx.Border.Class = "TextBoxBorder";
             this.detailOrganizationTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailOrganizationTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailOrganizationTxtbx.Location = new System.Drawing.Point(669, 586);
+            this.detailOrganizationTxtbx.Location = new System.Drawing.Point(585, 493);
             this.detailOrganizationTxtbx.Multiline = true;
             this.detailOrganizationTxtbx.Name = "detailOrganizationTxtbx";
             this.detailOrganizationTxtbx.PreventEnterBeep = true;
             this.detailOrganizationTxtbx.ReadOnly = true;
             this.detailOrganizationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailOrganizationTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailOrganizationTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailOrganizationTxtbx.TabIndex = 19;
             this.detailOrganizationTxtbx.Text = "تاریخ";
             // 
@@ -355,13 +355,13 @@
             this.detailPropertyTxtbx.Border.Class = "TextBoxBorder";
             this.detailPropertyTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailPropertyTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPropertyTxtbx.Location = new System.Drawing.Point(669, 535);
+            this.detailPropertyTxtbx.Location = new System.Drawing.Point(585, 451);
             this.detailPropertyTxtbx.Multiline = true;
             this.detailPropertyTxtbx.Name = "detailPropertyTxtbx";
             this.detailPropertyTxtbx.PreventEnterBeep = true;
             this.detailPropertyTxtbx.ReadOnly = true;
             this.detailPropertyTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPropertyTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailPropertyTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailPropertyTxtbx.TabIndex = 16;
             this.detailPropertyTxtbx.Text = "تاریخ";
             // 
@@ -379,13 +379,13 @@
             this.detailStartDateTxtbx.Border.Class = "TextBoxBorder";
             this.detailStartDateTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailStartDateTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailStartDateTxtbx.Location = new System.Drawing.Point(669, 483);
+            this.detailStartDateTxtbx.Location = new System.Drawing.Point(585, 407);
             this.detailStartDateTxtbx.Multiline = true;
             this.detailStartDateTxtbx.Name = "detailStartDateTxtbx";
             this.detailStartDateTxtbx.PreventEnterBeep = true;
             this.detailStartDateTxtbx.ReadOnly = true;
             this.detailStartDateTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStartDateTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailStartDateTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailStartDateTxtbx.TabIndex = 14;
             this.detailStartDateTxtbx.Text = "تاریخ";
             // 
@@ -403,13 +403,13 @@
             this.detailValueTxtbx.Border.Class = "TextBoxBorder";
             this.detailValueTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailValueTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailValueTxtbx.Location = new System.Drawing.Point(381, 586);
+            this.detailValueTxtbx.Location = new System.Drawing.Point(333, 493);
             this.detailValueTxtbx.Multiline = true;
             this.detailValueTxtbx.Name = "detailValueTxtbx";
             this.detailValueTxtbx.PreventEnterBeep = true;
             this.detailValueTxtbx.ReadOnly = true;
             this.detailValueTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailValueTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailValueTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailValueTxtbx.TabIndex = 20;
             this.detailValueTxtbx.Text = "تاریخ";
             // 
@@ -427,13 +427,13 @@
             this.detailRegisterTypeTxtbx.Border.Class = "TextBoxBorder";
             this.detailRegisterTypeTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailRegisterTypeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailRegisterTypeTxtbx.Location = new System.Drawing.Point(381, 535);
+            this.detailRegisterTypeTxtbx.Location = new System.Drawing.Point(333, 451);
             this.detailRegisterTypeTxtbx.Multiline = true;
             this.detailRegisterTypeTxtbx.Name = "detailRegisterTypeTxtbx";
             this.detailRegisterTypeTxtbx.PreventEnterBeep = true;
             this.detailRegisterTypeTxtbx.ReadOnly = true;
             this.detailRegisterTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegisterTypeTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailRegisterTypeTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailRegisterTypeTxtbx.TabIndex = 17;
             this.detailRegisterTypeTxtbx.Text = "تاریخ";
             // 
@@ -451,13 +451,13 @@
             this.detailDurationTxtbx.Border.Class = "TextBoxBorder";
             this.detailDurationTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailDurationTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailDurationTxtbx.Location = new System.Drawing.Point(381, 483);
+            this.detailDurationTxtbx.Location = new System.Drawing.Point(333, 407);
             this.detailDurationTxtbx.Multiline = true;
             this.detailDurationTxtbx.Name = "detailDurationTxtbx";
             this.detailDurationTxtbx.PreventEnterBeep = true;
             this.detailDurationTxtbx.ReadOnly = true;
             this.detailDurationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailDurationTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailDurationTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailDurationTxtbx.TabIndex = 15;
             this.detailDurationTxtbx.Text = "تاریخ";
             // 
@@ -465,10 +465,10 @@
             // 
             this.detailRegistrantLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRegistrantLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRegistrantLbl.Location = new System.Drawing.Point(813, 625);
+            this.detailRegistrantLbl.Location = new System.Drawing.Point(711, 526);
             this.detailRegistrantLbl.Name = "detailRegistrantLbl";
             this.detailRegistrantLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegistrantLbl.Size = new System.Drawing.Size(125, 69);
+            this.detailRegistrantLbl.Size = new System.Drawing.Size(109, 58);
             this.detailRegistrantLbl.TabIndex = 28;
             this.detailRegistrantLbl.Text = "کاربر ثبت کننده";
             this.detailRegistrantLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -476,9 +476,9 @@
             // detailPrintBtn
             // 
             this.detailPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPrintBtn.Location = new System.Drawing.Point(380, 796);
+            this.detailPrintBtn.Location = new System.Drawing.Point(332, 670);
             this.detailPrintBtn.Name = "detailPrintBtn";
-            this.detailPrintBtn.Size = new System.Drawing.Size(171, 50);
+            this.detailPrintBtn.Size = new System.Drawing.Size(150, 42);
             this.detailPrintBtn.TabIndex = 5;
             this.detailPrintBtn.Text = "پیش نمایش نامه";
             this.detailPrintBtn.UseVisualStyleBackColor = true;
@@ -487,9 +487,9 @@
             // detailOutputBtn
             // 
             this.detailOutputBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailOutputBtn.Location = new System.Drawing.Point(220, 796);
+            this.detailOutputBtn.Location = new System.Drawing.Point(192, 670);
             this.detailOutputBtn.Name = "detailOutputBtn";
-            this.detailOutputBtn.Size = new System.Drawing.Size(145, 50);
+            this.detailOutputBtn.Size = new System.Drawing.Size(127, 42);
             this.detailOutputBtn.TabIndex = 6;
             this.detailOutputBtn.Text = "فایل پروپوزال";
             this.detailOutputBtn.UseVisualStyleBackColor = true;
@@ -498,9 +498,9 @@
             // detailCloseBtn
             // 
             this.detailCloseBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailCloseBtn.Location = new System.Drawing.Point(63, 796);
+            this.detailCloseBtn.Location = new System.Drawing.Point(55, 670);
             this.detailCloseBtn.Name = "detailCloseBtn";
-            this.detailCloseBtn.Size = new System.Drawing.Size(145, 50);
+            this.detailCloseBtn.Size = new System.Drawing.Size(127, 42);
             this.detailCloseBtn.TabIndex = 7;
             this.detailCloseBtn.Text = "خروج";
             this.detailCloseBtn.UseVisualStyleBackColor = true;
@@ -520,13 +520,13 @@
             this.detailStatusTxtbx.Border.Class = "TextBoxBorder";
             this.detailStatusTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailStatusTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailStatusTxtbx.Location = new System.Drawing.Point(64, 586);
+            this.detailStatusTxtbx.Location = new System.Drawing.Point(56, 493);
             this.detailStatusTxtbx.Multiline = true;
             this.detailStatusTxtbx.Name = "detailStatusTxtbx";
             this.detailStatusTxtbx.PreventEnterBeep = true;
             this.detailStatusTxtbx.ReadOnly = true;
             this.detailStatusTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStatusTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailStatusTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailStatusTxtbx.TabIndex = 21;
             this.detailStatusTxtbx.Text = "تاریخ";
             // 
@@ -534,10 +534,10 @@
             // 
             this.detailStatusLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailStatusLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailStatusLbl.Location = new System.Drawing.Point(228, 579);
+            this.detailStatusLbl.Location = new System.Drawing.Point(200, 488);
             this.detailStatusLbl.Name = "detailStatusLbl";
             this.detailStatusLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStatusLbl.Size = new System.Drawing.Size(89, 35);
+            this.detailStatusLbl.Size = new System.Drawing.Size(78, 29);
             this.detailStatusLbl.TabIndex = 26;
             this.detailStatusLbl.Text = "وضعیت";
             this.detailStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -546,10 +546,10 @@
             // 
             this.detailValueLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailValueLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailValueLbl.Location = new System.Drawing.Point(532, 585);
+            this.detailValueLbl.Location = new System.Drawing.Point(466, 493);
             this.detailValueLbl.Name = "detailValueLbl";
             this.detailValueLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailValueLbl.Size = new System.Drawing.Size(115, 35);
+            this.detailValueLbl.Size = new System.Drawing.Size(101, 29);
             this.detailValueLbl.TabIndex = 24;
             this.detailValueLbl.Text = "مبلغ (ریال)";
             this.detailValueLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -558,10 +558,10 @@
             // 
             this.detailOrganizationLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailOrganizationLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailOrganizationLbl.Location = new System.Drawing.Point(821, 591);
+            this.detailOrganizationLbl.Location = new System.Drawing.Point(718, 498);
             this.detailOrganizationLbl.Name = "detailOrganizationLbl";
             this.detailOrganizationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailOrganizationLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailOrganizationLbl.Size = new System.Drawing.Size(102, 29);
             this.detailOrganizationLbl.TabIndex = 22;
             this.detailOrganizationLbl.Text = "سازمان کارفرما";
             this.detailOrganizationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -580,13 +580,13 @@
             this.detailProposalTypeTxtbx.Border.Class = "TextBoxBorder";
             this.detailProposalTypeTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailProposalTypeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailProposalTypeTxtbx.Location = new System.Drawing.Point(64, 534);
+            this.detailProposalTypeTxtbx.Location = new System.Drawing.Point(56, 450);
             this.detailProposalTypeTxtbx.Multiline = true;
             this.detailProposalTypeTxtbx.Name = "detailProposalTypeTxtbx";
             this.detailProposalTypeTxtbx.PreventEnterBeep = true;
             this.detailProposalTypeTxtbx.ReadOnly = true;
             this.detailProposalTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProposalTypeTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailProposalTypeTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailProposalTypeTxtbx.TabIndex = 18;
             this.detailProposalTypeTxtbx.Text = "تاریخ";
             // 
@@ -594,10 +594,10 @@
             // 
             this.detailProposalTypeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailProposalTypeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailProposalTypeLbl.Location = new System.Drawing.Point(228, 530);
+            this.detailProposalTypeLbl.Location = new System.Drawing.Point(200, 446);
             this.detailProposalTypeLbl.Name = "detailProposalTypeLbl";
             this.detailProposalTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProposalTypeLbl.Size = new System.Drawing.Size(89, 35);
+            this.detailProposalTypeLbl.Size = new System.Drawing.Size(78, 29);
             this.detailProposalTypeLbl.TabIndex = 20;
             this.detailProposalTypeLbl.Text = "نوع پروپوزال";
             this.detailProposalTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -606,10 +606,10 @@
             // 
             this.detailRegisterTypeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailRegisterTypeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailRegisterTypeLbl.Location = new System.Drawing.Point(532, 536);
+            this.detailRegisterTypeLbl.Location = new System.Drawing.Point(466, 451);
             this.detailRegisterTypeLbl.Name = "detailRegisterTypeLbl";
             this.detailRegisterTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegisterTypeLbl.Size = new System.Drawing.Size(115, 35);
+            this.detailRegisterTypeLbl.Size = new System.Drawing.Size(101, 29);
             this.detailRegisterTypeLbl.TabIndex = 18;
             this.detailRegisterTypeLbl.Text = "نوع ثبت";
             this.detailRegisterTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,10 +618,10 @@
             // 
             this.detailPropertyLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailPropertyLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailPropertyLbl.Location = new System.Drawing.Point(821, 538);
+            this.detailPropertyLbl.Location = new System.Drawing.Point(718, 453);
             this.detailPropertyLbl.Name = "detailPropertyLbl";
             this.detailPropertyLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPropertyLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailPropertyLbl.Size = new System.Drawing.Size(102, 29);
             this.detailPropertyLbl.TabIndex = 16;
             this.detailPropertyLbl.Text = "خاصیت";
             this.detailPropertyLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -640,13 +640,13 @@
             this.detailProcedureTypeTxtbx.Border.Class = "TextBoxBorder";
             this.detailProcedureTypeTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailProcedureTypeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailProcedureTypeTxtbx.Location = new System.Drawing.Point(64, 479);
+            this.detailProcedureTypeTxtbx.Location = new System.Drawing.Point(56, 403);
             this.detailProcedureTypeTxtbx.Multiline = true;
             this.detailProcedureTypeTxtbx.Name = "detailProcedureTypeTxtbx";
             this.detailProcedureTypeTxtbx.PreventEnterBeep = true;
             this.detailProcedureTypeTxtbx.ReadOnly = true;
             this.detailProcedureTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProcedureTypeTxtbx.Size = new System.Drawing.Size(145, 41);
+            this.detailProcedureTypeTxtbx.Size = new System.Drawing.Size(127, 35);
             this.detailProcedureTypeTxtbx.TabIndex = 16;
             this.detailProcedureTypeTxtbx.Text = "تاریخ";
             // 
@@ -654,10 +654,10 @@
             // 
             this.detailProcedureTypeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailProcedureTypeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailProcedureTypeLbl.Location = new System.Drawing.Point(228, 479);
+            this.detailProcedureTypeLbl.Location = new System.Drawing.Point(200, 403);
             this.detailProcedureTypeLbl.Name = "detailProcedureTypeLbl";
             this.detailProcedureTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProcedureTypeLbl.Size = new System.Drawing.Size(89, 35);
+            this.detailProcedureTypeLbl.Size = new System.Drawing.Size(78, 29);
             this.detailProcedureTypeLbl.TabIndex = 14;
             this.detailProcedureTypeLbl.Text = "نوع کار";
             this.detailProcedureTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -666,10 +666,10 @@
             // 
             this.detailDurationLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailDurationLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailDurationLbl.Location = new System.Drawing.Point(532, 485);
+            this.detailDurationLbl.Location = new System.Drawing.Point(466, 408);
             this.detailDurationLbl.Name = "detailDurationLbl";
             this.detailDurationLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailDurationLbl.Size = new System.Drawing.Size(115, 35);
+            this.detailDurationLbl.Size = new System.Drawing.Size(101, 29);
             this.detailDurationLbl.TabIndex = 12;
             this.detailDurationLbl.Text = "مدت زمان (ماه)";
             this.detailDurationLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -678,10 +678,10 @@
             // 
             this.detailStartDateLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailStartDateLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailStartDateLbl.Location = new System.Drawing.Point(821, 481);
+            this.detailStartDateLbl.Location = new System.Drawing.Point(718, 405);
             this.detailStartDateLbl.Name = "detailStartDateLbl";
             this.detailStartDateLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStartDateLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailStartDateLbl.Size = new System.Drawing.Size(102, 29);
             this.detailStartDateLbl.TabIndex = 10;
             this.detailStartDateLbl.Text = "تاریخ ارسال";
             this.detailStartDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -700,14 +700,14 @@
             this.detailCoExecutorTxtbx.Border.Class = "TextBoxBorder";
             this.detailCoExecutorTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailCoExecutorTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailCoExecutorTxtbx.Location = new System.Drawing.Point(63, 402);
+            this.detailCoExecutorTxtbx.Location = new System.Drawing.Point(55, 339);
             this.detailCoExecutorTxtbx.Multiline = true;
             this.detailCoExecutorTxtbx.Name = "detailCoExecutorTxtbx";
             this.detailCoExecutorTxtbx.PreventEnterBeep = true;
             this.detailCoExecutorTxtbx.ReadOnly = true;
             this.detailCoExecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailCoExecutorTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailCoExecutorTxtbx.Size = new System.Drawing.Size(751, 70);
+            this.detailCoExecutorTxtbx.Size = new System.Drawing.Size(657, 59);
             this.detailCoExecutorTxtbx.TabIndex = 13;
             this.detailCoExecutorTxtbx.TabStop = false;
             this.detailCoExecutorTxtbx.Text = resources.GetString("detailCoExecutorTxtbx.Text");
@@ -716,10 +716,10 @@
             // 
             this.detailCoExecutorLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailCoExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailCoExecutorLbl.Location = new System.Drawing.Point(820, 402);
+            this.detailCoExecutorLbl.Location = new System.Drawing.Point(718, 339);
             this.detailCoExecutorLbl.Name = "detailCoExecutorLbl";
             this.detailCoExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailCoExecutorLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailCoExecutorLbl.Size = new System.Drawing.Size(102, 29);
             this.detailCoExecutorLbl.TabIndex = 8;
             this.detailCoExecutorLbl.Text = "همکاران مجری";
             this.detailCoExecutorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -738,14 +738,14 @@
             this.detailExecutor2Txtbx.Border.Class = "TextBoxBorder";
             this.detailExecutor2Txtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailExecutor2Txtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailExecutor2Txtbx.Location = new System.Drawing.Point(63, 318);
+            this.detailExecutor2Txtbx.Location = new System.Drawing.Point(55, 268);
             this.detailExecutor2Txtbx.Multiline = true;
             this.detailExecutor2Txtbx.Name = "detailExecutor2Txtbx";
             this.detailExecutor2Txtbx.PreventEnterBeep = true;
             this.detailExecutor2Txtbx.ReadOnly = true;
             this.detailExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailExecutor2Txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailExecutor2Txtbx.Size = new System.Drawing.Size(751, 78);
+            this.detailExecutor2Txtbx.Size = new System.Drawing.Size(657, 66);
             this.detailExecutor2Txtbx.TabIndex = 12;
             this.detailExecutor2Txtbx.TabStop = false;
             this.detailExecutor2Txtbx.Text = resources.GetString("detailExecutor2Txtbx.Text");
@@ -754,10 +754,10 @@
             // 
             this.detailExecutor2Lbl.BackColor = System.Drawing.Color.Transparent;
             this.detailExecutor2Lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailExecutor2Lbl.Location = new System.Drawing.Point(820, 319);
+            this.detailExecutor2Lbl.Location = new System.Drawing.Point(718, 269);
             this.detailExecutor2Lbl.Name = "detailExecutor2Lbl";
             this.detailExecutor2Lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailExecutor2Lbl.Size = new System.Drawing.Size(117, 35);
+            this.detailExecutor2Lbl.Size = new System.Drawing.Size(102, 29);
             this.detailExecutor2Lbl.TabIndex = 6;
             this.detailExecutor2Lbl.Text = "مجریان همکار";
             this.detailExecutor2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -776,14 +776,14 @@
             this.detailKeywordTxtbx.Border.Class = "TextBoxBorder";
             this.detailKeywordTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailKeywordTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailKeywordTxtbx.Location = new System.Drawing.Point(63, 183);
+            this.detailKeywordTxtbx.Location = new System.Drawing.Point(55, 154);
             this.detailKeywordTxtbx.Multiline = true;
             this.detailKeywordTxtbx.Name = "detailKeywordTxtbx";
             this.detailKeywordTxtbx.PreventEnterBeep = true;
             this.detailKeywordTxtbx.ReadOnly = true;
             this.detailKeywordTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailKeywordTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailKeywordTxtbx.Size = new System.Drawing.Size(751, 70);
+            this.detailKeywordTxtbx.Size = new System.Drawing.Size(657, 59);
             this.detailKeywordTxtbx.TabIndex = 10;
             this.detailKeywordTxtbx.TabStop = false;
             this.detailKeywordTxtbx.Text = resources.GetString("detailKeywordTxtbx.Text");
@@ -802,13 +802,13 @@
             this.detailLatinTitleTxtbx.Border.Class = "TextBoxBorder";
             this.detailLatinTitleTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailLatinTitleTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailLatinTitleTxtbx.Location = new System.Drawing.Point(63, 97);
+            this.detailLatinTitleTxtbx.Location = new System.Drawing.Point(55, 82);
             this.detailLatinTitleTxtbx.Multiline = true;
             this.detailLatinTitleTxtbx.Name = "detailLatinTitleTxtbx";
             this.detailLatinTitleTxtbx.PreventEnterBeep = true;
             this.detailLatinTitleTxtbx.ReadOnly = true;
             this.detailLatinTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailLatinTitleTxtbx.Size = new System.Drawing.Size(751, 73);
+            this.detailLatinTitleTxtbx.Size = new System.Drawing.Size(657, 61);
             this.detailLatinTitleTxtbx.TabIndex = 9;
             this.detailLatinTitleTxtbx.TabStop = false;
             this.detailLatinTitleTxtbx.Text = resources.GetString("detailLatinTitleTxtbx.Text");
@@ -827,14 +827,14 @@
             this.detailPersianTitleTxtbx.Border.Class = "TextBoxBorder";
             this.detailPersianTitleTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailPersianTitleTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPersianTitleTxtbx.Location = new System.Drawing.Point(63, 9);
+            this.detailPersianTitleTxtbx.Location = new System.Drawing.Point(55, 8);
             this.detailPersianTitleTxtbx.Multiline = true;
             this.detailPersianTitleTxtbx.Name = "detailPersianTitleTxtbx";
             this.detailPersianTitleTxtbx.PreventEnterBeep = true;
             this.detailPersianTitleTxtbx.ReadOnly = true;
             this.detailPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailPersianTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailPersianTitleTxtbx.Size = new System.Drawing.Size(751, 73);
+            this.detailPersianTitleTxtbx.Size = new System.Drawing.Size(657, 61);
             this.detailPersianTitleTxtbx.TabIndex = 8;
             this.detailPersianTitleTxtbx.TabStop = false;
             this.detailPersianTitleTxtbx.Text = resources.GetString("detailPersianTitleTxtbx.Text");
@@ -843,10 +843,10 @@
             // 
             this.detailKeywordLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailKeywordLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailKeywordLbl.Location = new System.Drawing.Point(820, 183);
+            this.detailKeywordLbl.Location = new System.Drawing.Point(718, 154);
             this.detailKeywordLbl.Name = "detailKeywordLbl";
             this.detailKeywordLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailKeywordLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailKeywordLbl.Size = new System.Drawing.Size(102, 29);
             this.detailKeywordLbl.TabIndex = 4;
             this.detailKeywordLbl.Text = "کلمات کلیدی";
             this.detailKeywordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -855,10 +855,10 @@
             // 
             this.detailLatinTitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailLatinTitleLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailLatinTitleLbl.Location = new System.Drawing.Point(820, 98);
+            this.detailLatinTitleLbl.Location = new System.Drawing.Point(718, 83);
             this.detailLatinTitleLbl.Name = "detailLatinTitleLbl";
             this.detailLatinTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailLatinTitleLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailLatinTitleLbl.Size = new System.Drawing.Size(102, 29);
             this.detailLatinTitleLbl.TabIndex = 2;
             this.detailLatinTitleLbl.Text = "عنوان لاتین";
             this.detailLatinTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -867,10 +867,10 @@
             // 
             this.detailPersianTitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailPersianTitleLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailPersianTitleLbl.Location = new System.Drawing.Point(820, 10);
+            this.detailPersianTitleLbl.Location = new System.Drawing.Point(718, 8);
             this.detailPersianTitleLbl.Name = "detailPersianTitleLbl";
             this.detailPersianTitleLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPersianTitleLbl.Size = new System.Drawing.Size(117, 35);
+            this.detailPersianTitleLbl.Size = new System.Drawing.Size(102, 29);
             this.detailPersianTitleLbl.TabIndex = 0;
             this.detailPersianTitleLbl.Text = "عنوان فارسی";
             this.detailPersianTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -879,21 +879,21 @@
             // 
             this.detailExecutorLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailExecutorLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailExecutorLbl.Location = new System.Drawing.Point(813, 250);
+            this.detailExecutorLbl.Location = new System.Drawing.Point(711, 211);
             this.detailExecutorLbl.Name = "detailExecutorLbl";
             this.detailExecutorLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailExecutorLbl.Size = new System.Drawing.Size(125, 69);
+            this.detailExecutorLbl.Size = new System.Drawing.Size(109, 58);
             this.detailExecutorLbl.TabIndex = 46;
             this.detailExecutorLbl.Text = "مجری";
             this.detailExecutorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Detail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 853);
+            this.ClientSize = new System.Drawing.Size(862, 718);
             this.Controls.Add(this.detailPanel);
-            this.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Detail";
