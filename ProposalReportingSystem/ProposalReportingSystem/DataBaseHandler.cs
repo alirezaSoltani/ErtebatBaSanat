@@ -5604,5 +5604,76 @@ namespace ProposalReportingSystem
                 }
             }
         }
+
+        public Teachers getExecutorInfo(long NCode)
+        {
+            Teachers teacher = new Teachers();
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+                SqlDataReader reader;
+
+                try
+                {
+
+                    sc.CommandText = "SELECT * FROM TeacherTable WHERE t_NCode = '" + NCode + "'";
+                    sc.CommandType = CommandType.Text;
+
+                    reader = sc.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        teacher.T_FName = reader["t_FName"].ToString();
+                        teacher.T_LName = reader["t_LName"].ToString();
+                        teacher.T_NCode = long.Parse(reader["t_NCode"].ToString());
+                        teacher.T_EDeg = reader["t_EDeg"].ToString();
+                        teacher.T_Email = reader["t_Email"].ToString();
+                        teacher.T_Mobile = reader["t_Mobile"].ToString();
+                        teacher.T_Tel1 = reader["t_Tel1"].ToString();
+                        teacher.T_Tel2 = reader["t_Tel2"].ToString();
+                        teacher.T_Faculty = reader["t_Faculty"].ToString();
+                        teacher.T_Group = reader["t_Group"].ToString();
+                    }
+                       
+
+                    transaction.Commit();
+                    
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+                    
+                }
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                
+            }
+            return teacher;
+        }
+
+
+        ///
+       
     }
 }

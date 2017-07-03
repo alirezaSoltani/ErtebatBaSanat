@@ -3056,63 +3056,21 @@ namespace ProposalReportingSystem
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
 
                 Teachers teacher = new Teachers();
+                teacher = dbh.getExecutorInfo(long.Parse(searchProposalExecutorNCodeTxtbx.Text));
+                // Fill componenets with existing information
+                searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+                searchProposalExecutorEGroupCb.Text = teacher.T_Group;
+                searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
 
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                //    "Data Source= 185.159.152.2;" +
-                //"Initial Catalog=rayanpro_EBS;" +
-                //"User id=rayanpro_rayan; " +
-                //"Password=P@hn1395;";
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "SELECT * FROM TeacherTable WHERE t_NCode = '" + searchProposalExecutorNCodeTxtbx.Text + "'";
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-
-                    teacher.T_FName = reader["t_FName"].ToString();
-                    teacher.T_LName = reader["t_LName"].ToString();
-                    teacher.T_NCode = long.Parse(reader["t_NCode"].ToString());
-                    teacher.T_EDeg = reader["t_EDeg"].ToString();
-                    teacher.T_Email = reader["t_Email"].ToString();
-                    teacher.T_Mobile = reader["t_Mobile"].ToString();
-                    teacher.T_Tel1 = reader["t_Tel1"].ToString();
-                    teacher.T_Tel2 = reader["t_Tel2"].ToString();
-                    teacher.T_Faculty = reader["t_Faculty"].ToString();
-                    teacher.T_Group = reader["t_Group"].ToString();
-
-
-                    // Fill componenets with existing information
-                    searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
-                    searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
-                    searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
-                    searchProposalExecutorEGroupCb.Text = teacher.T_Group;
-                    searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
-
-                    //make components uneditable
-                    searchProposalExecutorFNameTxtbx.Enabled = false;
-                    searchProposalExecutorLNameTxtbx.Enabled = false;
-                    searchProposalExecutorFacultyCb.Enabled = false;
-                    searchProposalExecutorEGroupCb.Enabled = false;
-                    searchProposalExecutorMobileTxtbx.Enabled = false;
-                }
-
-                else
-                {
-                    PopUp p = new PopUp("خطا", "هیچ رکوردی با کد ملی وارد شده در سیستم ثبت نشده است.", "تایید", "", "", "error");
-                    p.ShowDialog();
-
-                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
-                    searchProposalExecutorNCodeTxtbx.Clear();
-                }
-                conn.Close();
-            }
-
+                //make components uneditable
+                searchProposalExecutorFNameTxtbx.Enabled = false;
+                searchProposalExecutorLNameTxtbx.Enabled = false;
+                searchProposalExecutorFacultyCb.Enabled = false;
+                searchProposalExecutorEGroupCb.Enabled = false;
+                searchProposalExecutorMobileTxtbx.Enabled = false;
+            } 
             else
             {
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
@@ -3146,46 +3104,22 @@ namespace ProposalReportingSystem
 
                 Teachers teacher = new Teachers();
 
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                //    "Data Source= 185.159.152.2;" +
-                //"Initial Catalog=rayanpro_EBS;" +
-                //"User id=rayanpro_rayan; " +
-                //"Password=P@hn1395;";
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "SELECT * FROM TeacherTable WHERE t_NCode = '" + addProposalExecutorNcodeTxtbx.Text +"'";
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                if(reader.HasRows)
-                {
-                    reader.Read();
-
-                    teacher.T_FName = reader["t_FName"].ToString();
-                    teacher.T_LName = reader["t_LName"].ToString();
-                    teacher.T_NCode = long.Parse(reader["t_NCode"].ToString());
-                    teacher.T_EDeg = reader["t_EDeg"].ToString();
-                    teacher.T_Email = reader["t_Email"].ToString();
-                    teacher.T_Mobile = reader["t_Mobile"].ToString();
-                    teacher.T_Tel1 = reader["t_Tel1"].ToString();
-                    teacher.T_Tel2 = reader["t_Tel2"].ToString();
-                    teacher.T_Faculty = reader["t_Faculty"].ToString();
-                    teacher.T_Group = reader["t_Group"].ToString();
-
+                teacher = dbh.getExecutorInfo(long.Parse(addProposalExecutorNcodeTxtbx.Text));
                     //Fill componenets with existing information
                     addProposalExecutorFNameTxtbx.Text = teacher.T_FName;
                     addProposalExecutorLNameTxtbx.Text = teacher.T_LName;
                     addProposalExecutorFacultyCb.Text = teacher.T_Faculty;
 
                     addProposalExecutorEGroupCb.Items.Clear();
+                if (addProposalExecutorFacultyCb.Text != "")
+                {
                     comboList = dbh.getEGroup(addProposalExecutorFacultyCb.SelectedItem.ToString());
+
                     foreach (String eGroup in comboList)
                     {
                         addProposalExecutorEGroupCb.Items.Add(eGroup);
                     }
+                }
 
                     
                     addProposalExecutorEGroupCb.Text = teacher.T_Group;
@@ -3205,14 +3139,36 @@ namespace ProposalReportingSystem
                     addProposalExecutorMobileTxtbx.Enabled = false;
                     addProposalExecutorTel1Txtbx.Enabled = false;
                     addProposalExecutorTel2Txtbx.Enabled = false;
-                }
-                
-                else
+
+                if (addProposalExecutorFNameTxtbx.Text == "")
                 {
                     PopUp p = new PopUp("ثبت اطلاعات جدید", "استادی با کد ملی وارد شده در سیستم ثبت نشده است.", "ثبت اطلاعات استاد جدید", "تغییر کد ملی وارد شده", "", "info");
                     p.ShowDialog();
                     if (p.DialogResult == DialogResult.Yes)
                     {
+                        ////
+                        //addProposalSearchBtn.Enabled = true;
+                        addProposalExecutorFNameTxtbx.Enabled = true;
+                        addProposalExecutorLNameTxtbx.Enabled = true; ;
+                        addProposalExecutorFacultyCb.Enabled = true;
+                        addProposalExecutorEGroupCb.Enabled = true;
+                        addProposalExecutorEDegCb.Enabled = true;
+                        addProposalExecutorEmailTxtbx.Enabled = true;
+                        addProposalExecutorMobileTxtbx.Enabled = true;
+                        addProposalExecutorTel1Txtbx.Enabled = true;
+                        addProposalExecutorTel2Txtbx.Enabled = true;
+
+                        addProposalExecutorFNameTxtbx.Clear();
+                        addProposalExecutorLNameTxtbx.Clear();
+                        addProposalExecutorFacultyCb.SelectedIndex = -1;
+                        addProposalExecutorEGroupCb.SelectedIndex = -1;
+                        addProposalExecutorEGroupCb.Items.Clear();
+                        addProposalExecutorEDegCb.SelectedIndex = -1;
+                        addProposalExecutorEmailTxtbx.Clear();
+                        addProposalExecutorMobileTxtbx.Clear();
+                        addProposalExecutorTel1Txtbx.Clear();
+                        addProposalExecutorTel2Txtbx.Clear();
+                        ////
                         addProposalExecutorFNameTxtbx.Focus();
                         isNewTeacher = true;
                     }
@@ -3224,15 +3180,15 @@ namespace ProposalReportingSystem
                     }
                 }
 
-                conn.Close();
             }
+
             else
             {
                 addProposalExecutorNcodeTxtbx.BackColor = Color.White;
 
                 addProposalSearchBtn.Enabled = true;
                 addProposalExecutorFNameTxtbx.Enabled = true;
-                addProposalExecutorLNameTxtbx.Enabled = true;;
+                addProposalExecutorLNameTxtbx.Enabled = true; ;
                 addProposalExecutorFacultyCb.Enabled = true;
                 addProposalExecutorEGroupCb.Enabled = true;
                 addProposalExecutorEDegCb.Enabled = true;
@@ -4061,67 +4017,40 @@ namespace ProposalReportingSystem
 
                 Teachers teacher = new Teachers();
 
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = conString;
-                //    "Data Source= 185.159.152.2;" +
-                //"Initial Catalog=rayanpro_EBS;" +
-                //"User id=rayanpro_rayan; " +
-                //"Password=P@hn1395;";
+                teacher = dbh.getExecutorInfo(long.Parse(editProposalExecutorNcodeTxtbx.Text));
 
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "SELECT * FROM TeacherTable WHERE t_NCode = '" + editProposalExecutorNcodeTxtbx.Text + "'";
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                if (reader.HasRows)
+                //Fill componenets with existing information
+                editProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                editProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                editProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+
+                editProposalExecutorEGroupCb.Items.Clear();
+                comboList = dbh.getEGroup(editProposalExecutorFacultyCb.SelectedItem.ToString());
+                foreach (String eGroup in comboList)
                 {
-                    reader.Read();
-
-                    teacher.T_FName = reader["t_FName"].ToString();
-                    teacher.T_LName = reader["t_LName"].ToString();
-                    teacher.T_NCode = long.Parse(reader["t_NCode"].ToString());
-                    teacher.T_EDeg = reader["t_EDeg"].ToString();
-                    teacher.T_Email = reader["t_Email"].ToString();
-                    teacher.T_Mobile = reader["t_Mobile"].ToString();
-                    teacher.T_Tel1 = reader["t_Tel1"].ToString();
-                    teacher.T_Tel2 = reader["t_Tel2"].ToString();
-                    teacher.T_Faculty = reader["t_Faculty"].ToString();
-                    teacher.T_Group = reader["t_Group"].ToString();
-
-                    //Fill componenets with existing information
-                    editProposalExecutorFNameTxtbx.Text = teacher.T_FName;
-                    editProposalExecutorLNameTxtbx.Text = teacher.T_LName;
-                    editProposalExecutorFacultyCb.Text = teacher.T_Faculty;
-
-                    editProposalExecutorEGroupCb.Items.Clear();
-                    comboList = dbh.getEGroup(editProposalExecutorFacultyCb.SelectedItem.ToString());
-                    foreach (String eGroup in comboList)
-                    {
-                        editProposalExecutorEGroupCb.Items.Add(eGroup);
-                    }
-
-
-                    editProposalExecutorEGroupCb.Text = teacher.T_Group;
-                    editProposalExecutorEDegCb.Text = teacher.T_EDeg;
-                    editProposalExecutorEmailTxtbx.Text = teacher.T_Email;
-                    editProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
-                    editProposalExecutorTel1Txtbx.Text = teacher.T_Tel1;
-                    editProposalExecutorTel2Txtbx.Text = teacher.T_Tel2;
-
-                    //make components uneditable
-                    editProposalExecutorFNameTxtbx.Enabled = false;
-                    editProposalExecutorLNameTxtbx.Enabled = false;
-                    editProposalExecutorFacultyCb.Enabled = false;
-                    editProposalExecutorEGroupCb.Enabled = false;
-                    editProposalExecutorEDegCb.Enabled = false;
-                    editProposalExecutorEmailTxtbx.Enabled = false;
-                    editProposalExecutorMobileTxtbx.Enabled = false;
-                    editProposalExecutorTel1Txtbx.Enabled = false;
-                    editProposalExecutorTel2Txtbx.Enabled = false;
+                    editProposalExecutorEGroupCb.Items.Add(eGroup);
                 }
+
+
+                editProposalExecutorEGroupCb.Text = teacher.T_Group;
+                editProposalExecutorEDegCb.Text = teacher.T_EDeg;
+                editProposalExecutorEmailTxtbx.Text = teacher.T_Email;
+                editProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+                editProposalExecutorTel1Txtbx.Text = teacher.T_Tel1;
+                editProposalExecutorTel2Txtbx.Text = teacher.T_Tel2;
+
+                //make components uneditable
+                editProposalExecutorFNameTxtbx.Enabled = false;
+                editProposalExecutorLNameTxtbx.Enabled = false;
+                editProposalExecutorFacultyCb.Enabled = false;
+                editProposalExecutorEGroupCb.Enabled = false;
+                editProposalExecutorEDegCb.Enabled = false;
+                editProposalExecutorEmailTxtbx.Enabled = false;
+                editProposalExecutorMobileTxtbx.Enabled = false;
+                editProposalExecutorTel1Txtbx.Enabled = false;
+                editProposalExecutorTel2Txtbx.Enabled = false;
             }
+
             else
             {
                 editProposalExecutorNcodeTxtbx.BackColor = Color.White;
