@@ -1468,7 +1468,9 @@ namespace ProposalReportingSystem
                     proposal.Status = addProposalStatusCb.Text;
                     proposal.RegisterType = addProposalRegisterTypeCb.Text;
                     proposal.Employer = long.Parse(addProposalOrganizationNumberCb.Text);
-                    proposal.Value = long.Parse(addProposalValueTxtbx.Text);
+                    string tempValue = addProposalValueTxtbx.Text.Replace(",", "");
+                    //addProposalValueTxtbx.Text = tempValue;
+                    proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
                     //INITIALIZE STARTDATE OF PROPOSAL
                     string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
@@ -5537,13 +5539,15 @@ namespace ProposalReportingSystem
                     proposal.Status = editProposalStatusCb.Text;
                     proposal.RegisterType = editProposalRegisterTypeCb.Text;
                     proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    string tempValue = editProposalValueTxtbx.Text.Replace(",", "");
+                    //addProposalValueTxtbx.Text = tempValue;
+                    proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
 
-                    dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(),1);
                     //string exNCode = editProposalExecutorNcodeTxtbx.Text;
                     //editProposalClearBtn.PerformClick();
                     //dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");

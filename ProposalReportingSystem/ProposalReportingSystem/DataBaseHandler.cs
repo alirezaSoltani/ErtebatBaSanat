@@ -357,7 +357,6 @@ namespace ProposalReportingSystem
             try
             {
 
-
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 conn.Open();
@@ -369,49 +368,140 @@ namespace ProposalReportingSystem
                 SqlTransaction transaction;
                 transaction = conn.BeginTransaction("new");
                 sc.Transaction = transaction;
-
-
-
+                SqlDataReader reader;
 
                 try
                 {
-                    sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "'";
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
-                                    + "VALUES ('" + proposal.Index + "',"
-                                             + "'" + proposal.PersianTitle + "',"
-                                             + "'" + proposal.EngTitle + "',"
-                                             + "'" + proposal.KeyWord + "',"
-                                             + "'" + proposal.Executor + "',"
-                                             + "'" + proposal.Executor2 + "',"
-                                             + "'" + proposal.CoExecutor + "',"
-                                             + "'" + proposal.StartDate + "',"
-                                             + "'" + proposal.Duration + "',"
-                                             + "'" + proposal.ProcedureType + "',"
-                                             + "'" + proposal.PropertyType + "',"
-                                             + "'" + proposal.RegisterType + "',"
-                                             + "'" + proposal.ProposalType + "',"
-                                             + "'" + proposal.Employer + "',"
-                                             + "'" + proposal.Value + "',"
-                                             + "'" + proposal.Status + "',"
-                                             + "'" + proposal.Registrant + "',"
-                                             + "'" + username + "',"
-                                             + "'" + dateTime + "')";
 
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
-                    sc.ExecuteNonQuery();
+                    sc.CommandText = " SELECT COUNT(*) FROM editionTable WHERE [index] = '" + proposal.Index + "'";
+                    reader = sc.ExecuteReader();
+                    reader.Read();
+                    int count = reader.GetInt32(0);
+                    reader.Close();
+                    if (count != 1)
+                    {
+                        PopUp p = new PopUp("اخطار", "این پروپوزال بیش از یک نسخه دارد . آیا از حذف اطلاعات پروپوزال مطمئن هستید؟", "بله", "خیر", "", "info");
+                        p.ShowDialog();
+                        if (p.DialogResult == DialogResult.Yes)
+                        {
 
-                    MoveFileToDeleted(proposal.FileName);
-                    transaction.Commit();
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                    popup.ShowDialog();
+
+
+                            sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                            sc.ExecuteNonQuery();
+                          
+                            sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
+                                            + "VALUES ('" + proposal.Index + "',"
+                                                     + "'" + proposal.PersianTitle + "',"
+                                                     + "'" + proposal.EngTitle + "',"
+                                                     + "'" + proposal.KeyWord + "',"
+                                                     + "'" + proposal.Executor + "',"
+                                                     + "'" + proposal.Executor2 + "',"
+                                                     + "'" + proposal.CoExecutor + "',"
+                                                     + "'" + proposal.StartDate + "',"
+                                                     + "'" + proposal.Duration + "',"
+                                                     + "'" + proposal.ProcedureType + "',"
+                                                     + "'" + proposal.PropertyType + "',"
+                                                     + "'" + proposal.RegisterType + "',"
+                                                     + "'" + proposal.ProposalType + "',"
+                                                     + "'" + proposal.Employer + "',"
+                                                     + "'" + proposal.Value + "',"
+                                                     + "'" + proposal.Status + "',"
+                                                     + "'" + proposal.Registrant + "',"
+                                                     + "'" + username + "',"
+                                                     + "'" + dateTime + "')";
+
+                            sc.ExecuteNonQuery();
+                            sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                            sc.ExecuteNonQuery();
+                            MoveFileToDeleted(proposal.FileName);
+
+                            sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
+                            reader=sc.ExecuteReader();
+                            while(reader.Read())
+                            {
+
+                                /////
+                                Proposal editions = new Proposal();
+                                editions.Index = long.Parse(reader["index"].ToString());
+                                editions.PersianTitle = reader["persianTitle"].ToString();
+                                editions.EngTitle = reader["engTitle"].ToString();
+                                editions.KeyWord = reader["keyword"].ToString();
+                                editions.Executor2 = reader["executor2"].ToString();
+                                editions.CoExecutor = reader["coExecutor"].ToString();
+                                editions.StartDate = reader["startDate"].ToString();
+                                editions.Duration = Int32.Parse(reader["duration"].ToString());
+                                editions.ProcedureType = reader["procedureType"].ToString();
+                                editions.ProposalType = reader["proposalType"].ToString();
+                                editions.PropertyType = reader["propertyType"].ToString();
+                                editions.RegisterType = reader["registerType"].ToString();
+                                editions.Employer = Int32.Parse(reader["employer"].ToString());
+                                editions.Edition = int.Parse(reader["edition"].ToString());
+                                editions.Value = long.Parse(reader["value"].ToString());
+                                editions.Status = reader["status"].ToString();
+                                editions.FileName = reader["fileName"].ToString();
+                                editions.Executor = long.Parse(reader["executor"].ToString());
+                                editions.Registrant = long.Parse(reader["registrant"].ToString());
+                                //editions.RegistrantName = editProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                                //editions.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
+
+                                /////
+
+                                DeleteEdition(editions, editions.Edition, username , dateTime,count);
+                            }
+                            reader.Close();
+
+
+
+                            transaction.Commit();
+                            popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                            popup.ShowDialog();
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                    else
+                    {
+                        sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                        sc.ExecuteNonQuery();
+                        sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "'";
+                        sc.ExecuteNonQuery();
+                        sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
+                                        + "VALUES ('" + proposal.Index + "',"
+                                                 + "'" + proposal.PersianTitle + "',"
+                                                 + "'" + proposal.EngTitle + "',"
+                                                 + "'" + proposal.KeyWord + "',"
+                                                 + "'" + proposal.Executor + "',"
+                                                 + "'" + proposal.Executor2 + "',"
+                                                 + "'" + proposal.CoExecutor + "',"
+                                                 + "'" + proposal.StartDate + "',"
+                                                 + "'" + proposal.Duration + "',"
+                                                 + "'" + proposal.ProcedureType + "',"
+                                                 + "'" + proposal.PropertyType + "',"
+                                                 + "'" + proposal.RegisterType + "',"
+                                                 + "'" + proposal.ProposalType + "',"
+                                                 + "'" + proposal.Employer + "',"
+                                                 + "'" + proposal.Value + "',"
+                                                 + "'" + proposal.Status + "',"
+                                                 + "'" + proposal.Registrant + "',"
+                                                 + "'" + username + "',"
+                                                 + "'" + dateTime + "')";
+
+                        sc.ExecuteNonQuery();
+                        sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                        sc.ExecuteNonQuery();
+
+                        MoveFileToDeleted(proposal.FileName);
+                        transaction.Commit();
+                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                        popup.ShowDialog();
+                    }
                 }
                 catch (Exception e)
                 {
-
+                    MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -715,7 +805,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void DeleteEdition(Proposal proposal, int EditionNumber, long username, String dateTime)
+        public void DeleteEdition(Proposal proposal, int EditionNumber, long username, String dateTime,int count)
         {
             try
             {
@@ -736,7 +826,7 @@ namespace ProposalReportingSystem
 
                     sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = " + EditionNumber;
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO deletedEditionTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,edition,username,date)"
+                    sc.CommandText = " INSERT INTO deletedEditionTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,edition,fileName,username,date)"
                                     + "VALUES ('" + proposal.Index + "',"
                                              + "'" + proposal.PersianTitle + "',"
                                              + "'" + proposal.EngTitle + "',"
@@ -755,6 +845,7 @@ namespace ProposalReportingSystem
                                              + "'" + proposal.Status + "',"
                                              + "'" + proposal.Registrant + "',"
                                              + "'" + EditionNumber + "',"
+                                             + "'" + proposal.FileName + "',"
                                              + "'" + username + "',"
                                              + "'" + dateTime + "')";
 
@@ -765,8 +856,11 @@ namespace ProposalReportingSystem
                     MoveFileToDeleted(proposal.FileName);
 
                     transaction.Commit();
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
-                    popup.ShowDialog();
+                    if (count == 1)
+                    {
+                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                        popup.ShowDialog();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -779,6 +873,37 @@ namespace ProposalReportingSystem
                     {
 
                     }
+                    if (count == 1)
+                    {
+                        if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
+                        {
+                            string context = "خطا در برقراری ارتباط با سرور";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+                        else if (e.Message.Contains("PRIMARY KEY"))
+                        {
+                            string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+                        else if (e.Message.Contains("conflict"))
+                        {
+                            string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+                        else
+                        {
+                            popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                            popup.ShowDialog();
+                        }
+                    }
+                }
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                if (count == 1)
+                {
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
                         string context = "خطا در برقراری ارتباط با سرور";
@@ -789,37 +914,11 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    else if (e.Message.Contains("conflict"))
-                    {
-                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
-                        Alert alert = new Alert(context, "darkred", 5);
-                    }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
                         popup.ShowDialog();
                     }
-                }
-
-                conn.Close();
-            }
-            catch (Exception e)
-            {
-
-                if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
-                {
-                    string context = "خطا در برقراری ارتباط با سرور";
-                    Alert alert = new Alert(context, "darkred", 5);
-                }
-                else if (e.Message.Contains("PRIMARY KEY"))
-                {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
-                    Alert alert = new Alert(context, "darkred", 5);
-                }
-                else
-                {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
-                    popup.ShowDialog();
                 }
             }
 
@@ -5314,13 +5413,20 @@ namespace ProposalReportingSystem
         //}
         public string DeleteFile(string fileName)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
-            request.Method = WebRequestMethods.Ftp.DeleteFile;
-            request.Credentials = new NetworkCredential("nima", "H-0sein");
-
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            try
             {
-                return response.StatusDescription;
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+                request.Credentials = new NetworkCredential("nima", "H-0sein");
+
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    return response.StatusDescription;
+                }
+            }
+            catch
+            {
+                return "";
             }
         }
 
@@ -5338,15 +5444,21 @@ namespace ProposalReportingSystem
         //}
         private string MoveFileToDeleted(string fileName)
         {
-
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
-            request.Method = WebRequestMethods.Ftp.Rename;
-            request.RenameTo = "Deleted/" + fileName;
-            request.Credentials = new NetworkCredential("nima", "H-0sein");
-
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            try
             {
-                return response.StatusDescription;
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
+                request.Method = WebRequestMethods.Ftp.Rename;
+                request.RenameTo = "Deleted/" + fileName;
+                request.Credentials = new NetworkCredential("nima", "H-0sein");
+
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    return response.StatusDescription;
+                }
+            }
+            catch
+            {
+                return "";
             }
         }
 
