@@ -178,7 +178,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show(e.Message);
+                        
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
@@ -302,7 +302,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    
                     try
                     {
                         transaction.Rollback();
@@ -501,7 +501,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    
                     try
                     {
                         transaction.Rollback();
@@ -2150,7 +2150,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        MessageBox.Show(e.Message);
+                       
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
@@ -2320,7 +2320,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    // MessageBox.Show("حذف با موفقیت به پایان رسید");
+                    
                     popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
@@ -3693,7 +3693,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                   
 
                     try
                     {
@@ -4968,14 +4968,14 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    //MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        //MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                        
                     }
                 }
 
@@ -5021,14 +5021,14 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                    
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        // MessageBox.Show("خطا در برقراری ارتباط با سرور");
+                        
                     }
                 }
 
