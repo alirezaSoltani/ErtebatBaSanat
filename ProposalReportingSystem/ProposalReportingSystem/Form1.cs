@@ -5805,7 +5805,7 @@ namespace ProposalReportingSystem
                 query = query.Replace("COUNT(*)", "TOP 5 *");
 
 
-                MessageBox.Show(query);
+               //MessageBox.Show(query);
 
                 //// total page 
                 CurrentPageIndex = 1;

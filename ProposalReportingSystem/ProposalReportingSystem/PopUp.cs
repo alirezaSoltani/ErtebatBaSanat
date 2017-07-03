@@ -36,6 +36,7 @@ namespace ProposalReportingSystem
                 popUpCenterBtn.Visible = false;
             }
 
+
             if (icon.Equals("error"))
             {
                 popUpIconPbx.BackgroundImage = ProposalReportingSystem.Properties.Resources.error;
@@ -51,6 +52,8 @@ namespace ProposalReportingSystem
                 popUpIconPbx.BackgroundImage = ProposalReportingSystem.Properties.Resources.success;
             }
         }
+
+       
 
         private void popUpCancelBtn_Click(object sender, EventArgs e)
         {

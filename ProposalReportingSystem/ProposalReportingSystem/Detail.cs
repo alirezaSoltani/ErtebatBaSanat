@@ -176,5 +176,19 @@ namespace ProposalReportingSystem
                 }
             }
         }
+
+        private void detailValueTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (detailValueTxtbx.Text == "")
+            {
+                detailValueTxtbx.BackColor = Color.White;
+            }
+            else
+            {
+                detailValueTxtbx.Text = string.Format("{0:n0}", double.Parse(detailValueTxtbx.Text.ToString()));
+                detailValueTxtbx.SelectionStart = detailValueTxtbx.Text.Length;
+                detailValueTxtbx.SelectionLength = 0;
+            }
+        }
     }
 }

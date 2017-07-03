@@ -23,6 +23,7 @@ namespace ProposalReportingSystem
         {
             InitializeComponent();
             this.Show();
+            
             //this.TopMost = true;
         }
 
