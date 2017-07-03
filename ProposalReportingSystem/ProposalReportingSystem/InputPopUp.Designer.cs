@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popUpContextLbl = new System.Windows.Forms.Label();
+            this.serverIPLbl = new System.Windows.Forms.Label();
             this.popUpPanel = new System.Windows.Forms.Panel();
             this.confirmBtn = new DevComponents.DotNetBar.ButtonX();
             this.popUpIconPbx = new System.Windows.Forms.PictureBox();
-            this.serverAdressTxtbx = new System.Windows.Forms.TextBox();
+            this.serverIPTxtbx = new System.Windows.Forms.TextBox();
             this.cancelBtn = new DevComponents.DotNetBar.ButtonX();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.serverURLTxtbx = new System.Windows.Forms.TextBox();
+            this.serverURLLbl = new System.Windows.Forms.Label();
             this.popUpPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popUpIconPbx)).BeginInit();
             this.SuspendLayout();
             // 
-            // popUpContextLbl
+            // serverIPLbl
             // 
-            this.popUpContextLbl.BackColor = System.Drawing.Color.Transparent;
-            this.popUpContextLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.popUpContextLbl.Location = new System.Drawing.Point(49, 43);
-            this.popUpContextLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.popUpContextLbl.Name = "popUpContextLbl";
-            this.popUpContextLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.popUpContextLbl.Size = new System.Drawing.Size(482, 26);
-            this.popUpContextLbl.TabIndex = 35;
-            this.popUpContextLbl.Text = "اطلاعات IP سرور را وارد کنید: ";
+            this.serverIPLbl.BackColor = System.Drawing.Color.Transparent;
+            this.serverIPLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.serverIPLbl.Location = new System.Drawing.Point(49, 43);
+            this.serverIPLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.serverIPLbl.Name = "serverIPLbl";
+            this.serverIPLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.serverIPLbl.Size = new System.Drawing.Size(482, 26);
+            this.serverIPLbl.TabIndex = 35;
+            this.serverIPLbl.Text = "اطلاعات IP سرور را وارد کنید: ";
             // 
             // popUpPanel
             // 
             this.popUpPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(236)))), ((int)(((byte)(253)))));
             this.popUpPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.popUpPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.popUpPanel.Controls.Add(this.textBox1);
-            this.popUpPanel.Controls.Add(this.label1);
+            this.popUpPanel.Controls.Add(this.serverURLTxtbx);
+            this.popUpPanel.Controls.Add(this.serverURLLbl);
             this.popUpPanel.Controls.Add(this.cancelBtn);
-            this.popUpPanel.Controls.Add(this.serverAdressTxtbx);
-            this.popUpPanel.Controls.Add(this.popUpContextLbl);
+            this.popUpPanel.Controls.Add(this.serverIPTxtbx);
+            this.popUpPanel.Controls.Add(this.serverIPLbl);
             this.popUpPanel.Controls.Add(this.popUpIconPbx);
             this.popUpPanel.Controls.Add(this.confirmBtn);
             this.popUpPanel.Location = new System.Drawing.Point(-30, -10);
@@ -95,13 +95,13 @@
             this.popUpIconPbx.TabIndex = 34;
             this.popUpIconPbx.TabStop = false;
             // 
-            // serverAdressTxtbx
+            // serverIPTxtbx
             // 
-            this.serverAdressTxtbx.Location = new System.Drawing.Point(40, 72);
-            this.serverAdressTxtbx.Multiline = true;
-            this.serverAdressTxtbx.Name = "serverAdressTxtbx";
-            this.serverAdressTxtbx.Size = new System.Drawing.Size(487, 49);
-            this.serverAdressTxtbx.TabIndex = 36;
+            this.serverIPTxtbx.Location = new System.Drawing.Point(40, 72);
+            this.serverIPTxtbx.Multiline = true;
+            this.serverIPTxtbx.Name = "serverIPTxtbx";
+            this.serverIPTxtbx.Size = new System.Drawing.Size(487, 49);
+            this.serverIPTxtbx.TabIndex = 36;
             // 
             // cancelBtn
             // 
@@ -116,25 +116,25 @@
             this.cancelBtn.TabIndex = 37;
             this.cancelBtn.Text = "لغو";
             // 
-            // textBox1
+            // serverURLTxtbx
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 153);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(487, 49);
-            this.textBox1.TabIndex = 39;
+            this.serverURLTxtbx.Location = new System.Drawing.Point(40, 153);
+            this.serverURLTxtbx.Multiline = true;
+            this.serverURLTxtbx.Name = "serverURLTxtbx";
+            this.serverURLTxtbx.Size = new System.Drawing.Size(487, 49);
+            this.serverURLTxtbx.TabIndex = 39;
             // 
-            // label1
+            // serverURLLbl
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(49, 124);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(482, 26);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "اطلاعات URL سرور را وارد کنید: ";
+            this.serverURLLbl.BackColor = System.Drawing.Color.Transparent;
+            this.serverURLLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.serverURLLbl.Location = new System.Drawing.Point(49, 124);
+            this.serverURLLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.serverURLLbl.Name = "serverURLLbl";
+            this.serverURLLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.serverURLLbl.Size = new System.Drawing.Size(482, 26);
+            this.serverURLLbl.TabIndex = 38;
+            this.serverURLLbl.Text = "اطلاعات URL سرور را وارد کنید: ";
             // 
             // InputPopUp
             // 
@@ -153,13 +153,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label popUpContextLbl;
+        private System.Windows.Forms.Label serverIPLbl;
         private System.Windows.Forms.Panel popUpPanel;
         private System.Windows.Forms.PictureBox popUpIconPbx;
         private DevComponents.DotNetBar.ButtonX confirmBtn;
         private DevComponents.DotNetBar.ButtonX cancelBtn;
-        private System.Windows.Forms.TextBox serverAdressTxtbx;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox serverIPTxtbx;
+        private System.Windows.Forms.TextBox serverURLTxtbx;
+        private System.Windows.Forms.Label serverURLLbl;
     }
 }
