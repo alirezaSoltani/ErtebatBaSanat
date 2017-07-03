@@ -5112,11 +5112,15 @@ namespace ProposalReportingSystem
                     proposal.FileName = editProposalCurrentFileName;
                     if(editProposalCurrentFileName == editProposalFileLinkLbl.Text)
                     {
-                        _inputParameter.FileName = "";
+                        _inputParameter.FileName = editProposalCurrentFileName;
+                    }
+                    else
+                    {
+                        _inputParameter.FileName = editProposalFileLinkLbl.Text;
                     }
 
                     dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
-                    dbh.editProposalQuery = "SELECT * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'";
+                    dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE persianTitle = '" + editProposalPersianTitleTxtbx.Text + "'";
                     editProposalClearBtn.PerformClick();
                     dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource,dbh.editProposalQuery,pageSize,1);
                 }

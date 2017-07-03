@@ -229,47 +229,8 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
-                                                        + "engTitle =" + "'" + proposal.EngTitle + "',"
-                                                        + "keyword =" + "'" + proposal.KeyWord + "',"
-                                                        + "executor =" + "'" + proposal.Executor + "',"
-                                                        + "executor2 = " + "'" + proposal.Executor2 + "',"
-                                                        + " coExecutor = " + "'" + proposal.CoExecutor + "',"
-                                                        + "  startDate=" + "'" + proposal.StartDate + "',"
-                                                        + "duration=" + "'" + proposal.Duration + "',"
-                                                        + "procedureType =" + "'" + proposal.ProcedureType + "',"
-                                                        + " propertyType = " + "'" + proposal.PropertyType + "',"
-                                                        + "registerType =" + "'" + proposal.RegisterType + "',"
-                                                        + "proposalType =" + "'" + proposal.ProposalType + "',"
-                                                        + " employer = " + "'" + proposal.Employer + "',"
-                                                        + " value = " + "'" + proposal.Value + "',"
-                                                        + " status = " + "'" + proposal.Status + "' "
-                                                        + " WHERE [index] = " + proposal.Index + "";
-
-                    sc.ExecuteNonQuery();
-
-                    sc.CommandText = "UPDATE editionTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
-                                                       + "engTitle =" + "'" + proposal.EngTitle + "',"
-                                                       + "keyword =" + "'" + proposal.KeyWord + "',"
-                                                       + "executor =" + "'" + proposal.Executor + "',"
-                                                       + "executor2 = " + "'" + proposal.Executor2 + "',"
-                                                       + " coExecutor = " + "'" + proposal.CoExecutor + "',"
-                                                       + " startDate=" + "'" + proposal.StartDate + "',"
-                                                       + "duration=" + "'" + proposal.Duration + "',"
-                                                       + "procedureType =" + "'" + proposal.ProcedureType + "',"
-                                                       + " propertyType = " + "'" + proposal.PropertyType + "',"
-                                                       + "registerType =" + "'" + proposal.RegisterType + "',"
-                                                       + "proposalType =" + "'" + proposal.ProposalType + "',"
-                                                       + " employer = " + "'" + proposal.Employer + "',"
-                                                       + " value = " + "'" + proposal.Value + "',"
-                                                       + " status = " + "'" + proposal.Status + "' "
-                                                       + " WHERE  [index] = " + proposal.Index + " AND edition = 0 ";
-
-                    sc.ExecuteNonQuery();
-
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
-                    sc.ExecuteNonQuery();
-                    if (_inputParameter.FileName != "")
+                    
+                    if (_inputParameter.FileName != currentFileName)
                     {
                         sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
                         reader = sc.ExecuteReader();
@@ -290,17 +251,58 @@ namespace ProposalReportingSystem
                         {
                             _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
                         }
-
                         uploadFile(_inputParameter);
                         reader.Close();
                     }
+                    sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
+                                                   + "engTitle =" + "'" + proposal.EngTitle + "',"
+                                                   + "keyword =" + "'" + proposal.KeyWord + "',"
+                                                   + "executor =" + "'" + proposal.Executor + "',"
+                                                   + "executor2 = " + "'" + proposal.Executor2 + "',"
+                                                   + " coExecutor = " + "'" + proposal.CoExecutor + "',"
+                                                   + "  startDate=" + "'" + proposal.StartDate + "',"
+                                                   + "duration=" + "'" + proposal.Duration + "',"
+                                                   + "procedureType =" + "'" + proposal.ProcedureType + "',"
+                                                   + " propertyType = " + "'" + proposal.PropertyType + "',"
+                                                   + "registerType =" + "'" + proposal.RegisterType + "',"
+                                                   + "proposalType =" + "'" + proposal.ProposalType + "',"
+                                                   + " employer = " + "'" + proposal.Employer + "',"
+                                                   + " value = " + "'" + proposal.Value + "',"
+                                                   + " status = " + "'" + proposal.Status + "' ,"
+                                                   + " filename = "+ "'"+ _inputParameter.FileName+"' "
+                                                   + " WHERE [index] = " + proposal.Index + "";
+                    sc.ExecuteNonQuery();
+
+                    sc.CommandText = "UPDATE editionTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
+                                                       + "engTitle =" + "'" + proposal.EngTitle + "',"
+                                                       + "keyword =" + "'" + proposal.KeyWord + "',"
+                                                       + "executor =" + "'" + proposal.Executor + "',"
+                                                       + "executor2 = " + "'" + proposal.Executor2 + "',"
+                                                       + " coExecutor = " + "'" + proposal.CoExecutor + "',"
+                                                       + " startDate=" + "'" + proposal.StartDate + "',"
+                                                       + "duration=" + "'" + proposal.Duration + "',"
+                                                       + "procedureType =" + "'" + proposal.ProcedureType + "',"
+                                                       + " propertyType = " + "'" + proposal.PropertyType + "',"
+                                                       + "registerType =" + "'" + proposal.RegisterType + "',"
+                                                       + "proposalType =" + "'" + proposal.ProposalType + "',"
+                                                       + " employer = " + "'" + proposal.Employer + "',"
+                                                       + " value = " + "'" + proposal.Value + "',"
+                                                       + " status = " + "'" + proposal.Status + "' ,"
+                                                       + " filename = " + "'" + _inputParameter.FileName + "' "
+                                                       + " WHERE  [index] = " + proposal.Index + " AND edition = 0 ";
+                    sc.ExecuteNonQuery();
+
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                    sc.ExecuteNonQuery();
+
+                   
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
                 {
-
+                    MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -4658,18 +4660,6 @@ namespace ProposalReportingSystem
                     bindingSourceObj.DataSource = table;
                     
                 }
-
-
-
-
-
-
-
-
-                ////////////////
-
-
-
 
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
                 dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
