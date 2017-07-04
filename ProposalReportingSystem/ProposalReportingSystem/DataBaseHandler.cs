@@ -16,10 +16,16 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
-        string conString = "Data Source= 169.254.92.252;" +
-                "Initial Catalog=rayanpro_EBS;" +
-                "User id=test; " +
-                "Password=HoseinNima1234;";
+        AppSetting getSetting = new AppSetting();
+        string conString;
+        public DataBaseHandler()
+        {
+            conString = getSetting.getConnectionString("cn");
+        }
+        //string conString = "Data Source= 169.254.92.252;" +
+        //        "Initial Catalog=rayanpro_EBS;" +
+        //        "User id=test; " +
+        //        "Password=HoseinNima1234;";
 
         //string conString = "Data Source= 185.159.152.2;" +
         //       "Initial Catalog=rayanpro_EBS;" +
@@ -5312,26 +5318,36 @@ namespace ProposalReportingSystem
         //}
         public void uploadFile(FTPSetting _inputParameter)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://169.254.92.252/", _inputParameter.FileName)));
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential("nima", "H-0sein");
-            Stream FtpStream = request.GetRequestStream();
-            FileStream fs = File.OpenRead(_inputParameter.FullName);
-            byte[] buffer = new byte[1024];
-            double total = (double)fs.Length;
-            int byteRead = 0;
-            double read = 0;
-            do
+            try
             {
+                string ftpUri = getSetting.getConnectionString("ftpuri");
+                string ftpUsername = getSetting.getConnectionString("ftpusername");
+                string ftpPassword = getSetting.getConnectionString("ftppassword");
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", ftpUri, _inputParameter.FileName)));
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+                request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                Stream FtpStream = request.GetRequestStream();
+                FileStream fs = File.OpenRead(_inputParameter.FullName);
+                byte[] buffer = new byte[1024];
+                double total = (double)fs.Length;
+                int byteRead = 0;
+                double read = 0;
+                do
+                {
 
-                byteRead = fs.Read(buffer, 0, 1024);
-                FtpStream.Write(buffer, 0, byteRead);
-                read += (double)byteRead;
-                double percentage = read / total * 100;
+                    byteRead = fs.Read(buffer, 0, 1024);
+                    FtpStream.Write(buffer, 0, byteRead);
+                    read += (double)byteRead;
+                    double percentage = read / total * 100;
+                }
+                while (byteRead != 0);
+                fs.Close();
+                FtpStream.Close();
             }
-            while (byteRead != 0);
-            fs.Close();
-            FtpStream.Close();
+            catch
+            {
+                
+            }
         }
 
         //169.254.92.252
@@ -5370,35 +5386,48 @@ namespace ProposalReportingSystem
         //}
         public string downloadFile(string FileNameToDownload, string tempDirPath)
         {
-            string DownloadedFilePath = "";
-            string ResponseDescription = "";
-            string PureFileName = new FileInfo(FileNameToDownload).Name;
-
-
-            DownloadedFilePath = tempDirPath;
-            string downloadUrl = String.Format("{0}/{1}", "ftp://169.254.92.252/", FileNameToDownload);
-            FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
-            req.Method = WebRequestMethods.Ftp.DownloadFile;
-            req.Credentials = new NetworkCredential("nima", "H-0sein");
-            req.UseBinary = true;
-            req.Proxy = null;
-
-            FtpWebResponse response = (FtpWebResponse)req.GetResponse();
-            Stream stream = response.GetResponseStream();
-            byte[] buffer = new byte[2048];
-            FileStream fs = new FileStream(DownloadedFilePath, FileMode.Create);
-            int ReadCount = stream.Read(buffer, 0, buffer.Length);
-            while (ReadCount > 0)
+            try
             {
-                fs.Write(buffer, 0, ReadCount);
-                ReadCount = stream.Read(buffer, 0, buffer.Length);
+
+
+                string ftpUri = getSetting.getConnectionString("ftpuri");
+                string ftpUsername = getSetting.getConnectionString("ftpusername");
+                string ftpPassword = getSetting.getConnectionString("ftppassword");
+
+                string DownloadedFilePath = "";
+                string ResponseDescription = "";
+                string PureFileName = new FileInfo(FileNameToDownload).Name;
+
+
+                DownloadedFilePath = tempDirPath;
+                string downloadUrl = String.Format("{0}/{1}", ftpUri, FileNameToDownload);
+                FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(downloadUrl);
+                req.Method = WebRequestMethods.Ftp.DownloadFile;
+                req.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                req.UseBinary = true;
+                req.Proxy = null;
+
+                FtpWebResponse response = (FtpWebResponse)req.GetResponse();
+                Stream stream = response.GetResponseStream();
+                byte[] buffer = new byte[2048];
+                FileStream fs = new FileStream(DownloadedFilePath, FileMode.Create);
+                int ReadCount = stream.Read(buffer, 0, buffer.Length);
+                while (ReadCount > 0)
+                {
+                    fs.Write(buffer, 0, ReadCount);
+                    ReadCount = stream.Read(buffer, 0, buffer.Length);
+                }
+                ResponseDescription = response.StatusDescription;
+                fs.Close();
+                stream.Close();
+
+
+                return ResponseDescription;
             }
-            ResponseDescription = response.StatusDescription;
-            fs.Close();
-            stream.Close();
-
-
-            return ResponseDescription;
+            catch(Exception e)
+            {
+                return "";
+            }
         }
 
         //private string DeleteFile(string fileName)
@@ -5416,9 +5445,13 @@ namespace ProposalReportingSystem
         {
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
+                string ftpUri = getSetting.getConnectionString("ftpuri");
+                string ftpUsername = getSetting.getConnectionString("ftpusername");
+                string ftpPassword = getSetting.getConnectionString("ftppassword");
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpUri + fileName);
                 request.Method = WebRequestMethods.Ftp.DeleteFile;
-                request.Credentials = new NetworkCredential("nima", "H-0sein");
+                request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
 
                 using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
@@ -5447,10 +5480,14 @@ namespace ProposalReportingSystem
         {
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://169.254.92.252/" + fileName);
+                string ftpUri = getSetting.getConnectionString("ftpuri");
+                string ftpUsername = getSetting.getConnectionString("ftpusername");
+                string ftpPassword = getSetting.getConnectionString("ftppassword");
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpUri + fileName);
                 request.Method = WebRequestMethods.Ftp.Rename;
                 request.RenameTo = "Deleted/" + fileName;
-                request.Credentials = new NetworkCredential("nima", "H-0sein");
+                request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
 
                 using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {

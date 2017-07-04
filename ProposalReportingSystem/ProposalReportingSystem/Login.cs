@@ -139,7 +139,7 @@ namespace ProposalReportingSystem
             try
             {
                
-                SqlConnection conn2 = new SqlConnection();
+                /*SqlConnection conn2 = new SqlConnection();
             
                 SqlCommand sc2 = new SqlCommand();
                 //conn2.ConnectionString = "Data Source= 185.159.152.2;" +
@@ -153,7 +153,7 @@ namespace ProposalReportingSystem
                 
                 sc2.Connection = conn2;
               
-                conn2.Open();
+                conn2.Open();*/
 
                 try
                 {
@@ -182,40 +182,29 @@ namespace ProposalReportingSystem
                         }
                         // REMEMBERING PASSWORD
 
-                        user.U_FName = "admin";
-                        user.U_LName = "admin";
-                        user.U_NCode = 98765;
-                        user.U_Password = "1";
-
-                        user.CanAddProposal = 1;
-                        user.CanEditProposal = 1;
-                        user.CanDeleteProposal = 1;
-                        user.CanAddUser = 1;
-                        user.CanEditUser = 1;
-                        user.CanDeleteUser = 1;
-                        user.CanManageTeacher = 1;
-                        user.CanManageType = 1;
-                        user.U_Color = "#D3EFFC";
-
-                        Form1 mainForm = new Form1(user);
+                        ServerInfo server = new ServerInfo();
                         this.Hide();
-                        mainForm.Show();
+                        server.Show();
                     }
 
                     else
                     {
+                        DataBaseHandler dbh = new DataBaseHandler();
+                        AppSetting setting = new AppSetting();
                         username = loginUsernameTxtBx.Text;
-                        password = loginPasswordTxtbx.Text;
+                        password = dbh.hashPass(loginPasswordTxtbx.Text);
 
                         SqlConnection conn = new SqlConnection();
                         //conn.ConnectionString = "Data Source= 185.159.152.2;" +
                         //"Initial Catalog=rayanpro_EBS;" +
                         //"User id=rayanpro_rayan; " +
                         //"Password=P@hn1395;";
-                        conn.ConnectionString = "Data Source= 169.254.92.252;" +
-                        "Initial Catalog=rayanpro_EBS;" +
-                        "User id=test; " +
-                        "Password=HoseinNima1234;";
+                        /* conn.ConnectionString = "Data Source= 169.254.92.252;" +
+                         "Initial Catalog=rayanpro_EBS;" +
+                         "User id=test; " +
+                         "Password=HoseinNima1234;";*/
+
+                        conn.ConnectionString = setting.getConnectionString("cn");
 
                         SqlCommand sc = new SqlCommand();
                         sc.CommandTimeout = 5;

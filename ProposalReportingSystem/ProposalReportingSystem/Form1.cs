@@ -4913,8 +4913,10 @@ namespace ProposalReportingSystem
             }
             else
             {
-                PopUp popUp = new PopUp("کد ملی ناقص", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
-                popUp.ShowDialog();
+                //PopUp popUp = new PopUp("کد ملی ناقص", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
+                //popUp.ShowDialog();
+                string context = "برای جست و جو کد ملی ده رقمی را به طور کامل وارد نمایید.";
+                Alert alert = new Alert(context, "darkred", 5);
             }
         }
 
@@ -4924,85 +4926,110 @@ namespace ProposalReportingSystem
             {
                 if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorNcodeTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorFNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorFNameTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorLNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام خانوادگی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorLNameTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorFacultyCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "دانشکده را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorFacultyCb.Focus();
                 }
 
                 else if (editProposalExecutorEGroupCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "گروه آموزشی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEGroupCb.Focus();
                 }
 
                 else if (editProposalExecutorEDegCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "درجه علمی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEDegCb.Focus();
                 }
 
                 else if (editProposalExecutorEmailTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorEmailTxtbx.BackColor == Color.Pink)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    /////////////////////////////////////////////////////////
+                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorMobileTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره موبایل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorMobileTxtbx.Focus();
                 }
 
                 else if (editProposalPersianTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
                 else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
                 else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "کلمات کلیدی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalKeywordsTxtbx.Focus();
                 }
 
@@ -5010,64 +5037,82 @@ namespace ProposalReportingSystem
 
                 else if (editProposalDurationTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مدت زمان را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalDurationTxtbx.Focus();
                 }
 
                 else if (editProposalProcedureTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalProcedureTypeCb.Focus();
                 }
 
                 else if (editProposalPropertyTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalPropertyTypeCb.Focus();
                 }
 
                 else if (editProposalRegisterTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalRegisterTypeCb.Focus();
                 }
 
                 else if (editProposalTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalTypeCb.Focus();
                 }
 
                 else if (editProposalOrganizationNumberCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalOrganizationNumberCb.Focus();
                 }
 
                 else if (editProposalOrganizationNameCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalOrganizationNameCb.Focus();
                 }
 
                 else if (editProposalValueTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مبلغ را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalValueTxtbx.Focus();
                 }
 
                 else if (editProposalStatusCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalStatusCb.Focus();
                 }
                 else
@@ -5131,149 +5176,191 @@ namespace ProposalReportingSystem
             {
                 if (editProposalExecutorNcodeTxtbx.Text.Length < 10)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorNcodeTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorFNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorFNameTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorLNameTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نام خانوادگی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorLNameTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorFacultyCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "دانشکده را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorFacultyCb.Focus();
                 }
 
                 else if (editProposalExecutorEGroupCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "گروه آموزشی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEGroupCb.Focus();
                 }
 
                 else if (editProposalExecutorEDegCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "درجه علمی را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEDegCb.Focus();
                 }
 
                 else if (editProposalExecutorEmailTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorEmailTxtbx.BackColor == Color.Pink)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
                 else if (editProposalExecutorMobileTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "شماره موبایل را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorMobileTxtbx.Focus();
                 }
 
                 else if (editProposalPersianTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
                 else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
                 else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "کلمات کلیدی را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalKeywordsTxtbx.Focus();
                 }
 
 
                 else if (editProposalDurationTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "مدت زمان را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalDurationTxtbx.Focus();
                 }
 
                 else if (editProposalProcedureTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalProcedureTypeCb.Focus();
                 }
 
                 else if (editProposalPropertyTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalPropertyTypeCb.Focus();
                 }
 
                 else if (editProposalRegisterTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalRegisterTypeCb.Focus();
                 }
 
                 else if (editProposalTypeCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "نوع پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalTypeCb.Focus();
                 }
 
                 else if (editProposalOrganizationNumberCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalOrganizationNumberCb.Focus();
                 }
 
                 else if (editProposalOrganizationNameCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "سازمان کارفرما را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalOrganizationNameCb.Focus();
                 }
 
                 else if (editProposalValueTxtbx.Text.Length == 0)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                //    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
+                //    p.ShowDialog();
+                    string context = "مبلغ را وارد نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalValueTxtbx.Focus();
                 }
 
                 else if (editProposalStatusCb.SelectedIndex == -1)
                 {
-                    PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
-                    p.ShowDialog();
+                    //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
+                    Alert alert = new Alert(context, "darkred", 5);
                     editProposalStatusCb.Focus();
                 }
                 else
