@@ -82,7 +82,7 @@
             // detailPanel
             // 
             this.detailPanel.AutoScroll = true;
-            this.detailPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.detailPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
             this.detailPanel.Controls.Add(this.detailSenderGradeTxtbx);
             this.detailPanel.Controls.Add(this.detailExecutorTxtbx);
             this.detailPanel.Controls.Add(this.detailRecieverGradeTxtbx);
@@ -890,8 +890,7 @@
             // 
             // Detail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(862, 688);
             this.Controls.Add(this.detailPanel);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
