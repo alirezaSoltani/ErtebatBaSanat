@@ -825,15 +825,17 @@ namespace ProposalReportingSystem
             /////////////////about us///////////////////////////
             gl.setSize(aboutUsPanel, 0, 1, 1000, 930);
             gl.setSize(aboutUsGp, 210, 250, 450, 340);
-            gl.setSize(aboutUsTitleLbl, 280, 10, 150, 35);
-            gl.setSize(AboutUsArshinLbl, 280, 60, 150, 30);
-            gl.setSize(aboutUsPeymanLbl, 280, 110, 150, 30);
-            gl.setSize(aboutUsHoseinLbl, 280, 160, 150, 30);
-            gl.setSize(aboutUsNimaLbl, 280, 210, 150, 30);
-            gl.setSize(aboutUsAlirezaLbl, 280, 260, 150, 30);
+            gl.setSize(aboutUsTitleLbl, 270, 10, 150, 35);
+            gl.setSize(AboutUsArshinLbl, 260, 60, 150, 30);
+            gl.setSize(aboutUsPeymanLbl, 255, 210, 150, 30);
+            gl.setSize(aboutUsHoseinLbl, 255, 160, 150, 30);
+            gl.setSize(aboutUsNimaLbl, 255, 110, 150, 30);
+            gl.setSize(aboutUsAlirezaLbl, 255, 260, 150, 30);
+            gl.setSize(aboutAppLbl, 50, 10, 150, 35);
+            gl.setSize(appInfoLbl, 25, 60, 200, 200);
             //////////////////about us///////////////////////////
 
-                
+
             /////////////////log design///////////////////////////
             gl.setSize(logPanel, 0, 1, 1000, 930);
             gl.setSize(logDgv, 20, 20, 825, 800);
