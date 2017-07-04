@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -5311,7 +5312,7 @@ namespace ProposalReportingSystem
         //}
         public void uploadFile(FTPSetting _inputParameter)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://169.254.92.252", _inputParameter.FileName)));
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", "ftp://169.254.92.252/", _inputParameter.FileName)));
             request.Method = WebRequestMethods.Ftp.UploadFile;
             request.Credentials = new NetworkCredential("nima", "H-0sein");
             Stream FtpStream = request.GetRequestStream();
@@ -5775,7 +5776,25 @@ namespace ProposalReportingSystem
         }
 
 
-        ///
-       
+        public string hashPass(string password2)
+        {
+            string password = password2;
+
+            // byte array representation of that string
+            byte[] encodedPassword = new UTF8Encoding().GetBytes(password);
+
+            // need MD5 to calculate the hash
+            byte[] hash = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(encodedPassword);
+
+            // string representation (similar to UNIX format)
+            string encoded = BitConverter.ToString(hash)
+               // without dashes
+               .Replace("0", string.Empty).Replace("-", string.Empty)
+               // make lowercase
+               .ToLower();
+
+            return encoded;
+        }
+
     }
 }

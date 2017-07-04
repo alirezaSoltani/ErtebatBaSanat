@@ -3576,7 +3576,7 @@ namespace ProposalReportingSystem
                 user.U_NCode = long.Parse(manageUserNcodeTxtbx.Text);
                 user.U_Email = manageUserEmailTxtbx.Text;
                 user.U_Tel = manageUserTelTxtbx.Text;
-                user.U_Password = manageUserPasswordTxtbx.Text;
+                user.U_Password = dbh.hashPass(manageUserPasswordTxtbx.Text);
 
                 if (manageUserAddProCb.Checked == true)
                 {
@@ -3718,7 +3718,7 @@ namespace ProposalReportingSystem
                 user.U_NCode = long.Parse(manageUserNcodeTxtbx.Text);
                 user.U_Email = manageUserEmailTxtbx.Text;
                 user.U_Tel = manageUserTelTxtbx.Text;
-                user.U_Password = manageUserPasswordTxtbx.Text;
+                user.U_Password = dbh.hashPass(manageUserPasswordTxtbx.Text);
 
                 if (manageUserAddProCb.Checked == true)
                 {
@@ -6586,12 +6586,12 @@ namespace ProposalReportingSystem
 
         private void personalSettingRegisterBtn_Click(object sender, EventArgs e)
         {
-            if (loginUser.U_Password == personalSettingOldPasswordTxtbx.Text)
+            if (loginUser.U_Password == dbh.hashPass(personalSettingOldPasswordTxtbx.Text))
             {
                 if (personalSettingNewPasswordTxtbx.Text == personalSettingRepeatPasswordTxtbx.Text)
                 {
-                    dbh.changePassword(loginUser.U_NCode, personalSettingNewPasswordTxtbx.Text, myDateTime.ToString());
-                    loginUser.U_Password = personalSettingNewPasswordTxtbx.Text;
+                    dbh.changePassword(loginUser.U_NCode, dbh.hashPass(personalSettingNewPasswordTxtbx.Text), myDateTime.ToString());
+                    loginUser.U_Password = dbh.hashPass(personalSettingNewPasswordTxtbx.Text);
                     personalSettingClearBtn.PerformClick();
                     PopUp p1 = new PopUp("تغییر رمز عبور", "رمز عبور با موفقیت تغییر یافت", "تایید", "", "", "success");
                     p1.ShowDialog();
