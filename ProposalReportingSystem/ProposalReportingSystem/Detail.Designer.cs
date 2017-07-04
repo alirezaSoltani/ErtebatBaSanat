@@ -896,6 +896,8 @@
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(880, 735);
             this.Name = "Detail";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

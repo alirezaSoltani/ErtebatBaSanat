@@ -110,5 +110,10 @@ namespace ProposalReportingSystem
             setting.setConnectionString("ftppassword", ftppassword);
             MessageBox.Show("Your FTP Password has changed successfully:\n" + setting.getConnectionString("ftppassword"), "Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ServerInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

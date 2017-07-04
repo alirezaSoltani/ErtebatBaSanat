@@ -3055,23 +3055,28 @@ namespace ProposalReportingSystem
         {
             if (searchProposalExecutorNCodeTxtbx.Text.Length == 10)
             {
-                searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
-
                 Teachers teacher = new Teachers();
                 teacher = dbh.getExecutorInfo(long.Parse(searchProposalExecutorNCodeTxtbx.Text));
-                // Fill componenets with existing information
-                searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
-                searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
-                searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
-                searchProposalExecutorEGroupCb.Text = teacher.T_Group;
-                searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
 
-                //make components uneditable
-                searchProposalExecutorFNameTxtbx.Enabled = false;
-                searchProposalExecutorLNameTxtbx.Enabled = false;
-                searchProposalExecutorFacultyCb.Enabled = false;
-                searchProposalExecutorEGroupCb.Enabled = false;
-                searchProposalExecutorMobileTxtbx.Enabled = false;
+
+                if (teacher.T_FName.ToString() != "notfound")
+                {
+                    searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
+
+                    // Fill componenets with existing information
+                    searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                    searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                    searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+                    searchProposalExecutorEGroupCb.Text = teacher.T_Group;
+                    searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+                
+                    //make components uneditable
+                    searchProposalExecutorFNameTxtbx.Enabled = false;
+                    searchProposalExecutorLNameTxtbx.Enabled = false;
+                    searchProposalExecutorFacultyCb.Enabled = false;
+                    searchProposalExecutorEGroupCb.Enabled = false;
+                    searchProposalExecutorMobileTxtbx.Enabled = false;
+                }
             } 
             else
             {
@@ -3107,23 +3112,26 @@ namespace ProposalReportingSystem
                 Teachers teacher = new Teachers();
 
                 teacher = dbh.getExecutorInfo(long.Parse(addProposalExecutorNcodeTxtbx.Text));
+
+                if (teacher.T_FName.ToString() != "notfound")
+                {
                     //Fill componenets with existing information
                     addProposalExecutorFNameTxtbx.Text = teacher.T_FName;
                     addProposalExecutorLNameTxtbx.Text = teacher.T_LName;
                     addProposalExecutorFacultyCb.Text = teacher.T_Faculty;
 
                     addProposalExecutorEGroupCb.Items.Clear();
-                if (addProposalExecutorFacultyCb.Text != "")
-                {
-                    comboList = dbh.getEGroup(addProposalExecutorFacultyCb.SelectedItem.ToString());
-
-                    foreach (String eGroup in comboList)
+                    if (addProposalExecutorFacultyCb.Text != "")
                     {
-                        addProposalExecutorEGroupCb.Items.Add(eGroup);
-                    }
-                }
+                        comboList = dbh.getEGroup(addProposalExecutorFacultyCb.SelectedItem.ToString());
 
-                    
+                        foreach (String eGroup in comboList)
+                        {
+                            addProposalExecutorEGroupCb.Items.Add(eGroup);
+                        }
+                    }
+
+
                     addProposalExecutorEGroupCb.Text = teacher.T_Group;
                     addProposalExecutorEDegCb.Text = teacher.T_EDeg;
                     addProposalExecutorEmailTxtbx.Text = teacher.T_Email;
@@ -3141,6 +3149,7 @@ namespace ProposalReportingSystem
                     addProposalExecutorMobileTxtbx.Enabled = false;
                     addProposalExecutorTel1Txtbx.Enabled = false;
                     addProposalExecutorTel2Txtbx.Enabled = false;
+                }
 
                 if (addProposalExecutorFNameTxtbx.Text == "")
                 {
@@ -3894,6 +3903,10 @@ namespace ProposalReportingSystem
         private void addProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            if (e.KeyChar == (char)13)
+            {
+                addProposalSearchBtn.PerformClick();
+            }
         }
 
         private void editProposalExecutorNcodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
@@ -3904,6 +3917,10 @@ namespace ProposalReportingSystem
         private void searchProposalExecutorNCodeTxtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
+            }
         }
 
         private void searchProposalValueFromTxtbx_TextChanged_1(object sender, EventArgs e)
@@ -4003,6 +4020,10 @@ namespace ProposalReportingSystem
         private void editProposalExecutorNcodeTxtbx_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            if (e.KeyChar == (char)13)
+            {
+                editProposalSearchBtn.PerformClick();
+            }
         }
 
         private void editProposalExecutorNcodeTxtbx_TextChanged(object sender, EventArgs e)
@@ -4021,36 +4042,39 @@ namespace ProposalReportingSystem
 
                 teacher = dbh.getExecutorInfo(long.Parse(editProposalExecutorNcodeTxtbx.Text));
 
-                //Fill componenets with existing information
-                editProposalExecutorFNameTxtbx.Text = teacher.T_FName;
-                editProposalExecutorLNameTxtbx.Text = teacher.T_LName;
-                editProposalExecutorFacultyCb.Text = teacher.T_Faculty;
-
-                editProposalExecutorEGroupCb.Items.Clear();
-                comboList = dbh.getEGroup(editProposalExecutorFacultyCb.SelectedItem.ToString());
-                foreach (String eGroup in comboList)
+                if (teacher.T_FName.ToString() != "notfound")
                 {
-                    editProposalExecutorEGroupCb.Items.Add(eGroup);
+                    //Fill componenets with existing information
+                    editProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                    editProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                    editProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+
+                    editProposalExecutorEGroupCb.Items.Clear();
+                    comboList = dbh.getEGroup(editProposalExecutorFacultyCb.SelectedItem.ToString());
+                    foreach (String eGroup in comboList)
+                    {
+                        editProposalExecutorEGroupCb.Items.Add(eGroup);
+                    }
+
+
+                    editProposalExecutorEGroupCb.Text = teacher.T_Group;
+                    editProposalExecutorEDegCb.Text = teacher.T_EDeg;
+                    editProposalExecutorEmailTxtbx.Text = teacher.T_Email;
+                    editProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+                    editProposalExecutorTel1Txtbx.Text = teacher.T_Tel1;
+                    editProposalExecutorTel2Txtbx.Text = teacher.T_Tel2;
+
+                    //make components uneditable
+                    editProposalExecutorFNameTxtbx.Enabled = false;
+                    editProposalExecutorLNameTxtbx.Enabled = false;
+                    editProposalExecutorFacultyCb.Enabled = false;
+                    editProposalExecutorEGroupCb.Enabled = false;
+                    editProposalExecutorEDegCb.Enabled = false;
+                    editProposalExecutorEmailTxtbx.Enabled = false;
+                    editProposalExecutorMobileTxtbx.Enabled = false;
+                    editProposalExecutorTel1Txtbx.Enabled = false;
+                    editProposalExecutorTel2Txtbx.Enabled = false;
                 }
-
-
-                editProposalExecutorEGroupCb.Text = teacher.T_Group;
-                editProposalExecutorEDegCb.Text = teacher.T_EDeg;
-                editProposalExecutorEmailTxtbx.Text = teacher.T_Email;
-                editProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
-                editProposalExecutorTel1Txtbx.Text = teacher.T_Tel1;
-                editProposalExecutorTel2Txtbx.Text = teacher.T_Tel2;
-
-                //make components uneditable
-                editProposalExecutorFNameTxtbx.Enabled = false;
-                editProposalExecutorLNameTxtbx.Enabled = false;
-                editProposalExecutorFacultyCb.Enabled = false;
-                editProposalExecutorEGroupCb.Enabled = false;
-                editProposalExecutorEDegCb.Enabled = false;
-                editProposalExecutorEmailTxtbx.Enabled = false;
-                editProposalExecutorMobileTxtbx.Enabled = false;
-                editProposalExecutorTel1Txtbx.Enabled = false;
-                editProposalExecutorTel2Txtbx.Enabled = false;
             }
 
             else
@@ -7414,6 +7438,43 @@ namespace ProposalReportingSystem
                     dbh.editSender(appSettingSenderNameTxtbx.Text, appSettingSenderGradeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                 }
             }
+        }
+
+        private void searchProposalExecutorFNameTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
+            }
+        }
+
+        private void searchProposalExecutorLNameTxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
+            }
+        }
+
+        private void searchProposalExecutorFacultyCb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
+            }
+        }
+
+        private void searchProposalExecutorEGroupCb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
+            }
+        }
+
+        private void searchProposalExecutorMobileTxtbx_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
 
         private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)

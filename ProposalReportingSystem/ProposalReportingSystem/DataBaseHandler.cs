@@ -5784,6 +5784,10 @@ namespace ProposalReportingSystem
                         teacher.T_Faculty = reader["t_Faculty"].ToString();
                         teacher.T_Group = reader["t_Group"].ToString();
                     }
+                    else
+                    {
+                        teacher.T_FName = "notfound";
+                    }
                        
 
                     transaction.Commit();

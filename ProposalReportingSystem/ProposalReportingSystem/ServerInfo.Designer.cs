@@ -244,7 +244,7 @@
             this.okBtn.Location = new System.Drawing.Point(520, 573);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(101, 37);
-            this.okBtn.TabIndex = 21;
+            this.okBtn.TabIndex = 0;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
@@ -265,6 +265,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "ServerInfo";
             this.Text = "ServerInfo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ServerInfo_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
