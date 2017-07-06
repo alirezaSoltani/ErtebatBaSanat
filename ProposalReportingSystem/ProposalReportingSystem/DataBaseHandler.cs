@@ -4597,6 +4597,10 @@ namespace ProposalReportingSystem
                 {
                     GetData3ForSearchProposal(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
                 }
+                else
+                {
+                     GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+                }
                 if (query.Contains("proposalTable"))
                 {
 
@@ -5048,6 +5052,25 @@ namespace ProposalReportingSystem
             dataGridview.Columns["startDate"].Visible = false;
             dataGridview.Columns["employer"].Visible = false;
             dataGridview.Columns["fileName"].Visible = false;
+
+
+            int i = PreviousPageOffSet;
+            int j = 0;
+            while (true)
+            {
+                try
+                {
+
+                    dataGridview.Rows[j].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                    j++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+
         }
 
 
