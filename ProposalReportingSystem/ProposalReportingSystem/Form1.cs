@@ -900,9 +900,9 @@ namespace ProposalReportingSystem
             if (op1.ShowDialog() == DialogResult.OK)
             {
                 FileInfo fi = new FileInfo(op1.FileName);
-                _inputParameter.Username = "Nima";
-                _inputParameter.Password = "P@hn1395";
-                _inputParameter.Server = "ftp://185.159.152.5";
+                _inputParameter.Username = "";
+                _inputParameter.Password = "";
+                _inputParameter.Server = "";
                 _inputParameter.FileName = fi.Name;
                 _inputParameter.FullName = fi.FullName;
             }
@@ -1500,6 +1500,7 @@ namespace ProposalReportingSystem
 
 
                     dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                    //addProposalClearBtn.PerformClick();
                     dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
                 }
             }
@@ -1508,15 +1509,16 @@ namespace ProposalReportingSystem
 
         private void appSettingAddBtn_Click(object sender, EventArgs e)
         {
-            if(appSettingProcedureTypeTxtbx.Enabled == true)
+
+            if (appSettingProcedureTypeTxtbx.Enabled == true)
             {
-                if(!appSettingProcedureTypeTxtbx.Text.Equals(""))
+                if (!appSettingProcedureTypeTxtbx.Text.Equals(""))
                 {
                     dbh.AddProcedureType(appSettingProcedureTypeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingProcedureTypeTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT procedureType FROM procedureTypeTable");
 
-                    
+
                     addProposalProcedureTypeCb.Items.Clear();
                     editProposalProcedureTypeCb.Items.Clear();
                     searchProposalProcedureTypeCb.Items.Clear();
@@ -1528,7 +1530,7 @@ namespace ProposalReportingSystem
                         editProposalProcedureTypeCb.Items.Add(procedure);
                         searchProposalProcedureTypeCb.Items.Add(procedure);
                     }
-                
+
                     appSettingProcedureTypeTxtbx.Focus();
                 }
             }
@@ -1539,21 +1541,21 @@ namespace ProposalReportingSystem
                 {
                     dbh.AddPropertyType(appSettingPropertyTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingPropertyTxtbx.Clear();
-                    
-                        dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
-                        addProposalPropertyTypeCb.Items.Clear();
-                        editProposalPropertyTypeCb.Items.Clear();
-                        searchProposalPropertyTypeCb.Items.Clear();
 
-                        comboList = dbh.getPropertyType();
-                        foreach (String Property in comboList)
-                        {
-                            addProposalPropertyTypeCb.Items.Add(Property);
-                            editProposalPropertyTypeCb.Items.Add(Property);
-                            searchProposalPropertyTypeCb.Items.Add(Property);
-                        }
-                    
-                   // form_initializer(); // To Reset items of comboBoxes and others
+                    dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT propertyType FROM propertyTypeTable");
+                    addProposalPropertyTypeCb.Items.Clear();
+                    editProposalPropertyTypeCb.Items.Clear();
+                    searchProposalPropertyTypeCb.Items.Clear();
+
+                    comboList = dbh.getPropertyType();
+                    foreach (String Property in comboList)
+                    {
+                        addProposalPropertyTypeCb.Items.Add(Property);
+                        editProposalPropertyTypeCb.Items.Add(Property);
+                        searchProposalPropertyTypeCb.Items.Add(Property);
+                    }
+
+                    // form_initializer(); // To Reset items of comboBoxes and others
                     appSettingPropertyTxtbx.Focus();
                 }
             }
@@ -1569,6 +1571,7 @@ namespace ProposalReportingSystem
                     addProposalExecutorFacultyCb.Items.Clear();
                     editProposalExecutorFacultyCb.Items.Clear();
                     searchProposalExecutorFacultyCb.Items.Clear();
+                    manageTeacherExecutorFacultyCb.Items.Clear();
 
                     comboList = dbh.getFaculty();
                     foreach (String ExecutorFaculty in comboList)
@@ -1576,6 +1579,7 @@ namespace ProposalReportingSystem
                         addProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageTeacherExecutorFacultyCb.Items.Add(ExecutorFaculty);
                     }
 
                     // form_initializer(); // To Reset items of comboBoxes and others
@@ -1633,7 +1637,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingEgroupTxtbx.Text.Equals(""))
                 {
-                    dbh.AddEGroup(appSettingFacultyTxtbx.Text,appSettingEgroupTxtbx.Text, loginUser.U_NCode, DateTime.Now.ToString());
+                    dbh.AddEGroup(appSettingFacultyTxtbx.Text, appSettingEgroupTxtbx.Text, loginUser.U_NCode, DateTime.Now.ToString());
                     appSettingEgroupTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
 
@@ -1642,21 +1646,25 @@ namespace ProposalReportingSystem
                     addProposalExecutorEGroupCb.Items.Clear();
                     editProposalExecutorEGroupCb.Items.Clear();
                     searchProposalExecutorEGroupCb.Items.Clear();
+                    manageTeacherExecutorEgroupCb.Items.Clear();
 
-                    
+
+
                     foreach (String EGroup in comboList)
                     {
                         addProposalExecutorEGroupCb.Items.Add(EGroup);
                         editProposalExecutorEGroupCb.Items.Add(EGroup);
                         searchProposalExecutorEGroupCb.Items.Add(EGroup);
-                    }
+                        manageTeacherExecutorEgroupCb.Items.Add(EGroup);
 
-                    appSettingEgroupTxtbx.Focus();
+                        appSettingEgroupTxtbx.Focus();
+                    }
                 }
             }
 
             else if (appSettingCoTxtbx.Enabled == true)
             {
+                MessageBox.Show("dd");
                 if (!appSettingCoTxtbx.Text.Equals(""))
                 {
                     dbh.AddEmployer(appSettingCoTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
@@ -1718,6 +1726,7 @@ namespace ProposalReportingSystem
 
             else if (appSettingEdegreeTxtbx.Enabled == true)
             {
+                // MessageBox
                 if (!appSettingEdegreeTxtbx.Text.Equals(""))
                 {
                     dbh.AddEDegree(appSettingEdegreeTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
@@ -1727,6 +1736,7 @@ namespace ProposalReportingSystem
                     comboList = dbh.getEDeg();
                     addProposalExecutorEDegCb.Items.Clear();
                     editProposalExecutorEDegCb.Items.Clear();
+                    manageTeacherExecutorEDegCb.Items.Clear();
                     //searchProposalEde.Items.Clear();
 
 
@@ -1734,7 +1744,8 @@ namespace ProposalReportingSystem
                     {
                         addProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
                         editProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
-                      //  searchProposalStatusCb.Items.Add(Status);
+                        manageTeacherExecutorEDegCb.Items.Add(ExecutorEDeg);
+                        //  searchProposalStatusCb.Items.Add(Status);
                     }
                     appSettingEdegreeTxtbx.Focus();
                 }
@@ -1781,6 +1792,8 @@ namespace ProposalReportingSystem
             appSettingDeleteBtn.Enabled = false;
 
             appSettingProcedureTypeTxtbx.Enabled = true;
+            appSettingProcedureTypeTxtbx.Focus();
+
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
@@ -1811,8 +1824,11 @@ namespace ProposalReportingSystem
             appSettingEditBtn.Enabled = false;
             appSettingDeleteBtn.Enabled = false;
 
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = true;
+            appSettingPropertyTxtbx.Focus();
+
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
             appSettingProTypeTxtbx.Enabled = false;
@@ -1845,6 +1861,8 @@ namespace ProposalReportingSystem
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = true;
+            appSettingFacultyTxtbx.Focus();
+
             appSettingRegTypeTxtbx.Enabled = false;
             appSettingProTypeTxtbx.Enabled = false;
             appSettingEgroupTxtbx.Enabled = false;
@@ -1872,10 +1890,13 @@ namespace ProposalReportingSystem
             appSettingEditBtn.Enabled = false;
             appSettingDeleteBtn.Enabled = false;
 
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = true;
+            appSettingRegTypeTxtbx.Focus();
+
             appSettingProTypeTxtbx.Enabled = false;
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
@@ -1899,6 +1920,7 @@ namespace ProposalReportingSystem
 
         private void appSettingProTypeRbtn_Click(object sender, EventArgs e)
         {
+
             appSettingEditBtn.Enabled = false;
             appSettingDeleteBtn.Enabled = false;
             appSettingProcedureTypeTxtbx.Enabled = false;
@@ -1906,6 +1928,8 @@ namespace ProposalReportingSystem
             appSettingFacultyTxtbx.Enabled = false;
             appSettingRegTypeTxtbx.Enabled = false;
             appSettingProTypeTxtbx.Enabled = true;
+            appSettingProTypeTxtbx.Focus();
+
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = false;
@@ -1936,6 +1960,7 @@ namespace ProposalReportingSystem
             appSettingEditBtn.Enabled = false;
             appSettingDeleteBtn.Enabled = false;
 
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1943,6 +1968,8 @@ namespace ProposalReportingSystem
             appSettingProTypeTxtbx.Enabled = false;
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = true;
+            appSettingCoTxtbx.Focus();
+
             appSettingStatusTxtbx.Enabled = false;
             appSettingEdegreeTxtbx.Enabled = false;
             appSettingEdegreeTxtbx.Clear();
@@ -1974,6 +2001,8 @@ namespace ProposalReportingSystem
             appSettingEditBtn.Enabled = false;
             appSettingDeleteBtn.Enabled = false;
 
+            
+
             appSettingProcedureTypeTxtbx.Enabled = false;
             appSettingPropertyTxtbx.Enabled = false;
             appSettingFacultyTxtbx.Enabled = false;
@@ -1982,6 +2011,8 @@ namespace ProposalReportingSystem
             appSettingEgroupTxtbx.Enabled = false;
             appSettingCoTxtbx.Enabled = false;
             appSettingStatusTxtbx.Enabled = true;
+            appSettingStatusTxtbx.Focus();
+
             appSettingEdegreeTxtbx.Enabled = false;
             appSettingEdegreeTxtbx.Clear();
 
@@ -2074,6 +2105,7 @@ namespace ProposalReportingSystem
                     addProposalExecutorFacultyCb.Items.Clear();
                     editProposalExecutorFacultyCb.Items.Clear();
                     searchProposalExecutorFacultyCb.Items.Clear();
+                    manageTeacherExecutorFacultyCb.Items.Clear();
 
                     comboList = dbh.getFaculty();
                     foreach (String ExecutorFaculty in comboList)
@@ -2081,6 +2113,7 @@ namespace ProposalReportingSystem
                         addProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageTeacherExecutorFacultyCb.Items.Add(ExecutorFaculty);
                     }
                     appSettingFacultyTxtbx.Focus();
                 }
@@ -2168,6 +2201,7 @@ namespace ProposalReportingSystem
                     addProposalExecutorEGroupCb.Items.Clear();
                     editProposalExecutorEGroupCb.Items.Clear();
                     searchProposalExecutorEGroupCb.Items.Clear();
+                    manageTeacherExecutorEgroupCb.Items.Clear();
 
 
                     foreach (String EGroup in comboList)
@@ -2175,6 +2209,7 @@ namespace ProposalReportingSystem
                         addProposalExecutorEGroupCb.Items.Add(EGroup);
                         editProposalExecutorEGroupCb.Items.Add(EGroup);
                         searchProposalExecutorEGroupCb.Items.Add(EGroup);
+                        manageTeacherExecutorEgroupCb.Items.Add(EGroup);
                     }
 
                     appSettingEgroupTxtbx.Focus();
@@ -2277,6 +2312,7 @@ namespace ProposalReportingSystem
                     comboList = dbh.getEDeg();
                     addProposalExecutorEDegCb.Items.Clear();
                     editProposalExecutorEDegCb.Items.Clear();
+                    manageTeacherExecutorEDegCb.Items.Clear();
                     //searchProposalEde.Items.Clear();
 
 
@@ -2284,6 +2320,7 @@ namespace ProposalReportingSystem
                     {
                         addProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
                         editProposalExecutorEDegCb.Items.Add(ExecutorEDeg);
+                        manageTeacherExecutorEDegCb.Items.Add(ExecutorEDeg);
                         //  searchProposalStatusCb.Items.Add(Status);
                     }
                     appSettingEdegreeTxtbx.Focus();
@@ -2577,6 +2614,7 @@ namespace ProposalReportingSystem
 
                 appSettingEgroupRbtn.Select();
                 appSettingEgroupTxtbx.Enabled = true;
+                appSettingEgroupTxtbx.Focus();
 
                // MessageBox.Show(appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString());
                 dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingShowDv.Rows[e.RowIndex].Cells["facultyName"].Value.ToString() + "'");
@@ -6077,9 +6115,9 @@ namespace ProposalReportingSystem
             if (op1.ShowDialog() == DialogResult.OK)
             {
                 FileInfo fi = new FileInfo(op1.FileName);
-                _inputParameter.Username = "Nima";
-                _inputParameter.Password = "P@hn1395";
-                _inputParameter.Server = "ftp://185.159.152.5";
+                _inputParameter.Username = "";
+                _inputParameter.Password = "";
+                _inputParameter.Server = "";
                 _inputParameter.FileName = fi.Name;
                 _inputParameter.FullName = fi.FullName;
             }
@@ -6888,9 +6926,11 @@ namespace ProposalReportingSystem
 
 
                         dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                        searchProposalShowDgv.Columns["navToAdd"].Visible = false;
+                        searchProposalShowDgv.Columns["navToEdit"].Visible = false;
                         searchProposalShowDgv.Columns["editionBtn"].Visible = false;
                         searchProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
-                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 6;
                         searchProposalShowDgv.Columns["edition"].Frozen = true;
 
                         editionProposalIndex = proposal.Index;
@@ -6902,9 +6942,151 @@ namespace ProposalReportingSystem
                         searchProposalNavigationPreviousPageBtn.Enabled = false;
                         searchProposalNavigationCurrentPageTxtbx.Enabled = false;
                         searchProposalNavigationReturnBtn.Enabled = true;
+                    }
+
+                    if (e.ColumnIndex == 21)
+                    {
+
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = 0;
+                        proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+                        proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
+
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 98765)
+                        {
+                            if (loginUser.CanEditProposal == 1 || loginUser.U_NCode == 98765)
+                            {
+                                menuManageProposalBtn.PerformClick();
+                                editProposalShowDgv.Columns.Clear();
+                                if (manageProposalIsWatchingEdition)
+                                {
+                                    editProposalClearBtn.PerformClick();
+                                }
+                                TotalPage = 1;
+                                CurrentPageIndex = 1;
+                                manageProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                                dbh.editProposalQuery = "SELECT * FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                                dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, dbh.editProposalQuery, pageSize, CurrentPageIndex);
+                                editProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                                editProposalExecutorNcodeTxtbx.Focus();
+
+
+                                manageProposalNavigationFirstPageBtn.Enabled = true;
+                                manageProposalNavigationNextPageBtn.Enabled = true;
+                                manageProposalNavigationLastPageBtn.Enabled = true;
+                                manageProposalNavigationPreviousPageBtn.Enabled = true;
+                                manageProposalNavigationCurrentPageTxtbx.Enabled = true;
+                                manageProposalNavigationReturnBtn.Enabled = false;
+
+                                editProposalShowDgv.CurrentCell = editProposalShowDgv.Rows[0].Cells[5];
+                                editProposalShowDgv_CellClick(this.editProposalShowDgv, new DataGridViewCellEventArgs(0, 0));
+                            }
+                            else
+                            {
+                                string context = "شما دسترسی برای تغییر پروپوزال ها را ندارید.";
+                                Alert alert = new Alert(context, "darkred", 5);
+                            }
+                        }
+                        else
+                        {
+                            string context = "شما دسترسی برای تغییر این پروپوزال را ندارید.";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+
 
 
                     }
+                    if (e.ColumnIndex == 22)
+                    {
+
+                        Proposal proposal = new Proposal();
+
+                        proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
+                        proposal.PersianTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
+                        proposal.EngTitle = searchProposalShowDgv.Rows[e.RowIndex].Cells["engTitle"].Value.ToString();
+                        proposal.KeyWord = searchProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
+                        proposal.Executor2 = searchProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
+                        proposal.CoExecutor = searchProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
+                        proposal.StartDate = searchProposalShowDgv.Rows[e.RowIndex].Cells["hijriDate"].Value.ToString();
+                        proposal.Duration = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString());
+                        proposal.ProcedureType = searchProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
+                        proposal.ProposalType = searchProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
+                        proposal.PropertyType = searchProposalShowDgv.Rows[e.RowIndex].Cells["propertyType"].Value.ToString();
+                        proposal.RegisterType = searchProposalShowDgv.Rows[e.RowIndex].Cells["registerType"].Value.ToString();
+                        proposal.Employer = Int32.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["employer"].Value.ToString());
+                        proposal.Edition = 0;
+                        proposal.Value = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString());
+                        proposal.Status = searchProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                        proposal.FileName = searchProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
+                        proposal.Executor = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString());
+                        proposal.Registrant = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["registrant"].Value.ToString());
+                        proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                        proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
+
+
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 98765)
+                        {
+                            if (loginUser.CanAddProposal == 1 || loginUser.U_NCode == 98765)
+                            {
+                                menuAddProposalBtn.PerformClick();
+                                addProposalShowDgv.Columns.Clear();
+                                if (addProposalIsWatchingEdition)
+                                {
+                                    addProposalClearBtn.PerformClick();
+                                }
+                                TotalPage = 1;
+                                CurrentPageIndex = 1;
+                                addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                                dbh.addProposalQuery = "SELECT * FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                                dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery, pageSize, CurrentPageIndex);
+                                addProposalExecutorNcodeTxtbx.BackColor = Color.White;
+                                addProposalExecutorNcodeTxtbx.Focus();
+
+
+                                addProposalNavigationFirstPageBtn.Enabled = true;
+                                addProposalNavigationNextPageBtn.Enabled = true;
+                                addProposalNavigationLastPageBtn.Enabled = true;
+                                addProposalNavigationPreviousPageBtn.Enabled = true;
+                                addProposalNavigationCurrentPageTxtbx.Enabled = true;
+                                addProposalNavigationReturnBtn.Enabled = false;
+
+                                addProposalShowDgv.CurrentCell = addProposalShowDgv.Rows[0].Cells["editionBtn"];
+
+                                addProposalShowDgv_CellClick(this.addProposalShowDgv, new DataGridViewCellEventArgs(addProposalShowDgv.CurrentCell.ColumnIndex, addProposalShowDgv.CurrentCell.RowIndex));
+                            }
+                            else
+                            {
+                                string context = "شما دسترسی برای افزودن پروپوزال ها را ندارید.";
+                                Alert alert = new Alert(context, "darkred", 5);
+                            }
+                        }
+                        else
+                        {
+                            string context = " شما دسترسی برای افزودن اصلاحیه این پروپوزال را ندارید.";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+
+                    }
+
 
                 }
                 else if (searchProposalIsWatchingEdition)

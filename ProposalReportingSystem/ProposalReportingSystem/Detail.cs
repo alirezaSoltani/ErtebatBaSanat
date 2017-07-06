@@ -92,19 +92,28 @@ namespace ProposalReportingSystem
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (saveFileDialog1.FileName != "")
+                try
                 {
-                    dbh.downloadFile(fileName, saveFileDialog1.FileName);
-                    System.Diagnostics.Process.Start(saveFileDialog1.FileName);
+                    if (saveFileDialog1.FileName != "")
+                    {
+                        dbh.downloadFile(fileName, saveFileDialog1.FileName);
+                        System.Diagnostics.Process.Start(saveFileDialog1.FileName);
 
-                    string context = "فایل پروپوزال در محل مورد نظر ذخیره شد";
+                        string context = "فایل پروپوزال در محل مورد نظر ذخیره شد";
+                        Alert alert = new Alert(context, "bluegray", 2);
+                    }
+                    else
+                    {
+                        string context = "نام فایل را وارد کنید ";
+                        Alert alert = new Alert(context, "darkred", 2);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    string context = "اشکال در فایل پروپوزال";
                     Alert alert = new Alert(context, "bluegray", 2);
                 }
-                else
-                {
-                    string context = "نام فایل را وارد کنید ";
-                    Alert alert = new Alert(context, "darkred", 2);
-                }
+                
             }
         }
 

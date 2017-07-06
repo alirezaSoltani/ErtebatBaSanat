@@ -150,7 +150,7 @@
             // 
             // loginShowPasswordChb
             // 
-            this.loginShowPasswordChb.Location = new System.Drawing.Point(251, 168);
+            this.loginShowPasswordChb.Location = new System.Drawing.Point(252, 168);
             this.loginShowPasswordChb.Name = "loginShowPasswordChb";
             this.loginShowPasswordChb.Size = new System.Drawing.Size(29, 24);
             this.loginShowPasswordChb.TabIndex = 12;

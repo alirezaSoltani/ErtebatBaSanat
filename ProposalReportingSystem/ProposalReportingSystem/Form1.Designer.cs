@@ -34,8 +34,8 @@
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             FarsiCalendarComponent.FarsiDate farsiDate1 = new FarsiCalendarComponent.FarsiDate();
             DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
@@ -50,7 +50,7 @@
             DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
@@ -63,15 +63,10 @@
             this.searchProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.searchProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.searchProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalShowDgv = new System.Windows.Forms.DataGridView();
             this.searchProposalSearchGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.searchProposalShowAllBtn = new DevComponents.DotNetBar.ButtonX();
@@ -118,7 +113,6 @@
             this.searchProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
             this.searchProposalExecutorInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.searchProposalProposalInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.editProposalPanel = new System.Windows.Forms.Panel();
             this.editProposalEditGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -177,40 +171,27 @@
             this.editProposalEnglishTitleTxtbx = new System.Windows.Forms.TextBox();
             this.editProposalPersianTitleTxtbx = new System.Windows.Forms.TextBox();
             this.editProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
-            this.logTab = new DevComponents.DotNetBar.SuperTabItem();
             this.editProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
             this.editProposalShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.manageProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.manageProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.editProposalShowDgv = new System.Windows.Forms.DataGridView();
-            this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.addProposalPanel = new System.Windows.Forms.Panel();
             this.addProposalShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.addProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.addProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.addProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem7 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem8 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem11 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem12 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem13 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalShowDgv = new System.Windows.Forms.DataGridView();
             this.addProposalAddGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.addProposalEnglishTitleTxtbx = new System.Windows.Forms.TextBox();
@@ -268,7 +249,6 @@
             this.addProposalPersianTitleTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
             this.addProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
-            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.manageUserPanel = new System.Windows.Forms.Panel();
             this.manageUserManageGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -305,32 +285,21 @@
             this.manageUserNavigationPanel = new System.Windows.Forms.Panel();
             this.manageUserNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.manageUserNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageUserNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageUserNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageUserNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageUserNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageUserShowDgv = new System.Windows.Forms.DataGridView();
-            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel12 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.manageTeacherPanel = new System.Windows.Forms.Panel();
             this.teacherManageShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageTeacherNavigationPanel = new System.Windows.Forms.Panel();
             this.manageTeacherNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.manageTeacherNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherShowDgv = new System.Windows.Forms.DataGridView();
             this.manageTeacherInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageTeacherSearchBtn = new DevComponents.DotNetBar.ButtonX();
@@ -359,7 +328,6 @@
             this.manageTeacherDeleteBtn = new DevComponents.DotNetBar.ButtonX();
             this.manageTeacherEditBtn = new DevComponents.DotNetBar.ButtonX();
             this.manageTeacherAddBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.homePanel = new System.Windows.Forms.Panel();
             this.homeTimeDateGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -369,9 +337,7 @@
             this.homeEBSLbl = new System.Windows.Forms.Label();
             this.homeWelcomeLbl = new System.Windows.Forms.Label();
             this.homeUserNameLbl = new System.Windows.Forms.Label();
-            this.homeUserProfileLbl = new System.Windows.Forms.Label();
             this.homeAppNameLbl = new System.Windows.Forms.Label();
-            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.aboutUsPanel = new System.Windows.Forms.Panel();
             this.aboutUsGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -381,23 +347,16 @@
             this.aboutUsPeymanLbl = new System.Windows.Forms.Label();
             this.AboutUsArshinLbl = new System.Windows.Forms.Label();
             this.aboutUsTitleLbl = new System.Windows.Forms.Label();
-            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel11 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.logPanel = new System.Windows.Forms.Panel();
             this.logNavigationPanel = new System.Windows.Forms.Panel();
             this.logNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.logNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem16 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem22 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem28 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem34 = new DevComponents.DotNetBar.SuperTabItem();
             this.logDgv = new System.Windows.Forms.DataGridView();
-            this.sysLogTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel7 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.personalSettingPanel = new System.Windows.Forms.Panel();
             this.personalSettingThemeGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -418,7 +377,6 @@
             this.currentPasswordLbl = new System.Windows.Forms.Label();
             this.personalSettingRegisterBtn = new DevComponents.DotNetBar.ButtonX();
             this.personalSettingClearBtn = new DevComponents.DotNetBar.ButtonX();
-            this.personalSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.appSettingPanel = new System.Windows.Forms.Panel();
             this.appSettingSenderInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -432,15 +390,10 @@
             this.appSettingNavigationPanel = new System.Windows.Forms.Panel();
             this.appSettingNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.appSettingNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem32 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem33 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem35 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem36 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem37 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingShowDv = new System.Windows.Forms.DataGridView();
             this.appSettingGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.appSettingEdegreeTxtbx = new System.Windows.Forms.TextBox();
@@ -474,9 +427,7 @@
             this.appSettingProcedureTypeLbl = new System.Windows.Forms.Label();
             this.appSettingEgroupLbl = new System.Windows.Forms.Label();
             this.appSettingEdegreeLbl = new System.Windows.Forms.Label();
-            this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel13 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.exitTab = new DevComponents.DotNetBar.SuperTabItem();
             this.log = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel8 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.wait_timer = new System.Windows.Forms.Timer(this.components);
@@ -485,6 +436,10 @@
             this.menuSlideRb = new System.Windows.Forms.RadioButton();
             this.menuDetailRb = new System.Windows.Forms.RadioButton();
             this.menuIconRb = new System.Windows.Forms.RadioButton();
+            this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.appInfoLbl = new System.Windows.Forms.Label();
+            this.aboutAppLbl = new System.Windows.Forms.Label();
             this.menuExitBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuSysLogBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuAboutUsBtn = new DevComponents.DotNetBar.ButtonX();
@@ -496,10 +451,55 @@
             this.menuSearchProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuAddProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuHomeBtn = new DevComponents.DotNetBar.ButtonX();
-            this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.appInfoLbl = new System.Windows.Forms.Label();
-            this.aboutAppLbl = new System.Windows.Forms.Label();
+            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
+            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.logTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem7 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem8 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem11 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem12 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem13 = new DevComponents.DotNetBar.SuperTabItem();
+            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem32 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem33 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem35 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem36 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem37 = new DevComponents.DotNetBar.SuperTabItem();
+            this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.personalSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.homeUserProfileLbl = new System.Windows.Forms.Label();
+            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem16 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem22 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem28 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem34 = new DevComponents.DotNetBar.SuperTabItem();
+            this.sysLogTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.exitTab = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -635,17 +635,17 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel5);
-            this.mainPage.Controls.Add(this.superTabControlPanel10);
-            this.mainPage.Controls.Add(this.superTabControlPanel11);
-            this.mainPage.Controls.Add(this.superTabControlPanel7);
-            this.mainPage.Controls.Add(this.superTabControlPanel6);
             this.mainPage.Controls.Add(this.superTabControlPanel2);
-            this.mainPage.Controls.Add(this.superTabControlPanel13);
-            this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel6);
+            this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel4);
+            this.mainPage.Controls.Add(this.superTabControlPanel10);
+            this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel11);
+            this.mainPage.Controls.Add(this.superTabControlPanel13);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.mainPage.Location = new System.Drawing.Point(0, 15);
             this.mainPage.Margin = new System.Windows.Forms.Padding(4);
@@ -798,14 +798,6 @@
             this.searchProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.searchProposalNavigationNextPageBtn.Click += new System.EventHandler(this.searchProposalNavigationNextPageBtn_Click);
             // 
-            // superTabItem14
-            // 
-            this.superTabItem14.GlobalItem = false;
-            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem14.Name = "superTabItem14";
-            this.superTabItem14.Text = "لاگ";
-            // 
             // searchProposalNavigationLastPageBtn
             // 
             this.searchProposalNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -823,14 +815,6 @@
             this.searchProposalNavigationLastPageBtn.TabIndex = 32;
             this.searchProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.searchProposalNavigationLastPageBtn.Click += new System.EventHandler(this.searchProposalNavigationLastPageBtn_Click);
-            // 
-            // superTabItem15
-            // 
-            this.superTabItem15.GlobalItem = false;
-            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem15.Name = "superTabItem15";
-            this.superTabItem15.Text = "لاگ";
             // 
             // searchProposalNavigationPreviousPageBtn
             // 
@@ -850,14 +834,6 @@
             this.searchProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.searchProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.searchProposalNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem17
-            // 
-            this.superTabItem17.GlobalItem = false;
-            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem17.Name = "superTabItem17";
-            this.superTabItem17.Text = "لاگ";
-            // 
             // searchProposalNavigationFirstPageBtn
             // 
             this.searchProposalNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -876,14 +852,6 @@
             this.searchProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.searchProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.searchProposalNavigationFirstPageBtn_Click);
             // 
-            // superTabItem18
-            // 
-            this.superTabItem18.GlobalItem = false;
-            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem18.Name = "superTabItem18";
-            this.superTabItem18.Text = "لاگ";
-            // 
             // searchProposalNavigationReturnBtn
             // 
             this.searchProposalNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -901,14 +869,6 @@
             this.searchProposalNavigationReturnBtn.TabIndex = 28;
             this.searchProposalNavigationReturnBtn.Text = "بازگشت";
             this.searchProposalNavigationReturnBtn.Click += new System.EventHandler(this.searchProposalNavigationReturnBtn_Click);
-            // 
-            // superTabItem19
-            // 
-            this.superTabItem19.GlobalItem = false;
-            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem19.Name = "superTabItem19";
-            this.superTabItem19.Text = "لاگ";
             // 
             // searchProposalShowDgv
             // 
@@ -1597,15 +1557,6 @@
             this.searchProposalProposalInfoGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.searchProposalProposalInfoGp.TabIndex = 121;
             this.searchProposalProposalInfoGp.Text = "جستجو بر اساس اطلاعات پروپوزال";
-            // 
-            // searchProposalTab
-            // 
-            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
-            this.searchProposalTab.GlobalItem = false;
-            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
-            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.searchProposalTab.Name = "searchProposalTab";
-            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
             // 
             // superTabControlPanel5
             // 
@@ -2396,14 +2347,6 @@
             this.editProposalRegisterBtn.Text = "ثبت تغییرات";
             this.editProposalRegisterBtn.Click += new System.EventHandler(this.editProposalRegisterBtn_Click);
             // 
-            // logTab
-            // 
-            this.logTab.GlobalItem = false;
-            this.logTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.logTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.logTab.Name = "logTab";
-            this.logTab.Text = "لاگ";
-            // 
             // editProposalClearBtn
             // 
             this.editProposalClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2516,14 +2459,6 @@
             this.manageProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.manageProposalNavigationNextPageBtn.Click += new System.EventHandler(this.manageProposalNavigationNextPageBtn_Click);
             // 
-            // superTabItem6
-            // 
-            this.superTabItem6.GlobalItem = false;
-            this.superTabItem6.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem6.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem6.Name = "superTabItem6";
-            this.superTabItem6.Text = "لاگ";
-            // 
             // manageProposalNavigationLastPageBtn
             // 
             this.manageProposalNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2542,14 +2477,6 @@
             this.manageProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.manageProposalNavigationLastPageBtn.Click += new System.EventHandler(this.manageProposalNavigationLastPageBtn_Click);
             // 
-            // superTabItem5
-            // 
-            this.superTabItem5.GlobalItem = false;
-            this.superTabItem5.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem5.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem5.Name = "superTabItem5";
-            this.superTabItem5.Text = "لاگ";
-            // 
             // buttonX4
             // 
             this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2566,14 +2493,6 @@
             this.buttonX4.SubItemsExpandWidth = 0;
             this.buttonX4.TabIndex = 31;
             this.buttonX4.Text = "ثبت تغییرات";
-            // 
-            // superTabItem4
-            // 
-            this.superTabItem4.GlobalItem = false;
-            this.superTabItem4.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem4.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem4.Name = "superTabItem4";
-            this.superTabItem4.Text = "لاگ";
             // 
             // manageProposalNavigationPreviousPageBtn
             // 
@@ -2593,14 +2512,6 @@
             this.manageProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.manageProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.manageProposalNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem3
-            // 
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem3.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "لاگ";
-            // 
             // manageProposalNavigationFirstPageBtn
             // 
             this.manageProposalNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2619,14 +2530,6 @@
             this.manageProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.manageProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.manageProposalNavigationFirstPageBtn_Click);
             // 
-            // superTabItem2
-            // 
-            this.superTabItem2.GlobalItem = false;
-            this.superTabItem2.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem2.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem2.Name = "superTabItem2";
-            this.superTabItem2.Text = "لاگ";
-            // 
             // manageProposalNavigationReturnBtn
             // 
             this.manageProposalNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2644,14 +2547,6 @@
             this.manageProposalNavigationReturnBtn.TabIndex = 28;
             this.manageProposalNavigationReturnBtn.Text = "بازگشت";
             this.manageProposalNavigationReturnBtn.Click += new System.EventHandler(this.manageProposalNavigationReturnBtn_Click);
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem1.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "لاگ";
             // 
             // editProposalShowDgv
             // 
@@ -2681,15 +2576,6 @@
             this.editProposalShowDgv.TabIndex = 2;
             this.editProposalShowDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.editProposalShowDgv_CellClick);
             this.editProposalShowDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageProposalTab
-            // 
-            this.manageProposalTab.AttachedControl = this.superTabControlPanel5;
-            this.manageProposalTab.GlobalItem = false;
-            this.manageProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
-            this.manageProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageProposalTab.Name = "manageProposalTab";
-            this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
             // 
             // superTabControlPanel2
             // 
@@ -2811,14 +2697,6 @@
             this.addProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.addProposalNavigationNextPageBtn.Click += new System.EventHandler(this.addProposalNavigationNextPageBtn_Click);
             // 
-            // superTabItem7
-            // 
-            this.superTabItem7.GlobalItem = false;
-            this.superTabItem7.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem7.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem7.Name = "superTabItem7";
-            this.superTabItem7.Text = "لاگ";
-            // 
             // addProposalNavigationLastPageBtn
             // 
             this.addProposalNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2836,14 +2714,6 @@
             this.addProposalNavigationLastPageBtn.TabIndex = 32;
             this.addProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.addProposalNavigationLastPageBtn.Click += new System.EventHandler(this.addProposalNavigationLastPageBtn_Click);
-            // 
-            // superTabItem8
-            // 
-            this.superTabItem8.GlobalItem = false;
-            this.superTabItem8.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem8.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem8.Name = "superTabItem8";
-            this.superTabItem8.Text = "لاگ";
             // 
             // addProposalNavigationPreviousPageBtn
             // 
@@ -2863,14 +2733,6 @@
             this.addProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.addProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.addProposalNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem11
-            // 
-            this.superTabItem11.GlobalItem = false;
-            this.superTabItem11.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem11.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem11.Name = "superTabItem11";
-            this.superTabItem11.Text = "لاگ";
-            // 
             // addProposalNavigationFirstPageBtn
             // 
             this.addProposalNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2888,14 +2750,6 @@
             this.addProposalNavigationFirstPageBtn.TabIndex = 29;
             this.addProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.addProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.addProposalNavigationFirstPageBtn_Click);
-            // 
-            // superTabItem12
-            // 
-            this.superTabItem12.GlobalItem = false;
-            this.superTabItem12.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem12.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem12.Name = "superTabItem12";
-            this.superTabItem12.Text = "لاگ";
             // 
             // addProposalNavigationReturnBtn
             // 
@@ -2915,14 +2769,6 @@
             this.addProposalNavigationReturnBtn.Text = "بازگشت";
             this.addProposalNavigationReturnBtn.Click += new System.EventHandler(this.addProposalNavigationReturnBtn_Click);
             // 
-            // superTabItem13
-            // 
-            this.superTabItem13.GlobalItem = false;
-            this.superTabItem13.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem13.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem13.Name = "superTabItem13";
-            this.superTabItem13.Text = "لاگ";
-            // 
             // addProposalShowDgv
             // 
             this.addProposalShowDgv.AllowUserToAddRows = false;
@@ -2937,14 +2783,14 @@
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.addProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1088, 169);
@@ -3683,16 +3529,6 @@
             this.addProposalRegisterBtn.Text = "ثبت اطلاعات";
             this.addProposalRegisterBtn.Click += new System.EventHandler(this.addProposalRegisterBtn_Click);
             // 
-            // addProposalTab
-            // 
-            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
-            this.addProposalTab.GlobalItem = false;
-            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
-            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.addProposalTab.Name = "addProposalTab";
-            this.addProposalTab.Text = "افزودن پروپوزال";
-            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
-            // 
             // superTabControlPanel4
             // 
             this.superTabControlPanel4.Controls.Add(this.manageUserPanel);
@@ -4319,14 +4155,6 @@
             this.manageUserNavigationNextPageBtn.TabIndex = 33;
             this.manageUserNavigationNextPageBtn.Text = "صفحه بعد";
             // 
-            // superTabItem26
-            // 
-            this.superTabItem26.GlobalItem = false;
-            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem26.Name = "superTabItem26";
-            this.superTabItem26.Text = "لاگ";
-            // 
             // manageUserNavigationLastPageBtn
             // 
             this.manageUserNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -4342,14 +4170,6 @@
             this.manageUserNavigationLastPageBtn.SubItemsExpandWidth = 0;
             this.manageUserNavigationLastPageBtn.TabIndex = 32;
             this.manageUserNavigationLastPageBtn.Text = "صفحه آخر";
-            // 
-            // superTabItem27
-            // 
-            this.superTabItem27.GlobalItem = false;
-            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem27.Name = "superTabItem27";
-            this.superTabItem27.Text = "لاگ";
             // 
             // manageUserNavigationPreviousPageBtn
             // 
@@ -4367,14 +4187,6 @@
             this.manageUserNavigationPreviousPageBtn.TabIndex = 30;
             this.manageUserNavigationPreviousPageBtn.Text = "صفحه قبل";
             // 
-            // superTabItem29
-            // 
-            this.superTabItem29.GlobalItem = false;
-            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem29.Name = "superTabItem29";
-            this.superTabItem29.Text = "لاگ";
-            // 
             // manageUserNavigationFirstPageBtn
             // 
             this.manageUserNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -4390,14 +4202,6 @@
             this.manageUserNavigationFirstPageBtn.SubItemsExpandWidth = 0;
             this.manageUserNavigationFirstPageBtn.TabIndex = 29;
             this.manageUserNavigationFirstPageBtn.Text = "صفحه اول";
-            // 
-            // superTabItem30
-            // 
-            this.superTabItem30.GlobalItem = false;
-            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem30.Name = "superTabItem30";
-            this.superTabItem30.Text = "لاگ";
             // 
             // manageUserNavigationReturnBtn
             // 
@@ -4415,14 +4219,6 @@
             this.manageUserNavigationReturnBtn.TabIndex = 28;
             this.manageUserNavigationReturnBtn.Text = "بازگشت";
             // 
-            // superTabItem31
-            // 
-            this.superTabItem31.GlobalItem = false;
-            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem31.Name = "superTabItem31";
-            this.superTabItem31.Text = "لاگ";
-            // 
             // manageUserShowDgv
             // 
             this.manageUserShowDgv.AllowUserToAddRows = false;
@@ -4438,29 +4234,20 @@
             this.manageUserShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageUserShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageUserShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.manageUserShowDgv.RowTemplate.Height = 24;
             this.manageUserShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageUserShowDgv.Size = new System.Drawing.Size(1093, 135);
             this.manageUserShowDgv.TabIndex = 2;
             this.manageUserShowDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.manageUserShowDgv_CellClick);
             this.manageUserShowDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserTab
-            // 
-            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
-            this.manageUserTab.GlobalItem = false;
-            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
-            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageUserTab.Name = "manageUserTab";
-            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
             // 
             // superTabControlPanel12
             // 
@@ -4583,14 +4370,6 @@
             this.manageTeacherNavigationNextPageBtn.Text = "صفحه بعد";
             this.manageTeacherNavigationNextPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationNextPageBtn_Click);
             // 
-            // superTabItem20
-            // 
-            this.superTabItem20.GlobalItem = false;
-            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem20.Name = "superTabItem20";
-            this.superTabItem20.Text = "لاگ";
-            // 
             // manageTeacherNavigationLastPageBtn
             // 
             this.manageTeacherNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -4608,14 +4387,6 @@
             this.manageTeacherNavigationLastPageBtn.TabIndex = 32;
             this.manageTeacherNavigationLastPageBtn.Text = "صفحه آخر";
             this.manageTeacherNavigationLastPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationLastPageBtn_Click);
-            // 
-            // superTabItem21
-            // 
-            this.superTabItem21.GlobalItem = false;
-            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem21.Name = "superTabItem21";
-            this.superTabItem21.Text = "لاگ";
             // 
             // manageTeacherNavigationPreviousPageBtn
             // 
@@ -4635,14 +4406,6 @@
             this.manageTeacherNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.manageTeacherNavigationPreviousPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem23
-            // 
-            this.superTabItem23.GlobalItem = false;
-            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem23.Name = "superTabItem23";
-            this.superTabItem23.Text = "لاگ";
-            // 
             // manageTeacherNavigationFirstPageBtn
             // 
             this.manageTeacherNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -4661,14 +4424,6 @@
             this.manageTeacherNavigationFirstPageBtn.Text = "صفحه اول";
             this.manageTeacherNavigationFirstPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationFirstPageBtn_Click);
             // 
-            // superTabItem24
-            // 
-            this.superTabItem24.GlobalItem = false;
-            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem24.Name = "superTabItem24";
-            this.superTabItem24.Text = "لاگ";
-            // 
             // manageTeacherNavigationReturnBtn
             // 
             this.manageTeacherNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -4685,14 +4440,6 @@
             this.manageTeacherNavigationReturnBtn.SubItemsExpandWidth = 0;
             this.manageTeacherNavigationReturnBtn.TabIndex = 28;
             this.manageTeacherNavigationReturnBtn.Text = "بازگشت";
-            // 
-            // superTabItem25
-            // 
-            this.superTabItem25.GlobalItem = false;
-            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem25.Name = "superTabItem25";
-            this.superTabItem25.Text = "لاگ";
             // 
             // manageTeacherShowDgv
             // 
@@ -5102,15 +4849,6 @@
             this.manageTeacherAddBtn.Text = "افزودن";
             this.manageTeacherAddBtn.Click += new System.EventHandler(this.manageTeacherAddBtn_Click);
             // 
-            // manageTeacherTab
-            // 
-            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
-            this.manageTeacherTab.GlobalItem = false;
-            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
-            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageTeacherTab.Name = "manageTeacherTab";
-            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
-            // 
             // superTabControlPanel1
             // 
             this.superTabControlPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
@@ -5378,17 +5116,6 @@
             this.homeUserNameLbl.Text = "نام و  نام خانوادگی";
             this.homeUserNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // homeUserProfileLbl
-            // 
-            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
-            this.homeUserProfileLbl.Location = new System.Drawing.Point(690, 102);
-            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
-            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
-            this.homeUserProfileLbl.TabIndex = 1;
-            this.homeUserProfileLbl.Visible = false;
-            // 
             // homeAppNameLbl
             // 
             this.homeAppNameLbl.BackColor = System.Drawing.Color.Transparent;
@@ -5400,15 +5127,6 @@
             this.homeAppNameLbl.TabIndex = 0;
             this.homeAppNameLbl.Text = "سامانه مدیریت پروپوزال های دانشگاه شهید چمران اهواز";
             this.homeAppNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeTab
-            // 
-            this.homeTab.AttachedControl = this.superTabControlPanel1;
-            this.homeTab.GlobalItem = false;
-            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
-            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.homeTab.Name = "homeTab";
-            this.homeTab.Text = "خانه";
             // 
             // superTabControlPanel10
             // 
@@ -5555,15 +5273,6 @@
             this.aboutUsTitleLbl.TabIndex = 0;
             this.aboutUsTitleLbl.Text = "طراحی و توسعه نرم افزار";
             // 
-            // aboutUsTab
-            // 
-            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
-            this.aboutUsTab.GlobalItem = false;
-            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
-            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.aboutUsTab.Name = "aboutUsTab";
-            this.aboutUsTab.Text = "درباره نرم افزار";
-            // 
             // superTabControlPanel11
             // 
             this.superTabControlPanel11.Controls.Add(this.logPanel);
@@ -5639,14 +5348,6 @@
             this.logNavigationNextPageBtn.Text = "صفحه بعد";
             this.logNavigationNextPageBtn.Click += new System.EventHandler(this.logNavigationNextPageBtn_Click);
             // 
-            // superTabItem10
-            // 
-            this.superTabItem10.GlobalItem = false;
-            this.superTabItem10.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem10.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem10.Name = "superTabItem10";
-            this.superTabItem10.Text = "لاگ";
-            // 
             // logNavigationLastPageBtn
             // 
             this.logNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -5663,14 +5364,6 @@
             this.logNavigationLastPageBtn.TabIndex = 32;
             this.logNavigationLastPageBtn.Text = "صفحه آخر";
             this.logNavigationLastPageBtn.Click += new System.EventHandler(this.logNavigationLastPageBtn_Click);
-            // 
-            // superTabItem16
-            // 
-            this.superTabItem16.GlobalItem = false;
-            this.superTabItem16.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem16.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem16.Name = "superTabItem16";
-            this.superTabItem16.Text = "لاگ";
             // 
             // logNavigationPreviousPageBtn
             // 
@@ -5689,14 +5382,6 @@
             this.logNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.logNavigationPreviousPageBtn.Click += new System.EventHandler(this.logNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem22
-            // 
-            this.superTabItem22.GlobalItem = false;
-            this.superTabItem22.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem22.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem22.Name = "superTabItem22";
-            this.superTabItem22.Text = "لاگ";
-            // 
             // logNavigationFirstPageBtn
             // 
             this.logNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -5714,14 +5399,6 @@
             this.logNavigationFirstPageBtn.Text = "صفحه اول";
             this.logNavigationFirstPageBtn.Click += new System.EventHandler(this.logNavigationFirstPageBtn_Click);
             // 
-            // superTabItem28
-            // 
-            this.superTabItem28.GlobalItem = false;
-            this.superTabItem28.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem28.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem28.Name = "superTabItem28";
-            this.superTabItem28.Text = "لاگ";
-            // 
             // logNavigationReturnBtn
             // 
             this.logNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -5738,14 +5415,6 @@
             this.logNavigationReturnBtn.TabIndex = 28;
             this.logNavigationReturnBtn.Text = "بازگشت";
             // 
-            // superTabItem34
-            // 
-            this.superTabItem34.GlobalItem = false;
-            this.superTabItem34.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem34.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem34.Name = "superTabItem34";
-            this.superTabItem34.Text = "لاگ";
-            // 
             // logDgv
             // 
             this.logDgv.AllowUserToAddRows = false;
@@ -5759,32 +5428,19 @@
             this.logDgv.Name = "logDgv";
             this.logDgv.ReadOnly = true;
             this.logDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.logDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.logDgv.RowTemplate.Height = 24;
             this.logDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logDgv.Size = new System.Drawing.Size(1107, 489);
             this.logDgv.TabIndex = 1;
             this.logDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // sysLogTab
-            // 
-            this.sysLogTab.AttachedControl = this.superTabControlPanel11;
-            this.sysLogTab.GlobalItem = false;
-            this.sysLogTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.sysLogTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.sysLogTab.Name = "sysLogTab";
-            this.sysLogTab.Text = "SystemLog";
-            this.sysLogTab.Tooltip = "Log of system";
-            this.sysLogTab.Visible = false;
-            this.sysLogTab.Click += new System.EventHandler(this.sysLogTab_Click);
-            this.sysLogTab.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
             // superTabControlPanel7
             // 
@@ -6124,15 +5780,6 @@
             this.personalSettingClearBtn.Text = "پاک کردن";
             this.personalSettingClearBtn.Click += new System.EventHandler(this.personalSettingClearBtn_Click);
             // 
-            // personalSettingsTab
-            // 
-            this.personalSettingsTab.AttachedControl = this.superTabControlPanel7;
-            this.personalSettingsTab.GlobalItem = false;
-            this.personalSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.user__1_;
-            this.personalSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.personalSettingsTab.Name = "personalSettingsTab";
-            this.personalSettingsTab.Text = "تنظیمات شخصی";
-            // 
             // superTabControlPanel6
             // 
             this.superTabControlPanel6.Controls.Add(this.appSettingPanel);
@@ -6366,14 +6013,6 @@
             this.appSettingNavigationNextPageBtn.TabIndex = 33;
             this.appSettingNavigationNextPageBtn.Text = "صفحه بعد";
             // 
-            // superTabItem32
-            // 
-            this.superTabItem32.GlobalItem = false;
-            this.superTabItem32.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem32.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem32.Name = "superTabItem32";
-            this.superTabItem32.Text = "لاگ";
-            // 
             // appSettingNavigationLastPageBtn
             // 
             this.appSettingNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6389,14 +6028,6 @@
             this.appSettingNavigationLastPageBtn.SubItemsExpandWidth = 0;
             this.appSettingNavigationLastPageBtn.TabIndex = 32;
             this.appSettingNavigationLastPageBtn.Text = "صفحه آخر";
-            // 
-            // superTabItem33
-            // 
-            this.superTabItem33.GlobalItem = false;
-            this.superTabItem33.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem33.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem33.Name = "superTabItem33";
-            this.superTabItem33.Text = "لاگ";
             // 
             // appSettingNavigationPreviousPageBtn
             // 
@@ -6414,14 +6045,6 @@
             this.appSettingNavigationPreviousPageBtn.TabIndex = 30;
             this.appSettingNavigationPreviousPageBtn.Text = "صفحه قبل";
             // 
-            // superTabItem35
-            // 
-            this.superTabItem35.GlobalItem = false;
-            this.superTabItem35.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem35.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem35.Name = "superTabItem35";
-            this.superTabItem35.Text = "لاگ";
-            // 
             // appSettingNavigationFirstPageBtn
             // 
             this.appSettingNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6438,14 +6061,6 @@
             this.appSettingNavigationFirstPageBtn.TabIndex = 29;
             this.appSettingNavigationFirstPageBtn.Text = "صفحه اول";
             // 
-            // superTabItem36
-            // 
-            this.superTabItem36.GlobalItem = false;
-            this.superTabItem36.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem36.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem36.Name = "superTabItem36";
-            this.superTabItem36.Text = "لاگ";
-            // 
             // appSettingNavigationReturnBtn
             // 
             this.appSettingNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6461,14 +6076,6 @@
             this.appSettingNavigationReturnBtn.SubItemsExpandWidth = 0;
             this.appSettingNavigationReturnBtn.TabIndex = 28;
             this.appSettingNavigationReturnBtn.Text = "بازگشت";
-            // 
-            // superTabItem37
-            // 
-            this.superTabItem37.GlobalItem = false;
-            this.superTabItem37.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem37.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem37.Name = "superTabItem37";
-            this.superTabItem37.Text = "لاگ";
             // 
             // appSettingShowDv
             // 
@@ -6572,6 +6179,7 @@
             this.appSettingGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.appSettingGp.TabIndex = 2;
             this.appSettingGp.Text = "تغییر مقادیر";
+            this.appSettingGp.Click += new System.EventHandler(this.appSettingProcedureTypeRbtn_Click);
             // 
             // appSettingEdegreeTxtbx
             // 
@@ -6955,15 +6563,6 @@
             this.appSettingEdegreeLbl.TabIndex = 23;
             this.appSettingEdegreeLbl.Text = "درجه علمی";
             // 
-            // appSettingsTab
-            // 
-            this.appSettingsTab.AttachedControl = this.superTabControlPanel6;
-            this.appSettingsTab.GlobalItem = false;
-            this.appSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.settings;
-            this.appSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.appSettingsTab.Name = "appSettingsTab";
-            this.appSettingsTab.Text = "تنظیمات برنامه";
-            // 
             // superTabControlPanel13
             // 
             this.superTabControlPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -6973,16 +6572,6 @@
             this.superTabControlPanel13.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel13.TabIndex = 0;
             this.superTabControlPanel13.TabItem = this.exitTab;
-            // 
-            // exitTab
-            // 
-            this.exitTab.AttachedControl = this.superTabControlPanel13;
-            this.exitTab.GlobalItem = false;
-            this.exitTab.Image = global::ProposalReportingSystem.Properties.Resources.sign_out_option_1_;
-            this.exitTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.exitTab.Name = "exitTab";
-            this.exitTab.Text = "خروج";
-            this.exitTab.Click += new System.EventHandler(this.exitTab_Click);
             // 
             // log
             // 
@@ -7078,6 +6667,33 @@
             this.menuIconRb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.menuIconRb.UseVisualStyleBackColor = true;
             this.menuIconRb.Click += new System.EventHandler(this.menuIconRb_Click);
+            // 
+            // appInfoLbl
+            // 
+            this.appInfoLbl.BackColor = System.Drawing.Color.Transparent;
+            this.appInfoLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.appInfoLbl.Location = new System.Drawing.Point(17, 61);
+            this.appInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.appInfoLbl.Name = "appInfoLbl";
+            this.appInfoLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.appInfoLbl.Size = new System.Drawing.Size(469, 201);
+            this.appInfoLbl.TabIndex = 6;
+            this.appInfoLbl.Text = " سامانه مدیریت اطلاعات پروپوزال ها و قراردادهای دانشگاه شهید چمران اهواز\r\n\r\nPropo" +
+    "sal and Contract Management System (PCMS)\r\n\r\n(نسخه 1.0)";
+            this.appInfoLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // aboutAppLbl
+            // 
+            this.aboutAppLbl.BackColor = System.Drawing.Color.Transparent;
+            this.aboutAppLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.aboutAppLbl.Location = new System.Drawing.Point(152, 5);
+            this.aboutAppLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.aboutAppLbl.Name = "aboutAppLbl";
+            this.aboutAppLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.aboutAppLbl.Size = new System.Drawing.Size(197, 42);
+            this.aboutAppLbl.TabIndex = 7;
+            this.aboutAppLbl.Text = "اطلاعات نرم افزار";
+            this.aboutAppLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // menuExitBtn
             // 
@@ -7289,32 +6905,417 @@
             this.menuHomeBtn.Click += new System.EventHandler(this.menuHomeBtn_Click);
             this.menuHomeBtn.MouseEnter += new System.EventHandler(this.iconMenuPanel_MouseEnter);
             // 
-            // appInfoLbl
+            // superTabItem14
             // 
-            this.appInfoLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appInfoLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.appInfoLbl.Location = new System.Drawing.Point(17, 61);
-            this.appInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appInfoLbl.Name = "appInfoLbl";
-            this.appInfoLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appInfoLbl.Size = new System.Drawing.Size(469, 201);
-            this.appInfoLbl.TabIndex = 6;
-            this.appInfoLbl.Text = " سامانه مدیریت اطلاعات پروپوزال ها و قراردادهای دانشگاه شهید چمران اهواز\r\n\r\nPropo" +
-    "sal and Contract Management System (PCMS)\r\n\r\n(نسخه 1.0)";
-            this.appInfoLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.superTabItem14.GlobalItem = false;
+            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem14.Name = "superTabItem14";
+            this.superTabItem14.Text = "لاگ";
             // 
-            // aboutAppLbl
+            // superTabItem15
             // 
-            this.aboutAppLbl.BackColor = System.Drawing.Color.Transparent;
-            this.aboutAppLbl.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.aboutAppLbl.Location = new System.Drawing.Point(152, 5);
-            this.aboutAppLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.aboutAppLbl.Name = "aboutAppLbl";
-            this.aboutAppLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.aboutAppLbl.Size = new System.Drawing.Size(197, 42);
-            this.aboutAppLbl.TabIndex = 7;
-            this.aboutAppLbl.Text = "اطلاعات نرم افزار";
-            this.aboutAppLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.superTabItem15.GlobalItem = false;
+            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem15.Name = "superTabItem15";
+            this.superTabItem15.Text = "لاگ";
+            // 
+            // superTabItem17
+            // 
+            this.superTabItem17.GlobalItem = false;
+            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem17.Name = "superTabItem17";
+            this.superTabItem17.Text = "لاگ";
+            // 
+            // superTabItem18
+            // 
+            this.superTabItem18.GlobalItem = false;
+            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem18.Name = "superTabItem18";
+            this.superTabItem18.Text = "لاگ";
+            // 
+            // superTabItem19
+            // 
+            this.superTabItem19.GlobalItem = false;
+            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem19.Name = "superTabItem19";
+            this.superTabItem19.Text = "لاگ";
+            // 
+            // searchProposalTab
+            // 
+            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
+            this.searchProposalTab.GlobalItem = false;
+            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
+            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.searchProposalTab.Name = "searchProposalTab";
+            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
+            // 
+            // logTab
+            // 
+            this.logTab.GlobalItem = false;
+            this.logTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.logTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.logTab.Name = "logTab";
+            this.logTab.Text = "لاگ";
+            // 
+            // superTabItem6
+            // 
+            this.superTabItem6.GlobalItem = false;
+            this.superTabItem6.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem6.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem6.Name = "superTabItem6";
+            this.superTabItem6.Text = "لاگ";
+            // 
+            // superTabItem5
+            // 
+            this.superTabItem5.GlobalItem = false;
+            this.superTabItem5.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem5.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem5.Name = "superTabItem5";
+            this.superTabItem5.Text = "لاگ";
+            // 
+            // superTabItem4
+            // 
+            this.superTabItem4.GlobalItem = false;
+            this.superTabItem4.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem4.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem4.Name = "superTabItem4";
+            this.superTabItem4.Text = "لاگ";
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem3.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "لاگ";
+            // 
+            // superTabItem2
+            // 
+            this.superTabItem2.GlobalItem = false;
+            this.superTabItem2.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem2.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem2.Name = "superTabItem2";
+            this.superTabItem2.Text = "لاگ";
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem1.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "لاگ";
+            // 
+            // manageProposalTab
+            // 
+            this.manageProposalTab.AttachedControl = this.superTabControlPanel5;
+            this.manageProposalTab.GlobalItem = false;
+            this.manageProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
+            this.manageProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageProposalTab.Name = "manageProposalTab";
+            this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
+            // 
+            // superTabItem7
+            // 
+            this.superTabItem7.GlobalItem = false;
+            this.superTabItem7.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem7.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem7.Name = "superTabItem7";
+            this.superTabItem7.Text = "لاگ";
+            // 
+            // superTabItem8
+            // 
+            this.superTabItem8.GlobalItem = false;
+            this.superTabItem8.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem8.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem8.Name = "superTabItem8";
+            this.superTabItem8.Text = "لاگ";
+            // 
+            // superTabItem11
+            // 
+            this.superTabItem11.GlobalItem = false;
+            this.superTabItem11.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem11.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem11.Name = "superTabItem11";
+            this.superTabItem11.Text = "لاگ";
+            // 
+            // superTabItem12
+            // 
+            this.superTabItem12.GlobalItem = false;
+            this.superTabItem12.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem12.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem12.Name = "superTabItem12";
+            this.superTabItem12.Text = "لاگ";
+            // 
+            // superTabItem13
+            // 
+            this.superTabItem13.GlobalItem = false;
+            this.superTabItem13.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem13.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem13.Name = "superTabItem13";
+            this.superTabItem13.Text = "لاگ";
+            // 
+            // addProposalTab
+            // 
+            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
+            this.addProposalTab.GlobalItem = false;
+            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
+            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.addProposalTab.Name = "addProposalTab";
+            this.addProposalTab.Text = "افزودن پروپوزال";
+            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
+            // 
+            // superTabItem32
+            // 
+            this.superTabItem32.GlobalItem = false;
+            this.superTabItem32.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem32.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem32.Name = "superTabItem32";
+            this.superTabItem32.Text = "لاگ";
+            // 
+            // superTabItem33
+            // 
+            this.superTabItem33.GlobalItem = false;
+            this.superTabItem33.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem33.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem33.Name = "superTabItem33";
+            this.superTabItem33.Text = "لاگ";
+            // 
+            // superTabItem35
+            // 
+            this.superTabItem35.GlobalItem = false;
+            this.superTabItem35.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem35.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem35.Name = "superTabItem35";
+            this.superTabItem35.Text = "لاگ";
+            // 
+            // superTabItem36
+            // 
+            this.superTabItem36.GlobalItem = false;
+            this.superTabItem36.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem36.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem36.Name = "superTabItem36";
+            this.superTabItem36.Text = "لاگ";
+            // 
+            // superTabItem37
+            // 
+            this.superTabItem37.GlobalItem = false;
+            this.superTabItem37.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem37.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem37.Name = "superTabItem37";
+            this.superTabItem37.Text = "لاگ";
+            // 
+            // appSettingsTab
+            // 
+            this.appSettingsTab.AttachedControl = this.superTabControlPanel6;
+            this.appSettingsTab.GlobalItem = false;
+            this.appSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.settings;
+            this.appSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.appSettingsTab.Name = "appSettingsTab";
+            this.appSettingsTab.Text = "تنظیمات برنامه";
+            // 
+            // personalSettingsTab
+            // 
+            this.personalSettingsTab.AttachedControl = this.superTabControlPanel7;
+            this.personalSettingsTab.GlobalItem = false;
+            this.personalSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.user__1_;
+            this.personalSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.personalSettingsTab.Name = "personalSettingsTab";
+            this.personalSettingsTab.Text = "تنظیمات شخصی";
+            // 
+            // superTabItem26
+            // 
+            this.superTabItem26.GlobalItem = false;
+            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem26.Name = "superTabItem26";
+            this.superTabItem26.Text = "لاگ";
+            // 
+            // superTabItem27
+            // 
+            this.superTabItem27.GlobalItem = false;
+            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem27.Name = "superTabItem27";
+            this.superTabItem27.Text = "لاگ";
+            // 
+            // superTabItem29
+            // 
+            this.superTabItem29.GlobalItem = false;
+            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem29.Name = "superTabItem29";
+            this.superTabItem29.Text = "لاگ";
+            // 
+            // superTabItem30
+            // 
+            this.superTabItem30.GlobalItem = false;
+            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem30.Name = "superTabItem30";
+            this.superTabItem30.Text = "لاگ";
+            // 
+            // superTabItem31
+            // 
+            this.superTabItem31.GlobalItem = false;
+            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem31.Name = "superTabItem31";
+            this.superTabItem31.Text = "لاگ";
+            // 
+            // manageUserTab
+            // 
+            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
+            this.manageUserTab.GlobalItem = false;
+            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
+            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageUserTab.Name = "manageUserTab";
+            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
+            // 
+            // aboutUsTab
+            // 
+            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
+            this.aboutUsTab.GlobalItem = false;
+            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
+            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.aboutUsTab.Name = "aboutUsTab";
+            this.aboutUsTab.Text = "درباره نرم افزار";
+            // 
+            // superTabItem20
+            // 
+            this.superTabItem20.GlobalItem = false;
+            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem20.Name = "superTabItem20";
+            this.superTabItem20.Text = "لاگ";
+            // 
+            // superTabItem21
+            // 
+            this.superTabItem21.GlobalItem = false;
+            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem21.Name = "superTabItem21";
+            this.superTabItem21.Text = "لاگ";
+            // 
+            // superTabItem23
+            // 
+            this.superTabItem23.GlobalItem = false;
+            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem23.Name = "superTabItem23";
+            this.superTabItem23.Text = "لاگ";
+            // 
+            // superTabItem24
+            // 
+            this.superTabItem24.GlobalItem = false;
+            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem24.Name = "superTabItem24";
+            this.superTabItem24.Text = "لاگ";
+            // 
+            // superTabItem25
+            // 
+            this.superTabItem25.GlobalItem = false;
+            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem25.Name = "superTabItem25";
+            this.superTabItem25.Text = "لاگ";
+            // 
+            // manageTeacherTab
+            // 
+            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
+            this.manageTeacherTab.GlobalItem = false;
+            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
+            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageTeacherTab.Name = "manageTeacherTab";
+            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
+            // 
+            // homeUserProfileLbl
+            // 
+            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
+            this.homeUserProfileLbl.Location = new System.Drawing.Point(690, 102);
+            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
+            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
+            this.homeUserProfileLbl.TabIndex = 1;
+            this.homeUserProfileLbl.Visible = false;
+            // 
+            // homeTab
+            // 
+            this.homeTab.AttachedControl = this.superTabControlPanel1;
+            this.homeTab.GlobalItem = false;
+            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
+            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.homeTab.Name = "homeTab";
+            this.homeTab.Text = "خانه";
+            // 
+            // superTabItem10
+            // 
+            this.superTabItem10.GlobalItem = false;
+            this.superTabItem10.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem10.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem10.Name = "superTabItem10";
+            this.superTabItem10.Text = "لاگ";
+            // 
+            // superTabItem16
+            // 
+            this.superTabItem16.GlobalItem = false;
+            this.superTabItem16.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem16.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem16.Name = "superTabItem16";
+            this.superTabItem16.Text = "لاگ";
+            // 
+            // superTabItem22
+            // 
+            this.superTabItem22.GlobalItem = false;
+            this.superTabItem22.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem22.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem22.Name = "superTabItem22";
+            this.superTabItem22.Text = "لاگ";
+            // 
+            // superTabItem28
+            // 
+            this.superTabItem28.GlobalItem = false;
+            this.superTabItem28.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem28.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem28.Name = "superTabItem28";
+            this.superTabItem28.Text = "لاگ";
+            // 
+            // superTabItem34
+            // 
+            this.superTabItem34.GlobalItem = false;
+            this.superTabItem34.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem34.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem34.Name = "superTabItem34";
+            this.superTabItem34.Text = "لاگ";
+            // 
+            // sysLogTab
+            // 
+            this.sysLogTab.AttachedControl = this.superTabControlPanel11;
+            this.sysLogTab.GlobalItem = false;
+            this.sysLogTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.sysLogTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.sysLogTab.Name = "sysLogTab";
+            this.sysLogTab.Text = "SystemLog";
+            this.sysLogTab.Tooltip = "Log of system";
+            this.sysLogTab.Visible = false;
+            this.sysLogTab.Click += new System.EventHandler(this.sysLogTab_Click);
+            this.sysLogTab.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // exitTab
+            // 
+            this.exitTab.AttachedControl = this.superTabControlPanel13;
+            this.exitTab.GlobalItem = false;
+            this.exitTab.Image = global::ProposalReportingSystem.Properties.Resources.sign_out_option_1_;
+            this.exitTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.exitTab.Name = "exitTab";
+            this.exitTab.Text = "خروج";
+            this.exitTab.Click += new System.EventHandler(this.exitTab_Click);
             // 
             // Form1
             // 

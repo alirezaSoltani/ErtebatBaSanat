@@ -73,6 +73,16 @@ namespace ProposalReportingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddProposalInSearch {
+            get {
+                object obj = ResourceManager.GetObject("AddProposalInSearch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap database {
             get {
                 object obj = ResourceManager.GetObject("database", resourceCulture);
@@ -86,6 +96,16 @@ namespace ProposalReportingSystem.Properties {
         internal static System.Drawing.Bitmap delete_dust_bin_erase_eraser_remove_icon_1 {
             get {
                 object obj = ResourceManager.GetObject("delete-dust-bin-erase-eraser-remove-icon-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditProposalInSearch {
+            get {
+                object obj = ResourceManager.GetObject("EditProposalInSearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4589,9 +4589,14 @@ namespace ProposalReportingSystem
                     PreviousPageOffSet = (page - 1) * PgSize;
                 }
                 dgvv.DataSource = bindingSource;
-
-                GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
-
+                if (dgvv.Name == "addProposalShowDgv" || dgvv.Name == "editProposalShowDgv")
+                {
+                    GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+                }
+                else if (dgvv.Name == "searchProposalShowDgv")
+                {
+                    GetData3ForSearchProposal(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+                }
                 if (query.Contains("proposalTable"))
                 {
 
@@ -4937,8 +4942,8 @@ namespace ProposalReportingSystem
         private void GetData3ForSearchProposal(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview, int PgSize, int PreviousPageOffSet)
         {
             string q = searchProposalQuery + " AND  [index] NOT IN " +
-                               "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                              "(SELECT TOP " + PreviousPageOffSet +
+                              " [index] FROM proposalTable ORDER BY startDate ) ";
             // Create a new data adapter based on the specified query.
             dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -4993,15 +4998,17 @@ namespace ProposalReportingSystem
 
             DataGridViewImageColumn navToEdit = new DataGridViewImageColumn();
             dataGridview.Columns.Add(navToEdit);
-            navToEdit.Image = ProposalReportingSystem.Properties.Resources.file;
+            navToEdit.Image = ProposalReportingSystem.Properties.Resources.EditProposalInSearch;
             navToEdit.Name = "navToEdit";
+            navToEdit.HeaderText = "تغییر یا حذف";
             dataGridview.Columns["navToEdit"].DisplayIndex = 0;
             dataGridview.Columns["navToEdit"].Frozen = true;
 
             DataGridViewImageColumn navToAdd = new DataGridViewImageColumn();
             dataGridview.Columns.Add(navToAdd);
-            navToAdd.Image = ProposalReportingSystem.Properties.Resources.file__1_;
+            navToAdd.Image = ProposalReportingSystem.Properties.Resources.AddProposalInSearch;
             navToAdd.Name = "navToAdd";
+            navToAdd.HeaderText = "افزودن نسخه";
             dataGridview.Columns["navToAdd"].DisplayIndex = 1;
             dataGridview.Columns["navToAdd"].Frozen = true;
 
@@ -5041,7 +5048,6 @@ namespace ProposalReportingSystem
             dataGridview.Columns["startDate"].Visible = false;
             dataGridview.Columns["employer"].Visible = false;
             dataGridview.Columns["fileName"].Visible = false;
-
         }
 
 
