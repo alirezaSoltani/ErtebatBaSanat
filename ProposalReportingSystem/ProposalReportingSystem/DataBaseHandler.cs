@@ -4934,6 +4934,117 @@ namespace ProposalReportingSystem
             }
             
         }
+        private void GetData3ForSearchProposal(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview, int PgSize, int PreviousPageOffSet)
+        {
+            string q = searchProposalQuery + " AND  [index] NOT IN " +
+                               "(SELECT TOP " + PreviousPageOffSet +
+                               " [index] FROM proposalTable ORDER BY startDate ) ";
+            // Create a new data adapter based on the specified query.
+            dataAdapter = new SqlDataAdapter(q, conString);
+
+            // Create a command builder to generate SQL update, insert, and
+            // delete commands based on selectCommand. These are used to
+            // update the database.
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            bindingSourceObj.DataSource = table;
+
+            dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
+            dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
+            dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
+            dataGridview.Columns["coExecutor"].HeaderText = "همکاران مجری";
+            dataGridview.Columns["startDate"].HeaderText = "تاریخ شروع";
+            dataGridview.Columns["duration"].HeaderText = "مدت زمان";
+            dataGridview.Columns["procedureType"].HeaderText = "نوع کار";
+            dataGridview.Columns["propertyType"].HeaderText = "خاصیت";
+            dataGridview.Columns["registerType"].HeaderText = "نوع ثبت";
+            dataGridview.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+            dataGridview.Columns["employer"].HeaderText = "سازمان کارفرما";
+            dataGridview.Columns["value"].HeaderText = "هزینه";
+            dataGridview.Columns["status"].HeaderText = "وضعیت";
+            dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
+            dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
+            dataGridview.Columns["registrant"].Visible = false;
+
+
+            ///////////
+            DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+            dataGridview.Columns.Add(btn);
+            btn.HeaderText = "اطلاعات";
+            btn.Text = "نمایش کلی";
+            btn.Name = "detailBtn";
+
+            DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
+            dataGridview.Columns.Add(btn2);
+            btn2.HeaderText = " نسخه ها";
+            btn2.Text = "نمایش جزئیات";
+            btn2.Name = "editionBtn";
+
+            DataGridViewTextBoxColumn btn3 = new DataGridViewTextBoxColumn();
+            dataGridview.Columns.Add(btn3);
+            btn3.HeaderText = "کاربر ثبت کننده ";
+            btn3.Name = "registrantBtn";
+
+
+            DataGridViewImageColumn navToEdit = new DataGridViewImageColumn();
+            dataGridview.Columns.Add(navToEdit);
+            navToEdit.Image = ProposalReportingSystem.Properties.Resources.file;
+            navToEdit.Name = "navToEdit";
+            dataGridview.Columns["navToEdit"].DisplayIndex = 0;
+            dataGridview.Columns["navToEdit"].Frozen = true;
+
+            DataGridViewImageColumn navToAdd = new DataGridViewImageColumn();
+            dataGridview.Columns.Add(navToAdd);
+            navToAdd.Image = ProposalReportingSystem.Properties.Resources.file__1_;
+            navToAdd.Name = "navToAdd";
+            dataGridview.Columns["navToAdd"].DisplayIndex = 1;
+            dataGridview.Columns["navToAdd"].Frozen = true;
+
+
+
+
+            dataGridview.Columns.Add("executorFullName", "مجری");
+            dataGridview.Columns["executorFullName"].DisplayIndex = 22;
+            dataGridview.Columns.Add("hijriDate", "تاریخ");
+            dataGridview.Columns["hijriDate"].DisplayIndex = 23;
+            dataGridview.Columns.Add("employerName", "سازمان کارفرما");
+            dataGridview.Columns["employerName"].DisplayIndex = 22;
+
+            btn.UseColumnTextForLinkValue = true;
+            btn2.UseColumnTextForLinkValue = true;
+
+            dataGridview.Columns["editionBtn"].Visible = true;
+            dataGridview.Columns["detailBtn"].Visible = true;
+
+
+            dataGridview.Columns[0].Visible = false;
+            dataGridview.Columns["detailBtn"].DisplayIndex = 2;
+            // dataGridview.Columns["detailBtn"].Frozen = true;
+            dataGridview.Columns["editionBtn"].DisplayIndex = 3;
+            dataGridview.Columns["editionBtn"].Frozen = true;
+
+            dataGridview.Columns["executor"].HeaderText = "مجری";
+            dataGridview.Columns["executorFullName"].DisplayIndex = 4;
+            dataGridview.Columns["executorFullName"].Frozen = true;
+            dataGridview.Columns["executor"].Visible = false;
+            //  dataGridview.Columns["executorFullName"].Frozen = true;
+
+            dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
+            dataGridview.Columns["persianTitle"].DisplayIndex = 5;
+            dataGridview.Columns["persianTitle"].Frozen = true;
+            ///////////////////////
+            dataGridview.Columns["startDate"].Visible = false;
+            dataGridview.Columns["employer"].Visible = false;
+            dataGridview.Columns["fileName"].Visible = false;
+
+        }
+
+
 
         public int totalPage(string query)
         {

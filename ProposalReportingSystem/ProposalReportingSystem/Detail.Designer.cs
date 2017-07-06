@@ -285,7 +285,7 @@
             // 
             this.detailEditionNumberLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailEditionNumberLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailEditionNumberLbl.Location = new System.Drawing.Point(178, 501);
+            this.detailEditionNumberLbl.Location = new System.Drawing.Point(179, 502);
             this.detailEditionNumberLbl.Name = "detailEditionNumberLbl";
             this.detailEditionNumberLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailEditionNumberLbl.Size = new System.Drawing.Size(99, 29);
@@ -641,7 +641,7 @@
             this.detailProcedureTypeTxtbx.Border.Class = "TextBoxBorder";
             this.detailProcedureTypeTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.detailProcedureTypeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailProcedureTypeTxtbx.Location = new System.Drawing.Point(56, 368);
+            this.detailProcedureTypeTxtbx.Location = new System.Drawing.Point(56, 373);
             this.detailProcedureTypeTxtbx.Multiline = true;
             this.detailProcedureTypeTxtbx.Name = "detailProcedureTypeTxtbx";
             this.detailProcedureTypeTxtbx.PreventEnterBeep = true;
@@ -655,7 +655,7 @@
             // 
             this.detailProcedureTypeLbl.BackColor = System.Drawing.Color.Transparent;
             this.detailProcedureTypeLbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailProcedureTypeLbl.Location = new System.Drawing.Point(200, 368);
+            this.detailProcedureTypeLbl.Location = new System.Drawing.Point(200, 372);
             this.detailProcedureTypeLbl.Name = "detailProcedureTypeLbl";
             this.detailProcedureTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailProcedureTypeLbl.Size = new System.Drawing.Size(78, 29);
