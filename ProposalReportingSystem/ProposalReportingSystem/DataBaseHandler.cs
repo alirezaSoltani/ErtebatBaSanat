@@ -236,30 +236,49 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    
-                    if (_inputParameter.FileName != currentFileName)
+
+                    //if (_inputParameter.FileName != currentFileName)
+                    //{
+                    //    sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
+                    //    reader = sc.ExecuteReader();
+                    //    reader.Read();
+                    //    proposal.Index = reader.GetInt64(0);
+
+                    //    DeleteFile(currentFileName);
+
+                    //    if (_inputParameter.FileName.Contains(".docx"))
+                    //    {
+                    //        _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                    //    }
+                    //    else if (_inputParameter.FileName.Contains(".doc"))
+                    //    {
+                    //        _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                    //    }
+                    //    if (_inputParameter.FileName.Contains(".pdf"))
+                    //    {
+                    //        _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                    //    }
+                    //    uploadFile(_inputParameter);
+                    //    reader.Close();
+                    //}
+                    if (_inputParameter.FileName != "")
                     {
-                        sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
-                        reader = sc.ExecuteReader();
-                        reader.Read();
-                        proposal.Index = reader.GetInt64(0);
 
                         DeleteFile(currentFileName);
 
                         if (_inputParameter.FileName.Contains(".docx"))
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                            _inputParameter.FileName = proposal.Index.ToString() +".docx";
                         }
                         else if (_inputParameter.FileName.Contains(".doc"))
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                            _inputParameter.FileName = proposal.Index.ToString() +".doc";
                         }
                         if (_inputParameter.FileName.Contains(".pdf"))
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                            _inputParameter.FileName = proposal.Index.ToString() +".pdf";
                         }
                         uploadFile(_inputParameter);
-                        reader.Close();
                     }
                     sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
                                                    + "engTitle =" + "'" + proposal.EngTitle + "',"
@@ -276,7 +295,7 @@ namespace ProposalReportingSystem
                                                    + " employer = " + "'" + proposal.Employer + "',"
                                                    + " value = " + "'" + proposal.Value + "',"
                                                    + " status = " + "'" + proposal.Status + "' ,"
-                                                   + " filename = "+ "'"+ _inputParameter.FileName+"' "
+                                                   + " filename = "+ "'"+ proposal.FileName+"' "
                                                    + " WHERE [index] = " + proposal.Index + "";
                     sc.ExecuteNonQuery();
 
@@ -295,7 +314,7 @@ namespace ProposalReportingSystem
                                                        + " employer = " + "'" + proposal.Employer + "',"
                                                        + " value = " + "'" + proposal.Value + "',"
                                                        + " status = " + "'" + proposal.Status + "' ,"
-                                                       + " filename = " + "'" + _inputParameter.FileName + "' "
+                                                       + " filename = " + "'" + proposal.FileName + "' "
                                                        + " WHERE  [index] = " + proposal.Index + " AND edition = 0 ";
                     sc.ExecuteNonQuery();
 

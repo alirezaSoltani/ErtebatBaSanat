@@ -66,6 +66,7 @@ namespace ProposalReportingSystem
         /// </summary>
         private string appSettingCurrentSelectedOption ,appSettingCurrentSelectedOption_2, currentSelectedIndex, manageUserCurrentSelectedOption,
                         manageTeacherCurrentSelectedOption, manageUserCurrentSelectedPassword;
+        private int  editProposalCurrentSelectedEdition;
         /// <summary>
         /// Current Values
         /// </summary>
@@ -1404,7 +1405,14 @@ namespace ProposalReportingSystem
 
                     dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
                     //addProposalClearBtn.PerformClick();
+                    addProposalShowDgv.Columns.Clear();
                     dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
+                    addProposalShowDgv.Columns["editionBtn"].Visible = false;
+                    addProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                    addProposalShowDgv.Columns["edition"].DisplayIndex = 3;
+                    addProposalShowDgv.Columns["edition"].Frozen = true;
+                    addProposalIsWatchingEdition = true;
+
                 }
             }
         }
@@ -5208,15 +5216,12 @@ namespace ProposalReportingSystem
                     proposal.StartDate = temp;
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
-                    if(editProposalCurrentFileName == editProposalFileLinkLbl.Text)
+                    //_inputParameter.FileName = editProposalCurrentFileName;
+                    if (editProposalCurrentFileName == editProposalFileLinkLbl.Text)
                     {
-                        _inputParameter.FileName = editProposalCurrentFileName;
+                        _inputParameter.FileName = "";
                     }
-                    else
-                    {
-                        _inputParameter.FileName = editProposalFileLinkLbl.Text;
-                    }
-
+                   
                     dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
                     dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE persianTitle = '" + editProposalPersianTitleTxtbx.Text + "'";
                     editProposalClearBtn.PerformClick();
@@ -5434,7 +5439,7 @@ namespace ProposalReportingSystem
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
-
+                    proposal.Edition =  editProposalCurrentSelectedEdition;
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
 
@@ -5442,9 +5447,40 @@ namespace ProposalReportingSystem
                     {
                         _inputParameter.FileName = "";
                     }
-                    dbh.EditEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(),_inputParameter, editProposalCurrentFileName);
-                    editProposalClearBtn.PerformClick();
-                    dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                    if (proposal.Edition == 0)
+                    {
+                        PopUp p = new PopUp("تغییر اطلاعات پروپوزال", "نسخه ای که میخواهید تغییر دهید نسخه اصلی پروپوزال است . آیا مایل به تغییر پروپوزال هستید ؟", "بله", "خیر", "", "info");
+                        p.ShowDialog();
+                        if (p.DialogResult == DialogResult.Yes)
+                        {
+                            dbh.EditProposal(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter, editProposalCurrentFileName);
+                            editProposalClearBtn.PerformClick();
+                            dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                            editProposalShowDgv.Columns["editionBtn"].Visible = false;
+                            editProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                            editProposalShowDgv.Columns["edition"].DisplayIndex = 3;
+                            editProposalShowDgv.Columns["edition"].Frozen = true;
+                            manageProposalIsWatchingEdition = true;
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        dbh.EditEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(), _inputParameter, editProposalCurrentFileName);
+                        editProposalClearBtn.PerformClick();
+                        dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
+                        editProposalShowDgv.Columns["editionBtn"].Visible = false;
+                        editProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
+                        editProposalShowDgv.Columns["edition"].DisplayIndex = 3;
+                        editProposalShowDgv.Columns["edition"].Frozen = true;
+                        manageProposalIsWatchingEdition = true;
+
+                    }
+                   
                 }
             }
         }
@@ -5512,7 +5548,7 @@ namespace ProposalReportingSystem
                         editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
-
+                       
 
                         editProposalRegisterBtn.Enabled = true;
                         editProposalDeleteBtn.Enabled = true;
@@ -5627,7 +5663,7 @@ namespace ProposalReportingSystem
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                         proposalEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
-
+                        editProposalCurrentSelectedEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
 
 
                         editProposalRegisterBtn.Enabled = true;
