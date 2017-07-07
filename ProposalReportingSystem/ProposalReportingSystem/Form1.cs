@@ -5517,7 +5517,7 @@ namespace ProposalReportingSystem
                         editProposalRegisterBtn.Enabled = true;
                         editProposalDeleteBtn.Enabled = true;
                         ////////
-
+                        editProposalShowDgv.Columns.Clear();
                         dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         editProposalShowDgv.Columns["editionBtn"].Visible = false;
                         editProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
@@ -5573,8 +5573,10 @@ namespace ProposalReportingSystem
                 }
                 else if (manageProposalIsWatchingEdition)
                 {
-                    if (e.ColumnIndex == 0)
+                   
+                    if (e.ColumnIndex == 19)
                     {
+
                         Proposal proposal = new Proposal();
                         proposal.Index = long.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
                         proposal.PersianTitle = editProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
@@ -6824,8 +6826,8 @@ namespace ProposalReportingSystem
                             addProposalStatusCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                             addProposalExecutorNcodeTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
                             addProposalStartdateTimeInput.GeoDate = DateTime.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
-                           
 
+                            addProposalShowDgv.Columns.Clear();
                             dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                             addProposalShowDgv.Columns["editionBtn"].Visible = false;
                             addProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
@@ -6849,9 +6851,11 @@ namespace ProposalReportingSystem
                     }
                     else if (addProposalIsWatchingEdition)
                     {
-                        if (e.ColumnIndex == 0)
-                        {
-                            Proposal proposal = new Proposal();
+                   // MessageBox.Show(addProposalShowDgv.Columns["detailBtn"].DisplayIndex + " ,"+ e.ColumnIndex);
+                    if (e.ColumnIndex == 19)
+                    {
+                       // MessageBox.Show(editProposalShowDgv.Columns["detailBtn"].DisplayIndex + "34334");
+                        Proposal proposal = new Proposal();
 
                             proposal.Index = long.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
                             proposal.PersianTitle = addProposalShowDgv.Rows[e.RowIndex].Cells["persianTitle"].Value.ToString();
@@ -6926,13 +6930,13 @@ namespace ProposalReportingSystem
 
                         proposal.Index = long.Parse(searchProposalShowDgv.Rows[e.RowIndex].Cells["index"].Value.ToString());
 
-
+                        searchProposalShowDgv.Columns.Clear();
                         dbh.dataGridViewUpdate2(searchProposalShowDgv, searchProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
-                        searchProposalShowDgv.Columns["navToAdd"].Visible = false;
-                        searchProposalShowDgv.Columns["navToEdit"].Visible = false;
+                        //searchProposalShowDgv.Columns["navToAdd"].Visible = false;
+                        //searchProposalShowDgv.Columns["navToEdit"].Visible = false;
                         searchProposalShowDgv.Columns["editionBtn"].Visible = false;
                         searchProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
-                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 5;
+                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 3;
                         searchProposalShowDgv.Columns["edition"].Frozen = true;
 
                         editionProposalIndex = proposal.Index;
@@ -7093,7 +7097,7 @@ namespace ProposalReportingSystem
                 }
                 else if (searchProposalIsWatchingEdition)
                 {
-                    if (e.ColumnIndex == 0)
+                    if (e.ColumnIndex == 19)
                     {
                         Proposal proposal = new Proposal();
 

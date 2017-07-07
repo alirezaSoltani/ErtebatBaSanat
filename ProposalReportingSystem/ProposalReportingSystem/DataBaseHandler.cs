@@ -5243,7 +5243,7 @@ namespace ProposalReportingSystem
                         row.Cells["registrantBtn"].Value = fullName;
                     }
                 }
-                if (query.Contains("editionTable"))
+                else if (query.Contains("editionTable"))
                 {
 
                     foreach (DataGridViewRow row in dgvv.Rows)
@@ -5270,18 +5270,18 @@ namespace ProposalReportingSystem
                         fullName = getRegistrantName(long.Parse(row.Cells["registrant"].Value.ToString()));
                         row.Cells["registrantBtn"].Value = fullName;
                     }
-                }
 
-                dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
-                dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
-                foreach (DataGridViewColumn col in dgvv.Columns)
-                {
-                    dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
+                    dgvv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                    dgvv.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
+                    foreach (DataGridViewColumn col in dgvv.Columns)
+                    {
+                        dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
+                    }
                 }
             }
-            catch
+            catch(Exception e )
             {
-
+                MessageBox.Show(e.Message);
             }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
@@ -5400,6 +5400,81 @@ namespace ProposalReportingSystem
                 dataGridview.Columns["fileName"].Visible = false;
 
             }
+
+            else if (selectCommand.Contains("editionTable"))
+            {
+                dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
+                dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
+                dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
+                dataGridview.Columns["coExecutor"].HeaderText = "همکاران مجری";
+                dataGridview.Columns["startDate"].HeaderText = "تاریخ شروع";
+                dataGridview.Columns["duration"].HeaderText = "مدت زمان";
+                dataGridview.Columns["procedureType"].HeaderText = "نوع کار";
+                dataGridview.Columns["propertyType"].HeaderText = "خاصیت";
+                dataGridview.Columns["registerType"].HeaderText = "نوع ثبت";
+                dataGridview.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns["employer"].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns["value"].HeaderText = "هزینه";
+                dataGridview.Columns["status"].HeaderText = "وضعیت";
+                dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
+                dataGridview.Columns["registrant"].Visible = false;
+
+
+                ///////////
+                DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn);
+                btn.HeaderText = "اطلاعات";
+                btn.Text = "نمایش کلی";
+                btn.Name = "detailBtn";
+
+                DataGridViewLinkColumn btn2 = new DataGridViewLinkColumn();
+                dataGridview.Columns.Add(btn2);
+                btn2.HeaderText = " نسخه ها";
+                btn2.Text = "نمایش جزئیات";
+                btn2.Name = "editionBtn";
+
+                DataGridViewTextBoxColumn btn3 = new DataGridViewTextBoxColumn();
+                dataGridview.Columns.Add(btn3);
+                btn3.HeaderText = "کاربر ثبت کننده ";
+                btn3.Name = "registrantBtn";
+
+                dataGridview.Columns.Add("executorFullName", "مجری");
+                dataGridview.Columns["executorFullName"].DisplayIndex = 20;
+                dataGridview.Columns.Add("hijriDate", "تاریخ");
+                dataGridview.Columns["hijriDate"].DisplayIndex = 21;
+                dataGridview.Columns.Add("employerName", "سازمان کارفرما");
+                dataGridview.Columns["employerName"].DisplayIndex = 22;
+
+                btn.UseColumnTextForLinkValue = true;
+                btn2.UseColumnTextForLinkValue = true;
+
+                dataGridview.Columns["editionBtn"].Visible = true;
+                dataGridview.Columns["detailBtn"].Visible = true;
+
+
+                dataGridview.Columns[0].Visible = false;
+                dataGridview.Columns["detailBtn"].DisplayIndex = 0;
+                // dataGridview.Columns["detailBtn"].Frozen = true;
+                dataGridview.Columns["editionBtn"].DisplayIndex = 1;
+                dataGridview.Columns["editionBtn"].Frozen = true;
+
+                dataGridview.Columns["executor"].HeaderText = "مجری";
+                dataGridview.Columns["executorFullName"].DisplayIndex = 2;
+                dataGridview.Columns["executorFullName"].Frozen = true;
+                dataGridview.Columns["executor"].Visible = false;
+                //  dataGridview.Columns["executorFullName"].Frozen = true;
+
+                dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
+                dataGridview.Columns["persianTitle"].DisplayIndex = 3;
+                //dataGridview.Columns["persianTitle"].Frozen = true;
+                ///////////////////////
+                dataGridview.Columns["startDate"].Visible = false;
+                dataGridview.Columns["employer"].Visible = false;
+                dataGridview.Columns["fileName"].Visible = false;
+
+            }
+
 
             else if (selectCommand.Contains("TeacherTable"))
             {
