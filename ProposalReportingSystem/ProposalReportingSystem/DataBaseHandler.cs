@@ -4726,7 +4726,7 @@ namespace ProposalReportingSystem
                 {
                     string q = addProposalQuery + " AND  [index] NOT IN " +
                                "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                               " [index] FROM proposalTable ) ";
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -4747,7 +4747,7 @@ namespace ProposalReportingSystem
                 {
                     string q = searchProposalQuery + " AND  [index] NOT IN " +
                                "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                               " [index] FROM proposalTable  ) ";
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -4768,7 +4768,7 @@ namespace ProposalReportingSystem
                 {
                     string q = editProposalQuery + " AND  [index] NOT IN " +
                                "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ORDER BY startDate ) ";
+                               " [index] FROM proposalTable ) ";
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -4884,7 +4884,7 @@ namespace ProposalReportingSystem
 
                 string q = manageTeacherQuery + " AND  t_NCode NOT IN " +
                                "(SELECT TOP " + PreviousPageOffSet +
-                               " t_NCode FROM TeacherTable ORDER BY t_NCode ) ";
+                               " t_NCode FROM TeacherTable ) ";
 
                 // Create a new data adapter based on the specified query.
                 dataAdapter = new SqlDataAdapter(q, conString);
@@ -4917,7 +4917,7 @@ namespace ProposalReportingSystem
             {
                 string q = logQuery + " AND  log# NOT IN " +
                               "(SELECT TOP " + PreviousPageOffSet +
-                              " log# FROM logTable ORDER BY log# ) ";
+                              " log# FROM logTable  ) ";
 
                 // Create a new data adapter based on the specified query.
                 dataAdapter = new SqlDataAdapter(q, conString);
@@ -4957,7 +4957,7 @@ namespace ProposalReportingSystem
         {
             string q = searchProposalQuery + " AND  [index] NOT IN " +
                               "(SELECT TOP " + PreviousPageOffSet +
-                              " [index] FROM proposalTable ORDER BY startDate ) ";
+                              " [index] FROM proposalTable  ) ";
             // Create a new data adapter based on the specified query.
             dataAdapter = new SqlDataAdapter(q, conString);
 
