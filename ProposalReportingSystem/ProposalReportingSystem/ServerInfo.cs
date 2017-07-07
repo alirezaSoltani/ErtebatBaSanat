@@ -13,6 +13,7 @@ namespace ProposalReportingSystem
     public partial class ServerInfo : Form
     {
         private User user = new User();
+        private AppSetting setting = new AppSetting();
 
         public ServerInfo()
         {
@@ -32,6 +33,8 @@ namespace ProposalReportingSystem
             user.CanManageTeacher = 1;
             user.CanManageType = 1;
             user.U_Color = "#D3EFFC";
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace ProposalReportingSystem
                 SqlHelper helper = new SqlHelper(connectionString);
                 if (helper.isConnected)
                 {
-                    AppSetting setting = new AppSetting();
+                    
                     MessageBox.Show("Your Connection String before change:\n" + setting.getConnectionString("cn"));
                     setting.setConnectionString("cn", connectionString);
                     MessageBox.Show("Your Connection String has changed successfully:\n" + setting.getConnectionString("cn"), "Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);

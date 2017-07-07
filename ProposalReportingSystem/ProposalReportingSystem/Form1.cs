@@ -15,10 +15,10 @@ namespace ProposalReportingSystem
 {
     public partial class Form1 : Form
     {
-        string conString = "Data Source= 169.254.92.252;" +
+        /*string conString = "Data Source= 169.254.92.252;" +
                 "Initial Catalog=rayanpro_EBS;" +
                 "User id=test; " +
-                "Password=HoseinNima1234;";
+                "Password=HoseinNima1234;";*/
 
         //string conString = "Data Source= 185.159.152.2;" +
         //       "Initial Catalog=rayanpro_EBS;" +
@@ -116,7 +116,7 @@ namespace ProposalReportingSystem
             if (loginUser.U_NCode == 999999999 && loginUser.U_Password == "P@hn1395")
             {
                 sysLogTab.Visible = true;
-                //menuSysLogBtn.Visible = true;
+                manageUserIsAdminCb.Visible = true;
                 homeUserNameLbl.Text = loginUser.U_LName + " " + loginUser.U_FName;
             }
             else
@@ -707,6 +707,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEditUserCb, 20, 75, 150, 35);
             gl.setSize(manageUserDeleteUserCb, 20, 135, 150, 35);
             gl.setSize(manageUserManageTypeCb, 20, 195, 150, 35);
+            gl.setSize(manageUserIsAdminCb, 20, 255, 150, 35);
 
             gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
             gl.setSize(manageUserEditBtn, 130, 360, 80, 30);

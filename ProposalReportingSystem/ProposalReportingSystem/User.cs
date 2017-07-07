@@ -15,6 +15,7 @@ namespace ProposalReportingSystem
         private string u_Email;
         private string u_Tel;
         private string u_Color;
+        private short u_IsAdmin;
         private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser, canManageTeacher, canManageType;
 
 
@@ -211,6 +212,19 @@ namespace ProposalReportingSystem
             set
             {
                 u_Color = value;
+            }
+        }
+
+        public short U_IsAdmin
+        {
+            get
+            {
+                return u_IsAdmin;
+            }
+
+            set
+            {
+                u_IsAdmin = value;
             }
         }
     }
