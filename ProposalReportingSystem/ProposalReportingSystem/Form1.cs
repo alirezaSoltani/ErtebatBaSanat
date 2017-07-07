@@ -3706,6 +3706,17 @@ namespace ProposalReportingSystem
                 {
                     user.CanManageType = 0;
                 }
+                if (loginUser.U_NCode == 999999999)
+                {
+                    if (manageUserIsAdminCb.Checked == true)
+                    {
+                        user.U_IsAdmin = 1;
+                    }
+                    else
+                    {
+                        user.U_IsAdmin = 0;
+                    }
+                }
 
                 dbh.AddUser(user, loginUser.U_NCode, myDateTime.ToString());
                 manageUserClearBtn.PerformClick();
@@ -3844,7 +3855,17 @@ namespace ProposalReportingSystem
                 {
                     user.CanManageTeacher = 0;
                 }
-
+                if (loginUser.U_NCode == 999999999)
+                {
+                    if (manageUserIsAdminCb.Checked == true)
+                    {
+                        user.U_IsAdmin = 1;
+                    }
+                    else
+                    {
+                        user.U_IsAdmin = 0;
+                    }
+                }
                 dbh.EditUsers(user, long.Parse(manageUserCurrentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
                 dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
@@ -4917,7 +4938,7 @@ namespace ProposalReportingSystem
             if(editProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
 
-                if (loginUser.U_NCode == 999999999)
+                if (loginUser.U_IsAdmin == 1)
                 {
                     editProposalShowDgv.Columns.Clear();
                     TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '"+ editProposalExecutorNcodeTxtbx.Text + "'");
@@ -5915,7 +5936,7 @@ namespace ProposalReportingSystem
 
         private void editProposalShowAllBtn_Click(object sender, EventArgs e)
         {
-            if(loginUser.U_NCode == 999999999)
+            if(loginUser.U_IsAdmin == 1)
             {
                 editProposalShowDgv.Columns.Clear();
                 if(manageProposalIsWatchingEdition)
@@ -6968,9 +6989,9 @@ namespace ProposalReportingSystem
                         proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
                         proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
-                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 999999999)
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_IsAdmin == 1)
                         {
-                            if (loginUser.CanEditProposal == 1 || loginUser.U_NCode == 999999999)
+                            if (loginUser.CanEditProposal == 1 || loginUser.U_IsAdmin == 1)
                             {
                                 menuManageProposalBtn.PerformClick();
                                 editProposalShowDgv.Columns.Clear();
@@ -7006,7 +7027,7 @@ namespace ProposalReportingSystem
                         else
                         {
                             string context = "شما دسترسی برای تغییر این پروپوزال را ندارید";
-                            Alert alert = new Alert(context, "bluegray", 5);
+                            Alert alert = new Alert(context, "darkred", 5);
                         }
 
 
@@ -7040,9 +7061,9 @@ namespace ProposalReportingSystem
                         proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
 
-                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 999999999)
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_IsAdmin == 1)
                         {
-                            if (loginUser.CanAddProposal == 1 || loginUser.U_NCode == 999999999)
+                            if (loginUser.CanAddProposal == 1 || loginUser.U_IsAdmin == 1)
                             {
                                 menuAddProposalBtn.PerformClick();
                                 addProposalShowDgv.Columns.Clear();

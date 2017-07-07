@@ -95,7 +95,6 @@
             this.serverTxtbx.Name = "serverTxtbx";
             this.serverTxtbx.Size = new System.Drawing.Size(423, 22);
             this.serverTxtbx.TabIndex = 4;
-            this.serverTxtbx.Text = "169.254.92.252";
             // 
             // databaseTxtbx
             // 
@@ -103,7 +102,6 @@
             this.databaseTxtbx.Name = "databaseTxtbx";
             this.databaseTxtbx.Size = new System.Drawing.Size(423, 22);
             this.databaseTxtbx.TabIndex = 5;
-            this.databaseTxtbx.Text = "rayanpro_EBS";
             // 
             // usernameTxtbx
             // 
@@ -111,7 +109,6 @@
             this.usernameTxtbx.Name = "usernameTxtbx";
             this.usernameTxtbx.Size = new System.Drawing.Size(423, 22);
             this.usernameTxtbx.TabIndex = 6;
-            this.usernameTxtbx.Text = "test";
             // 
             // passwordTxtbx
             // 
@@ -119,7 +116,6 @@
             this.passwordTxtbx.Name = "passwordTxtbx";
             this.passwordTxtbx.Size = new System.Drawing.Size(423, 22);
             this.passwordTxtbx.TabIndex = 7;
-            this.passwordTxtbx.Text = "HoseinNima1234";
             // 
             // testBtn
             // 

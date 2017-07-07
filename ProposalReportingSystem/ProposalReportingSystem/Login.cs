@@ -240,6 +240,11 @@ namespace ProposalReportingSystem
                             user.U_Email = reader["u_Email"].ToString();
                             user.U_Tel = reader["u_Tel"].ToString();
 
+                            if (reader["u_IsAdmin"].ToString() == "True")
+                                user.U_IsAdmin = 1;
+                            else
+                                user.U_IsAdmin = 0;
+
                             if (reader["u_canAddProposal"].ToString() == "True")
                                 user.CanAddProposal = 1;
                             else

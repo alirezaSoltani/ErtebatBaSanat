@@ -32,9 +32,17 @@ namespace ProposalReportingSystem
             user.CanDeleteUser = 1;
             user.CanManageTeacher = 1;
             user.CanManageType = 1;
+            user.U_IsAdmin = 1;
             user.U_Color = "#D3EFFC";
 
-            
+            serverTxtbx.Text = setting.getConnectionString("cndatasource");
+            databaseTxtbx.Text = setting.getConnectionString("cninitialcatalog");
+            usernameTxtbx.Text = setting.getConnectionString("cnuserid");
+            passwordTxtbx.Text = setting.getConnectionString("cnpassword");
+
+            ftpUriTxtbx.Text = setting.getConnectionString("ftpuri");
+            ftpUsernameTxtbx.Text = setting.getConnectionString("ftpusername");
+            ftpPasswordTxtbx.Text = setting.getConnectionString("ftppassword");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -73,6 +81,10 @@ namespace ProposalReportingSystem
                     
                     MessageBox.Show("Your Connection String before change:\n" + setting.getConnectionString("cn"));
                     setting.setConnectionString("cn", connectionString);
+                    setting.setConnectionString("cndatasource", serverTxtbx.Text);
+                    setting.setConnectionString("cninitialcatalog", databaseTxtbx.Text);
+                    setting.setConnectionString("cnuserid", usernameTxtbx.Text);
+                    setting.setConnectionString("cnpassword", passwordTxtbx.Text);
                     MessageBox.Show("Your Connection String has changed successfully:\n" + setting.getConnectionString("cn"), "Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

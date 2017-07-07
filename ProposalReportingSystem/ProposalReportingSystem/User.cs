@@ -15,7 +15,7 @@ namespace ProposalReportingSystem
         private string u_Email;
         private string u_Tel;
         private string u_Color;
-        private short u_IsAdmin;
+        private short u_IsAdmin = 0;
         private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser, canManageTeacher, canManageType;
 
 
