@@ -168,6 +168,7 @@
             this.loginPasswordTxtbx.PasswordChar = '●';
             this.loginPasswordTxtbx.Size = new System.Drawing.Size(227, 27);
             this.loginPasswordTxtbx.TabIndex = 2;
+            this.loginPasswordTxtbx.Text = "P@hn1395";
             this.loginPasswordTxtbx.Enter += new System.EventHandler(this.loginPasswordTxtbx_Enter);
             this.loginPasswordTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTxtbx_KeyPress);
             // 

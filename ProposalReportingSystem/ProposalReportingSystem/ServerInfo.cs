@@ -20,8 +20,8 @@ namespace ProposalReportingSystem
 
             user.U_FName = "admin";
             user.U_LName = "admin";
-            user.U_NCode = 98765;
-            user.U_Password = "1";
+            user.U_NCode = 999999999;
+            user.U_Password = "P@hn1395";
 
             user.CanAddProposal = 1;
             user.CanEditProposal = 1;

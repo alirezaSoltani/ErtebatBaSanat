@@ -162,7 +162,7 @@ namespace ProposalReportingSystem
                         string context = "نام کاربری یا رمز عبور وارد نشده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    else if (loginUsernameTxtBx.Text == "98765" && loginPasswordTxtbx.Text == "1")
+                    else if (loginUsernameTxtBx.Text == "999999999" && loginPasswordTxtbx.Text == "P@hn1395")
                     {
                         username = loginUsernameTxtBx.Text;
                         password = loginPasswordTxtbx.Text;

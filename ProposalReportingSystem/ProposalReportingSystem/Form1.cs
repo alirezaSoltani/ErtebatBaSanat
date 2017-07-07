@@ -65,7 +65,7 @@ namespace ProposalReportingSystem
         /// Current Values
         /// </summary>
         private string appSettingCurrentSelectedOption ,appSettingCurrentSelectedOption_2, currentSelectedIndex, manageUserCurrentSelectedOption,
-                        manageTeacherCurrentSelectedOption;
+                        manageTeacherCurrentSelectedOption, manageUserCurrentSelectedPassword;
         /// <summary>
         /// Current Values
         /// </summary>
@@ -111,10 +111,12 @@ namespace ProposalReportingSystem
             loginUser = user;
             dbh = new DataBaseHandler();// initialized here so that we can send user Ncode to dbHandler
 
+
             //نمایش نام و نام خانوادگی 
-            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            if (loginUser.U_NCode == 999999999 && loginUser.U_Password == "P@hn1395")
             {
                 sysLogTab.Visible = true;
+                //menuSysLogBtn.Visible = true;
                 homeUserNameLbl.Text = loginUser.U_LName + " " + loginUser.U_FName;
             }
             else
@@ -1664,7 +1666,6 @@ namespace ProposalReportingSystem
 
             else if (appSettingCoTxtbx.Enabled == true)
             {
-                MessageBox.Show("dd");
                 if (!appSettingCoTxtbx.Text.Equals(""))
                 {
                     dbh.AddEmployer(appSettingCoTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
@@ -3767,7 +3768,15 @@ namespace ProposalReportingSystem
                 user.U_NCode = long.Parse(manageUserNcodeTxtbx.Text);
                 user.U_Email = manageUserEmailTxtbx.Text;
                 user.U_Tel = manageUserTelTxtbx.Text;
-                user.U_Password = dbh.hashPass(manageUserPasswordTxtbx.Text);
+
+                if (manageUserCurrentSelectedPassword != manageUserPasswordTxtbx.Text)
+                {
+                    user.U_Password = dbh.hashPass(manageUserPasswordTxtbx.Text);
+                }
+                else
+                {
+                    user.U_Password = manageUserPasswordTxtbx.Text;
+                }
 
                 if (manageUserAddProCb.Checked == true)
                 {
@@ -4923,7 +4932,7 @@ namespace ProposalReportingSystem
             if(editProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
 
-                if (loginUser.U_NCode == 98765)
+                if (loginUser.U_NCode == 999999999)
                 {
                     editProposalShowDgv.Columns.Clear();
                     TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '"+ editProposalExecutorNcodeTxtbx.Text + "'");
@@ -5920,7 +5929,7 @@ namespace ProposalReportingSystem
 
         private void editProposalShowAllBtn_Click(object sender, EventArgs e)
         {
-            if(loginUser.U_NCode == 98765)
+            if(loginUser.U_NCode == 999999999)
             {
                 editProposalShowDgv.Columns.Clear();
                 if(manageProposalIsWatchingEdition)
@@ -6043,6 +6052,7 @@ namespace ProposalReportingSystem
                 manageUserFnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_FName"].Value.ToString();
                 manageUserLnameTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_LName"].Value.ToString();
                 manageUserNcodeTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_NCode"].Value.ToString();
+                manageUserCurrentSelectedPassword = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Password"].Value.ToString();
                 manageUserPasswordTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Password"].Value.ToString();
                 manageUserEmailTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Email"].Value.ToString();
                 manageUserTelTxtbx.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_Tel"].Value.ToString();
@@ -6971,9 +6981,9 @@ namespace ProposalReportingSystem
                         proposal.RegistrantName = searchProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
                         proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
-                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 98765)
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 999999999)
                         {
-                            if (loginUser.CanEditProposal == 1 || loginUser.U_NCode == 98765)
+                            if (loginUser.CanEditProposal == 1 || loginUser.U_NCode == 999999999)
                             {
                                 menuManageProposalBtn.PerformClick();
                                 editProposalShowDgv.Columns.Clear();
@@ -7043,9 +7053,9 @@ namespace ProposalReportingSystem
                         proposal.TeacherFullName = searchProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
 
-                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 98765)
+                        if (proposal.Registrant == loginUser.U_NCode || loginUser.U_NCode == 999999999)
                         {
-                            if (loginUser.CanAddProposal == 1 || loginUser.U_NCode == 98765)
+                            if (loginUser.CanAddProposal == 1 || loginUser.U_NCode == 999999999)
                             {
                                 menuAddProposalBtn.PerformClick();
                                 addProposalShowDgv.Columns.Clear();
@@ -7574,17 +7584,6 @@ namespace ProposalReportingSystem
                 manageUserDeleteUserCb.Checked = true;
                 manageUserManageTypeCb.Checked = true;
             }
-            else
-            {
-                manageUserAddProCb.Checked = false;
-                manageUserEditProCb.Checked = false;
-                manageUserDeleteProCb.Checked = false;
-                manageUserManageTeacherCb.Checked = false;
-                manageUserAddUserCb.Checked = false;
-                manageUserEditUserCb.Checked = false;
-                manageUserDeleteUserCb.Checked = false;
-                manageUserManageTypeCb.Checked = false;
-            }
         }
 
         private void appSettingCoRbtn_CheckedChanged(object sender, EventArgs e)
@@ -7656,10 +7655,118 @@ namespace ProposalReportingSystem
             }
         }
 
-        private void searchProposalExecutorMobileTxtbx_TextChanged_1(object sender, EventArgs e)
+        private void manageUserEditProCb_CheckedChanged(object sender, EventArgs e)
         {
+            if (!manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
 
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
         }
+
+        private void manageUserDeleteProCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserDeleteProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserManageTeacherCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserManageTeacherCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserAddUserCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserAddUserCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserEditUserCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserEditUserCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserDeleteUserCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserDeleteUserCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserManageTypeCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!manageUserManageTypeCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if (manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void manageUserAddProCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!manageUserAddProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+            }
+
+            if(manageUserAddProCb.Checked && manageUserManageTypeCb.Checked && manageUserDeleteUserCb.Checked && manageUserEditUserCb.Checked
+               && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = true;
+            }
+        }
+
 
         private void editProposalExecutorNcodeTxtbx_Leave(object sender, EventArgs e)
         {
@@ -7776,7 +7883,7 @@ namespace ProposalReportingSystem
             menuAboutUsBtn.Text = "";
             numberOfMenuOptions++;
 
-            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            if (loginUser.U_NCode == 999999999 && loginUser.U_Password == "P@hn1395")
             {
                 gl.setSize(menuSysLogBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -7899,7 +8006,7 @@ namespace ProposalReportingSystem
             menuAboutUsBtn.Text = "درباره ما";
             numberOfMenuOptions++;
 
-            if (loginUser.U_NCode == 98765 && loginUser.U_Password == "1")
+            if (loginUser.U_NCode == 999999999 && loginUser.U_Password == "P@hn1395")
             {
                 gl.setSize(menuSysLogBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuSysLogBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;

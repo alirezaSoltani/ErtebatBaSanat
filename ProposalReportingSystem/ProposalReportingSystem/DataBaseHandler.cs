@@ -5047,7 +5047,7 @@ namespace ProposalReportingSystem
 
             dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
             dataGridview.Columns["persianTitle"].DisplayIndex = 5;
-            dataGridview.Columns["persianTitle"].Frozen = true;
+            //dataGridview.Columns["persianTitle"].Frozen = true;
             ///////////////////////
             dataGridview.Columns["startDate"].Visible = false;
             dataGridview.Columns["employer"].Visible = false;
