@@ -295,7 +295,7 @@ namespace ProposalReportingSystem
                         {
                             //PopUp popUp = new PopUp("خطا", "نام کاربری یا رمز عبور اشتباه است.", "تایید", "", "", "error");
                             //popUp.ShowDialog();
-                            string context = "نام کاربری یا رمز عبور اشتباه است.";
+                            string context = "نام کاربری یا رمز عبور اشتباه است";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
                         conn.Close();
