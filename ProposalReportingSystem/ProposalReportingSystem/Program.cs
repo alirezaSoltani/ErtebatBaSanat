@@ -32,8 +32,6 @@ namespace ProposalReportingSystem
                     runApp();
                 }
             }
-            
-
         }
 
         static void runApp()

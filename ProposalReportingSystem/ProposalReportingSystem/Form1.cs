@@ -5429,7 +5429,9 @@ namespace ProposalReportingSystem
                     proposal.Status = editProposalStatusCb.Text;
                     proposal.RegisterType = editProposalRegisterTypeCb.Text;
                     proposal.Employer = long.Parse(editProposalOrganizationNumberCb.Text);
-                    proposal.Value = long.Parse(editProposalValueTxtbx.Text);
+                    string tempValue = editProposalValueTxtbx.Text.Replace(",", "");
+                    //addProposalValueTxtbx.Text = tempValue;
+                    proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
 
@@ -5519,7 +5521,7 @@ namespace ProposalReportingSystem
                         dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                         editProposalShowDgv.Columns["editionBtn"].Visible = false;
                         editProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
-                        editProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                        editProposalShowDgv.Columns["edition"].DisplayIndex = 3;
                         editProposalShowDgv.Columns["edition"].Frozen = true;
 
 
@@ -6827,7 +6829,7 @@ namespace ProposalReportingSystem
                             dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
                             addProposalShowDgv.Columns["editionBtn"].Visible = false;
                             addProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
-                            addProposalShowDgv.Columns["edition"].DisplayIndex = 4;
+                            addProposalShowDgv.Columns["edition"].DisplayIndex = 3;
                             addProposalShowDgv.Columns["edition"].Frozen = true;
 
                             addProposalNavigationFirstPageBtn.Enabled = false;
@@ -6930,7 +6932,7 @@ namespace ProposalReportingSystem
                         searchProposalShowDgv.Columns["navToEdit"].Visible = false;
                         searchProposalShowDgv.Columns["editionBtn"].Visible = false;
                         searchProposalShowDgv.Columns["edition"].HeaderText = "شماره نسخه";
-                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 6;
+                        searchProposalShowDgv.Columns["edition"].DisplayIndex = 5;
                         searchProposalShowDgv.Columns["edition"].Frozen = true;
 
                         editionProposalIndex = proposal.Index;
@@ -7730,6 +7732,14 @@ namespace ProposalReportingSystem
                && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
             {
                 manageUserCheckAllCb.Checked = true;
+            }
+        }
+
+        private void searchProposalStartDateFromTimeInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchProposalSearchBtn.PerformClick();
             }
         }
 
