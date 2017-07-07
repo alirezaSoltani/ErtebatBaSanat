@@ -159,7 +159,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
                     transaction.Commit();
                     b = true;
-                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات پروپوزال با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -180,13 +180,13 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
                         
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -204,12 +204,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -304,7 +304,7 @@ namespace ProposalReportingSystem
 
                    
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -325,12 +325,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -346,12 +346,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -461,7 +461,7 @@ namespace ProposalReportingSystem
 
 
                             transaction.Commit();
-                            popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                            popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                             popup.ShowDialog();
                         }
                         else
@@ -502,7 +502,7 @@ namespace ProposalReportingSystem
 
                         MoveFileToDeleted(proposal.FileName);
                         transaction.Commit();
-                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                         popup.ShowDialog();
                     }
                 }
@@ -524,7 +524,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -534,7 +534,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -551,12 +551,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -639,9 +639,9 @@ namespace ProposalReportingSystem
 
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
-                    //string context = "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد.";
+                    //string context = "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد";
                     //Alert alert = new Alert(context, "blue", 5);
                 }
                 catch (Exception e)
@@ -662,12 +662,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -684,12 +684,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -757,7 +757,7 @@ namespace ProposalReportingSystem
                     }
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -778,12 +778,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -800,12 +800,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -865,7 +865,7 @@ namespace ProposalReportingSystem
                     transaction.Commit();
                     if (count == 1)
                     {
-                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                        popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                         popup.ShowDialog();
                     }
                 }
@@ -889,7 +889,7 @@ namespace ProposalReportingSystem
                         }
                         else if (e.Message.Contains("PRIMARY KEY"))
                         {
-                            string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                            string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
                         else if (e.Message.Contains("conflict"))
@@ -899,7 +899,7 @@ namespace ProposalReportingSystem
                         }
                         else
                         {
-                            popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                            popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                             popup.ShowDialog();
                         }
                     }
@@ -918,12 +918,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                         popup.ShowDialog();
                     }
                 }
@@ -980,7 +980,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1001,12 +1001,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1023,12 +1023,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1073,7 +1073,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1094,12 +1094,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1116,12 +1116,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1175,7 +1175,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1196,7 +1196,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -1206,7 +1206,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1223,12 +1223,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1281,12 +1281,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1377,12 +1377,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1399,12 +1399,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1455,7 +1455,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch(Exception e)
@@ -1476,12 +1476,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1499,12 +1499,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1547,7 +1547,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1568,12 +1568,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1629,7 +1629,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1650,7 +1650,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -1660,7 +1660,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -1677,12 +1677,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1840,7 +1840,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1861,12 +1861,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -1885,12 +1885,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -1922,7 +1922,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -1943,12 +1943,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -1967,12 +1967,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2038,7 +2038,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2059,7 +2059,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -2069,7 +2069,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2088,12 +2088,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2131,7 +2131,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2152,13 +2152,13 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
                        
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2177,12 +2177,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2214,7 +2214,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2235,12 +2235,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2259,12 +2259,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2328,7 +2328,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
                     
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2349,7 +2349,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -2359,7 +2359,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2378,12 +2378,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2423,7 +2423,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }   
                 catch (Exception e)
@@ -2444,12 +2444,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2468,12 +2468,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2504,7 +2504,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات  با موفقیت  ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات  با موفقیت  ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2525,12 +2525,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2549,12 +2549,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2623,7 +2623,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2644,7 +2644,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -2654,7 +2654,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2673,12 +2673,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2720,7 +2720,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -2741,12 +2741,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2765,12 +2765,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2802,7 +2802,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -2824,12 +2824,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2848,12 +2848,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -2921,7 +2921,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -2943,7 +2943,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -2953,7 +2953,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -2972,12 +2972,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3017,7 +3017,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -3038,12 +3038,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3062,12 +3062,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3098,7 +3098,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -3120,12 +3120,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3144,12 +3144,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3221,7 +3221,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -3243,7 +3243,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -3253,7 +3253,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3272,12 +3272,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3320,7 +3320,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -3341,12 +3341,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3365,12 +3365,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3401,7 +3401,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -3423,12 +3423,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3447,12 +3447,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3516,7 +3516,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -3538,7 +3538,7 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -3548,7 +3548,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3567,12 +3567,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3613,7 +3613,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -3634,12 +3634,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3658,12 +3658,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3694,7 +3694,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -3717,12 +3717,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3741,12 +3741,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3812,20 +3812,20 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
                 catch (Exception e)
                 {
-
+                    MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-
+                        
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
@@ -3834,17 +3834,22 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    else if (e.Message.Contains("conflict"))
+                    else if (e.Message.Contains("conflict") && e.Message.Contains("dbo.EGroupTable"))
                     {
-                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        string context = "این مورد به دلیل وجود گروه آموزشی مختص به آن ، غیر قابل حذف است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("conflict") && e.Message.Contains("dbo.TeacherTable"))
+                    {
+                        string context = "این مورد به دلیل استفاده در اطلاعات اساتید ، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3863,12 +3868,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3908,7 +3913,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -3929,12 +3934,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -3953,12 +3958,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -3989,7 +3994,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -4011,12 +4016,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -4035,12 +4040,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -4103,7 +4108,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -4125,17 +4130,17 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    else if (e.Message.Contains("conflict"))
+                    else if (e.Message.Contains("conflict") && e.Message.Contains("dbo.TeacherTable"))
                     {
-                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        string context = "این مورد به دلیل استفاده در اطلاعات اساتید ، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -4154,12 +4159,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -4224,13 +4229,13 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
                 catch (Exception e)
                 {
-
+                    MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -4246,17 +4251,17 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    else if (e.Message.Contains("conflict"))
+                    else if (e.Message.Contains("conflict") && e.Message.Contains("dbo.TeacherTable"))
                     {
-                        string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
+                        string context = "این مورد به دلیل استفاده در اطلاعات اساتید ، غیر قابل حذف است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -4275,12 +4280,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -4311,7 +4316,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
 
                 }
@@ -4333,12 +4338,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -4357,12 +4362,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -4394,7 +4399,7 @@ namespace ProposalReportingSystem
 
                     transaction.Commit();
 
-                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید.", "تایید", "", "", "success");
+                    popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -4415,12 +4420,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
 
@@ -4439,12 +4444,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }
@@ -5738,7 +5743,7 @@ namespace ProposalReportingSystem
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "SELECT t_Faculty FROM teacherTable WHERE t_NCode = '" + ncode + "'";
+                sc.CommandText = "SELECT t_Faculty FROM TeacherTable WHERE t_NCode = '" + ncode + "'";
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
@@ -5831,7 +5836,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد.", "تایید", "", "", "success");
+                    popup = new PopUp("تغییر موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
@@ -5852,12 +5857,12 @@ namespace ProposalReportingSystem
                     }
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
-                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                        string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
                     {
-                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "error");
+                        popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
                 }
@@ -5874,12 +5879,12 @@ namespace ProposalReportingSystem
                 }
                 else if (e.Message.Contains("PRIMARY KEY"))
                 {
-                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است.";
+                    string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
                 else
                 {
-                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید .", "تایید", "", "", "warning");
+                    popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "warning");
                     popup.ShowDialog();
                 }
             }

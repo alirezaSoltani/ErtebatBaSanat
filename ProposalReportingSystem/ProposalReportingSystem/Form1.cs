@@ -980,8 +980,8 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
 
-                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorNcodeTxtbx.Focus();
                 }
 
@@ -989,8 +989,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorFNameTxtbx.Focus();
                 }
 
@@ -998,8 +998,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام خانوادگی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام خانوادگی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorLNameTxtbx.Focus();
                 }
 
@@ -1008,8 +1008,8 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
 
-                    string context = "دانشکده را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "دانشکده را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorFacultyCb.Focus();
                 }
 
@@ -1017,8 +1017,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "گروه آموزشی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "گروه آموزشی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEGroupCb.Focus();
                 }
 
@@ -1026,8 +1026,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "درجه علمی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "درجه علمی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEDegCb.Focus();
                 }
 
@@ -1035,8 +1035,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "آدرس ایمیل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
@@ -1044,7 +1044,7 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    string context = "آدرس ایمیل وارد شده صحیح نیست";
                     Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
@@ -1053,8 +1053,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره موبایل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "شماره موبایل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorMobileTxtbx.Focus();
                 }
 
@@ -1071,8 +1071,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
@@ -1080,8 +1080,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "کلمات کلیدی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "کلمات کلیدی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalKeywordsTxtbx.Focus();
                 }
 
@@ -1090,8 +1090,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalFileLinkLbl.Focus();
                 }
 
@@ -1099,8 +1099,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مدت زمان را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مدت زمان را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalDurationTxtbx.Focus();
                 }
 
@@ -1117,8 +1117,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "خاصیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalPropertyTypeCb.Focus();
                 }
 
@@ -1126,8 +1126,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalRegisterTypeCb.Focus();
                 }
 
@@ -1135,8 +1135,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalProposalTypeCb.Focus();
                 }
 
@@ -1144,8 +1144,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalOrganizationNumberCb.Focus();
                 }
 
@@ -1153,8 +1153,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalOrganizationNameCb.Focus();
                 }
 
@@ -1162,8 +1162,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مبلغ را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مبلغ را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalValueTxtbx.Focus();
                 }
 
@@ -1171,8 +1171,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "وضعیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalStatusCb.Focus();
                 }
 
@@ -1260,7 +1260,7 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
 
-                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
                     Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorNcodeTxtbx.Focus();
                 }
@@ -1269,8 +1269,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorFNameTxtbx.Focus();
                 }
 
@@ -1278,8 +1278,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام خانوادگی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام خانوادگی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorLNameTxtbx.Focus();
                 }
 
@@ -1288,8 +1288,8 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
 
-                    string context = "دانشکده را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "دانشکده را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorFacultyCb.Focus();
                 }
 
@@ -1297,8 +1297,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "گروه آموزشی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "گروه آموزشی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEGroupCb.Focus();
                 }
 
@@ -1306,8 +1306,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "درجه علمی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "درجه علمی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEDegCb.Focus();
                 }
 
@@ -1315,8 +1315,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "آدرس ایمیل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
 
@@ -1324,7 +1324,7 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    string context = "آدرس ایمیل وارد شده صحیح نیست";
                     Alert alert = new Alert(context, "darkred", 5);
                     addProposalExecutorEmailTxtbx.Focus();
                 }
@@ -1333,8 +1333,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره موبایل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "شماره موبایل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalExecutorMobileTxtbx.Focus();
                 }
 
@@ -1342,8 +1342,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalPersianTitleTxtbx.Focus();
                 }
 
@@ -1352,7 +1352,7 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "عنوان لاتین پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
@@ -1360,8 +1360,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "کلمات کلیدی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "کلمات کلیدی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalKeywordsTxtbx.Focus();
                 }
 
@@ -1370,8 +1370,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "فایل پروپوزال را جهت بارگذاری انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalFileLinkLbl.Focus();
                 }
 
@@ -1379,8 +1379,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مدت زمان را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مدت زمان را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalDurationTxtbx.Focus();
                 }
 
@@ -1388,8 +1388,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع کار پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalProcedureTypeCb.Focus();
                 }
 
@@ -1397,8 +1397,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "خاصیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalPropertyTypeCb.Focus();
                 }
 
@@ -1406,8 +1406,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalRegisterTypeCb.Focus();
                 }
 
@@ -1415,8 +1415,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalProposalTypeCb.Focus();
                 }
 
@@ -1424,8 +1424,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalOrganizationNumberCb.Focus();
                 }
 
@@ -1433,8 +1433,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalOrganizationNameCb.Focus();
                 }
 
@@ -1442,8 +1442,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مبلغ را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مبلغ را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalValueTxtbx.Focus();
                 }
 
@@ -1451,8 +1451,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "وضعیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     addProposalStatusCb.Focus();
                 }
                 else
@@ -3577,7 +3577,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید.";
+                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageUserNcodeTxtbx.Focus();
             }
@@ -3585,8 +3585,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "نام را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserFnameTxtbx.Focus();
             }
 
@@ -3594,8 +3594,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام خانوادگی را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام خانوادگی را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserLnameTxtbx.Focus();
             }
 
@@ -3603,8 +3603,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "رمز عبور را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "رمز عبور را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "رمز عبور را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserPasswordTxtbx.Focus();
             }
 
@@ -3614,7 +3614,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "داشتن حداقل یک سطح دسترسی الزامی است.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "داشتن حداقل یک سطح دسترسی الزامی است.";
+                string context = "داشتن حداقل یک سطح دسترسی الزامی است";
                 Alert alert = new Alert(context, "darkred", 5);
             }
 
@@ -3719,7 +3719,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید.";
+                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageUserNcodeTxtbx.Focus();
             }
@@ -3727,8 +3727,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "نام را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserFnameTxtbx.Focus();
             }
 
@@ -3736,8 +3736,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام خانوادگی را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام خانوادگی را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserLnameTxtbx.Focus();
             }
 
@@ -3745,8 +3745,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "رمز عبور را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "رمز عبور را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "رمز عبور را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageUserPasswordTxtbx.Focus();
             }
 
@@ -3756,8 +3756,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "داشتن حداقل یک سطح دسترسی الزامی است.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "داشتن حداقل یک سطح دسترسی الزامی است.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "داشتن حداقل یک سطح دسترسی الزامی است";
+                Alert alert = new Alert(context, "bluegray", 5);
             }
 
             else
@@ -4438,7 +4438,7 @@ namespace ProposalReportingSystem
                 //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
 
-                string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageTeacherExecutorNcodeTxtbx.Focus();
             }
@@ -4447,8 +4447,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherFnameTxtbx.Focus();
             }
 
@@ -4456,8 +4456,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام خانوادگی را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام خانوادگی را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherLnameTxtbx.Focus();
             }
 
@@ -4466,8 +4466,8 @@ namespace ProposalReportingSystem
                 //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
 
-                string context = "دانشکده را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "دانشکده را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorFacultyCb.Focus();
             }
 
@@ -4475,8 +4475,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "گروه آموزشی را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "گروه آموزشی را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEgroupCb.Focus();
             }
 
@@ -4484,8 +4484,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "درجه علمی را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "درجه علمی را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEDegCb.Focus();
             }
 
@@ -4493,16 +4493,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "آدرس ایمیل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
-                manageTeacherExecutorEmailTxtbx.Focus();
-            }
-            else if (manageTeacherExecutorEmailTxtbx.Text.Length == 0)
-            {
-                //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                //p.ShowDialog();
-                string context = "آدرس ایمیل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "آدرس ایمیل را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEmailTxtbx.Focus();
             }
 
@@ -4510,7 +4502,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                string context = "آدرس ایمیل وارد شده صحیح نیست";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageTeacherExecutorEmailTxtbx.Focus();
             }
@@ -4519,8 +4511,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "شماره موبایل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "شماره موبایل را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorMobileTxtbx.Focus();
             }
             else
@@ -4583,7 +4575,7 @@ namespace ProposalReportingSystem
                 //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
 
-                string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageTeacherExecutorNcodeTxtbx.Focus();
             }
@@ -4592,8 +4584,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherFnameTxtbx.Focus();
             }
 
@@ -4601,8 +4593,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "نام خانوادگی را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "نام خانوادگی را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherLnameTxtbx.Focus();
             }
 
@@ -4611,8 +4603,8 @@ namespace ProposalReportingSystem
                 //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
 
-                string context = "دانشکده را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "دانشکده را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorFacultyCb.Focus();
             }
 
@@ -4620,8 +4612,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "گروه آموزشی را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "گروه آموزشی را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEgroupCb.Focus();
             }
 
@@ -4629,8 +4621,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "درجه علمی را انتخاب نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "درجه علمی را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEDegCb.Focus();
             }
 
@@ -4638,16 +4630,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "آدرس ایمیل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
-                manageTeacherExecutorEmailTxtbx.Focus();
-            }
-            else if (manageTeacherExecutorEmailTxtbx.Text.Length == 0)
-            {
-                //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
-                //p.ShowDialog();
-                string context = "آدرس ایمیل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "آدرس ایمیل را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorEmailTxtbx.Focus();
             }
 
@@ -4655,7 +4639,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                string context = "آدرس ایمیل وارد شده صحیح نیست";
                 Alert alert = new Alert(context, "darkred", 5);
                 manageTeacherExecutorEmailTxtbx.Focus();
             }
@@ -4664,8 +4648,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
-                string context = "شماره موبایل را وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "شماره موبایل را وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
                 manageTeacherExecutorMobileTxtbx.Focus();
             }
             else
@@ -4811,7 +4795,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
@@ -4882,8 +4866,8 @@ namespace ProposalReportingSystem
             {
                 //PopUp p = new PopUp("خطا", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
                 //p.ShowDialog();
-                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید.";
-                Alert alert = new Alert(context, "darkred", 5);
+                string context = "کد ملی ده رقمی را به طور کامل وارد نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
             }
         }
 
@@ -4988,7 +4972,7 @@ namespace ProposalReportingSystem
             {
                 //PopUp popUp = new PopUp("کد ملی ناقص", "کد ملی ده رقمی را به طور کامل وارد نمایید.", "تایید", "", "", "info");
                 //popUp.ShowDialog();
-                string context = "برای جست و جو کد ملی ده رقمی را به طور کامل وارد نمایید.";
+                string context = "برای جست و جو کد ملی ده رقمی را به طور کامل وارد نمایید";
                 Alert alert = new Alert(context, "darkred", 5);
             }
         }
@@ -5001,7 +4985,7 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
                     Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorNcodeTxtbx.Focus();
                 }
@@ -5010,8 +4994,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorFNameTxtbx.Focus();
                 }
 
@@ -5019,8 +5003,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام خانوادگی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام خانوادگی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorLNameTxtbx.Focus();
                 }
 
@@ -5028,8 +5012,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "دانشکده را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "دانشکده را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorFacultyCb.Focus();
                 }
 
@@ -5037,8 +5021,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "گروه آموزشی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "گروه آموزشی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEGroupCb.Focus();
                 }
 
@@ -5046,8 +5030,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "درجه علمی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "درجه علمی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEDegCb.Focus();
                 }
 
@@ -5055,8 +5039,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "آدرس ایمیل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
@@ -5065,7 +5049,7 @@ namespace ProposalReportingSystem
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     /////////////////////////////////////////////////////////
-                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    string context = "آدرس ایمیل وارد شده صحیح نیست";
                     Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
@@ -5074,8 +5058,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره موبایل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "شماره موبایل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorMobileTxtbx.Focus();
                 }
 
@@ -5083,8 +5067,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
@@ -5092,8 +5076,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
@@ -5101,8 +5085,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "کلمات کلیدی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "کلمات کلیدی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalKeywordsTxtbx.Focus();
                 }
 
@@ -5112,8 +5096,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مدت زمان را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مدت زمان را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalDurationTxtbx.Focus();
                 }
 
@@ -5121,8 +5105,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع کار پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalProcedureTypeCb.Focus();
                 }
 
@@ -5130,8 +5114,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "خاصیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalPropertyTypeCb.Focus();
                 }
 
@@ -5139,8 +5123,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalRegisterTypeCb.Focus();
                 }
 
@@ -5148,8 +5132,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalTypeCb.Focus();
                 }
 
@@ -5157,8 +5141,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalOrganizationNumberCb.Focus();
                 }
 
@@ -5166,8 +5150,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalOrganizationNameCb.Focus();
                 }
 
@@ -5175,8 +5159,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مبلغ را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مبلغ را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalValueTxtbx.Focus();
                 }
 
@@ -5184,8 +5168,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخا نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "وضعیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalStatusCb.Focus();
                 }
                 else
@@ -5251,7 +5235,7 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره ملی ده رقمی را به طور صحیح وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید.";
+                    string context = "شماره ملی ده رقمی را به طور صحیح وارد نمایید";
                     Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorNcodeTxtbx.Focus();
                 }
@@ -5260,8 +5244,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorFNameTxtbx.Focus();
                 }
 
@@ -5269,8 +5253,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نام خانوادگی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نام خانوادگی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نام خانوادگی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorLNameTxtbx.Focus();
                 }
 
@@ -5278,8 +5262,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "دانشکده را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "دانشکده را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "دانشکده را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorFacultyCb.Focus();
                 }
 
@@ -5287,8 +5271,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "گروه آموزشی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "گروه آموزشی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "گروه آموزشی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEGroupCb.Focus();
                 }
 
@@ -5296,8 +5280,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "درجه علمی را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "درجه علمی را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "درجه علمی را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEDegCb.Focus();
                 }
 
@@ -5305,8 +5289,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "آدرس ایمیل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
 
@@ -5314,7 +5298,7 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "آدرس ایمیل وارد شده صحیح نیست.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "آدرس ایمیل وارد شده صحیح نیست.";
+                    string context = "آدرس ایمیل وارد شده صحیح نیست";
                     Alert alert = new Alert(context, "darkred", 5);
                     editProposalExecutorEmailTxtbx.Focus();
                 }
@@ -5323,8 +5307,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "شماره موبایل را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "شماره موبایل را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "شماره موبایل را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalExecutorMobileTxtbx.Focus();
                 }
 
@@ -5332,8 +5316,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان فارسی پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان فارسی پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
@@ -5341,8 +5325,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "عنوان لاتین پروپوزال را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "عنوان لاتین پروپوزال را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
@@ -5350,8 +5334,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "کلمات کلیدی را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "کلمات کلیدی را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalKeywordsTxtbx.Focus();
                 }
 
@@ -5360,8 +5344,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "مدت زمان را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "مدت زمان را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مدت زمان را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalDurationTxtbx.Focus();
                 }
 
@@ -5369,8 +5353,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع کار پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع کار پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع کار پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalProcedureTypeCb.Focus();
                 }
 
@@ -5378,8 +5362,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "خاصیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "خاصیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "خاصیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalPropertyTypeCb.Focus();
                 }
 
@@ -5387,8 +5371,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع ثبت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع ثبت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع ثبت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalRegisterTypeCb.Focus();
                 }
 
@@ -5396,8 +5380,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "نوع پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "نوع پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "نوع پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalTypeCb.Focus();
                 }
 
@@ -5405,8 +5389,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalOrganizationNumberCb.Focus();
                 }
 
@@ -5414,8 +5398,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "سازمان کارفرما را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "سازمان کارفرما را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "سازمان کارفرما را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalOrganizationNameCb.Focus();
                 }
 
@@ -5423,8 +5407,8 @@ namespace ProposalReportingSystem
                 {
                 //    PopUp p = new PopUp("خطای ورودی", "مبلغ را وارد نمایید.", "تایید", "", "", "error");
                 //    p.ShowDialog();
-                    string context = "مبلغ را وارد نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "مبلغ را وارد نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalValueTxtbx.Focus();
                 }
 
@@ -5432,8 +5416,8 @@ namespace ProposalReportingSystem
                 {
                     //PopUp p = new PopUp("خطای ورودی", "وضعیت پروپوزال را انتخاب نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
-                    string context = "وضعیت پروپوزال را انتخاب نمایید.";
-                    Alert alert = new Alert(context, "darkred", 5);
+                    string context = "وضعیت پروپوزال را انتخاب نمایید";
+                    Alert alert = new Alert(context, "bluegray", 5);
                     editProposalStatusCb.Focus();
                 }
                 else
@@ -5775,17 +5759,17 @@ namespace ProposalReportingSystem
         {
             List<long> NCODES = new List<long>();
 
-            string query = "SELECT TOP "+pageSize+" * FROM proposalTable WHERE ";
+            string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ";
 
             string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
 
             if (searchProposalExecutorFNameTxtbx.Text != "" && searchProposalExecutorFNameTxtbx.Enabled != false)
             {
-                query2 = query2 + " t_FName = '" + searchProposalExecutorFNameTxtbx.Text + "' AND";
+                query2 = query2 + " t_FName LIKE '%" + searchProposalExecutorFNameTxtbx.Text + "%' AND";
             }
             if (searchProposalExecutorLNameTxtbx.Text != "" && searchProposalExecutorLNameTxtbx.Enabled != false)
             {
-                query2 = query2 + " t_LName = '" + searchProposalExecutorLNameTxtbx.Text + "' AND";
+                query2 = query2 + " t_LName LIKE '%" + searchProposalExecutorLNameTxtbx.Text + "%' AND";
             }
             if (searchProposalExecutorFacultyCb.Text != "" && searchProposalExecutorFacultyCb.Enabled != false)
             {
@@ -5797,7 +5781,7 @@ namespace ProposalReportingSystem
             }
             if (searchProposalExecutorMobileTxtbx.Text != "" && searchProposalExecutorMobileTxtbx.Enabled != false)
             {
-                query2 = query2 + " t_Mobile = '" + searchProposalExecutorMobileTxtbx.Text + "' AND";
+                query2 = query2 + " t_Mobile LIKE '%" + searchProposalExecutorMobileTxtbx.Text + "%' AND";
             }
 
             query2 = query2.Substring(0, query2.Length - 3);
@@ -5812,7 +5796,7 @@ namespace ProposalReportingSystem
             foreach (long NC in NCODES)
             {
                 query = query + " executor = '" + NC + "' OR";
-                
+
             }
 
             if (query != "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ")
@@ -5827,12 +5811,12 @@ namespace ProposalReportingSystem
 
             if (searchProposalPersianTitleTxtbx.Text != "")
             {
-                query = query + " persianTitle = '" + searchProposalPersianTitleTxtbx.Text + "' AND";
+                query = query + " persianTitle LIKE '%" + searchProposalPersianTitleTxtbx.Text + "%' AND";
             }
 
             if (searchProposalEnglishTitleTxtbx.Text != "")
             {
-                query = query + " engTitle = '" + searchProposalEnglishTitleTxtbx.Text + "' AND";
+                query = query + " engTitle LIKE '%" + searchProposalEnglishTitleTxtbx.Text + "%' AND";
             }
 
             if (searchProposalProcedureTypeCb.Text != "")
@@ -5898,11 +5882,11 @@ namespace ProposalReportingSystem
 
                 query = query.Replace("TOP 5 *", "COUNT(*)");
                 TotalPage = dbh.totalPage(query);
-               
+
                 query = query.Replace("COUNT(*)", "TOP 5 *");
 
 
-               //MessageBox.Show(query);
+                //MessageBox.Show(query);
 
                 //// total page 
                 CurrentPageIndex = 1;
@@ -5925,6 +5909,7 @@ namespace ProposalReportingSystem
                 searchProposalShowDgv.Columns.Clear();
                 searchProposalShowDgv.DataSource = null;
             }
+
         }
 
         private void editProposalShowAllBtn_Click(object sender, EventArgs e)
@@ -6139,7 +6124,7 @@ namespace ProposalReportingSystem
 
         private void manageTeacherSearchBtn_Click(object sender, EventArgs e)
         {
-            string query2 = "SELECT TOP "+pageSize +" * FROM TeacherTable WHERE ";
+            string query2 = "SELECT TOP " + pageSize + " * FROM TeacherTable WHERE ";
 
             bool searchByeNCode = false;
 
@@ -6153,11 +6138,11 @@ namespace ProposalReportingSystem
             {
                 if (manageTeacherFnameTxtbx.Text != "")
                 {
-                    query2 = query2 + " t_FName = '" + manageTeacherFnameTxtbx.Text + "' AND";
+                    query2 = query2 + " t_FName LIKE '%" + manageTeacherFnameTxtbx.Text + "%' AND";
                 }
                 if (manageTeacherLnameTxtbx.Text != "")
                 {
-                    query2 = query2 + " t_LName = '" + manageTeacherLnameTxtbx.Text + "' AND";
+                    query2 = query2 + " t_LName LIKE '%" + manageTeacherLnameTxtbx.Text + "%' AND";
                 }
                 if (manageTeacherExecutorFacultyCb.Text != "")
                 {
@@ -6173,19 +6158,19 @@ namespace ProposalReportingSystem
                 }
                 if (manageTeacherExecutorMobileTxtbx.Text != "")
                 {
-                    query2 = query2 + " t_Mobile = '" + manageTeacherExecutorMobileTxtbx.Text + "' AND";
+                    query2 = query2 + " t_Mobile LIKE '%" + manageTeacherExecutorMobileTxtbx.Text + "%' AND";
                 }
                 if (manageTeacherExecutorEmailTxtbx.Text != "")
                 {
-                    query2 = query2 + " t_Email = '" + manageTeacherExecutorEmailTxtbx.Text + "' AND";
+                    query2 = query2 + " t_Email LIKE '%" + manageTeacherExecutorEmailTxtbx.Text + "%' AND";
                 }
                 if (manageTeacherExecutorTelTxtbx.Text != "")
                 {
-                    query2 = query2 + " t_Tel1 = '" + manageTeacherExecutorTelTxtbx.Text + "' AND";
+                    query2 = query2 + " t_Tel1 LIKE '%" + manageTeacherExecutorTelTxtbx.Text + "%' AND";
                 }
                 if (manageTeacherExecutorTel2Txtbx.Text != "")
                 {
-                    query2 = query2 + " t_Tel2 = '" + manageTeacherExecutorTel2Txtbx.Text + "' AND";
+                    query2 = query2 + " t_Tel2 LIKE '%" + manageTeacherExecutorTel2Txtbx.Text + "%' AND";
                 }
 
 
@@ -6194,12 +6179,12 @@ namespace ProposalReportingSystem
             query2 = query2.Substring(0, query2.Length - 3);
 
 
-            if (query2 != "SELECT TOP "+pageSize+" * FROM TeacherTable WHE")
+            if (query2 != "SELECT TOP " + pageSize + " * FROM TeacherTable WHE")
             {
                 manageTeacherShowDgv.Columns.Clear();
                 query2 = query2.Replace("TOP " + pageSize + " *", "COUNT(*)");
                 TotalPage = dbh.totalPage(query2);
-                query2 = query2.Replace("COUNT(*)","TOP " + pageSize + " *");
+                query2 = query2.Replace("COUNT(*)", "TOP " + pageSize + " *");
 
                 CurrentPageIndex = 1;
                 manageTeacherNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
@@ -6217,8 +6202,9 @@ namespace ProposalReportingSystem
                 manageTeacherNavigationReturnBtn.Enabled = false;
 
                 ////
-                
-               // dbh.dataGridViewUpdate3(manageTeacherShowDgv, teacherBindingSource, dbh.manageTeacherQuery , pageSize,CurrentPageIndex);
+
+                // dbh.dataGridViewUpdate3(manageTeacherShowDgv, teacherBindingSource, dbh.manageTeacherQuery , pageSize,CurrentPageIndex);
+
             }
         }
 
@@ -7012,14 +6998,14 @@ namespace ProposalReportingSystem
                             }
                             else
                             {
-                                string context = "شما دسترسی برای تغییر پروپوزال ها را ندارید.";
+                                string context = "شما دسترسی برای تغییر پروپوزال ها را ندارید";
                                 Alert alert = new Alert(context, "darkred", 5);
                             }
                         }
                         else
                         {
-                            string context = "شما دسترسی برای تغییر این پروپوزال را ندارید.";
-                            Alert alert = new Alert(context, "darkred", 5);
+                            string context = "شما دسترسی برای تغییر این پروپوزال را ندارید";
+                            Alert alert = new Alert(context, "bluegray", 5);
                         }
 
 
@@ -7091,7 +7077,7 @@ namespace ProposalReportingSystem
                         }
                         else
                         {
-                            string context = " شما دسترسی برای افزودن اصلاحیه این پروپوزال را ندارید.";
+                            string context = " شما دسترسی برای افزودن اصلاحیه این پروپوزال را ندارید";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
 
@@ -7135,16 +7121,6 @@ namespace ProposalReportingSystem
             catch (ArgumentOutOfRangeException) { }
         }
 
-        private void homeAapInfoGp_Click(object sender, EventArgs e)
-        {
-            /* Toast t = new Toast("متن پیام", 0.1, 0.3, 30, "error");
-             t.Show();  */
-            Toast t = new Toast();
-            t.showToast("متن پیام", 0.1, 0.1, 30, "error");
-
-            balloonTip1.SetBalloonCaption(addProposalSearchBtn, "راهنما");
-            balloonTip1.SetBalloonText(addProposalSearchBtn, "برای جستجو کلیک کنید");
-        }
 
         private void searchProposalNavigationFirstPageBtn_Click(object sender, EventArgs e)
         {
@@ -7267,7 +7243,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
@@ -7377,7 +7353,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
@@ -7528,7 +7504,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
@@ -7558,7 +7534,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        string context = "شماره صفحه بیشتر از تعداد صفحات است.";
+                        string context = "شماره صفحه بیشتر از تعداد صفحات است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                 }
@@ -7775,6 +7751,7 @@ namespace ProposalReportingSystem
                 editProposalExecutorNcodeTxtbx.BackColor = Color.Pink;
             }
         }
+
 
         private void searchProposalExecutorNCodeTxtbx_Leave(object sender, EventArgs e)
         {
