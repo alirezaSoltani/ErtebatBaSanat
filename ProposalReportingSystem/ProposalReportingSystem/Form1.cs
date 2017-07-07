@@ -135,11 +135,11 @@ namespace ProposalReportingSystem
                 }
                 else if (loginUser.CanEditProposal == 1 && loginUser.CanDeleteProposal == 0)
                 {
-                    editProposalDeleteBtn.Visible = false;
+                    editProposalDeleteBtn.Enabled =  false;
                 }
                 else if (loginUser.CanEditProposal == 0 && loginUser.CanDeleteProposal == 1)
                 {
-                    editProposalRegisterBtn.Visible = false;
+                    editProposalRegisterBtn.Enabled = false;
                 }
 
                 if(loginUser.CanAddUser == 0 && loginUser.CanEditUser == 0 && loginUser.CanDeleteUser == 0)
@@ -149,15 +149,15 @@ namespace ProposalReportingSystem
 
                 if(loginUser.CanAddUser == 0)
                 {
-                    manageUserAddBtn.Visible = false;
+                    manageUserAddBtn.Enabled = false;
                 }
                 if (loginUser.CanEditUser == 0)
                 {
-                    manageUserEditBtn.Visible = false;
+                    manageUserEditBtn.Enabled = false;
                 }
                 if (loginUser.CanDeleteUser == 0)
                 {
-                    manageUserDeleteBtn.Visible = false;
+                    manageUserDeleteBtn.Enabled = false;
                 }
                 if (loginUser.CanManageTeacher == 0)
                 {
@@ -405,106 +405,6 @@ namespace ProposalReportingSystem
 
             //********************************************//
             //////////////edit proposal design///////////////
-            /*gl.setSize(editProposalPanel, 0, 1, 1000, 930);
-            gl.setSize(editProposalEditGp, 20, 15, 826, 470);
-            gl.setSize(editProposalShowGp, 20, 495, 826, 400);
-            gl.setSize(editProposalShowDgv, 5, 5, 810, 285);
-            gl.setSize(superTabControlPanel5, 0, 1, 880, 1000);
-
-            gl.setSize(manageProposalNavigationPanel, 100, 300, 630, 60);
-            gl.setSize(manageProposalNavigationReturnBtn, 10, 10, 85, 40);
-            gl.setSize(manageProposalNavigationFirstPageBtn, 105, 10, 85, 40);
-            gl.setSize(manageProposalNavigationPreviousPageBtn, 200, 10, 85, 40);
-            gl.setSize(manageProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
-            gl.setSize(manageProposalNavigationNextPageBtn, 345, 10, 85, 40);
-            gl.setSize(manageProposalNavigationLastPageBtn, 440, 10, 85, 40);
-            gl.setSize(buttonX4, 535, 10, 85, 40);
-
-            gl.setSize(editProposalExecutorNcodeLbl, 720, 10, 70, 25);
-            gl.setSize(editProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
-            gl.setSize(editProposalSearchBtn, 550, 10, 65, 30);
-
-            gl.setSize(editProposalExecutorFNameLbl, 720, 50, 70, 25);
-            gl.setSize(editProposalExecutorFNameTxtbx, 550, 50, 160, 25);
-
-            gl.setSize(editProposalExecutorLNameLbl, 720, 90, 70, 25);
-            gl.setSize(editProposalExecutorLNameTxtbx, 550, 90, 160, 25);
-
-            gl.setSize(editProposalExecutorFacultyLbl, 720, 130, 70, 25);
-            gl.setSize(editProposalExecutorFacultyCb, 550, 130, 160, 25);
-
-            gl.setSize(editProposalExecutorEGroupLbl, 720, 170, 70, 25);
-            gl.setSize(editProposalExecutorEGroupCb, 550, 170, 160, 25);
-
-            gl.setSize(editProposalExecutorEDegLbl, 720, 210, 70, 25);
-            gl.setSize(editProposalExecutorEDegCb, 550, 210, 160, 25);
-
-            gl.setSize(editProposalExecutorEmailLbl, 720, 250, 70, 25);
-            gl.setSize(editProposalExecutorEmailTxtbx, 550, 250, 160, 25);
-
-            gl.setSize(editProposalExecutorMobileLbl, 720, 290, 70, 25);
-            gl.setSize(editProposalExecutorMobileTxtbx, 550, 290, 160, 25);
-
-            gl.setSize(editProposalExecutorTel1Lbl, 720, 330, 70, 25);
-            gl.setSize(editProposalExecutorTel1Txtbx, 550, 330, 160, 25);
-
-            gl.setSize(editProposalExecutorTel2Lbl, 720, 370, 70, 25);
-            gl.setSize(editProposalExecutorTel2Txtbx, 550, 370, 160, 25);
-
-            gl.setSize(editProposalPersianTitleLbl, 460, 10, 70, 25);
-            gl.setSize(editProposalPersianTitleTxtbx, 290, 10, 160, 75);
-
-            gl.setSize(editProposalEnglishTitleLbl, 460, 100, 70, 25);
-            gl.setSize(editProposalEnglishTitleTxtbx, 290, 100, 160, 75);
-
-            gl.setSize(editProposalKeywordsLbl, 460, 190, 70, 25);
-            gl.setSize(editProposalKeywordsTxtbx, 290, 190, 160, 45);
-
-            gl.setSize(editProposalExecutor2Lbl, 460, 250, 70, 25);
-            gl.setSize(editProposalExecutor2Txtbx, 290, 250, 160, 45);
-
-            gl.setSize(editProposalCoexecutorLbl, 460, 310, 70, 25);
-            gl.setSize(editProposalCoexecutorTxtbx, 290, 310, 160, 45);
-
-            gl.setSize(editProposalStartdateLbl, 460, 370, 70, 25);
-            gl.setSize(editProposalStartdateTimeInput, 290, 370, 160, 35);
-
-            gl.setSize(editProposalDurationLbl, 200, 10, 80, 25);
-            gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
-
-            gl.setSize(editProposalProcedureTypeLbl, 200, 50, 80, 25);
-            gl.setSize(editProposalProcedureTypeCb, 30, 50, 160, 25);
-
-            gl.setSize(editProposalPropertyTypeLbl, 200, 90, 80, 25);
-            gl.setSize(editProposalPropertyTypeCb, 30, 90, 160, 25);
-
-            gl.setSize(editProposalRegisterTypeLbl, 200, 130, 80, 25);
-            gl.setSize(editProposalRegisterTypeCb, 30, 130, 160, 25);
-
-            gl.setSize(editProposalTypeLbl, 200, 170, 80, 25);
-            gl.setSize(editProposalTypeCb, 30, 170, 160, 25);
-
-            gl.setSize(editProposalOrganizationLbl, 200, 210, 80, 25);
-            gl.setSize(editProposalOrganizationNameCb, 30, 210, 120, 25);
-            gl.setSize(editProposalOrganizationNumberCb, 155, 210, 35, 25);
-
-            gl.setSize(editProposalValueLbl, 200, 250, 80, 25);
-            gl.setSize(editProposalValueTxtbx, 30, 250, 160, 25);
-
-            gl.setSize(editProposalStatusLbl, 200, 290, 80, 25);
-            gl.setSize(editProposalStatusCb, 30, 290, 160, 25);
-
-            gl.setSize(editProposalFileLbl, 200, 330, 80, 25);
-            gl.setSize(editProposalFileLinkLbl, 30, 330, 160, 25);
-
-            gl.setSize(editProposalRegisterBtn, 30, 370, 70, 30);
-            gl.setSize(editProposalDeleteBtn, 110, 370, 70, 30);
-            gl.setSize(editProposalClearBtn, 190, 370, 70, 30);
-            gl.setSize(editProposalShowAllBtn, 290, 370, 70, 30);*/
-
-
-
-
             ////////////////////////////////////////////
             gl.setSize(editProposalPanel, 0, 1, 1000, 930);
             gl.setSize(editProposalEditGp, 20, 15, 826, 470);
@@ -698,16 +598,16 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
             gl.setSize(manageUserTellLb, 205, 220, 110, 25);
 
-            gl.setSize(manageUserAddProCb, 155, 15, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 75, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 135, 150, 35);
-            gl.setSize(manageUserManageTeacherCb, 155, 195, 150, 35);
-            gl.setSize(manageUserCheckAllCb, 155, 255, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 15, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 75, 150, 35);
-            gl.setSize(manageUserDeleteUserCb, 20, 135, 150, 35);
-            gl.setSize(manageUserManageTypeCb, 20, 195, 150, 35);
-            gl.setSize(manageUserIsAdminCb, 20, 255, 150, 35);
+            gl.setSize(manageUserAddProCb, 155, 75, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 135, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 195, 150, 35);
+            gl.setSize(manageUserManageTeacherCb, 155, 255, 150, 35);
+            gl.setSize(manageUserCheckAllCb, 155, 15, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 75, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 135, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 195, 150, 35);
+            gl.setSize(manageUserManageTypeCb, 20, 255, 150, 35);
+            gl.setSize(manageUserIsAdminCb, 20, 15, 150, 35);
 
             gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
             gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
@@ -4714,9 +4614,12 @@ namespace ProposalReportingSystem
                 manageTeacherExecutorEDegCb.Text = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_EDeg"].Value.ToString();
                 manageTeacherCurrentSelectedOption = manageTeacherShowDgv.Rows[e.RowIndex].Cells["t_NCode"].Value.ToString();
 
-               // manageTeacherExecutorNcodeTxtbx.Enabled = false; 
-                manageTeacherEditBtn.Enabled = true;
-                manageTeacherDeleteBtn.Enabled = true;
+               // manageTeacherExecutorNcodeTxtbx.Enabled = false;
+               if(loginUser.CanManageTeacher == 1)
+               {
+                    manageTeacherEditBtn.Enabled = true;
+                    manageTeacherDeleteBtn.Enabled = true;
+               } 
             }
             catch (ArgumentOutOfRangeException) { }
         }
@@ -5586,8 +5489,15 @@ namespace ProposalReportingSystem
                         editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                     
 
-                        editProposalRegisterBtn.Enabled = true;
-                        editProposalDeleteBtn.Enabled = true;
+                        if(loginUser.CanEditProposal == 1)
+                        {
+                            editProposalRegisterBtn.Enabled = true;
+                        }
+
+                        if(loginUser.CanDeleteProposal == 1)
+                        {
+                            editProposalDeleteBtn.Enabled = true;
+                        }
                     }
                 }
                 else if (manageProposalIsWatchingEdition)
@@ -6073,8 +5983,15 @@ namespace ProposalReportingSystem
                 manageUserManageTeacherCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageTeacher"].Value.ToString());
                 manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
 
-                manageUserEditBtn.Enabled = true;
-                manageUserDeleteBtn.Enabled = true;
+                if(loginUser.CanEditUser == 1)
+                {
+                    manageUserEditBtn.Enabled = true;
+                }
+                if(loginUser.CanDeleteUser == 1)
+                {
+                    manageUserDeleteBtn.Enabled = true;
+                }
+                
             }
             catch (ArgumentOutOfRangeException) { }
         }
