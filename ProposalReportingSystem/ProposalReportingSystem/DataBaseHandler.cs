@@ -129,7 +129,14 @@ namespace ProposalReportingSystem
                     }
 
 
-                    uploadFile(_inputParameter);
+                    string responseMessage = uploadFile(_inputParameter);
+                    if (responseMessage == "")
+                    {
+                        throw new Exception("response exception");
+
+                    }
+
+
 
                     reader.Close();
 
@@ -181,6 +188,11 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("response exception"))
+                    {
+                        string context = "خطا در آپلود فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
@@ -264,21 +276,32 @@ namespace ProposalReportingSystem
                     if (_inputParameter.FileName != "")
                     {
 
-                        DeleteFile(currentFileName);
+                        string deleteResponse = DeleteFile(currentFileName);
 
-                        if (_inputParameter.FileName.Contains(".docx"))
+                        if (deleteResponse == "")
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() +".docx";
+                            throw new Exception("Delete response exception");
                         }
-                        else if (_inputParameter.FileName.Contains(".doc"))
+                        else if (deleteResponse.Contains("successful"))
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() +".doc";
+                            if (_inputParameter.FileName.Contains(".docx"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                            }
+                            else if (_inputParameter.FileName.Contains(".doc"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                            }
+                            if (_inputParameter.FileName.Contains(".pdf"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                            }
+                            string responseMessage = uploadFile(_inputParameter);
+                            if (responseMessage == "")
+                            {
+                                throw new Exception("response exception");
+                            }
                         }
-                        if (_inputParameter.FileName.Contains(".pdf"))
-                        {
-                            _inputParameter.FileName = proposal.Index.ToString() +".pdf";
-                        }
-                        uploadFile(_inputParameter);
                     }
                     sc.CommandText = "UPDATE proposalTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
                                                    + "engTitle =" + "'" + proposal.EngTitle + "',"
@@ -345,6 +368,17 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("Delete response exception"))
+                    {
+                        string context = "خطا در تغییر فایل";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    
+                    else if (e.Message.Contains("response exception"))
+                    {
+                        string context = "خطا در آپلود فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
@@ -440,7 +474,8 @@ namespace ProposalReportingSystem
                             sc.ExecuteNonQuery();
                             sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                             sc.ExecuteNonQuery();
-                            MoveFileToDeleted(proposal.FileName);
+                            string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                            MessageBox.Show(moveToDeleteResponse);
 
                             sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
                             reader=sc.ExecuteReader();
@@ -519,7 +554,8 @@ namespace ProposalReportingSystem
                         sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                         sc.ExecuteNonQuery();
 
-                        MoveFileToDeleted(proposal.FileName);
+                        string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                        MessageBox.Show(moveToDeleteResponse);
                         transaction.Commit();
                         popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                         popup.ShowDialog();
@@ -652,7 +688,12 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
 
-                    uploadFile(_inputParameter);
+                    string responseMessage = uploadFile(_inputParameter);
+                    if (responseMessage == "")
+                    {
+                        throw new Exception("response exception");
+
+                    }
 
                     reader.Close();
 
@@ -684,6 +725,12 @@ namespace ProposalReportingSystem
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
+                    else if (e.Message.Contains("response exception"))
+                    {
+                        string context = "خطا در آپلود فایل";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                   
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
@@ -758,22 +805,34 @@ namespace ProposalReportingSystem
                     if (_inputParameter.FileName != "")
                     {
 
-                        DeleteFile(currentFileName);
+                        string deleteResponse = DeleteFile(currentFileName);
 
-                        if (_inputParameter.FileName.Contains(".docx"))
+                        if (deleteResponse == "")
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".docx";
+                            throw new Exception("Delete response exception");
                         }
-                        else if (_inputParameter.FileName.Contains(".doc"))
+                        else if (deleteResponse.Contains("successful"))
                         {
-                            _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".doc";
+                            if (_inputParameter.FileName.Contains(".docx"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".docx";
+                            }
+                            else if (_inputParameter.FileName.Contains(".doc"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".doc";
+                            }
+                            if (_inputParameter.FileName.Contains(".pdf"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
+                            }
+                            string responseMessage = uploadFile(_inputParameter);
+                            if (responseMessage == "")
+                            {
+                                throw new Exception("response exception");
+                            }
                         }
-                        if (_inputParameter.FileName.Contains(".pdf"))
-                        {
-                            _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".pdf";
-                        }
-                        uploadFile(_inputParameter);
                     }
+                
 
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
@@ -798,6 +857,16 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("Delete response exception"))
+                    {
+                        string context = "خطا در تغییر فایل";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("response exception"))
+                    {
+                        string context = "خطا در آپلود فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else
@@ -5561,17 +5630,24 @@ namespace ProposalReportingSystem
         //    fs.Close();
         //    FtpStream.Close();
         //}
-        public void uploadFile(FTPSetting _inputParameter)
+        public string uploadFile(FTPSetting _inputParameter)
         {
+            string ResponseDescription = "";
             try
             {
                 string ftpUri = getSetting.getConnectionString("ftpuri");
                 string ftpUsername = getSetting.getConnectionString("ftpusername");
                 string ftpPassword = getSetting.getConnectionString("ftppassword");
+                
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", ftpUri, _inputParameter.FileName)));
                 request.Method = WebRequestMethods.Ftp.UploadFile;
                 request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
                 Stream FtpStream = request.GetRequestStream();
+                ///
+               
+                //Stream stream = response.GetResponseStream();
+                ///
                 FileStream fs = File.OpenRead(_inputParameter.FullName);
                 byte[] buffer = new byte[1024];
                 double total = (double)fs.Length;
@@ -5586,12 +5662,18 @@ namespace ProposalReportingSystem
                     double percentage = read / total * 100;
                 }
                 while (byteRead != 0);
+              
+
                 fs.Close();
                 FtpStream.Close();
+              
+                ResponseDescription ="completed";
+                
+                return ResponseDescription; 
             }
             catch
             {
-                
+                return ResponseDescription;
             }
         }
 
@@ -5734,10 +5816,11 @@ namespace ProposalReportingSystem
                 request.RenameTo = "Deleted/" + fileName;
                 request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
 
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                {
-                    return response.StatusDescription;
-                }
+                //using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                //{
+                //    return response.StatusDescription;
+                //}
+                return "complete";
             }
             catch
             {

@@ -96,11 +96,20 @@ namespace ProposalReportingSystem
                 {
                     if (saveFileDialog1.FileName != "")
                     {
-                        dbh.downloadFile(fileName, saveFileDialog1.FileName);
-                        System.Diagnostics.Process.Start(saveFileDialog1.FileName);
+                        string responseMessage = dbh.downloadFile(fileName, saveFileDialog1.FileName);
+                       
+                        if (responseMessage.Contains("complete"))
+                        {
+                            System.Diagnostics.Process.Start(saveFileDialog1.FileName);
 
-                        string context = "فایل پروپوزال در محل مورد نظر ذخیره شد";
-                        Alert alert = new Alert(context, "bluegray", 2);
+                            string context = "فایل پروپوزال در محل مورد نظر ذخیره شد";
+                            Alert alert = new Alert(context, "bluegray", 2);
+                        }
+                        else
+                        {
+                            string context = "فایل پروپوزال موجود نمی باشد";
+                            Alert alert = new Alert(context, "bluegray", 2);
+                        }
                     }
                     else
                     {

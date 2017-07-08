@@ -63,8 +63,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 591);
+            this.panel1.Size = new System.Drawing.Size(353, 481);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -72,9 +73,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(49, 556);
+            this.label4.Location = new System.Drawing.Point(37, 452);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 31);
+            this.label4.Size = new System.Drawing.Size(280, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "نسخه 1.0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,9 +86,10 @@
             this.loginMinimizePbx.BackColor = System.Drawing.Color.Transparent;
             this.loginMinimizePbx.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login_minimize_black;
             this.loginMinimizePbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loginMinimizePbx.Location = new System.Drawing.Point(406, 3);
+            this.loginMinimizePbx.Location = new System.Drawing.Point(304, 2);
+            this.loginMinimizePbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginMinimizePbx.Name = "loginMinimizePbx";
-            this.loginMinimizePbx.Size = new System.Drawing.Size(25, 25);
+            this.loginMinimizePbx.Size = new System.Drawing.Size(19, 20);
             this.loginMinimizePbx.TabIndex = 10;
             this.loginMinimizePbx.TabStop = false;
             this.loginMinimizePbx.Click += new System.EventHandler(this.loginMinimizePbx_Click);
@@ -98,9 +101,10 @@
             this.loginClosePbx.BackColor = System.Drawing.Color.Transparent;
             this.loginClosePbx.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.login_close_black;
             this.loginClosePbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loginClosePbx.Location = new System.Drawing.Point(437, 3);
+            this.loginClosePbx.Location = new System.Drawing.Point(328, 2);
+            this.loginClosePbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginClosePbx.Name = "loginClosePbx";
-            this.loginClosePbx.Size = new System.Drawing.Size(25, 25);
+            this.loginClosePbx.Size = new System.Drawing.Size(19, 20);
             this.loginClosePbx.TabIndex = 9;
             this.loginClosePbx.TabStop = false;
             this.loginClosePbx.Click += new System.EventHandler(this.loginClosePbx_Click);
@@ -113,9 +117,10 @@
             this.pictureBox1.BackgroundImage = global::ProposalReportingSystem.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(116, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 114);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -131,19 +136,21 @@
             this.panel2.Controls.Add(this.loginEnterBtn);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(49, 173);
+            this.panel2.Location = new System.Drawing.Point(37, 141);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(373, 383);
+            this.panel2.Size = new System.Drawing.Size(281, 312);
             this.panel2.TabIndex = 7;
             // 
             // loginRememberUsername
             // 
             this.loginRememberUsername.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.loginRememberUsername.ForeColor = System.Drawing.Color.Navy;
-            this.loginRememberUsername.Location = new System.Drawing.Point(186, 250);
+            this.loginRememberUsername.Location = new System.Drawing.Point(140, 203);
+            this.loginRememberUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginRememberUsername.Name = "loginRememberUsername";
             this.loginRememberUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.loginRememberUsername.Size = new System.Drawing.Size(170, 24);
+            this.loginRememberUsername.Size = new System.Drawing.Size(128, 20);
             this.loginRememberUsername.TabIndex = 3;
             this.loginRememberUsername.Text = "ذخیره کردن نام کاربری";
             this.loginRememberUsername.UseVisualStyleBackColor = true;
@@ -151,9 +158,10 @@
             // 
             // loginShowPasswordChb
             // 
-            this.loginShowPasswordChb.Location = new System.Drawing.Point(254, 208);
+            this.loginShowPasswordChb.Location = new System.Drawing.Point(190, 169);
+            this.loginShowPasswordChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginShowPasswordChb.Name = "loginShowPasswordChb";
-            this.loginShowPasswordChb.Size = new System.Drawing.Size(29, 24);
+            this.loginShowPasswordChb.Size = new System.Drawing.Size(22, 20);
             this.loginShowPasswordChb.TabIndex = 12;
             this.loginShowPasswordChb.UseVisualStyleBackColor = true;
             this.loginShowPasswordChb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginShowPasswordChb_MouseDown);
@@ -163,13 +171,13 @@
             // 
             this.loginPasswordTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.loginPasswordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.loginPasswordTxtbx.Location = new System.Drawing.Point(21, 205);
+            this.loginPasswordTxtbx.Location = new System.Drawing.Point(16, 167);
+            this.loginPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginPasswordTxtbx.MaxLength = 12;
             this.loginPasswordTxtbx.Name = "loginPasswordTxtbx";
             this.loginPasswordTxtbx.PasswordChar = '●';
-            this.loginPasswordTxtbx.Size = new System.Drawing.Size(227, 27);
+            this.loginPasswordTxtbx.Size = new System.Drawing.Size(171, 23);
             this.loginPasswordTxtbx.TabIndex = 2;
-            this.loginPasswordTxtbx.Text = "P@hn1395";
             this.loginPasswordTxtbx.Enter += new System.EventHandler(this.loginPasswordTxtbx_Enter);
             this.loginPasswordTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTxtbx_KeyPress);
             // 
@@ -177,11 +185,12 @@
             // 
             this.loginUsernameTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.loginUsernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.loginUsernameTxtBx.Location = new System.Drawing.Point(21, 164);
+            this.loginUsernameTxtBx.Location = new System.Drawing.Point(16, 133);
+            this.loginUsernameTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginUsernameTxtBx.MaxLength = 10;
             this.loginUsernameTxtBx.Name = "loginUsernameTxtBx";
             this.loginUsernameTxtBx.ShortcutsEnabled = false;
-            this.loginUsernameTxtBx.Size = new System.Drawing.Size(227, 27);
+            this.loginUsernameTxtBx.Size = new System.Drawing.Size(171, 23);
             this.loginUsernameTxtBx.TabIndex = 1;
             this.loginUsernameTxtBx.Tag = "";
             this.loginUsernameTxtBx.Click += new System.EventHandler(this.loginUsernameTxtBx_Click);
@@ -193,9 +202,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("IranNastaliq", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(-11, -2);
+            this.label3.Location = new System.Drawing.Point(-8, -2);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(395, 163);
+            this.label3.Size = new System.Drawing.Size(296, 132);
             this.label3.TabIndex = 9;
             this.label3.Text = "سامانه ثبت و گزارش گیری پروپوزال ها و قراردادهای \r\nدانشگاه شهید چمران اهواز";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,9 +215,10 @@
             this.loginEnterBtn.BackColor = System.Drawing.Color.Snow;
             this.loginEnterBtn.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.loginEnterBtn.ForeColor = System.Drawing.Color.Navy;
-            this.loginEnterBtn.Location = new System.Drawing.Point(19, 293);
+            this.loginEnterBtn.Location = new System.Drawing.Point(14, 238);
+            this.loginEnterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginEnterBtn.Name = "loginEnterBtn";
-            this.loginEnterBtn.Size = new System.Drawing.Size(337, 40);
+            this.loginEnterBtn.Size = new System.Drawing.Size(253, 32);
             this.loginEnterBtn.TabIndex = 4;
             this.loginEnterBtn.Text = "ورود";
             this.loginEnterBtn.UseVisualStyleBackColor = false;
@@ -218,9 +229,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(254, 157);
+            this.label1.Location = new System.Drawing.Point(190, 128);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 35);
+            this.label1.Size = new System.Drawing.Size(78, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "نام کاربری";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -230,23 +242,25 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(254, 198);
+            this.label2.Location = new System.Drawing.Point(190, 161);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 35);
+            this.label2.Size = new System.Drawing.Size(78, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "رمز عبور";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(464, 592);
+            this.ClientSize = new System.Drawing.Size(348, 481);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
