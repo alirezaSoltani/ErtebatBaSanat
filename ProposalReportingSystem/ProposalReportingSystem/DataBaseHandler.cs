@@ -474,8 +474,7 @@ namespace ProposalReportingSystem
                             sc.ExecuteNonQuery();
                             sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                             sc.ExecuteNonQuery();
-                            string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
-                            MessageBox.Show(moveToDeleteResponse);
+                           
 
                             sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
                             reader=sc.ExecuteReader();
@@ -507,8 +506,17 @@ namespace ProposalReportingSystem
                                 //editions.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
                                 /////
+                                string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                                if (moveToDeleteResponse.Contains("successful"))
+                                {
+                                    DeleteEdition(editions, editions.Edition, username, dateTime, count);
 
-                                DeleteEdition(editions, editions.Edition, username , dateTime,count);
+                                }
+                                else
+                                {
+                                    throw new Exception("response exception");
+                                }
+                                
                             }
                             reader.Close();
 
@@ -520,7 +528,7 @@ namespace ProposalReportingSystem
                         }
                         else
                         {
-                            
+
                         }
                     }
                     else
@@ -555,7 +563,15 @@ namespace ProposalReportingSystem
                         sc.ExecuteNonQuery();
 
                         string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
-                        MessageBox.Show(moveToDeleteResponse);
+                        if (moveToDeleteResponse.Contains("successful"))
+                        {
+
+                        }
+                        else
+                        {
+                            throw new Exception("response exception");
+                        }
+
                         transaction.Commit();
                         popup = new PopUp("حذف موفقیت آمیز", "حذف اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                         popup.ShowDialog();
@@ -580,6 +596,11 @@ namespace ProposalReportingSystem
                     else if (e.Message.Contains("PRIMARY KEY"))
                     {
                         string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
+                        Alert alert = new Alert(context, "darkred", 5);
+                    }
+                    else if (e.Message.Contains("response exception"))
+                    {
+                        string context = "خطا در حذف فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
                     else if (e.Message.Contains("conflict"))
@@ -948,7 +969,16 @@ namespace ProposalReportingSystem
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + " edition " + EditionNumber + " ','" + "EditionTable'" + ")";
                     sc.ExecuteNonQuery();
 
-                    MoveFileToDeleted(proposal.FileName);
+                    string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                    if (moveToDeleteResponse.Contains("successful"))
+                    {
+                        
+
+                    }
+                    else
+                    {
+                        throw new Exception("response exception");
+                    }
 
                     transaction.Commit();
                     if (count == 1)
@@ -980,6 +1010,12 @@ namespace ProposalReportingSystem
                             string context = "قبلا با این مشخصات اطلاعاتی وارد شده است";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
+                        else if (e.Message.Contains("response exception"))
+                        {
+                            string context = "خطا در حذف فایل";
+                            Alert alert = new Alert(context, "darkred", 5);
+                        }
+                        
                         else if (e.Message.Contains("conflict"))
                         {
                             string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
@@ -5816,11 +5852,11 @@ namespace ProposalReportingSystem
                 request.RenameTo = "Deleted/" + fileName;
                 request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
 
-                //using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                //{
-                //    return response.StatusDescription;
-                //}
-                return "complete";
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    return response.StatusDescription;
+                }
+               
             }
             catch
             {
