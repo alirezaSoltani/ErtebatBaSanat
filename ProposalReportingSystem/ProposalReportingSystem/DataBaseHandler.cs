@@ -3840,7 +3840,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    //MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -4257,7 +4257,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                   // MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -5300,7 +5300,7 @@ namespace ProposalReportingSystem
             }
             catch(Exception e )
             {
-                MessageBox.Show(e.Message);
+               // MessageBox.Show(e.Message);
             }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
