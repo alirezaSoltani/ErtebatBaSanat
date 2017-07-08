@@ -3801,11 +3801,22 @@ namespace ProposalReportingSystem
                         user.U_IsAdmin = 0;
                     }
                 }
-                dbh.EditUsers(user, long.Parse(manageUserCurrentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
-                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
 
-                manageUserClearBtn.PerformClick();
-                manageUserShowAllBtn.PerformClick();
+                if (user.U_IsAdmin == 1 && loginUser.U_IsAdmin == 0)
+                {
+                    string context = "اطلاعات کاربر ادمین تنها توسط خود کاربر ادمین قابل تغییر می باشد";
+                    Alert alert = new Alert(context, "darkred", 5);
+                }
+
+                else
+                {
+                    dbh.EditUsers(user, long.Parse(manageUserCurrentSelectedOption), loginUser.U_NCode, myDateTime.ToString());
+                    dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
+
+                    manageUserClearBtn.PerformClick();
+                    manageUserShowAllBtn.PerformClick();
+                }
+                
             }
         }
 
@@ -3886,7 +3897,7 @@ namespace ProposalReportingSystem
                     user.U_IsAdmin = 0;
                 }
 
-                if (user.U_IsAdmin == 1)
+                if (user.U_IsAdmin == 1 && loginUser.U_NCode != 999999999 && user.U_NCode != loginUser.U_NCode)
                 {
                     string context = "کاربر مورد نظر ادمین بوده و غیر قابل حذف می باشد";
                     Alert alert = new Alert(context, "darkred", 5);
@@ -5676,6 +5687,7 @@ namespace ProposalReportingSystem
 
         private void editProposalDeleteBtn_Click(object sender, EventArgs e)
         {
+            
             PopUp p = new PopUp("حذف اطلاعات پروپوزال", "آیا از حذف اطلاعات پروپوزال مطمئن هستید؟", "بله", "خیر", "", "info");
             p.ShowDialog();
             if (p.DialogResult == DialogResult.Yes)
@@ -5731,8 +5743,20 @@ namespace ProposalReportingSystem
                     proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
-
-                    dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(),1);
+                    proposal.Edition = editProposalCurrentSelectedEdition;
+                    if (proposal.Edition == 0)
+                    {
+                        PopUp pop = new PopUp("اخطار", "نسخه ای که میخواهید حذف کنید نسخه اصلی پروپوزال است . آیا مایل به حذف پروپوزال هستید ؟", "بله", "خیر", "", "info");
+                        pop.ShowDialog();
+                        if (pop.DialogResult == DialogResult.Yes)
+                        {
+                            dbh.DeleteProposal(proposal, loginUser.U_NCode, myDateTime.ToString());
+                        }
+                    }
+                    else
+                    {
+                        dbh.DeleteEdition(proposal, proposalEdition, loginUser.U_NCode, myDateTime.ToString(), 1);
+                    }
                     //string exNCode = editProposalExecutorNcodeTxtbx.Text;
                     //editProposalClearBtn.PerformClick();
                     //dbh.dataGridViewUpdate2(editProposalShowDgv, editProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
@@ -7165,6 +7189,11 @@ namespace ProposalReportingSystem
                 }
             }
             catch (ArgumentOutOfRangeException) { }
+            catch (ArgumentException) { }
+            catch (Exception)
+            {
+            }
+
         }
 
 

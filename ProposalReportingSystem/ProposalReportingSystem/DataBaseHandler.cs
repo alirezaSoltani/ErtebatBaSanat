@@ -439,7 +439,7 @@ namespace ProposalReportingSystem
                     reader.Read();
                     int count = reader.GetInt32(0);
                     reader.Close();
-                    if (count != 1)
+                    if (count > 1)
                     {
                         PopUp p = new PopUp("اخطار", "این پروپوزال بیش از یک نسخه دارد . آیا از حذف اطلاعات پروپوزال مطمئن هستید؟", "بله", "خیر", "", "info");
                         p.ShowDialog();
@@ -450,7 +450,9 @@ namespace ProposalReportingSystem
 
                             sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                             sc.ExecuteNonQuery();
-                          
+                            sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = '0' ";
+                            sc.ExecuteNonQuery();
+
                             sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
                                             + "VALUES ('" + proposal.Index + "',"
                                                      + "'" + proposal.PersianTitle + "',"
@@ -475,7 +477,7 @@ namespace ProposalReportingSystem
                             sc.ExecuteNonQuery();
                             sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                             sc.ExecuteNonQuery();
-                           
+                            string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
 
                             sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
                             reader=sc.ExecuteReader();
@@ -507,15 +509,17 @@ namespace ProposalReportingSystem
                                 //editions.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
 
                                 /////
-                                string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
-                                if (moveToDeleteResponse.Contains("successful"))
+                                if (editions.Edition != 0)
                                 {
-                                    DeleteEdition(editions, editions.Edition, username, dateTime, count);
-
-                                }
-                                else
-                                {
-                                    throw new Exception("response exception");
+                                  
+                                    if (moveToDeleteResponse.Contains("successful"))
+                                    {
+                                        DeleteEdition(editions, editions.Edition, username, dateTime, count);
+                                    }
+                                    else
+                                    {
+                                        throw new Exception("response exception");
+                                    }
                                 }
                                 
                             }
@@ -5861,8 +5865,9 @@ namespace ProposalReportingSystem
                 }
                
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 return "";
             }
         }
