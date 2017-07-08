@@ -725,7 +725,7 @@ namespace ProposalReportingSystem
 
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "اطلاعات نسخه پروپوزال با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                     //string context = "اطلاعات اصلاحیه پروپوزال با موفقیت ثبت شد";
                     //Alert alert = new Alert(context, "blue", 5);

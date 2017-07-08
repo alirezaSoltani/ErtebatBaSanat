@@ -1404,6 +1404,7 @@ namespace ProposalReportingSystem
 
 
                     dbh.AddEdition(proposal, loginUser.U_NCode, myDateTime.ToString(), _inputParameter);
+                    addProposalFileLinkLbl.Text = "افزودن فایل";
                     //addProposalClearBtn.PerformClick();
                     addProposalShowDgv.Columns.Clear();
                     dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + editionProposalIndex + "'");
@@ -7147,7 +7148,7 @@ namespace ProposalReportingSystem
                         }
                         else
                         {
-                            string context = " شما دسترسی برای افزودن اصلاحیه این پروپوزال را ندارید";
+                            string context = " شما دسترسی برای افزودن نسخه این پروپوزال را ندارید";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
 
