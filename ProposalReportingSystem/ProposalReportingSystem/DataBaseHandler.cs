@@ -297,6 +297,7 @@ namespace ProposalReportingSystem
                                 _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
                             }
                             string responseMessage = uploadFile(_inputParameter);
+                            proposal.FileName = _inputParameter.FileName;
                             if (responseMessage == "")
                             {
                                 throw new Exception("response exception");
@@ -800,7 +801,37 @@ namespace ProposalReportingSystem
 
                 try
                 {
+                    if (_inputParameter.FileName != "")
+                    {
 
+                        string deleteResponse = DeleteFile(currentFileName);
+
+                        if (deleteResponse == "")
+                        {
+                            throw new Exception("Delete response exception");
+                        }
+                        else if (deleteResponse.Contains("successful"))
+                        {
+                            if (_inputParameter.FileName.Contains(".docx"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".docx";
+                            }
+                            else if (_inputParameter.FileName.Contains(".doc"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".doc";
+                            }
+                            if (_inputParameter.FileName.Contains(".pdf"))
+                            {
+                                _inputParameter.FileName = proposal.Index.ToString() + "-" + EditionNumber + ".pdf";
+                            }
+                            string responseMessage = uploadFile(_inputParameter);
+                            proposal.FileName = _inputParameter.FileName;
+                            if (responseMessage == "")
+                            {
+                                throw new Exception("response exception");
+                            }
+                        }
+                    }
                     sc.CommandText = "UPDATE editionTable SET persianTitle = " + "'" + proposal.PersianTitle + "',"
                                                        + "engTitle =" + "'" + proposal.EngTitle + "',"
                                                        + "keyword =" + "'" + proposal.KeyWord + "',"
@@ -815,6 +846,7 @@ namespace ProposalReportingSystem
                                                        + "proposalType =" + "'" + proposal.ProposalType + "',"
                                                        + " employer = " + "'" + proposal.Employer + "',"
                                                        + " value = " + "'" + proposal.Value + "',"
+                                                       + " fileName = " + "'" + proposal.FileName + "',"
                                                        + " status = " + "'" + proposal.Status + "' "
                                                        + " WHERE  [index] = " + proposal.Index + " AND edition = " + EditionNumber;
 
@@ -823,36 +855,7 @@ namespace ProposalReportingSystem
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + " Edition " + EditionNumber + " ','" + "EditionTable'" + ")";
                     sc.ExecuteNonQuery();
 
-                    if (_inputParameter.FileName != "")
-                    {
-
-                        string deleteResponse = DeleteFile(currentFileName);
-
-                        if (deleteResponse == "")
-                        {
-                            throw new Exception("Delete response exception");
-                        }
-                        else if (deleteResponse.Contains("successful"))
-                        {
-                            if (_inputParameter.FileName.Contains(".docx"))
-                            {
-                                _inputParameter.FileName = proposal.Index.ToString() + ".docx";
-                            }
-                            else if (_inputParameter.FileName.Contains(".doc"))
-                            {
-                                _inputParameter.FileName = proposal.Index.ToString() + ".doc";
-                            }
-                            if (_inputParameter.FileName.Contains(".pdf"))
-                            {
-                                _inputParameter.FileName = proposal.Index.ToString() + ".pdf";
-                            }
-                            string responseMessage = uploadFile(_inputParameter);
-                            if (responseMessage == "")
-                            {
-                                throw new Exception("response exception");
-                            }
-                        }
-                    }
+                   
                 
 
                     transaction.Commit();
