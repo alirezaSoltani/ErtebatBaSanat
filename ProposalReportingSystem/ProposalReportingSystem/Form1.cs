@@ -1581,8 +1581,8 @@ namespace ProposalReportingSystem
                     dbh.AddEmployer(appSettingCoTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingCoTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
-                    appSettingShowDv.Columns[0].HeaderText = "نام سازمان";
-                    appSettingShowDv.Columns[1].HeaderText = "کد سازمان";
+                    appSettingShowDv.Columns["orgName"].HeaderText = "نام سازمان";
+                    appSettingShowDv.Columns["index"].HeaderText = "کد سازمان";
                     // appSettingShowDv.Columns[2].Visible = false;
 
                     emp = dbh.getEmployers();
@@ -1597,12 +1597,12 @@ namespace ProposalReportingSystem
                     searchProposalStatusCb.Items.Clear();
                     foreach (Employers employer in emp)
                     {
-                        addProposalOrganizationNameCb.Items.Add(employer.Index);
-                        addProposalOrganizationNumberCb.Items.Add(employer.OrgName);
-
-                        editProposalOrganizationNameCb.Items.Add(employer.Index);
-                        editProposalOrganizationNumberCb.Items.Add(employer.OrgName);
-
+                        addProposalOrganizationNumberCb.Items.Add(employer.Index);
+                        addProposalOrganizationNameCb.Items.Add(employer.OrgName);
+                        
+                        editProposalOrganizationNumberCb.Items.Add(employer.Index);
+                        editProposalOrganizationNameCb.Items.Add(employer.OrgName);
+                        
                         searchProposalOrganizationNumberCb.Items.Add(employer.Index);
                         searchProposalOrganizationNameCb.Items.Add(employer.OrgName);
                     }
@@ -2160,11 +2160,11 @@ namespace ProposalReportingSystem
                     searchProposalStatusCb.Items.Clear();
                     foreach (Employers employer2 in emp)
                     {
-                        addProposalOrganizationNameCb.Items.Add(employer2.Index);
-                        addProposalOrganizationNumberCb.Items.Add(employer2.OrgName);
+                        addProposalOrganizationNumberCb.Items.Add(employer2.Index);
+                        addProposalOrganizationNameCb.Items.Add(employer2.OrgName);
 
-                        editProposalOrganizationNameCb.Items.Add(employer2.Index);
-                        editProposalOrganizationNumberCb.Items.Add(employer2.OrgName);
+                        editProposalOrganizationNumberCb.Items.Add(employer2.Index);
+                        editProposalOrganizationNameCb.Items.Add(employer2.OrgName);
 
                         searchProposalOrganizationNumberCb.Items.Add(employer2.Index);
                         searchProposalOrganizationNameCb.Items.Add(employer2.OrgName);
