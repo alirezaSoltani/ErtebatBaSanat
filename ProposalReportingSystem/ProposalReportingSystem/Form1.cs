@@ -124,50 +124,79 @@ namespace ProposalReportingSystem
             {
                 homeUserNameLbl.Text = loginUser.U_FName + " " + loginUser.U_LName;
 
-                //MANAGE ACCESS LEVELS
-                if (loginUser.CanAddProposal == 0)
+                if (loginUser.U_otherAccess == 1)
                 {
-                    addProposalTab.Visible = false;
+                    addProposalNavigationShowAllBtn.Visible = true;
+                    searchProposalNavigationShowAllBtn.Visible = true;
+                    manageProposalNavigationShowAllBtn.Visible = true;
+                    manageTeacherNavigationShowAllBtn.Visible = true;
+                    manageUserNavigationShowAllBtn.Visible = true;
+
+                    addProposalAddGp.Enabled = false;
+                    searchProposalSearchGp.Enabled = false;
+                    editProposalEditGp.Enabled = false;
+                    manageTeacherInfoGp.Enabled = false;
+                    manageUserManageGp.Enabled = false;
+
+                   
+                    //addProposalTab.Visible = true;
+                    //manageProposalTab.Visible = true;
+                    //manageUserTab.Visible = true;
+                    //manageTeacherTab.Visible = true;
+                    //appSettingsTab.Visible = true;
+
                 }
 
-                if (loginUser.CanEditProposal == 0 && loginUser.CanDeleteProposal == 0)
+                else
                 {
-                    manageProposalTab.Visible = false;
-                }
-                else if (loginUser.CanEditProposal == 1 && loginUser.CanDeleteProposal == 0)
-                {
-                    editProposalDeleteBtn.Enabled =  false;
-                }
-                else if (loginUser.CanEditProposal == 0 && loginUser.CanDeleteProposal == 1)
-                {
-                    editProposalRegisterBtn.Enabled = false;
-                }
 
-                if(loginUser.CanAddUser == 0 && loginUser.CanEditUser == 0 && loginUser.CanDeleteUser == 0)
-                {
-                    manageUserTab.Visible = false;
-                }
+                    //MANAGE ACCESS LEVELS
+                    if (loginUser.CanAddProposal == 0)
+                    {
+                        addProposalTab.Visible = false;
+                    }
 
-                if(loginUser.CanAddUser == 0)
-                {
-                    manageUserAddBtn.Enabled = false;
+                    if (loginUser.CanEditProposal == 0 && loginUser.CanDeleteProposal == 0)
+                    {
+                        manageProposalTab.Visible = false;
+                    }
+                    else if (loginUser.CanEditProposal == 1 && loginUser.CanDeleteProposal == 0)
+                    {
+                        editProposalDeleteBtn.Enabled = false;
+                    }
+                    else if (loginUser.CanEditProposal == 0 && loginUser.CanDeleteProposal == 1)
+                    {
+                        editProposalRegisterBtn.Enabled = false;
+                    }
+
+                    if (loginUser.CanAddUser == 0 && loginUser.CanEditUser == 0 && loginUser.CanDeleteUser == 0)
+                    {
+                        manageUserTab.Visible = false;
+                    }
+
+                    if (loginUser.CanAddUser == 0)
+                    {
+                        manageUserAddBtn.Enabled = false;
+                    }
+                    if (loginUser.CanEditUser == 0)
+                    {
+                        manageUserEditBtn.Enabled = false;
+                    }
+                    if (loginUser.CanDeleteUser == 0)
+                    {
+                        manageUserDeleteBtn.Enabled = false;
+                    }
+                    if (loginUser.CanManageTeacher == 0)
+                    {
+                        manageTeacherTab.Visible = false;
+                    }
+                    if (loginUser.CanManageType == 0)
+                    {
+                        appSettingsTab.Visible = false;
+                    }
                 }
-                if (loginUser.CanEditUser == 0)
-                {
-                    manageUserEditBtn.Enabled = false;
-                }
-                if (loginUser.CanDeleteUser == 0)
-                {
-                    manageUserDeleteBtn.Enabled = false;
-                }
-                if (loginUser.CanManageTeacher == 0)
-                {
-                    manageTeacherTab.Visible = false;
-                }
-                if (loginUser.CanManageType == 0)
-                {
-                    appSettingsTab.Visible = false;
-                }
+               
+
                 //MANAGE ACCESS LEVELS
             }
 
@@ -237,6 +266,7 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(addProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(addProposalNavigationLastPageBtn, 440, 10, 85, 40);
+            gl.setSize(addProposalNavigationShowAllBtn, 535, 10, 85, 40);
 
             gl.setSize(addProposalExecutorNcodeLbl, 720, 10, 70, 25);
             gl.setSize(addProposalExecutorNcodeTxtbx, 620, 10, 90, 25);
@@ -339,6 +369,7 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(searchProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(searchProposalNavigationLastPageBtn, 440, 10, 85, 40);
+            gl.setSize(searchProposalNavigationShowAllBtn, 535, 10, 85, 40);
 
             gl.setSize(searchProposalExecutorNCodeLbl, 720, 70, 60, 25);
             gl.setSize(searchProposalExecutorNCodeTxtbx, 550, 70, 160, 25);
@@ -420,7 +451,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageProposalNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(manageProposalNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageProposalNavigationLastPageBtn, 440, 10, 85, 40);
-            gl.setSize(buttonX4, 535, 10, 85, 40);
+            gl.setSize(manageProposalNavigationShowAllBtn, 535, 10, 85, 40);
 
 
 
@@ -526,6 +557,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageTeacherNavigationCurrentPageTxtbx, 295, 15, 40, 40);
             gl.setSize(manageTeacherNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(manageTeacherNavigationLastPageBtn, 440, 10, 85, 40);
+            gl.setSize(manageTeacherNavigationShowAllBtn, 535, 10, 85, 40);
 
             gl.setSize(manageTeacherExecutorNcodeLbl, 720, 60, 60, 25);
             gl.setSize(manageTeacherFnameLbl, 720, 130, 60, 25);
@@ -591,6 +623,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserShowPasswordChb, 210, 140, 25, 25);
             gl.setSize(manageUserEmailTxtbx, 45, 180, 160, 28);
             gl.setSize(manageUserTelTxtbx, 45, 220, 160, 28);
+            gl.setSize(manageUserNavigationShowAllBtn, 535, 10, 85, 40);
 
             gl.setSize(manageUserNcodLb, 205, 20, 110, 25);
             gl.setSize(manageUserFnameLb, 275, 60, 40, 25);
@@ -7895,6 +7928,7 @@ namespace ProposalReportingSystem
 
             }
         }
+
 
         private void manageUserAddProCb_CheckedChanged(object sender, EventArgs e)
         {
