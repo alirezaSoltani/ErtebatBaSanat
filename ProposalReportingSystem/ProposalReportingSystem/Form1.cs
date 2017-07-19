@@ -599,16 +599,19 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEmailLb, 205, 180, 110, 25);
             gl.setSize(manageUserTellLb, 205, 220, 110, 25);
 
-            gl.setSize(manageUserAddProCb, 155, 75, 150, 35);
-            gl.setSize(manageUserEditProCb, 155, 135, 150, 35);
-            gl.setSize(manageUserDeleteProCb, 155, 195, 150, 35);
-            gl.setSize(manageUserManageTeacherCb, 155, 255, 150, 35);
+
             gl.setSize(manageUserCheckAllCb, 155, 15, 150, 35);
-            gl.setSize(manageUserAddUserCb, 20, 75, 150, 35);
-            gl.setSize(manageUserEditUserCb, 20, 135, 150, 35);
-            gl.setSize(manageUserDeleteUserCb, 20, 195, 150, 35);
-            gl.setSize(manageUserManageTypeCb, 20, 255, 150, 35);
+            gl.setSize(manageUserAddProCb, 155, 55, 150, 35);
+            gl.setSize(manageUserEditProCb, 155, 95, 150, 35);
+            gl.setSize(manageUserDeleteProCb, 155, 135, 150, 35);
+            gl.setSize(manageUserManageTeacherCb, 155, 175, 150, 35);
             gl.setSize(manageUserIsAdminCb, 20, 15, 150, 35);
+            gl.setSize(manageUserAddUserCb, 20, 55, 150, 35);
+            gl.setSize(manageUserEditUserCb, 20, 95, 150, 35);
+            gl.setSize(manageUserDeleteUserCb, 20, 135, 150, 35);
+            gl.setSize(manageUserManageTypeCb, 20, 175, 150, 35);
+            gl.setSize(manageUserReadOnlyCb, 155, 215, 150, 35);
+
 
             gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
             gl.setSize(manageUserEditBtn, 130, 360, 80, 30);
@@ -3518,7 +3521,7 @@ namespace ProposalReportingSystem
                 Alert alert = new Alert(context, "darkred", 5);
                 manageUserNcodeTxtbx.Focus();
             }
-            else if(manageUserFnameTxtbx.Text == "")
+            else if (manageUserFnameTxtbx.Text == "")
             {
                 //PopUp p = new PopUp("خطا", "نام را وارد نمایید.", "تایید", "", "", "error");
                 //p.ShowDialog();
@@ -3547,7 +3550,7 @@ namespace ProposalReportingSystem
 
             else if (manageUserAddProCb.Checked == false && manageUserEditProCb.Checked == false && manageUserDeleteProCb.Checked == false &&
                      manageUserAddUserCb.Checked == false && manageUserEditUserCb.Checked == false && manageUserDeleteUserCb.Checked == false &&
-                     manageUserManageTeacherCb.Checked == false && manageUserManageTypeCb.Checked == false)
+                     manageUserManageTeacherCb.Checked == false && manageUserManageTypeCb.Checked == false && manageUserReadOnlyCb.Checked == false)
             {
                 //PopUp p = new PopUp("خطا", "داشتن حداقل یک سطح دسترسی الزامی است.", "تایید", "", "", "error");
                 //p.ShowDialog();
@@ -3642,6 +3645,16 @@ namespace ProposalReportingSystem
                 {
                     user.CanManageType = 0;
                 }
+
+                if (manageUserReadOnlyCb.Checked == true)
+                {
+                    user.U_otherAccess = 1; // ReadOnlyUser
+                }
+                else
+                {
+                    user.U_otherAccess = 0;
+                }
+
                 if (loginUser.U_NCode == 999999999)
                 {
                     if (manageUserIsAdminCb.Checked == true)
@@ -3700,7 +3713,7 @@ namespace ProposalReportingSystem
 
             else if (manageUserAddProCb.Checked == false && manageUserEditProCb.Checked == false && manageUserDeleteProCb.Checked == false &&
                      manageUserAddUserCb.Checked == false && manageUserEditUserCb.Checked == false && manageUserDeleteUserCb.Checked == false &&
-                     manageUserManageTeacherCb.Checked == false && manageUserManageTypeCb.Checked == false)
+                     manageUserManageTeacherCb.Checked == false && manageUserManageTypeCb.Checked == false && manageUserReadOnlyCb.Checked == false)
             {
                 //PopUp p = new PopUp("خطا", "داشتن حداقل یک سطح دسترسی الزامی است.", "تایید", "", "", "error");
                 //p.ShowDialog();
@@ -3791,6 +3804,16 @@ namespace ProposalReportingSystem
                 {
                     user.CanManageTeacher = 0;
                 }
+
+                if (manageUserReadOnlyCb.Checked == true)
+                {
+                    user.U_otherAccess = 1; // ReadOnlyUser
+                }
+                else
+                {
+                    user.U_otherAccess = 0;
+                }
+
                 if (loginUser.U_NCode == 999999999)
                 {
                     if (manageUserIsAdminCb.Checked == true)
@@ -3817,7 +3840,7 @@ namespace ProposalReportingSystem
                     manageUserClearBtn.PerformClick();
                     manageUserShowAllBtn.PerformClick();
                 }
-                
+
             }
         }
 
@@ -3835,8 +3858,8 @@ namespace ProposalReportingSystem
                 user.U_Email = manageUserEmailTxtbx.Text;
                 user.U_Tel = manageUserTelTxtbx.Text;
                 user.U_Password = manageUserPasswordTxtbx.Text;
-                
-                
+
+
 
                 if (manageUserAddProCb.Checked == true)
                 {
@@ -3898,18 +3921,27 @@ namespace ProposalReportingSystem
                     user.U_IsAdmin = 0;
                 }
 
+                if (manageUserReadOnlyCb.Checked == true)
+                {
+                    user.U_otherAccess = 1; // ReadOnlyUser
+                }
+                else
+                {
+                    user.U_otherAccess = 0;
+                }
+
                 if (user.U_IsAdmin == 1 && loginUser.U_NCode != 999999999 && user.U_NCode != loginUser.U_NCode)
                 {
                     string context = "کاربر مورد نظر ادمین بوده و غیر قابل حذف می باشد";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
 
-                else if(user.U_NCode == loginUser.U_NCode)
+                else if (user.U_NCode == loginUser.U_NCode)
                 {
                     string context = "شما توانایی حذف اطلاعات پروفایل خود را ندارید";
                     Alert alert = new Alert(context, "darkred", 5);
                 }
-                
+
                 else
                 {
                     dbh.DeleteUser(user, loginUser.U_NCode, myDateTime.ToString());
@@ -3917,7 +3949,7 @@ namespace ProposalReportingSystem
                     manageUserClearBtn.PerformClick();
                     manageUserShowAllBtn.PerformClick();
                 }
-                
+
             }
         }
 
@@ -7810,6 +7842,47 @@ namespace ProposalReportingSystem
             if (e.KeyChar == (char)13)
             {
                 searchProposalSearchBtn.PerformClick();
+            }
+        }
+
+        private void manageUserReadOnlyCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(manageUserReadOnlyCb.Checked)
+            {
+                manageUserCheckAllCb.Checked = false;
+                manageUserAddProCb.Checked = false;
+                manageUserEditProCb.Checked = false;
+                manageUserDeleteProCb.Checked = false;
+                manageUserManageTeacherCb.Checked = false;
+                manageUserAddUserCb.Checked = false;
+                manageUserEditUserCb.Checked = false;
+                manageUserDeleteUserCb.Checked = false;
+                manageUserManageTypeCb.Checked = false;
+
+                manageUserCheckAllCb.Enabled = false;
+                manageUserAddProCb.Enabled = false;
+                manageUserEditProCb.Enabled = false;
+                manageUserDeleteProCb.Enabled = false;
+                manageUserManageTeacherCb.Enabled = false;
+                manageUserAddUserCb.Enabled = false;
+                manageUserEditUserCb.Enabled = false;
+                manageUserDeleteUserCb.Enabled = false;
+                manageUserManageTypeCb.Enabled = false;
+
+            }
+
+            else
+            {
+                manageUserCheckAllCb.Enabled = true;
+                manageUserAddProCb.Enabled = true;
+                manageUserEditProCb.Enabled = true;
+                manageUserDeleteProCb.Enabled = true;
+                manageUserManageTeacherCb.Enabled = true;
+                manageUserAddUserCb.Enabled = true;
+                manageUserEditUserCb.Enabled = true;
+                manageUserDeleteUserCb.Enabled = true;
+                manageUserManageTypeCb.Enabled = true;
+
             }
         }
 
