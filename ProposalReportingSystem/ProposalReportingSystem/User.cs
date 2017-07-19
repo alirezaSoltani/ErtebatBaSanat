@@ -17,7 +17,7 @@ namespace ProposalReportingSystem
         private string u_Color;
         private short u_IsAdmin = 0;
         private short canAddProposal, canEditProposal, canDeleteProposal, canAddUser, canEditUser, canDeleteUser, canManageTeacher, canManageType;
-
+        private short u_otherAccess = 0;
 
         public long U_NCode
         {
@@ -225,6 +225,19 @@ namespace ProposalReportingSystem
             set
             {
                 u_IsAdmin = value;
+            }
+        }
+
+        public short U_otherAccess
+        {
+            get
+            {
+                return u_otherAccess;
+            }
+
+            set
+            {
+                u_otherAccess = value;
             }
         }
     }
