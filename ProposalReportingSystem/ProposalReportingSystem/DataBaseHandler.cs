@@ -1199,8 +1199,8 @@ namespace ProposalReportingSystem
                                                         + " u_canManageTeacher = " + "'" + user.CanManageTeacher + "',"
                                                         + " u_canManageType = " + "'" + user.CanManageType + "',"
                                                         + " u_Color = " + "'" + user.U_Color + "' ,"
-                                                         + " u_Color = " + "'" + user.U_IsAdmin + "' ,"
-                                                        + " u_IsAdmin = " + "'" + user.U_otherAccess + "'"
+                                                         + " u_IsAdmin = " + "'" + user.U_IsAdmin + "' ,"
+                                                        + " u_otherAccess = " + "'" + user.U_otherAccess + "'"
                                                         + " WHERE u_NCode = " + NCode + "";
 
                     sc.ExecuteNonQuery();
