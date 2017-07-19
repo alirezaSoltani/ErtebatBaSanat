@@ -6150,6 +6150,16 @@ namespace ProposalReportingSystem
                 manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
                 manageUserIsAdminCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_IsAdmin"].Value.ToString());
 
+                if(Int16.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_otherAccess"].Value.ToString())==1)
+                {
+                    manageUserReadOnlyCb.Checked = true;
+                }
+                else
+                {
+                    manageUserReadOnlyCb.Checked = false;
+                }
+
+
                 if (loginUser.CanEditUser == 1)
                 {
                     manageUserEditBtn.Enabled = true;

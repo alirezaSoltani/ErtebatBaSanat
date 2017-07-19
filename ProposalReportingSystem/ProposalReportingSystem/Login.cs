@@ -285,6 +285,15 @@ namespace ProposalReportingSystem
                             else
                                 user.CanManageType = 0;
 
+                            if (Int16.Parse(reader["u_otherAccess"].ToString()) == 1)
+                            {
+                                user.U_otherAccess = 1; // Read Only User
+                            }
+                            else
+                            {
+                                user.U_otherAccess = 0;
+                            }
+
                             user.U_Color = reader["u_Color"].ToString();
 
                             this.Hide();
