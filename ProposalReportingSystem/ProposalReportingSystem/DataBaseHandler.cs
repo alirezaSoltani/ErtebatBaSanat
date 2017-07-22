@@ -5472,6 +5472,7 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[14].Visible = false;
                 dataGridview.Columns[15].Visible = false;
                 dataGridview.Columns[16].Visible = false;
+                dataGridview.Columns[17].HeaderText = "دانشکده";
             }
 
             else if (selectCommand.Contains("proposalTable"))

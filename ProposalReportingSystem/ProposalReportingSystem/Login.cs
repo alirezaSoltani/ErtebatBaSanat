@@ -295,6 +295,7 @@ namespace ProposalReportingSystem
                             }
 
                             user.U_Color = reader["u_Color"].ToString();
+                            user.U_Faculty = reader["u_faculty"].ToString();
 
                             this.Hide();
                             Form1 mainForm = new Form1(user);

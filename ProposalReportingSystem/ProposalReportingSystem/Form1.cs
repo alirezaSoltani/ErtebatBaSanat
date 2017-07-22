@@ -4790,7 +4790,7 @@ namespace ProposalReportingSystem
 
         private void addProposalShowBtn_Click(object sender, EventArgs e)
         {
-
+            
             addProposalShowDgv.Columns.Clear();
             addProposalShowDgv.DataSource = null;
             if(addProposalIsWatchingEdition)
