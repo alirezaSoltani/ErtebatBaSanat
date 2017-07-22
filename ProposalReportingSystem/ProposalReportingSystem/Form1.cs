@@ -133,17 +133,27 @@ namespace ProposalReportingSystem
                     manageUserNavigationShowAllBtn.Visible = true;
 
                     addProposalAddGp.Enabled = false;
-                    searchProposalSearchGp.Enabled = false;
+                    //searchProposalSearchGp.Enabled = false;
                     editProposalEditGp.Enabled = false;
                     manageTeacherInfoGp.Enabled = false;
                     manageUserManageGp.Enabled = false;
+                    appSettingSenderInfoGp.Enabled = false;
+                    appSettingGp.Enabled = false;
 
-                   
-                    //addProposalTab.Visible = true;
-                    //manageProposalTab.Visible = true;
-                    //manageUserTab.Visible = true;
-                    //manageTeacherTab.Visible = true;
-                    //appSettingsTab.Visible = true;
+
+
+                    addProposalTab.Visible = true;
+                    manageProposalTab.Visible = true;
+                    manageUserTab.Visible = true;
+                    manageTeacherTab.Visible = true;
+                    appSettingsTab.Visible = true;
+
+
+                    menuAddProposalBtn.Enabled = false;
+                    menuManageProposalBtn.Enabled = false;
+                    menuManageTeacherBtn.Enabled = false;
+                    menuManageUserBtn.Enabled = false;
+                    menuAppSettingBtn.Enabled = false;
 
                 }
 
@@ -7985,7 +7995,7 @@ namespace ProposalReportingSystem
             menuHomeBtn.Text = "";
             numberOfMenuOptions++;
 
-            if (loginUser.CanAddProposal == 1)
+            if (loginUser.CanAddProposal == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuAddProposalBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -8003,7 +8013,7 @@ namespace ProposalReportingSystem
             menuSearchProposalBtn.Text = "";
             numberOfMenuOptions++;
 
-            if (loginUser.CanEditProposal == 1)
+            if (loginUser.CanEditProposal == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageProposalBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -8015,7 +8025,7 @@ namespace ProposalReportingSystem
                 menuManageProposalBtn.Visible = false;
             }
 
-            if (loginUser.CanManageTeacher == 1)
+            if (loginUser.CanManageTeacher == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageTeacherBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -8027,7 +8037,7 @@ namespace ProposalReportingSystem
                 menuManageTeacherBtn.Visible = false;
             }
 
-            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1)
+            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageUserBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -8039,7 +8049,7 @@ namespace ProposalReportingSystem
                 menuManageUserBtn.Visible = false;
             }
 
-            if (loginUser.CanManageType == 1)
+            if (loginUser.CanManageType == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuAppSettingBtn, 0, 5 + (numberOfMenuOptions * 75), 55, 75);
                 menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Center;
@@ -8103,7 +8113,7 @@ namespace ProposalReportingSystem
             menuHomeBtn.Text = "خانه";
             numberOfMenuOptions++;
 
-            if(loginUser.CanAddProposal == 1)
+            if(loginUser.CanAddProposal == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuAddProposalBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuAddProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
@@ -8122,7 +8132,7 @@ namespace ProposalReportingSystem
             numberOfMenuOptions++;
 
 
-            if (loginUser.CanEditProposal == 1)
+            if (loginUser.CanEditProposal == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageProposalBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuManageProposalBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
@@ -8135,7 +8145,7 @@ namespace ProposalReportingSystem
             }
 
 
-            if (loginUser.CanManageTeacher == 1)
+            if (loginUser.CanManageTeacher == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageTeacherBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuManageTeacherBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
@@ -8148,7 +8158,7 @@ namespace ProposalReportingSystem
             }
 
 
-            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1)
+            if (loginUser.CanAddUser == 1 || loginUser.CanEditUser == 1 || loginUser.CanDeleteUser == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuManageUserBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuManageUserBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
@@ -8161,7 +8171,7 @@ namespace ProposalReportingSystem
             }
 
 
-            if(loginUser.CanManageType == 1)
+            if(loginUser.CanManageType == 1 || loginUser.U_otherAccess == 1)
             {
                 gl.setSize(menuAppSettingBtn, 1, 5 + (numberOfMenuOptions * 75), 133, 75);
                 menuAppSettingBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;

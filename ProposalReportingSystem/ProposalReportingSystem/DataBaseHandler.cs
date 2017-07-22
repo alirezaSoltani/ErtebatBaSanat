@@ -5471,6 +5471,7 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[13].HeaderText = "تغيير تنظيمات برنامه";
                 dataGridview.Columns[14].Visible = false;
                 dataGridview.Columns[15].Visible = false;
+                dataGridview.Columns[16].Visible = false;
             }
 
             else if (selectCommand.Contains("proposalTable"))
