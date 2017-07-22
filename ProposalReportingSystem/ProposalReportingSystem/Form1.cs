@@ -258,7 +258,7 @@ namespace ProposalReportingSystem
             gl.setSize(homeUserNameLbl, 280 ,150, 145, 40);
             gl.setSize(homeWelcomeLbl, 280, 200, 145, 40);
             gl.setSize(analogClockControl1, 70, 25, 180, 180);
-            gl.setSize(monthCalendar1, 300, 50, 320, 250);
+            gl.setSize(monthCalendarX1, 300, 50, 320, 250);
             ///////////////////////Home design/////////////////////
 
 
@@ -653,6 +653,8 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserEditUserCb, 20, 95, 150, 35);
             gl.setSize(manageUserDeleteUserCb, 20, 135, 150, 35);
             gl.setSize(manageUserManageTypeCb, 20, 175, 150, 35);
+            gl.setSize(manageUserFacultyCb, 110, 215, 60, 35);
+            gl.setSize(manageUserFacultyCmb, 20, 220, 90, 35);
             gl.setSize(manageUserReadOnlyCb, 155, 215, 150, 35);
 
 
@@ -7922,6 +7924,7 @@ namespace ProposalReportingSystem
                 manageUserDeleteUserCb.Enabled = false;
                 manageUserManageTypeCb.Enabled = false;
 
+                manageUserFacultyCb.Enabled = true;
             }
 
             else
@@ -7936,9 +7939,22 @@ namespace ProposalReportingSystem
                 manageUserDeleteUserCb.Enabled = true;
                 manageUserManageTypeCb.Enabled = true;
 
+                manageUserFacultyCb.Checked = false;
+                manageUserFacultyCb.Enabled = false;
             }
         }
 
+        private void manageUserFacultyCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (manageUserFacultyCb.Checked)
+            {
+                manageUserFacultyCmb.Enabled = true;
+            }
+            else
+            {
+                manageUserFacultyCmb.Enabled = false;
+            }
+        }
 
         private void manageUserAddProCb_CheckedChanged(object sender, EventArgs e)
         {
