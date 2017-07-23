@@ -1532,6 +1532,7 @@ namespace ProposalReportingSystem
                     editProposalExecutorFacultyCb.Items.Clear();
                     searchProposalExecutorFacultyCb.Items.Clear();
                     manageTeacherExecutorFacultyCb.Items.Clear();
+                    manageUserFacultyCmb.Items.Clear();
 
                     comboList = dbh.getFaculty();
                     foreach (String ExecutorFaculty in comboList)
@@ -1540,6 +1541,7 @@ namespace ProposalReportingSystem
                         editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         manageTeacherExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageUserFacultyCmb.Items.Add(ExecutorFaculty);
                     }
 
                     // form_initializer(); // To Reset items of comboBoxes and others
@@ -2642,6 +2644,10 @@ namespace ProposalReportingSystem
             manageUserManageTeacherCb.Checked = false;
             manageUserManageTypeCb.Checked = false;
             manageUserCheckAllCb.Checked = false;
+            manageUserReadOnlyCb.Checked = false;
+            manageUserFacultyCb.Checked = false;
+            manageUserFacultyCmb.SelectedIndex = -1;
+
 
             manageUserShowDgv.DataSource = null;
             manageUserShowAllBtn.Enabled = true;
@@ -6606,7 +6612,12 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                manage Users                           \\
             //*************************************************************************\\
-
+            manageUserFacultyCmb.Items.Clear();
+            comboList = dbh.getFaculty();
+            foreach (String faculty in comboList)
+            {
+                manageUserFacultyCmb.Items.Add(faculty);
+            }
             //*************************************************************************\\
             //                                manage Users                            \\
             //*************************************************************************\\
