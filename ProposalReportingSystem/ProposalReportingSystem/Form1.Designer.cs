@@ -648,8 +648,8 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel2);
+            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel4);
             this.mainPage.Controls.Add(this.superTabControlPanel3);
             this.mainPage.Controls.Add(this.superTabControlPanel5);
@@ -696,7 +696,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(853, 705);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(843, 705);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.addProposalTab;
             // 
@@ -706,7 +706,7 @@
             this.addProposalPanel.Controls.Add(this.addProposalShowGp);
             this.addProposalPanel.Controls.Add(this.addProposalAddGp);
             this.addProposalPanel.Location = new System.Drawing.Point(1, 2);
-            this.addProposalPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalPanel.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalPanel.Name = "addProposalPanel";
             this.addProposalPanel.Size = new System.Drawing.Size(892, 654);
             this.addProposalPanel.TabIndex = 1;
@@ -721,7 +721,7 @@
             this.addProposalShowGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.addProposalShowGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalShowGp.Location = new System.Drawing.Point(14, 340);
-            this.addProposalShowGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalShowGp.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalShowGp.Name = "addProposalShowGp";
             this.addProposalShowGp.Size = new System.Drawing.Size(847, 292);
             // 
@@ -768,7 +768,7 @@
             this.addProposalNavigationPanel.Controls.Add(this.addProposalNavigationFirstPageBtn);
             this.addProposalNavigationPanel.Controls.Add(this.addProposalNavigationReturnBtn);
             this.addProposalNavigationPanel.Location = new System.Drawing.Point(121, 143);
-            this.addProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationPanel.Name = "addProposalNavigationPanel";
             this.addProposalNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.addProposalNavigationPanel.TabIndex = 4;
@@ -779,7 +779,7 @@
             this.addProposalNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.addProposalNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationShowAllBtn.Location = new System.Drawing.Point(524, 3);
-            this.addProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationShowAllBtn.Name = "addProposalNavigationShowAllBtn";
             this.addProposalNavigationShowAllBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -809,7 +809,7 @@
             this.addProposalNavigationCurrentPageTxtbx.Enabled = false;
             this.addProposalNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.addProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationCurrentPageTxtbx.MaxLength = 5;
             this.addProposalNavigationCurrentPageTxtbx.Name = "addProposalNavigationCurrentPageTxtbx";
             this.addProposalNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -825,7 +825,7 @@
             this.addProposalNavigationNextPageBtn.Enabled = false;
             this.addProposalNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.addProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationNextPageBtn.Name = "addProposalNavigationNextPageBtn";
             this.addProposalNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -851,7 +851,7 @@
             this.addProposalNavigationLastPageBtn.Enabled = false;
             this.addProposalNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.addProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationLastPageBtn.Name = "addProposalNavigationLastPageBtn";
             this.addProposalNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -877,7 +877,7 @@
             this.addProposalNavigationPreviousPageBtn.Enabled = false;
             this.addProposalNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.addProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationPreviousPageBtn.Name = "addProposalNavigationPreviousPageBtn";
             this.addProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -903,7 +903,7 @@
             this.addProposalNavigationFirstPageBtn.Enabled = false;
             this.addProposalNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.addProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationFirstPageBtn.Name = "addProposalNavigationFirstPageBtn";
             this.addProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -929,7 +929,7 @@
             this.addProposalNavigationReturnBtn.Enabled = false;
             this.addProposalNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.addProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalNavigationReturnBtn.Name = "addProposalNavigationReturnBtn";
             this.addProposalNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.addProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -955,7 +955,7 @@
             this.addProposalShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.addProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addProposalShowDgv.Location = new System.Drawing.Point(10, 2);
-            this.addProposalShowDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalShowDgv.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalShowDgv.MultiSelect = false;
             this.addProposalShowDgv.Name = "addProposalShowDgv";
             this.addProposalShowDgv.ReadOnly = true;
@@ -1039,7 +1039,7 @@
             this.addProposalAddGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.addProposalAddGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalAddGp.Location = new System.Drawing.Point(14, 15);
-            this.addProposalAddGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalAddGp.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalAddGp.Name = "addProposalAddGp";
             this.addProposalAddGp.Size = new System.Drawing.Size(847, 321);
             // 
@@ -1078,7 +1078,7 @@
             // 
             this.addProposalEnglishTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalEnglishTitleTxtbx.Location = new System.Drawing.Point(346, 42);
-            this.addProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalEnglishTitleTxtbx.Multiline = true;
             this.addProposalEnglishTitleTxtbx.Name = "addProposalEnglishTitleTxtbx";
             this.addProposalEnglishTitleTxtbx.Size = new System.Drawing.Size(138, 24);
@@ -1090,7 +1090,7 @@
             this.addProposalSearchBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.addProposalSearchBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addProposalSearchBtn.Location = new System.Drawing.Point(590, 3);
-            this.addProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalSearchBtn.Name = "addProposalSearchBtn";
             this.addProposalSearchBtn.Size = new System.Drawing.Size(45, 24);
             this.addProposalSearchBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -1103,7 +1103,7 @@
             this.addProposalShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.addProposalShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.addProposalShowAllBtn.Location = new System.Drawing.Point(301, 249);
-            this.addProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalShowAllBtn.Name = "addProposalShowAllBtn";
             this.addProposalShowAllBtn.Size = new System.Drawing.Size(94, 24);
             this.addProposalShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -1116,7 +1116,7 @@
             this.addProposalExecutorEGroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addProposalExecutorEGroupCb.FormattingEnabled = true;
             this.addProposalExecutorEGroupCb.Location = new System.Drawing.Point(590, 119);
-            this.addProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorEGroupCb.Name = "addProposalExecutorEGroupCb";
             this.addProposalExecutorEGroupCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalExecutorEGroupCb.Size = new System.Drawing.Size(139, 25);
@@ -1127,7 +1127,7 @@
             this.addProposalExecutorFacultyCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addProposalExecutorFacultyCb.FormattingEnabled = true;
             this.addProposalExecutorFacultyCb.Location = new System.Drawing.Point(590, 90);
-            this.addProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorFacultyCb.Name = "addProposalExecutorFacultyCb";
             this.addProposalExecutorFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalExecutorFacultyCb.Size = new System.Drawing.Size(139, 25);
@@ -1176,7 +1176,7 @@
             this.addProposalOrganizationNumberCb.FormattingEnabled = true;
             this.addProposalOrganizationNumberCb.ItemHeight = 17;
             this.addProposalOrganizationNumberCb.Location = new System.Drawing.Point(168, 158);
-            this.addProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalOrganizationNumberCb.Name = "addProposalOrganizationNumberCb";
             this.addProposalOrganizationNumberCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalOrganizationNumberCb.Size = new System.Drawing.Size(40, 25);
@@ -1191,7 +1191,7 @@
             this.addProposalStatusCb.FormattingEnabled = true;
             this.addProposalStatusCb.ItemHeight = 17;
             this.addProposalStatusCb.Location = new System.Drawing.Point(69, 220);
-            this.addProposalStatusCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalStatusCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalStatusCb.Name = "addProposalStatusCb";
             this.addProposalStatusCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalStatusCb.Size = new System.Drawing.Size(139, 25);
@@ -1204,7 +1204,7 @@
             this.addProposalOrganizationNameCb.FormattingEnabled = true;
             this.addProposalOrganizationNameCb.ItemHeight = 17;
             this.addProposalOrganizationNameCb.Location = new System.Drawing.Point(69, 158);
-            this.addProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalOrganizationNameCb.Name = "addProposalOrganizationNameCb";
             this.addProposalOrganizationNameCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalOrganizationNameCb.Size = new System.Drawing.Size(96, 25);
@@ -1217,7 +1217,7 @@
             this.addProposalProposalTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addProposalProposalTypeCb.FormattingEnabled = true;
             this.addProposalProposalTypeCb.Location = new System.Drawing.Point(69, 126);
-            this.addProposalProposalTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalProposalTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalProposalTypeCb.Name = "addProposalProposalTypeCb";
             this.addProposalProposalTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalProposalTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -1229,7 +1229,7 @@
             this.addProposalRegisterTypeCb.FormattingEnabled = true;
             this.addProposalRegisterTypeCb.ItemHeight = 17;
             this.addProposalRegisterTypeCb.Location = new System.Drawing.Point(69, 96);
-            this.addProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalRegisterTypeCb.Name = "addProposalRegisterTypeCb";
             this.addProposalRegisterTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalRegisterTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -1241,7 +1241,7 @@
             this.addProposalPropertyTypeCb.FormattingEnabled = true;
             this.addProposalPropertyTypeCb.ItemHeight = 17;
             this.addProposalPropertyTypeCb.Location = new System.Drawing.Point(69, 63);
-            this.addProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalPropertyTypeCb.Name = "addProposalPropertyTypeCb";
             this.addProposalPropertyTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalPropertyTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -1253,7 +1253,7 @@
             this.addProposalProcedureTypeCb.FormattingEnabled = true;
             this.addProposalProcedureTypeCb.ItemHeight = 17;
             this.addProposalProcedureTypeCb.Location = new System.Drawing.Point(69, 34);
-            this.addProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalProcedureTypeCb.Name = "addProposalProcedureTypeCb";
             this.addProposalProcedureTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalProcedureTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -1264,7 +1264,7 @@
             this.addProposalExecutorEDegCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addProposalExecutorEDegCb.FormattingEnabled = true;
             this.addProposalExecutorEDegCb.Location = new System.Drawing.Point(590, 147);
-            this.addProposalExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorEDegCb.Name = "addProposalExecutorEDegCb";
             this.addProposalExecutorEDegCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalExecutorEDegCb.Size = new System.Drawing.Size(139, 25);
@@ -1274,7 +1274,7 @@
             // 
             this.addProposalExecutorMobileTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorMobileTxtbx.Location = new System.Drawing.Point(590, 203);
-            this.addProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorMobileTxtbx.MaxLength = 20;
             this.addProposalExecutorMobileTxtbx.Name = "addProposalExecutorMobileTxtbx";
             this.addProposalExecutorMobileTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -1324,7 +1324,7 @@
             // 
             this.addProposalExecutorEmailTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorEmailTxtbx.Location = new System.Drawing.Point(590, 175);
-            this.addProposalExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorEmailTxtbx.MaxLength = 50;
             this.addProposalExecutorEmailTxtbx.Name = "addProposalExecutorEmailTxtbx";
             this.addProposalExecutorEmailTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -1375,7 +1375,7 @@
             // 
             this.addProposalExecutorTel2Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorTel2Txtbx.Location = new System.Drawing.Point(590, 261);
-            this.addProposalExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorTel2Txtbx.MaxLength = 20;
             this.addProposalExecutorTel2Txtbx.Name = "addProposalExecutorTel2Txtbx";
             this.addProposalExecutorTel2Txtbx.Size = new System.Drawing.Size(138, 25);
@@ -1399,7 +1399,7 @@
             // 
             this.addProposalExecutorTel1Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorTel1Txtbx.Location = new System.Drawing.Point(590, 232);
-            this.addProposalExecutorTel1Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorTel1Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorTel1Txtbx.MaxLength = 20;
             this.addProposalExecutorTel1Txtbx.Name = "addProposalExecutorTel1Txtbx";
             this.addProposalExecutorTel1Txtbx.Size = new System.Drawing.Size(138, 25);
@@ -1423,7 +1423,7 @@
             // 
             this.addProposalExecutorLNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorLNameTxtbx.Location = new System.Drawing.Point(590, 60);
-            this.addProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorLNameTxtbx.MaxLength = 100;
             this.addProposalExecutorLNameTxtbx.Name = "addProposalExecutorLNameTxtbx";
             this.addProposalExecutorLNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1447,7 +1447,7 @@
             // 
             this.addProposalExecutorFNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorFNameTxtbx.Location = new System.Drawing.Point(590, 31);
-            this.addProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorFNameTxtbx.MaxLength = 100;
             this.addProposalExecutorFNameTxtbx.Name = "addProposalExecutorFNameTxtbx";
             this.addProposalExecutorFNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1459,7 +1459,7 @@
             // 
             this.addProposalValueTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalValueTxtbx.Location = new System.Drawing.Point(69, 188);
-            this.addProposalValueTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalValueTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalValueTxtbx.MaxLength = 18;
             this.addProposalValueTxtbx.Name = "addProposalValueTxtbx";
             this.addProposalValueTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -1548,7 +1548,7 @@
             // 
             this.addProposalDurationTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalDurationTxtbx.Location = new System.Drawing.Point(69, 1);
-            this.addProposalDurationTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalDurationTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalDurationTxtbx.MaxLength = 9;
             this.addProposalDurationTxtbx.Name = "addProposalDurationTxtbx";
             this.addProposalDurationTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -1593,7 +1593,7 @@
             // 
             this.addProposalCoexecutorTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalCoexecutorTxtbx.Location = new System.Drawing.Point(346, 162);
-            this.addProposalCoexecutorTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalCoexecutorTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalCoexecutorTxtbx.Multiline = true;
             this.addProposalCoexecutorTxtbx.Name = "addProposalCoexecutorTxtbx";
             this.addProposalCoexecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1666,7 +1666,7 @@
             this.addProposalExecutor2Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutor2Txtbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.addProposalExecutor2Txtbx.Location = new System.Drawing.Point(346, 124);
-            this.addProposalExecutor2Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutor2Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutor2Txtbx.Multiline = true;
             this.addProposalExecutor2Txtbx.Name = "addProposalExecutor2Txtbx";
             this.addProposalExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1677,7 +1677,7 @@
             // 
             this.addProposalExecutorNcodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalExecutorNcodeTxtbx.Location = new System.Drawing.Point(640, 2);
-            this.addProposalExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalExecutorNcodeTxtbx.MaxLength = 10;
             this.addProposalExecutorNcodeTxtbx.Name = "addProposalExecutorNcodeTxtbx";
             this.addProposalExecutorNcodeTxtbx.Size = new System.Drawing.Size(88, 25);
@@ -1689,7 +1689,7 @@
             // 
             this.addProposalKeywordsTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalKeywordsTxtbx.Location = new System.Drawing.Point(346, 72);
-            this.addProposalKeywordsTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalKeywordsTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalKeywordsTxtbx.Multiline = true;
             this.addProposalKeywordsTxtbx.Name = "addProposalKeywordsTxtbx";
             this.addProposalKeywordsTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1700,7 +1700,7 @@
             // 
             this.addProposalPersianTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProposalPersianTitleTxtbx.Location = new System.Drawing.Point(346, 14);
-            this.addProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalPersianTitleTxtbx.Multiline = true;
             this.addProposalPersianTitleTxtbx.Name = "addProposalPersianTitleTxtbx";
             this.addProposalPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1712,7 +1712,7 @@
             this.addProposalClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.addProposalClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.addProposalClearBtn.Location = new System.Drawing.Point(191, 249);
-            this.addProposalClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalClearBtn.Name = "addProposalClearBtn";
             this.addProposalClearBtn.Size = new System.Drawing.Size(94, 24);
             this.addProposalClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -1725,7 +1725,7 @@
             this.addProposalRegisterBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.addProposalRegisterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.addProposalRegisterBtn.Location = new System.Drawing.Point(69, 249);
-            this.addProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addProposalRegisterBtn.Name = "addProposalRegisterBtn";
             this.addProposalRegisterBtn.Size = new System.Drawing.Size(108, 24);
             this.addProposalRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -1750,7 +1750,7 @@
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(852, 705);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(843, 705);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.homeTab;
             // 
@@ -1760,7 +1760,7 @@
             this.homePanel.Controls.Add(this.homeTimeDateGp);
             this.homePanel.Controls.Add(this.homeAapInfoGp);
             this.homePanel.Location = new System.Drawing.Point(2, 19);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(860, 618);
             this.homePanel.TabIndex = 4;
@@ -1871,7 +1871,7 @@
             this.monthCalendar1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(240)))));
             this.monthCalendar1.HorizontalGridLines = true;
             this.monthCalendar1.Location = new System.Drawing.Point(358, 24);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(2);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.NumbersColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.monthCalendar1.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(250)))));
@@ -2024,7 +2024,7 @@
             // 
             this.homeEBSLbl.BackColor = System.Drawing.Color.Transparent;
             this.homeEBSLbl.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeEBSLbl.Location = new System.Drawing.Point(56, 64);
+            this.homeEBSLbl.Location = new System.Drawing.Point(42, 42);
             this.homeEBSLbl.Name = "homeEBSLbl";
             this.homeEBSLbl.Size = new System.Drawing.Size(573, 28);
             this.homeEBSLbl.TabIndex = 4;
@@ -2212,7 +2212,7 @@
             this.manageUserFacultyCmb.Enabled = false;
             this.manageUserFacultyCmb.FormattingEnabled = true;
             this.manageUserFacultyCmb.Location = new System.Drawing.Point(31, 161);
-            this.manageUserFacultyCmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserFacultyCmb.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserFacultyCmb.Name = "manageUserFacultyCmb";
             this.manageUserFacultyCmb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageUserFacultyCmb.Size = new System.Drawing.Size(100, 24);
@@ -2432,7 +2432,7 @@
             // 
             this.manageUserShowPasswordChb.BackColor = System.Drawing.Color.Transparent;
             this.manageUserShowPasswordChb.Location = new System.Drawing.Point(208, 89);
-            this.manageUserShowPasswordChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserShowPasswordChb.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserShowPasswordChb.Name = "manageUserShowPasswordChb";
             this.manageUserShowPasswordChb.Size = new System.Drawing.Size(22, 24);
             this.manageUserShowPasswordChb.TabIndex = 2000;
@@ -2592,7 +2592,7 @@
             this.manageUserShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.manageUserShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserShowAllBtn.Location = new System.Drawing.Point(495, 232);
-            this.manageUserShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserShowAllBtn.Name = "manageUserShowAllBtn";
             this.manageUserShowAllBtn.Size = new System.Drawing.Size(81, 31);
             this.manageUserShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2605,7 +2605,7 @@
             this.manageUserClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.manageUserClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserClearBtn.Location = new System.Drawing.Point(246, 232);
-            this.manageUserClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserClearBtn.Name = "manageUserClearBtn";
             this.manageUserClearBtn.Size = new System.Drawing.Size(81, 31);
             this.manageUserClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2619,7 +2619,7 @@
             this.manageUserDeleteBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserDeleteBtn.Enabled = false;
             this.manageUserDeleteBtn.Location = new System.Drawing.Point(340, 232);
-            this.manageUserDeleteBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserDeleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserDeleteBtn.Name = "manageUserDeleteBtn";
             this.manageUserDeleteBtn.Size = new System.Drawing.Size(81, 31);
             this.manageUserDeleteBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2633,7 +2633,7 @@
             this.manageUserEditBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserEditBtn.Enabled = false;
             this.manageUserEditBtn.Location = new System.Drawing.Point(49, 232);
-            this.manageUserEditBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserEditBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserEditBtn.Name = "manageUserEditBtn";
             this.manageUserEditBtn.Size = new System.Drawing.Size(81, 31);
             this.manageUserEditBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2646,7 +2646,7 @@
             this.manageUserAddBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.manageUserAddBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserAddBtn.Location = new System.Drawing.Point(148, 232);
-            this.manageUserAddBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserAddBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserAddBtn.Name = "manageUserAddBtn";
             this.manageUserAddBtn.Size = new System.Drawing.Size(81, 31);
             this.manageUserAddBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2709,7 +2709,7 @@
             this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationFirstPageBtn);
             this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationReturnBtn);
             this.manageUserNavigationPanel.Location = new System.Drawing.Point(114, 115);
-            this.manageUserNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationPanel.Name = "manageUserNavigationPanel";
             this.manageUserNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.manageUserNavigationPanel.TabIndex = 4;
@@ -2720,7 +2720,7 @@
             this.manageUserNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationShowAllBtn.Location = new System.Drawing.Point(522, 3);
-            this.manageUserNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationShowAllBtn.Name = "manageUserNavigationShowAllBtn";
             this.manageUserNavigationShowAllBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2749,7 +2749,7 @@
             this.manageUserNavigationCurrentPageTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.manageUserNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.manageUserNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationCurrentPageTxtbx.MaxLength = 5;
             this.manageUserNavigationCurrentPageTxtbx.Name = "manageUserNavigationCurrentPageTxtbx";
             this.manageUserNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -2763,7 +2763,7 @@
             this.manageUserNavigationNextPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.manageUserNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationNextPageBtn.Name = "manageUserNavigationNextPageBtn";
             this.manageUserNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2787,7 +2787,7 @@
             this.manageUserNavigationLastPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.manageUserNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationLastPageBtn.Name = "manageUserNavigationLastPageBtn";
             this.manageUserNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2811,7 +2811,7 @@
             this.manageUserNavigationPreviousPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.manageUserNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationPreviousPageBtn.Name = "manageUserNavigationPreviousPageBtn";
             this.manageUserNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2835,7 +2835,7 @@
             this.manageUserNavigationFirstPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.manageUserNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationFirstPageBtn.Name = "manageUserNavigationFirstPageBtn";
             this.manageUserNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2859,7 +2859,7 @@
             this.manageUserNavigationReturnBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageUserNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.manageUserNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserNavigationReturnBtn.Name = "manageUserNavigationReturnBtn";
             this.manageUserNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.manageUserNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -2884,7 +2884,7 @@
             this.manageUserShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.manageUserShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageUserShowDgv.Location = new System.Drawing.Point(17, 2);
-            this.manageUserShowDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageUserShowDgv.Margin = new System.Windows.Forms.Padding(2);
             this.manageUserShowDgv.MultiSelect = false;
             this.manageUserShowDgv.Name = "manageUserShowDgv";
             this.manageUserShowDgv.ReadOnly = true;
@@ -2931,7 +2931,7 @@
             this.searchProposalPanel.Controls.Add(this.searchProposalShowGp);
             this.searchProposalPanel.Controls.Add(this.searchProposalSearchGp);
             this.searchProposalPanel.Location = new System.Drawing.Point(1, 2);
-            this.searchProposalPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalPanel.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalPanel.Name = "searchProposalPanel";
             this.searchProposalPanel.Size = new System.Drawing.Size(887, 655);
             this.searchProposalPanel.TabIndex = 2;
@@ -2946,7 +2946,7 @@
             this.searchProposalShowGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.searchProposalShowGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalShowGp.Location = new System.Drawing.Point(14, 340);
-            this.searchProposalShowGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalShowGp.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalShowGp.Name = "searchProposalShowGp";
             this.searchProposalShowGp.Size = new System.Drawing.Size(847, 269);
             // 
@@ -2993,7 +2993,7 @@
             this.searchProposalNavigationPanel.Controls.Add(this.searchProposalNavigationFirstPageBtn);
             this.searchProposalNavigationPanel.Controls.Add(this.searchProposalNavigationReturnBtn);
             this.searchProposalNavigationPanel.Location = new System.Drawing.Point(115, 131);
-            this.searchProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationPanel.Name = "searchProposalNavigationPanel";
             this.searchProposalNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.searchProposalNavigationPanel.TabIndex = 5;
@@ -3005,7 +3005,7 @@
             this.searchProposalNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.searchProposalNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationShowAllBtn.Location = new System.Drawing.Point(522, 3);
-            this.searchProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationShowAllBtn.Name = "searchProposalNavigationShowAllBtn";
             this.searchProposalNavigationShowAllBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3035,7 +3035,7 @@
             this.searchProposalNavigationCurrentPageTxtbx.Enabled = false;
             this.searchProposalNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.searchProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationCurrentPageTxtbx.MaxLength = 5;
             this.searchProposalNavigationCurrentPageTxtbx.Name = "searchProposalNavigationCurrentPageTxtbx";
             this.searchProposalNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -3051,7 +3051,7 @@
             this.searchProposalNavigationNextPageBtn.Enabled = false;
             this.searchProposalNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.searchProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationNextPageBtn.Name = "searchProposalNavigationNextPageBtn";
             this.searchProposalNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3077,7 +3077,7 @@
             this.searchProposalNavigationLastPageBtn.Enabled = false;
             this.searchProposalNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.searchProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationLastPageBtn.Name = "searchProposalNavigationLastPageBtn";
             this.searchProposalNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3103,7 +3103,7 @@
             this.searchProposalNavigationPreviousPageBtn.Enabled = false;
             this.searchProposalNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.searchProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationPreviousPageBtn.Name = "searchProposalNavigationPreviousPageBtn";
             this.searchProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3129,7 +3129,7 @@
             this.searchProposalNavigationFirstPageBtn.Enabled = false;
             this.searchProposalNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.searchProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationFirstPageBtn.Name = "searchProposalNavigationFirstPageBtn";
             this.searchProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3155,7 +3155,7 @@
             this.searchProposalNavigationReturnBtn.Enabled = false;
             this.searchProposalNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.searchProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalNavigationReturnBtn.Name = "searchProposalNavigationReturnBtn";
             this.searchProposalNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.searchProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3181,7 +3181,7 @@
             this.searchProposalShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.searchProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchProposalShowDgv.Location = new System.Drawing.Point(16, 9);
-            this.searchProposalShowDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalShowDgv.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalShowDgv.MultiSelect = false;
             this.searchProposalShowDgv.Name = "searchProposalShowDgv";
             this.searchProposalShowDgv.ReadOnly = true;
@@ -3254,7 +3254,7 @@
             this.searchProposalSearchGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.searchProposalSearchGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalSearchGp.Location = new System.Drawing.Point(14, 15);
-            this.searchProposalSearchGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalSearchGp.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalSearchGp.Name = "searchProposalSearchGp";
             this.searchProposalSearchGp.Size = new System.Drawing.Size(847, 311);
             // 
@@ -3305,7 +3305,7 @@
             this.searchProposalShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchProposalShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.searchProposalShowAllBtn.Location = new System.Drawing.Point(320, 249);
-            this.searchProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalShowAllBtn.Name = "searchProposalShowAllBtn";
             this.searchProposalShowAllBtn.Size = new System.Drawing.Size(94, 24);
             this.searchProposalShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3332,7 +3332,7 @@
             this.searchProposalExecutorEGroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalExecutorEGroupCb.FormattingEnabled = true;
             this.searchProposalExecutorEGroupCb.Location = new System.Drawing.Point(591, 161);
-            this.searchProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorEGroupCb.Name = "searchProposalExecutorEGroupCb";
             this.searchProposalExecutorEGroupCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalExecutorEGroupCb.Size = new System.Drawing.Size(139, 25);
@@ -3344,7 +3344,7 @@
             this.searchProposalExecutorFacultyCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalExecutorFacultyCb.FormattingEnabled = true;
             this.searchProposalExecutorFacultyCb.Location = new System.Drawing.Point(591, 132);
-            this.searchProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorFacultyCb.Name = "searchProposalExecutorFacultyCb";
             this.searchProposalExecutorFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalExecutorFacultyCb.Size = new System.Drawing.Size(139, 25);
@@ -3356,7 +3356,7 @@
             // 
             this.searchProposalStartDateToChbx.AutoSize = true;
             this.searchProposalStartDateToChbx.Location = new System.Drawing.Point(320, 129);
-            this.searchProposalStartDateToChbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalStartDateToChbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalStartDateToChbx.Name = "searchProposalStartDateToChbx";
             this.searchProposalStartDateToChbx.Size = new System.Drawing.Size(15, 14);
             this.searchProposalStartDateToChbx.TabIndex = 72;
@@ -3367,7 +3367,7 @@
             // 
             this.searchProposalStartDateFromChbx.AutoSize = true;
             this.searchProposalStartDateFromChbx.Location = new System.Drawing.Point(320, 100);
-            this.searchProposalStartDateFromChbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalStartDateFromChbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalStartDateFromChbx.Name = "searchProposalStartDateFromChbx";
             this.searchProposalStartDateFromChbx.Size = new System.Drawing.Size(15, 14);
             this.searchProposalStartDateFromChbx.TabIndex = 71;
@@ -3393,7 +3393,7 @@
             // 
             this.searchProposalValueToTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalValueToTxtbx.Location = new System.Drawing.Point(338, 180);
-            this.searchProposalValueToTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalValueToTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalValueToTxtbx.MaxLength = 20;
             this.searchProposalValueToTxtbx.Name = "searchProposalValueToTxtbx";
             this.searchProposalValueToTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -3428,7 +3428,7 @@
             this.searchProposalOrganizationNumberCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.searchProposalOrganizationNumberCb.FormattingEnabled = true;
             this.searchProposalOrganizationNumberCb.Location = new System.Drawing.Point(182, 158);
-            this.searchProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalOrganizationNumberCb.Name = "searchProposalOrganizationNumberCb";
             this.searchProposalOrganizationNumberCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalOrganizationNumberCb.Size = new System.Drawing.Size(40, 25);
@@ -3442,7 +3442,7 @@
             this.searchProposalStatusCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalStatusCb.FormattingEnabled = true;
             this.searchProposalStatusCb.Location = new System.Drawing.Point(83, 187);
-            this.searchProposalStatusCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalStatusCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalStatusCb.Name = "searchProposalStatusCb";
             this.searchProposalStatusCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalStatusCb.Size = new System.Drawing.Size(138, 25);
@@ -3455,7 +3455,7 @@
             this.searchProposalOrganizationNameCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalOrganizationNameCb.FormattingEnabled = true;
             this.searchProposalOrganizationNameCb.Location = new System.Drawing.Point(83, 158);
-            this.searchProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalOrganizationNameCb.Name = "searchProposalOrganizationNameCb";
             this.searchProposalOrganizationNameCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalOrganizationNameCb.Size = new System.Drawing.Size(96, 25);
@@ -3469,7 +3469,7 @@
             this.searchProposalTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalTypeCb.FormattingEnabled = true;
             this.searchProposalTypeCb.Location = new System.Drawing.Point(83, 127);
-            this.searchProposalTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalTypeCb.Name = "searchProposalTypeCb";
             this.searchProposalTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -3481,7 +3481,7 @@
             this.searchProposalRegisterTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalRegisterTypeCb.FormattingEnabled = true;
             this.searchProposalRegisterTypeCb.Location = new System.Drawing.Point(83, 97);
-            this.searchProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalRegisterTypeCb.Name = "searchProposalRegisterTypeCb";
             this.searchProposalRegisterTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalRegisterTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -3493,7 +3493,7 @@
             this.searchProposalPropertyTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalPropertyTypeCb.FormattingEnabled = true;
             this.searchProposalPropertyTypeCb.Location = new System.Drawing.Point(83, 64);
-            this.searchProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalPropertyTypeCb.Name = "searchProposalPropertyTypeCb";
             this.searchProposalPropertyTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalPropertyTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -3505,7 +3505,7 @@
             this.searchProposalProcedureTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchProposalProcedureTypeCb.FormattingEnabled = true;
             this.searchProposalProcedureTypeCb.Location = new System.Drawing.Point(83, 35);
-            this.searchProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalProcedureTypeCb.Name = "searchProposalProcedureTypeCb";
             this.searchProposalProcedureTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalProcedureTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -3516,7 +3516,7 @@
             // 
             this.searchProposalExecutorMobileTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalExecutorMobileTxtbx.Location = new System.Drawing.Point(591, 189);
-            this.searchProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorMobileTxtbx.MaxLength = 20;
             this.searchProposalExecutorMobileTxtbx.Name = "searchProposalExecutorMobileTxtbx";
             this.searchProposalExecutorMobileTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -3579,7 +3579,7 @@
             // 
             this.searchProposalExecutorLNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalExecutorLNameTxtbx.Location = new System.Drawing.Point(591, 102);
-            this.searchProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorLNameTxtbx.MaxLength = 100;
             this.searchProposalExecutorLNameTxtbx.Name = "searchProposalExecutorLNameTxtbx";
             this.searchProposalExecutorLNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3604,7 +3604,7 @@
             // 
             this.searchProposalExecutorFNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalExecutorFNameTxtbx.Location = new System.Drawing.Point(591, 73);
-            this.searchProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorFNameTxtbx.MaxLength = 100;
             this.searchProposalExecutorFNameTxtbx.Name = "searchProposalExecutorFNameTxtbx";
             this.searchProposalExecutorFNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3616,7 +3616,7 @@
             // 
             this.searchProposalValueFromTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalValueFromTxtbx.Location = new System.Drawing.Point(338, 152);
-            this.searchProposalValueFromTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalValueFromTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalValueFromTxtbx.MaxLength = 20;
             this.searchProposalValueFromTxtbx.Name = "searchProposalValueFromTxtbx";
             this.searchProposalValueFromTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -3742,7 +3742,7 @@
             // 
             this.searchProposalExecutorNCodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalExecutorNCodeTxtbx.Location = new System.Drawing.Point(591, 44);
-            this.searchProposalExecutorNCodeTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorNCodeTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorNCodeTxtbx.MaxLength = 10;
             this.searchProposalExecutorNCodeTxtbx.Name = "searchProposalExecutorNCodeTxtbx";
             this.searchProposalExecutorNCodeTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -3755,7 +3755,7 @@
             // 
             this.searchProposalEnglishTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalEnglishTitleTxtbx.Location = new System.Drawing.Point(338, 68);
-            this.searchProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalEnglishTitleTxtbx.Name = "searchProposalEnglishTitleTxtbx";
             this.searchProposalEnglishTitleTxtbx.Size = new System.Drawing.Size(138, 25);
             this.searchProposalEnglishTitleTxtbx.TabIndex = 8;
@@ -3765,7 +3765,7 @@
             // 
             this.searchProposalPersianTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchProposalPersianTitleTxtbx.Location = new System.Drawing.Point(338, 40);
-            this.searchProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalPersianTitleTxtbx.Name = "searchProposalPersianTitleTxtbx";
             this.searchProposalPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalPersianTitleTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -3777,7 +3777,7 @@
             this.searchProposalSearchBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchProposalSearchBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.searchProposalSearchBtn.Location = new System.Drawing.Point(37, 249);
-            this.searchProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalSearchBtn.Name = "searchProposalSearchBtn";
             this.searchProposalSearchBtn.Size = new System.Drawing.Size(147, 24);
             this.searchProposalSearchBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3790,7 +3790,7 @@
             this.searchProposalClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchProposalClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.searchProposalClearBtn.Location = new System.Drawing.Point(206, 249);
-            this.searchProposalClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalClearBtn.Name = "searchProposalClearBtn";
             this.searchProposalClearBtn.Size = new System.Drawing.Size(94, 24);
             this.searchProposalClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -3805,7 +3805,7 @@
             this.searchProposalExecutorInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.searchProposalExecutorInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.searchProposalExecutorInfoGp.Location = new System.Drawing.Point(578, 2);
-            this.searchProposalExecutorInfoGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalExecutorInfoGp.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalExecutorInfoGp.Name = "searchProposalExecutorInfoGp";
             this.searchProposalExecutorInfoGp.Size = new System.Drawing.Size(246, 241);
             // 
@@ -3847,7 +3847,7 @@
             this.searchProposalProposalInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.searchProposalProposalInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.searchProposalProposalInfoGp.Location = new System.Drawing.Point(37, 2);
-            this.searchProposalProposalInfoGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchProposalProposalInfoGp.Margin = new System.Windows.Forms.Padding(2);
             this.searchProposalProposalInfoGp.Name = "searchProposalProposalInfoGp";
             this.searchProposalProposalInfoGp.Size = new System.Drawing.Size(524, 241);
             // 
@@ -3906,7 +3906,7 @@
             this.editProposalPanel.Controls.Add(this.editProposalEditGp);
             this.editProposalPanel.Controls.Add(this.editProposalShowGp);
             this.editProposalPanel.Location = new System.Drawing.Point(0, 2);
-            this.editProposalPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalPanel.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalPanel.Name = "editProposalPanel";
             this.editProposalPanel.Size = new System.Drawing.Size(888, 656);
             this.editProposalPanel.TabIndex = 2;
@@ -3975,7 +3975,7 @@
             this.editProposalEditGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.editProposalEditGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalEditGp.Location = new System.Drawing.Point(16, 2);
-            this.editProposalEditGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalEditGp.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalEditGp.Name = "editProposalEditGp";
             this.editProposalEditGp.Size = new System.Drawing.Size(847, 335);
             // 
@@ -4015,7 +4015,7 @@
             this.editProposalShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.editProposalShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.editProposalShowAllBtn.Location = new System.Drawing.Point(328, 262);
-            this.editProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalShowAllBtn.Name = "editProposalShowAllBtn";
             this.editProposalShowAllBtn.Size = new System.Drawing.Size(77, 24);
             this.editProposalShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4042,7 +4042,7 @@
             this.editProposalDeleteBtn.Enabled = false;
             this.editProposalDeleteBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalDeleteBtn.Location = new System.Drawing.Point(236, 262);
-            this.editProposalDeleteBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalDeleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalDeleteBtn.Name = "editProposalDeleteBtn";
             this.editProposalDeleteBtn.Size = new System.Drawing.Size(57, 24);
             this.editProposalDeleteBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4056,7 +4056,7 @@
             this.editProposalSearchBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.editProposalSearchBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalSearchBtn.Location = new System.Drawing.Point(572, 2);
-            this.editProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalSearchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalSearchBtn.Name = "editProposalSearchBtn";
             this.editProposalSearchBtn.Size = new System.Drawing.Size(58, 24);
             this.editProposalSearchBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4069,7 +4069,7 @@
             this.editProposalExecutorEGroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.editProposalExecutorEGroupCb.FormattingEnabled = true;
             this.editProposalExecutorEGroupCb.Location = new System.Drawing.Point(572, 119);
-            this.editProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorEGroupCb.Name = "editProposalExecutorEGroupCb";
             this.editProposalExecutorEGroupCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalExecutorEGroupCb.Size = new System.Drawing.Size(139, 25);
@@ -4080,7 +4080,7 @@
             this.editProposalExecutorFacultyCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.editProposalExecutorFacultyCb.FormattingEnabled = true;
             this.editProposalExecutorFacultyCb.Location = new System.Drawing.Point(572, 91);
-            this.editProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorFacultyCb.Name = "editProposalExecutorFacultyCb";
             this.editProposalExecutorFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalExecutorFacultyCb.Size = new System.Drawing.Size(139, 25);
@@ -4131,7 +4131,7 @@
             this.editProposalOrganizationNumberCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalOrganizationNumberCb.FormattingEnabled = true;
             this.editProposalOrganizationNumberCb.Location = new System.Drawing.Point(150, 158);
-            this.editProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalOrganizationNumberCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalOrganizationNumberCb.Name = "editProposalOrganizationNumberCb";
             this.editProposalOrganizationNumberCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalOrganizationNumberCb.Size = new System.Drawing.Size(40, 25);
@@ -4146,7 +4146,7 @@
             this.editProposalStatusCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalStatusCb.FormattingEnabled = true;
             this.editProposalStatusCb.Location = new System.Drawing.Point(51, 221);
-            this.editProposalStatusCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalStatusCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalStatusCb.Name = "editProposalStatusCb";
             this.editProposalStatusCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalStatusCb.Size = new System.Drawing.Size(139, 25);
@@ -4159,7 +4159,7 @@
             this.editProposalOrganizationNameCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalOrganizationNameCb.FormattingEnabled = true;
             this.editProposalOrganizationNameCb.Location = new System.Drawing.Point(51, 158);
-            this.editProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalOrganizationNameCb.Name = "editProposalOrganizationNameCb";
             this.editProposalOrganizationNameCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalOrganizationNameCb.Size = new System.Drawing.Size(96, 25);
@@ -4173,7 +4173,7 @@
             this.editProposalTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalTypeCb.FormattingEnabled = true;
             this.editProposalTypeCb.Location = new System.Drawing.Point(51, 127);
-            this.editProposalTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalTypeCb.Name = "editProposalTypeCb";
             this.editProposalTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -4185,7 +4185,7 @@
             this.editProposalRegisterTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalRegisterTypeCb.FormattingEnabled = true;
             this.editProposalRegisterTypeCb.Location = new System.Drawing.Point(51, 97);
-            this.editProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalRegisterTypeCb.Name = "editProposalRegisterTypeCb";
             this.editProposalRegisterTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalRegisterTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -4197,7 +4197,7 @@
             this.editProposalPropertyTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalPropertyTypeCb.FormattingEnabled = true;
             this.editProposalPropertyTypeCb.Location = new System.Drawing.Point(51, 64);
-            this.editProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalPropertyTypeCb.Name = "editProposalPropertyTypeCb";
             this.editProposalPropertyTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalPropertyTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -4209,7 +4209,7 @@
             this.editProposalProcedureTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalProcedureTypeCb.FormattingEnabled = true;
             this.editProposalProcedureTypeCb.Location = new System.Drawing.Point(51, 35);
-            this.editProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalProcedureTypeCb.Name = "editProposalProcedureTypeCb";
             this.editProposalProcedureTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalProcedureTypeCb.Size = new System.Drawing.Size(139, 25);
@@ -4221,7 +4221,7 @@
             this.editProposalExecutorEDegCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorEDegCb.FormattingEnabled = true;
             this.editProposalExecutorEDegCb.Location = new System.Drawing.Point(572, 148);
-            this.editProposalExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorEDegCb.Name = "editProposalExecutorEDegCb";
             this.editProposalExecutorEDegCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalExecutorEDegCb.Size = new System.Drawing.Size(139, 25);
@@ -4232,7 +4232,7 @@
             this.editProposalExecutorMobileTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorMobileTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorMobileTxtbx.Location = new System.Drawing.Point(572, 204);
-            this.editProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorMobileTxtbx.MaxLength = 20;
             this.editProposalExecutorMobileTxtbx.Name = "editProposalExecutorMobileTxtbx";
             this.editProposalExecutorMobileTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -4283,7 +4283,7 @@
             this.editProposalExecutorEmailTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorEmailTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorEmailTxtbx.Location = new System.Drawing.Point(572, 176);
-            this.editProposalExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorEmailTxtbx.MaxLength = 50;
             this.editProposalExecutorEmailTxtbx.Name = "editProposalExecutorEmailTxtbx";
             this.editProposalExecutorEmailTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -4335,7 +4335,7 @@
             this.editProposalExecutorTel2Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorTel2Txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorTel2Txtbx.Location = new System.Drawing.Point(572, 262);
-            this.editProposalExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorTel2Txtbx.MaxLength = 20;
             this.editProposalExecutorTel2Txtbx.Name = "editProposalExecutorTel2Txtbx";
             this.editProposalExecutorTel2Txtbx.Size = new System.Drawing.Size(138, 25);
@@ -4360,7 +4360,7 @@
             this.editProposalExecutorTel1Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorTel1Txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorTel1Txtbx.Location = new System.Drawing.Point(572, 232);
-            this.editProposalExecutorTel1Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorTel1Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorTel1Txtbx.MaxLength = 20;
             this.editProposalExecutorTel1Txtbx.Name = "editProposalExecutorTel1Txtbx";
             this.editProposalExecutorTel1Txtbx.Size = new System.Drawing.Size(138, 25);
@@ -4385,7 +4385,7 @@
             this.editProposalExecutorLNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorLNameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorLNameTxtbx.Location = new System.Drawing.Point(572, 61);
-            this.editProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorLNameTxtbx.MaxLength = 100;
             this.editProposalExecutorLNameTxtbx.Name = "editProposalExecutorLNameTxtbx";
             this.editProposalExecutorLNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4410,7 +4410,7 @@
             this.editProposalExecutorFNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorFNameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorFNameTxtbx.Location = new System.Drawing.Point(572, 32);
-            this.editProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorFNameTxtbx.MaxLength = 100;
             this.editProposalExecutorFNameTxtbx.Name = "editProposalExecutorFNameTxtbx";
             this.editProposalExecutorFNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4423,7 +4423,7 @@
             this.editProposalValueTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalValueTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalValueTxtbx.Location = new System.Drawing.Point(51, 189);
-            this.editProposalValueTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalValueTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalValueTxtbx.MaxLength = 18;
             this.editProposalValueTxtbx.Name = "editProposalValueTxtbx";
             this.editProposalValueTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -4520,7 +4520,7 @@
             this.editProposalDurationTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalDurationTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalDurationTxtbx.Location = new System.Drawing.Point(51, 2);
-            this.editProposalDurationTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalDurationTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalDurationTxtbx.MaxLength = 10;
             this.editProposalDurationTxtbx.Name = "editProposalDurationTxtbx";
             this.editProposalDurationTxtbx.Size = new System.Drawing.Size(139, 25);
@@ -4557,7 +4557,7 @@
             this.editProposalCoexecutorTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalCoexecutorTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalCoexecutorTxtbx.Location = new System.Drawing.Point(328, 177);
-            this.editProposalCoexecutorTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalCoexecutorTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalCoexecutorTxtbx.Multiline = true;
             this.editProposalCoexecutorTxtbx.Name = "editProposalCoexecutorTxtbx";
             this.editProposalCoexecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4631,7 +4631,7 @@
             this.editProposalExecutor2Txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutor2Txtbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.editProposalExecutor2Txtbx.Location = new System.Drawing.Point(328, 130);
-            this.editProposalExecutor2Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutor2Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutor2Txtbx.Multiline = true;
             this.editProposalExecutor2Txtbx.Name = "editProposalExecutor2Txtbx";
             this.editProposalExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4643,7 +4643,7 @@
             this.editProposalExecutorNcodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalExecutorNcodeTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalExecutorNcodeTxtbx.Location = new System.Drawing.Point(635, 2);
-            this.editProposalExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalExecutorNcodeTxtbx.MaxLength = 10;
             this.editProposalExecutorNcodeTxtbx.Name = "editProposalExecutorNcodeTxtbx";
             this.editProposalExecutorNcodeTxtbx.Size = new System.Drawing.Size(75, 25);
@@ -4657,7 +4657,7 @@
             this.editProposalKeywordsTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalKeywordsTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalKeywordsTxtbx.Location = new System.Drawing.Point(328, 73);
-            this.editProposalKeywordsTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalKeywordsTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalKeywordsTxtbx.Multiline = true;
             this.editProposalKeywordsTxtbx.Name = "editProposalKeywordsTxtbx";
             this.editProposalKeywordsTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4669,7 +4669,7 @@
             this.editProposalEnglishTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalEnglishTitleTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalEnglishTitleTxtbx.Location = new System.Drawing.Point(328, 38);
-            this.editProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalEnglishTitleTxtbx.Multiline = true;
             this.editProposalEnglishTitleTxtbx.Name = "editProposalEnglishTitleTxtbx";
             this.editProposalEnglishTitleTxtbx.Size = new System.Drawing.Size(138, 26);
@@ -4680,7 +4680,7 @@
             this.editProposalPersianTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editProposalPersianTitleTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalPersianTitleTxtbx.Location = new System.Drawing.Point(328, 2);
-            this.editProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalPersianTitleTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalPersianTitleTxtbx.Multiline = true;
             this.editProposalPersianTitleTxtbx.Name = "editProposalPersianTitleTxtbx";
             this.editProposalPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -4694,7 +4694,7 @@
             this.editProposalRegisterBtn.Enabled = false;
             this.editProposalRegisterBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalRegisterBtn.Location = new System.Drawing.Point(51, 262);
-            this.editProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalRegisterBtn.Name = "editProposalRegisterBtn";
             this.editProposalRegisterBtn.Size = new System.Drawing.Size(82, 24);
             this.editProposalRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4719,7 +4719,7 @@
             this.editProposalClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.editProposalClearBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalClearBtn.Location = new System.Drawing.Point(138, 262);
-            this.editProposalClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalClearBtn.Name = "editProposalClearBtn";
             this.editProposalClearBtn.Size = new System.Drawing.Size(94, 24);
             this.editProposalClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4736,7 +4736,7 @@
             this.editProposalShowGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.editProposalShowGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.editProposalShowGp.Location = new System.Drawing.Point(14, 342);
-            this.editProposalShowGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalShowGp.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalShowGp.Name = "editProposalShowGp";
             this.editProposalShowGp.Size = new System.Drawing.Size(847, 284);
             // 
@@ -4783,7 +4783,7 @@
             this.manageProposalNavigationPanel.Controls.Add(this.manageProposalNavigationFirstPageBtn);
             this.manageProposalNavigationPanel.Controls.Add(this.manageProposalNavigationReturnBtn);
             this.manageProposalNavigationPanel.Location = new System.Drawing.Point(98, 115);
-            this.manageProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationPanel.Name = "manageProposalNavigationPanel";
             this.manageProposalNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.manageProposalNavigationPanel.TabIndex = 3;
@@ -4798,7 +4798,7 @@
             this.manageProposalNavigationCurrentPageTxtbx.Enabled = false;
             this.manageProposalNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.manageProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationCurrentPageTxtbx.MaxLength = 5;
             this.manageProposalNavigationCurrentPageTxtbx.Name = "manageProposalNavigationCurrentPageTxtbx";
             this.manageProposalNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -4814,7 +4814,7 @@
             this.manageProposalNavigationNextPageBtn.Enabled = false;
             this.manageProposalNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.manageProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationNextPageBtn.Name = "manageProposalNavigationNextPageBtn";
             this.manageProposalNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4840,7 +4840,7 @@
             this.manageProposalNavigationLastPageBtn.Enabled = false;
             this.manageProposalNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.manageProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationLastPageBtn.Name = "manageProposalNavigationLastPageBtn";
             this.manageProposalNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4865,7 +4865,7 @@
             this.manageProposalNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageProposalNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationShowAllBtn.Location = new System.Drawing.Point(523, 3);
-            this.manageProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationShowAllBtn.Name = "manageProposalNavigationShowAllBtn";
             this.manageProposalNavigationShowAllBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4892,7 +4892,7 @@
             this.manageProposalNavigationPreviousPageBtn.Enabled = false;
             this.manageProposalNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.manageProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationPreviousPageBtn.Name = "manageProposalNavigationPreviousPageBtn";
             this.manageProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4918,7 +4918,7 @@
             this.manageProposalNavigationFirstPageBtn.Enabled = false;
             this.manageProposalNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.manageProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationFirstPageBtn.Name = "manageProposalNavigationFirstPageBtn";
             this.manageProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4944,7 +4944,7 @@
             this.manageProposalNavigationReturnBtn.Enabled = false;
             this.manageProposalNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageProposalNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.manageProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageProposalNavigationReturnBtn.Name = "manageProposalNavigationReturnBtn";
             this.manageProposalNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.manageProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -4970,7 +4970,7 @@
             this.editProposalShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.editProposalShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.editProposalShowDgv.Location = new System.Drawing.Point(10, 4);
-            this.editProposalShowDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editProposalShowDgv.Margin = new System.Windows.Forms.Padding(2);
             this.editProposalShowDgv.MultiSelect = false;
             this.editProposalShowDgv.Name = "editProposalShowDgv";
             this.editProposalShowDgv.ReadOnly = true;
@@ -5018,7 +5018,7 @@
             this.appSettingPanel.Controls.Add(this.appSettingShowGp);
             this.appSettingPanel.Controls.Add(this.appSettingGp);
             this.appSettingPanel.Location = new System.Drawing.Point(1, 2);
-            this.appSettingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingPanel.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingPanel.Name = "appSettingPanel";
             this.appSettingPanel.Size = new System.Drawing.Size(885, 654);
             this.appSettingPanel.TabIndex = 1;
@@ -5187,7 +5187,7 @@
             this.appSettingNavigationPanel.Controls.Add(this.appSettingNavigationReturnBtn);
             this.appSettingNavigationPanel.Enabled = false;
             this.appSettingNavigationPanel.Location = new System.Drawing.Point(109, 101);
-            this.appSettingNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationPanel.Name = "appSettingNavigationPanel";
             this.appSettingNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.appSettingNavigationPanel.TabIndex = 4;
@@ -5201,7 +5201,7 @@
             this.appSettingNavigationCurrentPageTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.appSettingNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.appSettingNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationCurrentPageTxtbx.MaxLength = 5;
             this.appSettingNavigationCurrentPageTxtbx.Name = "appSettingNavigationCurrentPageTxtbx";
             this.appSettingNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -5215,7 +5215,7 @@
             this.appSettingNavigationNextPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.appSettingNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.appSettingNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationNextPageBtn.Name = "appSettingNavigationNextPageBtn";
             this.appSettingNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.appSettingNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5239,7 +5239,7 @@
             this.appSettingNavigationLastPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.appSettingNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.appSettingNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationLastPageBtn.Name = "appSettingNavigationLastPageBtn";
             this.appSettingNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.appSettingNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5263,7 +5263,7 @@
             this.appSettingNavigationPreviousPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.appSettingNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.appSettingNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationPreviousPageBtn.Name = "appSettingNavigationPreviousPageBtn";
             this.appSettingNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.appSettingNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5287,7 +5287,7 @@
             this.appSettingNavigationFirstPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.appSettingNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.appSettingNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationFirstPageBtn.Name = "appSettingNavigationFirstPageBtn";
             this.appSettingNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.appSettingNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5311,7 +5311,7 @@
             this.appSettingNavigationReturnBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.appSettingNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.appSettingNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingNavigationReturnBtn.Name = "appSettingNavigationReturnBtn";
             this.appSettingNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.appSettingNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5337,7 +5337,7 @@
             this.appSettingShowDv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.appSettingShowDv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appSettingShowDv.Location = new System.Drawing.Point(10, 1);
-            this.appSettingShowDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingShowDv.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingShowDv.MultiSelect = false;
             this.appSettingShowDv.Name = "appSettingShowDv";
             this.appSettingShowDv.ReadOnly = true;
@@ -5796,7 +5796,7 @@
             this.superTabControlPanel12.Controls.Add(this.manageTeacherPanel);
             this.superTabControlPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel12.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.superTabControlPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel12.Name = "superTabControlPanel12";
             this.superTabControlPanel12.Size = new System.Drawing.Size(860, 705);
             this.superTabControlPanel12.TabIndex = 0;
@@ -5808,7 +5808,7 @@
             this.manageTeacherPanel.Controls.Add(this.teacherManageShowGp);
             this.manageTeacherPanel.Controls.Add(this.manageTeacherInfoGp);
             this.manageTeacherPanel.Location = new System.Drawing.Point(1, 9);
-            this.manageTeacherPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherPanel.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherPanel.Name = "manageTeacherPanel";
             this.manageTeacherPanel.Size = new System.Drawing.Size(884, 652);
             this.manageTeacherPanel.TabIndex = 2;
@@ -5870,7 +5870,7 @@
             this.manageTeacherNavigationPanel.Controls.Add(this.manageTeacherNavigationFirstPageBtn);
             this.manageTeacherNavigationPanel.Controls.Add(this.manageTeacherNavigationReturnBtn);
             this.manageTeacherNavigationPanel.Location = new System.Drawing.Point(96, 136);
-            this.manageTeacherNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationPanel.Name = "manageTeacherNavigationPanel";
             this.manageTeacherNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.manageTeacherNavigationPanel.TabIndex = 4;
@@ -5881,7 +5881,7 @@
             this.manageTeacherNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.manageTeacherNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationShowAllBtn.Location = new System.Drawing.Point(522, 3);
-            this.manageTeacherNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationShowAllBtn.Name = "manageTeacherNavigationShowAllBtn";
             this.manageTeacherNavigationShowAllBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5911,7 +5911,7 @@
             this.manageTeacherNavigationCurrentPageTxtbx.Enabled = false;
             this.manageTeacherNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.manageTeacherNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationCurrentPageTxtbx.MaxLength = 5;
             this.manageTeacherNavigationCurrentPageTxtbx.Name = "manageTeacherNavigationCurrentPageTxtbx";
             this.manageTeacherNavigationCurrentPageTxtbx.PreventEnterBeep = true;
@@ -5927,7 +5927,7 @@
             this.manageTeacherNavigationNextPageBtn.Enabled = false;
             this.manageTeacherNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.manageTeacherNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationNextPageBtn.Name = "manageTeacherNavigationNextPageBtn";
             this.manageTeacherNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5953,7 +5953,7 @@
             this.manageTeacherNavigationLastPageBtn.Enabled = false;
             this.manageTeacherNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.manageTeacherNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationLastPageBtn.Name = "manageTeacherNavigationLastPageBtn";
             this.manageTeacherNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -5979,7 +5979,7 @@
             this.manageTeacherNavigationPreviousPageBtn.Enabled = false;
             this.manageTeacherNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.manageTeacherNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationPreviousPageBtn.Name = "manageTeacherNavigationPreviousPageBtn";
             this.manageTeacherNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -6005,7 +6005,7 @@
             this.manageTeacherNavigationFirstPageBtn.Enabled = false;
             this.manageTeacherNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.manageTeacherNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationFirstPageBtn.Name = "manageTeacherNavigationFirstPageBtn";
             this.manageTeacherNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -6031,7 +6031,7 @@
             this.manageTeacherNavigationReturnBtn.Enabled = false;
             this.manageTeacherNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageTeacherNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.manageTeacherNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherNavigationReturnBtn.Name = "manageTeacherNavigationReturnBtn";
             this.manageTeacherNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.manageTeacherNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -6056,7 +6056,7 @@
             this.manageTeacherShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.manageTeacherShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageTeacherShowDgv.Location = new System.Drawing.Point(12, 2);
-            this.manageTeacherShowDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherShowDgv.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherShowDgv.MultiSelect = false;
             this.manageTeacherShowDgv.Name = "manageTeacherShowDgv";
             this.manageTeacherShowDgv.ReadOnly = true;
@@ -6175,7 +6175,7 @@
             // 
             this.manageTeacherExecutorTel2Txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherExecutorTel2Txtbx.Location = new System.Drawing.Point(73, 145);
-            this.manageTeacherExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorTel2Txtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorTel2Txtbx.Name = "manageTeacherExecutorTel2Txtbx";
             this.manageTeacherExecutorTel2Txtbx.Size = new System.Drawing.Size(138, 25);
             this.manageTeacherExecutorTel2Txtbx.TabIndex = 10;
@@ -6184,7 +6184,7 @@
             // 
             this.manageTeacherExecutorMobileTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherExecutorMobileTxtbx.Location = new System.Drawing.Point(73, 57);
-            this.manageTeacherExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorMobileTxtbx.Name = "manageTeacherExecutorMobileTxtbx";
             this.manageTeacherExecutorMobileTxtbx.Size = new System.Drawing.Size(138, 25);
             this.manageTeacherExecutorMobileTxtbx.TabIndex = 8;
@@ -6193,7 +6193,7 @@
             // 
             this.manageTeacherExecutorEmailTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherExecutorEmailTxtbx.Location = new System.Drawing.Point(73, 14);
-            this.manageTeacherExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorEmailTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorEmailTxtbx.Name = "manageTeacherExecutorEmailTxtbx";
             this.manageTeacherExecutorEmailTxtbx.Size = new System.Drawing.Size(138, 25);
             this.manageTeacherExecutorEmailTxtbx.TabIndex = 7;
@@ -6204,7 +6204,7 @@
             // 
             this.manageTeacherExecutorTelTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherExecutorTelTxtbx.Location = new System.Drawing.Point(73, 102);
-            this.manageTeacherExecutorTelTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorTelTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorTelTxtbx.Name = "manageTeacherExecutorTelTxtbx";
             this.manageTeacherExecutorTelTxtbx.Size = new System.Drawing.Size(138, 25);
             this.manageTeacherExecutorTelTxtbx.TabIndex = 9;
@@ -6227,7 +6227,7 @@
             this.manageTeacherExecutorEgroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.manageTeacherExecutorEgroupCb.FormattingEnabled = true;
             this.manageTeacherExecutorEgroupCb.Location = new System.Drawing.Point(352, 17);
-            this.manageTeacherExecutorEgroupCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorEgroupCb.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorEgroupCb.Name = "manageTeacherExecutorEgroupCb";
             this.manageTeacherExecutorEgroupCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherExecutorEgroupCb.Size = new System.Drawing.Size(139, 25);
@@ -6238,7 +6238,7 @@
             this.manageTeacherExecutorFacultyCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.manageTeacherExecutorFacultyCb.FormattingEnabled = true;
             this.manageTeacherExecutorFacultyCb.Location = new System.Drawing.Point(352, 149);
-            this.manageTeacherExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorFacultyCb.Name = "manageTeacherExecutorFacultyCb";
             this.manageTeacherExecutorFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherExecutorFacultyCb.Size = new System.Drawing.Size(138, 25);
@@ -6249,7 +6249,7 @@
             // 
             this.manageTeacherLnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherLnameTxtbx.Location = new System.Drawing.Point(586, 149);
-            this.manageTeacherLnameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherLnameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherLnameTxtbx.Name = "manageTeacherLnameTxtbx";
             this.manageTeacherLnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherLnameTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -6259,7 +6259,7 @@
             // 
             this.manageTeacherExecutorNcodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherExecutorNcodeTxtbx.Location = new System.Drawing.Point(586, 22);
-            this.manageTeacherExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorNcodeTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorNcodeTxtbx.MaxLength = 10;
             this.manageTeacherExecutorNcodeTxtbx.Name = "manageTeacherExecutorNcodeTxtbx";
             this.manageTeacherExecutorNcodeTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -6272,7 +6272,7 @@
             // 
             this.manageTeacherFnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.manageTeacherFnameTxtbx.Location = new System.Drawing.Point(586, 84);
-            this.manageTeacherFnameTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherFnameTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherFnameTxtbx.Name = "manageTeacherFnameTxtbx";
             this.manageTeacherFnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherFnameTxtbx.Size = new System.Drawing.Size(138, 25);
@@ -6283,7 +6283,7 @@
             this.manageTeacherExecutorEDegCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.manageTeacherExecutorEDegCb.FormattingEnabled = true;
             this.manageTeacherExecutorEDegCb.Location = new System.Drawing.Point(352, 84);
-            this.manageTeacherExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.manageTeacherExecutorEDegCb.Margin = new System.Windows.Forms.Padding(2);
             this.manageTeacherExecutorEDegCb.Name = "manageTeacherExecutorEDegCb";
             this.manageTeacherExecutorEDegCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherExecutorEDegCb.Size = new System.Drawing.Size(139, 25);
@@ -6484,7 +6484,7 @@
             this.personalSettingPanel.Controls.Add(this.personalSettingThemeGp);
             this.personalSettingPanel.Controls.Add(this.personalSettingPasswordGp);
             this.personalSettingPanel.Location = new System.Drawing.Point(-1, 0);
-            this.personalSettingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingPanel.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingPanel.Name = "personalSettingPanel";
             this.personalSettingPanel.Size = new System.Drawing.Size(889, 666);
             this.personalSettingPanel.TabIndex = 1;
@@ -6499,7 +6499,7 @@
             this.personalSettingThemeGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.personalSettingThemeGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.personalSettingThemeGp.Location = new System.Drawing.Point(20, 278);
-            this.personalSettingThemeGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingThemeGp.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingThemeGp.Name = "personalSettingThemeGp";
             this.personalSettingThemeGp.Size = new System.Drawing.Size(848, 285);
             // 
@@ -6544,7 +6544,7 @@
             this.appSettingBackgroundChangeGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.appSettingBackgroundChangeGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingBackgroundChangeGp.Location = new System.Drawing.Point(362, 68);
-            this.appSettingBackgroundChangeGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.appSettingBackgroundChangeGp.Margin = new System.Windows.Forms.Padding(2);
             this.appSettingBackgroundChangeGp.Name = "appSettingBackgroundChangeGp";
             this.appSettingBackgroundChangeGp.Size = new System.Drawing.Size(134, 139);
             // 
@@ -6644,7 +6644,7 @@
             this.personalSettingPasswordGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.personalSettingPasswordGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.personalSettingPasswordGp.Location = new System.Drawing.Point(20, 10);
-            this.personalSettingPasswordGp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingPasswordGp.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingPasswordGp.Name = "personalSettingPasswordGp";
             this.personalSettingPasswordGp.Size = new System.Drawing.Size(848, 241);
             // 
@@ -6683,7 +6683,7 @@
             // 
             this.personalSettingOldPasswordChb.BackColor = System.Drawing.Color.Transparent;
             this.personalSettingOldPasswordChb.Location = new System.Drawing.Point(474, 35);
-            this.personalSettingOldPasswordChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingOldPasswordChb.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingOldPasswordChb.Name = "personalSettingOldPasswordChb";
             this.personalSettingOldPasswordChb.Size = new System.Drawing.Size(22, 24);
             this.personalSettingOldPasswordChb.TabIndex = 37;
@@ -6695,7 +6695,7 @@
             // 
             this.personalSettingNewPasswordChb.BackColor = System.Drawing.Color.Transparent;
             this.personalSettingNewPasswordChb.Location = new System.Drawing.Point(474, 66);
-            this.personalSettingNewPasswordChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingNewPasswordChb.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingNewPasswordChb.Name = "personalSettingNewPasswordChb";
             this.personalSettingNewPasswordChb.Size = new System.Drawing.Size(22, 20);
             this.personalSettingNewPasswordChb.TabIndex = 36;
@@ -6707,7 +6707,7 @@
             // 
             this.personalSettingRepeatPasswordChb.BackColor = System.Drawing.Color.Transparent;
             this.personalSettingRepeatPasswordChb.Location = new System.Drawing.Point(474, 93);
-            this.personalSettingRepeatPasswordChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingRepeatPasswordChb.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingRepeatPasswordChb.Name = "personalSettingRepeatPasswordChb";
             this.personalSettingRepeatPasswordChb.Size = new System.Drawing.Size(22, 20);
             this.personalSettingRepeatPasswordChb.TabIndex = 35;
@@ -6719,7 +6719,7 @@
             // 
             this.personalSettingRepeatPasswordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.personalSettingRepeatPasswordTxtbx.Location = new System.Drawing.Point(253, 92);
-            this.personalSettingRepeatPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingRepeatPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingRepeatPasswordTxtbx.MaxLength = 12;
             this.personalSettingRepeatPasswordTxtbx.Name = "personalSettingRepeatPasswordTxtbx";
             this.personalSettingRepeatPasswordTxtbx.PasswordChar = '●';
@@ -6730,7 +6730,7 @@
             // 
             this.personalSettingNewPasswordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.personalSettingNewPasswordTxtbx.Location = new System.Drawing.Point(253, 63);
-            this.personalSettingNewPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingNewPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingNewPasswordTxtbx.MaxLength = 12;
             this.personalSettingNewPasswordTxtbx.Name = "personalSettingNewPasswordTxtbx";
             this.personalSettingNewPasswordTxtbx.PasswordChar = '●';
@@ -6741,7 +6741,7 @@
             // 
             this.personalSettingOldPasswordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.personalSettingOldPasswordTxtbx.Location = new System.Drawing.Point(253, 35);
-            this.personalSettingOldPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingOldPasswordTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingOldPasswordTxtbx.MaxLength = 12;
             this.personalSettingOldPasswordTxtbx.Name = "personalSettingOldPasswordTxtbx";
             this.personalSettingOldPasswordTxtbx.PasswordChar = '●';
@@ -6790,7 +6790,7 @@
             this.personalSettingRegisterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.personalSettingRegisterBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.personalSettingRegisterBtn.Location = new System.Drawing.Point(253, 136);
-            this.personalSettingRegisterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingRegisterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingRegisterBtn.Name = "personalSettingRegisterBtn";
             this.personalSettingRegisterBtn.Size = new System.Drawing.Size(94, 30);
             this.personalSettingRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -6804,7 +6804,7 @@
             this.personalSettingClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.personalSettingClearBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.personalSettingClearBtn.Location = new System.Drawing.Point(375, 136);
-            this.personalSettingClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalSettingClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.personalSettingClearBtn.Name = "personalSettingClearBtn";
             this.personalSettingClearBtn.Size = new System.Drawing.Size(94, 30);
             this.personalSettingClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -6826,7 +6826,7 @@
             this.superTabControlPanel10.Controls.Add(this.aboutUsPanel);
             this.superTabControlPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel10.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.superTabControlPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel10.Name = "superTabControlPanel10";
             this.superTabControlPanel10.Size = new System.Drawing.Size(853, 705);
             this.superTabControlPanel10.TabIndex = 0;
@@ -6837,7 +6837,7 @@
             this.aboutUsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.aboutUsPanel.Controls.Add(this.aboutUsGp);
             this.aboutUsPanel.Location = new System.Drawing.Point(2, 8);
-            this.aboutUsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aboutUsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.aboutUsPanel.Name = "aboutUsPanel";
             this.aboutUsPanel.Size = new System.Drawing.Size(876, 594);
             this.aboutUsPanel.TabIndex = 2;
@@ -6998,7 +6998,7 @@
             this.superTabControlPanel11.Controls.Add(this.logPanel);
             this.superTabControlPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel11.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.superTabControlPanel11.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel11.Name = "superTabControlPanel11";
             this.superTabControlPanel11.Size = new System.Drawing.Size(853, 705);
             this.superTabControlPanel11.TabIndex = 1;
@@ -7010,7 +7010,7 @@
             this.logPanel.Controls.Add(this.logNavigationPanel);
             this.logPanel.Controls.Add(this.logDgv);
             this.logPanel.Location = new System.Drawing.Point(2, 2);
-            this.logPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logPanel.Margin = new System.Windows.Forms.Padding(2);
             this.logPanel.Name = "logPanel";
             this.logPanel.Size = new System.Drawing.Size(898, 586);
             this.logPanel.TabIndex = 2;
@@ -7027,7 +7027,7 @@
             this.logNavigationPanel.Controls.Add(this.logNavigationFirstPageBtn);
             this.logNavigationPanel.Controls.Add(this.logNavigationReturnBtn);
             this.logNavigationPanel.Location = new System.Drawing.Point(147, 420);
-            this.logNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationPanel.Name = "logNavigationPanel";
             this.logNavigationPanel.Size = new System.Drawing.Size(615, 33);
             this.logNavigationPanel.TabIndex = 5;
@@ -7041,7 +7041,7 @@
             this.logNavigationCurrentPageTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.logNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(271, 3);
-            this.logNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationCurrentPageTxtbx.MaxLength = 5;
             this.logNavigationCurrentPageTxtbx.Multiline = true;
             this.logNavigationCurrentPageTxtbx.Name = "logNavigationCurrentPageTxtbx";
@@ -7057,7 +7057,7 @@
             this.logNavigationNextPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.logNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationNextPageBtn.Location = new System.Drawing.Point(349, 3);
-            this.logNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationNextPageBtn.Name = "logNavigationNextPageBtn";
             this.logNavigationNextPageBtn.Size = new System.Drawing.Size(82, 24);
             this.logNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -7082,7 +7082,7 @@
             this.logNavigationLastPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.logNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationLastPageBtn.Location = new System.Drawing.Point(436, 3);
-            this.logNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationLastPageBtn.Name = "logNavigationLastPageBtn";
             this.logNavigationLastPageBtn.Size = new System.Drawing.Size(82, 24);
             this.logNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -7107,7 +7107,7 @@
             this.logNavigationPreviousPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.logNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationPreviousPageBtn.Location = new System.Drawing.Point(184, 3);
-            this.logNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationPreviousPageBtn.Name = "logNavigationPreviousPageBtn";
             this.logNavigationPreviousPageBtn.Size = new System.Drawing.Size(82, 24);
             this.logNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -7132,7 +7132,7 @@
             this.logNavigationFirstPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.logNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationFirstPageBtn.Location = new System.Drawing.Point(97, 3);
-            this.logNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationFirstPageBtn.Name = "logNavigationFirstPageBtn";
             this.logNavigationFirstPageBtn.Size = new System.Drawing.Size(82, 24);
             this.logNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -7157,7 +7157,7 @@
             this.logNavigationReturnBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.logNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.logNavigationReturnBtn.Location = new System.Drawing.Point(10, 3);
-            this.logNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logNavigationReturnBtn.Name = "logNavigationReturnBtn";
             this.logNavigationReturnBtn.Size = new System.Drawing.Size(82, 24);
             this.logNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
@@ -7183,7 +7183,7 @@
             this.logDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.logDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.logDgv.Location = new System.Drawing.Point(14, 15);
-            this.logDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logDgv.Margin = new System.Windows.Forms.Padding(2);
             this.logDgv.MultiSelect = false;
             this.logDgv.Name = "logDgv";
             this.logDgv.ReadOnly = true;
@@ -7219,7 +7219,7 @@
             // 
             this.superTabControlPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel13.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.superTabControlPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel13.Name = "superTabControlPanel13";
             this.superTabControlPanel13.Size = new System.Drawing.Size(860, 705);
             this.superTabControlPanel13.TabIndex = 0;
@@ -7281,7 +7281,7 @@
             this.iconMenuPanel.Controls.Add(this.menuAddProposalBtn);
             this.iconMenuPanel.Controls.Add(this.menuHomeBtn);
             this.iconMenuPanel.Location = new System.Drawing.Point(1028, 0);
-            this.iconMenuPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconMenuPanel.Margin = new System.Windows.Forms.Padding(2);
             this.iconMenuPanel.Name = "iconMenuPanel";
             this.iconMenuPanel.Size = new System.Drawing.Size(50, 629);
             this.iconMenuPanel.TabIndex = 1;
@@ -7292,7 +7292,7 @@
             this.menuSlideRb.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menuSlideRb.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSlideRb.Location = new System.Drawing.Point(2, 602);
-            this.menuSlideRb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuSlideRb.Margin = new System.Windows.Forms.Padding(2);
             this.menuSlideRb.Name = "menuSlideRb";
             this.menuSlideRb.Size = new System.Drawing.Size(44, 17);
             this.menuSlideRb.TabIndex = 33;
@@ -7306,7 +7306,7 @@
             this.menuDetailRb.Checked = true;
             this.menuDetailRb.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuDetailRb.Location = new System.Drawing.Point(-3, 578);
-            this.menuDetailRb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuDetailRb.Margin = new System.Windows.Forms.Padding(2);
             this.menuDetailRb.Name = "menuDetailRb";
             this.menuDetailRb.Size = new System.Drawing.Size(50, 17);
             this.menuDetailRb.TabIndex = 32;
@@ -7321,7 +7321,7 @@
             this.menuIconRb.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menuIconRb.Font = new System.Drawing.Font("B Yekan+", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuIconRb.Location = new System.Drawing.Point(1, 554);
-            this.menuIconRb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuIconRb.Margin = new System.Windows.Forms.Padding(2);
             this.menuIconRb.Name = "menuIconRb";
             this.menuIconRb.Size = new System.Drawing.Size(46, 20);
             this.menuIconRb.TabIndex = 31;
@@ -7339,7 +7339,7 @@
             this.menuExitBtn.Image = global::ProposalReportingSystem.Properties.Resources.sign_out_option_1_;
             this.menuExitBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuExitBtn.Location = new System.Drawing.Point(5, 506);
-            this.menuExitBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuExitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuExitBtn.Name = "menuExitBtn";
             this.menuExitBtn.PulseSpeed = 5;
             this.menuExitBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7358,7 +7358,7 @@
             this.menuSysLogBtn.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
             this.menuSysLogBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuSysLogBtn.Location = new System.Drawing.Point(5, 451);
-            this.menuSysLogBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuSysLogBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuSysLogBtn.Name = "menuSysLogBtn";
             this.menuSysLogBtn.PulseSpeed = 5;
             this.menuSysLogBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7377,7 +7377,7 @@
             this.menuAboutUsBtn.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
             this.menuAboutUsBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuAboutUsBtn.Location = new System.Drawing.Point(5, 401);
-            this.menuAboutUsBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuAboutUsBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuAboutUsBtn.Name = "menuAboutUsBtn";
             this.menuAboutUsBtn.PulseSpeed = 5;
             this.menuAboutUsBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7396,7 +7396,7 @@
             this.menuPersonalSettingBtn.Image = global::ProposalReportingSystem.Properties.Resources.user__1_;
             this.menuPersonalSettingBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuPersonalSettingBtn.Location = new System.Drawing.Point(5, 352);
-            this.menuPersonalSettingBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuPersonalSettingBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuPersonalSettingBtn.Name = "menuPersonalSettingBtn";
             this.menuPersonalSettingBtn.PulseSpeed = 5;
             this.menuPersonalSettingBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7415,7 +7415,7 @@
             this.menuAppSettingBtn.Image = global::ProposalReportingSystem.Properties.Resources.settings;
             this.menuAppSettingBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuAppSettingBtn.Location = new System.Drawing.Point(2, 302);
-            this.menuAppSettingBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuAppSettingBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuAppSettingBtn.Name = "menuAppSettingBtn";
             this.menuAppSettingBtn.PulseSpeed = 5;
             this.menuAppSettingBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7434,7 +7434,7 @@
             this.menuManageUserBtn.Image = global::ProposalReportingSystem.Properties.Resources.user;
             this.menuManageUserBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuManageUserBtn.Location = new System.Drawing.Point(2, 253);
-            this.menuManageUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuManageUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuManageUserBtn.Name = "menuManageUserBtn";
             this.menuManageUserBtn.PulseSpeed = 5;
             this.menuManageUserBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7453,7 +7453,7 @@
             this.menuManageTeacherBtn.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
             this.menuManageTeacherBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuManageTeacherBtn.Location = new System.Drawing.Point(4, 204);
-            this.menuManageTeacherBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuManageTeacherBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuManageTeacherBtn.Name = "menuManageTeacherBtn";
             this.menuManageTeacherBtn.PulseSpeed = 5;
             this.menuManageTeacherBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7472,7 +7472,7 @@
             this.menuManageProposalBtn.Image = global::ProposalReportingSystem.Properties.Resources.file;
             this.menuManageProposalBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuManageProposalBtn.Location = new System.Drawing.Point(4, 154);
-            this.menuManageProposalBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuManageProposalBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuManageProposalBtn.Name = "menuManageProposalBtn";
             this.menuManageProposalBtn.PulseSpeed = 5;
             this.menuManageProposalBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7491,7 +7491,7 @@
             this.menuSearchProposalBtn.Image = global::ProposalReportingSystem.Properties.Resources.search;
             this.menuSearchProposalBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuSearchProposalBtn.Location = new System.Drawing.Point(4, 102);
-            this.menuSearchProposalBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuSearchProposalBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuSearchProposalBtn.Name = "menuSearchProposalBtn";
             this.menuSearchProposalBtn.PulseSpeed = 5;
             this.menuSearchProposalBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7510,7 +7510,7 @@
             this.menuAddProposalBtn.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
             this.menuAddProposalBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuAddProposalBtn.Location = new System.Drawing.Point(3, 52);
-            this.menuAddProposalBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuAddProposalBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuAddProposalBtn.Name = "menuAddProposalBtn";
             this.menuAddProposalBtn.PulseSpeed = 5;
             this.menuAddProposalBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);
@@ -7530,7 +7530,7 @@
             this.menuHomeBtn.Image = global::ProposalReportingSystem.Properties.Resources.home;
             this.menuHomeBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.menuHomeBtn.Location = new System.Drawing.Point(2, 2);
-            this.menuHomeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuHomeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuHomeBtn.Name = "menuHomeBtn";
             this.menuHomeBtn.PulseSpeed = 5;
             this.menuHomeBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 40, 2);

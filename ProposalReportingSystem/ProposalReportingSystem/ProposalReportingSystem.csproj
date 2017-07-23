@@ -105,6 +105,10 @@
     <Reference Include="FarsiLibrary.Win">
       <HintPath>C:\Users\ASUS\Desktop\FarsiLibrary\FarsiLibrary.Win.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ShDateTimePicker">
+      <HintPath>..\..\..\..\..\Desktop\ShDateTimePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Stimulsoft.Base">
       <HintPath>G:\Software\Programming\Stimulsoft Reports Ultimate Suite\Stimulsoft Reports Ultimate Suite 2015.2 Retail\Net\Stimulsoft.Base.dll</HintPath>
     </Reference>
