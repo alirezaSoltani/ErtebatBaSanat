@@ -108,7 +108,6 @@ namespace ProposalReportingSystem
         {
             InitializeComponent();
 
-            
             loginUser = user;
             dbh = new DataBaseHandler();// initialized here so that we can send user Ncode to dbHandler
 
@@ -2624,6 +2623,12 @@ namespace ProposalReportingSystem
             searchProposalShowDgv.Columns.Clear();
             searchProposalShowDgv.DataSource = null;
             searchProposalShowAllBtn.Enabled = true;
+
+            if (loginUser.U_Faculty != "")
+            {
+                searchProposalExecutorFacultyCb.Text = loginUser.U_Faculty;
+                searchProposalExecutorFacultyCb.Enabled = false;
+            }
         }
 
         private void manageUserClearBtn_Click(object sender, EventArgs e)
@@ -3065,25 +3070,48 @@ namespace ProposalReportingSystem
                 try
                 {
                     teacher = dbh.getExecutorInfo(long.Parse(searchProposalExecutorNCodeTxtbx.Text));
-
+                    
                     if (teacher.T_FName.ToString() != "notfound")
                     {
-                        searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
+                        if (loginUser.U_Faculty == "")
+                        {
+                            searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
 
-                        // Fill componenets with existing information
-                        searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
-                        searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
-                        searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
-                        searchProposalExecutorEGroupCb.Text = teacher.T_Group;
-                        searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+                            // Fill componenets with existing information
+                            searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                            searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                            searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+                            searchProposalExecutorEGroupCb.Text = teacher.T_Group;
+                            searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
 
-                        //make components uneditable
-                        searchProposalExecutorFNameTxtbx.Enabled = false;
-                        searchProposalExecutorLNameTxtbx.Enabled = false;
-                        searchProposalExecutorFacultyCb.Enabled = false;
-                        searchProposalExecutorEGroupCb.Enabled = false;
-                        searchProposalExecutorMobileTxtbx.Enabled = false;
+                            //make components uneditable
+                            searchProposalExecutorFNameTxtbx.Enabled = false;
+                            searchProposalExecutorLNameTxtbx.Enabled = false;
+                            searchProposalExecutorFacultyCb.Enabled = false;
+                            searchProposalExecutorEGroupCb.Enabled = false;
+                            searchProposalExecutorMobileTxtbx.Enabled = false;
+                        }
+                       else if(loginUser.U_Faculty == teacher.T_Faculty)
+                        {
+                            searchProposalExecutorNCodeTxtbx.BackColor = Color.LightGreen;
+
+                            // Fill componenets with existing information
+                            searchProposalExecutorFNameTxtbx.Text = teacher.T_FName;
+                            searchProposalExecutorLNameTxtbx.Text = teacher.T_LName;
+                            searchProposalExecutorFacultyCb.Text = teacher.T_Faculty;
+                            searchProposalExecutorEGroupCb.Text = teacher.T_Group;
+                            searchProposalExecutorMobileTxtbx.Text = teacher.T_Mobile;
+
+                            //make components uneditable
+                            searchProposalExecutorFNameTxtbx.Enabled = false;
+                            searchProposalExecutorLNameTxtbx.Enabled = false;
+                            searchProposalExecutorFacultyCb.Enabled = false;
+                            searchProposalExecutorEGroupCb.Enabled = false;
+                            searchProposalExecutorMobileTxtbx.Enabled = false;
+                        }
                     }
+
+                   
                 }
                 catch(NullReferenceException)
                 {
@@ -3099,19 +3127,38 @@ namespace ProposalReportingSystem
             } 
             else
             {
-                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                if (loginUser.U_Faculty == "")
+                {
+                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
 
-                searchProposalExecutorFNameTxtbx.Enabled = true;
-                searchProposalExecutorLNameTxtbx.Enabled = true;
-                searchProposalExecutorFacultyCb.Enabled = true;
-                searchProposalExecutorEGroupCb.Enabled = true;
-                searchProposalExecutorMobileTxtbx.Enabled = true;
+                    searchProposalExecutorFNameTxtbx.Enabled = true;
+                    searchProposalExecutorLNameTxtbx.Enabled = true;
+                    searchProposalExecutorFacultyCb.Enabled = true;
+                    searchProposalExecutorEGroupCb.Enabled = true;
+                    searchProposalExecutorMobileTxtbx.Enabled = true;
 
-                searchProposalExecutorFNameTxtbx.Clear();
-                searchProposalExecutorLNameTxtbx.Clear();
-                searchProposalExecutorFacultyCb.SelectedIndex = -1;
-                searchProposalExecutorEGroupCb.SelectedIndex = -1;
-                searchProposalExecutorMobileTxtbx.Clear();
+                    searchProposalExecutorFNameTxtbx.Clear();
+                    searchProposalExecutorLNameTxtbx.Clear();
+                    searchProposalExecutorFacultyCb.SelectedIndex = -1;
+                    searchProposalExecutorEGroupCb.SelectedIndex = -1;
+                    searchProposalExecutorMobileTxtbx.Clear();
+                }
+                else
+                {
+                    searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+
+                    searchProposalExecutorFNameTxtbx.Enabled = true;
+                    searchProposalExecutorLNameTxtbx.Enabled = true;
+                    //searchProposalExecutorFacultyCb.Enabled = true;
+                    searchProposalExecutorEGroupCb.Enabled = true;
+                    searchProposalExecutorMobileTxtbx.Enabled = true;
+
+                    searchProposalExecutorFNameTxtbx.Clear();
+                    searchProposalExecutorLNameTxtbx.Clear();
+                   // searchProposalExecutorFacultyCb.SelectedIndex = -1;
+                    searchProposalExecutorEGroupCb.SelectedIndex = -1;
+                    searchProposalExecutorMobileTxtbx.Clear();
+                }
             }
         }
 
@@ -5960,6 +6007,10 @@ namespace ProposalReportingSystem
 
         private void searchProposalSearchBtn_Click(object sender, EventArgs e)
         {
+            if(loginUser.U_Faculty != "")
+            {
+                searchProposalExecutorFacultyCb.Enabled = true; 
+            }
             List<long> NCODES = new List<long>();
 
             string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ";
@@ -5989,6 +6040,10 @@ namespace ProposalReportingSystem
 
             query2 = query2.Substring(0, query2.Length - 3);
 
+            if (loginUser.U_Faculty != "")
+            {
+                searchProposalExecutorFacultyCb.Enabled = false;
+            }
 
             if (query2 != "SELECT t_NCode FROM teacherTable WHE")
             {
@@ -6593,6 +6648,15 @@ namespace ProposalReportingSystem
             {
                 searchProposalStatusCb.Items.Add(statusType);
             }
+
+            //just a faculty
+            if (loginUser.U_Faculty != "")
+            {
+                searchProposalExecutorFacultyCb.Text = loginUser.U_Faculty;
+                searchProposalExecutorFacultyCb.Enabled = false;
+            }
+            //just a faculty
+
             //*************************************************************************\\
             //                                Search Proposal                          \\
             //*************************************************************************\\
