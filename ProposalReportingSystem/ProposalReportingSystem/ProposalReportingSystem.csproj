@@ -47,6 +47,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\BPersianCalender.dll</HintPath>
     </Reference>
+    <Reference Include="DateTimeSelector">
+      <HintPath>..\..\..\..\..\Desktop\DateTimeSelector.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.Charts.Design, Version=12.9.0.0, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Charts.Design.dll</HintPath>

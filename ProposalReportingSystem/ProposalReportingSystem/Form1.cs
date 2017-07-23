@@ -324,8 +324,8 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 70, 25);
-            //gl.setSize(dateTimePicker1, 290, 370, 160, 35);
-            gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
+            gl.setSize(dateTimeSelector1, 290, 370, 160, 35);
+            //gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
 
 
             gl.setSize(addProposalDurationLbl, 200, 10, 80, 25);

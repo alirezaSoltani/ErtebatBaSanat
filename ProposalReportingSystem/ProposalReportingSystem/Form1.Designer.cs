@@ -520,6 +520,7 @@
             this.addProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dateTimeSelector1 = new Atf.UI.DateTimeSelector();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPage)).BeginInit();
             this.mainPage.SuspendLayout();
@@ -981,6 +982,7 @@
             // 
             this.addProposalAddGp.CanvasColor = System.Drawing.SystemColors.Control;
             this.addProposalAddGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.addProposalAddGp.Controls.Add(this.dateTimeSelector1);
             this.addProposalAddGp.Controls.Add(this.addProposalEnglishTitleTxtbx);
             this.addProposalAddGp.Controls.Add(this.addProposalSearchBtn);
             this.addProposalAddGp.Controls.Add(this.addProposalShowAllBtn);
@@ -7540,6 +7542,14 @@
             this.menuHomeBtn.Click += new System.EventHandler(this.menuHomeBtn_Click);
             this.menuHomeBtn.MouseEnter += new System.EventHandler(this.iconMenuPanel_MouseEnter);
             // 
+            // dateTimeSelector1
+            // 
+            this.dateTimeSelector1.Location = new System.Drawing.Point(346, 226);
+            this.dateTimeSelector1.Name = "dateTimeSelector1";
+            this.dateTimeSelector1.Size = new System.Drawing.Size(138, 26);
+            this.dateTimeSelector1.TabIndex = 119;
+            this.dateTimeSelector1.UsePersianFormat = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8102,6 +8112,7 @@
         private BehComponents.MonthCalendarX monthCalendarX1;
         private System.Windows.Forms.CheckBox manageUserFacultyCb;
         private System.Windows.Forms.ComboBox manageUserFacultyCmb;
+        private Atf.UI.DateTimeSelector dateTimeSelector1;
     }
 }
 
