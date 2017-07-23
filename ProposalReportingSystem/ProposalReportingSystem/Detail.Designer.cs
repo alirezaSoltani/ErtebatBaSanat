@@ -140,10 +140,9 @@
             this.detailSenderGradeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailSenderGradeTxtbx.Location = new System.Drawing.Point(55, 592);
             this.detailSenderGradeTxtbx.MaxLength = 75;
-            this.detailSenderGradeTxtbx.Multiline = true;
             this.detailSenderGradeTxtbx.Name = "detailSenderGradeTxtbx";
             this.detailSenderGradeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderGradeTxtbx.Size = new System.Drawing.Size(367, 31);
+            this.detailSenderGradeTxtbx.Size = new System.Drawing.Size(367, 33);
             this.detailSenderGradeTxtbx.TabIndex = 4;
             // 
             // detailExecutorTxtbx
@@ -177,10 +176,9 @@
             this.detailRecieverGradeTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailRecieverGradeTxtbx.Location = new System.Drawing.Point(56, 549);
             this.detailRecieverGradeTxtbx.MaxLength = 150;
-            this.detailRecieverGradeTxtbx.Multiline = true;
             this.detailRecieverGradeTxtbx.Name = "detailRecieverGradeTxtbx";
             this.detailRecieverGradeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverGradeTxtbx.Size = new System.Drawing.Size(265, 31);
+            this.detailRecieverGradeTxtbx.Size = new System.Drawing.Size(265, 33);
             this.detailRecieverGradeTxtbx.TabIndex = 2;
             // 
             // detailRecieverGradeLbl
@@ -214,10 +212,9 @@
             this.detailSenderNameTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailSenderNameTxtbx.Location = new System.Drawing.Point(560, 588);
             this.detailSenderNameTxtbx.MaxLength = 75;
-            this.detailSenderNameTxtbx.Multiline = true;
             this.detailSenderNameTxtbx.Name = "detailSenderNameTxtbx";
             this.detailSenderNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailSenderNameTxtbx.Size = new System.Drawing.Size(153, 31);
+            this.detailSenderNameTxtbx.Size = new System.Drawing.Size(153, 33);
             this.detailSenderNameTxtbx.TabIndex = 3;
             // 
             // detailRecieverNameTxtbx
@@ -227,10 +224,9 @@
             this.detailRecieverNameTxtbx.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.detailRecieverNameTxtbx.Location = new System.Drawing.Point(480, 545);
             this.detailRecieverNameTxtbx.MaxLength = 150;
-            this.detailRecieverNameTxtbx.Multiline = true;
             this.detailRecieverNameTxtbx.Name = "detailRecieverNameTxtbx";
             this.detailRecieverNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRecieverNameTxtbx.Size = new System.Drawing.Size(233, 31);
+            this.detailRecieverNameTxtbx.Size = new System.Drawing.Size(233, 33);
             this.detailRecieverNameTxtbx.TabIndex = 1;
             // 
             // detailSenderNameLbl
