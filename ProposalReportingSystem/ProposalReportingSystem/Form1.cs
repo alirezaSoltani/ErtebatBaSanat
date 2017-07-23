@@ -5979,29 +5979,88 @@ namespace ProposalReportingSystem
 
         private void searchProposalShowAllBtn_Click(object sender, EventArgs e)
         {
-            searchProposalShowDgv.Columns.Clear();
-            //addProposalShowDgv.DataSource = null;
-            if(searchProposalIsWatchingEdition)
+            if (loginUser.U_Faculty == "")
             {
-                searchProposalClearBtn.PerformClick();
+                searchProposalShowDgv.Columns.Clear();
+                //addProposalShowDgv.DataSource = null;
+                if (searchProposalIsWatchingEdition)
+                {
+                    searchProposalClearBtn.PerformClick();
+                }
+                TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
+
+
+                CurrentPageIndex = 1;
+                searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.searchProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE 1=1 ";
+                dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery, pageSize, CurrentPageIndex);
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                searchProposalExecutorNCodeTxtbx.Focus();
+
+                searchProposalNavigationFirstPageBtn.Enabled = true;
+                searchProposalNavigationNextPageBtn.Enabled = true;
+                searchProposalNavigationLastPageBtn.Enabled = true;
+                searchProposalNavigationPreviousPageBtn.Enabled = true;
+                searchProposalNavigationCurrentPageTxtbx.Enabled = true;
+                searchProposalNavigationReturnBtn.Enabled = false;
+                //  addProposalShowAllBtn.Enabled = false;
             }
-            TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable");
+            else if(loginUser.U_Faculty != "")
+            {
+                if (loginUser.U_Faculty != "")
+                {
+                    searchProposalExecutorFacultyCb.Enabled = true;
+                }
+                List<long> NCODES = new List<long>();
+
+                string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ";
+
+                string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
+                if (searchProposalExecutorFacultyCb.Text != "" && searchProposalExecutorFacultyCb.Enabled != false)
+                {
+                    query2 = query2 + " t_Faculty = '" + searchProposalExecutorFacultyCb.Text + "' AND";
+                }
+                query2 = query2.Substring(0, query2.Length - 3);
+
+                if (loginUser.U_Faculty != "")
+                {
+                    searchProposalExecutorFacultyCb.Enabled = false;
+                }
+
+                if (query2 != "SELECT t_NCode FROM teacherTable WHE")
+                {
+                    NCODES = dbh.getTeachersNCode(query2);
+                }
+                foreach (long NC in NCODES)
+                {
+                    query = query + " executor = '" + NC + "' OR";
+
+                }
+                searchProposalShowDgv.Columns.Clear();
+                query = query.Substring(0, query.Length - 3);
+                query = query.Replace("TOP 5 *", "COUNT(*)");
+                TotalPage = dbh.totalPage(query);
+
+                query = query.Replace("COUNT(*)", "TOP 5 *");
 
 
-            CurrentPageIndex = 1;
-            searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-            dbh.searchProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE 1=1 ";
-            dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery, pageSize, CurrentPageIndex);
-            searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
-            searchProposalExecutorNCodeTxtbx.Focus();
+               
+                CurrentPageIndex = 1;
+                searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
+                dbh.searchProposalQuery = query;
+                dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery, pageSize, CurrentPageIndex);
 
-            searchProposalNavigationFirstPageBtn.Enabled = true;
-            searchProposalNavigationNextPageBtn.Enabled = true;
-            searchProposalNavigationLastPageBtn.Enabled = true;
-            searchProposalNavigationPreviousPageBtn.Enabled = true;
-            searchProposalNavigationCurrentPageTxtbx.Enabled = true;
-            searchProposalNavigationReturnBtn.Enabled = false;
-            //  addProposalShowAllBtn.Enabled = false;
+                searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
+                searchProposalExecutorNCodeTxtbx.Focus();
+
+                searchProposalNavigationFirstPageBtn.Enabled = true;
+                searchProposalNavigationNextPageBtn.Enabled = true;
+                searchProposalNavigationLastPageBtn.Enabled = true;
+                searchProposalNavigationPreviousPageBtn.Enabled = true;
+                searchProposalNavigationCurrentPageTxtbx.Enabled = true;
+                searchProposalNavigationReturnBtn.Enabled = false;
+
+            }
         }
 
 
