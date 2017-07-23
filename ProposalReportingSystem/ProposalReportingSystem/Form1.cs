@@ -1026,14 +1026,14 @@ namespace ProposalReportingSystem
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
-                else if (addProposalKeywordsTxtbx.Text.Length == 0)
+                /*else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "کلمات کلیدی را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     addProposalKeywordsTxtbx.Focus();
-                }
+                }*/
 
 
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
@@ -1306,14 +1306,14 @@ namespace ProposalReportingSystem
                     addProposalEnglishTitleTxtbx.Focus();
                 }
 
-                else if (addProposalKeywordsTxtbx.Text.Length == 0)
+                /*else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "کلمات کلیدی را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     addProposalKeywordsTxtbx.Focus();
-                }
+                }*/
 
 
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
@@ -3609,6 +3609,13 @@ namespace ProposalReportingSystem
                 Alert alert = new Alert(context, "darkred", 5);
             }
 
+            else if(manageUserFacultyCb.Checked && manageUserFacultyCmb.Text=="")
+            {
+                string context = "دانشکده را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
+                manageUserFacultyCmb.Focus();
+            }
+
             else
             {
                 User user = new User();
@@ -3706,6 +3713,19 @@ namespace ProposalReportingSystem
                     user.U_otherAccess = 0;
                 }
 
+                if (manageUserFacultyCb.Checked == true)
+                {
+                    if (manageUserFacultyCmb.Text != "")
+                    {
+                        user.U_Faculty = manageUserFacultyCmb.Text;
+                    }
+                }
+                else
+                {
+                    user.U_Faculty = "";
+                }
+
+
                 if (loginUser.U_NCode == 999999999)
                 {
                     if (manageUserIsAdminCb.Checked == true)
@@ -3770,6 +3790,13 @@ namespace ProposalReportingSystem
                 //p.ShowDialog();
                 string context = "داشتن حداقل یک سطح دسترسی الزامی است";
                 Alert alert = new Alert(context, "bluegray", 5);
+            }
+
+            else if(manageUserFacultyCb.Checked && manageUserFacultyCmb.Text=="")
+            {
+                string context = "دانشکده را انتخاب نمایید";
+                Alert alert = new Alert(context, "bluegray", 5);
+                manageUserFacultyCmb.Focus();
             }
 
             else
@@ -3864,6 +3891,19 @@ namespace ProposalReportingSystem
                 {
                     user.U_otherAccess = 0;
                 }
+
+                if (manageUserFacultyCb.Checked == true)
+                {
+                    if (manageUserFacultyCmb.Text != "")
+                    {
+                        user.U_Faculty = manageUserFacultyCmb.Text;
+                    }
+                }
+                else
+                {
+                    user.U_Faculty = "";
+                }
+
 
                 if (loginUser.U_NCode == 999999999)
                 {
@@ -3980,6 +4020,20 @@ namespace ProposalReportingSystem
                 {
                     user.U_otherAccess = 0;
                 }
+
+
+                if (manageUserFacultyCb.Checked == true)
+                {
+                    if (manageUserFacultyCmb.Text != "")
+                    {
+                        user.U_Faculty = manageUserFacultyCmb.Text;
+                    }
+                }
+                else
+                {
+                    user.U_Faculty = "";
+                }
+
 
                 if (user.U_IsAdmin == 1 && loginUser.U_NCode != 999999999 && user.U_NCode != loginUser.U_NCode)
                 {
@@ -5178,14 +5232,14 @@ namespace ProposalReportingSystem
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
-                else if (editProposalKeywordsTxtbx.Text.Length == 0)
+                /*else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "کلمات کلیدی را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     editProposalKeywordsTxtbx.Focus();
-                }
+                }*/
 
                
 
@@ -5424,14 +5478,14 @@ namespace ProposalReportingSystem
                     editProposalEnglishTitleTxtbx.Focus();
                 }
 
-                else if (editProposalKeywordsTxtbx.Text.Length == 0)
+                /*else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "کلمات کلیدی را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "کلمات کلیدی را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     editProposalKeywordsTxtbx.Focus();
-                }
+                }*/
 
 
                 else if (editProposalDurationTxtbx.Text.Length == 0)

@@ -197,7 +197,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                        
+
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
@@ -229,7 +229,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditProposal(Proposal proposal, long username, String dateTime,FTPSetting _inputParameter,string currentFileName)
+        public void EditProposal(Proposal proposal, long username, String dateTime, FTPSetting _inputParameter, string currentFileName)
         {
             try
             {
@@ -319,7 +319,7 @@ namespace ProposalReportingSystem
                                                    + " employer = " + "'" + proposal.Employer + "',"
                                                    + " value = " + "'" + proposal.Value + "',"
                                                    + " status = " + "'" + proposal.Status + "' ,"
-                                                   + " filename = "+ "'"+ proposal.FileName+"' "
+                                                   + " filename = " + "'" + proposal.FileName + "' "
                                                    + " WHERE [index] = " + proposal.Index + "";
                     sc.ExecuteNonQuery();
 
@@ -345,14 +345,14 @@ namespace ProposalReportingSystem
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
                     sc.ExecuteNonQuery();
 
-                   
+
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)
                 {
-                    
+
                     try
                     {
                         transaction.Rollback();
@@ -376,7 +376,7 @@ namespace ProposalReportingSystem
                         string context = "خطا در تغییر فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                    
+
                     else if (e.Message.Contains("response exception"))
                     {
                         string context = "خطا در آپلود فایل";
@@ -480,8 +480,8 @@ namespace ProposalReportingSystem
                             string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
 
                             sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
-                            reader=sc.ExecuteReader();
-                            while(reader.Read())
+                            reader = sc.ExecuteReader();
+                            while (reader.Read())
                             {
 
                                 /////
@@ -511,7 +511,7 @@ namespace ProposalReportingSystem
                                 /////
                                 if (editions.Edition != 0)
                                 {
-                                  
+
                                     if (moveToDeleteResponse.Contains("successful"))
                                     {
                                         DeleteEdition(editions, editions.Edition, username, dateTime, count);
@@ -521,7 +521,7 @@ namespace ProposalReportingSystem
                                         throw new Exception("response exception");
                                     }
                                 }
-                                
+
                             }
                             reader.Close();
 
@@ -584,7 +584,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    
+
                     try
                     {
                         transaction.Rollback();
@@ -756,7 +756,7 @@ namespace ProposalReportingSystem
                         string context = "خطا در آپلود فایل";
                         Alert alert = new Alert(context, "darkred", 5);
                     }
-                   
+
                     else
                     {
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
@@ -859,8 +859,8 @@ namespace ProposalReportingSystem
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited " + proposal.PersianTitle + " Edition " + EditionNumber + " ','" + "EditionTable'" + ")";
                     sc.ExecuteNonQuery();
 
-                   
-                
+
+
 
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییر اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
@@ -928,7 +928,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void DeleteEdition(Proposal proposal, int EditionNumber, long username, String dateTime,int count)
+        public void DeleteEdition(Proposal proposal, int EditionNumber, long username, String dateTime, int count)
         {
             try
             {
@@ -979,7 +979,7 @@ namespace ProposalReportingSystem
                     string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
                     if (moveToDeleteResponse.Contains("successful"))
                     {
-                        
+
 
                     }
                     else
@@ -1022,7 +1022,7 @@ namespace ProposalReportingSystem
                             string context = "خطا در حذف فایل";
                             Alert alert = new Alert(context, "darkred", 5);
                         }
-                        
+
                         else if (e.Message.Contains("conflict"))
                         {
                             string context = "این مورد به دلیل استفاده در اطلاعات پروپوزال، غیر قابل حذف است";
@@ -1089,7 +1089,7 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser,u_canManageTeacher,u_canManageType,u_Color,u_IsAdmin,u_otherAccess)"
+                    sc.CommandText = "INSERT INTO UsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser,u_canManageTeacher,u_canManageType,u_Color,u_IsAdmin,u_otherAccess,u_faculty)"
                                  + " VALUES ('" + user.U_FName + "',"
                                           + "'" + user.U_LName + "',"
                                           + "'" + user.U_NCode + "',"
@@ -1106,7 +1106,8 @@ namespace ProposalReportingSystem
                                           + "'" + user.CanManageType + "',"
                                           + "'" + user.U_Color + "',"
                                           + "'" + user.U_IsAdmin + "',"
-                                          + "'" + user.U_otherAccess + "')";
+                                          + "'" + user.U_otherAccess + "',"
+                                          + "'" + user.U_Faculty + "')";
 
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + user.U_NCode + "','" + "UsersTable'" + ")";
@@ -1199,8 +1200,9 @@ namespace ProposalReportingSystem
                                                         + " u_canManageTeacher = " + "'" + user.CanManageTeacher + "',"
                                                         + " u_canManageType = " + "'" + user.CanManageType + "',"
                                                         + " u_Color = " + "'" + user.U_Color + "' ,"
-                                                         + " u_IsAdmin = " + "'" + user.U_IsAdmin + "' ,"
-                                                        + " u_otherAccess = " + "'" + user.U_otherAccess + "'"
+                                                        + " u_IsAdmin = " + "'" + user.U_IsAdmin + "' ,"
+                                                        + " u_otherAccess = " + "'" + user.U_otherAccess + "' ,"
+                                                        + " u_faculty = " + "'" + user.U_Faculty + "'"
                                                         + " WHERE u_NCode = " + NCode + "";
 
                     sc.ExecuteNonQuery();
@@ -1287,7 +1289,7 @@ namespace ProposalReportingSystem
                 {
                     sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
                     sc.ExecuteNonQuery();
-                    sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser, u_canEditUser , u_canDeleteUser ,u_canManageTeacher, u_canManageType, u_Color ,u_IsAdmin, u_otherAccess, username ,date)"
+                    sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser, u_canEditUser , u_canDeleteUser ,u_canManageTeacher, u_canManageType, u_Color ,u_IsAdmin, u_otherAccess, u_faculty, username ,date)"
                                 + " VALUES ('" + user.U_FName + "',"
                                          + "'" + user.U_LName + "',"
                                          + "'" + user.U_NCode + "',"
@@ -1304,7 +1306,8 @@ namespace ProposalReportingSystem
                                          + "'" + user.CanManageTeacher + "',"
                                          + "'" + user.U_Color + "',"
                                          + "'" + user.U_IsAdmin + "',"
-                                         + "'" + user.U_otherAccess+ "',"
+                                         + "'" + user.U_otherAccess + "',"
+                                         + "'" + user.U_Faculty + "',"
                                          + "'" + username + "',"
                                          + "'" + dateTime + "')";
                     sc.ExecuteNonQuery();
@@ -1546,7 +1549,7 @@ namespace ProposalReportingSystem
                 }
             }
         }
-            
+
 
         //////////////////end query Users
 
@@ -1595,16 +1598,16 @@ namespace ProposalReportingSystem
                     popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                   
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                       
+
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
@@ -1724,7 +1727,7 @@ namespace ProposalReportingSystem
             }
         }
 
-        public void DeleteTeacher(Teachers teacher,long oldNCode, long username, String dateTime)
+        public void DeleteTeacher(Teachers teacher, long oldNCode, long username, String dateTime)
         {
             try
             {
@@ -1903,7 +1906,7 @@ namespace ProposalReportingSystem
             List<Teachers> list = new List<Teachers>();
             try
             {
-              
+
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
@@ -2294,7 +2297,7 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
-                       
+
                         popup = new PopUp("خطای سیستمی", "با پشتیبانی تماس حاصل فرمایید ", "تایید", "", "", "error");
                         popup.ShowDialog();
                     }
@@ -2464,7 +2467,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    
+
                     popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
@@ -2562,7 +2565,7 @@ namespace ProposalReportingSystem
 
                     popup = new PopUp("افزودن موفقیت آمیز", "افزودن با موفقیت به پایان رسید", "تایید", "", "", "success");
                     popup.ShowDialog();
-                }   
+                }
                 catch (Exception e)
                 {
 
@@ -2698,7 +2701,7 @@ namespace ProposalReportingSystem
 
         }
 
-        
+
         public List<string> getPropertyType()
         {
 
@@ -2999,7 +3002,7 @@ namespace ProposalReportingSystem
 
         public List<string> getProposalType()
         {
-            
+
             List<string> list = new List<string>();
             try
             {
@@ -3295,7 +3298,7 @@ namespace ProposalReportingSystem
 
         public List<string> getRegisterType()
         {
-            
+
             List<string> list = new List<string>();
             try
             {
@@ -3837,7 +3840,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                   
+
 
                     try
                     {
@@ -3897,7 +3900,7 @@ namespace ProposalReportingSystem
             {
 
 
-               
+
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = conString;
                 SqlCommand sc = new SqlCommand();
@@ -3962,7 +3965,7 @@ namespace ProposalReportingSystem
                     }
                     catch
                     {
-                        
+
                     }
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                     {
@@ -4372,7 +4375,7 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                   // MessageBox.Show(e.Message);
+                    // MessageBox.Show(e.Message);
                     try
                     {
                         transaction.Rollback();
@@ -4741,7 +4744,7 @@ namespace ProposalReportingSystem
                 }
                 else
                 {
-                     GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
+                    GetData3(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
                 }
                 if (query.Contains("proposalTable"))
                 {
@@ -4787,7 +4790,7 @@ namespace ProposalReportingSystem
 
             }
         }
-        private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview,int PgSize, int PreviousPageOffSet)
+        private void GetData3(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview, int PgSize, int PreviousPageOffSet)
         {
             //// Create a new data adapter based on the specified query.
             //dataAdapter = new SqlDataAdapter(selectCommand, conString);
@@ -4809,8 +4812,8 @@ namespace ProposalReportingSystem
             //dataGridview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             //dataGridview.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-           
-           
+
+
 
             if (selectCommand.Contains("UsersTable"))
             {
@@ -4856,7 +4859,7 @@ namespace ProposalReportingSystem
 
             else if (selectCommand.Contains("proposalTable"))
             {
-                if (dataGridview.Name  == "addProposalShowDgv")
+                if (dataGridview.Name == "addProposalShowDgv")
                 {
                     string q = addProposalQuery + " AND  [index] NOT IN " +
                                "(SELECT TOP " + PreviousPageOffSet +
@@ -4917,7 +4920,7 @@ namespace ProposalReportingSystem
                     table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                     dataAdapter.Fill(table);
                     bindingSourceObj.DataSource = table;
-                    
+
                 }
 
                 dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
@@ -4972,7 +4975,7 @@ namespace ProposalReportingSystem
 
                 dataGridview.Columns[0].Visible = false;
                 dataGridview.Columns["detailBtn"].DisplayIndex = 0;
-               // dataGridview.Columns["detailBtn"].Frozen = true;
+                // dataGridview.Columns["detailBtn"].Frozen = true;
                 dataGridview.Columns["editionBtn"].DisplayIndex = 1;
                 dataGridview.Columns["editionBtn"].Frozen = true;
 
@@ -5075,7 +5078,7 @@ namespace ProposalReportingSystem
             {
                 try
                 {
-                    
+
                     dataGridview.Rows[j].HeaderCell.Value = (i + 1) + "";
                     i++;
                     j++;
@@ -5085,7 +5088,7 @@ namespace ProposalReportingSystem
                     break;
                 }
             }
-            
+
         }
         private void GetData3ForSearchProposal(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview, int PgSize, int PreviousPageOffSet)
         {
@@ -5259,26 +5262,26 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        
+
                     }
                 }
 
                 conn.Close();
             }
             catch { }
-            return totalPages+1;
+            return totalPages + 1;
         }
 
         public int totalLogPage(string query)
         {
-            
+
             int totalPages = 0;
             try
             {
@@ -5312,14 +5315,14 @@ namespace ProposalReportingSystem
                 }
                 catch
                 {
-                    
+
                     try
                     {
                         transaction.Rollback();
                     }
                     catch
                     {
-                        
+
                     }
                 }
 
@@ -5413,9 +5416,9 @@ namespace ProposalReportingSystem
                     }
                 }
             }
-            catch(Exception e )
+            catch (Exception e)
             {
-               // MessageBox.Show(e.Message);
+                // MessageBox.Show(e.Message);
             }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
@@ -5437,7 +5440,7 @@ namespace ProposalReportingSystem
 
 
             // Resize the DataGridView columns to fit the newly loaded content.
-           
+
 
             int i = 0;
             while (true)
@@ -5626,7 +5629,7 @@ namespace ProposalReportingSystem
                 dataGridview.Columns[9].HeaderText = "تلفن 2";
             }
 
-            
+
             int j = 0;
             while (true)
             {
@@ -5634,7 +5637,7 @@ namespace ProposalReportingSystem
                 {
 
                     dataGridview.Rows[j].HeaderCell.Value = (j + 1) + "";
-                   
+
                     j++;
                 }
                 catch (ArgumentOutOfRangeException e1)
@@ -5642,7 +5645,7 @@ namespace ProposalReportingSystem
                     break;
                 }
             }
-           
+
 
         }
 
@@ -5686,14 +5689,14 @@ namespace ProposalReportingSystem
                 string ftpUri = getSetting.getConnectionString("ftpuri");
                 string ftpUsername = getSetting.getConnectionString("ftpusername");
                 string ftpPassword = getSetting.getConnectionString("ftppassword");
-                
+
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}", ftpUri, _inputParameter.FileName)));
                 request.Method = WebRequestMethods.Ftp.UploadFile;
                 request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                 //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
                 Stream FtpStream = request.GetRequestStream();
                 ///
-               
+
                 //Stream stream = response.GetResponseStream();
                 ///
                 FileStream fs = File.OpenRead(_inputParameter.FullName);
@@ -5710,14 +5713,14 @@ namespace ProposalReportingSystem
                     double percentage = read / total * 100;
                 }
                 while (byteRead != 0);
-              
+
 
                 fs.Close();
                 FtpStream.Close();
-              
-                ResponseDescription ="completed";
-                
-                return ResponseDescription; 
+
+                ResponseDescription = "completed";
+
+                return ResponseDescription;
             }
             catch
             {
@@ -5799,7 +5802,7 @@ namespace ProposalReportingSystem
 
                 return ResponseDescription;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return "";
             }
@@ -5868,11 +5871,11 @@ namespace ProposalReportingSystem
                 {
                     return response.StatusDescription;
                 }
-               
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-               // MessageBox.Show(e.Message);
+                // MessageBox.Show(e.Message);
                 return "";
             }
         }
@@ -5932,7 +5935,7 @@ namespace ProposalReportingSystem
         public string getEmployerName(long code)
         {
 
-            string employerName="";
+            string employerName = "";
             try
             {
                 SqlConnection conn = new SqlConnection();
@@ -5951,24 +5954,24 @@ namespace ProposalReportingSystem
             catch { }
             return employerName;
         }
-        
+
 
         public string getDateHijri(string date)
         {
-  
+
             int len = date.IndexOf(" ");
             string GregorianDate = date.Substring(0, len);
-           
+
             DateTime d = DateTime.Parse(GregorianDate);
             PersianCalendar pc = new PersianCalendar();
             return string.Format("{0}/{1:00}/{2:00}", pc.GetYear(d), pc.GetMonth(d), pc.GetDayOfMonth(d));//---> miladi to shamsi*/
 
         }
 
-       
+
         public string getExecutorFaculty(long ncode)
         {
-            string faculty= "";
+            string faculty = "";
             try
             {
                 SqlConnection conn = new SqlConnection();
@@ -5983,7 +5986,7 @@ namespace ProposalReportingSystem
                 reader.Read();
                 faculty = reader.GetString(0);
                 conn.Close();
-               
+
             }
             catch
             {
@@ -6165,10 +6168,10 @@ namespace ProposalReportingSystem
                     {
                         teacher.T_FName = "notfound";
                     }
-                       
+
 
                     transaction.Commit();
-                    
+
                 }
                 catch (Exception e)
                 {
@@ -6181,14 +6184,14 @@ namespace ProposalReportingSystem
                     {
 
                     }
-                    
+
                 }
 
                 conn.Close();
             }
             catch (Exception e)
             {
-                
+
             }
             return teacher;
         }
