@@ -4036,6 +4036,7 @@ namespace ProposalReportingSystem
                 {
                     user.CanEditUser = 1;
                 }
+
                 else
                 {
                     user.CanEditUser = 0;
