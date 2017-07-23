@@ -6255,7 +6255,13 @@ namespace ProposalReportingSystem
                 manageUserManageTypeCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_canManageType"].Value.ToString());
                 manageUserIsAdminCb.Checked = bool.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_IsAdmin"].Value.ToString());
 
-                if(Int16.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_otherAccess"].Value.ToString())==1)
+                if (manageUserShowDgv.Rows[e.RowIndex].Cells["u_faculty"].Value.ToString() != "")
+                {
+                    manageUserFacultyCb.Checked = true;
+                }
+                manageUserFacultyCmb.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_faculty"].Value.ToString();
+
+                if (Int16.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_otherAccess"].Value.ToString())==1)
                 {
                     manageUserReadOnlyCb.Checked = true;
                 }
