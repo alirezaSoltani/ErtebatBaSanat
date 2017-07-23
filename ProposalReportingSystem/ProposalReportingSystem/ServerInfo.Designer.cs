@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.serverLbl = new System.Windows.Forms.Label();
             this.databaseLbl = new System.Windows.Forms.Label();
             this.usernameLbl = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ftpChangeBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
+            this.bPersianCalenderTextBox1 = new BPersianCalender.BPersianCalenderTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -245,11 +247,24 @@
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
+            // bPersianCalenderTextBox1
+            // 
+            this.bPersianCalenderTextBox1.Location = new System.Drawing.Point(356, 293);
+            this.bPersianCalenderTextBox1.Miladi = new System.DateTime(((long)(0)));
+            this.bPersianCalenderTextBox1.Name = "bPersianCalenderTextBox1";
+            this.bPersianCalenderTextBox1.NowDateSelected = false;
+            this.bPersianCalenderTextBox1.ReadOnly = true;
+            this.bPersianCalenderTextBox1.SelectedDate = null;
+            this.bPersianCalenderTextBox1.Shamsi = null;
+            this.bPersianCalenderTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.bPersianCalenderTextBox1.TabIndex = 21;
+            // 
             // ServerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 622);
+            this.Controls.Add(this.bPersianCalenderTextBox1);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.ftpPasswordTxtbx);
             this.Controls.Add(this.ftpUsernameTxtbx);
@@ -293,5 +308,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button ftpChangeBtn;
         private System.Windows.Forms.Button okBtn;
+        private BPersianCalender.BPersianCalenderTextBox bPersianCalenderTextBox1;
     }
 }
