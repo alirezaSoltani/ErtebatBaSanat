@@ -324,8 +324,8 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 70, 25);
-            //gl.setSize(dateTimePicker1, 290, 370, 160, 35);
-            gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
+            gl.setSize(addProposalStartDateDts, 290, 370, 160, 35);
+            //gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
 
 
             gl.setSize(addProposalDurationLbl, 200, 10, 80, 25);
@@ -407,11 +407,11 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalEnglishTitleTxtbx, 260, 110, 160, 25);
 
             gl.setSize(searchProposalStartDateFromLbl, 420, 150, 60, 25);
-            gl.setSize(searchProposalStartDateFromTimeInput, 260, 150, 160, 35);
+            gl.setSize(searchProposalStartDateFromDts, 237, 120, 160, 35);
             gl.setSize(searchProposalStartDateFromChbx, 245, 155, 30, 30);
 
             gl.setSize(searchProposalStartDateToLbl, 420, 190, 60, 25);
-            gl.setSize(searchProposalStartDateToTimeInput, 260, 190, 160, 35);
+            gl.setSize(searchProposalStartDateToDts, 237, 160, 160, 35);
             gl.setSize(searchProposalStartDateToChbx, 245, 195, 30, 30);
 
             gl.setSize(searchProposalValueFromLbl, 420, 230, 60, 25);
@@ -514,7 +514,7 @@ namespace ProposalReportingSystem
             gl.setSize(editProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(editProposalStartdateLbl, 460, 370, 70, 25);
-            gl.setSize(editProposalStartdateTimeInput, 370, 370, 80, 35);
+            gl.setSize(editProposalStartdateDts, 370, 370, 80, 35);
 
             gl.setSize(editProposalDurationLbl, 200, 10, 80, 25);
             gl.setSize(editProposalDurationTxtbx, 30, 10, 160, 25);
@@ -822,11 +822,11 @@ namespace ProposalReportingSystem
         {
             if(searchProposalStartDateFromChbx.Checked == true)
             {
-                searchProposalStartDateFromTimeInput.Enabled = true;
+                searchProposalStartDateFromDts.Enabled = true;
             }
             else
             {
-                searchProposalStartDateFromTimeInput.Enabled = false;
+                searchProposalStartDateFromDts.Enabled = false;
             }
         }
 
@@ -834,11 +834,11 @@ namespace ProposalReportingSystem
         {
             if (searchProposalStartDateToChbx.Checked == true)
             {
-                searchProposalStartDateToTimeInput.Enabled = true;
+                searchProposalStartDateToDts.Enabled = true;
             }
             else
             {
-                searchProposalStartDateToTimeInput.Enabled = false;
+                searchProposalStartDateToDts.Enabled = false;
             }
         }
 
@@ -888,7 +888,7 @@ namespace ProposalReportingSystem
             addProposalKeywordsTxtbx.Clear();
             addProposalExecutor2Txtbx.Clear();
             addProposalCoexecutorTxtbx.Clear();
-            addProposalStartdateTimeInput.GeoDate = DateTime.Now;
+            addProposalStartDateDts.Value = DateTime.Now;
             addProposalDurationTxtbx.Clear();
             addProposalDurationTxtbx.BackColor = Color.White;
             addProposalProcedureTypeCb.SelectedIndex = -1;
@@ -1018,14 +1018,23 @@ namespace ProposalReportingSystem
                     addProposalPersianTitleTxtbx.Focus();
                 }
 
-                else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
+                else if (addProposalStartDateDts.GetText("yyyy-MM-dd") == "")
+                {
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "تاریخ شروع را وارد نمایید";
+                    Alert alert = new Alert(context, "darkred", 5);
+                    addProposalPersianTitleTxtbx.Focus();
+                }
+
+                /*else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "عنوان لاتین پروپوزال را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     addProposalEnglishTitleTxtbx.Focus();
-                }
+                }*/
 
                 /*else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
@@ -1164,23 +1173,23 @@ namespace ProposalReportingSystem
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
                     //INITIALIZE STARTDATE OF PROPOSAL
-                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    string temp = addProposalStartDateDts.Value.Value.Year + "-";//YEAR
+                    if (addProposalStartDateDts.Value.Value.Month > 9)//MONTH
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += addProposalStartDateDts.Value.Value.Month + "-";
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += "0" + addProposalStartDateDts.Value.Value.Month + "-";
                     }
 
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    if (addProposalStartDateDts.Value.Value.Day > 9)//DAY
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += addProposalStartDateDts.Value.Value.Day;
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += "0" + addProposalStartDateDts.Value.Value.Day;
                     }
                     //INITIALIZE STARTDATE OF PROPOSAL
                     proposal.StartDate = temp;
@@ -1298,14 +1307,14 @@ namespace ProposalReportingSystem
                     addProposalPersianTitleTxtbx.Focus();
                 }
 
-                else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
+                /*else if (addProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "عنوان لاتین پروپوزال را وارد نمایید.";
                     Alert alert = new Alert(context, "bluegray", 5);
                     addProposalEnglishTitleTxtbx.Focus();
-                }
+                }*/
 
                 /*else if (addProposalKeywordsTxtbx.Text.Length == 0)
                 {
@@ -1316,6 +1325,15 @@ namespace ProposalReportingSystem
                     addProposalKeywordsTxtbx.Focus();
                 }*/
 
+
+                else if (addProposalStartDateDts.GetText("yyyy-MM-dd") == "")
+                {
+                    //PopUp p = new PopUp("خطای ورودی", "عنوان فارسی پروپوزال را وارد نمایید.", "تایید", "", "", "error");
+                    //p.ShowDialog();
+                    string context = "تاریخ شروع را وارد نمایید";
+                    Alert alert = new Alert(context, "darkred", 5);
+                    addProposalPersianTitleTxtbx.Focus();
+                }
 
                 else if (addProposalFileLinkLbl.Text == "افزودن فایل")
                 {
@@ -1428,23 +1446,23 @@ namespace ProposalReportingSystem
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(addProposalExecutorNcodeTxtbx.Text);
                     //INITIALIZE STARTDATE OF PROPOSAL
-                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    string temp = addProposalStartDateDts.Value.Value.Year + "-";//YEAR
+                    if (addProposalStartDateDts.Value.Value.Month > 9)//MONTH
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += addProposalStartDateDts.Value.Value.Month + "-";
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += "0" + addProposalStartDateDts.Value.Value.Month + "-";
                     }
 
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    if (addProposalStartDateDts.Value.Value.Day > 9)//DAY
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += addProposalStartDateDts.Value.Value.Day;
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += "0" + addProposalStartDateDts.Value.Value.Day;
                     }
                     //INITIALIZE STARTDATE OF PROPOSAL
                     proposal.StartDate = temp;
@@ -2599,8 +2617,8 @@ namespace ProposalReportingSystem
             searchProposalExecutorMobileTxtbx.Clear();
             searchProposalPersianTitleTxtbx.Clear();
             searchProposalEnglishTitleTxtbx.Clear();
-            searchProposalStartDateFromTimeInput.GeoDate = DateTime.Now;
-            searchProposalStartDateToTimeInput.GeoDate = DateTime.Now;
+            searchProposalStartDateFromDts.Value = DateTime.Now;
+            searchProposalStartDateToDts.Value = DateTime.Now;
             searchProposalValueFromTxtbx.Clear();
             searchProposalValueToTxtbx.Clear();
             searchProposalValueFromTxtbx.BackColor = Color.White;
@@ -2692,7 +2710,7 @@ namespace ProposalReportingSystem
             editProposalExecutor2Txtbx.Clear();
             editProposalCoexecutorTxtbx.Clear();
             editProposalFileLinkLbl.Text = "افزودن فایل";
-            editProposalStartdateTimeInput.GeoDate = DateTime.Now;
+            editProposalStartdateDts.Value = DateTime.Now;
             editProposalDurationTxtbx.Clear();
             editProposalDurationTxtbx.BackColor = Color.White;
             editProposalProcedureTypeCb.SelectedIndex = -1;
@@ -5045,8 +5063,12 @@ namespace ProposalReportingSystem
 
         private void addProposalSearchBtn_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(addProposalDts.GetText("yyyy-MM-dd"));
+            //MessageBox.Show(addProposalStartDateDts.GetText("yyyy-MM-dd"));
+            //MessageBox.Show(addProposalStartDateDts.Value.ToString());
+            //MessageBox.Show(addProposalStartDateDts.Value.Value.Year + "-" + addProposalStartDateDts.Value.Value.Month + "-" + addProposalStartDateDts.Value.Value.Day);
+            //addProposalStartDateDts.Value = DateTime.Now;
 
-           
             if (addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
                 addProposalShowDgv.Columns.Clear();
@@ -5275,14 +5297,14 @@ namespace ProposalReportingSystem
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
-                else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
+                /*else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "عنوان لاتین پروپوزال را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     editProposalEnglishTitleTxtbx.Focus();
-                }
+                }*/
 
                 /*else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
@@ -5395,23 +5417,23 @@ namespace ProposalReportingSystem
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
                     //INITIALIZE STARTDATE OF PROPOSAL
-                    string temp = addProposalStartdateTimeInput.GeoDate.Value.Year + "-";//YEAR
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Month > 9)//MONTH
+                    string temp = editProposalStartdateDts.Value.Value.Year + "-";//YEAR
+                    if (editProposalStartdateDts.Value.Value.Month > 9)//MONTH
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += editProposalStartdateDts.Value.Value.Month + "-";
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Month + "-";
+                        temp += "0" + editProposalStartdateDts.Value.Value.Month + "-";
                     }
 
-                    if (addProposalStartdateTimeInput.GeoDate.Value.Day > 9)//DAY
+                    if (editProposalStartdateDts.Value.Value.Day > 9)//DAY
                     {
-                        temp += addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += editProposalStartdateDts.Value.Value.Day;
                     }
                     else
                     {
-                        temp += "0" + addProposalStartdateTimeInput.GeoDate.Value.Day;
+                        temp += "0" + editProposalStartdateDts.Value.Value.Day;
                     }
                     //INITIALIZE STARTDATE OF PROPOSAL
                     proposal.StartDate = temp;
@@ -5521,14 +5543,14 @@ namespace ProposalReportingSystem
                     editProposalPersianTitleTxtbx.Focus();
                 }
 
-                else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
+                /*else if (editProposalEnglishTitleTxtbx.Text.Length == 0)
                 {
                     //PopUp p = new PopUp("خطای ورودی", "عنوان لاتین پروپوزال را وارد نمایید.", "تایید", "", "", "error");
                     //p.ShowDialog();
                     string context = "عنوان لاتین پروپوزال را وارد نمایید";
                     Alert alert = new Alert(context, "bluegray", 5);
                     editProposalEnglishTitleTxtbx.Focus();
-                }
+                }*/
 
                 /*else if (editProposalKeywordsTxtbx.Text.Length == 0)
                 {
@@ -5639,7 +5661,7 @@ namespace ProposalReportingSystem
                     //addProposalValueTxtbx.Text = tempValue;
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.StartDate = editProposalStartdateDts.Value.ToString();
                     proposal.Edition =  editProposalCurrentSelectedEdition;
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
@@ -5736,7 +5758,7 @@ namespace ProposalReportingSystem
                         editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalStartdateDts.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
                         editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
                         editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -5748,7 +5770,7 @@ namespace ProposalReportingSystem
                         editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
-                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                        editProposalStartdateDts.Value = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                        
 
                         editProposalRegisterBtn.Enabled = true;
@@ -5782,7 +5804,7 @@ namespace ProposalReportingSystem
                         editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalStartdateDts.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
                         editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
                         editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -5794,7 +5816,7 @@ namespace ProposalReportingSystem
                         editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
-                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                        editProposalStartdateDts.Value = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                     
 
                         if(loginUser.CanEditProposal == 1)
@@ -5850,7 +5872,7 @@ namespace ProposalReportingSystem
                         editProposalKeywordsTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["keyword"].Value.ToString();
                         editProposalExecutor2Txtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor2"].Value.ToString();
                         editProposalCoexecutorTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["coExecutor"].Value.ToString();
-                        editProposalStartdateTimeInput.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
+                        editProposalStartdateDts.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString();
                         editProposalDurationTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["duration"].Value.ToString();
                         editProposalProcedureTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["procedureType"].Value.ToString();
                         editProposalTypeCb.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["proposalType"].Value.ToString();
@@ -5862,7 +5884,7 @@ namespace ProposalReportingSystem
                         editProposalCurrentFileName = editProposalShowDgv.Rows[e.RowIndex].Cells["fileName"].Value.ToString();
                         editProposalFileLinkLbl.Text = editProposalCurrentFileName;
                         editProposalExecutorNcodeTxtbx.Text = editProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
-                        editProposalStartdateTimeInput.GeoDate = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                        editProposalStartdateDts.Value = DateTime.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
                         proposalEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
                         editProposalCurrentSelectedEdition = int.Parse(editProposalShowDgv.Rows[e.RowIndex].Cells["edition"].Value.ToString());
 
@@ -5901,7 +5923,7 @@ namespace ProposalReportingSystem
                     //addProposalValueTxtbx.Text = tempValue;
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.StartDate = editProposalStartdateDts.Value.ToString();
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
 
@@ -5930,7 +5952,7 @@ namespace ProposalReportingSystem
                     //addProposalValueTxtbx.Text = tempValue;
                     proposal.Value = long.Parse(tempValue);
                     proposal.Executor = long.Parse(editProposalExecutorNcodeTxtbx.Text);
-                    proposal.StartDate = editProposalStartdateTimeInput.GeoDate.ToString();
+                    proposal.StartDate = editProposalStartdateDts.Value.ToString();
                     proposal.Index = long.Parse(currentSelectedIndex);
                     proposal.FileName = editProposalCurrentFileName;
                     proposal.Edition = editProposalCurrentSelectedEdition;
@@ -6187,12 +6209,12 @@ namespace ProposalReportingSystem
 
             if (searchProposalStartDateFromChbx.Checked == true)
             {
-                query = query + " startDate >= '" + searchProposalStartDateFromTimeInput.GeoDate.ToString() + "' AND";
+                query = query + " startDate >= '" + searchProposalStartDateFromDts.Value.ToString() + "' AND";
             }
 
             if (searchProposalStartDateToChbx.Checked == true)
             {
-                query = query + " startDate <= '" + searchProposalStartDateToTimeInput.GeoDate.ToString() + "' AND";
+                query = query + " startDate <= '" + searchProposalStartDateToDts.Value.ToString() + "' AND";
 
             }
 
@@ -6587,7 +6609,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                Add Proposal                             \\
             //*************************************************************************\\
-            addProposalStartdateTimeInput.GeoDate = DateTime.Now;
+            addProposalStartDateDts.Value = DateTime.Now;
             
             addProposalExecutorFacultyCb.Items.Clear();
             addProposalProcedureTypeCb.Items.Clear();
@@ -6657,8 +6679,8 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                Search Proposal                          \\
             //*************************************************************************\\
-            searchProposalStartDateFromTimeInput.GeoDate = DateTime.Now;
-            searchProposalStartDateToTimeInput.GeoDate = DateTime.Now;
+            searchProposalStartDateFromDts.Value = DateTime.Now;
+            searchProposalStartDateToDts.Value = DateTime.Now;
 
             searchProposalExecutorFacultyCb.Items.Clear();
             searchProposalExecutorEGroupCb.Items.Clear();
@@ -6729,7 +6751,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                                edit Proposal                             \\
             //*************************************************************************\\
-            editProposalStartdateTimeInput.GeoDate = DateTime.Now;
+            editProposalStartdateDts.Value = DateTime.Now;
 
             editProposalExecutorFacultyCb.Items.Clear();
             editProposalProcedureTypeCb.Items.Clear();
@@ -7172,7 +7194,7 @@ namespace ProposalReportingSystem
                             addProposalValueTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["value"].Value.ToString();
                             addProposalStatusCb.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["status"].Value.ToString();
                             addProposalExecutorNcodeTxtbx.Text = addProposalShowDgv.Rows[e.RowIndex].Cells["executor"].Value.ToString();
-                            addProposalStartdateTimeInput.GeoDate = DateTime.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
+                            addProposalStartDateDts.Value = DateTime.Parse(addProposalShowDgv.Rows[e.RowIndex].Cells["startDate"].Value.ToString());
 
                             addProposalShowDgv.Columns.Clear();
                             dbh.dataGridViewUpdate2(addProposalShowDgv, addProposalBindingSource, "SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'");
@@ -8088,14 +8110,6 @@ namespace ProposalReportingSystem
                && manageUserAddUserCb.Checked && manageUserManageTeacherCb.Checked && manageUserDeleteProCb.Checked && manageUserEditProCb.Checked)
             {
                 manageUserCheckAllCb.Checked = true;
-            }
-        }
-
-        private void searchProposalStartDateFromTimeInput_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                searchProposalSearchBtn.PerformClick();
             }
         }
 

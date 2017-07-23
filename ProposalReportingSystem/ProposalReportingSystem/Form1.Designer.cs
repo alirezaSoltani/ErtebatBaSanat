@@ -32,8 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            FarsiCalendarComponent.FarsiDate farsiDate1 = new FarsiCalendarComponent.FarsiDate();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData1 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData2 = new DevComponents.DotNetBar.Controls.ColorData();
@@ -46,11 +45,11 @@
             DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
@@ -76,12 +75,12 @@
             this.superTabItem13 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalShowDgv = new System.Windows.Forms.DataGridView();
             this.addProposalAddGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.addProposalStartDateDts = new Atf.UI.DateTimeSelector();
             this.addProposalEnglishTitleTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalSearchBtn = new DevComponents.DotNetBar.ButtonX();
             this.addProposalShowAllBtn = new DevComponents.DotNetBar.ButtonX();
             this.addProposalExecutorEGroupCb = new System.Windows.Forms.ComboBox();
             this.addProposalExecutorFacultyCb = new System.Windows.Forms.ComboBox();
-            this.addProposalStartdateTimeInput = new FarsiCalendarComponent.FarsiDatePicker();
             this.addProposalFileLinkLbl = new System.Windows.Forms.LinkLabel();
             this.addProposalFileLbl = new System.Windows.Forms.Label();
             this.addProposalOrganizationNumberCb = new System.Windows.Forms.ComboBox();
@@ -136,7 +135,6 @@
             this.homePanel = new System.Windows.Forms.Panel();
             this.homeTimeDateGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.monthCalendarX1 = new BehComponents.MonthCalendarX();
-            this.monthCalendar1 = new FarsiCalendarComponent.FarsiCalendarControl();
             this.analogClockControl1 = new DevComponents.DotNetBar.Controls.AnalogClockControl();
             this.homeAapInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.homeEBSLbl = new System.Windows.Forms.Label();
@@ -219,12 +217,10 @@
             this.searchProposalSearchGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.searchProposalStatusLbl = new System.Windows.Forms.Label();
             this.searchProposalShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.searchProposalStartDateToTimeInput = new FarsiCalendarComponent.FarsiDatePicker();
             this.searchProposalExecutorEGroupCb = new System.Windows.Forms.ComboBox();
             this.searchProposalExecutorFacultyCb = new System.Windows.Forms.ComboBox();
             this.searchProposalStartDateToChbx = new System.Windows.Forms.CheckBox();
             this.searchProposalStartDateFromChbx = new System.Windows.Forms.CheckBox();
-            this.searchProposalStartDateFromTimeInput = new FarsiCalendarComponent.FarsiDatePicker();
             this.searchProposalValueToTxtbx = new System.Windows.Forms.TextBox();
             this.searchProposalValueToLbl = new System.Windows.Forms.Label();
             this.searchProposalStartDateToLbl = new System.Windows.Forms.Label();
@@ -271,7 +267,6 @@
             this.editProposalSearchBtn = new DevComponents.DotNetBar.ButtonX();
             this.editProposalExecutorEGroupCb = new System.Windows.Forms.ComboBox();
             this.editProposalExecutorFacultyCb = new System.Windows.Forms.ComboBox();
-            this.editProposalStartdateTimeInput = new FarsiCalendarComponent.FarsiDatePicker();
             this.editProposalFileLinkLbl = new System.Windows.Forms.LinkLabel();
             this.editProposalFileLbl = new System.Windows.Forms.Label();
             this.editProposalOrganizationNumberCb = new System.Windows.Forms.ComboBox();
@@ -520,6 +515,9 @@
             this.addProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchProposalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchProposalStartDateFromDts = new Atf.UI.DateTimeSelector();
+            this.searchProposalStartDateToDts = new Atf.UI.DateTimeSelector();
+            this.editProposalStartdateDts = new Atf.UI.DateTimeSelector();
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPage)).BeginInit();
             this.mainPage.SuspendLayout();
@@ -547,6 +545,7 @@
             this.searchProposalNavigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchProposalShowDgv)).BeginInit();
             this.searchProposalSearchGp.SuspendLayout();
+            this.searchProposalProposalInfoGp.SuspendLayout();
             this.superTabControlPanel5.SuspendLayout();
             this.editProposalPanel.SuspendLayout();
             this.editProposalEditGp.SuspendLayout();
@@ -648,14 +647,14 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel2);
-            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel4);
-            this.mainPage.Controls.Add(this.superTabControlPanel3);
-            this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel6);
-            this.mainPage.Controls.Add(this.superTabControlPanel12);
             this.mainPage.Controls.Add(this.superTabControlPanel7);
+            this.mainPage.Controls.Add(this.superTabControlPanel2);
+            this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel5);
+            this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel10);
             this.mainPage.Controls.Add(this.superTabControlPanel11);
             this.mainPage.Controls.Add(this.superTabControlPanel13);
@@ -964,14 +963,14 @@
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.addProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1088, 169);
@@ -983,12 +982,12 @@
             // 
             this.addProposalAddGp.CanvasColor = System.Drawing.SystemColors.Control;
             this.addProposalAddGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.addProposalAddGp.Controls.Add(this.addProposalStartDateDts);
             this.addProposalAddGp.Controls.Add(this.addProposalEnglishTitleTxtbx);
             this.addProposalAddGp.Controls.Add(this.addProposalSearchBtn);
             this.addProposalAddGp.Controls.Add(this.addProposalShowAllBtn);
             this.addProposalAddGp.Controls.Add(this.addProposalExecutorEGroupCb);
             this.addProposalAddGp.Controls.Add(this.addProposalExecutorFacultyCb);
-            this.addProposalAddGp.Controls.Add(this.addProposalStartdateTimeInput);
             this.addProposalAddGp.Controls.Add(this.addProposalFileLinkLbl);
             this.addProposalAddGp.Controls.Add(this.addProposalFileLbl);
             this.addProposalAddGp.Controls.Add(this.addProposalOrganizationNumberCb);
@@ -1076,6 +1075,15 @@
             this.addProposalAddGp.Text = "اطلاعات پروپوزال";
             this.addProposalAddGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
+            // addProposalStartDateDts
+            // 
+            this.addProposalStartDateDts.Location = new System.Drawing.Point(462, 250);
+            this.addProposalStartDateDts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addProposalStartDateDts.Name = "addProposalStartDateDts";
+            this.addProposalStartDateDts.Size = new System.Drawing.Size(184, 30);
+            this.addProposalStartDateDts.TabIndex = 119;
+            this.addProposalStartDateDts.UsePersianFormat = true;
+            // 
             // addProposalEnglishTitleTxtbx
             // 
             this.addProposalEnglishTitleTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1135,18 +1143,6 @@
             this.addProposalExecutorFacultyCb.Size = new System.Drawing.Size(184, 29);
             this.addProposalExecutorFacultyCb.TabIndex = 4;
             this.addProposalExecutorFacultyCb.SelectedIndexChanged += new System.EventHandler(this.addProposalExecutorFacultyCb_SelectedIndexChanged);
-            // 
-            // addProposalStartdateTimeInput
-            // 
-            this.addProposalStartdateTimeInput.BackColor = System.Drawing.Color.Transparent;
-            this.addProposalStartdateTimeInput.GeoDate = new System.DateTime(2017, 1, 21, 0, 0, 0, 0);
-            this.addProposalStartdateTimeInput.Location = new System.Drawing.Point(461, 249);
-            this.addProposalStartdateTimeInput.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
-            this.addProposalStartdateTimeInput.MaximumSize = new System.Drawing.Size(1687, 44);
-            this.addProposalStartdateTimeInput.Name = "addProposalStartdateTimeInput";
-            this.addProposalStartdateTimeInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addProposalStartdateTimeInput.Size = new System.Drawing.Size(185, 30);
-            this.addProposalStartdateTimeInput.TabIndex = 16;
             // 
             // addProposalFileLinkLbl
             // 
@@ -1623,7 +1619,7 @@
             this.addProposalEnglishTitleLbl.Name = "addProposalEnglishTitleLbl";
             this.addProposalEnglishTitleLbl.Size = new System.Drawing.Size(99, 25);
             this.addProposalEnglishTitleLbl.TabIndex = 6;
-            this.addProposalEnglishTitleLbl.Text = "*عنوان لاتین";
+            this.addProposalEnglishTitleLbl.Text = "عنوان لاتین";
             this.addProposalEnglishTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // addProposalPersianTitleLbl
@@ -1749,7 +1745,6 @@
             this.homeTimeDateGp.CanvasColor = System.Drawing.Color.Transparent;
             this.homeTimeDateGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.homeTimeDateGp.Controls.Add(this.monthCalendarX1);
-            this.homeTimeDateGp.Controls.Add(this.monthCalendar1);
             this.homeTimeDateGp.Controls.Add(this.analogClockControl1);
             this.homeTimeDateGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.homeTimeDateGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -1792,7 +1787,8 @@
             // monthCalendarX1
             // 
             this.monthCalendarX1.BoldedDayForeColor = System.Drawing.Color.Blue;
-            this.monthCalendarX1.BorderColor = System.Drawing.Color.Transparent;
+            this.monthCalendarX1.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.monthCalendarX1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.monthCalendarX1.CalendarType = BehComponents.CalendarTypes.Persian;
             this.monthCalendarX1.DayRectTickness = 1F;
             this.monthCalendarX1.DaysBackColor = System.Drawing.Color.LightCyan;
@@ -1805,7 +1801,7 @@
             this.monthCalendarX1.HolidayForeColor = System.Drawing.Color.Red;
             this.monthCalendarX1.HolidayWeekly = BehComponents.MonthCalendarX.DayOfWeekForHoliday.Friday;
             this.monthCalendarX1.LineWeekColor = System.Drawing.Color.Blue;
-            this.monthCalendarX1.Location = new System.Drawing.Point(477, 94);
+            this.monthCalendarX1.Location = new System.Drawing.Point(457, 59);
             this.monthCalendarX1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.monthCalendarX1.Name = "monthCalendarX1";
             this.monthCalendarX1.PersianAnnuallyBoldedDates = new BehComponents.PersianDateTime[0];
@@ -1813,8 +1809,8 @@
             this.monthCalendarX1.PersianHolidayDates = new BehComponents.PersianDateTime[0];
             this.monthCalendarX1.PersianMonthlyBoldedDates = new BehComponents.PersianDateTime[0];
             this.monthCalendarX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.monthCalendarX1.ShowToday = false;
-            this.monthCalendarX1.ShowTodayRect = true;
+            this.monthCalendarX1.ShowToday = true;
+            this.monthCalendarX1.ShowTodayRect = false;
             this.monthCalendarX1.ShowToolTips = false;
             this.monthCalendarX1.ShowTrailing = true;
             this.monthCalendarX1.Size = new System.Drawing.Size(621, 245);
@@ -1838,38 +1834,6 @@
             this.monthCalendarX1.WeekDaysFont = new System.Drawing.Font("Tahoma", 7.8F);
             this.monthCalendarX1.WeekDaysForeColor = System.Drawing.Color.Red;
             this.monthCalendarX1.WeekStartsOn = BehComponents.MonthCalendarX.WeekDays.Saturday;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.AntiAliasTexts = true;
-            this.monthCalendar1.BackColor = System.Drawing.Color.White;
-            this.monthCalendar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.monthCalendar1.DaysBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(199)))), ((int)(((byte)(186)))));
-            this.monthCalendar1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(216)))));
-            this.monthCalendar1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(240)))));
-            this.monthCalendar1.HorizontalGridLines = true;
-            this.monthCalendar1.Location = new System.Drawing.Point(477, 30);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.NumbersColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.monthCalendar1.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(250)))));
-            farsiDate1.Day = 1;
-            farsiDate1.FarsiDateValue = "96/05/01";
-            farsiDate1.GeoDate = new System.DateTime(2017, 7, 23, 0, 0, 0, 0);
-            farsiDate1.Month = 5;
-            farsiDate1.Year = 1396;
-            this.monthCalendar1.SelectedFarsiValue = farsiDate1;
-            this.monthCalendar1.SelectedGeoValue = new System.DateTime(2017, 7, 23, 0, 0, 0, 0);
-            this.monthCalendar1.SelectedNumberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(250)))));
-            this.monthCalendar1.ShowSmallDayName = false;
-            this.monthCalendar1.ShowToday = true;
-            this.monthCalendar1.Size = new System.Drawing.Size(585, 32);
-            this.monthCalendar1.TabIndex = 2;
-            this.monthCalendar1.Text = "farsiCalendarControl1";
-            this.monthCalendar1.TodayBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
-            this.monthCalendar1.TodayNumberColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.monthCalendar1.VerticalGridLines = true;
-            this.monthCalendar1.Visible = false;
             // 
             // analogClockControl1
             // 
@@ -2076,7 +2040,7 @@
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1136, 868);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.manageUserTab;
             // 
@@ -2529,9 +2493,8 @@
             this.manageUserTelTxtbx.Location = new System.Drawing.Point(29, 177);
             this.manageUserTelTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUserTelTxtbx.MaxLength = 20;
-            this.manageUserTelTxtbx.Multiline = true;
             this.manageUserTelTxtbx.Name = "manageUserTelTxtbx";
-            this.manageUserTelTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserTelTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserTelTxtbx.TabIndex = 6;
             this.manageUserTelTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.manageUserNcodTxtbx_KeyPress);
             // 
@@ -2541,9 +2504,8 @@
             this.manageUserEmailTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manageUserEmailTxtbx.Location = new System.Drawing.Point(29, 145);
             this.manageUserEmailTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.manageUserEmailTxtbx.Multiline = true;
             this.manageUserEmailTxtbx.Name = "manageUserEmailTxtbx";
-            this.manageUserEmailTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserEmailTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserEmailTxtbx.TabIndex = 5;
             this.manageUserEmailTxtbx.TextChanged += new System.EventHandler(this.manageUserEmailTxtbx_TextChanged);
             this.manageUserEmailTxtbx.Leave += new System.EventHandler(this.manageUserEmailTxtbx_Leave);
@@ -2555,10 +2517,9 @@
             this.manageUserPasswordTxtbx.Location = new System.Drawing.Point(29, 113);
             this.manageUserPasswordTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUserPasswordTxtbx.MaxLength = 12;
-            this.manageUserPasswordTxtbx.Multiline = true;
             this.manageUserPasswordTxtbx.Name = "manageUserPasswordTxtbx";
             this.manageUserPasswordTxtbx.PasswordChar = '●';
-            this.manageUserPasswordTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserPasswordTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserPasswordTxtbx.TabIndex = 4;
             // 
             // manageUserNcodeTxtbx
@@ -2568,9 +2529,8 @@
             this.manageUserNcodeTxtbx.Location = new System.Drawing.Point(29, 81);
             this.manageUserNcodeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUserNcodeTxtbx.MaxLength = 10;
-            this.manageUserNcodeTxtbx.Multiline = true;
             this.manageUserNcodeTxtbx.Name = "manageUserNcodeTxtbx";
-            this.manageUserNcodeTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserNcodeTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserNcodeTxtbx.TabIndex = 1;
             this.manageUserNcodeTxtbx.TextChanged += new System.EventHandler(this.manageUserNcodTxtbx_TextChanged);
             this.manageUserNcodeTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.manageUserNcodTxtbx_KeyPress);
@@ -2583,10 +2543,9 @@
             this.manageUserLnameTxtbx.Location = new System.Drawing.Point(29, 49);
             this.manageUserLnameTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUserLnameTxtbx.MaxLength = 100;
-            this.manageUserLnameTxtbx.Multiline = true;
             this.manageUserLnameTxtbx.Name = "manageUserLnameTxtbx";
             this.manageUserLnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserLnameTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserLnameTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserLnameTxtbx.TabIndex = 3;
             // 
             // manageUserFnameTxtbx
@@ -2596,10 +2555,9 @@
             this.manageUserFnameTxtbx.Location = new System.Drawing.Point(29, 17);
             this.manageUserFnameTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUserFnameTxtbx.MaxLength = 100;
-            this.manageUserFnameTxtbx.Multiline = true;
             this.manageUserFnameTxtbx.Name = "manageUserFnameTxtbx";
             this.manageUserFnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserFnameTxtbx.Size = new System.Drawing.Size(241, 25);
+            this.manageUserFnameTxtbx.Size = new System.Drawing.Size(241, 29);
             this.manageUserFnameTxtbx.TabIndex = 2;
             // 
             // manageUserShowAllBtn
@@ -2907,14 +2865,14 @@
             this.manageUserShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageUserShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageUserShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.manageUserShowDgv.RowTemplate.Height = 24;
             this.manageUserShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageUserShowDgv.Size = new System.Drawing.Size(1093, 135);
@@ -2938,7 +2896,7 @@
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1136, 868);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.searchProposalTab;
             // 
@@ -3205,14 +3163,14 @@
             this.searchProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.searchProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.searchProposalShowDgv.RowTemplate.Height = 24;
             this.searchProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchProposalShowDgv.Size = new System.Drawing.Size(1075, 137);
@@ -3226,12 +3184,10 @@
             this.searchProposalSearchGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStatusLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalShowAllBtn);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateToTimeInput);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorEGroupCb);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFacultyCb);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateToChbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateFromChbx);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateFromTimeInput);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalValueToTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalValueToLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateToLbl);
@@ -3329,20 +3285,6 @@
             this.searchProposalShowAllBtn.Text = "نمایش همه";
             this.searchProposalShowAllBtn.Click += new System.EventHandler(this.searchProposalShowAllBtn_Click);
             // 
-            // searchProposalStartDateToTimeInput
-            // 
-            this.searchProposalStartDateToTimeInput.BackColor = System.Drawing.Color.Transparent;
-            this.searchProposalStartDateToTimeInput.Enabled = false;
-            this.searchProposalStartDateToTimeInput.GeoDate = new System.DateTime(2016, 11, 28, 0, 0, 0, 0);
-            this.searchProposalStartDateToTimeInput.Location = new System.Drawing.Point(451, 155);
-            this.searchProposalStartDateToTimeInput.Margin = new System.Windows.Forms.Padding(4, 12, 4, 12);
-            this.searchProposalStartDateToTimeInput.MaximumSize = new System.Drawing.Size(2136, 78);
-            this.searchProposalStartDateToTimeInput.Name = "searchProposalStartDateToTimeInput";
-            this.searchProposalStartDateToTimeInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.searchProposalStartDateToTimeInput.Size = new System.Drawing.Size(184, 30);
-            this.searchProposalStartDateToTimeInput.TabIndex = 10;
-            this.searchProposalStartDateToTimeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchProposalExecutorFNameTxtbx_KeyPress);
-            // 
             // searchProposalExecutorEGroupCb
             // 
             this.searchProposalExecutorEGroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -3389,21 +3331,6 @@
             this.searchProposalStartDateFromChbx.TabIndex = 71;
             this.searchProposalStartDateFromChbx.UseVisualStyleBackColor = true;
             this.searchProposalStartDateFromChbx.CheckedChanged += new System.EventHandler(this.searchProposalStartDateFromChbx_CheckedChanged);
-            // 
-            // searchProposalStartDateFromTimeInput
-            // 
-            this.searchProposalStartDateFromTimeInput.BackColor = System.Drawing.Color.Transparent;
-            this.searchProposalStartDateFromTimeInput.Cursor = System.Windows.Forms.Cursors.Default;
-            this.searchProposalStartDateFromTimeInput.Enabled = false;
-            this.searchProposalStartDateFromTimeInput.GeoDate = new System.DateTime(2016, 11, 28, 0, 0, 0, 0);
-            this.searchProposalStartDateFromTimeInput.Location = new System.Drawing.Point(451, 119);
-            this.searchProposalStartDateFromTimeInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchProposalStartDateFromTimeInput.MaximumSize = new System.Drawing.Size(1500, 34);
-            this.searchProposalStartDateFromTimeInput.Name = "searchProposalStartDateFromTimeInput";
-            this.searchProposalStartDateFromTimeInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.searchProposalStartDateFromTimeInput.Size = new System.Drawing.Size(184, 32);
-            this.searchProposalStartDateFromTimeInput.TabIndex = 9;
-            this.searchProposalStartDateFromTimeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchProposalStartDateFromTimeInput_KeyPress);
             // 
             // searchProposalValueToTxtbx
             // 
@@ -3844,6 +3771,8 @@
             this.searchProposalProposalInfoGp.BackColor = System.Drawing.Color.Transparent;
             this.searchProposalProposalInfoGp.CanvasColor = System.Drawing.Color.Transparent;
             this.searchProposalProposalInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.searchProposalProposalInfoGp.Controls.Add(this.searchProposalStartDateToDts);
+            this.searchProposalProposalInfoGp.Controls.Add(this.searchProposalStartDateFromDts);
             this.searchProposalProposalInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.searchProposalProposalInfoGp.Location = new System.Drawing.Point(49, 2);
             this.searchProposalProposalInfoGp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3896,7 +3825,7 @@
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1136, 868);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel5.TabIndex = 0;
             this.superTabControlPanel5.TabItem = this.manageProposalTab;
             // 
@@ -3916,13 +3845,13 @@
             // 
             this.editProposalEditGp.CanvasColor = System.Drawing.SystemColors.Control;
             this.editProposalEditGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.editProposalEditGp.Controls.Add(this.editProposalStartdateDts);
             this.editProposalEditGp.Controls.Add(this.editProposalShowAllBtn);
             this.editProposalEditGp.Controls.Add(this.editProposalDurationLbl);
             this.editProposalEditGp.Controls.Add(this.editProposalDeleteBtn);
             this.editProposalEditGp.Controls.Add(this.editProposalSearchBtn);
             this.editProposalEditGp.Controls.Add(this.editProposalExecutorEGroupCb);
             this.editProposalEditGp.Controls.Add(this.editProposalExecutorFacultyCb);
-            this.editProposalEditGp.Controls.Add(this.editProposalStartdateTimeInput);
             this.editProposalEditGp.Controls.Add(this.editProposalFileLinkLbl);
             this.editProposalEditGp.Controls.Add(this.editProposalFileLbl);
             this.editProposalEditGp.Controls.Add(this.editProposalOrganizationNumberCb);
@@ -4085,19 +4014,6 @@
             this.editProposalExecutorFacultyCb.Size = new System.Drawing.Size(184, 29);
             this.editProposalExecutorFacultyCb.TabIndex = 4;
             this.editProposalExecutorFacultyCb.SelectedIndexChanged += new System.EventHandler(this.editProposalExecutorFacultyCb_SelectedIndexChanged);
-            // 
-            // editProposalStartdateTimeInput
-            // 
-            this.editProposalStartdateTimeInput.BackColor = System.Drawing.Color.Transparent;
-            this.editProposalStartdateTimeInput.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.editProposalStartdateTimeInput.GeoDate = new System.DateTime(2016, 11, 28, 0, 0, 0, 0);
-            this.editProposalStartdateTimeInput.Location = new System.Drawing.Point(437, 282);
-            this.editProposalStartdateTimeInput.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
-            this.editProposalStartdateTimeInput.MaximumSize = new System.Drawing.Size(1687, 44);
-            this.editProposalStartdateTimeInput.Name = "editProposalStartdateTimeInput";
-            this.editProposalStartdateTimeInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.editProposalStartdateTimeInput.Size = new System.Drawing.Size(185, 28);
-            this.editProposalStartdateTimeInput.TabIndex = 16;
             // 
             // editProposalFileLinkLbl
             // 
@@ -4585,7 +4501,7 @@
             this.editProposalEnglishTitleLbl.Name = "editProposalEnglishTitleLbl";
             this.editProposalEnglishTitleLbl.Size = new System.Drawing.Size(99, 25);
             this.editProposalEnglishTitleLbl.TabIndex = 66;
-            this.editProposalEnglishTitleLbl.Text = "*عنوان لاتین";
+            this.editProposalEnglishTitleLbl.Text = "عنوان لاتین";
             this.editProposalEnglishTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // editProposalPersianTitleLbl
@@ -4951,14 +4867,14 @@
             this.editProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.editProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.editProposalShowDgv.RowTemplate.Height = 24;
             this.editProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.editProposalShowDgv.Size = new System.Drawing.Size(1075, 121);
@@ -4982,7 +4898,7 @@
             this.superTabControlPanel6.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel6.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel6.TabIndex = 0;
             this.superTabControlPanel6.TabItem = this.appSettingsTab;
             // 
@@ -5072,20 +4988,18 @@
             // 
             this.appSettingSenderGradeTxtbx.Location = new System.Drawing.Point(493, 15);
             this.appSettingSenderGradeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingSenderGradeTxtbx.Multiline = true;
             this.appSettingSenderGradeTxtbx.Name = "appSettingSenderGradeTxtbx";
             this.appSettingSenderGradeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingSenderGradeTxtbx.Size = new System.Drawing.Size(263, 34);
+            this.appSettingSenderGradeTxtbx.Size = new System.Drawing.Size(263, 29);
             this.appSettingSenderGradeTxtbx.TabIndex = 5;
             // 
             // appSettingSenderNameTxtbx
             // 
             this.appSettingSenderNameTxtbx.Location = new System.Drawing.Point(900, 17);
             this.appSettingSenderNameTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingSenderNameTxtbx.Multiline = true;
             this.appSettingSenderNameTxtbx.Name = "appSettingSenderNameTxtbx";
             this.appSettingSenderNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingSenderNameTxtbx.Size = new System.Drawing.Size(133, 34);
+            this.appSettingSenderNameTxtbx.Size = new System.Drawing.Size(133, 29);
             this.appSettingSenderNameTxtbx.TabIndex = 4;
             // 
             // appSettingSenderInfoClearBtn
@@ -5327,14 +5241,14 @@
             this.appSettingShowDv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.appSettingShowDv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.appSettingShowDv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.appSettingShowDv.RowTemplate.Height = 24;
             this.appSettingShowDv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appSettingShowDv.Size = new System.Drawing.Size(1097, 113);
@@ -5420,10 +5334,9 @@
             this.appSettingEdegreeTxtbx.Enabled = false;
             this.appSettingEdegreeTxtbx.Location = new System.Drawing.Point(52, 234);
             this.appSettingEdegreeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingEdegreeTxtbx.Multiline = true;
             this.appSettingEdegreeTxtbx.Name = "appSettingEdegreeTxtbx";
             this.appSettingEdegreeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEdegreeTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingEdegreeTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingEdegreeTxtbx.TabIndex = 22;
             // 
             // appSettingEdegreeRbtn
@@ -5458,10 +5371,9 @@
             this.appSettingFacultyTxtbx.Enabled = false;
             this.appSettingFacultyTxtbx.Location = new System.Drawing.Point(795, 234);
             this.appSettingFacultyTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingFacultyTxtbx.Multiline = true;
             this.appSettingFacultyTxtbx.Name = "appSettingFacultyTxtbx";
             this.appSettingFacultyTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingFacultyTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingFacultyTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingFacultyTxtbx.TabIndex = 15;
             this.appSettingFacultyTxtbx.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
@@ -5470,10 +5382,9 @@
             this.appSettingEgroupTxtbx.Enabled = false;
             this.appSettingEgroupTxtbx.Location = new System.Drawing.Point(433, 234);
             this.appSettingEgroupTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingEgroupTxtbx.Multiline = true;
             this.appSettingEgroupTxtbx.Name = "appSettingEgroupTxtbx";
             this.appSettingEgroupTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEgroupTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingEgroupTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingEgroupTxtbx.TabIndex = 17;
             // 
             // appSettingFacultyRbtn
@@ -5509,10 +5420,9 @@
             this.appSettingStatusTxtbx.Enabled = false;
             this.appSettingStatusTxtbx.Location = new System.Drawing.Point(43, 148);
             this.appSettingStatusTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingStatusTxtbx.Multiline = true;
             this.appSettingStatusTxtbx.Name = "appSettingStatusTxtbx";
             this.appSettingStatusTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingStatusTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingStatusTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingStatusTxtbx.TabIndex = 7;
             // 
             // appSettingPropertyTxtbx
@@ -5520,10 +5430,9 @@
             this.appSettingPropertyTxtbx.Enabled = false;
             this.appSettingPropertyTxtbx.Location = new System.Drawing.Point(797, 148);
             this.appSettingPropertyTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingPropertyTxtbx.Multiline = true;
             this.appSettingPropertyTxtbx.Name = "appSettingPropertyTxtbx";
             this.appSettingPropertyTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingPropertyTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingPropertyTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingPropertyTxtbx.TabIndex = 3;
             this.appSettingPropertyTxtbx.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
@@ -5545,10 +5454,9 @@
             this.appSettingProTypeTxtbx.Enabled = false;
             this.appSettingProTypeTxtbx.Location = new System.Drawing.Point(436, 148);
             this.appSettingProTypeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingProTypeTxtbx.Multiline = true;
             this.appSettingProTypeTxtbx.Name = "appSettingProTypeTxtbx";
             this.appSettingProTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProTypeTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingProTypeTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingProTypeTxtbx.TabIndex = 5;
             // 
             // appSettingPropertyRbtn
@@ -5570,10 +5478,9 @@
             this.appSettingCoTxtbx.Enabled = false;
             this.appSettingCoTxtbx.Location = new System.Drawing.Point(39, 52);
             this.appSettingCoTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingCoTxtbx.Multiline = true;
             this.appSettingCoTxtbx.Name = "appSettingCoTxtbx";
             this.appSettingCoTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingCoTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingCoTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingCoTxtbx.TabIndex = 6;
             // 
             // appSettingProTypeRbtn
@@ -5594,10 +5501,9 @@
             this.appSettingRegTypeTxtbx.Enabled = false;
             this.appSettingRegTypeTxtbx.Location = new System.Drawing.Point(432, 52);
             this.appSettingRegTypeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingRegTypeTxtbx.Multiline = true;
             this.appSettingRegTypeTxtbx.Name = "appSettingRegTypeTxtbx";
             this.appSettingRegTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingRegTypeTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingRegTypeTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingRegTypeTxtbx.TabIndex = 4;
             // 
             // appSettingCoRbtn
@@ -5646,10 +5552,9 @@
             this.appSettingProcedureTypeTxtbx.Enabled = false;
             this.appSettingProcedureTypeTxtbx.Location = new System.Drawing.Point(793, 52);
             this.appSettingProcedureTypeTxtbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.appSettingProcedureTypeTxtbx.Multiline = true;
             this.appSettingProcedureTypeTxtbx.Name = "appSettingProcedureTypeTxtbx";
             this.appSettingProcedureTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProcedureTypeTxtbx.Size = new System.Drawing.Size(312, 34);
+            this.appSettingProcedureTypeTxtbx.Size = new System.Drawing.Size(312, 29);
             this.appSettingProcedureTypeTxtbx.TabIndex = 1;
             this.appSettingProcedureTypeTxtbx.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
@@ -5813,7 +5718,7 @@
             this.superTabControlPanel12.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.superTabControlPanel12.Name = "superTabControlPanel12";
-            this.superTabControlPanel12.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel12.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel12.TabIndex = 0;
             this.superTabControlPanel12.TabItem = this.manageTeacherTab;
             // 
@@ -6079,14 +5984,14 @@
             this.manageTeacherShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageTeacherShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.manageTeacherShowDgv.RowTemplate.Height = 24;
             this.manageTeacherShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageTeacherShowDgv.Size = new System.Drawing.Size(1075, 153);
@@ -6488,7 +6393,7 @@
             this.superTabControlPanel7.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel7.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel7.TabIndex = 0;
             this.superTabControlPanel7.TabItem = this.personalSettingsTab;
             // 
@@ -7556,12 +7461,36 @@
             this.menuHomeBtn.Click += new System.EventHandler(this.menuHomeBtn_Click);
             this.menuHomeBtn.MouseEnter += new System.EventHandler(this.iconMenuPanel_MouseEnter);
             // 
+            // searchProposalStartDateFromDts
+            // 
+            this.searchProposalStartDateFromDts.Location = new System.Drawing.Point(397, 91);
+            this.searchProposalStartDateFromDts.Name = "searchProposalStartDateFromDts";
+            this.searchProposalStartDateFromDts.Size = new System.Drawing.Size(182, 30);
+            this.searchProposalStartDateFromDts.TabIndex = 0;
+            this.searchProposalStartDateFromDts.UsePersianFormat = true;
+            // 
+            // searchProposalStartDateToDts
+            // 
+            this.searchProposalStartDateToDts.Location = new System.Drawing.Point(397, 124);
+            this.searchProposalStartDateToDts.Name = "searchProposalStartDateToDts";
+            this.searchProposalStartDateToDts.Size = new System.Drawing.Size(185, 30);
+            this.searchProposalStartDateToDts.TabIndex = 1;
+            this.searchProposalStartDateToDts.UsePersianFormat = true;
+            // 
+            // editProposalStartdateDts
+            // 
+            this.editProposalStartdateDts.Location = new System.Drawing.Point(437, 277);
+            this.editProposalStartdateDts.Name = "editProposalStartdateDts";
+            this.editProposalStartdateDts.Size = new System.Drawing.Size(183, 30);
+            this.editProposalStartdateDts.TabIndex = 118;
+            this.editProposalStartdateDts.UsePersianFormat = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(232)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1363, 734);
+            this.ClientSize = new System.Drawing.Size(1468, 734);
             this.Controls.Add(this.iconMenuPanel);
             this.Controls.Add(this.mainPage);
             this.DoubleBuffered = true;
@@ -7602,6 +7531,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchProposalShowDgv)).EndInit();
             this.searchProposalSearchGp.ResumeLayout(false);
             this.searchProposalSearchGp.PerformLayout();
+            this.searchProposalProposalInfoGp.ResumeLayout(false);
+            this.searchProposalProposalInfoGp.PerformLayout();
             this.superTabControlPanel5.ResumeLayout(false);
             this.editProposalPanel.ResumeLayout(false);
             this.editProposalEditGp.ResumeLayout(false);
@@ -7890,13 +7821,9 @@
         private System.Windows.Forms.Label editProposalFileLbl;
         private System.Windows.Forms.TextBox searchProposalValueToTxtbx;
         private System.Windows.Forms.Label searchProposalValueToLbl;
-        private FarsiCalendarComponent.FarsiDatePicker addProposalStartdateTimeInput;
-        private FarsiCalendarComponent.FarsiDatePicker editProposalStartdateTimeInput;
-        private FarsiCalendarComponent.FarsiDatePicker searchProposalStartDateFromTimeInput;
         private System.Windows.Forms.CheckBox searchProposalStartDateToChbx;
         private System.Windows.Forms.CheckBox searchProposalStartDateFromChbx;
         private DevComponents.DotNetBar.ButtonX manageUserClearBtn;
-        private FarsiCalendarComponent.FarsiCalendarControl monthCalendar1;
         private System.Windows.Forms.Panel homePanel;
         private System.Windows.Forms.Panel aboutUsPanel;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel11;
@@ -7911,7 +7838,6 @@
         private System.Windows.Forms.ComboBox searchProposalExecutorEGroupCb;
         private System.Windows.Forms.ComboBox searchProposalExecutorFacultyCb;
         private DevComponents.DotNetBar.Controls.GroupPanel searchProposalExecutorInfoGp;
-        private FarsiCalendarComponent.FarsiDatePicker searchProposalStartDateToTimeInput;
         private DevComponents.DotNetBar.Controls.GroupPanel searchProposalProposalInfoGp;
         private System.Windows.Forms.Label appSettingEgroupLbl;
         private System.Windows.Forms.Label appSettingFacultyLbl;
@@ -8119,6 +8045,10 @@
         private BehComponents.MonthCalendarX monthCalendarX1;
         private System.Windows.Forms.CheckBox manageUserFacultyCb;
         private System.Windows.Forms.ComboBox manageUserFacultyCmb;
+        private Atf.UI.DateTimeSelector addProposalStartDateDts;
+        private Atf.UI.DateTimeSelector searchProposalStartDateToDts;
+        private Atf.UI.DateTimeSelector searchProposalStartDateFromDts;
+        private Atf.UI.DateTimeSelector editProposalStartdateDts;
     }
 }
 
