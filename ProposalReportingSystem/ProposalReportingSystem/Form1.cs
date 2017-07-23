@@ -324,9 +324,9 @@ namespace ProposalReportingSystem
             gl.setSize(addProposalCoexecutorTxtbx, 290, 310, 160, 45);
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 70, 25);
-            //gl.setSize(bPersianCalenderTextBox1, 290, 370, 160, 35);
-            //gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
-            
+            //gl.setSize(dateTimePicker1, 290, 370, 160, 35);
+            gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
+
 
             gl.setSize(addProposalDurationLbl, 200, 10, 80, 25);
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
@@ -5045,6 +5045,8 @@ namespace ProposalReportingSystem
 
         private void addProposalSearchBtn_Click(object sender, EventArgs e)
         {
+
+           
             if (addProposalExecutorNcodeTxtbx.Text.Length == 10)
             {
                 addProposalShowDgv.Columns.Clear();
