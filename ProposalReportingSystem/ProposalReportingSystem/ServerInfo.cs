@@ -33,6 +33,7 @@ namespace ProposalReportingSystem
             user.CanManageTeacher = 1;
             user.CanManageType = 1;
             user.U_IsAdmin = 1;
+            user.U_Faculty = "";
             user.U_Color = "#D3EFFC";
 
             serverTxtbx.Text = setting.getConnectionString("cndatasource");
