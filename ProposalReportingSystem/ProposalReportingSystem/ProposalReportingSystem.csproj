@@ -39,11 +39,13 @@
     <StartupObject>ProposalReportingSystem.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BehComponents">
+    <Reference Include="BehComponents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=a36ced8ede3e7af7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Desktop\BehComponents.dll</HintPath>
     </Reference>
-    <Reference Include="BPersianCalender">
-      <HintPath>..\..\..\..\..\Desktop\BPersianCalender.dll</HintPath>
+    <Reference Include="BPersianCalender, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BPersianCalender.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.Charts.Design, Version=12.9.0.0, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -329,6 +331,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EditProposalInSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
