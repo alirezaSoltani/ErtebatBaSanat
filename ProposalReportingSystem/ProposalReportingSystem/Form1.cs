@@ -405,11 +405,11 @@ namespace ProposalReportingSystem
             gl.setSize(searchProposalEnglishTitleTxtbx, 260, 110, 160, 25);
 
             gl.setSize(searchProposalStartDateFromLbl, 420, 150, 60, 25);
-            gl.setSize(searchProposalStartDateFromDts, 237, 120, 160, 35);
+            gl.setSize(searchProposalStartDateFromDts, 237, 112, 160, 35);
             gl.setSize(searchProposalStartDateFromChbx, 245, 157, 30, 30);
 
             gl.setSize(searchProposalStartDateToLbl, 420, 190, 60, 25);
-            gl.setSize(searchProposalStartDateToDts, 237, 160, 160, 35);
+            gl.setSize(searchProposalStartDateToDts, 237, 152, 160, 35);
             gl.setSize(searchProposalStartDateToChbx, 245, 197, 30, 30);
 
             gl.setSize(searchProposalValueFromLbl, 420, 230, 60, 25);
