@@ -7090,20 +7090,25 @@ namespace ProposalReportingSystem
 
         private void menuExitBtn_Click(object sender, EventArgs e)
         {
-            Login l = new Login();
-            this.Hide();
+            PopUp p = new PopUp("خروج", "آیا مایل به خروج از برنامه هستید؟", "بله", "خیر", "", "info");
+            p.ShowDialog();
+            if (p.DialogResult == DialogResult.Yes)
+            {
+                Login l = new Login();
+                this.Hide();
 
-            menuHomeBtn.Checked = false;
-            menuAddProposalBtn.Checked = false;
-            menuSearchProposalBtn.Checked = false;
-            menuManageProposalBtn.Checked = false;
-            menuManageTeacherBtn.Checked = false;
-            menuManageUserBtn.Checked = false;
-            menuAppSettingBtn.Checked = false;
-            menuPersonalSettingBtn.Checked = false;
-            menuAboutUsBtn.Checked = false;
-            menuSysLogBtn.Checked = false;
-            menuExitBtn.Checked = true;
+                menuHomeBtn.Checked = false;
+                menuAddProposalBtn.Checked = false;
+                menuSearchProposalBtn.Checked = false;
+                menuManageProposalBtn.Checked = false;
+                menuManageTeacherBtn.Checked = false;
+                menuManageUserBtn.Checked = false;
+                menuAppSettingBtn.Checked = false;
+                menuPersonalSettingBtn.Checked = false;
+                menuAboutUsBtn.Checked = false;
+                menuSysLogBtn.Checked = false;
+                menuExitBtn.Checked = true;
+            }
         }
 
         private void menuIconRb_Click(object sender, EventArgs e)
