@@ -325,8 +325,6 @@ namespace ProposalReportingSystem
 
             gl.setSize(addProposalStartdateLbl, 460, 370, 70, 25);
             gl.setSize(addProposalStartDateDts, 290, 370, 160, 35);
-            //gl.setSize(addProposalStartdateTimeInput, 290, 370, 160, 35);
-
 
             gl.setSize(addProposalDurationLbl, 200, 10, 80, 25);
             gl.setSize(addProposalDurationTxtbx, 30, 10, 160, 25);
@@ -6897,6 +6895,7 @@ namespace ProposalReportingSystem
             //*************************************************************************\\
             //                        manage color prefrence                           \\
             //*************************************************************************\\
+
         }
 
         private void menuHomeBtn_Click(object sender, EventArgs e)

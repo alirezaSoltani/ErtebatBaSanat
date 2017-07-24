@@ -898,7 +898,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "جزئیات پروپوزال";
+            this.Text = "اطلاعات کلی پروپوزال";
             this.detailPanel.ResumeLayout(false);
             this.detailPanel.PerformLayout();
             this.ResumeLayout(false);
