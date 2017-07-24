@@ -3832,7 +3832,8 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastFaculty + " to " + newFaculty + "','" + "facultyTable'" + ")";
                     sc.ExecuteNonQuery();
-
+                    sc.CommandText = "UPDATE UsersTable SET u_faculty = " + "'" + newFaculty + "' WHERE u_faculty = '" + lastFaculty + "'";
+                    sc.ExecuteNonQuery();
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");
                     popup.ShowDialog();

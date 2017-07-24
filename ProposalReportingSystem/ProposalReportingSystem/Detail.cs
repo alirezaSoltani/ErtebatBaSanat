@@ -54,7 +54,9 @@ namespace ProposalReportingSystem
             detailProposalTypeTxtbx.Text = proposal.ProposalType;
             detailStatusTxtbx.Text = proposal.Status;
 
-            detailRegistrantTxtbx.Text = proposal.RegistrantName;
+            detailRegistrantTxtbx.Text = proposal.RegistrantName ;
+
+            detailLetterDateDts.Value = DateTime.Now;
 
             detailSenderNameTxtbx.Text = dbh.getSenderName();
             detailSenderGradeTxtbx.Text = dbh.getSenderGrade();

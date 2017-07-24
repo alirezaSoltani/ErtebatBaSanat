@@ -130,8 +130,7 @@ namespace ProposalReportingSystem
 
         private void loginPasswordTxtbx_Enter(object sender, EventArgs e)
         {
-            /*loginPasswordTxtbx.Text = "1";
-            loginEnterBtn.PerformClick();*/
+            loginPasswordTxtbx.SelectAll();
         }
 
         private void loginEnterBtn_Click(object sender, EventArgs e)

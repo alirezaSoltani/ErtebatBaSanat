@@ -45,12 +45,12 @@
             DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -647,16 +647,16 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel6);
-            this.mainPage.Controls.Add(this.superTabControlPanel7);
-            this.mainPage.Controls.Add(this.superTabControlPanel2);
-            this.mainPage.Controls.Add(this.superTabControlPanel11);
-            this.mainPage.Controls.Add(this.superTabControlPanel10);
-            this.mainPage.Controls.Add(this.superTabControlPanel4);
-            this.mainPage.Controls.Add(this.superTabControlPanel12);
-            this.mainPage.Controls.Add(this.superTabControlPanel5);
-            this.mainPage.Controls.Add(this.superTabControlPanel3);
             this.mainPage.Controls.Add(this.superTabControlPanel1);
+            this.mainPage.Controls.Add(this.superTabControlPanel2);
+            this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel4);
+            this.mainPage.Controls.Add(this.superTabControlPanel10);
+            this.mainPage.Controls.Add(this.superTabControlPanel7);
+            this.mainPage.Controls.Add(this.superTabControlPanel6);
+            this.mainPage.Controls.Add(this.superTabControlPanel5);
+            this.mainPage.Controls.Add(this.superTabControlPanel11);
             this.mainPage.Controls.Add(this.superTabControlPanel13);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.mainPage.Location = new System.Drawing.Point(0, 15);
@@ -878,7 +878,7 @@
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.manageUserTab;
             // 
@@ -1734,7 +1734,7 @@
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.homeTab;
             // 
@@ -2051,7 +2051,7 @@
             this.superTabControlPanel12.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.superTabControlPanel12.Name = "superTabControlPanel12";
-            this.superTabControlPanel12.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel12.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel12.TabIndex = 0;
             this.superTabControlPanel12.TabItem = this.manageTeacherTab;
             // 
@@ -2317,14 +2317,14 @@
             this.manageTeacherShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageTeacherShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.manageTeacherShowDgv.RowTemplate.Height = 24;
             this.manageTeacherShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageTeacherShowDgv.Size = new System.Drawing.Size(1075, 153);
@@ -3365,6 +3365,7 @@
             this.editProposalCoexecutorTxtbx.Multiline = true;
             this.editProposalCoexecutorTxtbx.Name = "editProposalCoexecutorTxtbx";
             this.editProposalCoexecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.editProposalCoexecutorTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editProposalCoexecutorTxtbx.Size = new System.Drawing.Size(183, 44);
             this.editProposalCoexecutorTxtbx.TabIndex = 15;
             // 
@@ -3434,6 +3435,7 @@
             this.editProposalExecutor2Txtbx.Multiline = true;
             this.editProposalExecutor2Txtbx.Name = "editProposalExecutor2Txtbx";
             this.editProposalExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.editProposalExecutor2Txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editProposalExecutor2Txtbx.Size = new System.Drawing.Size(183, 41);
             this.editProposalExecutor2Txtbx.TabIndex = 14;
             // 
@@ -3460,6 +3462,7 @@
             this.editProposalKeywordsTxtbx.Multiline = true;
             this.editProposalKeywordsTxtbx.Name = "editProposalKeywordsTxtbx";
             this.editProposalKeywordsTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.editProposalKeywordsTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editProposalKeywordsTxtbx.Size = new System.Drawing.Size(183, 54);
             this.editProposalKeywordsTxtbx.TabIndex = 13;
             // 
@@ -3471,6 +3474,7 @@
             this.editProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editProposalEnglishTitleTxtbx.Multiline = true;
             this.editProposalEnglishTitleTxtbx.Name = "editProposalEnglishTitleTxtbx";
+            this.editProposalEnglishTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editProposalEnglishTitleTxtbx.Size = new System.Drawing.Size(183, 32);
             this.editProposalEnglishTitleTxtbx.TabIndex = 12;
             // 
@@ -3483,6 +3487,7 @@
             this.editProposalPersianTitleTxtbx.Multiline = true;
             this.editProposalPersianTitleTxtbx.Name = "editProposalPersianTitleTxtbx";
             this.editProposalPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.editProposalPersianTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editProposalPersianTitleTxtbx.Size = new System.Drawing.Size(183, 38);
             this.editProposalPersianTitleTxtbx.TabIndex = 11;
             // 
@@ -3807,7 +3812,7 @@
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.searchProposalTab;
             // 
@@ -4074,14 +4079,14 @@
             this.searchProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.searchProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.searchProposalShowDgv.RowTemplate.Height = 24;
             this.searchProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchProposalShowDgv.Size = new System.Drawing.Size(1075, 137);
@@ -4198,7 +4203,8 @@
             // 
             // searchProposalExecutorEGroupCb
             // 
-            this.searchProposalExecutorEGroupCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalExecutorEGroupCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalExecutorEGroupCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalExecutorEGroupCb.FormattingEnabled = true;
             this.searchProposalExecutorEGroupCb.Location = new System.Drawing.Point(788, 198);
             this.searchProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4210,7 +4216,8 @@
             // 
             // searchProposalExecutorFacultyCb
             // 
-            this.searchProposalExecutorFacultyCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalExecutorFacultyCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalExecutorFacultyCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalExecutorFacultyCb.FormattingEnabled = true;
             this.searchProposalExecutorFacultyCb.Location = new System.Drawing.Point(788, 162);
             this.searchProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4722,6 +4729,7 @@
             // 
             // searchProposalStartDateToDts
             // 
+            this.searchProposalStartDateToDts.Enabled = false;
             this.searchProposalStartDateToDts.Location = new System.Drawing.Point(397, 124);
             this.searchProposalStartDateToDts.Name = "searchProposalStartDateToDts";
             this.searchProposalStartDateToDts.Size = new System.Drawing.Size(185, 30);
@@ -4730,6 +4738,7 @@
             // 
             // searchProposalStartDateFromDts
             // 
+            this.searchProposalStartDateFromDts.Enabled = false;
             this.searchProposalStartDateFromDts.Location = new System.Drawing.Point(397, 91);
             this.searchProposalStartDateFromDts.Name = "searchProposalStartDateFromDts";
             this.searchProposalStartDateFromDts.Size = new System.Drawing.Size(182, 30);
@@ -4752,7 +4761,7 @@
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.addProposalTab;
             // 
@@ -5018,14 +5027,14 @@
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.addProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1088, 169);
@@ -5146,6 +5155,7 @@
             this.addProposalEnglishTitleTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addProposalEnglishTitleTxtbx.Multiline = true;
             this.addProposalEnglishTitleTxtbx.Name = "addProposalEnglishTitleTxtbx";
+            this.addProposalEnglishTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addProposalEnglishTitleTxtbx.Size = new System.Drawing.Size(183, 29);
             this.addProposalEnglishTitleTxtbx.TabIndex = 12;
             // 
@@ -5627,6 +5637,7 @@
             this.addProposalCoexecutorTxtbx.Multiline = true;
             this.addProposalCoexecutorTxtbx.Name = "addProposalCoexecutorTxtbx";
             this.addProposalCoexecutorTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.addProposalCoexecutorTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addProposalCoexecutorTxtbx.Size = new System.Drawing.Size(183, 44);
             this.addProposalCoexecutorTxtbx.TabIndex = 15;
             // 
@@ -5695,6 +5706,7 @@
             this.addProposalExecutor2Txtbx.Multiline = true;
             this.addProposalExecutor2Txtbx.Name = "addProposalExecutor2Txtbx";
             this.addProposalExecutor2Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.addProposalExecutor2Txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addProposalExecutor2Txtbx.Size = new System.Drawing.Size(183, 41);
             this.addProposalExecutor2Txtbx.TabIndex = 14;
             // 
@@ -5718,6 +5730,7 @@
             this.addProposalKeywordsTxtbx.Multiline = true;
             this.addProposalKeywordsTxtbx.Name = "addProposalKeywordsTxtbx";
             this.addProposalKeywordsTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.addProposalKeywordsTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addProposalKeywordsTxtbx.Size = new System.Drawing.Size(183, 54);
             this.addProposalKeywordsTxtbx.TabIndex = 13;
             // 
@@ -5729,6 +5742,7 @@
             this.addProposalPersianTitleTxtbx.Multiline = true;
             this.addProposalPersianTitleTxtbx.Name = "addProposalPersianTitleTxtbx";
             this.addProposalPersianTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.addProposalPersianTitleTxtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addProposalPersianTitleTxtbx.Size = new System.Drawing.Size(183, 29);
             this.addProposalPersianTitleTxtbx.TabIndex = 11;
             // 
@@ -5963,14 +5977,14 @@
             this.logDgv.Name = "logDgv";
             this.logDgv.ReadOnly = true;
             this.logDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.logDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.logDgv.RowTemplate.Height = 24;
             this.logDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logDgv.Size = new System.Drawing.Size(1107, 489);
@@ -6687,14 +6701,14 @@
             this.appSettingShowDv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.appSettingShowDv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.appSettingShowDv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.appSettingShowDv.RowTemplate.Height = 24;
             this.appSettingShowDv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appSettingShowDv.Size = new System.Drawing.Size(1097, 113);

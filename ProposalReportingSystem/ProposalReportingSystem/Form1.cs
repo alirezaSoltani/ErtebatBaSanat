@@ -256,7 +256,7 @@ namespace ProposalReportingSystem
             gl.setSize(homeUserProfileLbl, 210, 75, 85, 85);
             gl.setSize(homeUserNameLbl, 280 ,150, 145, 40);
             gl.setSize(homeWelcomeLbl, 280, 200, 145, 40);
-            gl.setSize(analogClockControl1, 70, 25, 180, 180);
+            gl.setSize(analogClockControl1, 70, 20, 180, 180);
             gl.setSize(monthCalendarX1, 300, 50, 320, 250);
             ///////////////////////Home design/////////////////////
 
@@ -406,11 +406,11 @@ namespace ProposalReportingSystem
 
             gl.setSize(searchProposalStartDateFromLbl, 420, 150, 60, 25);
             gl.setSize(searchProposalStartDateFromDts, 237, 120, 160, 35);
-            gl.setSize(searchProposalStartDateFromChbx, 245, 155, 30, 30);
+            gl.setSize(searchProposalStartDateFromChbx, 245, 157, 30, 30);
 
             gl.setSize(searchProposalStartDateToLbl, 420, 190, 60, 25);
             gl.setSize(searchProposalStartDateToDts, 237, 160, 160, 35);
-            gl.setSize(searchProposalStartDateToChbx, 245, 195, 30, 30);
+            gl.setSize(searchProposalStartDateToChbx, 245, 197, 30, 30);
 
             gl.setSize(searchProposalValueFromLbl, 420, 230, 60, 25);
             gl.setSize(searchProposalValueFromTxtbx, 260, 230, 160, 25);
@@ -6038,7 +6038,7 @@ namespace ProposalReportingSystem
                 }
                 List<long> NCODES = new List<long>();
 
-                string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ";
+                string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE (";
 
                 string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
                 if (searchProposalExecutorFacultyCb.Text != "" && searchProposalExecutorFacultyCb.Enabled != false)
@@ -6062,7 +6062,7 @@ namespace ProposalReportingSystem
 
                 }
                 searchProposalShowDgv.Columns.Clear();
-                query = query.Substring(0, query.Length - 3);
+                query = query.Substring(0, query.Length - 3) + " ) ";
                 query = query.Replace("TOP 5 *", "COUNT(*)");
                 TotalPage = dbh.totalPage(query);
 
@@ -6091,13 +6091,13 @@ namespace ProposalReportingSystem
 
         private void searchProposalSearchBtn_Click(object sender, EventArgs e)
         {
-            if(loginUser.U_Faculty != "")
+            if (loginUser.U_Faculty != "")
             {
-                searchProposalExecutorFacultyCb.Enabled = true; 
+                searchProposalExecutorFacultyCb.Enabled = true;
             }
             List<long> NCODES = new List<long>();
 
-            string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ";
+            string query = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE (";
 
             string query2 = "SELECT t_NCode FROM teacherTable WHERE ";
 
@@ -6141,9 +6141,13 @@ namespace ProposalReportingSystem
 
             }
 
-            if (query != "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ")
+            if (query != "SELECT TOP " + pageSize + " * FROM proposalTable WHERE (")
             {
-                query = query.Substring(0, query.Length - 2) + " AND";
+                query = query.Substring(0, query.Length - 2) + " ) AND";
+            }
+            else
+            {
+                query = query.Substring(0, query.Length - 1);
             }
 
             if (searchProposalExecutorNCodeTxtbx.Text != "")
@@ -6234,6 +6238,7 @@ namespace ProposalReportingSystem
                 CurrentPageIndex = 1;
                 searchProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
                 dbh.searchProposalQuery = query;
+
                 dbh.dataGridViewUpdate3(searchProposalShowDgv, searchProposalBindingSource, dbh.searchProposalQuery, pageSize, CurrentPageIndex);
 
                 searchProposalExecutorNCodeTxtbx.BackColor = Color.White;
@@ -6251,7 +6256,6 @@ namespace ProposalReportingSystem
                 searchProposalShowDgv.Columns.Clear();
                 searchProposalShowDgv.DataSource = null;
             }
-
         }
 
         private void editProposalShowAllBtn_Click(object sender, EventArgs e)
@@ -8316,9 +8320,9 @@ namespace ProposalReportingSystem
             menuExitBtn.Text = "";
             numberOfMenuOptions++;
 
-            gl.setSize(menuIconRb, 0, 845, 50, 25);
-            gl.setSize(menuDetailRb, 0, 870, 50, 25);
-            gl.setSize(menuSlideRb, 0, 895, 50, 25);
+            gl.setSize(menuIconRb, 0, 835, 50, 25);
+            gl.setSize(menuDetailRb, 0, 860, 50, 25);
+            gl.setSize(menuSlideRb, 0, 885, 50, 25);
 
             isIconMenu = true;
             isDetailedMenu = false;
@@ -8438,9 +8442,9 @@ namespace ProposalReportingSystem
             menuExitBtn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Right;
             menuExitBtn.Text = "خروج";
 
-            gl.setSize(menuIconRb, 45, 845, 50, 25);
-            gl.setSize(menuDetailRb, 45, 870, 50, 25);
-            gl.setSize(menuSlideRb, 45, 895, 50, 25);
+            gl.setSize(menuIconRb, 45, 835, 50, 25);
+            gl.setSize(menuDetailRb, 45, 860, 50, 25);
+            gl.setSize(menuSlideRb, 45, 885, 50, 25);
 
             isDetailedMenu = true;
             isIconMenu = false;
