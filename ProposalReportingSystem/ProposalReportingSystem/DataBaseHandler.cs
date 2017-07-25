@@ -6214,6 +6214,75 @@ namespace ProposalReportingSystem
             return teacher;
         }
 
+        public User getRegistrantInfo(long NCode)
+        {
+            User user = new User();
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = conString;
+                conn.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+
+
+                SqlTransaction transaction;
+                transaction = conn.BeginTransaction("new");
+                sc.Transaction = transaction;
+                SqlDataReader reader;
+
+                try
+                {
+                    //(u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser,u_canEditUser , u_canDeleteUser,u_canManageTeacher,u_canManageType,u_Color,u_IsAdmin,u_otherAccess,u_faculty)
+                    sc.CommandText = "SELECT * FROM UsersTable WHERE u_NCode = '" + NCode + "'";
+                    sc.CommandType = CommandType.Text;
+
+                    reader = sc.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        user.U_FName = reader["u_FName"].ToString();
+                        user.U_LName = reader["u_LName"].ToString();
+                        user.U_NCode = long.Parse(reader["u_NCode"].ToString());
+                        user.U_Email = reader["u_Email"].ToString();
+                        user.U_otherAccess = Int16.Parse(reader["u_otherAccess"].ToString());
+                        user.U_Tel = reader["u_Tel"].ToString();
+                        user.U_Password = reader["t_Password"].ToString();
+                        user.U_Faculty = reader["u_faculty"].ToString();
+                        user.U_IsAdmin = Int16.Parse(reader["u_isAdmin"].ToString());
+                        user.U_Color = reader["t_Color"].ToString();
+                        
+                    }
+                    
+
+
+                    transaction.Commit();
+
+                }
+                catch (Exception e)
+                {
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return user;
+        }
+
 
         public string hashPass(string password2)
         {

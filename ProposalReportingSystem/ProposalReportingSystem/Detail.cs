@@ -23,14 +23,13 @@ namespace ProposalReportingSystem
             InitializeComponent();
         }
 
-        public Detail(Proposal proposal, long loginUserNCode)
+        public Detail(Proposal proposal,User user)
         {
             InitializeComponent();
 
             prop = proposal;
 
-
-            this.loginUserNCode = loginUserNCode;
+            this.loginUserNCode = user.U_NCode;
             dbh = new DataBaseHandler(/*this.loginUserNCode*/);
 
             fileName = proposal.FileName;
