@@ -3941,25 +3941,42 @@ namespace ProposalReportingSystem
                 SqlTransaction transaction;
                 transaction = conn.BeginTransaction("new");
                 sc.Transaction = transaction;
-
+                SqlDataReader reader;
                 try
                 {
-                    sc.CommandText = "DELETE FROM facultyTable WHERE facultyName = '" + faculty + "'";
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO deletedFacultyTable  (facultyName , date , username) VALUES( '" + faculty + "','" + dateTime + "','" + username + "')";
-                    sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + faculty + "','" + "facultyTable'" + ")";
-                    sc.ExecuteNonQuery();
+                    int countUserFaculty = 0;
+                    sc.CommandText = "SELECT COUNT(*) FROM UsersTable WHERE u_faculty ='" + faculty + "'";
+                    reader = sc.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        countUserFaculty = reader.GetInt32(0);
+                    }
+                    reader.Close();
+                    if (countUserFaculty == 0)
+                    {
+                        sc.CommandText = "DELETE FROM facultyTable WHERE facultyName = '" + faculty + "'";
+                        sc.ExecuteNonQuery();
+                        sc.CommandText = " INSERT INTO deletedFacultyTable  (facultyName , date , username) VALUES( '" + faculty + "','" + dateTime + "','" + username + "')";
+                        sc.ExecuteNonQuery();
+                        sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + faculty + "','" + "facultyTable'" + ")";
+                        sc.ExecuteNonQuery();
 
-                    transaction.Commit();
+                        transaction.Commit();
 
-                    popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
-                    popup.ShowDialog();
+                        popup = new PopUp("حذف موفقیت آمیز", "حذف با موفقیت به پایان رسید", "تایید", "", "", "success");
+                        popup.ShowDialog();
+                    }
+                    else if (countUserFaculty > 0)
+                    {
+                       
+                        string context = "کاربری مربوط به این دانشکده وجود دارد و نمی توان این دانشکده را حذف کرد ";
+                        Alert alert = new Alert(context, "darkred", 5);
 
+                    }
                 }
                 catch (Exception e)
                 {
-                    //MessageBox.Show(e.Message);
+                    
                     try
                     {
                         transaction.Rollback();
