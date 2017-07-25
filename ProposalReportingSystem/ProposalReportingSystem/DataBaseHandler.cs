@@ -1349,37 +1349,112 @@ namespace ProposalReportingSystem
                 SqlTransaction transaction;
                 transaction = conn.BeginTransaction("new");
                 sc.Transaction = transaction;
-
+                SqlDataReader reader;
 
 
 
                 try
                 {
-                    sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
+                    User users = new User();
+                    ////
+                    sc.CommandText = " SELECT * FROM UsersTable WHERE u_NCode = '" + user.U_NCode + "'";
+                    reader = sc.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        /////
+
+                        users.U_NCode = long.Parse(reader["u_NCode"].ToString());
+                        users.U_FName = reader["u_FName"].ToString();
+                        users.U_LName = reader["u_LName"].ToString();
+                        users.U_Faculty = reader["u_Faculty"].ToString();
+                        users.U_Email = reader["u_Email"].ToString();
+                        users.U_Color = reader["u_Color"].ToString();
+                        users.U_Password = reader["u_Password"].ToString();
+                        users.U_Tel = reader["u_Tel"].ToString();
+                        if (reader["u_IsAdmin"].ToString() == "True")
+                            users.U_IsAdmin = 1;
+                        else
+                            users.U_IsAdmin = 0;
+
+                        if (reader["u_canAddProposal"].ToString() == "True")
+                            users.CanAddProposal = 1;
+                        else
+                            users.CanAddProposal = 0;
+
+                        if (reader["u_canEditProposal"].ToString() == "True")
+                            users.CanEditProposal = 1;
+                        else
+                            users.CanEditProposal = 0;
+
+                        if (reader["u_canDeleteProposal"].ToString() == "True")
+                            users.CanDeleteProposal = 1;
+                        else
+                            users.CanDeleteProposal = 0;
+
+                        if (reader["u_canAddUser"].ToString() == "True")
+                            users.CanAddUser = 1;
+                        else
+                            users.CanAddUser = 0;
+
+                        if (reader["u_canEditUser"].ToString() == "True")
+                            users.CanEditUser = 1;
+                        else
+                            users.CanEditUser = 0;
+
+                        if (reader["u_canDeleteUser"].ToString() == "True")
+                            users.CanDeleteUser = 1;
+                        else
+                            users.CanDeleteUser = 0;
+
+                        if (reader["u_canManageTeacher"].ToString() == "True")
+                            users.CanManageTeacher = 1;
+                        else
+                            users.CanManageTeacher = 0;
+
+                        if (reader["u_canManageType"].ToString() == "True")
+                            users.CanManageType = 1;
+                        else
+                            users.CanManageType = 0;
+
+                        if (Int16.Parse(reader["u_otherAccess"].ToString()) == 1)
+                        {
+                            users.U_otherAccess = 1; // Read Only User
+                        }
+                        else
+                        {
+                            users.U_otherAccess = 0;
+                        }
+                       
+                    }
+                    /////
+                    reader.Close();
+
+                    sc.CommandText = " DELETE FROM UsersTable WHERE u_NCode = '" + users.U_NCode + "'";
                     sc.ExecuteNonQuery();
                     sc.CommandText = "INSERT INTO deletedUsersTable (u_FName , u_LName , u_NCode , u_Password ,u_Email , u_Tel , u_canAddProposal , u_canEditProposal , u_canDeleteProposal , u_canAddUser, u_canEditUser , u_canDeleteUser ,u_canManageTeacher, u_canManageType, u_Color ,u_IsAdmin, u_otherAccess, u_faculty, username ,date)"
-                                + " VALUES ('" + user.U_FName + "',"
-                                         + "'" + user.U_LName + "',"
-                                         + "'" + user.U_NCode + "',"
-                                         + "'" + user.U_Password + "',"
-                                         + "'" + user.U_Email + "',"
-                                         + "'" + user.U_Tel + "',"
-                                         + "'" + user.CanAddProposal + "',"
-                                         + "'" + user.CanEditProposal + "',"
-                                         + "'" + user.CanDeleteProposal + "',"
-                                         + "'" + user.CanAddUser + "',"
-                                         + "'" + user.CanEditUser + "',"
-                                         + "'" + user.CanDeleteUser + "',"
-                                         + "'" + user.CanManageTeacher + "',"
-                                         + "'" + user.CanManageTeacher + "',"
-                                         + "'" + user.U_Color + "',"
-                                         + "'" + user.U_IsAdmin + "',"
-                                         + "'" + user.U_otherAccess + "',"
-                                         + "'" + user.U_Faculty + "',"
+                                + " VALUES ('" + users.U_FName + "',"
+                                         + "'" + users.U_LName + "',"
+                                         + "'" + users.U_NCode + "',"
+                                         + "'" + users.U_Password + "',"
+                                         + "'" + users.U_Email + "',"
+                                         + "'" + users.U_Tel + "',"
+                                         + "'" + users.CanAddProposal + "',"
+                                         + "'" + users.CanEditProposal + "',"
+                                         + "'" + users.CanDeleteProposal + "',"
+                                         + "'" + users.CanAddUser + "',"
+                                         + "'" + users.CanEditUser + "',"
+                                         + "'" + users.CanDeleteUser + "',"
+                                         + "'" + users.CanManageTeacher + "',"
+                                         + "'" + users.CanManageTeacher + "',"
+                                         + "'" + users.U_Color + "',"
+                                         + "'" + users.U_IsAdmin + "',"
+                                         + "'" + users.U_otherAccess + "',"
+                                         + "'" + users.U_Faculty + "',"
                                          + "'" + username + "',"
                                          + "'" + dateTime + "')";
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + user.U_NCode + "','" + "UsersTable" + "')";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + users.U_NCode + "','" + "UsersTable" + "')";
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
@@ -1811,25 +1886,49 @@ namespace ProposalReportingSystem
                 SqlTransaction transaction;
                 transaction = conn.BeginTransaction("new");
                 sc.Transaction = transaction;
-
+                SqlDataReader reader;
 
 
 
                 try
                 {
+                    Teachers teachers = new Teachers();
+                    ////
+                    sc.CommandText = " SELECT * FROM TeacherTable WHERE t_NCode = '" + oldNCode + "'";
+                    reader = sc.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        /////
+
+                        teachers.T_NCode = long.Parse(reader["t_NCode"].ToString());
+                        teachers.T_FName = reader["t_FName"].ToString();
+                        teachers.T_LName = reader["t_LName"].ToString();
+                        teachers.T_Faculty = reader["t_Faculty"].ToString();
+                        teachers.T_Group = reader["t_Group"].ToString();
+                        teachers.T_Tel1 = reader["t_Tel1"].ToString();
+                        teachers.T_Tel2 = reader["t_Tel2"].ToString();
+                        teachers.T_Mobile =reader["t_Mobile"].ToString();
+                        teachers.T_Email = reader["t_Email"].ToString();
+                        teachers.T_EDeg = reader["t_EDeg"].ToString();
+                       
+                    }
+                    /////
+                    reader.Close();
+
                     sc.CommandText = " DELETE FROM TeacherTable WHERE t_NCode = '" + oldNCode + "'";
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO deletedTeacherTable (t_FName , t_LName , t_NCode , t_EDeg ,t_Email , t_Group , t_Mobile ,t_Tel1,t_Tel2,t_Faculty , username , date)"
-                                    + "VALUES ('" + teacher.T_FName + "',"
-                                             + "'" + teacher.T_LName + "',"
-                                             + "'" + teacher.T_NCode + "',"
-                                             + "'" + teacher.T_EDeg + "',"
-                                             + "'" + teacher.T_Email + "',"
-                                             + "'" + teacher.T_Group + "',"
-                                             + "'" + teacher.T_Mobile + "',"
-                                             + "'" + teacher.T_Tel1 + "',"
-                                             + "'" + teacher.T_Tel2 + "',"
-                                             + "'" + teacher.T_Faculty + "',"
+                                    + "VALUES ('" + teachers.T_FName + "',"
+                                             + "'" + teachers.T_LName + "',"
+                                             + "'" + teachers.T_NCode + "',"
+                                             + "'" + teachers.T_EDeg + "',"
+                                             + "'" + teachers.T_Email + "',"
+                                             + "'" + teachers.T_Group + "',"
+                                             + "'" + teachers.T_Mobile + "',"
+                                             + "'" + teachers.T_Tel1 + "',"
+                                             + "'" + teachers.T_Tel2 + "',"
+                                             + "'" + teachers.T_Faculty + "',"
                                               + "'" + username + "',"
                                              + "'" + dateTime + "')";
                     sc.ExecuteNonQuery();
