@@ -445,39 +445,71 @@ namespace ProposalReportingSystem
                         p.ShowDialog();
                         if (p.DialogResult == DialogResult.Yes)
                         {
+                            Proposal pro = new Proposal();
+                            ////
+                            sc.CommandText = " SELECT * FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                            reader = sc.ExecuteReader();
+                            while (reader.Read())
+                            {
 
+                                /////
+                               
+                                pro.Index = long.Parse(reader["index"].ToString());
+                                pro.PersianTitle = reader["persianTitle"].ToString();
+                                pro.EngTitle = reader["engTitle"].ToString();
+                                pro.KeyWord = reader["keyword"].ToString();
+                                pro.Executor2 = reader["executor2"].ToString();
+                                pro.CoExecutor = reader["coExecutor"].ToString();
+                                pro.StartDate = reader["startDate"].ToString();
+                                pro.Duration = Int32.Parse(reader["duration"].ToString());
+                                pro.ProcedureType = reader["procedureType"].ToString();
+                                pro.ProposalType = reader["proposalType"].ToString();
+                                pro.PropertyType = reader["propertyType"].ToString();
+                                pro.RegisterType = reader["registerType"].ToString();
+                                pro.Employer = Int32.Parse(reader["employer"].ToString());
+                               // pro.Edition = int.Parse(reader["edition"].ToString());
+                                pro.Value = long.Parse(reader["value"].ToString());
+                                pro.Status = reader["status"].ToString();
+                                pro.FileName = reader["fileName"].ToString();
+                                pro.Executor = long.Parse(reader["executor"].ToString());
+                                pro.Registrant = long.Parse(reader["registrant"].ToString());
+                                //editions.RegistrantName = editProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                                //editions.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
+                            }
+                            /////
+                            reader.Close();
 
-
-                            sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                                sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                             sc.ExecuteNonQuery();
                             sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = '0' ";
                             sc.ExecuteNonQuery();
 
-                            sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
-                                            + "VALUES ('" + proposal.Index + "',"
-                                                     + "'" + proposal.PersianTitle + "',"
-                                                     + "'" + proposal.EngTitle + "',"
-                                                     + "'" + proposal.KeyWord + "',"
-                                                     + "'" + proposal.Executor + "',"
-                                                     + "'" + proposal.Executor2 + "',"
-                                                     + "'" + proposal.CoExecutor + "',"
-                                                     + "'" + proposal.StartDate + "',"
-                                                     + "'" + proposal.Duration + "',"
-                                                     + "'" + proposal.ProcedureType + "',"
-                                                     + "'" + proposal.PropertyType + "',"
-                                                     + "'" + proposal.RegisterType + "',"
-                                                     + "'" + proposal.ProposalType + "',"
-                                                     + "'" + proposal.Employer + "',"
-                                                     + "'" + proposal.Value + "',"
-                                                     + "'" + proposal.Status + "',"
-                                                     + "'" + proposal.Registrant + "',"
+                            sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,fileName,username,date)"
+                                            + "VALUES ('" + pro.Index + "',"
+                                                     + "'" + pro.PersianTitle + "',"
+                                                     + "'" + pro.EngTitle + "',"
+                                                     + "'" + pro.KeyWord + "',"
+                                                     + "'" + pro.Executor + "',"
+                                                     + "'" + pro.Executor2 + "',"
+                                                     + "'" + pro.CoExecutor + "',"
+                                                     + "'" + pro.StartDate + "',"
+                                                     + "'" + pro.Duration + "',"
+                                                     + "'" + pro.ProcedureType + "',"
+                                                     + "'" + pro.PropertyType + "',"
+                                                     + "'" + pro.RegisterType + "',"
+                                                     + "'" + pro.ProposalType + "',"
+                                                     + "'" + pro.Employer + "',"
+                                                     + "'" + pro.Value + "',"
+                                                     + "'" + pro.Status + "',"
+                                                     + "'" + pro.Registrant + "',"
+                                                     + "'" + pro.FileName + "',"
                                                      + "'" + username + "',"
                                                      + "'" + dateTime + "')";
 
                             sc.ExecuteNonQuery();
-                            sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                            sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + pro.PersianTitle + "','" + "proposalTable'" + ")";
                             sc.ExecuteNonQuery();
-                            string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                            string moveToDeleteResponse = MoveFileToDeleted(pro.FileName);
 
                             sc.CommandText = " SELECT * FROM editionTable WHERE [index] = '" + proposal.Index + "'";
                             reader = sc.ExecuteReader();
@@ -538,36 +570,72 @@ namespace ProposalReportingSystem
                     }
                     else
                     {
+                        Proposal pro = new Proposal();
+                        ////
+                        sc.CommandText = " SELECT * FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                        reader = sc.ExecuteReader();
+                        while (reader.Read())
+                        {
+
+                            /////
+
+                            pro.Index = long.Parse(reader["index"].ToString());
+                            pro.PersianTitle = reader["persianTitle"].ToString();
+                            pro.EngTitle = reader["engTitle"].ToString();
+                            pro.KeyWord = reader["keyword"].ToString();
+                            pro.Executor2 = reader["executor2"].ToString();
+                            pro.CoExecutor = reader["coExecutor"].ToString();
+                            pro.StartDate = reader["startDate"].ToString();
+                            pro.Duration = Int32.Parse(reader["duration"].ToString());
+                            pro.ProcedureType = reader["procedureType"].ToString();
+                            pro.ProposalType = reader["proposalType"].ToString();
+                            pro.PropertyType = reader["propertyType"].ToString();
+                            pro.RegisterType = reader["registerType"].ToString();
+                            pro.Employer = Int32.Parse(reader["employer"].ToString());
+                            //pro.Edition = int.Parse(reader["edition"].ToString());
+                            pro.Value = long.Parse(reader["value"].ToString());
+                            pro.Status = reader["status"].ToString();
+                            pro.FileName = reader["fileName"].ToString();
+                            pro.Executor = long.Parse(reader["executor"].ToString());
+                            pro.Registrant = long.Parse(reader["registrant"].ToString());
+                            //editions.RegistrantName = editProposalShowDgv.Rows[e.RowIndex].Cells["registrantBtn"].Value.ToString();
+                            //editions.TeacherFullName = editProposalShowDgv.Rows[e.RowIndex].Cells["executorFullName"].Value.ToString();
+                        }
+                        /////
+                        reader.Close();
+
                         sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                         sc.ExecuteNonQuery();
-                        sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "'";
+                        sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = '0' ";
                         sc.ExecuteNonQuery();
-                        sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,username,date)"
-                                        + "VALUES ('" + proposal.Index + "',"
-                                                 + "'" + proposal.PersianTitle + "',"
-                                                 + "'" + proposal.EngTitle + "',"
-                                                 + "'" + proposal.KeyWord + "',"
-                                                 + "'" + proposal.Executor + "',"
-                                                 + "'" + proposal.Executor2 + "',"
-                                                 + "'" + proposal.CoExecutor + "',"
-                                                 + "'" + proposal.StartDate + "',"
-                                                 + "'" + proposal.Duration + "',"
-                                                 + "'" + proposal.ProcedureType + "',"
-                                                 + "'" + proposal.PropertyType + "',"
-                                                 + "'" + proposal.RegisterType + "',"
-                                                 + "'" + proposal.ProposalType + "',"
-                                                 + "'" + proposal.Employer + "',"
-                                                 + "'" + proposal.Value + "',"
-                                                 + "'" + proposal.Status + "',"
-                                                 + "'" + proposal.Registrant + "',"
+
+                        sc.CommandText = " INSERT INTO deletedProposalTable ([index],persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,fileName,username,date)"
+                                        + "VALUES ('" + pro.Index + "',"
+                                                 + "'" + pro.PersianTitle + "',"
+                                                 + "'" + pro.EngTitle + "',"
+                                                 + "'" + pro.KeyWord + "',"
+                                                 + "'" + pro.Executor + "',"
+                                                 + "'" + pro.Executor2 + "',"
+                                                 + "'" + pro.CoExecutor + "',"
+                                                 + "'" + pro.StartDate + "',"
+                                                 + "'" + pro.Duration + "',"
+                                                 + "'" + pro.ProcedureType + "',"
+                                                 + "'" + pro.PropertyType + "',"
+                                                 + "'" + pro.RegisterType + "',"
+                                                 + "'" + pro.ProposalType + "',"
+                                                 + "'" + pro.Employer + "',"
+                                                 + "'" + pro.Value + "',"
+                                                 + "'" + pro.Status + "',"
+                                                 + "'" + pro.Registrant + "',"
+                                                 + "'" + pro.FileName + "',"
                                                  + "'" + username + "',"
                                                  + "'" + dateTime + "')";
 
                         sc.ExecuteNonQuery();
-                        sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                        sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "deleted " + pro.PersianTitle + "','" + "proposalTable'" + ")";
                         sc.ExecuteNonQuery();
 
-                        string moveToDeleteResponse = MoveFileToDeleted(proposal.FileName);
+                        string moveToDeleteResponse = MoveFileToDeleted(pro.FileName);
                         if (moveToDeleteResponse.Contains("successful"))
                         {
 
