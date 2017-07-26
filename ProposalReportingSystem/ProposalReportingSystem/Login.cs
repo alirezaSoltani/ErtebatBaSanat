@@ -188,7 +188,7 @@ namespace ProposalReportingSystem
 
                     else
                     {
-                        DataBaseHandler dbh = new DataBaseHandler();
+                        DataBaseHandler dbh = new DataBaseHandler( user );
                         AppSetting setting = new AppSetting();
                         username = loginUsernameTxtBx.Text;
                         password = dbh.hashPass(loginPasswordTxtbx.Text);

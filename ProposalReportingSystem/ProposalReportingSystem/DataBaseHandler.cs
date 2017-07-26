@@ -16,10 +16,12 @@ namespace ProposalReportingSystem
 {
     class DataBaseHandler
     {
+        User loginUser;
         AppSetting getSetting = new AppSetting();
         string conString;
-        public DataBaseHandler()
+        public DataBaseHandler(User user)
         {
+            loginUser = user;
             conString = getSetting.getConnectionString("cn");
         }
         //string conString = "Data Source= 169.254.92.252;" +
@@ -31,6 +33,7 @@ namespace ProposalReportingSystem
         //       "Initial Catalog=rayanpro_EBS;" +
         //       "User id=rayanpro_rayan; " +
         //       "Password=P@hn1395;";
+        
 
         private Toast toast;//related to toast messages
         private PopUp popup;
@@ -171,6 +174,11 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
                     b = false;
                     try
                     {
@@ -202,12 +210,18 @@ namespace ProposalReportingSystem
                         popup.ShowDialog();
                     }
 
+                   
+
                 }
 
                 conn.Close();
             }
             catch (Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
@@ -352,7 +366,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -392,6 +409,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
 
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
@@ -652,7 +673,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -692,7 +716,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -800,7 +827,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -836,7 +866,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -936,7 +969,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -976,7 +1012,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1064,7 +1103,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1108,6 +1150,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (count == 1)
                 {
                     if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
@@ -1187,7 +1233,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1217,7 +1266,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1283,7 +1335,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1313,7 +1368,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1463,7 +1521,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1498,7 +1559,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1548,7 +1612,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1576,8 +1643,12 @@ namespace ProposalReportingSystem
 
                 conn.Close();
             }
-            catch
+            catch (Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
             }
@@ -1644,7 +1715,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1674,7 +1748,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1743,7 +1820,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1774,7 +1854,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -1835,7 +1918,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1863,8 +1949,12 @@ namespace ProposalReportingSystem
 
                 conn.Close();
             }
-            catch
+            catch(Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
             }
@@ -1941,7 +2031,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -1976,7 +2069,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2152,7 +2248,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2184,7 +2283,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2234,7 +2336,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2266,7 +2371,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2350,7 +2458,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2387,7 +2498,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2443,7 +2557,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2476,7 +2593,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2526,7 +2646,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2558,7 +2681,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2640,7 +2766,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2677,7 +2806,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2735,7 +2867,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2767,7 +2902,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2816,7 +2954,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2848,7 +2989,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -2935,7 +3079,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -2972,7 +3119,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3032,7 +3182,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3064,7 +3217,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3115,7 +3271,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3147,7 +3306,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3234,7 +3396,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3271,7 +3436,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3329,7 +3497,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3361,7 +3532,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3411,7 +3585,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3443,7 +3620,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3534,7 +3714,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3571,7 +3754,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3632,7 +3818,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3664,7 +3853,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3714,7 +3906,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3746,7 +3941,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3829,7 +4027,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3866,7 +4067,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -3925,7 +4129,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -3957,7 +4164,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4009,7 +4219,10 @@ namespace ProposalReportingSystem
                 catch (Exception e)
                 {
 
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4041,7 +4254,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4143,7 +4359,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-                    
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4185,7 +4404,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4243,7 +4465,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4275,7 +4500,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4325,7 +4553,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4357,7 +4588,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4439,7 +4673,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4476,7 +4713,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4561,6 +4801,10 @@ namespace ProposalReportingSystem
                 catch (Exception e)
                 {
                     // MessageBox.Show(e.Message);
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4597,7 +4841,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4647,7 +4894,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4679,7 +4929,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -4729,7 +4982,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -4761,7 +5017,10 @@ namespace ProposalReportingSystem
 
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -5604,6 +5863,10 @@ namespace ProposalReportingSystem
             catch (Exception e)
             {
                 // MessageBox.Show(e.Message);
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
         }
         private void GetData2(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
@@ -5907,8 +6170,12 @@ namespace ProposalReportingSystem
 
                 return ResponseDescription;
             }
-            catch
+            catch(Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return ResponseDescription;
             }
         }
@@ -5989,6 +6256,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return "";
             }
         }
@@ -6021,8 +6292,12 @@ namespace ProposalReportingSystem
                     return response.StatusDescription;
                 }
             }
-            catch
+            catch(Exception e)
             {
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return "";
             }
         }
@@ -6061,6 +6336,10 @@ namespace ProposalReportingSystem
             catch (Exception e)
             {
                 // MessageBox.Show(e.Message);
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return "";
             }
         }
@@ -6261,7 +6540,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -6291,7 +6573,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
                 if (e.Message.Contains("Timeout expired") || e.Message.Contains("server was not found") || e.Message.Contains("expired"))
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
@@ -6360,7 +6645,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -6376,7 +6664,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             return teacher;
         }
@@ -6429,7 +6720,10 @@ namespace ProposalReportingSystem
                 }
                 catch (Exception e)
                 {
-
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                     try
                     {
                         transaction.Rollback();
@@ -6445,7 +6739,10 @@ namespace ProposalReportingSystem
             }
             catch (Exception e)
             {
-
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             return user;
         }

@@ -109,7 +109,7 @@ namespace ProposalReportingSystem
             InitializeComponent();
 
             loginUser = user;
-            dbh = new DataBaseHandler();// initialized here so that we can send user Ncode to dbHandler
+            
 
 
             //نمایش نام و نام خانوادگی 
@@ -208,6 +208,9 @@ namespace ProposalReportingSystem
 
                 //MANAGE ACCESS LEVELS
             }
+
+
+            dbh = new DataBaseHandler(loginUser);// initialized here so that we can send user Ncode to dbHandler
 
 
             //homePanel.Visible = false;
@@ -3131,15 +3134,26 @@ namespace ProposalReportingSystem
 
                    
                 }
-                catch(NullReferenceException)
+                catch(NullReferenceException ex)
                 {
                     string context = "خطا در برقراری ارتباط با سرور";
                     Alert alert = new Alert(context, "darkred", 5);
+
+                    if(loginUser.U_NCode ==999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch(Exception ex)
                 {
                     string context = "با پشتیبانی تماس بگیرید";
                     Alert alert = new Alert(context, "darkred", 5);
+
+
+                    if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 
             } 
@@ -3306,15 +3320,25 @@ namespace ProposalReportingSystem
                     addProposalExecutorTel2Txtbx.Clear();
                 }
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException ex)
             {
                 string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
+
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (Exception ex)
             {
                 string context = "با پشتیبانی تماس بگیرید";
                 Alert alert = new Alert(context, "darkred", 5);
+
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -4333,15 +4357,25 @@ namespace ProposalReportingSystem
                     editProposalExecutorNcodeTxtbx.BackColor = Color.White;
                 }
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException ex)
             {
                 string context = "خطا در برقراری ارتباط با سرور";
                 Alert alert = new Alert(context, "darkred", 5);
+
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (Exception ex)
             {
                 string context = "با پشتیبانی تماس بگیرید";
                 Alert alert = new Alert(context, "darkred", 5);
+
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             
         }

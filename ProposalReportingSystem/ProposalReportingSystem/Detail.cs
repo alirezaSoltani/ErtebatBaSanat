@@ -26,11 +26,14 @@ namespace ProposalReportingSystem
         public Detail(Proposal proposal,User user)
         {
             InitializeComponent();
-
+            if(user.U_otherAccess != 0)
+            {
+                detailPrintBtn.Enabled = false;
+            }
             prop = proposal;
 
             this.loginUserNCode = user.U_NCode;
-            dbh = new DataBaseHandler(/*this.loginUserNCode*/);
+            dbh = new DataBaseHandler(user);
 
             fileName = proposal.FileName;
             detailPersianTitleTxtbx.Text = proposal.PersianTitle;
@@ -120,6 +123,10 @@ namespace ProposalReportingSystem
                 }
                 catch(Exception ex)
                 {
+                    if (loginUserNCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     string context = "اشکال در فایل پروپوزال";
                     Alert alert = new Alert(context, "bluegray", 2);
                 }
@@ -183,6 +190,10 @@ namespace ProposalReportingSystem
                     }
                     catch (Exception ee)
                     {
+                        if (loginUserNCode == 999999999) // to show exceptin for admin
+                        {
+                            MessageBox.Show(ee.Message);
+                        }
                         MessageBox.Show(ee.Message.ToString());
                         string context = "خطای نام فرستنده یا گیرنده";
                         Alert alert = new Alert(context, "bluegray", 15);
@@ -190,6 +201,10 @@ namespace ProposalReportingSystem
                 }
                 catch(Exception ee)
                 {
+                    if (loginUserNCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(ee.Message);
+                    }
                     string context = "خطای فایل نامه";
                     Alert alert = new Alert(context, "bluegray", 15);
                 }
