@@ -55,7 +55,8 @@ namespace ProposalReportingSystem
 
             Report report = new Report();
             report.Load("report1.frx");
-            report.SetParameterValue("r_header", "پیشنهاد پروژه های ارسالی به سازمان ها و دستگاه های اجرایی در سال  پیشنهاد پروژه های ارسالی به سازمان ها و دستگاه های اجرایی در سال  پیشنهاد و دستگاه های اجرایی در سال 96");
+            report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
+            //report.SetParameterValue("r_userInfo", );
             //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
             report.RegisterData(dt, "proposalTable");
             report.GetDataSource("proposalTable").Enabled = true;
