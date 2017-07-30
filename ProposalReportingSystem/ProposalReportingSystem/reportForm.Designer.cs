@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.detailPrintBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reportExitBtn = new System.Windows.Forms.Button();
             this.reportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportDataGridView = new System.Windows.Forms.DataGridView();
             this.reportHeaderGbx = new System.Windows.Forms.GroupBox();
@@ -48,25 +48,26 @@
             // detailPrintBtn
             // 
             this.detailPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPrintBtn.Location = new System.Drawing.Point(25, 661);
+            this.detailPrintBtn.Location = new System.Drawing.Point(267, 623);
             this.detailPrintBtn.Margin = new System.Windows.Forms.Padding(4);
             this.detailPrintBtn.Name = "detailPrintBtn";
-            this.detailPrintBtn.Size = new System.Drawing.Size(307, 44);
+            this.detailPrintBtn.Size = new System.Drawing.Size(223, 44);
             this.detailPrintBtn.TabIndex = 1;
             this.detailPrintBtn.Text = "پرینت خروجی";
             this.detailPrintBtn.UseVisualStyleBackColor = true;
             this.detailPrintBtn.Click += new System.EventHandler(this.detailPrintBtn_Click);
             // 
-            // button1
+            // reportExitBtn
             // 
-            this.button1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(339, 661);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "خروج";
-            this.button1.UseVisualStyleBackColor = true;
+            this.reportExitBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.reportExitBtn.Location = new System.Drawing.Point(25, 623);
+            this.reportExitBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.reportExitBtn.Name = "reportExitBtn";
+            this.reportExitBtn.Size = new System.Drawing.Size(223, 44);
+            this.reportExitBtn.TabIndex = 2;
+            this.reportExitBtn.Text = "خروج";
+            this.reportExitBtn.UseVisualStyleBackColor = true;
+            this.reportExitBtn.Click += new System.EventHandler(this.reportExitBtn_Click);
             // 
             // reportDataGridView
             // 
@@ -119,8 +120,9 @@
             this.reportDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.reportDataGridView.RowTemplate.Height = 24;
             this.reportDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reportDataGridView.Size = new System.Drawing.Size(1265, 521);
+            this.reportDataGridView.Size = new System.Drawing.Size(1265, 483);
             this.reportDataGridView.TabIndex = 3;
+            this.reportDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportDataGridView_CellClick);
             // 
             // reportHeaderGbx
             // 
@@ -140,7 +142,7 @@
             this.reportTitleTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.reportTitleTxtbx.Location = new System.Drawing.Point(19, 24);
             this.reportTitleTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.reportTitleTxtbx.MaxLength = 100;
+            this.reportTitleTxtbx.MaxLength = 180;
             this.reportTitleTxtbx.Multiline = true;
             this.reportTitleTxtbx.Name = "reportTitleTxtbx";
             this.reportTitleTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -165,9 +167,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(1319, 721);
+            this.ClientSize = new System.Drawing.Size(1319, 680);
             this.Controls.Add(this.reportHeaderGbx);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.reportExitBtn);
             this.Controls.Add(this.detailPrintBtn);
             this.Controls.Add(this.reportDataGridView);
             this.DoubleBuffered = true;
@@ -187,7 +189,7 @@
 
         #endregion
         private System.Windows.Forms.Button detailPrintBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reportExitBtn;
         private System.Windows.Forms.BindingSource reportBindingSource;
         private System.Windows.Forms.DataGridView reportDataGridView;
         private System.Windows.Forms.GroupBox reportHeaderGbx;

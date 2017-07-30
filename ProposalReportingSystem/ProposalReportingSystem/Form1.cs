@@ -2640,6 +2640,8 @@ namespace ProposalReportingSystem
             searchProposalNavigationPreviousPageBtn.Enabled = false;
             searchProposalNavigationCurrentPageTxtbx.Enabled = false;
             searchProposalNavigationReturnBtn.Enabled = false;
+            searchProposalNavigationShowAllBtn.Enabled = false;
+
 
             searchProposalShowDgv.Columns.Clear();
             searchProposalShowDgv.DataSource = null;
@@ -6041,6 +6043,7 @@ namespace ProposalReportingSystem
 
         private void searchProposalShowAllBtn_Click(object sender, EventArgs e)
         {
+            
             if (loginUser.U_Faculty == "")
             {
                 searchProposalShowDgv.Columns.Clear();
@@ -6065,6 +6068,7 @@ namespace ProposalReportingSystem
                 searchProposalNavigationPreviousPageBtn.Enabled = true;
                 searchProposalNavigationCurrentPageTxtbx.Enabled = true;
                 searchProposalNavigationReturnBtn.Enabled = false;
+                searchProposalNavigationShowAllBtn.Enabled = true;
                 //  addProposalShowAllBtn.Enabled = false;
             }
             else if(loginUser.U_Faculty != "")
@@ -6287,11 +6291,13 @@ namespace ProposalReportingSystem
                 searchProposalNavigationPreviousPageBtn.Enabled = true;
                 searchProposalNavigationCurrentPageTxtbx.Enabled = true;
                 searchProposalNavigationReturnBtn.Enabled = false;
+                searchProposalNavigationShowAllBtn.Enabled = true;
             }
             else
             {
                 searchProposalShowDgv.Columns.Clear();
                 searchProposalShowDgv.DataSource = null;
+                searchProposalNavigationShowAllBtn.Enabled = false;
             }
         }
 
@@ -8228,8 +8234,8 @@ namespace ProposalReportingSystem
 
         private void searchProposalNavigationShowAllBtn_Click(object sender, EventArgs e)
         {
-            reportForm reportForm = new reportForm(dbh.searchProposalQuery);
-            reportForm.Show();
+            reportForm reportForm = new reportForm(dbh.searchProposalQuery, loginUser);
+            reportForm.ShowDialog();
 
         }
 

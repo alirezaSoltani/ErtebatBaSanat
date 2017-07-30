@@ -33,8 +33,8 @@
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData1 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData2 = new DevComponents.DotNetBar.Controls.ColorData();
@@ -47,7 +47,7 @@
             DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -647,15 +647,15 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel5);
+            this.mainPage.Controls.Add(this.superTabControlPanel6);
+            this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel1);
             this.mainPage.Controls.Add(this.superTabControlPanel2);
-            this.mainPage.Controls.Add(this.superTabControlPanel6);
             this.mainPage.Controls.Add(this.superTabControlPanel4);
             this.mainPage.Controls.Add(this.superTabControlPanel12);
             this.mainPage.Controls.Add(this.superTabControlPanel10);
-            this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel11);
             this.mainPage.Controls.Add(this.superTabControlPanel13);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -779,6 +779,7 @@
             this.searchProposalNavigationShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchProposalNavigationShowAllBtn.BackColor = System.Drawing.Color.White;
             this.searchProposalNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.searchProposalNavigationShowAllBtn.Enabled = false;
             this.searchProposalNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.searchProposalNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
             this.searchProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -789,7 +790,7 @@
             this.superTabItem39});
             this.searchProposalNavigationShowAllBtn.SubItemsExpandWidth = 0;
             this.searchProposalNavigationShowAllBtn.TabIndex = 35;
-            this.searchProposalNavigationShowAllBtn.Text = "مشاهده";
+            this.searchProposalNavigationShowAllBtn.Text = "ریپورت فهرست";
             this.searchProposalNavigationShowAllBtn.Click += new System.EventHandler(this.searchProposalNavigationShowAllBtn_Click);
             // 
             // superTabItem39
@@ -2701,14 +2702,14 @@
             this.editProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.editProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.editProposalShowDgv.RowTemplate.Height = 24;
             this.editProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.editProposalShowDgv.Size = new System.Drawing.Size(1075, 121);
@@ -2998,14 +2999,14 @@
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.addProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1088, 169);
@@ -4078,7 +4079,7 @@
             this.superTabControlPanel6.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(1124, 868);
+            this.superTabControlPanel6.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel6.TabIndex = 0;
             this.superTabControlPanel6.TabItem = this.appSettingsTab;
             // 
@@ -4421,14 +4422,14 @@
             this.appSettingShowDv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.appSettingShowDv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.appSettingShowDv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.appSettingShowDv.RowTemplate.Height = 24;
             this.appSettingShowDv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appSettingShowDv.Size = new System.Drawing.Size(1097, 113);
@@ -6611,7 +6612,7 @@
             this.superTabControlPanel7.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel7.Size = new System.Drawing.Size(1137, 868);
             this.superTabControlPanel7.TabIndex = 0;
             this.superTabControlPanel7.TabItem = this.personalSettingsTab;
             // 

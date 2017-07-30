@@ -18,50 +18,104 @@ namespace ProposalReportingSystem
         DataBaseHandler dbh;
         string query;
 
-        public reportForm(String queryy)
+        public reportForm(String queryy, User loginUser)
         {
             InitializeComponent();
+            user = loginUser;
             query = queryy;
             
         }
 
         private void detailPrintBtn_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in reportDataGridView.Columns)
+            if (reportTitleTxtbx.Text == "")
             {
-
-                dt.Columns.Add(col.Name);
-            }
-
-            foreach (DataGridViewRow row in reportDataGridView.Rows)
-            {
-                DataRow dRow = dt.NewRow();
-                foreach (DataGridViewCell cell in row.Cells)
+                PopUp p = new PopUp("ریپورت بدون عنوان", "عنوانی برای ریپورت وارد نکرده اید. ادامه می دهید؟", "بله", "خیر", "", "info");
+                p.ShowDialog();
+                if (p.DialogResult == DialogResult.Yes)
                 {
-                    if (cell.ColumnIndex == 14)
+                    DataTable dt = new DataTable();
+                    foreach (DataGridViewColumn col in reportDataGridView.Columns)
                     {
-                        string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
-                        temp = temp.Replace(',', '/');
-                        dRow[cell.ColumnIndex] = temp;
+
+                        dt.Columns.Add(col.Name);
                     }
-                    else
-                        dRow[cell.ColumnIndex] = cell.Value;
+
+                    foreach (DataGridViewRow row in reportDataGridView.Rows)
+                    {
+                        DataRow dRow = dt.NewRow();
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.ColumnIndex == 14)
+                            {
+                                string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                                temp = temp.Replace(',', '/');
+                                dRow[cell.ColumnIndex] = temp;
+                            }
+                            else
+                                dRow[cell.ColumnIndex] = cell.Value;
+                        }
+                        dt.Rows.Add(dRow);
+                    }
+
+                    //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                    Report report = new Report();
+                    report.Load("report1.frx");
+                    report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
+                    report.SetParameterValue("r_userInfo", user.U_FName + user.U_LName);
+                    report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                    //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                    report.RegisterData(dt, "proposalTable");
+                    report.GetDataSource("proposalTable").Enabled = true;
+                    report.Prepare();
+                    report.Show();
                 }
-                dt.Rows.Add(dRow);
+                else
+                {
+                    reportTitleTxtbx.Focus();
+                }
             }
+            else
+            {
+                DataTable dt = new DataTable();
+                foreach (DataGridViewColumn col in reportDataGridView.Columns)
+                {
 
-            //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+                    dt.Columns.Add(col.Name);
+                }
 
-            Report report = new Report();
-            report.Load("report1.frx");
-            report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
-            //report.SetParameterValue("r_userInfo", );
-            //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
-            report.RegisterData(dt, "proposalTable");
-            report.GetDataSource("proposalTable").Enabled = true;
-            report.Prepare();
-            report.Show();
+                foreach (DataGridViewRow row in reportDataGridView.Rows)
+                {
+                    DataRow dRow = dt.NewRow();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.ColumnIndex == 14)
+                        {
+                            string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                            temp = temp.Replace(',', '/');
+                            dRow[cell.ColumnIndex] = temp;
+                        }
+                        else
+                            dRow[cell.ColumnIndex] = cell.Value;
+                    }
+                    dt.Rows.Add(dRow);
+                }
+
+                //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                Report report = new Report();
+                report.Load("report1.frx");
+                report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
+                report.SetParameterValue("r_userInfo", user.U_FName + user.U_LName);
+                report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                report.RegisterData(dt, "proposalTable");
+                report.GetDataSource("proposalTable").Enabled = true;
+                report.Prepare();
+                report.Show();
+            }
+            
         }
 
         private void reportForm_Load(object sender, EventArgs e)
@@ -148,5 +202,14 @@ namespace ProposalReportingSystem
             }*/
         }
 
+        private void reportExitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void reportDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 }
