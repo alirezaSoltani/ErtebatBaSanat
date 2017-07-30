@@ -108,6 +108,22 @@
     <Reference Include="FarsiLibrary.Win">
       <HintPath>C:\Users\ASUS\Desktop\FarsiLibrary\FarsiLibrary.Win.dll</HintPath>
     </Reference>
+    <Reference Include="FastReport, Version=2015.1.2.0, Culture=neutral, PublicKeyToken=417583d16d08abed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Software\Programming\FastReport.Net.2017.1.22\FastReport.Net.2017.1.22\Full Bins\Full Bins\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2015.1.2.0, Culture=neutral, PublicKeyToken=417583d16d08abed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Software\Programming\FastReport.Net.2017.1.22\FastReport.Net.2017.1.22\Full Bins\Full Bins\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2015.1.2.0, Culture=neutral, PublicKeyToken=417583d16d08abed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Software\Programming\FastReport.Net.2017.1.22\FastReport.Net.2017.1.22\Full Bins\Full Bins\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install, Version=1.0.0.0, Culture=neutral, PublicKeyToken=417583d16d08abed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Software\Programming\FastReport.Net.2017.1.22\FastReport.Net.2017.1.22\Full Bins\Full Bins\FastReport.Install.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ShDateTimePicker">
       <HintPath>..\..\..\..\..\Desktop\ShDateTimePicker.dll</HintPath>

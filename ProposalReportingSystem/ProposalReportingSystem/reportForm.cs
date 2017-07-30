@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FastReport;
+using FastReport.Data;
 
 namespace ProposalReportingSystem
 {
@@ -25,15 +27,41 @@ namespace ProposalReportingSystem
 
         private void detailPrintBtn_Click(object sender, EventArgs e)
         {
-           
-        }
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn col in reportDataGridView.Columns)
+            {
 
-        private void reportDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
+                dt.Columns.Add(col.Name);
+            }
 
-       
+            foreach (DataGridViewRow row in reportDataGridView.Rows)
+            {
+                DataRow dRow = dt.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.ColumnIndex == 14)
+                    {
+                        string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                        temp = temp.Replace(',', '/');
+                        dRow[cell.ColumnIndex] = temp;
+                    }
+                    else
+                        dRow[cell.ColumnIndex] = cell.Value;
+                }
+                dt.Rows.Add(dRow);
+            }
+
+            //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+            Report report = new Report();
+            report.Load("report1.frx");
+            report.SetParameterValue("r_header", "پیشنهاد پروژه های ارسالی به سازمان ها و دستگاه های اجرایی در سال  پیشنهاد پروژه های ارسالی به سازمان ها و دستگاه های اجرایی در سال  پیشنهاد و دستگاه های اجرایی در سال 96");
+            //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+            report.RegisterData(dt, "proposalTable");
+            report.GetDataSource("proposalTable").Enabled = true;
+            report.Prepare();
+            report.Show();
+        }
 
         private void reportForm_Load(object sender, EventArgs e)
         {
@@ -60,14 +88,15 @@ namespace ProposalReportingSystem
 
             dbh = new DataBaseHandler(user);
             dbh.dataGridViewUpdateForReport(reportDataGridView, reportBindingSource, query);
-
+            reportDataGridView.Columns.Add("hijriDate", "تاریخ");
 
 
             foreach (DataGridViewRow row in reportDataGridView.Rows)
             {
                 string fullName;
                 fullName = dbh.getDateHijri(row.Cells["startDate"].Value.ToString());
-                row.Cells["startDate"].Value = fullName;
+                string[] splittedString = fullName.Split(' ');
+                row.Cells["hijriDate"].Value = splittedString[0];
             }
             foreach (DataGridViewRow row in reportDataGridView.Rows)
             {
@@ -84,6 +113,7 @@ namespace ProposalReportingSystem
             reportDataGridView.Columns["executor"].Visible = false;
             reportDataGridView.Columns["executor2"].Visible = false;
             reportDataGridView.Columns["duration"].Visible = false;
+            reportDataGridView.Columns["startDate"].Visible = false;
             reportDataGridView.Columns["procedureType"].Visible = false;
             reportDataGridView.Columns["registerType"].Visible = false;
             reportDataGridView.Columns["propertyType"].Visible = false;
@@ -98,6 +128,7 @@ namespace ProposalReportingSystem
             reportDataGridView.Columns["t_EDeg"].Visible = false;
             reportDataGridView.Columns["t_Mobile"].Visible = false;
             reportDataGridView.Columns["index1"].Visible = false;
+
             reportDataGridView.Columns["orgName"].HeaderText = "سازمان کارفرما";
             /*
             int j = 0;
@@ -115,5 +146,6 @@ namespace ProposalReportingSystem
                 }
             }*/
         }
+
     }
 }
