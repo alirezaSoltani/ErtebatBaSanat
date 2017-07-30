@@ -8226,6 +8226,13 @@ namespace ProposalReportingSystem
             }
         }
 
+        private void searchProposalNavigationShowAllBtn_Click(object sender, EventArgs e)
+        {
+            reportForm reportForm = new reportForm(dbh.searchProposalQuery);
+            reportForm.Show();
+
+        }
+
         private void manageUserAddProCb_CheckedChanged(object sender, EventArgs e)
         {
             if(!manageUserAddProCb.Checked)

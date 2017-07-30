@@ -84,9 +84,17 @@
             this.detailValueLbl = new System.Windows.Forms.Label();
             this.detailStatusLbl = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.registrantGenderGb = new System.Windows.Forms.GroupBox();
+            this.executorGenderGb = new System.Windows.Forms.GroupBox();
+            this.detailMaleExecutor = new System.Windows.Forms.RadioButton();
+            this.detailFemaleExecutor = new System.Windows.Forms.RadioButton();
+            this.detailMaleRegistrant = new System.Windows.Forms.RadioButton();
+            this.detailFemaleRegistrant = new System.Windows.Forms.RadioButton();
             this.detailPanel.SuspendLayout();
             this.letterInfoGb.SuspendLayout();
             this.detailProposalInfoGb.SuspendLayout();
+            this.registrantGenderGb.SuspendLayout();
+            this.executorGenderGb.SuspendLayout();
             this.SuspendLayout();
             // 
             // detailPanel
@@ -102,6 +110,8 @@
             // 
             // letterInfoGb
             // 
+            this.letterInfoGb.Controls.Add(this.executorGenderGb);
+            this.letterInfoGb.Controls.Add(this.registrantGenderGb);
             this.letterInfoGb.Controls.Add(this.textBox2);
             this.letterInfoGb.Controls.Add(this.label2);
             this.letterInfoGb.Controls.Add(this.checkBox1);
@@ -133,19 +143,19 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox2.Location = new System.Drawing.Point(26, 147);
-            this.textBox2.MaxLength = 200;
+            this.textBox2.Location = new System.Drawing.Point(23, 148);
+            this.textBox2.MaxLength = 180;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(803, 54);
+            this.textBox2.Size = new System.Drawing.Size(414, 54);
             this.textBox2.TabIndex = 51;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(832, 148);
+            this.label2.Location = new System.Drawing.Point(468, 148);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(102, 29);
@@ -178,7 +188,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(470, 22);
+            this.label1.Location = new System.Drawing.Point(468, 22);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(102, 29);
@@ -986,6 +996,74 @@
             this.detailStatusLbl.Text = "وضعیت";
             this.detailStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // registrantGenderGb
+            // 
+            this.registrantGenderGb.Controls.Add(this.detailMaleRegistrant);
+            this.registrantGenderGb.Controls.Add(this.detailFemaleRegistrant);
+            this.registrantGenderGb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.registrantGenderGb.Location = new System.Drawing.Point(596, 194);
+            this.registrantGenderGb.Name = "registrantGenderGb";
+            this.registrantGenderGb.Size = new System.Drawing.Size(335, 47);
+            this.registrantGenderGb.TabIndex = 57;
+            this.registrantGenderGb.TabStop = false;
+            this.registrantGenderGb.Text = "کارشناس";
+            // 
+            // executorGenderGb
+            // 
+            this.executorGenderGb.Controls.Add(this.detailMaleExecutor);
+            this.executorGenderGb.Controls.Add(this.detailFemaleExecutor);
+            this.executorGenderGb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.executorGenderGb.Location = new System.Drawing.Point(596, 143);
+            this.executorGenderGb.Name = "executorGenderGb";
+            this.executorGenderGb.Size = new System.Drawing.Size(335, 47);
+            this.executorGenderGb.TabIndex = 58;
+            this.executorGenderGb.TabStop = false;
+            this.executorGenderGb.Text = "مجری";
+            // 
+            // detailMaleExecutor
+            // 
+            this.detailMaleExecutor.AutoSize = true;
+            this.detailMaleExecutor.Location = new System.Drawing.Point(177, 16);
+            this.detailMaleExecutor.Name = "detailMaleExecutor";
+            this.detailMaleExecutor.Size = new System.Drawing.Size(63, 21);
+            this.detailMaleExecutor.TabIndex = 54;
+            this.detailMaleExecutor.TabStop = true;
+            this.detailMaleExecutor.Text = "مجری آقا";
+            this.detailMaleExecutor.UseVisualStyleBackColor = true;
+            // 
+            // detailFemaleExecutor
+            // 
+            this.detailFemaleExecutor.AutoSize = true;
+            this.detailFemaleExecutor.Location = new System.Drawing.Point(57, 16);
+            this.detailFemaleExecutor.Name = "detailFemaleExecutor";
+            this.detailFemaleExecutor.Size = new System.Drawing.Size(72, 21);
+            this.detailFemaleExecutor.TabIndex = 53;
+            this.detailFemaleExecutor.TabStop = true;
+            this.detailFemaleExecutor.Text = "مجری خانم";
+            this.detailFemaleExecutor.UseVisualStyleBackColor = true;
+            // 
+            // detailMaleRegistrant
+            // 
+            this.detailMaleRegistrant.AutoSize = true;
+            this.detailMaleRegistrant.Location = new System.Drawing.Point(158, 20);
+            this.detailMaleRegistrant.Name = "detailMaleRegistrant";
+            this.detailMaleRegistrant.Size = new System.Drawing.Size(82, 21);
+            this.detailMaleRegistrant.TabIndex = 56;
+            this.detailMaleRegistrant.TabStop = true;
+            this.detailMaleRegistrant.Text = "کارشناس آقا";
+            this.detailMaleRegistrant.UseVisualStyleBackColor = true;
+            // 
+            // detailFemaleRegistrant
+            // 
+            this.detailFemaleRegistrant.AutoSize = true;
+            this.detailFemaleRegistrant.Location = new System.Drawing.Point(38, 20);
+            this.detailFemaleRegistrant.Name = "detailFemaleRegistrant";
+            this.detailFemaleRegistrant.Size = new System.Drawing.Size(91, 21);
+            this.detailFemaleRegistrant.TabIndex = 55;
+            this.detailFemaleRegistrant.TabStop = true;
+            this.detailFemaleRegistrant.Text = "کارشناس خانم";
+            this.detailFemaleRegistrant.UseVisualStyleBackColor = true;
+            // 
             // Detail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1006,6 +1084,10 @@
             this.letterInfoGb.ResumeLayout(false);
             this.letterInfoGb.PerformLayout();
             this.detailProposalInfoGb.ResumeLayout(false);
+            this.registrantGenderGb.ResumeLayout(false);
+            this.registrantGenderGb.PerformLayout();
+            this.executorGenderGb.ResumeLayout(false);
+            this.executorGenderGb.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1068,5 +1150,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox executorGenderGb;
+        private System.Windows.Forms.RadioButton detailMaleExecutor;
+        private System.Windows.Forms.RadioButton detailFemaleExecutor;
+        private System.Windows.Forms.GroupBox registrantGenderGb;
+        private System.Windows.Forms.RadioButton detailMaleRegistrant;
+        private System.Windows.Forms.RadioButton detailFemaleRegistrant;
     }
 }

@@ -5784,6 +5784,89 @@ namespace ProposalReportingSystem
         /// <param name="bindingSource"></param>
         /// <param name="query"></param>
 
+
+        public void dataGridViewUpdateForReport(DataGridView dgvv, BindingSource bindingSource, String query)
+        {
+            try
+            {
+                dgvv.DataSource = bindingSource;
+                GetDataForReport(query, bindingSource, dgvv);
+            }
+            catch (Exception e)
+            {
+                // MessageBox.Show(e.Message);
+                if (loginUser.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        private void GetDataForReport(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
+        {
+          
+            dataAdapter = new SqlDataAdapter(selectCommand, conString);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            bindingSourceObj.DataSource = table;
+
+            int i = 0;
+            //dataGridview.Rows[i].HeaderCell.Value = "ردیف";
+            while (true)
+            {
+                try
+                {
+                    dataGridview.Rows[i].HeaderCell.Value = (i + 1) + "";
+                    i++;
+                }
+                catch (ArgumentOutOfRangeException e1)
+                {
+                    break;
+                }
+            }
+
+            if (selectCommand.Contains("proposalTable"))
+            {
+
+                dataGridview.Columns["executor"].HeaderText = "مجری";
+                dataGridview.Columns["persianTitle"].HeaderText = "عنوان فارسی";
+                dataGridview.Columns["engTitle"].HeaderText = "عنوان لاتین";
+                dataGridview.Columns["keyword"].HeaderText = "کلمه کلیدی";
+                dataGridview.Columns["executor2"].HeaderText = "مجریان همکار";
+                dataGridview.Columns["coExecutor"].HeaderText = "همکاران مجری";
+                dataGridview.Columns["startDate"].HeaderText = "تاریخ شروع";
+                dataGridview.Columns["duration"].HeaderText = "مدت زمان";
+                dataGridview.Columns["procedureType"].HeaderText = "نوع کار";
+                dataGridview.Columns["propertyType"].HeaderText = "خاصیت";
+                dataGridview.Columns["registerType"].HeaderText = "نوع ثبت";
+                dataGridview.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+                dataGridview.Columns["employer"].HeaderText = "سازمان کارفرما";
+                dataGridview.Columns["value"].HeaderText = "هزینه";
+                dataGridview.Columns["status"].HeaderText = "وضعیت";
+                dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
+                dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
+              
+            }
+
+           
+
+             if (selectCommand.Contains("TeacherTable"))
+            {
+                dataGridview.Columns["t_NCode"].HeaderText = "کد ملی";
+                dataGridview.Columns["t_FName"].HeaderText = "نام";
+                dataGridview.Columns["t_LName"].HeaderText = "نام خانوادگی";
+                dataGridview.Columns["t_Faculty"].HeaderText = "دانشکده";
+                dataGridview.Columns["t_Group"].HeaderText = "گروه آموزشی";
+                dataGridview.Columns["t_EDeg"].HeaderText = "درجه علمی";
+                dataGridview.Columns["t_Email"].HeaderText = "ایمیل";
+                dataGridview.Columns["t_Mobile"].HeaderText = "تلفن همراه";
+                dataGridview.Columns["t_Tel1"].HeaderText = "تلفن 1";
+                dataGridview.Columns["t_Tel2"].HeaderText = "تلفن 2";
+            }
+        }
+
         public void dataGridViewUpdate2(DataGridView dgvv, BindingSource bindingSource, String query)
         {
             /// <summary>
