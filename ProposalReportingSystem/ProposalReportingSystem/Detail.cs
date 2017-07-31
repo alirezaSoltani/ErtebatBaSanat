@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Stimulsoft.Report;
+using FastReport;
+using FastReport.Data;
 
 namespace ProposalReportingSystem
 {
@@ -16,6 +18,7 @@ namespace ProposalReportingSystem
         private DataBaseHandler dbh; 
         private static string fileName;
         private long loginUserNCode;
+        private User loginUser; 
         private Proposal prop = new Proposal();
 
         public Detail()
@@ -26,6 +29,7 @@ namespace ProposalReportingSystem
         public Detail(Proposal proposal,User user)
         {
             InitializeComponent();
+            loginUser = user;
             if(user.U_otherAccess != 0)
             {
                 detailPrintBtn.Enabled = false;
@@ -165,7 +169,7 @@ namespace ProposalReportingSystem
             {
                 try
                 {
-                    StiReport report = new StiReport();
+                    /*StiReport report = new StiReport();
                     report.Load(Application.StartupPath + @"\Report2.mrt");
 
                     detailPrintBtn.Enabled = false;
@@ -197,7 +201,65 @@ namespace ProposalReportingSystem
                         MessageBox.Show(ee.Message.ToString());
                         string context = "خطای نام فرستنده یا گیرنده";
                         Alert alert = new Alert(context, "bluegray", 15);
+                    }*/
+
+
+                    Report report = new Report();
+                    report.Load("report3.frx");
+                    report.SetParameterValue("l_date", detailLetterDateDts.GetText("yyyy/MM/dd"));
+                    report.SetParameterValue("l_number", detailLetterNumberTxtbx.Text);
+
+                    if(detailAttachmentChb.Checked)
+                    {
+                        report.SetParameterValue("l_attachment", "دارد");
                     }
+                    else
+                    {
+                        report.SetParameterValue("l_attachment", "ندارد");
+                    }
+                    
+                    report.SetParameterValue("l_recieverName", detailRecieverNameTxtbx.Text);
+                    report.SetParameterValue("l_recieverGrade", detailRecieverGradeTxtbx.Text);
+
+                    if (detailMaleExecutorRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + "جنـاب آقای " + detailExecutorTxtbx.Text +" عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+                    else if (detailFemaleExecutorRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + "سرکار خانم " + detailExecutorTxtbx.Text + " عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+                    else
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + detailExecutorTxtbx.Text + " عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+                    
+                    report.SetParameterValue("l_title", "«" + detailPersianTitleTxtbx.Text + "»");
+                    report.SetParameterValue("l_afterTitle", "به حضور ایفاد می گردد. خواهشمند است ضمن بررسی و در صورت تایید نتیجه امر جهت تهیه نسخ مورد نیاز قرارداد و انعقاد آن به این مدیرت ابلاغ گردد.");
+
+                    report.SetParameterValue("l_senderName", detailSenderNameTxtbx.Text );
+                    report.SetParameterValue("l_senderGrade" , detailSenderGradeTxtbx.Text);
+
+                    if (detailMaleRegistrantRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: " + "آقای" + " " + loginUser.U_LName);
+                    }
+                    else if (detailFemaleRegistrantRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: " + "خانم" + " " + loginUser.U_LName);
+                    }
+                    else
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: "  + loginUser.U_LName);
+                    }
+                    report.SetParameterValue("l_registrantInternal", "داخلی:");
+                    report.SetParameterValue("l_registrantInternalNumber", loginUser.U_Tel);
+                    report.SetParameterValue("l_registrantEmail", loginUser.U_Email );
+
+                    report.SetParameterValue("l_psText", detailLetterPSTxtbx.Text);
+
+
+                    report.Show();
                 }
                 catch(Exception ee)
                 {
