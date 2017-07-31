@@ -5791,6 +5791,11 @@ namespace ProposalReportingSystem
             {
                 dgvv.DataSource = bindingSource;
                 GetDataForReport(query, bindingSource, dgvv);
+
+                foreach (DataGridViewColumn col in dgvv.Columns)
+                {
+                    dgvv.Columns[col.Name].SortMode = DataGridViewColumnSortMode.Programmatic;
+                }
             }
             catch (Exception e)
             {

@@ -63,7 +63,8 @@ namespace ProposalReportingSystem
                     Report report = new Report();
                     report.Load("report1.frx");
                     report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
-                    report.SetParameterValue("r_userInfo", user.U_FName + user.U_LName);
+                    report.SetParameterValue("r_userInfo", user.U_LName);
+                    report.SetParameterValue("r_userTel", user.U_Tel);
                     report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
                     //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
                     report.RegisterData(dt, "proposalTable");
@@ -185,6 +186,25 @@ namespace ProposalReportingSystem
             reportDataGridView.Columns["index1"].Visible = false;
 
             reportDataGridView.Columns["orgName"].HeaderText = "سازمان کارفرما";
+
+            reportDataGridView.Columns["orgName"].DisplayIndex = 1;
+            reportDataGridView.Columns["orgName"].HeaderText = "سازمان اعتبار دهنده";
+            reportDataGridView.Columns["t_FName"].DisplayIndex = 2;
+            reportDataGridView.Columns["t_FName"].HeaderText = "مجری";
+            reportDataGridView.Columns["t_Faculty"].DisplayIndex = 3;
+            reportDataGridView.Columns["t_Faculty"].HeaderText = "دانشکده";
+            reportDataGridView.Columns["t_Group"].DisplayIndex = 4;
+            reportDataGridView.Columns["t_Group"].HeaderText = "گروه آموزشی";
+            reportDataGridView.Columns["persianTitle"].DisplayIndex = 5;
+            reportDataGridView.Columns["persianTitle"].HeaderText = "عنوان";
+            reportDataGridView.Columns["proposalType"].DisplayIndex = 6;
+            reportDataGridView.Columns["proposalType"].HeaderText = "نوع پروپوزال";
+            reportDataGridView.Columns["value"].DisplayIndex = 7;
+            reportDataGridView.Columns["value"].HeaderText = "مبلغ";
+            reportDataGridView.Columns["hijriDate"].DisplayIndex = 8;
+            reportDataGridView.Columns["hijriDate"].HeaderText = "تاریخ";
+            reportDataGridView.Columns["status"].DisplayIndex = 9;
+            reportDataGridView.Columns["status"].HeaderText = "وضعیت";
             /*
             int j = 0;
             //  reportDataGridView.Rows[j].HeaderCell.Value = "ردیف";
@@ -205,11 +225,6 @@ namespace ProposalReportingSystem
         private void reportExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void reportDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
         }
     }
 }

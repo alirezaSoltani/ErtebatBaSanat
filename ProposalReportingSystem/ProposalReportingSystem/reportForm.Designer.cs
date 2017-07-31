@@ -122,7 +122,6 @@
             this.reportDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reportDataGridView.Size = new System.Drawing.Size(1265, 483);
             this.reportDataGridView.TabIndex = 3;
-            this.reportDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportDataGridView_CellClick);
             // 
             // reportHeaderGbx
             // 
