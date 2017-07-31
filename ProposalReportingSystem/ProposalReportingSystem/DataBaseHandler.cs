@@ -33,7 +33,7 @@ namespace ProposalReportingSystem
         //       "Initial Catalog=rayanpro_EBS;" +
         //       "User id=rayanpro_rayan; " +
         //       "Password=P@hn1395;";
-        
+
 
         private Toast toast;//related to toast messages
         private PopUp popup;
@@ -110,7 +110,23 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
 
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + proposal.PersianTitle + "','" + "proposalTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added "
+                                             + proposal.PersianTitle + " -- "
+                                             + " " + proposal.EngTitle + " -- "
+                                             + " " + proposal.KeyWord + " -- "
+                                             + " " + proposal.Executor + " -- "
+                                             + " " + proposal.Executor2 + " -- "
+                                             + " " + proposal.CoExecutor + " -- "
+                                             + " " + proposal.StartDate + " -- "
+                                             + " " + proposal.Duration + " -- "
+                                             + " " + proposal.ProcedureType + " -- "
+                                             + " " + proposal.PropertyType + " -- "
+                                             + " " + proposal.RegisterType + " -- "
+                                             + " " + proposal.ProposalType + " -- "
+                                             + " " + proposal.Employer + " -- "
+                                             + " " + proposal.Value + " -- "
+                                             + " " + proposal.Status + " -- "
+                                             + " " + proposal.Registrant + "','" + "proposalTable'" + ")";
                     sc.ExecuteNonQuery();
                     sc.CommandText = "SELECT [index] FROM proposalTable WHERE persianTitle = '" + proposal.PersianTitle + "'  ";
                     reader = sc.ExecuteReader();
@@ -149,7 +165,7 @@ namespace ProposalReportingSystem
                     sc.CommandText = "INSERT INTO editionTable ([index] , persianTitle,engTitle,keyword,executor,executor2,coExecutor,startDate,duration,procedureType,propertyType,registerType,proposalType,employer,value,status,registrant,fileName , edition)"
                                    + "VALUES ('" + proposal.Index + "',"
                                             + "'" + proposal.PersianTitle + "',"
-                                             + "'" + proposal.EngTitle + "',"
+                                            + "'" + proposal.EngTitle + "',"
                                             + "'" + proposal.KeyWord + "',"
                                             + "'" + proposal.Executor + "',"
                                             + "'" + proposal.Executor2 + "',"
@@ -210,7 +226,7 @@ namespace ProposalReportingSystem
                         popup.ShowDialog();
                     }
 
-                   
+
 
                 }
 
@@ -474,7 +490,7 @@ namespace ProposalReportingSystem
                             {
 
                                 /////
-                               
+
                                 pro.Index = long.Parse(reader["index"].ToString());
                                 pro.PersianTitle = reader["persianTitle"].ToString();
                                 pro.EngTitle = reader["engTitle"].ToString();
@@ -488,7 +504,7 @@ namespace ProposalReportingSystem
                                 pro.PropertyType = reader["propertyType"].ToString();
                                 pro.RegisterType = reader["registerType"].ToString();
                                 pro.Employer = Int32.Parse(reader["employer"].ToString());
-                               // pro.Edition = int.Parse(reader["edition"].ToString());
+                                // pro.Edition = int.Parse(reader["edition"].ToString());
                                 pro.Value = long.Parse(reader["value"].ToString());
                                 pro.Status = reader["status"].ToString();
                                 pro.FileName = reader["fileName"].ToString();
@@ -500,7 +516,7 @@ namespace ProposalReportingSystem
                             /////
                             reader.Close();
 
-                                sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
+                            sc.CommandText = " DELETE FROM proposalTable WHERE [index] = '" + proposal.Index + "'";
                             sc.ExecuteNonQuery();
                             sc.CommandText = " DELETE FROM editionTable WHERE [index] = '" + proposal.Index + "' AND edition = '0' ";
                             sc.ExecuteNonQuery();
@@ -805,7 +821,26 @@ namespace ProposalReportingSystem
                                             + "'" + EditionNumber + "')";
                     sc.ExecuteNonQuery();
 
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added edition " + EditionNumber + " of proposal " + proposal.PersianTitle + " ',' EditionTable ' )";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added edition "
+                                             + " " + proposal.Index + " -- "
+                                             + " " + proposal.PersianTitle + " -- "
+                                             + " " + proposal.EngTitle + " -- "
+                                             + " " + proposal.KeyWord + " -- "
+                                             + " " + proposal.Executor + " -- "
+                                             + " " + proposal.Executor2 + " -- "
+                                             + " " + proposal.CoExecutor + " -- "
+                                             + " " + proposal.StartDate + " -- "
+                                             + " " + proposal.Duration + " -- "
+                                             + " " + proposal.ProcedureType + " -- "
+                                             + " " + proposal.PropertyType + " -- "
+                                             + " " + proposal.RegisterType + " -- "
+                                             + " " + proposal.ProposalType + " -- "
+                                             + " " + proposal.Employer + " -- "
+                                             + " " + proposal.Value + " -- "
+                                             + " " + proposal.Status + " -- "
+                                             + " " + _inputParameter.FileName + " -- "
+                                             + " " + proposal.Registrant + " -- "
+                                             + " " + EditionNumber + " ',' EditionTable ' )";
                     sc.ExecuteNonQuery();
 
 
@@ -1224,7 +1259,25 @@ namespace ProposalReportingSystem
                                           + "'" + user.U_Faculty + "')";
 
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + user.U_NCode + "','" + "UsersTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added "
+                                          + " " + user.U_FName + " -- "
+                                          + " " + user.U_LName + " -- "
+                                          + " " + user.U_NCode + " -- "
+                                          + " " + user.U_Password + " -- "
+                                          + " " + user.U_Email + " -- "
+                                          + " " + user.U_Tel + " -- "
+                                          + " " + user.CanAddProposal + " -- "
+                                          + " " + user.CanEditProposal + " -- "
+                                          + " " + user.CanDeleteProposal + " -- "
+                                          + " " + user.CanAddUser + " -- "
+                                          + " " + user.CanEditUser + " -- "
+                                          + " " + user.CanDeleteUser + " -- "
+                                          + " " + user.CanManageTeacher + " -- "
+                                          + " " + user.CanManageType + " -- "
+                                          + " " + user.U_Color + " -- "
+                                          + " " + user.U_IsAdmin + " -- "
+                                          + " " + user.U_otherAccess + " -- "
+                                          + " " + user.U_Faculty + " ','" + "UsersTable'" + ")";
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
@@ -1483,7 +1536,7 @@ namespace ProposalReportingSystem
                         {
                             users.U_otherAccess = 0;
                         }
-                       
+
                     }
                     /////
                     reader.Close();
@@ -1811,7 +1864,17 @@ namespace ProposalReportingSystem
                                              + "'" + teacher.T_Faculty + "')";
 
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added " + teacher.T_NCode + "','" + "TeacherTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Added "
+                                             + " " + teacher.T_FName + " -- "
+                                             + " " + teacher.T_LName + " -- "
+                                             + " " + teacher.T_NCode + " -- "
+                                             + " " + teacher.T_EDeg + " -- "
+                                             + " " + teacher.T_Email + " -- "
+                                             + " " + teacher.T_Group + " -- "
+                                             + " " + teacher.T_Mobile + " -- "
+                                             + " " + teacher.T_Tel1 + " -- "
+                                             + " " + teacher.T_Tel2 + " -- "
+                                             + " " + teacher.T_Faculty + " ','" + "TeacherTable'" + ")";
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
@@ -1949,7 +2012,7 @@ namespace ProposalReportingSystem
 
                 conn.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (loginUser.U_NCode == 999999999) // to show exceptin for admin
                 {
@@ -1998,10 +2061,10 @@ namespace ProposalReportingSystem
                         teachers.T_Group = reader["t_Group"].ToString();
                         teachers.T_Tel1 = reader["t_Tel1"].ToString();
                         teachers.T_Tel2 = reader["t_Tel2"].ToString();
-                        teachers.T_Mobile =reader["t_Mobile"].ToString();
+                        teachers.T_Mobile = reader["t_Mobile"].ToString();
                         teachers.T_Email = reader["t_Email"].ToString();
                         teachers.T_EDeg = reader["t_EDeg"].ToString();
-                       
+
                     }
                     /////
                     reader.Close();
@@ -4351,7 +4414,7 @@ namespace ProposalReportingSystem
                     }
                     else if (countUserFaculty > 0)
                     {
-                       
+
                         string context = "کاربری مربوط به این دانشکده وجود دارد و نمی توان این دانشکده را حذف کرد ";
                         Alert alert = new Alert(context, "darkred", 5);
 
@@ -5809,7 +5872,7 @@ namespace ProposalReportingSystem
 
         private void GetDataForReport(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview)
         {
-          
+
             dataAdapter = new SqlDataAdapter(selectCommand, conString);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataTable table = new DataTable();
@@ -5852,12 +5915,12 @@ namespace ProposalReportingSystem
                 dataGridview.Columns["status"].HeaderText = "وضعیت";
                 dataGridview.Columns["registrant"].HeaderText = "کاربر ثبت کننده";
                 dataGridview.Columns["fileName"].HeaderText = "فایل پروپوزال";
-              
+
             }
 
-           
 
-             if (selectCommand.Contains("TeacherTable"))
+
+            if (selectCommand.Contains("TeacherTable"))
             {
                 dataGridview.Columns["t_NCode"].HeaderText = "کد ملی";
                 dataGridview.Columns["t_FName"].HeaderText = "نام";
@@ -6258,7 +6321,7 @@ namespace ProposalReportingSystem
 
                 return ResponseDescription;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (loginUser.U_NCode == 999999999) // to show exceptin for admin
                 {
@@ -6380,7 +6443,7 @@ namespace ProposalReportingSystem
                     return response.StatusDescription;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (loginUser.U_NCode == 999999999) // to show exceptin for admin
                 {
@@ -6798,9 +6861,9 @@ namespace ProposalReportingSystem
                         user.U_Faculty = reader["u_faculty"].ToString();
                         user.U_IsAdmin = Int16.Parse(reader["u_isAdmin"].ToString());
                         user.U_Color = reader["t_Color"].ToString();
-                        
+
                     }
-                    
+
 
 
                     transaction.Commit();

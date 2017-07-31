@@ -37,7 +37,6 @@ namespace ProposalReportingSystem
                     DataTable dt = new DataTable();
                     foreach (DataGridViewColumn col in reportDataGridView.Columns)
                     {
-
                         dt.Columns.Add(col.Name);
                     }
 
@@ -62,7 +61,8 @@ namespace ProposalReportingSystem
 
                     Report report = new Report();
                     report.Load("report1.frx");
-                    report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
+                    report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                    report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
                     report.SetParameterValue("r_userInfo", user.U_LName);
                     report.SetParameterValue("r_userTel", user.U_Tel);
                     report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
@@ -107,8 +107,10 @@ namespace ProposalReportingSystem
 
                 Report report = new Report();
                 report.Load("report1.frx");
-                report.SetParameterValue("r_header", reportTitleTxtbx.Text.ToString());
-                report.SetParameterValue("r_userInfo", user.U_FName + user.U_LName);
+                report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+                report.SetParameterValue("r_userInfo", user.U_LName);
+                report.SetParameterValue("r_userTel", user.U_Tel);
                 report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
                 //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
                 report.RegisterData(dt, "proposalTable");
