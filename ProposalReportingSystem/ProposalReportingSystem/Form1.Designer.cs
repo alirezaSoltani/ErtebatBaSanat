@@ -33,8 +33,6 @@
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData1 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData2 = new DevComponents.DotNetBar.Controls.ColorData();
@@ -47,15 +45,73 @@
             DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.mainPage = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.manageUserPanel = new System.Windows.Forms.Panel();
+            this.manageUserManageGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.menageUserAccessLevelGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.manageUserFacultyCmb = new System.Windows.Forms.ComboBox();
+            this.manageUserFacultyCb = new System.Windows.Forms.CheckBox();
+            this.manageUserReadOnlyCb = new System.Windows.Forms.CheckBox();
+            this.manageUserIsAdminCb = new System.Windows.Forms.CheckBox();
+            this.manageUserCheckAllCb = new System.Windows.Forms.CheckBox();
+            this.manageUserManageTypeCb = new System.Windows.Forms.CheckBox();
+            this.manageUserManageTeacherCb = new System.Windows.Forms.CheckBox();
+            this.manageUserDeleteUserCb = new System.Windows.Forms.CheckBox();
+            this.manageUserEditUserCb = new System.Windows.Forms.CheckBox();
+            this.manageUserAddUserCb = new System.Windows.Forms.CheckBox();
+            this.manageUserDeleteProCb = new System.Windows.Forms.CheckBox();
+            this.manageUserEditProCb = new System.Windows.Forms.CheckBox();
+            this.manageUserAddProCb = new System.Windows.Forms.CheckBox();
+            this.manageUserPersonalInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.manageUserShowPasswordChb = new System.Windows.Forms.CheckBox();
+            this.manageUserTellLb = new System.Windows.Forms.Label();
+            this.manageUserEmailLb = new System.Windows.Forms.Label();
+            this.manageUserPasswordLb = new System.Windows.Forms.Label();
+            this.manageUserNcodLb = new System.Windows.Forms.Label();
+            this.manageUserLnameLb = new System.Windows.Forms.Label();
+            this.manageUserFnameLb = new System.Windows.Forms.Label();
+            this.manageUserTelTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserEmailTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserPasswordTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserNcodeTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserLnameTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserFnameTxtbx = new System.Windows.Forms.TextBox();
+            this.manageUserShowAllBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserClearBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserDeleteBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserEditBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserAddBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.manageUserNavigationPanel = new System.Windows.Forms.Panel();
+            this.manageUserNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.manageUserNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
+            this.manageUserShowDgv = new System.Windows.Forms.DataGridView();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.homePanel = new System.Windows.Forms.Panel();
+            this.homeTimeDateGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.monthCalendarX1 = new BehComponents.MonthCalendarX();
+            this.analogClockControl1 = new DevComponents.DotNetBar.Controls.AnalogClockControl();
+            this.homeAapInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.homeEBSLbl = new System.Windows.Forms.Label();
+            this.homeWelcomeLbl = new System.Windows.Forms.Label();
+            this.homeUserNameLbl = new System.Windows.Forms.Label();
+            this.homeAppNameLbl = new System.Windows.Forms.Label();
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.appSettingPanel = new System.Windows.Forms.Panel();
             this.appSettingSenderInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -69,15 +125,10 @@
             this.appSettingNavigationPanel = new System.Windows.Forms.Panel();
             this.appSettingNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.appSettingNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem32 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem33 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem35 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem36 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem37 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingShowDv = new System.Windows.Forms.DataGridView();
             this.appSettingGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.appSettingEdegreeTxtbx = new System.Windows.Forms.TextBox();
@@ -102,16 +153,6 @@
             this.appSettingDeleteBtn = new DevComponents.DotNetBar.ButtonX();
             this.appSettingEditBtn = new DevComponents.DotNetBar.ButtonX();
             this.appSettingAddBtn = new DevComponents.DotNetBar.ButtonX();
-            this.appSettingFacultyLbl = new System.Windows.Forms.Label();
-            this.appSettingStatusLbl = new System.Windows.Forms.Label();
-            this.aapSettingCoLbl = new System.Windows.Forms.Label();
-            this.appSettingProTypeLbl = new System.Windows.Forms.Label();
-            this.appSettingRegTypeLbl = new System.Windows.Forms.Label();
-            this.appSettingPropertyLbl = new System.Windows.Forms.Label();
-            this.appSettingProcedureTypeLbl = new System.Windows.Forms.Label();
-            this.appSettingEgroupLbl = new System.Windows.Forms.Label();
-            this.appSettingEdegreeLbl = new System.Windows.Forms.Label();
-            this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel7 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.personalSettingPanel = new System.Windows.Forms.Panel();
             this.personalSettingThemeGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -132,27 +173,19 @@
             this.currentPasswordLbl = new System.Windows.Forms.Label();
             this.personalSettingRegisterBtn = new DevComponents.DotNetBar.ButtonX();
             this.personalSettingClearBtn = new DevComponents.DotNetBar.ButtonX();
-            this.personalSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.searchProposalPanel = new System.Windows.Forms.Panel();
             this.searchProposalShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.searchProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.searchProposalNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem39 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.searchProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
             this.searchProposalShowDgv = new System.Windows.Forms.DataGridView();
             this.searchProposalSearchGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.searchProposalStatusLbl = new System.Windows.Forms.Label();
             this.searchProposalShowAllBtn = new DevComponents.DotNetBar.ButtonX();
             this.searchProposalExecutorEGroupCb = new System.Windows.Forms.ComboBox();
             this.searchProposalExecutorFacultyCb = new System.Windows.Forms.ComboBox();
@@ -196,7 +229,6 @@
             this.searchProposalProposalInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.searchProposalStartDateToDts = new Atf.UI.DateTimeSelector();
             this.searchProposalStartDateFromDts = new Atf.UI.DateTimeSelector();
-            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.editProposalPanel = new System.Windows.Forms.Panel();
             this.editProposalEditGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -255,54 +287,28 @@
             this.editProposalEnglishTitleTxtbx = new System.Windows.Forms.TextBox();
             this.editProposalPersianTitleTxtbx = new System.Windows.Forms.TextBox();
             this.editProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
-            this.logTab = new DevComponents.DotNetBar.SuperTabItem();
             this.editProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
             this.editProposalShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.manageProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.manageProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.editProposalShowDgv = new System.Windows.Forms.DataGridView();
-            this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.homePanel = new System.Windows.Forms.Panel();
-            this.homeTimeDateGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.monthCalendarX1 = new BehComponents.MonthCalendarX();
-            this.analogClockControl1 = new DevComponents.DotNetBar.Controls.AnalogClockControl();
-            this.homeAapInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.homeEBSLbl = new System.Windows.Forms.Label();
-            this.homeWelcomeLbl = new System.Windows.Forms.Label();
-            this.homeUserNameLbl = new System.Windows.Forms.Label();
-            this.homeUserProfileLbl = new System.Windows.Forms.Label();
-            this.homeAppNameLbl = new System.Windows.Forms.Label();
-            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.addProposalPanel = new System.Windows.Forms.Panel();
             this.addProposalShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.addProposalNavigationPanel = new System.Windows.Forms.Panel();
             this.addProposalNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem38 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.addProposalNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem7 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem8 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem11 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem12 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem13 = new DevComponents.DotNetBar.SuperTabItem();
             this.addProposalShowDgv = new System.Windows.Forms.DataGridView();
             this.addProposalAddGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.addProposalStartDateDts = new Atf.UI.DateTimeSelector();
@@ -360,77 +366,17 @@
             this.addProposalPersianTitleTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
             this.addProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
-            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.manageUserPanel = new System.Windows.Forms.Panel();
-            this.manageUserManageGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.menageUserAccessLevelGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.manageUserFacultyCmb = new System.Windows.Forms.ComboBox();
-            this.manageUserFacultyCb = new System.Windows.Forms.CheckBox();
-            this.manageUserReadOnlyCb = new System.Windows.Forms.CheckBox();
-            this.manageUserIsAdminCb = new System.Windows.Forms.CheckBox();
-            this.manageUserCheckAllCb = new System.Windows.Forms.CheckBox();
-            this.manageUserManageTypeCb = new System.Windows.Forms.CheckBox();
-            this.manageUserManageTeacherCb = new System.Windows.Forms.CheckBox();
-            this.manageUserDeleteUserCb = new System.Windows.Forms.CheckBox();
-            this.manageUserEditUserCb = new System.Windows.Forms.CheckBox();
-            this.manageUserAddUserCb = new System.Windows.Forms.CheckBox();
-            this.manageUserDeleteProCb = new System.Windows.Forms.CheckBox();
-            this.manageUserEditProCb = new System.Windows.Forms.CheckBox();
-            this.manageUserAddProCb = new System.Windows.Forms.CheckBox();
-            this.manageUserPersonalInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.manageUserShowPasswordChb = new System.Windows.Forms.CheckBox();
-            this.manageUserTellLb = new System.Windows.Forms.Label();
-            this.manageUserEmailLb = new System.Windows.Forms.Label();
-            this.manageUserPasswordLb = new System.Windows.Forms.Label();
-            this.manageUserNcodLb = new System.Windows.Forms.Label();
-            this.manageUserLnameLb = new System.Windows.Forms.Label();
-            this.manageUserFnameLb = new System.Windows.Forms.Label();
-            this.manageUserTelTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserEmailTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserPasswordTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserNcodeTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserLnameTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserFnameTxtbx = new System.Windows.Forms.TextBox();
-            this.manageUserShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageUserClearBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageUserDeleteBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageUserEditBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageUserAddBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageUserShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.manageUserNavigationPanel = new System.Windows.Forms.Panel();
-            this.manageUserNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem41 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.manageUserNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserShowDgv = new System.Windows.Forms.DataGridView();
-            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel12 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.manageTeacherPanel = new System.Windows.Forms.Panel();
             this.teacherManageShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageTeacherNavigationPanel = new System.Windows.Forms.Panel();
             this.manageTeacherNavigationShowAllBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem40 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.manageTeacherNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageTeacherShowDgv = new System.Windows.Forms.DataGridView();
             this.manageTeacherInfoGp = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.manageTeacherSearchBtn = new DevComponents.DotNetBar.ButtonX();
@@ -459,7 +405,6 @@
             this.manageTeacherDeleteBtn = new DevComponents.DotNetBar.ButtonX();
             this.manageTeacherEditBtn = new DevComponents.DotNetBar.ButtonX();
             this.manageTeacherAddBtn = new DevComponents.DotNetBar.ButtonX();
-            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.aboutUsPanel = new System.Windows.Forms.Panel();
             this.aboutUsGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -471,25 +416,17 @@
             this.aboutUsPeymanLbl = new System.Windows.Forms.Label();
             this.AboutUsArshinLbl = new System.Windows.Forms.Label();
             this.aboutUsTitleLbl = new System.Windows.Forms.Label();
-            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel11 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.logPanel = new System.Windows.Forms.Panel();
             this.logNavigationPanel = new System.Windows.Forms.Panel();
             this.logNavigationCurrentPageTxtbx = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.logNavigationNextPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationLastPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem16 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationPreviousPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem22 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationFirstPageBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem28 = new DevComponents.DotNetBar.SuperTabItem();
             this.logNavigationReturnBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem34 = new DevComponents.DotNetBar.SuperTabItem();
             this.logDgv = new System.Windows.Forms.DataGridView();
-            this.sysLogTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel13 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.exitTab = new DevComponents.DotNetBar.SuperTabItem();
             this.log = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel8 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.wait_timer = new System.Windows.Forms.Timer(this.components);
@@ -498,6 +435,9 @@
             this.menuSlideRb = new System.Windows.Forms.RadioButton();
             this.menuDetailRb = new System.Windows.Forms.RadioButton();
             this.menuIconRb = new System.Windows.Forms.RadioButton();
+            this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.searchProposalStatusLbl = new System.Windows.Forms.Label();
             this.menuExitBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuSysLogBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuAboutUsBtn = new DevComponents.DotNetBar.ButtonX();
@@ -509,8 +449,53 @@
             this.menuSearchProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuAddProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuHomeBtn = new DevComponents.DotNetBar.ButtonX();
-            this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.superTabItem41 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem40 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.logTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem39 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
+            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.personalSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem32 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem33 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem35 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem36 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem37 = new DevComponents.DotNetBar.SuperTabItem();
+            this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.homeUserProfileLbl = new System.Windows.Forms.Label();
+            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem16 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem22 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem28 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem34 = new DevComponents.DotNetBar.SuperTabItem();
+            this.sysLogTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.exitTab = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -521,6 +506,18 @@
             this.superTabControlPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPage)).BeginInit();
             this.mainPage.SuspendLayout();
+            this.superTabControlPanel4.SuspendLayout();
+            this.manageUserPanel.SuspendLayout();
+            this.manageUserManageGp.SuspendLayout();
+            this.menageUserAccessLevelGp.SuspendLayout();
+            this.manageUserPersonalInfoGp.SuspendLayout();
+            this.manageUserShowGp.SuspendLayout();
+            this.manageUserNavigationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.manageUserShowDgv)).BeginInit();
+            this.superTabControlPanel1.SuspendLayout();
+            this.homePanel.SuspendLayout();
+            this.homeTimeDateGp.SuspendLayout();
+            this.homeAapInfoGp.SuspendLayout();
             this.superTabControlPanel6.SuspendLayout();
             this.appSettingPanel.SuspendLayout();
             this.appSettingSenderInfoGp.SuspendLayout();
@@ -546,24 +543,12 @@
             this.editProposalShowGp.SuspendLayout();
             this.manageProposalNavigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editProposalShowDgv)).BeginInit();
-            this.superTabControlPanel1.SuspendLayout();
-            this.homePanel.SuspendLayout();
-            this.homeTimeDateGp.SuspendLayout();
-            this.homeAapInfoGp.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.addProposalPanel.SuspendLayout();
             this.addProposalShowGp.SuspendLayout();
             this.addProposalNavigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProposalShowDgv)).BeginInit();
             this.addProposalAddGp.SuspendLayout();
-            this.superTabControlPanel4.SuspendLayout();
-            this.manageUserPanel.SuspendLayout();
-            this.manageUserManageGp.SuspendLayout();
-            this.menageUserAccessLevelGp.SuspendLayout();
-            this.manageUserPersonalInfoGp.SuspendLayout();
-            this.manageUserShowGp.SuspendLayout();
-            this.manageUserNavigationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manageUserShowDgv)).BeginInit();
             this.superTabControlPanel12.SuspendLayout();
             this.manageTeacherPanel.SuspendLayout();
             this.teacherManageShowGp.SuspendLayout();
@@ -647,15 +632,15 @@
             this.mainPage.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mainPage.ControlBox.MenuBox,
             this.mainPage.ControlBox.CloseBox});
-            this.mainPage.Controls.Add(this.superTabControlPanel4);
-            this.mainPage.Controls.Add(this.superTabControlPanel1);
-            this.mainPage.Controls.Add(this.superTabControlPanel6);
-            this.mainPage.Controls.Add(this.superTabControlPanel7);
-            this.mainPage.Controls.Add(this.superTabControlPanel3);
-            this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel2);
+            this.mainPage.Controls.Add(this.superTabControlPanel1);
+            this.mainPage.Controls.Add(this.superTabControlPanel4);
             this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel5);
+            this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel7);
             this.mainPage.Controls.Add(this.superTabControlPanel10);
+            this.mainPage.Controls.Add(this.superTabControlPanel6);
             this.mainPage.Controls.Add(this.superTabControlPanel11);
             this.mainPage.Controls.Add(this.superTabControlPanel13);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -690,6 +675,1103 @@
             this.mainPage.TabVerticalSpacing = 0;
             this.mainPage.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
             // 
+            // superTabControlPanel4
+            // 
+            this.superTabControlPanel4.Controls.Add(this.manageUserPanel);
+            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.superTabControlPanel4.Name = "superTabControlPanel4";
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel4.TabIndex = 0;
+            this.superTabControlPanel4.TabItem = this.manageUserTab;
+            // 
+            // manageUserPanel
+            // 
+            this.manageUserPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.manageUserPanel.Controls.Add(this.manageUserManageGp);
+            this.manageUserPanel.Controls.Add(this.manageUserShowGp);
+            this.manageUserPanel.Location = new System.Drawing.Point(4, 4);
+            this.manageUserPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserPanel.Name = "manageUserPanel";
+            this.manageUserPanel.Size = new System.Drawing.Size(1183, 812);
+            this.manageUserPanel.TabIndex = 1002;
+            this.manageUserPanel.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserManageGp
+            // 
+            this.manageUserManageGp.CanvasColor = System.Drawing.SystemColors.Control;
+            this.manageUserManageGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.manageUserManageGp.Controls.Add(this.menageUserAccessLevelGp);
+            this.manageUserManageGp.Controls.Add(this.manageUserPersonalInfoGp);
+            this.manageUserManageGp.Controls.Add(this.manageUserShowAllBtn);
+            this.manageUserManageGp.Controls.Add(this.manageUserClearBtn);
+            this.manageUserManageGp.Controls.Add(this.manageUserDeleteBtn);
+            this.manageUserManageGp.Controls.Add(this.manageUserEditBtn);
+            this.manageUserManageGp.Controls.Add(this.manageUserAddBtn);
+            this.manageUserManageGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.manageUserManageGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserManageGp.Location = new System.Drawing.Point(13, 10);
+            this.manageUserManageGp.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserManageGp.Name = "manageUserManageGp";
+            this.manageUserManageGp.Size = new System.Drawing.Size(1148, 372);
+            // 
+            // 
+            // 
+            this.manageUserManageGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.manageUserManageGp.Style.BackColorGradientAngle = 90;
+            this.manageUserManageGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.manageUserManageGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserManageGp.Style.BorderBottomWidth = 2;
+            this.manageUserManageGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.manageUserManageGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserManageGp.Style.BorderLeftWidth = 2;
+            this.manageUserManageGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserManageGp.Style.BorderRightWidth = 2;
+            this.manageUserManageGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserManageGp.Style.BorderTopWidth = 2;
+            this.manageUserManageGp.Style.CornerDiameter = 10;
+            this.manageUserManageGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.manageUserManageGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.manageUserManageGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.manageUserManageGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.manageUserManageGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.manageUserManageGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.manageUserManageGp.TabIndex = 1001;
+            this.manageUserManageGp.Text = "اطلاعات کاربر";
+            this.manageUserManageGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // menageUserAccessLevelGp
+            // 
+            this.menageUserAccessLevelGp.BackColor = System.Drawing.Color.Transparent;
+            this.menageUserAccessLevelGp.CanvasColor = System.Drawing.Color.Transparent;
+            this.menageUserAccessLevelGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserFacultyCmb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserFacultyCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserReadOnlyCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserIsAdminCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserCheckAllCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserManageTypeCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserManageTeacherCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserDeleteUserCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserEditUserCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserAddUserCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserDeleteProCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserEditProCb);
+            this.menageUserAccessLevelGp.Controls.Add(this.manageUserAddProCb);
+            this.menageUserAccessLevelGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.menageUserAccessLevelGp.Font = new System.Drawing.Font("B Yekan+", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.menageUserAccessLevelGp.Location = new System.Drawing.Point(65, 12);
+            this.menageUserAccessLevelGp.Margin = new System.Windows.Forms.Padding(4);
+            this.menageUserAccessLevelGp.Name = "menageUserAccessLevelGp";
+            this.menageUserAccessLevelGp.Size = new System.Drawing.Size(555, 270);
+            // 
+            // 
+            // 
+            this.menageUserAccessLevelGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.menageUserAccessLevelGp.Style.BackColorGradientAngle = 90;
+            this.menageUserAccessLevelGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.menageUserAccessLevelGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.menageUserAccessLevelGp.Style.BorderBottomWidth = 2;
+            this.menageUserAccessLevelGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.menageUserAccessLevelGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.menageUserAccessLevelGp.Style.BorderLeftWidth = 2;
+            this.menageUserAccessLevelGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.menageUserAccessLevelGp.Style.BorderRightWidth = 2;
+            this.menageUserAccessLevelGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.menageUserAccessLevelGp.Style.BorderTopWidth = 2;
+            this.menageUserAccessLevelGp.Style.CornerDiameter = 10;
+            this.menageUserAccessLevelGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.menageUserAccessLevelGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.menageUserAccessLevelGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.menageUserAccessLevelGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.menageUserAccessLevelGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.menageUserAccessLevelGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.menageUserAccessLevelGp.TabIndex = 1004;
+            this.menageUserAccessLevelGp.Text = "سطح دسترسی";
+            // 
+            // manageUserFacultyCmb
+            // 
+            this.manageUserFacultyCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.manageUserFacultyCmb.Enabled = false;
+            this.manageUserFacultyCmb.FormattingEnabled = true;
+            this.manageUserFacultyCmb.Location = new System.Drawing.Point(41, 198);
+            this.manageUserFacultyCmb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserFacultyCmb.Name = "manageUserFacultyCmb";
+            this.manageUserFacultyCmb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserFacultyCmb.Size = new System.Drawing.Size(125, 28);
+            this.manageUserFacultyCmb.TabIndex = 19;
+            // 
+            // manageUserFacultyCb
+            // 
+            this.manageUserFacultyCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserFacultyCb.Enabled = false;
+            this.manageUserFacultyCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserFacultyCb.Location = new System.Drawing.Point(173, 196);
+            this.manageUserFacultyCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserFacultyCb.Name = "manageUserFacultyCb";
+            this.manageUserFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserFacultyCb.Size = new System.Drawing.Size(35, 33);
+            this.manageUserFacultyCb.TabIndex = 18;
+            this.manageUserFacultyCb.Text = "دانشکده";
+            this.manageUserFacultyCb.UseVisualStyleBackColor = false;
+            this.manageUserFacultyCb.CheckedChanged += new System.EventHandler(this.manageUserFacultyCb_CheckedChanged);
+            // 
+            // manageUserReadOnlyCb
+            // 
+            this.manageUserReadOnlyCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserReadOnlyCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserReadOnlyCb.Location = new System.Drawing.Point(299, 196);
+            this.manageUserReadOnlyCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserReadOnlyCb.Name = "manageUserReadOnlyCb";
+            this.manageUserReadOnlyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserReadOnlyCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserReadOnlyCb.TabIndex = 17;
+            this.manageUserReadOnlyCb.Text = "فقط مشاهده";
+            this.manageUserReadOnlyCb.UseVisualStyleBackColor = false;
+            this.manageUserReadOnlyCb.CheckedChanged += new System.EventHandler(this.manageUserReadOnlyCb_CheckedChanged);
+            // 
+            // manageUserIsAdminCb
+            // 
+            this.manageUserIsAdminCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserIsAdminCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserIsAdminCb.Location = new System.Drawing.Point(64, 158);
+            this.manageUserIsAdminCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserIsAdminCb.Name = "manageUserIsAdminCb";
+            this.manageUserIsAdminCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserIsAdminCb.Size = new System.Drawing.Size(145, 33);
+            this.manageUserIsAdminCb.TabIndex = 16;
+            this.manageUserIsAdminCb.Text = "کاربر ادمین";
+            this.manageUserIsAdminCb.UseVisualStyleBackColor = false;
+            this.manageUserIsAdminCb.Visible = false;
+            // 
+            // manageUserCheckAllCb
+            // 
+            this.manageUserCheckAllCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserCheckAllCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserCheckAllCb.Location = new System.Drawing.Point(299, 164);
+            this.manageUserCheckAllCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserCheckAllCb.Name = "manageUserCheckAllCb";
+            this.manageUserCheckAllCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserCheckAllCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserCheckAllCb.TabIndex = 15;
+            this.manageUserCheckAllCb.Text = "دسترسی کامل";
+            this.manageUserCheckAllCb.UseVisualStyleBackColor = false;
+            this.manageUserCheckAllCb.CheckedChanged += new System.EventHandler(this.manageUserCheckAllCb_CheckedChanged);
+            // 
+            // manageUserManageTypeCb
+            // 
+            this.manageUserManageTypeCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserManageTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserManageTypeCb.Location = new System.Drawing.Point(16, 126);
+            this.manageUserManageTypeCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserManageTypeCb.Name = "manageUserManageTypeCb";
+            this.manageUserManageTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserManageTypeCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserManageTypeCb.TabIndex = 14;
+            this.manageUserManageTypeCb.Text = "تغییر تنظیمات برنامه";
+            this.manageUserManageTypeCb.UseVisualStyleBackColor = false;
+            this.manageUserManageTypeCb.CheckedChanged += new System.EventHandler(this.manageUserManageTypeCb_CheckedChanged);
+            // 
+            // manageUserManageTeacherCb
+            // 
+            this.manageUserManageTeacherCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserManageTeacherCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserManageTeacherCb.Location = new System.Drawing.Point(299, 127);
+            this.manageUserManageTeacherCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserManageTeacherCb.Name = "manageUserManageTeacherCb";
+            this.manageUserManageTeacherCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserManageTeacherCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserManageTeacherCb.TabIndex = 10;
+            this.manageUserManageTeacherCb.Text = "مدیریت اطلاعات اساتید";
+            this.manageUserManageTeacherCb.UseVisualStyleBackColor = false;
+            this.manageUserManageTeacherCb.CheckedChanged += new System.EventHandler(this.manageUserManageTeacherCb_CheckedChanged);
+            // 
+            // manageUserDeleteUserCb
+            // 
+            this.manageUserDeleteUserCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserDeleteUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserDeleteUserCb.Location = new System.Drawing.Point(16, 86);
+            this.manageUserDeleteUserCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserDeleteUserCb.Name = "manageUserDeleteUserCb";
+            this.manageUserDeleteUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserDeleteUserCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserDeleteUserCb.TabIndex = 13;
+            this.manageUserDeleteUserCb.Text = "حذف کاربر";
+            this.manageUserDeleteUserCb.UseVisualStyleBackColor = false;
+            this.manageUserDeleteUserCb.CheckedChanged += new System.EventHandler(this.manageUserDeleteUserCb_CheckedChanged);
+            // 
+            // manageUserEditUserCb
+            // 
+            this.manageUserEditUserCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserEditUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserEditUserCb.Location = new System.Drawing.Point(16, 47);
+            this.manageUserEditUserCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserEditUserCb.Name = "manageUserEditUserCb";
+            this.manageUserEditUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserEditUserCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserEditUserCb.TabIndex = 12;
+            this.manageUserEditUserCb.Text = "تغییر اطلاعات کاربر";
+            this.manageUserEditUserCb.UseVisualStyleBackColor = false;
+            this.manageUserEditUserCb.CheckedChanged += new System.EventHandler(this.manageUserEditUserCb_CheckedChanged);
+            // 
+            // manageUserAddUserCb
+            // 
+            this.manageUserAddUserCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserAddUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserAddUserCb.Location = new System.Drawing.Point(16, 9);
+            this.manageUserAddUserCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserAddUserCb.Name = "manageUserAddUserCb";
+            this.manageUserAddUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserAddUserCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserAddUserCb.TabIndex = 11;
+            this.manageUserAddUserCb.Text = "افزودن کاربر";
+            this.manageUserAddUserCb.UseVisualStyleBackColor = false;
+            this.manageUserAddUserCb.CheckedChanged += new System.EventHandler(this.manageUserAddUserCb_CheckedChanged);
+            // 
+            // manageUserDeleteProCb
+            // 
+            this.manageUserDeleteProCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserDeleteProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserDeleteProCb.Location = new System.Drawing.Point(299, 86);
+            this.manageUserDeleteProCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserDeleteProCb.Name = "manageUserDeleteProCb";
+            this.manageUserDeleteProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserDeleteProCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserDeleteProCb.TabIndex = 9;
+            this.manageUserDeleteProCb.Text = "حذف پروپوزال";
+            this.manageUserDeleteProCb.UseVisualStyleBackColor = false;
+            this.manageUserDeleteProCb.CheckedChanged += new System.EventHandler(this.manageUserDeleteProCb_CheckedChanged);
+            // 
+            // manageUserEditProCb
+            // 
+            this.manageUserEditProCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserEditProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserEditProCb.Location = new System.Drawing.Point(299, 48);
+            this.manageUserEditProCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserEditProCb.Name = "manageUserEditProCb";
+            this.manageUserEditProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserEditProCb.Size = new System.Drawing.Size(193, 33);
+            this.manageUserEditProCb.TabIndex = 8;
+            this.manageUserEditProCb.Text = "تغییر اطلاعات پروپوزال";
+            this.manageUserEditProCb.UseVisualStyleBackColor = false;
+            this.manageUserEditProCb.CheckedChanged += new System.EventHandler(this.manageUserEditProCb_CheckedChanged);
+            // 
+            // manageUserAddProCb
+            // 
+            this.manageUserAddProCb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserAddProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserAddProCb.Location = new System.Drawing.Point(267, 4);
+            this.manageUserAddProCb.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserAddProCb.Name = "manageUserAddProCb";
+            this.manageUserAddProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserAddProCb.Size = new System.Drawing.Size(225, 42);
+            this.manageUserAddProCb.TabIndex = 7;
+            this.manageUserAddProCb.Text = "افزودن پروپوزال";
+            this.manageUserAddProCb.UseVisualStyleBackColor = false;
+            this.manageUserAddProCb.CheckedChanged += new System.EventHandler(this.manageUserAddProCb_CheckedChanged);
+            // 
+            // manageUserPersonalInfoGp
+            // 
+            this.manageUserPersonalInfoGp.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserPersonalInfoGp.CanvasColor = System.Drawing.Color.Transparent;
+            this.manageUserPersonalInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserShowPasswordChb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserTellLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserEmailLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserPasswordLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserNcodLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserLnameLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserFnameLb);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserTelTxtbx);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserEmailTxtbx);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserPasswordTxtbx);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserNcodeTxtbx);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserLnameTxtbx);
+            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserFnameTxtbx);
+            this.manageUserPersonalInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.manageUserPersonalInfoGp.Location = new System.Drawing.Point(659, 4);
+            this.manageUserPersonalInfoGp.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserPersonalInfoGp.Name = "manageUserPersonalInfoGp";
+            this.manageUserPersonalInfoGp.Size = new System.Drawing.Size(464, 277);
+            // 
+            // 
+            // 
+            this.manageUserPersonalInfoGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.manageUserPersonalInfoGp.Style.BackColorGradientAngle = 90;
+            this.manageUserPersonalInfoGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.manageUserPersonalInfoGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserPersonalInfoGp.Style.BorderBottomWidth = 2;
+            this.manageUserPersonalInfoGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.manageUserPersonalInfoGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserPersonalInfoGp.Style.BorderLeftWidth = 2;
+            this.manageUserPersonalInfoGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserPersonalInfoGp.Style.BorderRightWidth = 2;
+            this.manageUserPersonalInfoGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserPersonalInfoGp.Style.BorderTopWidth = 2;
+            this.manageUserPersonalInfoGp.Style.CornerDiameter = 10;
+            this.manageUserPersonalInfoGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.manageUserPersonalInfoGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.manageUserPersonalInfoGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.manageUserPersonalInfoGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.manageUserPersonalInfoGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.manageUserPersonalInfoGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.manageUserPersonalInfoGp.TabIndex = 1000;
+            this.manageUserPersonalInfoGp.Text = "مشخصات کاربر";
+            // 
+            // manageUserShowPasswordChb
+            // 
+            this.manageUserShowPasswordChb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserShowPasswordChb.Location = new System.Drawing.Point(277, 110);
+            this.manageUserShowPasswordChb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserShowPasswordChb.Name = "manageUserShowPasswordChb";
+            this.manageUserShowPasswordChb.Size = new System.Drawing.Size(29, 30);
+            this.manageUserShowPasswordChb.TabIndex = 2000;
+            this.manageUserShowPasswordChb.TabStop = false;
+            this.manageUserShowPasswordChb.UseVisualStyleBackColor = false;
+            this.manageUserShowPasswordChb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.manageUserShowPasswordChb_MouseDown);
+            this.manageUserShowPasswordChb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.manageUserShowPasswordChb_MouseUp);
+            // 
+            // manageUserTellLb
+            // 
+            this.manageUserTellLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserTellLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserTellLb.Location = new System.Drawing.Point(293, 169);
+            this.manageUserTellLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserTellLb.Name = "manageUserTellLb";
+            this.manageUserTellLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserTellLb.Size = new System.Drawing.Size(119, 33);
+            this.manageUserTellLb.TabIndex = 25;
+            this.manageUserTellLb.Text = "تلفن";
+            this.manageUserTellLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserEmailLb
+            // 
+            this.manageUserEmailLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserEmailLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserEmailLb.Location = new System.Drawing.Point(293, 137);
+            this.manageUserEmailLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserEmailLb.Name = "manageUserEmailLb";
+            this.manageUserEmailLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserEmailLb.Size = new System.Drawing.Size(119, 32);
+            this.manageUserEmailLb.TabIndex = 24;
+            this.manageUserEmailLb.Text = "ایمیل";
+            this.manageUserEmailLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserPasswordLb
+            // 
+            this.manageUserPasswordLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserPasswordLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserPasswordLb.Location = new System.Drawing.Point(293, 105);
+            this.manageUserPasswordLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserPasswordLb.Name = "manageUserPasswordLb";
+            this.manageUserPasswordLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserPasswordLb.Size = new System.Drawing.Size(119, 31);
+            this.manageUserPasswordLb.TabIndex = 23;
+            this.manageUserPasswordLb.Text = "گذرواژه*";
+            this.manageUserPasswordLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserNcodLb
+            // 
+            this.manageUserNcodLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserNcodLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNcodLb.Location = new System.Drawing.Point(289, 73);
+            this.manageUserNcodLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserNcodLb.Name = "manageUserNcodLb";
+            this.manageUserNcodLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserNcodLb.Size = new System.Drawing.Size(124, 32);
+            this.manageUserNcodLb.TabIndex = 22;
+            this.manageUserNcodLb.Text = "کد ملی*";
+            this.manageUserNcodLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserLnameLb
+            // 
+            this.manageUserLnameLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserLnameLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserLnameLb.Location = new System.Drawing.Point(307, 41);
+            this.manageUserLnameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserLnameLb.Name = "manageUserLnameLb";
+            this.manageUserLnameLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserLnameLb.Size = new System.Drawing.Size(105, 32);
+            this.manageUserLnameLb.TabIndex = 21;
+            this.manageUserLnameLb.Text = "نام خانوادگی*";
+            this.manageUserLnameLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserFnameLb
+            // 
+            this.manageUserFnameLb.BackColor = System.Drawing.Color.Transparent;
+            this.manageUserFnameLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserFnameLb.Location = new System.Drawing.Point(339, 14);
+            this.manageUserFnameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.manageUserFnameLb.Name = "manageUserFnameLb";
+            this.manageUserFnameLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserFnameLb.Size = new System.Drawing.Size(72, 28);
+            this.manageUserFnameLb.TabIndex = 20;
+            this.manageUserFnameLb.Text = "نام*";
+            this.manageUserFnameLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserTelTxtbx
+            // 
+            this.manageUserTelTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserTelTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserTelTxtbx.Location = new System.Drawing.Point(29, 177);
+            this.manageUserTelTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserTelTxtbx.MaxLength = 30;
+            this.manageUserTelTxtbx.Name = "manageUserTelTxtbx";
+            this.manageUserTelTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserTelTxtbx.TabIndex = 6;
+            // 
+            // manageUserEmailTxtbx
+            // 
+            this.manageUserEmailTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserEmailTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserEmailTxtbx.Location = new System.Drawing.Point(29, 145);
+            this.manageUserEmailTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserEmailTxtbx.MaxLength = 50;
+            this.manageUserEmailTxtbx.Name = "manageUserEmailTxtbx";
+            this.manageUserEmailTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserEmailTxtbx.TabIndex = 5;
+            this.manageUserEmailTxtbx.TextChanged += new System.EventHandler(this.manageUserEmailTxtbx_TextChanged);
+            this.manageUserEmailTxtbx.Leave += new System.EventHandler(this.manageUserEmailTxtbx_Leave);
+            // 
+            // manageUserPasswordTxtbx
+            // 
+            this.manageUserPasswordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserPasswordTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserPasswordTxtbx.Location = new System.Drawing.Point(29, 113);
+            this.manageUserPasswordTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserPasswordTxtbx.MaxLength = 12;
+            this.manageUserPasswordTxtbx.Name = "manageUserPasswordTxtbx";
+            this.manageUserPasswordTxtbx.PasswordChar = '●';
+            this.manageUserPasswordTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserPasswordTxtbx.TabIndex = 4;
+            // 
+            // manageUserNcodeTxtbx
+            // 
+            this.manageUserNcodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserNcodeTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNcodeTxtbx.Location = new System.Drawing.Point(29, 81);
+            this.manageUserNcodeTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserNcodeTxtbx.MaxLength = 10;
+            this.manageUserNcodeTxtbx.Name = "manageUserNcodeTxtbx";
+            this.manageUserNcodeTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserNcodeTxtbx.TabIndex = 1;
+            this.manageUserNcodeTxtbx.TextChanged += new System.EventHandler(this.manageUserNcodTxtbx_TextChanged);
+            this.manageUserNcodeTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.manageUserNcodTxtbx_KeyPress);
+            this.manageUserNcodeTxtbx.Leave += new System.EventHandler(this.manageUserNcodTxtbx_Leave);
+            // 
+            // manageUserLnameTxtbx
+            // 
+            this.manageUserLnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserLnameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserLnameTxtbx.Location = new System.Drawing.Point(29, 49);
+            this.manageUserLnameTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserLnameTxtbx.MaxLength = 35;
+            this.manageUserLnameTxtbx.Name = "manageUserLnameTxtbx";
+            this.manageUserLnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserLnameTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserLnameTxtbx.TabIndex = 3;
+            // 
+            // manageUserFnameTxtbx
+            // 
+            this.manageUserFnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.manageUserFnameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserFnameTxtbx.Location = new System.Drawing.Point(29, 17);
+            this.manageUserFnameTxtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserFnameTxtbx.MaxLength = 25;
+            this.manageUserFnameTxtbx.Name = "manageUserFnameTxtbx";
+            this.manageUserFnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserFnameTxtbx.Size = new System.Drawing.Size(241, 29);
+            this.manageUserFnameTxtbx.TabIndex = 2;
+            // 
+            // manageUserShowAllBtn
+            // 
+            this.manageUserShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserShowAllBtn.Location = new System.Drawing.Point(660, 286);
+            this.manageUserShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserShowAllBtn.Name = "manageUserShowAllBtn";
+            this.manageUserShowAllBtn.Size = new System.Drawing.Size(108, 38);
+            this.manageUserShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserShowAllBtn.TabIndex = 11;
+            this.manageUserShowAllBtn.Text = "نمایش همه";
+            this.manageUserShowAllBtn.Click += new System.EventHandler(this.manageUserShowBtn_Click);
+            // 
+            // manageUserClearBtn
+            // 
+            this.manageUserClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserClearBtn.Location = new System.Drawing.Point(328, 286);
+            this.manageUserClearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserClearBtn.Name = "manageUserClearBtn";
+            this.manageUserClearBtn.Size = new System.Drawing.Size(108, 38);
+            this.manageUserClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserClearBtn.TabIndex = 10;
+            this.manageUserClearBtn.Text = "پاک کردن";
+            this.manageUserClearBtn.Click += new System.EventHandler(this.manageUserClearBtn_Click);
+            // 
+            // manageUserDeleteBtn
+            // 
+            this.manageUserDeleteBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserDeleteBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserDeleteBtn.Enabled = false;
+            this.manageUserDeleteBtn.Location = new System.Drawing.Point(453, 286);
+            this.manageUserDeleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserDeleteBtn.Name = "manageUserDeleteBtn";
+            this.manageUserDeleteBtn.Size = new System.Drawing.Size(108, 38);
+            this.manageUserDeleteBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserDeleteBtn.TabIndex = 9;
+            this.manageUserDeleteBtn.Text = "حذف کردن";
+            this.manageUserDeleteBtn.Click += new System.EventHandler(this.manageUserDeleteBtn_Click);
+            // 
+            // manageUserEditBtn
+            // 
+            this.manageUserEditBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserEditBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserEditBtn.Enabled = false;
+            this.manageUserEditBtn.Location = new System.Drawing.Point(65, 286);
+            this.manageUserEditBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserEditBtn.Name = "manageUserEditBtn";
+            this.manageUserEditBtn.Size = new System.Drawing.Size(108, 38);
+            this.manageUserEditBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserEditBtn.TabIndex = 8;
+            this.manageUserEditBtn.Text = "ثبت تغییرات";
+            this.manageUserEditBtn.Click += new System.EventHandler(this.manageUserEditBtn_Click);
+            // 
+            // manageUserAddBtn
+            // 
+            this.manageUserAddBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserAddBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserAddBtn.Location = new System.Drawing.Point(197, 286);
+            this.manageUserAddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserAddBtn.Name = "manageUserAddBtn";
+            this.manageUserAddBtn.Size = new System.Drawing.Size(108, 38);
+            this.manageUserAddBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserAddBtn.TabIndex = 7;
+            this.manageUserAddBtn.Text = "افزودن اطلاعات";
+            this.manageUserAddBtn.Click += new System.EventHandler(this.manageUserAddBtn_Click);
+            // 
+            // manageUserShowGp
+            // 
+            this.manageUserShowGp.CanvasColor = System.Drawing.SystemColors.Control;
+            this.manageUserShowGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.manageUserShowGp.Controls.Add(this.manageUserNavigationPanel);
+            this.manageUserShowGp.Controls.Add(this.manageUserShowDgv);
+            this.manageUserShowGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.manageUserShowGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserShowGp.Location = new System.Drawing.Point(13, 390);
+            this.manageUserShowGp.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserShowGp.Name = "manageUserShowGp";
+            this.manageUserShowGp.Size = new System.Drawing.Size(1148, 389);
+            // 
+            // 
+            // 
+            this.manageUserShowGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.manageUserShowGp.Style.BackColorGradientAngle = 90;
+            this.manageUserShowGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.manageUserShowGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserShowGp.Style.BorderBottomWidth = 2;
+            this.manageUserShowGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.manageUserShowGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserShowGp.Style.BorderLeftWidth = 2;
+            this.manageUserShowGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserShowGp.Style.BorderRightWidth = 2;
+            this.manageUserShowGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.manageUserShowGp.Style.BorderTopWidth = 2;
+            this.manageUserShowGp.Style.CornerDiameter = 10;
+            this.manageUserShowGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.manageUserShowGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.manageUserShowGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.manageUserShowGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.manageUserShowGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.manageUserShowGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.manageUserShowGp.TabIndex = 0;
+            this.manageUserShowGp.Text = "فهرست کاربران";
+            this.manageUserShowGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // manageUserNavigationPanel
+            // 
+            this.manageUserNavigationPanel.BackColor = System.Drawing.Color.White;
+            this.manageUserNavigationPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationShowAllBtn);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationCurrentPageTxtbx);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationNextPageBtn);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationLastPageBtn);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationPreviousPageBtn);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationFirstPageBtn);
+            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationReturnBtn);
+            this.manageUserNavigationPanel.Location = new System.Drawing.Point(152, 142);
+            this.manageUserNavigationPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationPanel.Name = "manageUserNavigationPanel";
+            this.manageUserNavigationPanel.Size = new System.Drawing.Size(819, 40);
+            this.manageUserNavigationPanel.TabIndex = 4;
+            // 
+            // manageUserNavigationShowAllBtn
+            // 
+            this.manageUserNavigationShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
+            this.manageUserNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationShowAllBtn.Name = "manageUserNavigationShowAllBtn";
+            this.manageUserNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem41});
+            this.manageUserNavigationShowAllBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationShowAllBtn.TabIndex = 35;
+            this.manageUserNavigationShowAllBtn.Text = "مشاهده";
+            this.manageUserNavigationShowAllBtn.Visible = false;
+            this.manageUserNavigationShowAllBtn.Click += new System.EventHandler(this.manageUserShowBtn_Click);
+            // 
+            // manageUserNavigationCurrentPageTxtbx
+            // 
+            // 
+            // 
+            // 
+            this.manageUserNavigationCurrentPageTxtbx.Border.Class = "TextBoxBorder";
+            this.manageUserNavigationCurrentPageTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.manageUserNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(361, 4);
+            this.manageUserNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationCurrentPageTxtbx.MaxLength = 5;
+            this.manageUserNavigationCurrentPageTxtbx.Name = "manageUserNavigationCurrentPageTxtbx";
+            this.manageUserNavigationCurrentPageTxtbx.PreventEnterBeep = true;
+            this.manageUserNavigationCurrentPageTxtbx.Size = new System.Drawing.Size(99, 29);
+            this.manageUserNavigationCurrentPageTxtbx.TabIndex = 34;
+            this.manageUserNavigationCurrentPageTxtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // manageUserNavigationNextPageBtn
+            // 
+            this.manageUserNavigationNextPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationNextPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
+            this.manageUserNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationNextPageBtn.Name = "manageUserNavigationNextPageBtn";
+            this.manageUserNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem26});
+            this.manageUserNavigationNextPageBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationNextPageBtn.TabIndex = 33;
+            this.manageUserNavigationNextPageBtn.Text = "صفحه بعد";
+            // 
+            // manageUserNavigationLastPageBtn
+            // 
+            this.manageUserNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationLastPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
+            this.manageUserNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationLastPageBtn.Name = "manageUserNavigationLastPageBtn";
+            this.manageUserNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem27});
+            this.manageUserNavigationLastPageBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationLastPageBtn.TabIndex = 32;
+            this.manageUserNavigationLastPageBtn.Text = "صفحه آخر";
+            // 
+            // manageUserNavigationPreviousPageBtn
+            // 
+            this.manageUserNavigationPreviousPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationPreviousPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
+            this.manageUserNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationPreviousPageBtn.Name = "manageUserNavigationPreviousPageBtn";
+            this.manageUserNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem29});
+            this.manageUserNavigationPreviousPageBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationPreviousPageBtn.TabIndex = 30;
+            this.manageUserNavigationPreviousPageBtn.Text = "صفحه قبل";
+            // 
+            // manageUserNavigationFirstPageBtn
+            // 
+            this.manageUserNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationFirstPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
+            this.manageUserNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationFirstPageBtn.Name = "manageUserNavigationFirstPageBtn";
+            this.manageUserNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem30});
+            this.manageUserNavigationFirstPageBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationFirstPageBtn.TabIndex = 29;
+            this.manageUserNavigationFirstPageBtn.Text = "صفحه اول";
+            // 
+            // manageUserNavigationReturnBtn
+            // 
+            this.manageUserNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.manageUserNavigationReturnBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.manageUserNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manageUserNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
+            this.manageUserNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserNavigationReturnBtn.Name = "manageUserNavigationReturnBtn";
+            this.manageUserNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
+            this.manageUserNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.manageUserNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem31});
+            this.manageUserNavigationReturnBtn.SubItemsExpandWidth = 0;
+            this.manageUserNavigationReturnBtn.TabIndex = 28;
+            this.manageUserNavigationReturnBtn.Text = "بازگشت";
+            // 
+            // manageUserShowDgv
+            // 
+            this.manageUserShowDgv.AllowUserToAddRows = false;
+            this.manageUserShowDgv.AllowUserToDeleteRows = false;
+            this.manageUserShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.manageUserShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageUserShowDgv.Location = new System.Drawing.Point(23, 2);
+            this.manageUserShowDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageUserShowDgv.MultiSelect = false;
+            this.manageUserShowDgv.Name = "manageUserShowDgv";
+            this.manageUserShowDgv.ReadOnly = true;
+            this.manageUserShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.manageUserShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.manageUserShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.manageUserShowDgv.RowTemplate.Height = 24;
+            this.manageUserShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.manageUserShowDgv.Size = new System.Drawing.Size(1093, 135);
+            this.manageUserShowDgv.TabIndex = 2;
+            this.manageUserShowDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.manageUserShowDgv_CellClick);
+            this.manageUserShowDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            this.superTabControlPanel1.Controls.Add(this.homePanel);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(1147, 868);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.homeTab;
+            // 
+            // homePanel
+            // 
+            this.homePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.homePanel.Controls.Add(this.homeTimeDateGp);
+            this.homePanel.Controls.Add(this.homeAapInfoGp);
+            this.homePanel.Location = new System.Drawing.Point(3, 23);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(1147, 761);
+            this.homePanel.TabIndex = 4;
+            this.homePanel.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // homeTimeDateGp
+            // 
+            this.homeTimeDateGp.BackColor = System.Drawing.Color.Transparent;
+            this.homeTimeDateGp.CanvasColor = System.Drawing.Color.Transparent;
+            this.homeTimeDateGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.homeTimeDateGp.Controls.Add(this.monthCalendarX1);
+            this.homeTimeDateGp.Controls.Add(this.analogClockControl1);
+            this.homeTimeDateGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.homeTimeDateGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeTimeDateGp.Location = new System.Drawing.Point(20, 324);
+            this.homeTimeDateGp.Margin = new System.Windows.Forms.Padding(4);
+            this.homeTimeDateGp.Name = "homeTimeDateGp";
+            this.homeTimeDateGp.Size = new System.Drawing.Size(1136, 410);
+            // 
+            // 
+            // 
+            this.homeTimeDateGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.homeTimeDateGp.Style.BackColorGradientAngle = 90;
+            this.homeTimeDateGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.homeTimeDateGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeTimeDateGp.Style.BorderBottomWidth = 5;
+            this.homeTimeDateGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.homeTimeDateGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeTimeDateGp.Style.BorderLeftWidth = 5;
+            this.homeTimeDateGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeTimeDateGp.Style.BorderRightWidth = 5;
+            this.homeTimeDateGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeTimeDateGp.Style.BorderTopWidth = 5;
+            this.homeTimeDateGp.Style.CornerDiameter = 15;
+            this.homeTimeDateGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.homeTimeDateGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.homeTimeDateGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.homeTimeDateGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.homeTimeDateGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.homeTimeDateGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.homeTimeDateGp.TabIndex = 3;
+            this.homeTimeDateGp.Text = "ساعت و تاریخ";
+            this.homeTimeDateGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // monthCalendarX1
+            // 
+            this.monthCalendarX1.BoldedDayForeColor = System.Drawing.Color.Blue;
+            this.monthCalendarX1.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.monthCalendarX1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthCalendarX1.CalendarType = BehComponents.CalendarTypes.Persian;
+            this.monthCalendarX1.DayRectTickness = 1F;
+            this.monthCalendarX1.DaysBackColor = System.Drawing.Color.LightCyan;
+            this.monthCalendarX1.DaysFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.monthCalendarX1.DaysForeColor = System.Drawing.Color.Navy;
+            this.monthCalendarX1.EnglishAnnuallyBoldedDates = new System.DateTime[0];
+            this.monthCalendarX1.EnglishBoldedDates = new System.DateTime[0];
+            this.monthCalendarX1.EnglishHolidayDates = new System.DateTime[0];
+            this.monthCalendarX1.EnglishMonthlyBoldedDates = new System.DateTime[0];
+            this.monthCalendarX1.HolidayForeColor = System.Drawing.Color.Red;
+            this.monthCalendarX1.HolidayWeekly = BehComponents.MonthCalendarX.DayOfWeekForHoliday.Friday;
+            this.monthCalendarX1.LineWeekColor = System.Drawing.Color.Blue;
+            this.monthCalendarX1.Location = new System.Drawing.Point(457, 59);
+            this.monthCalendarX1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.monthCalendarX1.Name = "monthCalendarX1";
+            this.monthCalendarX1.PersianAnnuallyBoldedDates = new BehComponents.PersianDateTime[0];
+            this.monthCalendarX1.PersianBoldedDates = new BehComponents.PersianDateTime[0];
+            this.monthCalendarX1.PersianHolidayDates = new BehComponents.PersianDateTime[0];
+            this.monthCalendarX1.PersianMonthlyBoldedDates = new BehComponents.PersianDateTime[0];
+            this.monthCalendarX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.monthCalendarX1.ShowToday = true;
+            this.monthCalendarX1.ShowTodayRect = false;
+            this.monthCalendarX1.ShowToolTips = false;
+            this.monthCalendarX1.ShowTrailing = true;
+            this.monthCalendarX1.Size = new System.Drawing.Size(621, 244);
+            this.monthCalendarX1.Style_DaysButton = BehComponents.ButtonX.ButtonStyles.Simple;
+            this.monthCalendarX1.Style_GotoTodayButton = BehComponents.ButtonX.ButtonStyles.Blue;
+            this.monthCalendarX1.Style_MonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
+            this.monthCalendarX1.Style_NextMonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
+            this.monthCalendarX1.Style_PreviousMonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
+            this.monthCalendarX1.Style_YearButton = BehComponents.ButtonX.ButtonStyles.Blue;
+            this.monthCalendarX1.TabIndex = 3;
+            this.monthCalendarX1.TitleBackColor = System.Drawing.Color.AliceBlue;
+            this.monthCalendarX1.TitleFont = new System.Drawing.Font("Tahoma", 7.8F);
+            this.monthCalendarX1.TitleForeColor = System.Drawing.Color.Black;
+            this.monthCalendarX1.TodayBackColor = System.Drawing.Color.AliceBlue;
+            this.monthCalendarX1.TodayFont = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.monthCalendarX1.TodayForeColor = System.Drawing.Color.Black;
+            this.monthCalendarX1.TodayRectColor = System.Drawing.Color.Navy;
+            this.monthCalendarX1.TodayRectTickness = 3F;
+            this.monthCalendarX1.TrailingForeColor = System.Drawing.Color.DarkGray;
+            this.monthCalendarX1.WeekDaysBackColor = System.Drawing.Color.AliceBlue;
+            this.monthCalendarX1.WeekDaysFont = new System.Drawing.Font("Tahoma", 7.8F);
+            this.monthCalendarX1.WeekDaysForeColor = System.Drawing.Color.Red;
+            this.monthCalendarX1.WeekStartsOn = BehComponents.MonthCalendarX.WeekDays.Saturday;
+            // 
+            // analogClockControl1
+            // 
+            this.analogClockControl1.AutomaticMode = true;
+            this.analogClockControl1.BackColor = System.Drawing.Color.Transparent;
+            this.analogClockControl1.ClockStyle = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
+            colorData1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            colorData1.BorderWidth = 0.01F;
+            colorData1.BrushSBSScale = 1F;
+            colorData1.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            clockStyleData1.BezelColor = colorData1;
+            colorData2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData2.BorderWidth = 0.01F;
+            colorData2.BrushSBSScale = 1F;
+            colorData2.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData2.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockStyleData1.CapColor = colorData2;
+            colorData3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(145)))), ((int)(((byte)(161)))));
+            colorData3.BorderWidth = 0.01F;
+            colorData3.BrushAngle = 45F;
+            colorData3.BrushSBSScale = 1F;
+            colorData3.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData3.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
+            colorData3.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            clockStyleData1.FaceColor = colorData3;
+            clockStyleData1.GlassAngle = -20;
+            colorData4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData4.BorderWidth = 0.01F;
+            colorData4.BrushSBSScale = 1F;
+            colorData4.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData4.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData1.HandColor = colorData4;
+            clockHandStyleData1.Length = 0.55F;
+            clockHandStyleData1.Width = 0.015F;
+            clockStyleData1.HourHandStyle = clockHandStyleData1;
+            colorData5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData5.BorderWidth = 0.01F;
+            colorData5.BrushSBSScale = 1F;
+            colorData5.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData5.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            colorData5.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            clockStyleData1.LargeTickColor = colorData5;
+            colorData6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData6.BorderWidth = 0.01F;
+            colorData6.BrushSBSScale = 1F;
+            colorData6.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData6.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData2.HandColor = colorData6;
+            clockHandStyleData2.Length = 0.8F;
+            clockHandStyleData2.Width = 0.01F;
+            clockStyleData1.MinuteHandStyle = clockHandStyleData2;
+            clockStyleData1.NumberFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            colorData7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData7.BorderWidth = 0.01F;
+            colorData7.BrushSBSScale = 1F;
+            colorData7.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData7.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData3.HandColor = colorData7;
+            clockHandStyleData3.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
+            clockHandStyleData3.Length = 0.8F;
+            clockHandStyleData3.Width = 0.005F;
+            clockStyleData1.SecondHandStyle = clockHandStyleData3;
+            colorData8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData8.BorderWidth = 0.01F;
+            colorData8.BrushSBSScale = 1F;
+            colorData8.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData8.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            colorData8.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            clockStyleData1.SmallTickColor = colorData8;
+            clockStyleData1.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
+            this.analogClockControl1.ClockStyleData = clockStyleData1;
+            this.analogClockControl1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.analogClockControl1.Location = new System.Drawing.Point(100, 48);
+            this.analogClockControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.analogClockControl1.MinimumSize = new System.Drawing.Size(133, 123);
+            this.analogClockControl1.Name = "analogClockControl1";
+            this.analogClockControl1.Size = new System.Drawing.Size(296, 296);
+            this.analogClockControl1.TabIndex = 0;
+            this.analogClockControl1.Text = "analogClockControl1";
+            this.analogClockControl1.Value = new System.DateTime(2016, 11, 21, 11, 15, 59, 170);
+            // 
+            // homeAapInfoGp
+            // 
+            this.homeAapInfoGp.BackColor = System.Drawing.Color.Transparent;
+            this.homeAapInfoGp.CanvasColor = System.Drawing.SystemColors.Control;
+            this.homeAapInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.homeAapInfoGp.Controls.Add(this.homeEBSLbl);
+            this.homeAapInfoGp.Controls.Add(this.homeWelcomeLbl);
+            this.homeAapInfoGp.Controls.Add(this.homeUserNameLbl);
+            this.homeAapInfoGp.Controls.Add(this.homeUserProfileLbl);
+            this.homeAapInfoGp.Controls.Add(this.homeAppNameLbl);
+            this.homeAapInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
+            this.homeAapInfoGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeAapInfoGp.Location = new System.Drawing.Point(149, 30);
+            this.homeAapInfoGp.Margin = new System.Windows.Forms.Padding(4);
+            this.homeAapInfoGp.Name = "homeAapInfoGp";
+            this.homeAapInfoGp.Size = new System.Drawing.Size(919, 287);
+            // 
+            // 
+            // 
+            this.homeAapInfoGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.homeAapInfoGp.Style.BackColorGradientAngle = 90;
+            this.homeAapInfoGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.homeAapInfoGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeAapInfoGp.Style.BorderBottomWidth = 5;
+            this.homeAapInfoGp.Style.BorderColor = System.Drawing.Color.Navy;
+            this.homeAapInfoGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeAapInfoGp.Style.BorderLeftWidth = 5;
+            this.homeAapInfoGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeAapInfoGp.Style.BorderRightWidth = 5;
+            this.homeAapInfoGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.homeAapInfoGp.Style.BorderTopWidth = 5;
+            this.homeAapInfoGp.Style.CornerDiameter = 15;
+            this.homeAapInfoGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.homeAapInfoGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.homeAapInfoGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.homeAapInfoGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.homeAapInfoGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.homeAapInfoGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.homeAapInfoGp.TabIndex = 2;
+            this.homeAapInfoGp.Text = "مشخصات برنامه و کاربر";
+            this.homeAapInfoGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // homeEBSLbl
+            // 
+            this.homeEBSLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeEBSLbl.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeEBSLbl.Location = new System.Drawing.Point(56, 52);
+            this.homeEBSLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeEBSLbl.Name = "homeEBSLbl";
+            this.homeEBSLbl.Size = new System.Drawing.Size(764, 34);
+            this.homeEBSLbl.TabIndex = 4;
+            this.homeEBSLbl.Text = "PCMS(1.0.1)";
+            this.homeEBSLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // homeWelcomeLbl
+            // 
+            this.homeWelcomeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeWelcomeLbl.Font = new System.Drawing.Font("B Nazanin", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeWelcomeLbl.Location = new System.Drawing.Point(337, 185);
+            this.homeWelcomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeWelcomeLbl.Name = "homeWelcomeLbl";
+            this.homeWelcomeLbl.Size = new System.Drawing.Size(247, 38);
+            this.homeWelcomeLbl.TabIndex = 3;
+            this.homeWelcomeLbl.Text = "خوش آمدید";
+            this.homeWelcomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // homeUserNameLbl
+            // 
+            this.homeUserNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeUserNameLbl.Font = new System.Drawing.Font("B Nazanin", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeUserNameLbl.Location = new System.Drawing.Point(341, 142);
+            this.homeUserNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeUserNameLbl.Name = "homeUserNameLbl";
+            this.homeUserNameLbl.Size = new System.Drawing.Size(243, 42);
+            this.homeUserNameLbl.TabIndex = 2;
+            this.homeUserNameLbl.Text = "نام و  نام خانوادگی";
+            this.homeUserNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // homeAppNameLbl
+            // 
+            this.homeAppNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeAppNameLbl.Font = new System.Drawing.Font("B Sina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.homeAppNameLbl.Location = new System.Drawing.Point(75, 17);
+            this.homeAppNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeAppNameLbl.Name = "homeAppNameLbl";
+            this.homeAppNameLbl.Size = new System.Drawing.Size(764, 34);
+            this.homeAppNameLbl.TabIndex = 0;
+            this.homeAppNameLbl.Text = "سامانه مدیریت پروپوزال ها و قراردادهای دانشگاه شهید چمران اهواز";
+            this.homeAppNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // superTabControlPanel6
             // 
             this.superTabControlPanel6.Controls.Add(this.appSettingPanel);
@@ -697,7 +1779,7 @@
             this.superTabControlPanel6.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(1137, 868);
+            this.superTabControlPanel6.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel6.TabIndex = 0;
             this.superTabControlPanel6.TabItem = this.appSettingsTab;
             // 
@@ -921,14 +2003,6 @@
             this.appSettingNavigationNextPageBtn.TabIndex = 33;
             this.appSettingNavigationNextPageBtn.Text = "صفحه بعد";
             // 
-            // superTabItem32
-            // 
-            this.superTabItem32.GlobalItem = false;
-            this.superTabItem32.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem32.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem32.Name = "superTabItem32";
-            this.superTabItem32.Text = "لاگ";
-            // 
             // appSettingNavigationLastPageBtn
             // 
             this.appSettingNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -944,14 +2018,6 @@
             this.appSettingNavigationLastPageBtn.SubItemsExpandWidth = 0;
             this.appSettingNavigationLastPageBtn.TabIndex = 32;
             this.appSettingNavigationLastPageBtn.Text = "صفحه آخر";
-            // 
-            // superTabItem33
-            // 
-            this.superTabItem33.GlobalItem = false;
-            this.superTabItem33.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem33.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem33.Name = "superTabItem33";
-            this.superTabItem33.Text = "لاگ";
             // 
             // appSettingNavigationPreviousPageBtn
             // 
@@ -969,14 +2035,6 @@
             this.appSettingNavigationPreviousPageBtn.TabIndex = 30;
             this.appSettingNavigationPreviousPageBtn.Text = "صفحه قبل";
             // 
-            // superTabItem35
-            // 
-            this.superTabItem35.GlobalItem = false;
-            this.superTabItem35.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem35.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem35.Name = "superTabItem35";
-            this.superTabItem35.Text = "لاگ";
-            // 
             // appSettingNavigationFirstPageBtn
             // 
             this.appSettingNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -992,14 +2050,6 @@
             this.appSettingNavigationFirstPageBtn.SubItemsExpandWidth = 0;
             this.appSettingNavigationFirstPageBtn.TabIndex = 29;
             this.appSettingNavigationFirstPageBtn.Text = "صفحه اول";
-            // 
-            // superTabItem36
-            // 
-            this.superTabItem36.GlobalItem = false;
-            this.superTabItem36.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem36.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem36.Name = "superTabItem36";
-            this.superTabItem36.Text = "لاگ";
             // 
             // appSettingNavigationReturnBtn
             // 
@@ -1017,14 +2067,6 @@
             this.appSettingNavigationReturnBtn.TabIndex = 28;
             this.appSettingNavigationReturnBtn.Text = "بازگشت";
             // 
-            // superTabItem37
-            // 
-            this.superTabItem37.GlobalItem = false;
-            this.superTabItem37.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem37.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem37.Name = "superTabItem37";
-            this.superTabItem37.Text = "لاگ";
-            // 
             // appSettingShowDv
             // 
             this.appSettingShowDv.AllowUserToAddRows = false;
@@ -1040,14 +2082,14 @@
             this.appSettingShowDv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.appSettingShowDv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.appSettingShowDv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSettingShowDv.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.appSettingShowDv.RowTemplate.Height = 24;
             this.appSettingShowDv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appSettingShowDv.Size = new System.Drawing.Size(1097, 113);
@@ -1082,15 +2124,6 @@
             this.appSettingGp.Controls.Add(this.appSettingDeleteBtn);
             this.appSettingGp.Controls.Add(this.appSettingEditBtn);
             this.appSettingGp.Controls.Add(this.appSettingAddBtn);
-            this.appSettingGp.Controls.Add(this.appSettingFacultyLbl);
-            this.appSettingGp.Controls.Add(this.appSettingStatusLbl);
-            this.appSettingGp.Controls.Add(this.aapSettingCoLbl);
-            this.appSettingGp.Controls.Add(this.appSettingProTypeLbl);
-            this.appSettingGp.Controls.Add(this.appSettingRegTypeLbl);
-            this.appSettingGp.Controls.Add(this.appSettingPropertyLbl);
-            this.appSettingGp.Controls.Add(this.appSettingProcedureTypeLbl);
-            this.appSettingGp.Controls.Add(this.appSettingEgroupLbl);
-            this.appSettingGp.Controls.Add(this.appSettingEdegreeLbl);
             this.appSettingGp.DisabledBackColor = System.Drawing.Color.Empty;
             this.appSettingGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.appSettingGp.Location = new System.Drawing.Point(8, 154);
@@ -1141,13 +2174,14 @@
             // appSettingEdegreeRbtn
             // 
             this.appSettingEdegreeRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingEdegreeRbtn.Location = new System.Drawing.Point(356, 199);
+            this.appSettingEdegreeRbtn.Location = new System.Drawing.Point(250, 199);
             this.appSettingEdegreeRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingEdegreeRbtn.Name = "appSettingEdegreeRbtn";
             this.appSettingEdegreeRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEdegreeRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingEdegreeRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingEdegreeRbtn.TabIndex = 21;
             this.appSettingEdegreeRbtn.TabStop = true;
+            this.appSettingEdegreeRbtn.Text = "درجه علمی";
             this.appSettingEdegreeRbtn.UseVisualStyleBackColor = false;
             this.appSettingEdegreeRbtn.Click += new System.EventHandler(this.appSettingEdegreeRbtn_Click);
             // 
@@ -1189,13 +2223,14 @@
             // appSettingFacultyRbtn
             // 
             this.appSettingFacultyRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingFacultyRbtn.Location = new System.Drawing.Point(1092, 199);
+            this.appSettingFacultyRbtn.Location = new System.Drawing.Point(986, 199);
             this.appSettingFacultyRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingFacultyRbtn.Name = "appSettingFacultyRbtn";
             this.appSettingFacultyRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingFacultyRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingFacultyRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingFacultyRbtn.TabIndex = 14;
             this.appSettingFacultyRbtn.TabStop = true;
+            this.appSettingFacultyRbtn.Text = "دانشکده";
             this.appSettingFacultyRbtn.UseVisualStyleBackColor = false;
             this.appSettingFacultyRbtn.Click += new System.EventHandler(this.appSettingFacultyRbtn_Click);
             this.appSettingFacultyRbtn.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
@@ -1204,13 +2239,14 @@
             // 
             this.appSettingEgroupRbtn.BackColor = System.Drawing.Color.Transparent;
             this.appSettingEgroupRbtn.Enabled = false;
-            this.appSettingEgroupRbtn.Location = new System.Drawing.Point(737, 199);
+            this.appSettingEgroupRbtn.Location = new System.Drawing.Point(631, 199);
             this.appSettingEgroupRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingEgroupRbtn.Name = "appSettingEgroupRbtn";
             this.appSettingEgroupRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEgroupRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingEgroupRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingEgroupRbtn.TabIndex = 16;
             this.appSettingEgroupRbtn.TabStop = true;
+            this.appSettingEgroupRbtn.Text = "گروه آموزشی";
             this.appSettingEgroupRbtn.UseVisualStyleBackColor = false;
             this.appSettingEgroupRbtn.Click += new System.EventHandler(this.appSettingEgroupRbtn_Click);
             // 
@@ -1238,13 +2274,14 @@
             // appSettingStatusRbtn
             // 
             this.appSettingStatusRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingStatusRbtn.Location = new System.Drawing.Point(359, 96);
+            this.appSettingStatusRbtn.Location = new System.Drawing.Point(253, 96);
             this.appSettingStatusRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingStatusRbtn.Name = "appSettingStatusRbtn";
             this.appSettingStatusRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingStatusRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingStatusRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingStatusRbtn.TabIndex = 5;
             this.appSettingStatusRbtn.TabStop = true;
+            this.appSettingStatusRbtn.Text = "وضعیت";
             this.appSettingStatusRbtn.UseVisualStyleBackColor = false;
             this.appSettingStatusRbtn.Click += new System.EventHandler(this.appSettingStatusRbtn_Click);
             // 
@@ -1261,13 +2298,14 @@
             // appSettingPropertyRbtn
             // 
             this.appSettingPropertyRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingPropertyRbtn.Location = new System.Drawing.Point(1093, 96);
+            this.appSettingPropertyRbtn.Location = new System.Drawing.Point(987, 96);
             this.appSettingPropertyRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingPropertyRbtn.Name = "appSettingPropertyRbtn";
             this.appSettingPropertyRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingPropertyRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingPropertyRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingPropertyRbtn.TabIndex = 1;
             this.appSettingPropertyRbtn.TabStop = true;
+            this.appSettingPropertyRbtn.Text = "خاصیت";
             this.appSettingPropertyRbtn.UseVisualStyleBackColor = false;
             this.appSettingPropertyRbtn.Click += new System.EventHandler(this.appSettingPropertyRbtn_Click);
             this.appSettingPropertyRbtn.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
@@ -1285,13 +2323,14 @@
             // appSettingProTypeRbtn
             // 
             this.appSettingProTypeRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingProTypeRbtn.Location = new System.Drawing.Point(740, 96);
+            this.appSettingProTypeRbtn.Location = new System.Drawing.Point(634, 96);
             this.appSettingProTypeRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingProTypeRbtn.Name = "appSettingProTypeRbtn";
             this.appSettingProTypeRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProTypeRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingProTypeRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingProTypeRbtn.TabIndex = 3;
             this.appSettingProTypeRbtn.TabStop = true;
+            this.appSettingProTypeRbtn.Text = "نوع پروپوزال";
             this.appSettingProTypeRbtn.UseVisualStyleBackColor = false;
             this.appSettingProTypeRbtn.Click += new System.EventHandler(this.appSettingProTypeRbtn_Click);
             // 
@@ -1308,13 +2347,14 @@
             // appSettingCoRbtn
             // 
             this.appSettingCoRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingCoRbtn.Location = new System.Drawing.Point(355, 14);
+            this.appSettingCoRbtn.Location = new System.Drawing.Point(249, 14);
             this.appSettingCoRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingCoRbtn.Name = "appSettingCoRbtn";
             this.appSettingCoRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingCoRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingCoRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingCoRbtn.TabIndex = 4;
             this.appSettingCoRbtn.TabStop = true;
+            this.appSettingCoRbtn.Text = "سازمان";
             this.appSettingCoRbtn.UseVisualStyleBackColor = false;
             this.appSettingCoRbtn.CheckedChanged += new System.EventHandler(this.appSettingCoRbtn_CheckedChanged);
             this.appSettingCoRbtn.Click += new System.EventHandler(this.appSettingCoRbtn_Click);
@@ -1322,13 +2362,14 @@
             // appSettingProcedureTypeRbtn
             // 
             this.appSettingProcedureTypeRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingProcedureTypeRbtn.Location = new System.Drawing.Point(1091, 14);
+            this.appSettingProcedureTypeRbtn.Location = new System.Drawing.Point(985, 14);
             this.appSettingProcedureTypeRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingProcedureTypeRbtn.Name = "appSettingProcedureTypeRbtn";
             this.appSettingProcedureTypeRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProcedureTypeRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingProcedureTypeRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingProcedureTypeRbtn.TabIndex = 0;
             this.appSettingProcedureTypeRbtn.TabStop = true;
+            this.appSettingProcedureTypeRbtn.Text = "نوع کار";
             this.appSettingProcedureTypeRbtn.UseVisualStyleBackColor = false;
             this.appSettingProcedureTypeRbtn.Click += new System.EventHandler(this.appSettingProcedureTypeRbtn_Click);
             this.appSettingProcedureTypeRbtn.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
@@ -1336,13 +2377,14 @@
             // appSettingRegTypeRbtn
             // 
             this.appSettingRegTypeRbtn.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingRegTypeRbtn.Location = new System.Drawing.Point(736, 14);
+            this.appSettingRegTypeRbtn.Location = new System.Drawing.Point(630, 14);
             this.appSettingRegTypeRbtn.Margin = new System.Windows.Forms.Padding(4);
             this.appSettingRegTypeRbtn.Name = "appSettingRegTypeRbtn";
             this.appSettingRegTypeRbtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingRegTypeRbtn.Size = new System.Drawing.Size(24, 28);
+            this.appSettingRegTypeRbtn.Size = new System.Drawing.Size(130, 28);
             this.appSettingRegTypeRbtn.TabIndex = 2;
             this.appSettingRegTypeRbtn.TabStop = true;
+            this.appSettingRegTypeRbtn.Text = "نوع ثبت";
             this.appSettingRegTypeRbtn.UseVisualStyleBackColor = false;
             this.appSettingRegTypeRbtn.Click += new System.EventHandler(this.appSettingRegTypeRbtn_Click);
             // 
@@ -1399,117 +2441,6 @@
             this.appSettingAddBtn.Text = "افزودن";
             this.appSettingAddBtn.Click += new System.EventHandler(this.appSettingAddBtn_Click);
             // 
-            // appSettingFacultyLbl
-            // 
-            this.appSettingFacultyLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingFacultyLbl.Location = new System.Drawing.Point(1005, 203);
-            this.appSettingFacultyLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingFacultyLbl.Name = "appSettingFacultyLbl";
-            this.appSettingFacultyLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingFacultyLbl.Size = new System.Drawing.Size(77, 32);
-            this.appSettingFacultyLbl.TabIndex = 18;
-            this.appSettingFacultyLbl.Text = "دانشکده";
-            this.appSettingFacultyLbl.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // appSettingStatusLbl
-            // 
-            this.appSettingStatusLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingStatusLbl.Location = new System.Drawing.Point(295, 98);
-            this.appSettingStatusLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingStatusLbl.Name = "appSettingStatusLbl";
-            this.appSettingStatusLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingStatusLbl.Size = new System.Drawing.Size(56, 32);
-            this.appSettingStatusLbl.TabIndex = 13;
-            this.appSettingStatusLbl.Text = "وضعیت";
-            // 
-            // aapSettingCoLbl
-            // 
-            this.aapSettingCoLbl.BackColor = System.Drawing.Color.Transparent;
-            this.aapSettingCoLbl.Location = new System.Drawing.Point(291, 20);
-            this.aapSettingCoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.aapSettingCoLbl.Name = "aapSettingCoLbl";
-            this.aapSettingCoLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.aapSettingCoLbl.Size = new System.Drawing.Size(56, 32);
-            this.aapSettingCoLbl.TabIndex = 12;
-            this.aapSettingCoLbl.Text = "سازمان";
-            // 
-            // appSettingProTypeLbl
-            // 
-            this.appSettingProTypeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingProTypeLbl.Location = new System.Drawing.Point(633, 102);
-            this.appSettingProTypeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingProTypeLbl.Name = "appSettingProTypeLbl";
-            this.appSettingProTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProTypeLbl.Size = new System.Drawing.Size(99, 42);
-            this.appSettingProTypeLbl.TabIndex = 11;
-            this.appSettingProTypeLbl.Text = "نوع پروپوزال";
-            // 
-            // appSettingRegTypeLbl
-            // 
-            this.appSettingRegTypeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingRegTypeLbl.Location = new System.Drawing.Point(663, 16);
-            this.appSettingRegTypeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingRegTypeLbl.Name = "appSettingRegTypeLbl";
-            this.appSettingRegTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingRegTypeLbl.Size = new System.Drawing.Size(65, 32);
-            this.appSettingRegTypeLbl.TabIndex = 10;
-            this.appSettingRegTypeLbl.Text = "نوع ثبت";
-            // 
-            // appSettingPropertyLbl
-            // 
-            this.appSettingPropertyLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingPropertyLbl.Location = new System.Drawing.Point(1031, 102);
-            this.appSettingPropertyLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingPropertyLbl.Name = "appSettingPropertyLbl";
-            this.appSettingPropertyLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingPropertyLbl.Size = new System.Drawing.Size(56, 32);
-            this.appSettingPropertyLbl.TabIndex = 9;
-            this.appSettingPropertyLbl.Text = "خاصیت";
-            this.appSettingPropertyLbl.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // appSettingProcedureTypeLbl
-            // 
-            this.appSettingProcedureTypeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingProcedureTypeLbl.Location = new System.Drawing.Point(1027, 14);
-            this.appSettingProcedureTypeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingProcedureTypeLbl.Name = "appSettingProcedureTypeLbl";
-            this.appSettingProcedureTypeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingProcedureTypeLbl.Size = new System.Drawing.Size(56, 27);
-            this.appSettingProcedureTypeLbl.TabIndex = 8;
-            this.appSettingProcedureTypeLbl.Text = "نوع کار";
-            this.appSettingProcedureTypeLbl.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // appSettingEgroupLbl
-            // 
-            this.appSettingEgroupLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingEgroupLbl.Location = new System.Drawing.Point(629, 206);
-            this.appSettingEgroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingEgroupLbl.Name = "appSettingEgroupLbl";
-            this.appSettingEgroupLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEgroupLbl.Size = new System.Drawing.Size(99, 42);
-            this.appSettingEgroupLbl.TabIndex = 19;
-            this.appSettingEgroupLbl.Text = "گروه آموزشی";
-            // 
-            // appSettingEdegreeLbl
-            // 
-            this.appSettingEdegreeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingEdegreeLbl.Location = new System.Drawing.Point(249, 206);
-            this.appSettingEdegreeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.appSettingEdegreeLbl.Name = "appSettingEdegreeLbl";
-            this.appSettingEdegreeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.appSettingEdegreeLbl.Size = new System.Drawing.Size(99, 42);
-            this.appSettingEdegreeLbl.TabIndex = 23;
-            this.appSettingEdegreeLbl.Text = "درجه علمی";
-            // 
-            // appSettingsTab
-            // 
-            this.appSettingsTab.AttachedControl = this.superTabControlPanel6;
-            this.appSettingsTab.GlobalItem = false;
-            this.appSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.settings;
-            this.appSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.appSettingsTab.Name = "appSettingsTab";
-            this.appSettingsTab.Text = "تنظیمات برنامه";
-            // 
             // superTabControlPanel7
             // 
             this.superTabControlPanel7.Controls.Add(this.personalSettingPanel);
@@ -1517,7 +2448,7 @@
             this.superTabControlPanel7.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(1137, 868);
+            this.superTabControlPanel7.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel7.TabIndex = 0;
             this.superTabControlPanel7.TabItem = this.personalSettingsTab;
             // 
@@ -1848,15 +2779,6 @@
             this.personalSettingClearBtn.Text = "پاک کردن";
             this.personalSettingClearBtn.Click += new System.EventHandler(this.personalSettingClearBtn_Click);
             // 
-            // personalSettingsTab
-            // 
-            this.personalSettingsTab.AttachedControl = this.superTabControlPanel7;
-            this.personalSettingsTab.GlobalItem = false;
-            this.personalSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.user__1_;
-            this.personalSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.personalSettingsTab.Name = "personalSettingsTab";
-            this.personalSettingsTab.Text = "تنظیمات شخصی";
-            // 
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Controls.Add(this.searchProposalPanel);
@@ -1864,7 +2786,7 @@
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1137, 868);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.searchProposalTab;
             // 
@@ -1960,14 +2882,6 @@
             this.searchProposalNavigationShowAllBtn.Text = "ریپورت فهرست";
             this.searchProposalNavigationShowAllBtn.Click += new System.EventHandler(this.searchProposalNavigationShowAllBtn_Click);
             // 
-            // superTabItem39
-            // 
-            this.superTabItem39.GlobalItem = false;
-            this.superTabItem39.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem39.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem39.Name = "superTabItem39";
-            this.superTabItem39.Text = "لاگ";
-            // 
             // searchProposalNavigationCurrentPageTxtbx
             // 
             // 
@@ -2005,14 +2919,6 @@
             this.searchProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.searchProposalNavigationNextPageBtn.Click += new System.EventHandler(this.searchProposalNavigationNextPageBtn_Click);
             // 
-            // superTabItem14
-            // 
-            this.superTabItem14.GlobalItem = false;
-            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem14.Name = "superTabItem14";
-            this.superTabItem14.Text = "لاگ";
-            // 
             // searchProposalNavigationLastPageBtn
             // 
             this.searchProposalNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2030,14 +2936,6 @@
             this.searchProposalNavigationLastPageBtn.TabIndex = 32;
             this.searchProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.searchProposalNavigationLastPageBtn.Click += new System.EventHandler(this.searchProposalNavigationLastPageBtn_Click);
-            // 
-            // superTabItem15
-            // 
-            this.superTabItem15.GlobalItem = false;
-            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem15.Name = "superTabItem15";
-            this.superTabItem15.Text = "لاگ";
             // 
             // searchProposalNavigationPreviousPageBtn
             // 
@@ -2057,14 +2955,6 @@
             this.searchProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.searchProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.searchProposalNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem17
-            // 
-            this.superTabItem17.GlobalItem = false;
-            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem17.Name = "superTabItem17";
-            this.superTabItem17.Text = "لاگ";
-            // 
             // searchProposalNavigationFirstPageBtn
             // 
             this.searchProposalNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2082,14 +2972,6 @@
             this.searchProposalNavigationFirstPageBtn.TabIndex = 29;
             this.searchProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.searchProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.searchProposalNavigationFirstPageBtn_Click);
-            // 
-            // superTabItem18
-            // 
-            this.superTabItem18.GlobalItem = false;
-            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem18.Name = "superTabItem18";
-            this.superTabItem18.Text = "لاگ";
             // 
             // searchProposalNavigationReturnBtn
             // 
@@ -2109,14 +2991,6 @@
             this.searchProposalNavigationReturnBtn.Text = "بازگشت";
             this.searchProposalNavigationReturnBtn.Click += new System.EventHandler(this.searchProposalNavigationReturnBtn_Click);
             // 
-            // superTabItem19
-            // 
-            this.superTabItem19.GlobalItem = false;
-            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem19.Name = "superTabItem19";
-            this.superTabItem19.Text = "لاگ";
-            // 
             // searchProposalShowDgv
             // 
             this.searchProposalShowDgv.AllowUserToAddRows = false;
@@ -2131,14 +3005,14 @@
             this.searchProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.searchProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.searchProposalShowDgv.RowTemplate.Height = 24;
             this.searchProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchProposalShowDgv.Size = new System.Drawing.Size(1075, 137);
@@ -2150,10 +3024,14 @@
             // 
             this.searchProposalSearchGp.CanvasColor = System.Drawing.SystemColors.Control;
             this.searchProposalSearchGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalStatusLbl);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalShowAllBtn);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorEGroupCb);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFacultyCb);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorMobileTxtbx);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorLNameTxtbx);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFNameTxtbx);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorNCodeTxtbx);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalStatusLbl);
+            this.searchProposalSearchGp.Controls.Add(this.searchProposalShowAllBtn);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateToChbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalStartDateFromChbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalValueToTxtbx);
@@ -2166,14 +3044,11 @@
             this.searchProposalSearchGp.Controls.Add(this.searchProposalRegisterTypeCb);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalPropertyTypeCb);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalProcedureTypeCb);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorMobileTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorMobileLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorEGroupLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFacultyLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorLNameLbl);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorLNameTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFNameLbl);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorFNameTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalValueFromTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalValueFromLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalOrganizationLbl);
@@ -2185,7 +3060,6 @@
             this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorNCodeLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalEnglishTitleLbl);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalPersianTitleLbl);
-            this.searchProposalSearchGp.Controls.Add(this.searchProposalExecutorNCodeTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalEnglishTitleTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalPersianTitleTxtbx);
             this.searchProposalSearchGp.Controls.Add(this.searchProposalSearchBtn);
@@ -2230,16 +3104,6 @@
             this.searchProposalSearchGp.Text = "جستجوی اطلاعات";
             this.searchProposalSearchGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
-            // searchProposalStatusLbl
-            // 
-            this.searchProposalStatusLbl.BackColor = System.Drawing.Color.Transparent;
-            this.searchProposalStatusLbl.Location = new System.Drawing.Point(301, 226);
-            this.searchProposalStatusLbl.Name = "searchProposalStatusLbl";
-            this.searchProposalStatusLbl.Size = new System.Drawing.Size(99, 25);
-            this.searchProposalStatusLbl.TabIndex = 25;
-            this.searchProposalStatusLbl.Text = "وضعیت";
-            this.searchProposalStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // searchProposalShowAllBtn
             // 
             this.searchProposalShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -2258,7 +3122,7 @@
             this.searchProposalExecutorEGroupCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.searchProposalExecutorEGroupCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalExecutorEGroupCb.FormattingEnabled = true;
-            this.searchProposalExecutorEGroupCb.Location = new System.Drawing.Point(788, 198);
+            this.searchProposalExecutorEGroupCb.Location = new System.Drawing.Point(809, 198);
             this.searchProposalExecutorEGroupCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorEGroupCb.Name = "searchProposalExecutorEGroupCb";
             this.searchProposalExecutorEGroupCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2271,7 +3135,7 @@
             this.searchProposalExecutorFacultyCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.searchProposalExecutorFacultyCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalExecutorFacultyCb.FormattingEnabled = true;
-            this.searchProposalExecutorFacultyCb.Location = new System.Drawing.Point(788, 162);
+            this.searchProposalExecutorFacultyCb.Location = new System.Drawing.Point(809, 162);
             this.searchProposalExecutorFacultyCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorFacultyCb.Name = "searchProposalExecutorFacultyCb";
             this.searchProposalExecutorFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2350,7 +3214,8 @@
             // 
             // searchProposalStatusCb
             // 
-            this.searchProposalStatusCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalStatusCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalStatusCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalStatusCb.FormattingEnabled = true;
             this.searchProposalStatusCb.Location = new System.Drawing.Point(111, 230);
             this.searchProposalStatusCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2365,6 +3230,7 @@
             this.searchProposalOrganizationNameCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.searchProposalOrganizationNameCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalOrganizationNameCb.FormattingEnabled = true;
+            this.searchProposalOrganizationNameCb.ItemHeight = 21;
             this.searchProposalOrganizationNameCb.Location = new System.Drawing.Point(111, 194);
             this.searchProposalOrganizationNameCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalOrganizationNameCb.Name = "searchProposalOrganizationNameCb";
@@ -2377,7 +3243,8 @@
             // 
             // searchProposalTypeCb
             // 
-            this.searchProposalTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalTypeCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalTypeCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalTypeCb.FormattingEnabled = true;
             this.searchProposalTypeCb.Location = new System.Drawing.Point(111, 156);
             this.searchProposalTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2389,7 +3256,8 @@
             // 
             // searchProposalRegisterTypeCb
             // 
-            this.searchProposalRegisterTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalRegisterTypeCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalRegisterTypeCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalRegisterTypeCb.FormattingEnabled = true;
             this.searchProposalRegisterTypeCb.Location = new System.Drawing.Point(111, 119);
             this.searchProposalRegisterTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2401,7 +3269,8 @@
             // 
             // searchProposalPropertyTypeCb
             // 
-            this.searchProposalPropertyTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalPropertyTypeCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalPropertyTypeCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalPropertyTypeCb.FormattingEnabled = true;
             this.searchProposalPropertyTypeCb.Location = new System.Drawing.Point(111, 79);
             this.searchProposalPropertyTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2413,7 +3282,8 @@
             // 
             // searchProposalProcedureTypeCb
             // 
-            this.searchProposalProcedureTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchProposalProcedureTypeCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchProposalProcedureTypeCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.searchProposalProcedureTypeCb.FormattingEnabled = true;
             this.searchProposalProcedureTypeCb.Location = new System.Drawing.Point(111, 43);
             this.searchProposalProcedureTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2426,7 +3296,7 @@
             // searchProposalExecutorMobileTxtbx
             // 
             this.searchProposalExecutorMobileTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchProposalExecutorMobileTxtbx.Location = new System.Drawing.Point(788, 233);
+            this.searchProposalExecutorMobileTxtbx.Location = new System.Drawing.Point(809, 233);
             this.searchProposalExecutorMobileTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorMobileTxtbx.MaxLength = 20;
             this.searchProposalExecutorMobileTxtbx.Name = "searchProposalExecutorMobileTxtbx";
@@ -2485,7 +3355,7 @@
             // searchProposalExecutorLNameTxtbx
             // 
             this.searchProposalExecutorLNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchProposalExecutorLNameTxtbx.Location = new System.Drawing.Point(788, 126);
+            this.searchProposalExecutorLNameTxtbx.Location = new System.Drawing.Point(809, 126);
             this.searchProposalExecutorLNameTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorLNameTxtbx.MaxLength = 100;
             this.searchProposalExecutorLNameTxtbx.Name = "searchProposalExecutorLNameTxtbx";
@@ -2509,7 +3379,7 @@
             // searchProposalExecutorFNameTxtbx
             // 
             this.searchProposalExecutorFNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchProposalExecutorFNameTxtbx.Location = new System.Drawing.Point(788, 90);
+            this.searchProposalExecutorFNameTxtbx.Location = new System.Drawing.Point(809, 90);
             this.searchProposalExecutorFNameTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorFNameTxtbx.MaxLength = 100;
             this.searchProposalExecutorFNameTxtbx.Name = "searchProposalExecutorFNameTxtbx";
@@ -2637,7 +3507,7 @@
             // searchProposalExecutorNCodeTxtbx
             // 
             this.searchProposalExecutorNCodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchProposalExecutorNCodeTxtbx.Location = new System.Drawing.Point(788, 54);
+            this.searchProposalExecutorNCodeTxtbx.Location = new System.Drawing.Point(809, 54);
             this.searchProposalExecutorNCodeTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalExecutorNCodeTxtbx.MaxLength = 10;
             this.searchProposalExecutorNCodeTxtbx.Name = "searchProposalExecutorNCodeTxtbx";
@@ -2786,7 +3656,7 @@
             this.searchProposalStartDateToDts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalStartDateToDts.Name = "searchProposalStartDateToDts";
             this.searchProposalStartDateToDts.Size = new System.Drawing.Size(185, 30);
-            this.searchProposalStartDateToDts.TabIndex = 1;
+            this.searchProposalStartDateToDts.TabIndex = 10;
             this.searchProposalStartDateToDts.UsePersianFormat = true;
             // 
             // searchProposalStartDateFromDts
@@ -2796,17 +3666,8 @@
             this.searchProposalStartDateFromDts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalStartDateFromDts.Name = "searchProposalStartDateFromDts";
             this.searchProposalStartDateFromDts.Size = new System.Drawing.Size(181, 30);
-            this.searchProposalStartDateFromDts.TabIndex = 0;
+            this.searchProposalStartDateFromDts.TabIndex = 9;
             this.searchProposalStartDateFromDts.UsePersianFormat = true;
-            // 
-            // searchProposalTab
-            // 
-            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
-            this.searchProposalTab.GlobalItem = false;
-            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
-            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.searchProposalTab.Name = "searchProposalTab";
-            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
             // 
             // superTabControlPanel5
             // 
@@ -2815,7 +3676,7 @@
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1137, 868);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel5.TabIndex = 0;
             this.superTabControlPanel5.TabItem = this.manageProposalTab;
             // 
@@ -2935,7 +3796,7 @@
             this.editProposalStartdateDts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editProposalStartdateDts.Name = "editProposalStartdateDts";
             this.editProposalStartdateDts.Size = new System.Drawing.Size(183, 30);
-            this.editProposalStartdateDts.TabIndex = 118;
+            this.editProposalStartdateDts.TabIndex = 16;
             this.editProposalStartdateDts.UsePersianFormat = true;
             // 
             // editProposalShowAllBtn
@@ -3597,14 +4458,6 @@
             this.editProposalRegisterBtn.Text = "ثبت تغییرات";
             this.editProposalRegisterBtn.Click += new System.EventHandler(this.editProposalRegisterBtn_Click);
             // 
-            // logTab
-            // 
-            this.logTab.GlobalItem = false;
-            this.logTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.logTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.logTab.Name = "logTab";
-            this.logTab.Text = "لاگ";
-            // 
             // editProposalClearBtn
             // 
             this.editProposalClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -3717,14 +4570,6 @@
             this.manageProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.manageProposalNavigationNextPageBtn.Click += new System.EventHandler(this.manageProposalNavigationNextPageBtn_Click);
             // 
-            // superTabItem6
-            // 
-            this.superTabItem6.GlobalItem = false;
-            this.superTabItem6.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem6.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem6.Name = "superTabItem6";
-            this.superTabItem6.Text = "لاگ";
-            // 
             // manageProposalNavigationLastPageBtn
             // 
             this.manageProposalNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -3742,14 +4587,6 @@
             this.manageProposalNavigationLastPageBtn.TabIndex = 32;
             this.manageProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.manageProposalNavigationLastPageBtn.Click += new System.EventHandler(this.manageProposalNavigationLastPageBtn_Click);
-            // 
-            // superTabItem5
-            // 
-            this.superTabItem5.GlobalItem = false;
-            this.superTabItem5.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem5.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem5.Name = "superTabItem5";
-            this.superTabItem5.Text = "لاگ";
             // 
             // manageProposalNavigationShowAllBtn
             // 
@@ -3769,14 +4606,6 @@
             this.manageProposalNavigationShowAllBtn.Visible = false;
             this.manageProposalNavigationShowAllBtn.Click += new System.EventHandler(this.editProposalShowAllBtn_Click);
             // 
-            // superTabItem4
-            // 
-            this.superTabItem4.GlobalItem = false;
-            this.superTabItem4.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem4.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem4.Name = "superTabItem4";
-            this.superTabItem4.Text = "لاگ";
-            // 
             // manageProposalNavigationPreviousPageBtn
             // 
             this.manageProposalNavigationPreviousPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -3794,14 +4623,6 @@
             this.manageProposalNavigationPreviousPageBtn.TabIndex = 30;
             this.manageProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.manageProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.manageProposalNavigationPreviousPageBtn_Click);
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem3.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "لاگ";
             // 
             // manageProposalNavigationFirstPageBtn
             // 
@@ -3821,14 +4642,6 @@
             this.manageProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.manageProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.manageProposalNavigationFirstPageBtn_Click);
             // 
-            // superTabItem2
-            // 
-            this.superTabItem2.GlobalItem = false;
-            this.superTabItem2.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem2.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem2.Name = "superTabItem2";
-            this.superTabItem2.Text = "لاگ";
-            // 
             // manageProposalNavigationReturnBtn
             // 
             this.manageProposalNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -3846,14 +4659,6 @@
             this.manageProposalNavigationReturnBtn.TabIndex = 28;
             this.manageProposalNavigationReturnBtn.Text = "بازگشت";
             this.manageProposalNavigationReturnBtn.Click += new System.EventHandler(this.manageProposalNavigationReturnBtn_Click);
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem1.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "لاگ";
             // 
             // editProposalShowDgv
             // 
@@ -3884,333 +4689,6 @@
             this.editProposalShowDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.editProposalShowDgv_CellClick);
             this.editProposalShowDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
-            // manageProposalTab
-            // 
-            this.manageProposalTab.AttachedControl = this.superTabControlPanel5;
-            this.manageProposalTab.GlobalItem = false;
-            this.manageProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
-            this.manageProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageProposalTab.Name = "manageProposalTab";
-            this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
-            // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            this.superTabControlPanel1.Controls.Add(this.homePanel);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(1147, 868);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.homeTab;
-            // 
-            // homePanel
-            // 
-            this.homePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.homePanel.Controls.Add(this.homeTimeDateGp);
-            this.homePanel.Controls.Add(this.homeAapInfoGp);
-            this.homePanel.Location = new System.Drawing.Point(3, 23);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1147, 761);
-            this.homePanel.TabIndex = 4;
-            this.homePanel.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // homeTimeDateGp
-            // 
-            this.homeTimeDateGp.BackColor = System.Drawing.Color.Transparent;
-            this.homeTimeDateGp.CanvasColor = System.Drawing.Color.Transparent;
-            this.homeTimeDateGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.homeTimeDateGp.Controls.Add(this.monthCalendarX1);
-            this.homeTimeDateGp.Controls.Add(this.analogClockControl1);
-            this.homeTimeDateGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.homeTimeDateGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeTimeDateGp.Location = new System.Drawing.Point(20, 324);
-            this.homeTimeDateGp.Margin = new System.Windows.Forms.Padding(4);
-            this.homeTimeDateGp.Name = "homeTimeDateGp";
-            this.homeTimeDateGp.Size = new System.Drawing.Size(1136, 410);
-            // 
-            // 
-            // 
-            this.homeTimeDateGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.homeTimeDateGp.Style.BackColorGradientAngle = 90;
-            this.homeTimeDateGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.homeTimeDateGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeTimeDateGp.Style.BorderBottomWidth = 5;
-            this.homeTimeDateGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.homeTimeDateGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeTimeDateGp.Style.BorderLeftWidth = 5;
-            this.homeTimeDateGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeTimeDateGp.Style.BorderRightWidth = 5;
-            this.homeTimeDateGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeTimeDateGp.Style.BorderTopWidth = 5;
-            this.homeTimeDateGp.Style.CornerDiameter = 15;
-            this.homeTimeDateGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.homeTimeDateGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.homeTimeDateGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.homeTimeDateGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.homeTimeDateGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.homeTimeDateGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.homeTimeDateGp.TabIndex = 3;
-            this.homeTimeDateGp.Text = "ساعت و تاریخ";
-            this.homeTimeDateGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // monthCalendarX1
-            // 
-            this.monthCalendarX1.BoldedDayForeColor = System.Drawing.Color.Blue;
-            this.monthCalendarX1.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.monthCalendarX1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monthCalendarX1.CalendarType = BehComponents.CalendarTypes.Persian;
-            this.monthCalendarX1.DayRectTickness = 1F;
-            this.monthCalendarX1.DaysBackColor = System.Drawing.Color.LightCyan;
-            this.monthCalendarX1.DaysFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.monthCalendarX1.DaysForeColor = System.Drawing.Color.Navy;
-            this.monthCalendarX1.EnglishAnnuallyBoldedDates = new System.DateTime[0];
-            this.monthCalendarX1.EnglishBoldedDates = new System.DateTime[0];
-            this.monthCalendarX1.EnglishHolidayDates = new System.DateTime[0];
-            this.monthCalendarX1.EnglishMonthlyBoldedDates = new System.DateTime[0];
-            this.monthCalendarX1.HolidayForeColor = System.Drawing.Color.Red;
-            this.monthCalendarX1.HolidayWeekly = BehComponents.MonthCalendarX.DayOfWeekForHoliday.Friday;
-            this.monthCalendarX1.LineWeekColor = System.Drawing.Color.Blue;
-            this.monthCalendarX1.Location = new System.Drawing.Point(457, 59);
-            this.monthCalendarX1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.monthCalendarX1.Name = "monthCalendarX1";
-            this.monthCalendarX1.PersianAnnuallyBoldedDates = new BehComponents.PersianDateTime[0];
-            this.monthCalendarX1.PersianBoldedDates = new BehComponents.PersianDateTime[0];
-            this.monthCalendarX1.PersianHolidayDates = new BehComponents.PersianDateTime[0];
-            this.monthCalendarX1.PersianMonthlyBoldedDates = new BehComponents.PersianDateTime[0];
-            this.monthCalendarX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.monthCalendarX1.ShowToday = true;
-            this.monthCalendarX1.ShowTodayRect = false;
-            this.monthCalendarX1.ShowToolTips = false;
-            this.monthCalendarX1.ShowTrailing = true;
-            this.monthCalendarX1.Size = new System.Drawing.Size(621, 244);
-            this.monthCalendarX1.Style_DaysButton = BehComponents.ButtonX.ButtonStyles.Simple;
-            this.monthCalendarX1.Style_GotoTodayButton = BehComponents.ButtonX.ButtonStyles.Blue;
-            this.monthCalendarX1.Style_MonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
-            this.monthCalendarX1.Style_NextMonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
-            this.monthCalendarX1.Style_PreviousMonthButton = BehComponents.ButtonX.ButtonStyles.Blue;
-            this.monthCalendarX1.Style_YearButton = BehComponents.ButtonX.ButtonStyles.Blue;
-            this.monthCalendarX1.TabIndex = 3;
-            this.monthCalendarX1.TitleBackColor = System.Drawing.Color.AliceBlue;
-            this.monthCalendarX1.TitleFont = new System.Drawing.Font("Tahoma", 7.8F);
-            this.monthCalendarX1.TitleForeColor = System.Drawing.Color.Black;
-            this.monthCalendarX1.TodayBackColor = System.Drawing.Color.AliceBlue;
-            this.monthCalendarX1.TodayFont = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.monthCalendarX1.TodayForeColor = System.Drawing.Color.Black;
-            this.monthCalendarX1.TodayRectColor = System.Drawing.Color.Navy;
-            this.monthCalendarX1.TodayRectTickness = 3F;
-            this.monthCalendarX1.TrailingForeColor = System.Drawing.Color.DarkGray;
-            this.monthCalendarX1.WeekDaysBackColor = System.Drawing.Color.AliceBlue;
-            this.monthCalendarX1.WeekDaysFont = new System.Drawing.Font("Tahoma", 7.8F);
-            this.monthCalendarX1.WeekDaysForeColor = System.Drawing.Color.Red;
-            this.monthCalendarX1.WeekStartsOn = BehComponents.MonthCalendarX.WeekDays.Saturday;
-            // 
-            // analogClockControl1
-            // 
-            this.analogClockControl1.AutomaticMode = true;
-            this.analogClockControl1.BackColor = System.Drawing.Color.Transparent;
-            this.analogClockControl1.ClockStyle = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            colorData1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            colorData1.BorderWidth = 0.01F;
-            colorData1.BrushSBSScale = 1F;
-            colorData1.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            clockStyleData1.BezelColor = colorData1;
-            colorData2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData2.BorderWidth = 0.01F;
-            colorData2.BrushSBSScale = 1F;
-            colorData2.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData2.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockStyleData1.CapColor = colorData2;
-            colorData3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(145)))), ((int)(((byte)(161)))));
-            colorData3.BorderWidth = 0.01F;
-            colorData3.BrushAngle = 45F;
-            colorData3.BrushSBSScale = 1F;
-            colorData3.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData3.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
-            colorData3.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            clockStyleData1.FaceColor = colorData3;
-            clockStyleData1.GlassAngle = -20;
-            colorData4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData4.BorderWidth = 0.01F;
-            colorData4.BrushSBSScale = 1F;
-            colorData4.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData4.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData1.HandColor = colorData4;
-            clockHandStyleData1.Length = 0.55F;
-            clockHandStyleData1.Width = 0.015F;
-            clockStyleData1.HourHandStyle = clockHandStyleData1;
-            colorData5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData5.BorderWidth = 0.01F;
-            colorData5.BrushSBSScale = 1F;
-            colorData5.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData5.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData5.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData1.LargeTickColor = colorData5;
-            colorData6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData6.BorderWidth = 0.01F;
-            colorData6.BrushSBSScale = 1F;
-            colorData6.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData6.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData2.HandColor = colorData6;
-            clockHandStyleData2.Length = 0.8F;
-            clockHandStyleData2.Width = 0.01F;
-            clockStyleData1.MinuteHandStyle = clockHandStyleData2;
-            clockStyleData1.NumberFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            colorData7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData7.BorderWidth = 0.01F;
-            colorData7.BrushSBSScale = 1F;
-            colorData7.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData7.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData3.HandColor = colorData7;
-            clockHandStyleData3.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
-            clockHandStyleData3.Length = 0.8F;
-            clockHandStyleData3.Width = 0.005F;
-            clockStyleData1.SecondHandStyle = clockHandStyleData3;
-            colorData8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData8.BorderWidth = 0.01F;
-            colorData8.BrushSBSScale = 1F;
-            colorData8.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData8.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData8.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData1.SmallTickColor = colorData8;
-            clockStyleData1.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            this.analogClockControl1.ClockStyleData = clockStyleData1;
-            this.analogClockControl1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.analogClockControl1.Location = new System.Drawing.Point(100, 48);
-            this.analogClockControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.analogClockControl1.MinimumSize = new System.Drawing.Size(133, 123);
-            this.analogClockControl1.Name = "analogClockControl1";
-            this.analogClockControl1.Size = new System.Drawing.Size(296, 296);
-            this.analogClockControl1.TabIndex = 0;
-            this.analogClockControl1.Text = "analogClockControl1";
-            this.analogClockControl1.Value = new System.DateTime(2016, 11, 21, 11, 15, 59, 170);
-            // 
-            // homeAapInfoGp
-            // 
-            this.homeAapInfoGp.BackColor = System.Drawing.Color.Transparent;
-            this.homeAapInfoGp.CanvasColor = System.Drawing.SystemColors.Control;
-            this.homeAapInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.homeAapInfoGp.Controls.Add(this.homeEBSLbl);
-            this.homeAapInfoGp.Controls.Add(this.homeWelcomeLbl);
-            this.homeAapInfoGp.Controls.Add(this.homeUserNameLbl);
-            this.homeAapInfoGp.Controls.Add(this.homeUserProfileLbl);
-            this.homeAapInfoGp.Controls.Add(this.homeAppNameLbl);
-            this.homeAapInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.homeAapInfoGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeAapInfoGp.Location = new System.Drawing.Point(149, 30);
-            this.homeAapInfoGp.Margin = new System.Windows.Forms.Padding(4);
-            this.homeAapInfoGp.Name = "homeAapInfoGp";
-            this.homeAapInfoGp.Size = new System.Drawing.Size(919, 287);
-            // 
-            // 
-            // 
-            this.homeAapInfoGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.homeAapInfoGp.Style.BackColorGradientAngle = 90;
-            this.homeAapInfoGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.homeAapInfoGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeAapInfoGp.Style.BorderBottomWidth = 5;
-            this.homeAapInfoGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.homeAapInfoGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeAapInfoGp.Style.BorderLeftWidth = 5;
-            this.homeAapInfoGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeAapInfoGp.Style.BorderRightWidth = 5;
-            this.homeAapInfoGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.homeAapInfoGp.Style.BorderTopWidth = 5;
-            this.homeAapInfoGp.Style.CornerDiameter = 15;
-            this.homeAapInfoGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.homeAapInfoGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.homeAapInfoGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.homeAapInfoGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.homeAapInfoGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.homeAapInfoGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.homeAapInfoGp.TabIndex = 2;
-            this.homeAapInfoGp.Text = "مشخصات برنامه و کاربر";
-            this.homeAapInfoGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // homeEBSLbl
-            // 
-            this.homeEBSLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeEBSLbl.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeEBSLbl.Location = new System.Drawing.Point(56, 52);
-            this.homeEBSLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeEBSLbl.Name = "homeEBSLbl";
-            this.homeEBSLbl.Size = new System.Drawing.Size(764, 34);
-            this.homeEBSLbl.TabIndex = 4;
-            this.homeEBSLbl.Text = "PCMS(1.0.1)";
-            this.homeEBSLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeWelcomeLbl
-            // 
-            this.homeWelcomeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeWelcomeLbl.Font = new System.Drawing.Font("B Nazanin", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeWelcomeLbl.Location = new System.Drawing.Point(337, 185);
-            this.homeWelcomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeWelcomeLbl.Name = "homeWelcomeLbl";
-            this.homeWelcomeLbl.Size = new System.Drawing.Size(247, 38);
-            this.homeWelcomeLbl.TabIndex = 3;
-            this.homeWelcomeLbl.Text = "خوش آمدید";
-            this.homeWelcomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeUserNameLbl
-            // 
-            this.homeUserNameLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeUserNameLbl.Font = new System.Drawing.Font("B Nazanin", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeUserNameLbl.Location = new System.Drawing.Point(341, 142);
-            this.homeUserNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeUserNameLbl.Name = "homeUserNameLbl";
-            this.homeUserNameLbl.Size = new System.Drawing.Size(243, 42);
-            this.homeUserNameLbl.TabIndex = 2;
-            this.homeUserNameLbl.Text = "نام و  نام خانوادگی";
-            this.homeUserNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeUserProfileLbl
-            // 
-            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
-            this.homeUserProfileLbl.Location = new System.Drawing.Point(691, 102);
-            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
-            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
-            this.homeUserProfileLbl.TabIndex = 1;
-            this.homeUserProfileLbl.Visible = false;
-            // 
-            // homeAppNameLbl
-            // 
-            this.homeAppNameLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeAppNameLbl.Font = new System.Drawing.Font("B Sina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.homeAppNameLbl.Location = new System.Drawing.Point(75, 17);
-            this.homeAppNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeAppNameLbl.Name = "homeAppNameLbl";
-            this.homeAppNameLbl.Size = new System.Drawing.Size(764, 34);
-            this.homeAppNameLbl.TabIndex = 0;
-            this.homeAppNameLbl.Text = "سامانه مدیریت پروپوزال ها و قراردادهای دانشگاه شهید چمران اهواز";
-            this.homeAppNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeTab
-            // 
-            this.homeTab.AttachedControl = this.superTabControlPanel1;
-            this.homeTab.GlobalItem = false;
-            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
-            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.homeTab.Name = "homeTab";
-            this.homeTab.Text = "خانه";
-            // 
             // superTabControlPanel2
             // 
             this.superTabControlPanel2.Controls.Add(this.addProposalPanel);
@@ -4218,7 +4696,7 @@
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1124, 868);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.addProposalTab;
             // 
@@ -4305,21 +4783,11 @@
             this.addProposalNavigationShowAllBtn.Name = "addProposalNavigationShowAllBtn";
             this.addProposalNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem38});
             this.addProposalNavigationShowAllBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationShowAllBtn.TabIndex = 35;
             this.addProposalNavigationShowAllBtn.Text = "مشاهده";
             this.addProposalNavigationShowAllBtn.Visible = false;
             this.addProposalNavigationShowAllBtn.Click += new System.EventHandler(this.addProposalShowBtn_Click);
-            // 
-            // superTabItem38
-            // 
-            this.superTabItem38.GlobalItem = false;
-            this.superTabItem38.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem38.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem38.Name = "superTabItem38";
-            this.superTabItem38.Text = "لاگ";
             // 
             // addProposalNavigationCurrentPageTxtbx
             // 
@@ -4351,20 +4819,10 @@
             this.addProposalNavigationNextPageBtn.Name = "addProposalNavigationNextPageBtn";
             this.addProposalNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem7});
             this.addProposalNavigationNextPageBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationNextPageBtn.TabIndex = 33;
             this.addProposalNavigationNextPageBtn.Text = "صفحه بعد";
             this.addProposalNavigationNextPageBtn.Click += new System.EventHandler(this.addProposalNavigationNextPageBtn_Click);
-            // 
-            // superTabItem7
-            // 
-            this.superTabItem7.GlobalItem = false;
-            this.superTabItem7.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem7.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem7.Name = "superTabItem7";
-            this.superTabItem7.Text = "لاگ";
             // 
             // addProposalNavigationLastPageBtn
             // 
@@ -4377,20 +4835,10 @@
             this.addProposalNavigationLastPageBtn.Name = "addProposalNavigationLastPageBtn";
             this.addProposalNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem8});
             this.addProposalNavigationLastPageBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationLastPageBtn.TabIndex = 32;
             this.addProposalNavigationLastPageBtn.Text = "صفحه آخر";
             this.addProposalNavigationLastPageBtn.Click += new System.EventHandler(this.addProposalNavigationLastPageBtn_Click);
-            // 
-            // superTabItem8
-            // 
-            this.superTabItem8.GlobalItem = false;
-            this.superTabItem8.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem8.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem8.Name = "superTabItem8";
-            this.superTabItem8.Text = "لاگ";
             // 
             // addProposalNavigationPreviousPageBtn
             // 
@@ -4403,20 +4851,10 @@
             this.addProposalNavigationPreviousPageBtn.Name = "addProposalNavigationPreviousPageBtn";
             this.addProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem11});
             this.addProposalNavigationPreviousPageBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationPreviousPageBtn.TabIndex = 30;
             this.addProposalNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.addProposalNavigationPreviousPageBtn.Click += new System.EventHandler(this.addProposalNavigationPreviousPageBtn_Click);
-            // 
-            // superTabItem11
-            // 
-            this.superTabItem11.GlobalItem = false;
-            this.superTabItem11.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem11.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem11.Name = "superTabItem11";
-            this.superTabItem11.Text = "لاگ";
             // 
             // addProposalNavigationFirstPageBtn
             // 
@@ -4429,20 +4867,10 @@
             this.addProposalNavigationFirstPageBtn.Name = "addProposalNavigationFirstPageBtn";
             this.addProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem12});
             this.addProposalNavigationFirstPageBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationFirstPageBtn.TabIndex = 29;
             this.addProposalNavigationFirstPageBtn.Text = "صفحه اول";
             this.addProposalNavigationFirstPageBtn.Click += new System.EventHandler(this.addProposalNavigationFirstPageBtn_Click);
-            // 
-            // superTabItem12
-            // 
-            this.superTabItem12.GlobalItem = false;
-            this.superTabItem12.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem12.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem12.Name = "superTabItem12";
-            this.superTabItem12.Text = "لاگ";
             // 
             // addProposalNavigationReturnBtn
             // 
@@ -4455,20 +4883,10 @@
             this.addProposalNavigationReturnBtn.Name = "addProposalNavigationReturnBtn";
             this.addProposalNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.addProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem13});
             this.addProposalNavigationReturnBtn.SubItemsExpandWidth = 0;
             this.addProposalNavigationReturnBtn.TabIndex = 28;
             this.addProposalNavigationReturnBtn.Text = "بازگشت";
             this.addProposalNavigationReturnBtn.Click += new System.EventHandler(this.addProposalNavigationReturnBtn_Click);
-            // 
-            // superTabItem13
-            // 
-            this.superTabItem13.GlobalItem = false;
-            this.superTabItem13.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem13.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem13.Name = "superTabItem13";
-            this.superTabItem13.Text = "لاگ";
             // 
             // addProposalShowDgv
             // 
@@ -4484,14 +4902,14 @@
             this.addProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.addProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.addProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.addProposalShowDgv.RowTemplate.Height = 24;
             this.addProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addProposalShowDgv.Size = new System.Drawing.Size(1088, 169);
@@ -4602,7 +5020,7 @@
             this.addProposalStartDateDts.Margin = new System.Windows.Forms.Padding(4);
             this.addProposalStartDateDts.Name = "addProposalStartDateDts";
             this.addProposalStartDateDts.Size = new System.Drawing.Size(184, 30);
-            this.addProposalStartDateDts.TabIndex = 119;
+            this.addProposalStartDateDts.TabIndex = 16;
             this.addProposalStartDateDts.UsePersianFormat = true;
             // 
             // addProposalEnglishTitleTxtbx
@@ -5212,7 +5630,7 @@
             this.addProposalClearBtn.Name = "addProposalClearBtn";
             this.addProposalClearBtn.Size = new System.Drawing.Size(125, 30);
             this.addProposalClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalClearBtn.TabIndex = 27;
+            this.addProposalClearBtn.TabIndex = 28;
             this.addProposalClearBtn.Text = "پاک کردن";
             this.addProposalClearBtn.Click += new System.EventHandler(this.addProposalClearBtn_Click);
             // 
@@ -5225,875 +5643,9 @@
             this.addProposalRegisterBtn.Name = "addProposalRegisterBtn";
             this.addProposalRegisterBtn.Size = new System.Drawing.Size(144, 30);
             this.addProposalRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalRegisterBtn.TabIndex = 28;
+            this.addProposalRegisterBtn.TabIndex = 27;
             this.addProposalRegisterBtn.Text = "ثبت اطلاعات";
             this.addProposalRegisterBtn.Click += new System.EventHandler(this.addProposalRegisterBtn_Click);
-            // 
-            // addProposalTab
-            // 
-            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
-            this.addProposalTab.GlobalItem = false;
-            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
-            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.addProposalTab.Name = "addProposalTab";
-            this.addProposalTab.Text = "افزودن پروپوزال";
-            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
-            // 
-            // superTabControlPanel4
-            // 
-            this.superTabControlPanel4.Controls.Add(this.manageUserPanel);
-            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(4);
-            this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1147, 868);
-            this.superTabControlPanel4.TabIndex = 0;
-            this.superTabControlPanel4.TabItem = this.manageUserTab;
-            // 
-            // manageUserPanel
-            // 
-            this.manageUserPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.manageUserPanel.Controls.Add(this.manageUserManageGp);
-            this.manageUserPanel.Controls.Add(this.manageUserShowGp);
-            this.manageUserPanel.Location = new System.Drawing.Point(4, 4);
-            this.manageUserPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserPanel.Name = "manageUserPanel";
-            this.manageUserPanel.Size = new System.Drawing.Size(1183, 812);
-            this.manageUserPanel.TabIndex = 1002;
-            this.manageUserPanel.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserManageGp
-            // 
-            this.manageUserManageGp.CanvasColor = System.Drawing.SystemColors.Control;
-            this.manageUserManageGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.manageUserManageGp.Controls.Add(this.menageUserAccessLevelGp);
-            this.manageUserManageGp.Controls.Add(this.manageUserPersonalInfoGp);
-            this.manageUserManageGp.Controls.Add(this.manageUserShowAllBtn);
-            this.manageUserManageGp.Controls.Add(this.manageUserClearBtn);
-            this.manageUserManageGp.Controls.Add(this.manageUserDeleteBtn);
-            this.manageUserManageGp.Controls.Add(this.manageUserEditBtn);
-            this.manageUserManageGp.Controls.Add(this.manageUserAddBtn);
-            this.manageUserManageGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.manageUserManageGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserManageGp.Location = new System.Drawing.Point(13, 10);
-            this.manageUserManageGp.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserManageGp.Name = "manageUserManageGp";
-            this.manageUserManageGp.Size = new System.Drawing.Size(1148, 372);
-            // 
-            // 
-            // 
-            this.manageUserManageGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.manageUserManageGp.Style.BackColorGradientAngle = 90;
-            this.manageUserManageGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.manageUserManageGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserManageGp.Style.BorderBottomWidth = 2;
-            this.manageUserManageGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.manageUserManageGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserManageGp.Style.BorderLeftWidth = 2;
-            this.manageUserManageGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserManageGp.Style.BorderRightWidth = 2;
-            this.manageUserManageGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserManageGp.Style.BorderTopWidth = 2;
-            this.manageUserManageGp.Style.CornerDiameter = 10;
-            this.manageUserManageGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.manageUserManageGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.manageUserManageGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.manageUserManageGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.manageUserManageGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.manageUserManageGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.manageUserManageGp.TabIndex = 1001;
-            this.manageUserManageGp.Text = "اطلاعات کاربر";
-            this.manageUserManageGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // menageUserAccessLevelGp
-            // 
-            this.menageUserAccessLevelGp.BackColor = System.Drawing.Color.Transparent;
-            this.menageUserAccessLevelGp.CanvasColor = System.Drawing.Color.Transparent;
-            this.menageUserAccessLevelGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserFacultyCmb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserFacultyCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserReadOnlyCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserIsAdminCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserCheckAllCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserManageTypeCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserManageTeacherCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserDeleteUserCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserEditUserCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserAddUserCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserDeleteProCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserEditProCb);
-            this.menageUserAccessLevelGp.Controls.Add(this.manageUserAddProCb);
-            this.menageUserAccessLevelGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.menageUserAccessLevelGp.Font = new System.Drawing.Font("B Yekan+", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.menageUserAccessLevelGp.Location = new System.Drawing.Point(65, 12);
-            this.menageUserAccessLevelGp.Margin = new System.Windows.Forms.Padding(4);
-            this.menageUserAccessLevelGp.Name = "menageUserAccessLevelGp";
-            this.menageUserAccessLevelGp.Size = new System.Drawing.Size(555, 270);
-            // 
-            // 
-            // 
-            this.menageUserAccessLevelGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.menageUserAccessLevelGp.Style.BackColorGradientAngle = 90;
-            this.menageUserAccessLevelGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.menageUserAccessLevelGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.menageUserAccessLevelGp.Style.BorderBottomWidth = 2;
-            this.menageUserAccessLevelGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.menageUserAccessLevelGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.menageUserAccessLevelGp.Style.BorderLeftWidth = 2;
-            this.menageUserAccessLevelGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.menageUserAccessLevelGp.Style.BorderRightWidth = 2;
-            this.menageUserAccessLevelGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.menageUserAccessLevelGp.Style.BorderTopWidth = 2;
-            this.menageUserAccessLevelGp.Style.CornerDiameter = 10;
-            this.menageUserAccessLevelGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.menageUserAccessLevelGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.menageUserAccessLevelGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.menageUserAccessLevelGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.menageUserAccessLevelGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.menageUserAccessLevelGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.menageUserAccessLevelGp.TabIndex = 1004;
-            this.menageUserAccessLevelGp.Text = "سطح دسترسی";
-            // 
-            // manageUserFacultyCmb
-            // 
-            this.manageUserFacultyCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.manageUserFacultyCmb.Enabled = false;
-            this.manageUserFacultyCmb.FormattingEnabled = true;
-            this.manageUserFacultyCmb.Location = new System.Drawing.Point(41, 198);
-            this.manageUserFacultyCmb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserFacultyCmb.Name = "manageUserFacultyCmb";
-            this.manageUserFacultyCmb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserFacultyCmb.Size = new System.Drawing.Size(132, 28);
-            this.manageUserFacultyCmb.TabIndex = 19;
-            // 
-            // manageUserFacultyCb
-            // 
-            this.manageUserFacultyCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserFacultyCb.Enabled = false;
-            this.manageUserFacultyCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserFacultyCb.Location = new System.Drawing.Point(173, 196);
-            this.manageUserFacultyCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserFacultyCb.Name = "manageUserFacultyCb";
-            this.manageUserFacultyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserFacultyCb.Size = new System.Drawing.Size(35, 33);
-            this.manageUserFacultyCb.TabIndex = 18;
-            this.manageUserFacultyCb.Text = "دانشکده";
-            this.manageUserFacultyCb.UseVisualStyleBackColor = false;
-            this.manageUserFacultyCb.CheckedChanged += new System.EventHandler(this.manageUserFacultyCb_CheckedChanged);
-            // 
-            // manageUserReadOnlyCb
-            // 
-            this.manageUserReadOnlyCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserReadOnlyCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserReadOnlyCb.Location = new System.Drawing.Point(299, 196);
-            this.manageUserReadOnlyCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserReadOnlyCb.Name = "manageUserReadOnlyCb";
-            this.manageUserReadOnlyCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserReadOnlyCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserReadOnlyCb.TabIndex = 17;
-            this.manageUserReadOnlyCb.Text = "فقط مشاهده";
-            this.manageUserReadOnlyCb.UseVisualStyleBackColor = false;
-            this.manageUserReadOnlyCb.CheckedChanged += new System.EventHandler(this.manageUserReadOnlyCb_CheckedChanged);
-            // 
-            // manageUserIsAdminCb
-            // 
-            this.manageUserIsAdminCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserIsAdminCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserIsAdminCb.Location = new System.Drawing.Point(64, 158);
-            this.manageUserIsAdminCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserIsAdminCb.Name = "manageUserIsAdminCb";
-            this.manageUserIsAdminCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserIsAdminCb.Size = new System.Drawing.Size(145, 33);
-            this.manageUserIsAdminCb.TabIndex = 16;
-            this.manageUserIsAdminCb.Text = "کاربر ادمین";
-            this.manageUserIsAdminCb.UseVisualStyleBackColor = false;
-            this.manageUserIsAdminCb.Visible = false;
-            // 
-            // manageUserCheckAllCb
-            // 
-            this.manageUserCheckAllCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserCheckAllCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserCheckAllCb.Location = new System.Drawing.Point(299, 164);
-            this.manageUserCheckAllCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserCheckAllCb.Name = "manageUserCheckAllCb";
-            this.manageUserCheckAllCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserCheckAllCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserCheckAllCb.TabIndex = 15;
-            this.manageUserCheckAllCb.Text = "دسترسی کامل";
-            this.manageUserCheckAllCb.UseVisualStyleBackColor = false;
-            this.manageUserCheckAllCb.CheckedChanged += new System.EventHandler(this.manageUserCheckAllCb_CheckedChanged);
-            // 
-            // manageUserManageTypeCb
-            // 
-            this.manageUserManageTypeCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserManageTypeCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserManageTypeCb.Location = new System.Drawing.Point(16, 126);
-            this.manageUserManageTypeCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserManageTypeCb.Name = "manageUserManageTypeCb";
-            this.manageUserManageTypeCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserManageTypeCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserManageTypeCb.TabIndex = 14;
-            this.manageUserManageTypeCb.Text = "تغییر تنظیمات برنامه";
-            this.manageUserManageTypeCb.UseVisualStyleBackColor = false;
-            this.manageUserManageTypeCb.CheckedChanged += new System.EventHandler(this.manageUserManageTypeCb_CheckedChanged);
-            // 
-            // manageUserManageTeacherCb
-            // 
-            this.manageUserManageTeacherCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserManageTeacherCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserManageTeacherCb.Location = new System.Drawing.Point(299, 127);
-            this.manageUserManageTeacherCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserManageTeacherCb.Name = "manageUserManageTeacherCb";
-            this.manageUserManageTeacherCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserManageTeacherCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserManageTeacherCb.TabIndex = 10;
-            this.manageUserManageTeacherCb.Text = "مدیریت اطلاعات اساتید";
-            this.manageUserManageTeacherCb.UseVisualStyleBackColor = false;
-            this.manageUserManageTeacherCb.CheckedChanged += new System.EventHandler(this.manageUserManageTeacherCb_CheckedChanged);
-            // 
-            // manageUserDeleteUserCb
-            // 
-            this.manageUserDeleteUserCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserDeleteUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserDeleteUserCb.Location = new System.Drawing.Point(16, 86);
-            this.manageUserDeleteUserCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserDeleteUserCb.Name = "manageUserDeleteUserCb";
-            this.manageUserDeleteUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserDeleteUserCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserDeleteUserCb.TabIndex = 13;
-            this.manageUserDeleteUserCb.Text = "حذف کاربر";
-            this.manageUserDeleteUserCb.UseVisualStyleBackColor = false;
-            this.manageUserDeleteUserCb.CheckedChanged += new System.EventHandler(this.manageUserDeleteUserCb_CheckedChanged);
-            // 
-            // manageUserEditUserCb
-            // 
-            this.manageUserEditUserCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserEditUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserEditUserCb.Location = new System.Drawing.Point(16, 47);
-            this.manageUserEditUserCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserEditUserCb.Name = "manageUserEditUserCb";
-            this.manageUserEditUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserEditUserCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserEditUserCb.TabIndex = 12;
-            this.manageUserEditUserCb.Text = "تغییر اطلاعات کاربر";
-            this.manageUserEditUserCb.UseVisualStyleBackColor = false;
-            this.manageUserEditUserCb.CheckedChanged += new System.EventHandler(this.manageUserEditUserCb_CheckedChanged);
-            // 
-            // manageUserAddUserCb
-            // 
-            this.manageUserAddUserCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserAddUserCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserAddUserCb.Location = new System.Drawing.Point(16, 9);
-            this.manageUserAddUserCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserAddUserCb.Name = "manageUserAddUserCb";
-            this.manageUserAddUserCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserAddUserCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserAddUserCb.TabIndex = 11;
-            this.manageUserAddUserCb.Text = "افزودن کاربر";
-            this.manageUserAddUserCb.UseVisualStyleBackColor = false;
-            this.manageUserAddUserCb.CheckedChanged += new System.EventHandler(this.manageUserAddUserCb_CheckedChanged);
-            // 
-            // manageUserDeleteProCb
-            // 
-            this.manageUserDeleteProCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserDeleteProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserDeleteProCb.Location = new System.Drawing.Point(299, 86);
-            this.manageUserDeleteProCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserDeleteProCb.Name = "manageUserDeleteProCb";
-            this.manageUserDeleteProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserDeleteProCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserDeleteProCb.TabIndex = 9;
-            this.manageUserDeleteProCb.Text = "حذف پروپوزال";
-            this.manageUserDeleteProCb.UseVisualStyleBackColor = false;
-            this.manageUserDeleteProCb.CheckedChanged += new System.EventHandler(this.manageUserDeleteProCb_CheckedChanged);
-            // 
-            // manageUserEditProCb
-            // 
-            this.manageUserEditProCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserEditProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserEditProCb.Location = new System.Drawing.Point(299, 48);
-            this.manageUserEditProCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserEditProCb.Name = "manageUserEditProCb";
-            this.manageUserEditProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserEditProCb.Size = new System.Drawing.Size(193, 33);
-            this.manageUserEditProCb.TabIndex = 8;
-            this.manageUserEditProCb.Text = "تغییر اطلاعات پروپوزال";
-            this.manageUserEditProCb.UseVisualStyleBackColor = false;
-            this.manageUserEditProCb.CheckedChanged += new System.EventHandler(this.manageUserEditProCb_CheckedChanged);
-            // 
-            // manageUserAddProCb
-            // 
-            this.manageUserAddProCb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserAddProCb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserAddProCb.Location = new System.Drawing.Point(267, 4);
-            this.manageUserAddProCb.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserAddProCb.Name = "manageUserAddProCb";
-            this.manageUserAddProCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserAddProCb.Size = new System.Drawing.Size(225, 42);
-            this.manageUserAddProCb.TabIndex = 7;
-            this.manageUserAddProCb.Text = "افزودن پروپوزال";
-            this.manageUserAddProCb.UseVisualStyleBackColor = false;
-            this.manageUserAddProCb.CheckedChanged += new System.EventHandler(this.manageUserAddProCb_CheckedChanged);
-            // 
-            // manageUserPersonalInfoGp
-            // 
-            this.manageUserPersonalInfoGp.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserPersonalInfoGp.CanvasColor = System.Drawing.Color.Transparent;
-            this.manageUserPersonalInfoGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserShowPasswordChb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserTellLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserEmailLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserPasswordLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserNcodLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserLnameLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserFnameLb);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserTelTxtbx);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserEmailTxtbx);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserPasswordTxtbx);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserNcodeTxtbx);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserLnameTxtbx);
-            this.manageUserPersonalInfoGp.Controls.Add(this.manageUserFnameTxtbx);
-            this.manageUserPersonalInfoGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.manageUserPersonalInfoGp.Location = new System.Drawing.Point(659, 4);
-            this.manageUserPersonalInfoGp.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserPersonalInfoGp.Name = "manageUserPersonalInfoGp";
-            this.manageUserPersonalInfoGp.Size = new System.Drawing.Size(464, 277);
-            // 
-            // 
-            // 
-            this.manageUserPersonalInfoGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.manageUserPersonalInfoGp.Style.BackColorGradientAngle = 90;
-            this.manageUserPersonalInfoGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.manageUserPersonalInfoGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserPersonalInfoGp.Style.BorderBottomWidth = 2;
-            this.manageUserPersonalInfoGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.manageUserPersonalInfoGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserPersonalInfoGp.Style.BorderLeftWidth = 2;
-            this.manageUserPersonalInfoGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserPersonalInfoGp.Style.BorderRightWidth = 2;
-            this.manageUserPersonalInfoGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserPersonalInfoGp.Style.BorderTopWidth = 2;
-            this.manageUserPersonalInfoGp.Style.CornerDiameter = 10;
-            this.manageUserPersonalInfoGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.manageUserPersonalInfoGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.manageUserPersonalInfoGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.manageUserPersonalInfoGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.manageUserPersonalInfoGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.manageUserPersonalInfoGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.manageUserPersonalInfoGp.TabIndex = 1000;
-            this.manageUserPersonalInfoGp.Text = "مشخصات کاربر";
-            // 
-            // manageUserShowPasswordChb
-            // 
-            this.manageUserShowPasswordChb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserShowPasswordChb.Location = new System.Drawing.Point(277, 110);
-            this.manageUserShowPasswordChb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserShowPasswordChb.Name = "manageUserShowPasswordChb";
-            this.manageUserShowPasswordChb.Size = new System.Drawing.Size(29, 30);
-            this.manageUserShowPasswordChb.TabIndex = 2000;
-            this.manageUserShowPasswordChb.TabStop = false;
-            this.manageUserShowPasswordChb.UseVisualStyleBackColor = false;
-            this.manageUserShowPasswordChb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.manageUserShowPasswordChb_MouseDown);
-            this.manageUserShowPasswordChb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.manageUserShowPasswordChb_MouseUp);
-            // 
-            // manageUserTellLb
-            // 
-            this.manageUserTellLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserTellLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserTellLb.Location = new System.Drawing.Point(293, 169);
-            this.manageUserTellLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserTellLb.Name = "manageUserTellLb";
-            this.manageUserTellLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserTellLb.Size = new System.Drawing.Size(119, 33);
-            this.manageUserTellLb.TabIndex = 25;
-            this.manageUserTellLb.Text = "تلفن";
-            this.manageUserTellLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserEmailLb
-            // 
-            this.manageUserEmailLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserEmailLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserEmailLb.Location = new System.Drawing.Point(293, 137);
-            this.manageUserEmailLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserEmailLb.Name = "manageUserEmailLb";
-            this.manageUserEmailLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserEmailLb.Size = new System.Drawing.Size(119, 32);
-            this.manageUserEmailLb.TabIndex = 24;
-            this.manageUserEmailLb.Text = "ایمیل";
-            this.manageUserEmailLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserPasswordLb
-            // 
-            this.manageUserPasswordLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserPasswordLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserPasswordLb.Location = new System.Drawing.Point(293, 105);
-            this.manageUserPasswordLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserPasswordLb.Name = "manageUserPasswordLb";
-            this.manageUserPasswordLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserPasswordLb.Size = new System.Drawing.Size(119, 31);
-            this.manageUserPasswordLb.TabIndex = 23;
-            this.manageUserPasswordLb.Text = "گذرواژه*";
-            this.manageUserPasswordLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserNcodLb
-            // 
-            this.manageUserNcodLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserNcodLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNcodLb.Location = new System.Drawing.Point(289, 73);
-            this.manageUserNcodLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserNcodLb.Name = "manageUserNcodLb";
-            this.manageUserNcodLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserNcodLb.Size = new System.Drawing.Size(124, 32);
-            this.manageUserNcodLb.TabIndex = 22;
-            this.manageUserNcodLb.Text = "کد ملی*";
-            this.manageUserNcodLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserLnameLb
-            // 
-            this.manageUserLnameLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserLnameLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserLnameLb.Location = new System.Drawing.Point(307, 41);
-            this.manageUserLnameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserLnameLb.Name = "manageUserLnameLb";
-            this.manageUserLnameLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserLnameLb.Size = new System.Drawing.Size(105, 32);
-            this.manageUserLnameLb.TabIndex = 21;
-            this.manageUserLnameLb.Text = "نام خانوادگی*";
-            this.manageUserLnameLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserFnameLb
-            // 
-            this.manageUserFnameLb.BackColor = System.Drawing.Color.Transparent;
-            this.manageUserFnameLb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserFnameLb.Location = new System.Drawing.Point(339, 14);
-            this.manageUserFnameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.manageUserFnameLb.Name = "manageUserFnameLb";
-            this.manageUserFnameLb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserFnameLb.Size = new System.Drawing.Size(72, 28);
-            this.manageUserFnameLb.TabIndex = 20;
-            this.manageUserFnameLb.Text = "نام*";
-            this.manageUserFnameLb.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserTelTxtbx
-            // 
-            this.manageUserTelTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserTelTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserTelTxtbx.Location = new System.Drawing.Point(29, 177);
-            this.manageUserTelTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserTelTxtbx.MaxLength = 30;
-            this.manageUserTelTxtbx.Name = "manageUserTelTxtbx";
-            this.manageUserTelTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserTelTxtbx.TabIndex = 6;
-            // 
-            // manageUserEmailTxtbx
-            // 
-            this.manageUserEmailTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserEmailTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserEmailTxtbx.Location = new System.Drawing.Point(29, 145);
-            this.manageUserEmailTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserEmailTxtbx.MaxLength = 50;
-            this.manageUserEmailTxtbx.Name = "manageUserEmailTxtbx";
-            this.manageUserEmailTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserEmailTxtbx.TabIndex = 5;
-            this.manageUserEmailTxtbx.TextChanged += new System.EventHandler(this.manageUserEmailTxtbx_TextChanged);
-            this.manageUserEmailTxtbx.Leave += new System.EventHandler(this.manageUserEmailTxtbx_Leave);
-            // 
-            // manageUserPasswordTxtbx
-            // 
-            this.manageUserPasswordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserPasswordTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserPasswordTxtbx.Location = new System.Drawing.Point(29, 113);
-            this.manageUserPasswordTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserPasswordTxtbx.MaxLength = 12;
-            this.manageUserPasswordTxtbx.Name = "manageUserPasswordTxtbx";
-            this.manageUserPasswordTxtbx.PasswordChar = '●';
-            this.manageUserPasswordTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserPasswordTxtbx.TabIndex = 4;
-            // 
-            // manageUserNcodeTxtbx
-            // 
-            this.manageUserNcodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserNcodeTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNcodeTxtbx.Location = new System.Drawing.Point(29, 81);
-            this.manageUserNcodeTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserNcodeTxtbx.MaxLength = 10;
-            this.manageUserNcodeTxtbx.Name = "manageUserNcodeTxtbx";
-            this.manageUserNcodeTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserNcodeTxtbx.TabIndex = 1;
-            this.manageUserNcodeTxtbx.TextChanged += new System.EventHandler(this.manageUserNcodTxtbx_TextChanged);
-            this.manageUserNcodeTxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.manageUserNcodTxtbx_KeyPress);
-            this.manageUserNcodeTxtbx.Leave += new System.EventHandler(this.manageUserNcodTxtbx_Leave);
-            // 
-            // manageUserLnameTxtbx
-            // 
-            this.manageUserLnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserLnameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserLnameTxtbx.Location = new System.Drawing.Point(29, 49);
-            this.manageUserLnameTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserLnameTxtbx.MaxLength = 35;
-            this.manageUserLnameTxtbx.Name = "manageUserLnameTxtbx";
-            this.manageUserLnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserLnameTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserLnameTxtbx.TabIndex = 3;
-            // 
-            // manageUserFnameTxtbx
-            // 
-            this.manageUserFnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manageUserFnameTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserFnameTxtbx.Location = new System.Drawing.Point(29, 17);
-            this.manageUserFnameTxtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserFnameTxtbx.MaxLength = 25;
-            this.manageUserFnameTxtbx.Name = "manageUserFnameTxtbx";
-            this.manageUserFnameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserFnameTxtbx.Size = new System.Drawing.Size(241, 29);
-            this.manageUserFnameTxtbx.TabIndex = 2;
-            // 
-            // manageUserShowAllBtn
-            // 
-            this.manageUserShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserShowAllBtn.Location = new System.Drawing.Point(660, 286);
-            this.manageUserShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserShowAllBtn.Name = "manageUserShowAllBtn";
-            this.manageUserShowAllBtn.Size = new System.Drawing.Size(108, 38);
-            this.manageUserShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserShowAllBtn.TabIndex = 19;
-            this.manageUserShowAllBtn.Text = "نمایش همه";
-            this.manageUserShowAllBtn.Click += new System.EventHandler(this.manageUserShowBtn_Click);
-            // 
-            // manageUserClearBtn
-            // 
-            this.manageUserClearBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserClearBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserClearBtn.Location = new System.Drawing.Point(328, 286);
-            this.manageUserClearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserClearBtn.Name = "manageUserClearBtn";
-            this.manageUserClearBtn.Size = new System.Drawing.Size(108, 38);
-            this.manageUserClearBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserClearBtn.TabIndex = 18;
-            this.manageUserClearBtn.Text = "پاک کردن";
-            this.manageUserClearBtn.Click += new System.EventHandler(this.manageUserClearBtn_Click);
-            // 
-            // manageUserDeleteBtn
-            // 
-            this.manageUserDeleteBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserDeleteBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserDeleteBtn.Enabled = false;
-            this.manageUserDeleteBtn.Location = new System.Drawing.Point(453, 286);
-            this.manageUserDeleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserDeleteBtn.Name = "manageUserDeleteBtn";
-            this.manageUserDeleteBtn.Size = new System.Drawing.Size(108, 38);
-            this.manageUserDeleteBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserDeleteBtn.TabIndex = 17;
-            this.manageUserDeleteBtn.Text = "حذف کردن";
-            this.manageUserDeleteBtn.Click += new System.EventHandler(this.manageUserDeleteBtn_Click);
-            // 
-            // manageUserEditBtn
-            // 
-            this.manageUserEditBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserEditBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserEditBtn.Enabled = false;
-            this.manageUserEditBtn.Location = new System.Drawing.Point(65, 286);
-            this.manageUserEditBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserEditBtn.Name = "manageUserEditBtn";
-            this.manageUserEditBtn.Size = new System.Drawing.Size(108, 38);
-            this.manageUserEditBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserEditBtn.TabIndex = 16;
-            this.manageUserEditBtn.Text = "ثبت تغییرات";
-            this.manageUserEditBtn.Click += new System.EventHandler(this.manageUserEditBtn_Click);
-            // 
-            // manageUserAddBtn
-            // 
-            this.manageUserAddBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserAddBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserAddBtn.Location = new System.Drawing.Point(197, 286);
-            this.manageUserAddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserAddBtn.Name = "manageUserAddBtn";
-            this.manageUserAddBtn.Size = new System.Drawing.Size(108, 38);
-            this.manageUserAddBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserAddBtn.TabIndex = 15;
-            this.manageUserAddBtn.Text = "افزودن اطلاعات";
-            this.manageUserAddBtn.Click += new System.EventHandler(this.manageUserAddBtn_Click);
-            // 
-            // manageUserShowGp
-            // 
-            this.manageUserShowGp.CanvasColor = System.Drawing.SystemColors.Control;
-            this.manageUserShowGp.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.manageUserShowGp.Controls.Add(this.manageUserNavigationPanel);
-            this.manageUserShowGp.Controls.Add(this.manageUserShowDgv);
-            this.manageUserShowGp.DisabledBackColor = System.Drawing.Color.Empty;
-            this.manageUserShowGp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserShowGp.Location = new System.Drawing.Point(13, 390);
-            this.manageUserShowGp.Margin = new System.Windows.Forms.Padding(4);
-            this.manageUserShowGp.Name = "manageUserShowGp";
-            this.manageUserShowGp.Size = new System.Drawing.Size(1148, 389);
-            // 
-            // 
-            // 
-            this.manageUserShowGp.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.manageUserShowGp.Style.BackColorGradientAngle = 90;
-            this.manageUserShowGp.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.manageUserShowGp.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserShowGp.Style.BorderBottomWidth = 2;
-            this.manageUserShowGp.Style.BorderColor = System.Drawing.Color.Navy;
-            this.manageUserShowGp.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserShowGp.Style.BorderLeftWidth = 2;
-            this.manageUserShowGp.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserShowGp.Style.BorderRightWidth = 2;
-            this.manageUserShowGp.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.manageUserShowGp.Style.BorderTopWidth = 2;
-            this.manageUserShowGp.Style.CornerDiameter = 10;
-            this.manageUserShowGp.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.manageUserShowGp.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.manageUserShowGp.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.manageUserShowGp.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.manageUserShowGp.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.manageUserShowGp.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.manageUserShowGp.TabIndex = 0;
-            this.manageUserShowGp.Text = "فهرست کاربران";
-            this.manageUserShowGp.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserNavigationPanel
-            // 
-            this.manageUserNavigationPanel.BackColor = System.Drawing.Color.White;
-            this.manageUserNavigationPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationShowAllBtn);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationCurrentPageTxtbx);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationNextPageBtn);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationLastPageBtn);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationPreviousPageBtn);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationFirstPageBtn);
-            this.manageUserNavigationPanel.Controls.Add(this.manageUserNavigationReturnBtn);
-            this.manageUserNavigationPanel.Location = new System.Drawing.Point(152, 142);
-            this.manageUserNavigationPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationPanel.Name = "manageUserNavigationPanel";
-            this.manageUserNavigationPanel.Size = new System.Drawing.Size(819, 40);
-            this.manageUserNavigationPanel.TabIndex = 4;
-            // 
-            // manageUserNavigationShowAllBtn
-            // 
-            this.manageUserNavigationShowAllBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationShowAllBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationShowAllBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
-            this.manageUserNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationShowAllBtn.Name = "manageUserNavigationShowAllBtn";
-            this.manageUserNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem41});
-            this.manageUserNavigationShowAllBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationShowAllBtn.TabIndex = 35;
-            this.manageUserNavigationShowAllBtn.Text = "مشاهده";
-            this.manageUserNavigationShowAllBtn.Visible = false;
-            this.manageUserNavigationShowAllBtn.Click += new System.EventHandler(this.manageUserShowBtn_Click);
-            // 
-            // superTabItem41
-            // 
-            this.superTabItem41.GlobalItem = false;
-            this.superTabItem41.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem41.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem41.Name = "superTabItem41";
-            this.superTabItem41.Text = "لاگ";
-            // 
-            // manageUserNavigationCurrentPageTxtbx
-            // 
-            // 
-            // 
-            // 
-            this.manageUserNavigationCurrentPageTxtbx.Border.Class = "TextBoxBorder";
-            this.manageUserNavigationCurrentPageTxtbx.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.manageUserNavigationCurrentPageTxtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationCurrentPageTxtbx.Location = new System.Drawing.Point(361, 4);
-            this.manageUserNavigationCurrentPageTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationCurrentPageTxtbx.MaxLength = 5;
-            this.manageUserNavigationCurrentPageTxtbx.Name = "manageUserNavigationCurrentPageTxtbx";
-            this.manageUserNavigationCurrentPageTxtbx.PreventEnterBeep = true;
-            this.manageUserNavigationCurrentPageTxtbx.Size = new System.Drawing.Size(99, 29);
-            this.manageUserNavigationCurrentPageTxtbx.TabIndex = 34;
-            this.manageUserNavigationCurrentPageTxtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // manageUserNavigationNextPageBtn
-            // 
-            this.manageUserNavigationNextPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationNextPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationNextPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
-            this.manageUserNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationNextPageBtn.Name = "manageUserNavigationNextPageBtn";
-            this.manageUserNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem26});
-            this.manageUserNavigationNextPageBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationNextPageBtn.TabIndex = 33;
-            this.manageUserNavigationNextPageBtn.Text = "صفحه بعد";
-            // 
-            // superTabItem26
-            // 
-            this.superTabItem26.GlobalItem = false;
-            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem26.Name = "superTabItem26";
-            this.superTabItem26.Text = "لاگ";
-            // 
-            // manageUserNavigationLastPageBtn
-            // 
-            this.manageUserNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationLastPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationLastPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
-            this.manageUserNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationLastPageBtn.Name = "manageUserNavigationLastPageBtn";
-            this.manageUserNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem27});
-            this.manageUserNavigationLastPageBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationLastPageBtn.TabIndex = 32;
-            this.manageUserNavigationLastPageBtn.Text = "صفحه آخر";
-            // 
-            // superTabItem27
-            // 
-            this.superTabItem27.GlobalItem = false;
-            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem27.Name = "superTabItem27";
-            this.superTabItem27.Text = "لاگ";
-            // 
-            // manageUserNavigationPreviousPageBtn
-            // 
-            this.manageUserNavigationPreviousPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationPreviousPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationPreviousPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
-            this.manageUserNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationPreviousPageBtn.Name = "manageUserNavigationPreviousPageBtn";
-            this.manageUserNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem29});
-            this.manageUserNavigationPreviousPageBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationPreviousPageBtn.TabIndex = 30;
-            this.manageUserNavigationPreviousPageBtn.Text = "صفحه قبل";
-            // 
-            // superTabItem29
-            // 
-            this.superTabItem29.GlobalItem = false;
-            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem29.Name = "superTabItem29";
-            this.superTabItem29.Text = "لاگ";
-            // 
-            // manageUserNavigationFirstPageBtn
-            // 
-            this.manageUserNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationFirstPageBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationFirstPageBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
-            this.manageUserNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationFirstPageBtn.Name = "manageUserNavigationFirstPageBtn";
-            this.manageUserNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem30});
-            this.manageUserNavigationFirstPageBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationFirstPageBtn.TabIndex = 29;
-            this.manageUserNavigationFirstPageBtn.Text = "صفحه اول";
-            // 
-            // superTabItem30
-            // 
-            this.superTabItem30.GlobalItem = false;
-            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem30.Name = "superTabItem30";
-            this.superTabItem30.Text = "لاگ";
-            // 
-            // manageUserNavigationReturnBtn
-            // 
-            this.manageUserNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.manageUserNavigationReturnBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.manageUserNavigationReturnBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manageUserNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
-            this.manageUserNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserNavigationReturnBtn.Name = "manageUserNavigationReturnBtn";
-            this.manageUserNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
-            this.manageUserNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageUserNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem31});
-            this.manageUserNavigationReturnBtn.SubItemsExpandWidth = 0;
-            this.manageUserNavigationReturnBtn.TabIndex = 28;
-            this.manageUserNavigationReturnBtn.Text = "بازگشت";
-            // 
-            // superTabItem31
-            // 
-            this.superTabItem31.GlobalItem = false;
-            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem31.Name = "superTabItem31";
-            this.superTabItem31.Text = "لاگ";
-            // 
-            // manageUserShowDgv
-            // 
-            this.manageUserShowDgv.AllowUserToAddRows = false;
-            this.manageUserShowDgv.AllowUserToDeleteRows = false;
-            this.manageUserShowDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.manageUserShowDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.manageUserShowDgv.Location = new System.Drawing.Point(23, 2);
-            this.manageUserShowDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manageUserShowDgv.MultiSelect = false;
-            this.manageUserShowDgv.Name = "manageUserShowDgv";
-            this.manageUserShowDgv.ReadOnly = true;
-            this.manageUserShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.manageUserShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.manageUserShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.manageUserShowDgv.RowTemplate.Height = 24;
-            this.manageUserShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.manageUserShowDgv.Size = new System.Drawing.Size(1093, 135);
-            this.manageUserShowDgv.TabIndex = 2;
-            this.manageUserShowDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.manageUserShowDgv_CellClick);
-            this.manageUserShowDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
-            // manageUserTab
-            // 
-            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
-            this.manageUserTab.GlobalItem = false;
-            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
-            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageUserTab.Name = "manageUserTab";
-            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
             // 
             // superTabControlPanel12
             // 
@@ -6102,7 +5654,7 @@
             this.superTabControlPanel12.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.superTabControlPanel12.Name = "superTabControlPanel12";
-            this.superTabControlPanel12.Size = new System.Drawing.Size(1124, 868);
+            this.superTabControlPanel12.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel12.TabIndex = 0;
             this.superTabControlPanel12.TabItem = this.manageTeacherTab;
             // 
@@ -6198,14 +5750,6 @@
             this.manageTeacherNavigationShowAllBtn.Visible = false;
             this.manageTeacherNavigationShowAllBtn.Enter += new System.EventHandler(this.manageTeacherShowBtn_Click);
             // 
-            // superTabItem40
-            // 
-            this.superTabItem40.GlobalItem = false;
-            this.superTabItem40.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem40.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem40.Name = "superTabItem40";
-            this.superTabItem40.Text = "لاگ";
-            // 
             // manageTeacherNavigationCurrentPageTxtbx
             // 
             // 
@@ -6243,14 +5787,6 @@
             this.manageTeacherNavigationNextPageBtn.Text = "صفحه بعد";
             this.manageTeacherNavigationNextPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationNextPageBtn_Click);
             // 
-            // superTabItem20
-            // 
-            this.superTabItem20.GlobalItem = false;
-            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem20.Name = "superTabItem20";
-            this.superTabItem20.Text = "لاگ";
-            // 
             // manageTeacherNavigationLastPageBtn
             // 
             this.manageTeacherNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6268,14 +5804,6 @@
             this.manageTeacherNavigationLastPageBtn.TabIndex = 32;
             this.manageTeacherNavigationLastPageBtn.Text = "صفحه آخر";
             this.manageTeacherNavigationLastPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationLastPageBtn_Click);
-            // 
-            // superTabItem21
-            // 
-            this.superTabItem21.GlobalItem = false;
-            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem21.Name = "superTabItem21";
-            this.superTabItem21.Text = "لاگ";
             // 
             // manageTeacherNavigationPreviousPageBtn
             // 
@@ -6295,14 +5823,6 @@
             this.manageTeacherNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.manageTeacherNavigationPreviousPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem23
-            // 
-            this.superTabItem23.GlobalItem = false;
-            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem23.Name = "superTabItem23";
-            this.superTabItem23.Text = "لاگ";
-            // 
             // manageTeacherNavigationFirstPageBtn
             // 
             this.manageTeacherNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6321,14 +5841,6 @@
             this.manageTeacherNavigationFirstPageBtn.Text = "صفحه اول";
             this.manageTeacherNavigationFirstPageBtn.Click += new System.EventHandler(this.manageTeacherNavigationFirstPageBtn_Click);
             // 
-            // superTabItem24
-            // 
-            this.superTabItem24.GlobalItem = false;
-            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem24.Name = "superTabItem24";
-            this.superTabItem24.Text = "لاگ";
-            // 
             // manageTeacherNavigationReturnBtn
             // 
             this.manageTeacherNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -6346,14 +5858,6 @@
             this.manageTeacherNavigationReturnBtn.TabIndex = 28;
             this.manageTeacherNavigationReturnBtn.Text = "بازگشت";
             // 
-            // superTabItem25
-            // 
-            this.superTabItem25.GlobalItem = false;
-            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem25.Name = "superTabItem25";
-            this.superTabItem25.Text = "لاگ";
-            // 
             // manageTeacherShowDgv
             // 
             this.manageTeacherShowDgv.AllowUserToAddRows = false;
@@ -6368,14 +5872,14 @@
             this.manageTeacherShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageTeacherShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.manageTeacherShowDgv.RowTemplate.Height = 24;
             this.manageTeacherShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageTeacherShowDgv.Size = new System.Drawing.Size(1075, 153);
@@ -6461,7 +5965,7 @@
             this.manageTeacherSearchBtn.Name = "manageTeacherSearchBtn";
             this.manageTeacherSearchBtn.Size = new System.Drawing.Size(168, 43);
             this.manageTeacherSearchBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageTeacherSearchBtn.TabIndex = 80;
+            this.manageTeacherSearchBtn.TabIndex = 79;
             this.manageTeacherSearchBtn.Text = "جستــــــــــجو";
             this.manageTeacherSearchBtn.Click += new System.EventHandler(this.manageTeacherSearchBtn_Click);
             // 
@@ -6474,7 +5978,7 @@
             this.manageTeacherShowAllBtn.Name = "manageTeacherShowAllBtn";
             this.manageTeacherShowAllBtn.Size = new System.Drawing.Size(168, 42);
             this.manageTeacherShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.manageTeacherShowAllBtn.TabIndex = 79;
+            this.manageTeacherShowAllBtn.TabIndex = 80;
             this.manageTeacherShowAllBtn.Text = "نمایش همه";
             this.manageTeacherShowAllBtn.Click += new System.EventHandler(this.manageTeacherShowBtn_Click);
             this.manageTeacherShowAllBtn.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
@@ -6763,15 +6267,6 @@
             this.manageTeacherAddBtn.Text = "افزودن";
             this.manageTeacherAddBtn.Click += new System.EventHandler(this.manageTeacherAddBtn_Click);
             // 
-            // manageTeacherTab
-            // 
-            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
-            this.manageTeacherTab.GlobalItem = false;
-            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
-            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageTeacherTab.Name = "manageTeacherTab";
-            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
-            // 
             // superTabControlPanel10
             // 
             this.superTabControlPanel10.Controls.Add(this.aboutUsPanel);
@@ -6944,15 +6439,6 @@
             this.aboutUsTitleLbl.TabIndex = 0;
             this.aboutUsTitleLbl.Text = "طراحی و توسعه نرم افزار";
             // 
-            // aboutUsTab
-            // 
-            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
-            this.aboutUsTab.GlobalItem = false;
-            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
-            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.aboutUsTab.Name = "aboutUsTab";
-            this.aboutUsTab.Text = "درباره نرم افزار";
-            // 
             // superTabControlPanel11
             // 
             this.superTabControlPanel11.Controls.Add(this.logPanel);
@@ -7028,14 +6514,6 @@
             this.logNavigationNextPageBtn.Text = "صفحه بعد";
             this.logNavigationNextPageBtn.Click += new System.EventHandler(this.logNavigationNextPageBtn_Click);
             // 
-            // superTabItem10
-            // 
-            this.superTabItem10.GlobalItem = false;
-            this.superTabItem10.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem10.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem10.Name = "superTabItem10";
-            this.superTabItem10.Text = "لاگ";
-            // 
             // logNavigationLastPageBtn
             // 
             this.logNavigationLastPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -7052,14 +6530,6 @@
             this.logNavigationLastPageBtn.TabIndex = 32;
             this.logNavigationLastPageBtn.Text = "صفحه آخر";
             this.logNavigationLastPageBtn.Click += new System.EventHandler(this.logNavigationLastPageBtn_Click);
-            // 
-            // superTabItem16
-            // 
-            this.superTabItem16.GlobalItem = false;
-            this.superTabItem16.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem16.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem16.Name = "superTabItem16";
-            this.superTabItem16.Text = "لاگ";
             // 
             // logNavigationPreviousPageBtn
             // 
@@ -7078,14 +6548,6 @@
             this.logNavigationPreviousPageBtn.Text = "صفحه قبل";
             this.logNavigationPreviousPageBtn.Click += new System.EventHandler(this.logNavigationPreviousPageBtn_Click);
             // 
-            // superTabItem22
-            // 
-            this.superTabItem22.GlobalItem = false;
-            this.superTabItem22.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem22.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem22.Name = "superTabItem22";
-            this.superTabItem22.Text = "لاگ";
-            // 
             // logNavigationFirstPageBtn
             // 
             this.logNavigationFirstPageBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -7103,14 +6565,6 @@
             this.logNavigationFirstPageBtn.Text = "صفحه اول";
             this.logNavigationFirstPageBtn.Click += new System.EventHandler(this.logNavigationFirstPageBtn_Click);
             // 
-            // superTabItem28
-            // 
-            this.superTabItem28.GlobalItem = false;
-            this.superTabItem28.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem28.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem28.Name = "superTabItem28";
-            this.superTabItem28.Text = "لاگ";
-            // 
             // logNavigationReturnBtn
             // 
             this.logNavigationReturnBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -7126,14 +6580,6 @@
             this.logNavigationReturnBtn.SubItemsExpandWidth = 0;
             this.logNavigationReturnBtn.TabIndex = 28;
             this.logNavigationReturnBtn.Text = "بازگشت";
-            // 
-            // superTabItem34
-            // 
-            this.superTabItem34.GlobalItem = false;
-            this.superTabItem34.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem34.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem34.Name = "superTabItem34";
-            this.superTabItem34.Text = "لاگ";
             // 
             // logDgv
             // 
@@ -7162,19 +6608,6 @@
             this.logDgv.TabIndex = 1;
             this.logDgv.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
             // 
-            // sysLogTab
-            // 
-            this.sysLogTab.AttachedControl = this.superTabControlPanel11;
-            this.sysLogTab.GlobalItem = false;
-            this.sysLogTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.sysLogTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.sysLogTab.Name = "sysLogTab";
-            this.sysLogTab.Text = "SystemLog";
-            this.sysLogTab.Tooltip = "Log of system";
-            this.sysLogTab.Visible = false;
-            this.sysLogTab.Click += new System.EventHandler(this.sysLogTab_Click);
-            this.sysLogTab.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
-            // 
             // superTabControlPanel13
             // 
             this.superTabControlPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -7184,16 +6617,6 @@
             this.superTabControlPanel13.Size = new System.Drawing.Size(1139, 868);
             this.superTabControlPanel13.TabIndex = 0;
             this.superTabControlPanel13.TabItem = this.exitTab;
-            // 
-            // exitTab
-            // 
-            this.exitTab.AttachedControl = this.superTabControlPanel13;
-            this.exitTab.GlobalItem = false;
-            this.exitTab.Image = global::ProposalReportingSystem.Properties.Resources.sign_out_option_1_;
-            this.exitTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.exitTab.Name = "exitTab";
-            this.exitTab.Text = "خروج";
-            this.exitTab.Click += new System.EventHandler(this.exitTab_Click);
             // 
             // log
             // 
@@ -7289,6 +6712,16 @@
             this.menuIconRb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.menuIconRb.UseVisualStyleBackColor = true;
             this.menuIconRb.Click += new System.EventHandler(this.menuIconRb_Click);
+            // 
+            // searchProposalStatusLbl
+            // 
+            this.searchProposalStatusLbl.BackColor = System.Drawing.Color.Transparent;
+            this.searchProposalStatusLbl.Location = new System.Drawing.Point(301, 226);
+            this.searchProposalStatusLbl.Name = "searchProposalStatusLbl";
+            this.searchProposalStatusLbl.Size = new System.Drawing.Size(99, 25);
+            this.searchProposalStatusLbl.TabIndex = 25;
+            this.searchProposalStatusLbl.Text = "وضعیت";
+            this.searchProposalStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // menuExitBtn
             // 
@@ -7500,6 +6933,402 @@
             this.menuHomeBtn.Click += new System.EventHandler(this.menuHomeBtn_Click);
             this.menuHomeBtn.MouseEnter += new System.EventHandler(this.iconMenuPanel_MouseEnter);
             // 
+            // superTabItem41
+            // 
+            this.superTabItem41.GlobalItem = false;
+            this.superTabItem41.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem41.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem41.Name = "superTabItem41";
+            this.superTabItem41.Text = "لاگ";
+            // 
+            // superTabItem26
+            // 
+            this.superTabItem26.GlobalItem = false;
+            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem26.Name = "superTabItem26";
+            this.superTabItem26.Text = "لاگ";
+            // 
+            // superTabItem27
+            // 
+            this.superTabItem27.GlobalItem = false;
+            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem27.Name = "superTabItem27";
+            this.superTabItem27.Text = "لاگ";
+            // 
+            // superTabItem29
+            // 
+            this.superTabItem29.GlobalItem = false;
+            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem29.Name = "superTabItem29";
+            this.superTabItem29.Text = "لاگ";
+            // 
+            // superTabItem30
+            // 
+            this.superTabItem30.GlobalItem = false;
+            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem30.Name = "superTabItem30";
+            this.superTabItem30.Text = "لاگ";
+            // 
+            // superTabItem31
+            // 
+            this.superTabItem31.GlobalItem = false;
+            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem31.Name = "superTabItem31";
+            this.superTabItem31.Text = "لاگ";
+            // 
+            // manageUserTab
+            // 
+            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
+            this.manageUserTab.GlobalItem = false;
+            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
+            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageUserTab.Name = "manageUserTab";
+            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
+            // 
+            // superTabItem40
+            // 
+            this.superTabItem40.GlobalItem = false;
+            this.superTabItem40.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem40.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem40.Name = "superTabItem40";
+            this.superTabItem40.Text = "لاگ";
+            // 
+            // superTabItem20
+            // 
+            this.superTabItem20.GlobalItem = false;
+            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem20.Name = "superTabItem20";
+            this.superTabItem20.Text = "لاگ";
+            // 
+            // superTabItem21
+            // 
+            this.superTabItem21.GlobalItem = false;
+            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem21.Name = "superTabItem21";
+            this.superTabItem21.Text = "لاگ";
+            // 
+            // superTabItem23
+            // 
+            this.superTabItem23.GlobalItem = false;
+            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem23.Name = "superTabItem23";
+            this.superTabItem23.Text = "لاگ";
+            // 
+            // superTabItem24
+            // 
+            this.superTabItem24.GlobalItem = false;
+            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem24.Name = "superTabItem24";
+            this.superTabItem24.Text = "لاگ";
+            // 
+            // superTabItem25
+            // 
+            this.superTabItem25.GlobalItem = false;
+            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem25.Name = "superTabItem25";
+            this.superTabItem25.Text = "لاگ";
+            // 
+            // manageTeacherTab
+            // 
+            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
+            this.manageTeacherTab.GlobalItem = false;
+            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
+            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageTeacherTab.Name = "manageTeacherTab";
+            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
+            // 
+            // logTab
+            // 
+            this.logTab.GlobalItem = false;
+            this.logTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.logTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.logTab.Name = "logTab";
+            this.logTab.Text = "لاگ";
+            // 
+            // superTabItem6
+            // 
+            this.superTabItem6.GlobalItem = false;
+            this.superTabItem6.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem6.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem6.Name = "superTabItem6";
+            this.superTabItem6.Text = "لاگ";
+            // 
+            // superTabItem5
+            // 
+            this.superTabItem5.GlobalItem = false;
+            this.superTabItem5.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem5.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem5.Name = "superTabItem5";
+            this.superTabItem5.Text = "لاگ";
+            // 
+            // superTabItem4
+            // 
+            this.superTabItem4.GlobalItem = false;
+            this.superTabItem4.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem4.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem4.Name = "superTabItem4";
+            this.superTabItem4.Text = "لاگ";
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem3.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "لاگ";
+            // 
+            // superTabItem2
+            // 
+            this.superTabItem2.GlobalItem = false;
+            this.superTabItem2.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem2.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem2.Name = "superTabItem2";
+            this.superTabItem2.Text = "لاگ";
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem1.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "لاگ";
+            // 
+            // manageProposalTab
+            // 
+            this.manageProposalTab.AttachedControl = this.superTabControlPanel5;
+            this.manageProposalTab.GlobalItem = false;
+            this.manageProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file;
+            this.manageProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageProposalTab.Name = "manageProposalTab";
+            this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
+            // 
+            // superTabItem39
+            // 
+            this.superTabItem39.GlobalItem = false;
+            this.superTabItem39.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem39.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem39.Name = "superTabItem39";
+            this.superTabItem39.Text = "لاگ";
+            // 
+            // superTabItem14
+            // 
+            this.superTabItem14.GlobalItem = false;
+            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem14.Name = "superTabItem14";
+            this.superTabItem14.Text = "لاگ";
+            // 
+            // superTabItem15
+            // 
+            this.superTabItem15.GlobalItem = false;
+            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem15.Name = "superTabItem15";
+            this.superTabItem15.Text = "لاگ";
+            // 
+            // superTabItem17
+            // 
+            this.superTabItem17.GlobalItem = false;
+            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem17.Name = "superTabItem17";
+            this.superTabItem17.Text = "لاگ";
+            // 
+            // superTabItem18
+            // 
+            this.superTabItem18.GlobalItem = false;
+            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem18.Name = "superTabItem18";
+            this.superTabItem18.Text = "لاگ";
+            // 
+            // superTabItem19
+            // 
+            this.superTabItem19.GlobalItem = false;
+            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem19.Name = "superTabItem19";
+            this.superTabItem19.Text = "لاگ";
+            // 
+            // searchProposalTab
+            // 
+            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
+            this.searchProposalTab.GlobalItem = false;
+            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
+            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.searchProposalTab.Name = "searchProposalTab";
+            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
+            // 
+            // addProposalTab
+            // 
+            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
+            this.addProposalTab.GlobalItem = false;
+            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
+            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.addProposalTab.Name = "addProposalTab";
+            this.addProposalTab.Text = "افزودن پروپوزال";
+            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
+            // 
+            // personalSettingsTab
+            // 
+            this.personalSettingsTab.AttachedControl = this.superTabControlPanel7;
+            this.personalSettingsTab.GlobalItem = false;
+            this.personalSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.user__1_;
+            this.personalSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.personalSettingsTab.Name = "personalSettingsTab";
+            this.personalSettingsTab.Text = "تنظیمات شخصی";
+            // 
+            // aboutUsTab
+            // 
+            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
+            this.aboutUsTab.GlobalItem = false;
+            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
+            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.aboutUsTab.Name = "aboutUsTab";
+            this.aboutUsTab.Text = "درباره نرم افزار";
+            // 
+            // superTabItem32
+            // 
+            this.superTabItem32.GlobalItem = false;
+            this.superTabItem32.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem32.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem32.Name = "superTabItem32";
+            this.superTabItem32.Text = "لاگ";
+            // 
+            // superTabItem33
+            // 
+            this.superTabItem33.GlobalItem = false;
+            this.superTabItem33.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem33.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem33.Name = "superTabItem33";
+            this.superTabItem33.Text = "لاگ";
+            // 
+            // superTabItem35
+            // 
+            this.superTabItem35.GlobalItem = false;
+            this.superTabItem35.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem35.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem35.Name = "superTabItem35";
+            this.superTabItem35.Text = "لاگ";
+            // 
+            // superTabItem36
+            // 
+            this.superTabItem36.GlobalItem = false;
+            this.superTabItem36.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem36.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem36.Name = "superTabItem36";
+            this.superTabItem36.Text = "لاگ";
+            // 
+            // superTabItem37
+            // 
+            this.superTabItem37.GlobalItem = false;
+            this.superTabItem37.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem37.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem37.Name = "superTabItem37";
+            this.superTabItem37.Text = "لاگ";
+            // 
+            // appSettingsTab
+            // 
+            this.appSettingsTab.AttachedControl = this.superTabControlPanel6;
+            this.appSettingsTab.GlobalItem = false;
+            this.appSettingsTab.Image = global::ProposalReportingSystem.Properties.Resources.settings;
+            this.appSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.appSettingsTab.Name = "appSettingsTab";
+            this.appSettingsTab.Text = "تنظیمات برنامه";
+            // 
+            // homeUserProfileLbl
+            // 
+            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
+            this.homeUserProfileLbl.Location = new System.Drawing.Point(691, 102);
+            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
+            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
+            this.homeUserProfileLbl.TabIndex = 1;
+            this.homeUserProfileLbl.Visible = false;
+            // 
+            // homeTab
+            // 
+            this.homeTab.AttachedControl = this.superTabControlPanel1;
+            this.homeTab.GlobalItem = false;
+            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
+            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.homeTab.Name = "homeTab";
+            this.homeTab.Text = "خانه";
+            // 
+            // superTabItem10
+            // 
+            this.superTabItem10.GlobalItem = false;
+            this.superTabItem10.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem10.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem10.Name = "superTabItem10";
+            this.superTabItem10.Text = "لاگ";
+            // 
+            // superTabItem16
+            // 
+            this.superTabItem16.GlobalItem = false;
+            this.superTabItem16.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem16.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem16.Name = "superTabItem16";
+            this.superTabItem16.Text = "لاگ";
+            // 
+            // superTabItem22
+            // 
+            this.superTabItem22.GlobalItem = false;
+            this.superTabItem22.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem22.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem22.Name = "superTabItem22";
+            this.superTabItem22.Text = "لاگ";
+            // 
+            // superTabItem28
+            // 
+            this.superTabItem28.GlobalItem = false;
+            this.superTabItem28.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem28.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem28.Name = "superTabItem28";
+            this.superTabItem28.Text = "لاگ";
+            // 
+            // superTabItem34
+            // 
+            this.superTabItem34.GlobalItem = false;
+            this.superTabItem34.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem34.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem34.Name = "superTabItem34";
+            this.superTabItem34.Text = "لاگ";
+            // 
+            // sysLogTab
+            // 
+            this.sysLogTab.AttachedControl = this.superTabControlPanel11;
+            this.sysLogTab.GlobalItem = false;
+            this.sysLogTab.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.sysLogTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.sysLogTab.Name = "sysLogTab";
+            this.sysLogTab.Text = "SystemLog";
+            this.sysLogTab.Tooltip = "Log of system";
+            this.sysLogTab.Visible = false;
+            this.sysLogTab.Click += new System.EventHandler(this.sysLogTab_Click);
+            this.sysLogTab.MouseEnter += new System.EventHandler(this.homePanel_MouseEnter);
+            // 
+            // exitTab
+            // 
+            this.exitTab.AttachedControl = this.superTabControlPanel13;
+            this.exitTab.GlobalItem = false;
+            this.exitTab.Image = global::ProposalReportingSystem.Properties.Resources.sign_out_option_1_;
+            this.exitTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.exitTab.Name = "exitTab";
+            this.exitTab.Text = "خروج";
+            this.exitTab.Click += new System.EventHandler(this.exitTab_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -7519,6 +7348,19 @@
             this.superTabControlPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainPage)).EndInit();
             this.mainPage.ResumeLayout(false);
+            this.superTabControlPanel4.ResumeLayout(false);
+            this.manageUserPanel.ResumeLayout(false);
+            this.manageUserManageGp.ResumeLayout(false);
+            this.menageUserAccessLevelGp.ResumeLayout(false);
+            this.manageUserPersonalInfoGp.ResumeLayout(false);
+            this.manageUserPersonalInfoGp.PerformLayout();
+            this.manageUserShowGp.ResumeLayout(false);
+            this.manageUserNavigationPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.manageUserShowDgv)).EndInit();
+            this.superTabControlPanel1.ResumeLayout(false);
+            this.homePanel.ResumeLayout(false);
+            this.homeTimeDateGp.ResumeLayout(false);
+            this.homeAapInfoGp.ResumeLayout(false);
             this.superTabControlPanel6.ResumeLayout(false);
             this.appSettingPanel.ResumeLayout(false);
             this.appSettingSenderInfoGp.ResumeLayout(false);
@@ -7550,10 +7392,6 @@
             this.editProposalShowGp.ResumeLayout(false);
             this.manageProposalNavigationPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.editProposalShowDgv)).EndInit();
-            this.superTabControlPanel1.ResumeLayout(false);
-            this.homePanel.ResumeLayout(false);
-            this.homeTimeDateGp.ResumeLayout(false);
-            this.homeAapInfoGp.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             this.addProposalPanel.ResumeLayout(false);
             this.addProposalShowGp.ResumeLayout(false);
@@ -7561,15 +7399,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addProposalShowDgv)).EndInit();
             this.addProposalAddGp.ResumeLayout(false);
             this.addProposalAddGp.PerformLayout();
-            this.superTabControlPanel4.ResumeLayout(false);
-            this.manageUserPanel.ResumeLayout(false);
-            this.manageUserManageGp.ResumeLayout(false);
-            this.menageUserAccessLevelGp.ResumeLayout(false);
-            this.manageUserPersonalInfoGp.ResumeLayout(false);
-            this.manageUserPersonalInfoGp.PerformLayout();
-            this.manageUserShowGp.ResumeLayout(false);
-            this.manageUserNavigationPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.manageUserShowDgv)).EndInit();
             this.superTabControlPanel12.ResumeLayout(false);
             this.manageTeacherPanel.ResumeLayout(false);
             this.teacherManageShowGp.ResumeLayout(false);
@@ -7729,7 +7558,6 @@
         private System.Windows.Forms.TextBox searchProposalValueFromTxtbx;
         private System.Windows.Forms.Label searchProposalValueFromLbl;
         private System.Windows.Forms.Label searchProposalOrganizationLbl;
-        private System.Windows.Forms.Label searchProposalStatusLbl;
         private System.Windows.Forms.Label searchProposalTypeLbl;
         private System.Windows.Forms.Label searchProposalRegisterTypeLbl;
         private System.Windows.Forms.Label searchProposalPropertyTypeLbl;
@@ -7744,12 +7572,6 @@
         private System.Windows.Forms.Panel searchProposalPanel;
         private DevComponents.DotNetBar.Controls.GroupPanel appSettingShowGp;
         private DevComponents.DotNetBar.Controls.GroupPanel appSettingGp;
-        private System.Windows.Forms.Label appSettingStatusLbl;
-        private System.Windows.Forms.Label aapSettingCoLbl;
-        private System.Windows.Forms.Label appSettingProTypeLbl;
-        private System.Windows.Forms.Label appSettingRegTypeLbl;
-        private System.Windows.Forms.Label appSettingPropertyLbl;
-        private System.Windows.Forms.Label appSettingProcedureTypeLbl;
         private System.Windows.Forms.TextBox appSettingStatusTxtbx;
         private System.Windows.Forms.TextBox appSettingPropertyTxtbx;
         private System.Windows.Forms.RadioButton appSettingStatusRbtn;
@@ -7854,8 +7676,6 @@
         private System.Windows.Forms.ComboBox searchProposalExecutorFacultyCb;
         private DevComponents.DotNetBar.Controls.GroupPanel searchProposalExecutorInfoGp;
         private DevComponents.DotNetBar.Controls.GroupPanel searchProposalProposalInfoGp;
-        private System.Windows.Forms.Label appSettingEgroupLbl;
-        private System.Windows.Forms.Label appSettingFacultyLbl;
         private System.Windows.Forms.TextBox appSettingFacultyTxtbx;
         private System.Windows.Forms.TextBox appSettingEgroupTxtbx;
         private System.Windows.Forms.RadioButton appSettingFacultyRbtn;
@@ -7922,7 +7742,6 @@
         private System.Windows.Forms.CheckBox manageUserShowPasswordChb;
         private System.Windows.Forms.Label homeEBSLbl;
         private DevComponents.DotNetBar.ButtonX manageTeacherSearchBtn;
-        private System.Windows.Forms.Label appSettingEdegreeLbl;
         private System.Windows.Forms.TextBox appSettingEdegreeTxtbx;
         private System.Windows.Forms.RadioButton appSettingEdegreeRbtn;
         private System.Windows.Forms.DataGridView addProposalShowDgv;
@@ -7966,15 +7785,10 @@
         private System.Windows.Forms.Panel addProposalNavigationPanel;
         private DevComponents.DotNetBar.Controls.TextBoxX addProposalNavigationCurrentPageTxtbx;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationNextPageBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem7;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationLastPageBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem8;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationPreviousPageBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem11;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationFirstPageBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem12;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationReturnBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem13;
         private System.Windows.Forms.Panel searchProposalNavigationPanel;
         private DevComponents.DotNetBar.Controls.TextBoxX searchProposalNavigationCurrentPageTxtbx;
         private DevComponents.DotNetBar.ButtonX searchProposalNavigationNextPageBtn;
@@ -8050,7 +7864,6 @@
         private System.Windows.Forms.CheckBox manageUserIsAdminCb;
         private System.Windows.Forms.CheckBox manageUserReadOnlyCb;
         private DevComponents.DotNetBar.ButtonX addProposalNavigationShowAllBtn;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem38;
         private DevComponents.DotNetBar.ButtonX searchProposalNavigationShowAllBtn;
         private DevComponents.DotNetBar.SuperTabItem superTabItem39;
         private DevComponents.DotNetBar.ButtonX manageUserNavigationShowAllBtn;
@@ -8064,6 +7877,7 @@
         private Atf.UI.DateTimeSelector searchProposalStartDateToDts;
         private Atf.UI.DateTimeSelector searchProposalStartDateFromDts;
         private Atf.UI.DateTimeSelector editProposalStartdateDts;
+        private System.Windows.Forms.Label searchProposalStatusLbl;
     }
 }
 

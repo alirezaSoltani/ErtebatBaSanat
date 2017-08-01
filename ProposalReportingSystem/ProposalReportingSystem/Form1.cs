@@ -699,40 +699,31 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(appSettingNavigationLastPageBtn, 440, 10, 85, 40);
 
-            gl.setSize(aapSettingCoLbl, 145, 20, 75, 35);
-            gl.setSize(appSettingCoRbtn, 218, 20, 18, 23);
+            gl.setSize(appSettingCoRbtn, 138, 20, 98, 23);
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 35);
 
-            gl.setSize(appSettingRegTypeLbl, 440, 20, 75, 35);
-            gl.setSize(appSettingRegTypeRbtn, 512, 20, 18, 23);
+            gl.setSize(appSettingRegTypeRbtn, 432, 20, 98, 23);
             gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
 
-            gl.setSize(appSettingProcedureTypeLbl, 690, 20, 75, 35);
-            gl.setSize(appSettingProcedureTypeRbtn, 765, 20, 18, 23);
+            gl.setSize(appSettingProcedureTypeRbtn, 685, 20, 98, 23);
             gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
 
-            gl.setSize(appSettingStatusLbl, 145, 110, 75, 35);
-            gl.setSize(appSettingStatusRbtn, 218, 110, 18, 23);
+            gl.setSize(appSettingStatusRbtn, 138, 110, 98, 23);
             gl.setSize(appSettingStatusTxtbx, 55, 150, 170, 35);
 
-            gl.setSize(appSettingProTypeLbl, 440, 110, 75, 35);
-            gl.setSize(appSettingProTypeRbtn, 512, 110, 18, 23);
+            gl.setSize(appSettingProTypeRbtn, 432, 110, 98, 23);
             gl.setSize(appSettingProTypeTxtbx, 350, 150, 170, 35);
 
-            gl.setSize(appSettingPropertyLbl, 690, 110, 75, 35);
-            gl.setSize(appSettingPropertyRbtn, 765, 110, 18, 23);
+            gl.setSize(appSettingPropertyRbtn, 685, 110, 98, 23);
             gl.setSize(appSettingPropertyTxtbx, 605, 150, 170, 35);
 
-            gl.setSize(appSettingFacultyLbl, 690, 210, 75, 35);
-            gl.setSize(appSettingFacultyRbtn, 765, 210, 18, 23);
+            gl.setSize(appSettingFacultyRbtn, 685, 210, 98, 23);
             gl.setSize(appSettingFacultyTxtbx, 605, 250, 170, 35);
 
-            gl.setSize(appSettingEgroupLbl, 440, 210, 75, 35);
-            gl.setSize(appSettingEgroupRbtn, 512, 210, 18, 23);
+            gl.setSize(appSettingEgroupRbtn, 432, 210, 98, 23);
             gl.setSize(appSettingEgroupTxtbx, 350, 250, 170, 35);
 
-            gl.setSize(appSettingEdegreeLbl, 145, 210, 75, 35);
-            gl.setSize(appSettingEdegreeRbtn, 218, 210, 18, 23);
+            gl.setSize(appSettingEdegreeRbtn, 132, 210, 98, 23);
             gl.setSize(appSettingEdegreeTxtbx, 55, 250, 170, 35);
 
             gl.setSize(appSettingAddBtn, 55, 315, 80, 30);
@@ -1964,7 +1955,7 @@ namespace ProposalReportingSystem
             appSettingStatusTxtbx.Clear();
 
             appSettingAddBtn.Enabled = true;
-            appSettingNavigationPanel.Enabled = true;
+            //appSettingNavigationPanel.Enabled = true;
 
             dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT * FROM employersTable");
             appSettingShowDv.Columns["index"].HeaderText = "کد سازمان";
@@ -5110,7 +5101,7 @@ namespace ProposalReportingSystem
                 TotalPage = dbh.totalPage("SELECT COUNT(*) FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'");
                 CurrentPageIndex = 1;
                 addProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-                dbh.addProposalQuery = "SELECT TOP " + pageSize  + " * FROM proposalTable WHERE executor = '" + addProposalExecutorNcodeTxtbx.Text + "'";
+                dbh.addProposalQuery = "SELECT TOP " + pageSize  + " * FROM proposalTable WHERE ( executor = '" + addProposalExecutorNcodeTxtbx.Text + "')";
                 dbh.dataGridViewUpdate3(addProposalShowDgv, addProposalBindingSource, dbh.addProposalQuery,pageSize,CurrentPageIndex);
 
                 addProposalNavigationFirstPageBtn.Enabled = true;
@@ -5183,7 +5174,7 @@ namespace ProposalReportingSystem
 
                     CurrentPageIndex = 1;
                     manageProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-                    dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE executor = '" + editProposalExecutorNcodeTxtbx.Text + "'";
+                    dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ( executor = '" + editProposalExecutorNcodeTxtbx.Text + "')";
                     dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, dbh.editProposalQuery, pageSize, CurrentPageIndex);
                     editProposalExecutorNcodeTxtbx.BackColor = Color.White;
                     editProposalExecutorNcodeTxtbx.Focus();
@@ -5206,7 +5197,7 @@ namespace ProposalReportingSystem
 
                     CurrentPageIndex = 1;
                     manageProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-                    dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "' AND  executor = '" + editProposalExecutorNcodeTxtbx.Text + "'";
+                    dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE ( registrant = '" + loginUser.U_NCode + "' AND  executor = '" + editProposalExecutorNcodeTxtbx.Text + "')";
                     dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, dbh.editProposalQuery, pageSize, CurrentPageIndex);
                     editProposalExecutorNcodeTxtbx.BackColor = Color.White;
                     editProposalExecutorNcodeTxtbx.Focus();
@@ -6125,6 +6116,7 @@ namespace ProposalReportingSystem
                 searchProposalNavigationPreviousPageBtn.Enabled = true;
                 searchProposalNavigationCurrentPageTxtbx.Enabled = true;
                 searchProposalNavigationReturnBtn.Enabled = false;
+                searchProposalNavigationShowAllBtn.Enabled = true;
 
             }
         }
@@ -6342,7 +6334,7 @@ namespace ProposalReportingSystem
 
                 CurrentPageIndex = 1;
                 manageProposalNavigationCurrentPageTxtbx.Text = CurrentPageIndex.ToString();
-                dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE registrant = '" + loginUser.U_NCode + "'";
+                dbh.editProposalQuery = "SELECT TOP " + pageSize + " * FROM proposalTable WHERE (registrant = '" + loginUser.U_NCode + "')";
                 dbh.dataGridViewUpdate3(editProposalShowDgv, editProposalBindingSource, dbh.editProposalQuery, pageSize, CurrentPageIndex);
                 editProposalExecutorNcodeTxtbx.BackColor = Color.White;
                 editProposalExecutorNcodeTxtbx.Focus();

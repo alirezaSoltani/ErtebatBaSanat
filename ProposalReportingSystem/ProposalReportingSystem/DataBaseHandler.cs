@@ -5247,6 +5247,17 @@ namespace ProposalReportingSystem
                 }
                 else if (dgvv.Name == "searchProposalShowDgv")
                 {
+                    query = query.Replace("TOP 5 *", "COUNT(*)");
+                    int totalpage = totalPage(query);
+
+                    if (totalpage == page)
+                    {
+                        query = query.Replace("COUNT(*)", "TOP 5 *");
+                    }
+                    else
+                    {
+                        query = query.Replace("COUNT(*)", "TOP 5 *");
+                    }
                     GetData3ForSearchProposal(query, bindingSource, dgvv, PgSize, PreviousPageOffSet);
                 }
                 else
@@ -5368,9 +5379,15 @@ namespace ProposalReportingSystem
             {
                 if (dataGridview.Name == "addProposalShowDgv")
                 {
-                    string q = addProposalQuery + " AND  [index] NOT IN " +
-                               "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ) ";
+                    //string q = addProposalQuery + " AND  [index] NOT IN " +
+                    //           "(SELECT TOP " + PreviousPageOffSet +
+                    //           " [index] FROM proposalTable ) ";
+
+                    string notquery = selectCommand;
+                    notquery = notquery.Replace("SELECT TOP 5 *", "  SELECT TOP " + PreviousPageOffSet + " [index]");
+
+                    string q = selectCommand + " AND  [index] NOT IN (" + notquery + ")";
+
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -5389,9 +5406,15 @@ namespace ProposalReportingSystem
 
                 if (dataGridview.Name == "searchProposalShowDgv")
                 {
-                    string q = searchProposalQuery + " AND  [index] NOT IN " +
-                               "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable  ) ";
+                    string notquery = selectCommand;
+                    notquery = notquery.Replace("SELECT TOP 5 *", "  SELECT TOP " + PreviousPageOffSet + " [index]");
+
+                    string q = selectCommand + " AND  [index] NOT IN (" + notquery + ")";
+
+                    //string q = searchProposalQuery + " AND  [index] NOT IN " +
+                    //           "(SELECT TOP " + PreviousPageOffSet +
+                    //           " [index] FROM proposalTable  ) ";
+
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -5410,9 +5433,14 @@ namespace ProposalReportingSystem
 
                 if (dataGridview.Name == "editProposalShowDgv")
                 {
-                    string q = editProposalQuery + " AND  [index] NOT IN " +
-                               "(SELECT TOP " + PreviousPageOffSet +
-                               " [index] FROM proposalTable ) ";
+                    string notquery = selectCommand;
+                    notquery = notquery.Replace("SELECT TOP 5 *", "  SELECT TOP " + PreviousPageOffSet + " [index]");
+
+                    string q = selectCommand + " AND  [index] NOT IN (" + notquery + ")";
+
+                    //string q = editProposalQuery + " AND  [index] NOT IN " +
+                    //           "(SELECT TOP " + PreviousPageOffSet +
+                    //           " [index] FROM proposalTable ) ";
                     // Create a new data adapter based on the specified query.
                     dataAdapter = new SqlDataAdapter(q, conString);
 
@@ -5504,31 +5532,11 @@ namespace ProposalReportingSystem
 
             else if (selectCommand.Contains("TeacherTable"))
             {
+                string notquery = selectCommand;
+                notquery = notquery.Replace("SELECT TOP 5 *", "  SELECT TOP " + PreviousPageOffSet + " t_NCode");
 
-                //if (dataGridview.Name == "manageTeacherShowDgv")
-                //{
-                //    string q = manageTeacherQuery + " AND  [index] NOT IN " +
-                //               "(SELECT TOP " + PreviousPageOffSet +
-                //               " [index] FROM proposalTable ORDER BY startDate ) ";
-                //    // Create a new data adapter based on the specified query.
-                //    dataAdapter = new SqlDataAdapter(q, conString);
+                string q = selectCommand + " AND  t_NCode NOT IN (" + notquery + ")";
 
-                //    // Create a command builder to generate SQL update, insert, and
-                //    // delete commands based on selectCommand. These are used to
-                //    // update the database.
-
-                //    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
-                //    // Populate a new data table and bind it to the BindingSource.
-                //    DataTable table = new DataTable();
-                //    table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                //    dataAdapter.Fill(table);
-                //    bindingSourceObj.DataSource = table;
-                //}
-
-                string q = manageTeacherQuery + " AND  t_NCode NOT IN " +
-                               "(SELECT TOP " + PreviousPageOffSet +
-                               " t_NCode FROM TeacherTable ) ";
 
                 // Create a new data adapter based on the specified query.
                 dataAdapter = new SqlDataAdapter(q, conString);
@@ -5599,9 +5607,11 @@ namespace ProposalReportingSystem
         }
         private void GetData3ForSearchProposal(string selectCommand, BindingSource bindingSourceObj, DataGridView dataGridview, int PgSize, int PreviousPageOffSet)
         {
-            string q = searchProposalQuery + " AND  [index] NOT IN " +
-                              "(SELECT TOP " + PreviousPageOffSet +
-                              " [index] FROM proposalTable  ) ";
+            string notquery = selectCommand;
+            notquery = notquery.Replace("SELECT TOP 5 *", "  SELECT TOP " + PreviousPageOffSet + " [index]");
+
+            string q = selectCommand + " AND  [index] NOT IN (" + notquery + ")";
+
             // Create a new data adapter based on the specified query.
             dataAdapter = new SqlDataAdapter(q, conString);
 

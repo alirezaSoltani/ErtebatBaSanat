@@ -26,100 +26,113 @@ namespace ProposalReportingSystem
             
         }
 
-        private void detailPrintBtn_Click(object sender, EventArgs e)
-        {
-            if (reportTitleTxtbx.Text == "")
-            {
-                PopUp p = new PopUp("ریپورت بدون عنوان", "عنوانی برای ریپورت وارد نکرده اید. ادامه می دهید؟", "بله", "خیر", "", "info");
-                p.ShowDialog();
-                if (p.DialogResult == DialogResult.Yes)
-                {
-                    DataTable dt = new DataTable();
-                    foreach (DataGridViewColumn col in reportDataGridView.Columns)
-                    {
-                        dt.Columns.Add(col.Name);
-                    }
+        //private void detailPrintBtn_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (reportTitleTxtbx.Text == "")
+        //        {
+        //            PopUp p = new PopUp("ریپورت بدون عنوان", "عنوانی برای ریپورت وارد نکرده اید. ادامه می دهید؟", "بله", "خیر", "", "info");
+        //            p.ShowDialog();
+        //            if (p.DialogResult == DialogResult.Yes)
+        //            {
+        //                DataTable dt = new DataTable();
+        //                foreach (DataGridViewColumn col in reportDataGridView.Columns)
+        //                {
+        //                    dt.Columns.Add(col.Name);
+        //                }
 
-                    foreach (DataGridViewRow row in reportDataGridView.Rows)
-                    {
-                        DataRow dRow = dt.NewRow();
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            if (cell.ColumnIndex == 14)
-                            {
-                                string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
-                                temp = temp.Replace(',', '/');
-                                dRow[cell.ColumnIndex] = temp;
-                            }
-                            else
-                                dRow[cell.ColumnIndex] = cell.Value;
-                        }
-                        dt.Rows.Add(dRow);
-                    }
+        //                foreach (DataGridViewRow row in reportDataGridView.Rows)
+        //                {
+        //                    DataRow dRow = dt.NewRow();
+        //                    foreach (DataGridViewCell cell in row.Cells)
+        //                    {
+        //                        if (cell.ColumnIndex == 14)
+        //                        {
+        //                            string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+        //                            temp = temp.Replace(',', '/');
+        //                            dRow[cell.ColumnIndex] = temp;
+        //                        }
+        //                        else
+        //                            dRow[cell.ColumnIndex] = cell.Value;
+        //                    }
+        //                    dt.Rows.Add(dRow);
+        //                }
 
-                    //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+        //                //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
 
-                    Report report = new Report();
-                    report.Load("report1.frx");
-                    report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
-                    report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
-                    report.SetParameterValue("r_userInfo", user.U_LName);
-                    report.SetParameterValue("r_userTel", user.U_Tel);
-                    report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
-                    //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
-                    report.RegisterData(dt, "proposalTable");
-                    report.GetDataSource("proposalTable").Enabled = true;
-                    report.Prepare();
-                    report.Show();
-                }
-                else
-                {
-                    reportTitleTxtbx.Focus();
-                }
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                foreach (DataGridViewColumn col in reportDataGridView.Columns)
-                {
+        //                Report report = new Report();
+        //                report.Load("report1.frx");
+        //                report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+        //                report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+        //                report.SetParameterValue("r_userInfo", user.U_LName);
+        //                report.SetParameterValue("r_userTel", user.U_Tel);
+        //                report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+        //                //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+        //                report.RegisterData(dt, "proposalTable");
+        //                report.GetDataSource("proposalTable").Enabled = true;
+        //                report.Prepare();
+        //                report.Show();
+        //            }
+        //            else
+        //            {
+        //                reportTitleTxtbx.Focus();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DataTable dt = new DataTable();
+        //            foreach (DataGridViewColumn col in reportDataGridView.Columns)
+        //            {
 
-                    dt.Columns.Add(col.Name);
-                }
+        //                dt.Columns.Add(col.Name);
+        //            }
 
-                foreach (DataGridViewRow row in reportDataGridView.Rows)
-                {
-                    DataRow dRow = dt.NewRow();
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if (cell.ColumnIndex == 14)
-                        {
-                            string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
-                            temp = temp.Replace(',', '/');
-                            dRow[cell.ColumnIndex] = temp;
-                        }
-                        else
-                            dRow[cell.ColumnIndex] = cell.Value;
-                    }
-                    dt.Rows.Add(dRow);
-                }
+        //            foreach (DataGridViewRow row in reportDataGridView.Rows)
+        //            {
+        //                DataRow dRow = dt.NewRow();
+        //                foreach (DataGridViewCell cell in row.Cells)
+        //                {
+        //                    if (cell.ColumnIndex == 14)
+        //                    {
+        //                        string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+        //                        temp = temp.Replace(',', '/');
+        //                        dRow[cell.ColumnIndex] = temp;
+        //                    }
+        //                    else
+        //                        dRow[cell.ColumnIndex] = cell.Value;
+        //                }
+        //                dt.Rows.Add(dRow);
+        //            }
 
-                //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+        //            //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
 
-                Report report = new Report();
-                report.Load("report1.frx");
-                report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
-                report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
-                report.SetParameterValue("r_userInfo", user.U_LName);
-                report.SetParameterValue("r_userTel", user.U_Tel);
-                report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
-                //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
-                report.RegisterData(dt, "proposalTable");
-                report.GetDataSource("proposalTable").Enabled = true;
-                report.Prepare();
-                report.Show();
-            }
-            
-        }
+        //            Report report = new Report();
+        //            report.Load("report1.frx");
+        //            report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+        //            report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+        //            report.SetParameterValue("r_userInfo", user.U_LName);
+        //            report.SetParameterValue("r_userTel", user.U_Tel);
+        //            report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+        //            //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+        //            report.RegisterData(dt, "proposalTable");
+        //            report.GetDataSource("proposalTable").Enabled = true;
+        //            report.Prepare();
+        //            report.Show();
+        //        }
+        //    }
+        //    catch (Exception ee)
+        //    {
+        //        if (user.U_NCode == 999999999) // to show exceptin for admin
+        //        {
+        //            MessageBox.Show(ee.Message);
+        //        }
+        //        string context = "خطای فایل نامه";
+        //        Alert alert = new Alert(context, "bluegray", 15);
+        //    }
+
+
+        //}
 
         private void reportForm_Load(object sender, EventArgs e)
         {
@@ -227,6 +240,225 @@ namespace ProposalReportingSystem
         private void reportExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reportPreviewBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (reportTitleTxtbx.Text == "")
+                {
+                    PopUp p = new PopUp("ریپورت بدون عنوان", "عنوانی برای ریپورت وارد نکرده اید. ادامه می دهید؟", "بله", "خیر", "", "info");
+                    p.ShowDialog();
+                    if (p.DialogResult == DialogResult.Yes)
+                    {
+                        DataTable dt = new DataTable();
+                        foreach (DataGridViewColumn col in reportDataGridView.Columns)
+                        {
+                            dt.Columns.Add(col.Name);
+                        }
+
+                        foreach (DataGridViewRow row in reportDataGridView.Rows)
+                        {
+                            DataRow dRow = dt.NewRow();
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.ColumnIndex == 14)
+                                {
+                                    string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                                    temp = temp.Replace(',', '/');
+                                    dRow[cell.ColumnIndex] = temp;
+                                }
+                                else
+                                    dRow[cell.ColumnIndex] = cell.Value;
+                            }
+                            dt.Rows.Add(dRow);
+                        }
+
+                        //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                        Report report = new Report();
+                        report.Load("report1.frx");
+                        report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                        report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+                        report.SetParameterValue("r_userInfo", user.U_LName);
+                        report.SetParameterValue("r_userTel", user.U_Tel);
+                        report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                        //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                        report.RegisterData(dt, "proposalTable");
+                        report.GetDataSource("proposalTable").Enabled = true;
+                        report.Prepare();
+                        report.Show();
+                    }
+                    else
+                    {
+                        reportTitleTxtbx.Focus();
+                    }
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    foreach (DataGridViewColumn col in reportDataGridView.Columns)
+                    {
+
+                        dt.Columns.Add(col.Name);
+                    }
+
+                    foreach (DataGridViewRow row in reportDataGridView.Rows)
+                    {
+                        DataRow dRow = dt.NewRow();
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.ColumnIndex == 14)
+                            {
+                                string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                                temp = temp.Replace(',', '/');
+                                dRow[cell.ColumnIndex] = temp;
+                            }
+                            else
+                                dRow[cell.ColumnIndex] = cell.Value;
+                        }
+                        dt.Rows.Add(dRow);
+                    }
+
+                    //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                    Report report = new Report();
+                    report.Load("report1.frx");
+                    report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                    report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+                    report.SetParameterValue("r_userInfo", user.U_LName);
+                    report.SetParameterValue("r_userTel", user.U_Tel);
+                    report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                    //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                    report.RegisterData(dt, "proposalTable");
+                    report.GetDataSource("proposalTable").Enabled = true;
+                    report.Prepare();
+                    report.Show();
+                }
+            }
+            catch (Exception ee)
+            {
+                if (user.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ee.Message);
+                }
+                string context = "خطای فایل نامه";
+                Alert alert = new Alert(context, "bluegray", 15);
+            }
+
+
+        }
+
+        private void reportExitBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void reportFastPrintBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (reportTitleTxtbx.Text == "")
+                {
+                    PopUp p = new PopUp("ریپورت بدون عنوان", "عنوانی برای ریپورت وارد نکرده اید. ادامه می دهید؟", "بله", "خیر", "", "info");
+                    p.ShowDialog();
+                    if (p.DialogResult == DialogResult.Yes)
+                    {
+                        DataTable dt = new DataTable();
+                        foreach (DataGridViewColumn col in reportDataGridView.Columns)
+                        {
+                            dt.Columns.Add(col.Name);
+                        }
+
+                        foreach (DataGridViewRow row in reportDataGridView.Rows)
+                        {
+                            DataRow dRow = dt.NewRow();
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.ColumnIndex == 14)
+                                {
+                                    string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                                    temp = temp.Replace(',', '/');
+                                    dRow[cell.ColumnIndex] = temp;
+                                }
+                                else
+                                    dRow[cell.ColumnIndex] = cell.Value;
+                            }
+                            dt.Rows.Add(dRow);
+                        }
+
+                        //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                        Report report = new Report();
+                        report.Load("report1.frx");
+                        report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                        report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+                        report.SetParameterValue("r_userInfo", user.U_LName);
+                        report.SetParameterValue("r_userTel", user.U_Tel);
+                        report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                        //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                        report.RegisterData(dt, "proposalTable");
+                        report.GetDataSource("proposalTable").Enabled = true;
+                        report.Prepare();
+                        report.Print();
+                    }
+                    else
+                    {
+                        reportTitleTxtbx.Focus();
+                    }
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    foreach (DataGridViewColumn col in reportDataGridView.Columns)
+                    {
+
+                        dt.Columns.Add(col.Name);
+                    }
+
+                    foreach (DataGridViewRow row in reportDataGridView.Rows)
+                    {
+                        DataRow dRow = dt.NewRow();
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.ColumnIndex == 14)
+                            {
+                                string temp = string.Format("{0:n0}", double.Parse(cell.Value.ToString()));
+                                temp = temp.Replace(',', '/');
+                                dRow[cell.ColumnIndex] = temp;
+                            }
+                            else
+                                dRow[cell.ColumnIndex] = cell.Value;
+                        }
+                        dt.Rows.Add(dRow);
+                    }
+
+                    //DataTable dt = (DataTable)(searchProposalShowDgv.DataSource);
+
+                    Report report = new Report();
+                    report.Load("report1.frx");
+                    report.SetParameterValue("r_title", reportTitleTxtbx.Text.ToString());
+                    report.SetParameterValue("r_totalRecords", reportDataGridView.Rows.Count.ToString());
+                    report.SetParameterValue("r_userInfo", user.U_LName);
+                    report.SetParameterValue("r_userTel", user.U_Tel);
+                    report.SetParameterValue("r_dateInfo", dbh.getDateHijri(DateTime.Now.ToString()));
+                    //TableDataSource table = report.GetDataSource("proposalTable") as TableDataSource;
+                    report.RegisterData(dt, "proposalTable");
+                    report.GetDataSource("proposalTable").Enabled = true;
+                    report.Prepare();
+                    report.Print();
+                }
+            }
+            catch (Exception ee)
+            {
+                if (user.U_NCode == 999999999) // to show exceptin for admin
+                {
+                    MessageBox.Show(ee.Message);
+                }
+                string context = "خطای فایل نامه";
+                Alert alert = new Alert(context, "bluegray", 15);
+            }
         }
     }
 }

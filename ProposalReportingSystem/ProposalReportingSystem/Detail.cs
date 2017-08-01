@@ -66,7 +66,7 @@ namespace ProposalReportingSystem
 
             detailSenderNameTxtbx.Text = dbh.getSenderName();
             detailSenderGradeTxtbx.Text = dbh.getSenderGrade();
-
+            detailRecieverNameTxtbx.Focus();
 
         }
 
@@ -258,7 +258,6 @@ namespace ProposalReportingSystem
 
                     report.SetParameterValue("l_psText", detailLetterPSTxtbx.Text);
 
-
                     report.Show();
                 }
                 catch(Exception ee)
@@ -284,6 +283,140 @@ namespace ProposalReportingSystem
                 detailValueTxtbx.Text = string.Format("{0:n0}", double.Parse(detailValueTxtbx.Text.ToString()));
                 detailValueTxtbx.SelectionStart = detailValueTxtbx.Text.Length;
                 detailValueTxtbx.SelectionLength = 0;
+            }
+        }
+
+        private void detailِFastPrintBtn_Click(object sender, EventArgs e)
+        {
+            if (detailRecieverNameTxtbx.Text == "")
+            {
+                string context = "عنوانی برای گیرنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailRecieverGradeTxtbx.Text == "")
+            {
+                string context = "عنوانی برای سمت گیرنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailSenderNameTxtbx.Text == "")
+            {
+                string context = "عنوانی برای فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            else if (detailSenderGradeTxtbx.Text == "")
+            {
+                string context = "عنوانی برای سمت فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }
+            /*else if (detailSenderTxtbx.Text == "")
+            {
+                string context = "عنوانی برای فرستنده نامه وارد کنید";
+                Alert alert = new Alert(context, "bluegray", 2);
+            }*/
+            else
+            {
+                try
+                {
+                    /*StiReport report = new StiReport();
+                    report.Load(Application.StartupPath + @"\Report2.mrt");
+
+                    detailPrintBtn.Enabled = false;
+                    detailPrintBtn.Enabled = true;
+
+                    report.Dictionary.Variables["employer"].Value = detailRecieverGradeTxtbx.Text;
+                    report.Dictionary.Variables["recieverName"].Value = detailRecieverNameTxtbx.Text;
+                    report.Dictionary.Variables["persianTitle"].Value = prop.PersianTitle.ToString();
+                    report.Dictionary.Variables["englishTitle"].Value = prop.EngTitle.ToString();
+                    report.Dictionary.Variables["executorName"].Value = "که توسط " + dbh.getExecutorName(prop.Executor) + " عضو محترم هیات علمی دانشکده "
+                                                                        + dbh.getExecutorFaculty(prop.Executor) + " این دانشگاه ارائه گردیده است، ارسال میگردد."
+                                                                        + " خواهشمند است دستور فرماييد اقدام مقتضي معمول و از نتيجه امر اين معاونت را مطلع فرمايند  " ;
+                    //report.Dictionary.Variables["moderatorName"].Value = detailSenderTxtbx.Text;
+                    //report.Dictionary.Variables["moderatorGrade"].Value = detailSenderGradeTxtbx.Text;
+                    report.Dictionary.Variables["moderatorName"].Value = detailSenderNameTxtbx.Text.ToString();
+                    report.Dictionary.Variables["moderatorGrade"].Value = detailSenderGradeTxtbx.Text.ToString();
+
+                    try
+                    {
+                        report.Compile();
+                        report.Show();
+                    }
+                    catch (Exception ee)
+                    {
+                        if (loginUserNCode == 999999999) // to show exceptin for admin
+                        {
+                            MessageBox.Show(ee.Message);
+                        }
+                        MessageBox.Show(ee.Message.ToString());
+                        string context = "خطای نام فرستنده یا گیرنده";
+                        Alert alert = new Alert(context, "bluegray", 15);
+                    }*/
+
+
+                    Report report = new Report();
+                    report.Load("report3.frx");
+                    report.SetParameterValue("l_date", detailLetterDateDts.GetText("yyyy/MM/dd"));
+                    report.SetParameterValue("l_number", detailLetterNumberTxtbx.Text);
+
+                    if (detailAttachmentChb.Checked)
+                    {
+                        report.SetParameterValue("l_attachment", "دارد");
+                    }
+                    else
+                    {
+                        report.SetParameterValue("l_attachment", "ندارد");
+                    }
+
+                    report.SetParameterValue("l_recieverName", detailRecieverNameTxtbx.Text);
+                    report.SetParameterValue("l_recieverGrade", detailRecieverGradeTxtbx.Text);
+
+                    if (detailMaleExecutorRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + "جنـاب آقای " + detailExecutorTxtbx.Text + " عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+                    else if (detailFemaleExecutorRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + "سرکار خانم " + detailExecutorTxtbx.Text + " عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+                    else
+                    {
+                        report.SetParameterValue("l_beforeTitle", "         بدین وسیله «یک نسخه» فرم مشروح پیشـنهاد پـروژه پژوهشـی " + detailExecutorTxtbx.Text + " عضــو محتــرم هیــات علمــی دانشــکده " + dbh.getExecutorFaculty(prop.Executor) + " تحت عنوان:");
+                    }
+
+                    report.SetParameterValue("l_title", "«" + detailPersianTitleTxtbx.Text + "»");
+                    report.SetParameterValue("l_afterTitle", "به حضور ایفاد می گردد. خواهشمند است ضمن بررسی و در صورت تایید نتیجه امر جهت تهیه نسخ مورد نیاز قرارداد و انعقاد آن به این مدیرت ابلاغ گردد.");
+
+                    report.SetParameterValue("l_senderName", detailSenderNameTxtbx.Text);
+                    report.SetParameterValue("l_senderGrade", detailSenderGradeTxtbx.Text);
+
+                    if (detailMaleRegistrantRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: " + "آقای" + " " + loginUser.U_LName);
+                    }
+                    else if (detailFemaleRegistrantRb.Checked == true)
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: " + "خانم" + " " + loginUser.U_LName);
+                    }
+                    else
+                    {
+                        report.SetParameterValue("l_registrant", "کارشناس مسئول پیگیری: " + loginUser.U_LName);
+                    }
+                    report.SetParameterValue("l_registrantInternal", "داخلی:");
+                    report.SetParameterValue("l_registrantInternalNumber", loginUser.U_Tel);
+                    report.SetParameterValue("l_registrantEmail", loginUser.U_Email);
+
+                    report.SetParameterValue("l_psText", detailLetterPSTxtbx.Text);
+
+                    report.Print();
+                }
+                catch (Exception ee)
+                {
+                    if (loginUserNCode == 999999999) // to show exceptin for admin
+                    {
+                        MessageBox.Show(ee.Message);
+                    }
+                    string context = "خطای فایل نامه";
+                    Alert alert = new Alert(context, "bluegray", 15);
+                }
             }
         }
     }
