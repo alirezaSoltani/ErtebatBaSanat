@@ -30,6 +30,10 @@
         {
             this.detailPanel = new System.Windows.Forms.Panel();
             this.letterInfoGb = new System.Windows.Forms.GroupBox();
+            this.detailOutputFileBtn = new DevComponents.DotNetBar.ButtonX();
+            this.detailExitBtn = new DevComponents.DotNetBar.ButtonX();
+            this.detailPreviewBtn = new DevComponents.DotNetBar.ButtonX();
+            this.detailFastPrintBtn = new DevComponents.DotNetBar.ButtonX();
             this.executorGenderGb = new System.Windows.Forms.GroupBox();
             this.detailMaleExecutorRb = new System.Windows.Forms.RadioButton();
             this.detailFemaleExecutorRb = new System.Windows.Forms.RadioButton();
@@ -43,10 +47,7 @@
             this.detailLetterNumberLbl = new System.Windows.Forms.Label();
             this.detailLetterDateDts = new Atf.UI.DateTimeSelector();
             this.detailLetterDateLbl = new System.Windows.Forms.Label();
-            this.detailPrintBtn = new System.Windows.Forms.Button();
             this.detailRecieverNameTxtbx = new System.Windows.Forms.TextBox();
-            this.detailOutputBtn = new System.Windows.Forms.Button();
-            this.detailCloseBtn = new System.Windows.Forms.Button();
             this.detailRecieverNameLbl = new System.Windows.Forms.Label();
             this.detailSenderGradeTxtbx = new System.Windows.Forms.TextBox();
             this.detailSenderNameLbl = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.detailValueLbl = new System.Windows.Forms.Label();
             this.detailStatusLbl = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.detailِFastPrintBtn = new System.Windows.Forms.Button();
             this.detailPanel.SuspendLayout();
             this.letterInfoGb.SuspendLayout();
             this.executorGenderGb.SuspendLayout();
@@ -111,7 +111,10 @@
             // 
             // letterInfoGb
             // 
-            this.letterInfoGb.Controls.Add(this.detailِFastPrintBtn);
+            this.letterInfoGb.Controls.Add(this.detailOutputFileBtn);
+            this.letterInfoGb.Controls.Add(this.detailExitBtn);
+            this.letterInfoGb.Controls.Add(this.detailPreviewBtn);
+            this.letterInfoGb.Controls.Add(this.detailFastPrintBtn);
             this.letterInfoGb.Controls.Add(this.executorGenderGb);
             this.letterInfoGb.Controls.Add(this.registrantGenderGb);
             this.letterInfoGb.Controls.Add(this.detailLetterPSTxtbx);
@@ -121,10 +124,7 @@
             this.letterInfoGb.Controls.Add(this.detailLetterNumberLbl);
             this.letterInfoGb.Controls.Add(this.detailLetterDateDts);
             this.letterInfoGb.Controls.Add(this.detailLetterDateLbl);
-            this.letterInfoGb.Controls.Add(this.detailPrintBtn);
             this.letterInfoGb.Controls.Add(this.detailRecieverNameTxtbx);
-            this.letterInfoGb.Controls.Add(this.detailOutputBtn);
-            this.letterInfoGb.Controls.Add(this.detailCloseBtn);
             this.letterInfoGb.Controls.Add(this.detailRecieverNameLbl);
             this.letterInfoGb.Controls.Add(this.detailSenderGradeTxtbx);
             this.letterInfoGb.Controls.Add(this.detailSenderNameLbl);
@@ -135,10 +135,82 @@
             this.letterInfoGb.Location = new System.Drawing.Point(18, 413);
             this.letterInfoGb.Name = "letterInfoGb";
             this.letterInfoGb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.letterInfoGb.Size = new System.Drawing.Size(957, 252);
+            this.letterInfoGb.Size = new System.Drawing.Size(957, 261);
             this.letterInfoGb.TabIndex = 48;
             this.letterInfoGb.TabStop = false;
             this.letterInfoGb.Text = "اطلاعات نامه";
+            // 
+            // detailOutputFileBtn
+            // 
+            this.detailOutputFileBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.detailOutputFileBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.detailOutputFileBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailOutputFileBtn.Image = global::ProposalReportingSystem.Properties.Resources.attach_1_;
+            this.detailOutputFileBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.detailOutputFileBtn.ImageTextSpacing = 7;
+            this.detailOutputFileBtn.Location = new System.Drawing.Point(130, 214);
+            this.detailOutputFileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailOutputFileBtn.Name = "detailOutputFileBtn";
+            this.detailOutputFileBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
+            this.detailOutputFileBtn.Size = new System.Drawing.Size(146, 36);
+            this.detailOutputFileBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.detailOutputFileBtn.TabIndex = 62;
+            this.detailOutputFileBtn.Text = "فایل پروپوزال";
+            this.detailOutputFileBtn.Click += new System.EventHandler(this.detailOutputFileBtn_Click);
+            // 
+            // detailExitBtn
+            // 
+            this.detailExitBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.detailExitBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.detailExitBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailExitBtn.Image = global::ProposalReportingSystem.Properties.Resources.logout_2____Copy;
+            this.detailExitBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.detailExitBtn.ImageTextSpacing = 7;
+            this.detailExitBtn.Location = new System.Drawing.Point(24, 214);
+            this.detailExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailExitBtn.Name = "detailExitBtn";
+            this.detailExitBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
+            this.detailExitBtn.Size = new System.Drawing.Size(100, 36);
+            this.detailExitBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.detailExitBtn.TabIndex = 61;
+            this.detailExitBtn.Text = "خروج";
+            this.detailExitBtn.Click += new System.EventHandler(this.detailExitBtn_Click);
+            // 
+            // detailPreviewBtn
+            // 
+            this.detailPreviewBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.detailPreviewBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.detailPreviewBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailPreviewBtn.Image = global::ProposalReportingSystem.Properties.Resources.preview_1_;
+            this.detailPreviewBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.detailPreviewBtn.ImageTextSpacing = 2;
+            this.detailPreviewBtn.Location = new System.Drawing.Point(282, 214);
+            this.detailPreviewBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailPreviewBtn.Name = "detailPreviewBtn";
+            this.detailPreviewBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
+            this.detailPreviewBtn.Size = new System.Drawing.Size(155, 36);
+            this.detailPreviewBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.detailPreviewBtn.TabIndex = 60;
+            this.detailPreviewBtn.Text = "پیش نمایش نامه";
+            this.detailPreviewBtn.Click += new System.EventHandler(this.detailPreviewBtn_Click);
+            // 
+            // detailFastPrintBtn
+            // 
+            this.detailFastPrintBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.detailFastPrintBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.detailFastPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.detailFastPrintBtn.Image = global::ProposalReportingSystem.Properties.Resources.printer_1_;
+            this.detailFastPrintBtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.detailFastPrintBtn.ImageTextSpacing = 7;
+            this.detailFastPrintBtn.Location = new System.Drawing.Point(443, 214);
+            this.detailFastPrintBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailFastPrintBtn.Name = "detailFastPrintBtn";
+            this.detailFastPrintBtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
+            this.detailFastPrintBtn.Size = new System.Drawing.Size(146, 36);
+            this.detailFastPrintBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.detailFastPrintBtn.TabIndex = 59;
+            this.detailFastPrintBtn.Text = "پرینت نامه";
+            this.detailFastPrintBtn.Click += new System.EventHandler(this.detailFastPrintBtn_Click);
             // 
             // executorGenderGb
             // 
@@ -147,7 +219,7 @@
             this.executorGenderGb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.executorGenderGb.Location = new System.Drawing.Point(596, 143);
             this.executorGenderGb.Name = "executorGenderGb";
-            this.executorGenderGb.Size = new System.Drawing.Size(335, 47);
+            this.executorGenderGb.Size = new System.Drawing.Size(335, 54);
             this.executorGenderGb.TabIndex = 58;
             this.executorGenderGb.TabStop = false;
             this.executorGenderGb.Text = "مجری";
@@ -177,9 +249,9 @@
             this.registrantGenderGb.Controls.Add(this.detailMaleRegistrantRb);
             this.registrantGenderGb.Controls.Add(this.detailFemaleRegistrantRb);
             this.registrantGenderGb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.registrantGenderGb.Location = new System.Drawing.Point(596, 194);
+            this.registrantGenderGb.Location = new System.Drawing.Point(597, 196);
             this.registrantGenderGb.Name = "registrantGenderGb";
-            this.registrantGenderGb.Size = new System.Drawing.Size(335, 47);
+            this.registrantGenderGb.Size = new System.Drawing.Size(335, 54);
             this.registrantGenderGb.TabIndex = 57;
             this.registrantGenderGb.TabStop = false;
             this.registrantGenderGb.Text = "کارشناس";
@@ -285,17 +357,6 @@
             this.detailLetterDateLbl.Text = "تاریخ";
             this.detailLetterDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // detailPrintBtn
-            // 
-            this.detailPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailPrintBtn.Location = new System.Drawing.Point(302, 208);
-            this.detailPrintBtn.Name = "detailPrintBtn";
-            this.detailPrintBtn.Size = new System.Drawing.Size(135, 36);
-            this.detailPrintBtn.TabIndex = 7;
-            this.detailPrintBtn.Text = "پیش نمایش نامه";
-            this.detailPrintBtn.UseVisualStyleBackColor = true;
-            this.detailPrintBtn.Click += new System.EventHandler(this.detailPrintBtn_Click);
-            // 
             // detailRecieverNameTxtbx
             // 
             this.detailRecieverNameTxtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
@@ -307,28 +368,6 @@
             this.detailRecieverNameTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.detailRecieverNameTxtbx.Size = new System.Drawing.Size(233, 33);
             this.detailRecieverNameTxtbx.TabIndex = 2;
-            // 
-            // detailOutputBtn
-            // 
-            this.detailOutputBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailOutputBtn.Location = new System.Drawing.Point(162, 208);
-            this.detailOutputBtn.Name = "detailOutputBtn";
-            this.detailOutputBtn.Size = new System.Drawing.Size(127, 36);
-            this.detailOutputBtn.TabIndex = 8;
-            this.detailOutputBtn.Text = "فایل پروپوزال";
-            this.detailOutputBtn.UseVisualStyleBackColor = true;
-            this.detailOutputBtn.Click += new System.EventHandler(this.detailOutputBtn_Click);
-            // 
-            // detailCloseBtn
-            // 
-            this.detailCloseBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailCloseBtn.Location = new System.Drawing.Point(25, 208);
-            this.detailCloseBtn.Name = "detailCloseBtn";
-            this.detailCloseBtn.Size = new System.Drawing.Size(127, 36);
-            this.detailCloseBtn.TabIndex = 9;
-            this.detailCloseBtn.Text = "خروج";
-            this.detailCloseBtn.UseVisualStyleBackColor = true;
-            this.detailCloseBtn.Click += new System.EventHandler(this.detailCloseBtn_Click);
             // 
             // detailRecieverNameLbl
             // 
@@ -648,7 +687,7 @@
             this.detailEditionNumberTxtbx.PreventEnterBeep = true;
             this.detailEditionNumberTxtbx.ReadOnly = true;
             this.detailEditionNumberTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailEditionNumberTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailEditionNumberTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailEditionNumberTxtbx.TabIndex = 23;
             this.detailEditionNumberTxtbx.TabStop = false;
             // 
@@ -720,7 +759,7 @@
             this.detailRegistrantTxtbx.PreventEnterBeep = true;
             this.detailRegistrantTxtbx.ReadOnly = true;
             this.detailRegistrantTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegistrantTxtbx.Size = new System.Drawing.Size(489, 35);
+            this.detailRegistrantTxtbx.Size = new System.Drawing.Size(489, 33);
             this.detailRegistrantTxtbx.TabIndex = 22;
             this.detailRegistrantTxtbx.TabStop = false;
             // 
@@ -755,7 +794,7 @@
             this.detailOrganizationTxtbx.PreventEnterBeep = true;
             this.detailOrganizationTxtbx.ReadOnly = true;
             this.detailOrganizationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailOrganizationTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailOrganizationTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailOrganizationTxtbx.TabIndex = 19;
             this.detailOrganizationTxtbx.TabStop = false;
             // 
@@ -778,7 +817,7 @@
             this.detailStartDateTxtbx.PreventEnterBeep = true;
             this.detailStartDateTxtbx.ReadOnly = true;
             this.detailStartDateTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStartDateTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailStartDateTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailStartDateTxtbx.TabIndex = 14;
             this.detailStartDateTxtbx.TabStop = false;
             // 
@@ -801,7 +840,7 @@
             this.detailPropertyTxtbx.PreventEnterBeep = true;
             this.detailPropertyTxtbx.ReadOnly = true;
             this.detailPropertyTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailPropertyTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailPropertyTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailPropertyTxtbx.TabIndex = 16;
             this.detailPropertyTxtbx.TabStop = false;
             // 
@@ -848,7 +887,7 @@
             this.detailValueTxtbx.PreventEnterBeep = true;
             this.detailValueTxtbx.ReadOnly = true;
             this.detailValueTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailValueTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailValueTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailValueTxtbx.TabIndex = 20;
             this.detailValueTxtbx.TabStop = false;
             this.detailValueTxtbx.TextChanged += new System.EventHandler(this.detailValueTxtbx_TextChanged);
@@ -884,7 +923,7 @@
             this.detailRegisterTypeTxtbx.PreventEnterBeep = true;
             this.detailRegisterTypeTxtbx.ReadOnly = true;
             this.detailRegisterTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailRegisterTypeTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailRegisterTypeTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailRegisterTypeTxtbx.TabIndex = 17;
             this.detailRegisterTypeTxtbx.TabStop = false;
             // 
@@ -907,7 +946,7 @@
             this.detailProcedureTypeTxtbx.PreventEnterBeep = true;
             this.detailProcedureTypeTxtbx.ReadOnly = true;
             this.detailProcedureTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProcedureTypeTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailProcedureTypeTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailProcedureTypeTxtbx.TabIndex = 16;
             this.detailProcedureTypeTxtbx.TabStop = false;
             // 
@@ -930,7 +969,7 @@
             this.detailDurationTxtbx.PreventEnterBeep = true;
             this.detailDurationTxtbx.ReadOnly = true;
             this.detailDurationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailDurationTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailDurationTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailDurationTxtbx.TabIndex = 15;
             this.detailDurationTxtbx.TabStop = false;
             // 
@@ -1001,7 +1040,7 @@
             this.detailProposalTypeTxtbx.PreventEnterBeep = true;
             this.detailProposalTypeTxtbx.ReadOnly = true;
             this.detailProposalTypeTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailProposalTypeTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailProposalTypeTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailProposalTypeTxtbx.TabIndex = 18;
             this.detailProposalTypeTxtbx.TabStop = false;
             // 
@@ -1036,7 +1075,7 @@
             this.detailStatusTxtbx.PreventEnterBeep = true;
             this.detailStatusTxtbx.ReadOnly = true;
             this.detailStatusTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.detailStatusTxtbx.Size = new System.Drawing.Size(158, 35);
+            this.detailStatusTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailStatusTxtbx.TabIndex = 21;
             this.detailStatusTxtbx.TabStop = false;
             // 
@@ -1063,17 +1102,6 @@
             this.detailStatusLbl.TabIndex = 26;
             this.detailStatusLbl.Text = "وضعیت";
             this.detailStatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // detailِFastPrintBtn
-            // 
-            this.detailِFastPrintBtn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.detailِFastPrintBtn.Location = new System.Drawing.Point(443, 208);
-            this.detailِFastPrintBtn.Name = "detailِFastPrintBtn";
-            this.detailِFastPrintBtn.Size = new System.Drawing.Size(135, 36);
-            this.detailِFastPrintBtn.TabIndex = 8;
-            this.detailِFastPrintBtn.Text = "پرینت نامه";
-            this.detailِFastPrintBtn.UseVisualStyleBackColor = true;
-            this.detailِFastPrintBtn.Click += new System.EventHandler(this.detailِFastPrintBtn_Click);
             // 
             // Detail
             // 
@@ -1128,9 +1156,6 @@
         private System.Windows.Forms.Label detailStatusLbl;
         private System.Windows.Forms.Label detailValueLbl;
         private System.Windows.Forms.Label detailOrganizationLbl;
-        private System.Windows.Forms.Button detailPrintBtn;
-        private System.Windows.Forms.Button detailOutputBtn;
-        private System.Windows.Forms.Button detailCloseBtn;
         private System.Windows.Forms.Label detailRegistrantLbl;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevComponents.DotNetBar.Controls.TextBoxX detailValueTxtbx;
@@ -1167,6 +1192,9 @@
         private System.Windows.Forms.GroupBox registrantGenderGb;
         private System.Windows.Forms.RadioButton detailMaleRegistrantRb;
         private System.Windows.Forms.RadioButton detailFemaleRegistrantRb;
-        private System.Windows.Forms.Button detailِFastPrintBtn;
+        private DevComponents.DotNetBar.ButtonX detailFastPrintBtn;
+        private DevComponents.DotNetBar.ButtonX detailPreviewBtn;
+        private DevComponents.DotNetBar.ButtonX detailExitBtn;
+        private DevComponents.DotNetBar.ButtonX detailOutputFileBtn;
     }
 }

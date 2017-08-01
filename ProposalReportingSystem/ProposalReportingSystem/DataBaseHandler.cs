@@ -1878,7 +1878,7 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
 
                     transaction.Commit();
-                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات با موفقیت انجام شد", "تایید", "", "", "success");
+                    popup = new PopUp("ثبت موفقیت آمیز", "افزودن اطلاعات استاد با موفقیت انجام شد", "تایید", "", "", "success");
                     popup.ShowDialog();
                 }
                 catch (Exception e)

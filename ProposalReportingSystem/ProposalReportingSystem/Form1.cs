@@ -699,31 +699,31 @@ namespace ProposalReportingSystem
             gl.setSize(appSettingNavigationNextPageBtn, 345, 10, 85, 40);
             gl.setSize(appSettingNavigationLastPageBtn, 440, 10, 85, 40);
 
-            gl.setSize(appSettingCoRbtn, 138, 20, 98, 23);
+            gl.setSize(appSettingCoRbtn, 138, 20, 98, 35);
             gl.setSize(appSettingCoTxtbx, 55, 60, 170, 35);
 
-            gl.setSize(appSettingRegTypeRbtn, 432, 20, 98, 23);
+            gl.setSize(appSettingRegTypeRbtn, 432, 20, 98, 35);
             gl.setSize(appSettingRegTypeTxtbx, 350, 60, 170, 35);
 
-            gl.setSize(appSettingProcedureTypeRbtn, 685, 20, 98, 23);
+            gl.setSize(appSettingProcedureTypeRbtn, 687, 20, 98, 35);
             gl.setSize(appSettingProcedureTypeTxtbx, 605, 60, 170, 35);
 
-            gl.setSize(appSettingStatusRbtn, 138, 110, 98, 23);
+            gl.setSize(appSettingStatusRbtn, 138, 110, 98, 35);
             gl.setSize(appSettingStatusTxtbx, 55, 150, 170, 35);
 
-            gl.setSize(appSettingProTypeRbtn, 432, 110, 98, 23);
+            gl.setSize(appSettingProTypeRbtn, 432, 110, 98, 35);
             gl.setSize(appSettingProTypeTxtbx, 350, 150, 170, 35);
 
-            gl.setSize(appSettingPropertyRbtn, 685, 110, 98, 23);
+            gl.setSize(appSettingPropertyRbtn, 687, 110, 98, 35);
             gl.setSize(appSettingPropertyTxtbx, 605, 150, 170, 35);
 
-            gl.setSize(appSettingFacultyRbtn, 685, 210, 98, 23);
+            gl.setSize(appSettingFacultyRbtn, 687, 210, 98, 35);
             gl.setSize(appSettingFacultyTxtbx, 605, 250, 170, 35);
 
-            gl.setSize(appSettingEgroupRbtn, 432, 210, 98, 23);
+            gl.setSize(appSettingEgroupRbtn, 432, 210, 98, 35);
             gl.setSize(appSettingEgroupTxtbx, 350, 250, 170, 35);
 
-            gl.setSize(appSettingEdegreeRbtn, 132, 210, 98, 23);
+            gl.setSize(appSettingEdegreeRbtn, 138, 210, 98, 35);
             gl.setSize(appSettingEdegreeTxtbx, 55, 250, 170, 35);
 
             gl.setSize(appSettingAddBtn, 55, 315, 80, 30);
