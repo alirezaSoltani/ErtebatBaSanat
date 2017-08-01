@@ -657,7 +657,7 @@ namespace ProposalReportingSystem
             gl.setSize(manageUserManageTypeCb, 20, 175, 150, 35);
             gl.setSize(manageUserFacultyCb, 110, 215, 60, 35);
             gl.setSize(manageUserFacultyCmb, 20, 220, 90, 35);
-            gl.setSize(manageUserReadOnlyCb, 155, 215, 150, 35);
+            gl.setSize(manageUserReadOnlyCb, 175, 215, 130, 35);
 
 
             gl.setSize(manageUserAddBtn, 40, 360, 80, 30);
@@ -6437,7 +6437,15 @@ namespace ProposalReportingSystem
                 {
                     manageUserFacultyCb.Checked = true;
                 }
-                manageUserFacultyCmb.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_faculty"].Value.ToString();
+                if (manageUserShowDgv.Rows[e.RowIndex].Cells["u_faculty"].Value.ToString() == "")
+                {
+                    manageUserFacultyCmb.SelectedIndex = -1;
+                }
+                else
+                {
+                    manageUserFacultyCmb.Text = manageUserShowDgv.Rows[e.RowIndex].Cells["u_faculty"].Value.ToString();
+                }
+               
 
                 if (Int16.Parse(manageUserShowDgv.Rows[e.RowIndex].Cells["u_otherAccess"].Value.ToString())==1)
                 {
@@ -6462,13 +6470,6 @@ namespace ProposalReportingSystem
             catch (ArgumentOutOfRangeException) { }
         }
 
-        private void searchProposalExecutorFNameTxtbx_Enter(object sender, EventArgs e)
-        {
-            if (searchProposalExecutorNCodeTxtbx.Text.Length < 10)
-            {
-                searchProposalExecutorNCodeTxtbx.BackColor = Color.Pink;
-            }
-        }
 
         private void appSettingEdegreeRbtn_Click(object sender, EventArgs e)
         {

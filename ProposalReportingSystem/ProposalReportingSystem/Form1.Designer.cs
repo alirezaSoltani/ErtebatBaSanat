@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
             DevComponents.DotNetBar.Controls.ColorData colorData1 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData2 = new DevComponents.DotNetBar.Controls.ColorData();
@@ -46,10 +46,10 @@
             DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
             DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.home_tab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
@@ -365,7 +365,6 @@
             this.addProposalKeywordsTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalPersianTitleTxtbx = new System.Windows.Forms.TextBox();
             this.addProposalClearBtn = new DevComponents.DotNetBar.ButtonX();
-            this.addProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
             this.superTabControlPanel12 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.manageTeacherPanel = new System.Windows.Forms.Panel();
             this.teacherManageShowGp = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -449,20 +448,15 @@
             this.menuSearchProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuAddProposalBtn = new DevComponents.DotNetBar.ButtonX();
             this.menuHomeBtn = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem41 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem40 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
-            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.addProposalRegisterBtn = new DevComponents.DotNetBar.ButtonX();
+            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem39 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
+            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
             this.logTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
@@ -471,24 +465,29 @@
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.manageProposalTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem39 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem14 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem15 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem17 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem18 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabItem19 = new DevComponents.DotNetBar.SuperTabItem();
-            this.searchProposalTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.addProposalTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem40 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem20 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem21 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem23 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem24 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem25 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageTeacherTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem41 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem26 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem27 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem29 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem30 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabItem31 = new DevComponents.DotNetBar.SuperTabItem();
+            this.manageUserTab = new DevComponents.DotNetBar.SuperTabItem();
             this.personalSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.homeUserProfileLbl = new System.Windows.Forms.Label();
+            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem32 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem33 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem35 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem36 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem37 = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingsTab = new DevComponents.DotNetBar.SuperTabItem();
-            this.homeUserProfileLbl = new System.Windows.Forms.Label();
-            this.homeTab = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem16 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItem22 = new DevComponents.DotNetBar.SuperTabItem();
@@ -496,6 +495,7 @@
             this.superTabItem34 = new DevComponents.DotNetBar.SuperTabItem();
             this.sysLogTab = new DevComponents.DotNetBar.SuperTabItem();
             this.exitTab = new DevComponents.DotNetBar.SuperTabItem();
+            this.aboutUsTab = new DevComponents.DotNetBar.SuperTabItem();
             this.appSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -634,15 +634,15 @@
             this.mainPage.ControlBox.CloseBox});
             this.mainPage.Controls.Add(this.superTabControlPanel2);
             this.mainPage.Controls.Add(this.superTabControlPanel1);
-            this.mainPage.Controls.Add(this.superTabControlPanel4);
-            this.mainPage.Controls.Add(this.superTabControlPanel12);
-            this.mainPage.Controls.Add(this.superTabControlPanel5);
             this.mainPage.Controls.Add(this.superTabControlPanel3);
+            this.mainPage.Controls.Add(this.superTabControlPanel5);
+            this.mainPage.Controls.Add(this.superTabControlPanel12);
+            this.mainPage.Controls.Add(this.superTabControlPanel4);
             this.mainPage.Controls.Add(this.superTabControlPanel7);
-            this.mainPage.Controls.Add(this.superTabControlPanel10);
             this.mainPage.Controls.Add(this.superTabControlPanel6);
             this.mainPage.Controls.Add(this.superTabControlPanel11);
             this.mainPage.Controls.Add(this.superTabControlPanel13);
+            this.mainPage.Controls.Add(this.superTabControlPanel10);
             this.mainPage.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.mainPage.Location = new System.Drawing.Point(0, 15);
             this.mainPage.Margin = new System.Windows.Forms.Padding(4);
@@ -1338,6 +1338,7 @@
             this.manageUserNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
             this.manageUserNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationShowAllBtn.Name = "manageUserNavigationShowAllBtn";
+            this.manageUserNavigationShowAllBtn.ShowSubItems = false;
             this.manageUserNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1373,6 +1374,7 @@
             this.manageUserNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.manageUserNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationNextPageBtn.Name = "manageUserNavigationNextPageBtn";
+            this.manageUserNavigationNextPageBtn.ShowSubItems = false;
             this.manageUserNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1389,6 +1391,7 @@
             this.manageUserNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.manageUserNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationLastPageBtn.Name = "manageUserNavigationLastPageBtn";
+            this.manageUserNavigationLastPageBtn.ShowSubItems = false;
             this.manageUserNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1405,6 +1408,7 @@
             this.manageUserNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.manageUserNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationPreviousPageBtn.Name = "manageUserNavigationPreviousPageBtn";
+            this.manageUserNavigationPreviousPageBtn.ShowSubItems = false;
             this.manageUserNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1421,6 +1425,7 @@
             this.manageUserNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.manageUserNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationFirstPageBtn.Name = "manageUserNavigationFirstPageBtn";
+            this.manageUserNavigationFirstPageBtn.ShowSubItems = false;
             this.manageUserNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1437,6 +1442,7 @@
             this.manageUserNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.manageUserNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageUserNavigationReturnBtn.Name = "manageUserNavigationReturnBtn";
+            this.manageUserNavigationReturnBtn.ShowSubItems = false;
             this.manageUserNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.manageUserNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageUserNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1459,14 +1465,14 @@
             this.manageUserShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageUserShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageUserShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageUserShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.manageUserShowDgv.RowTemplate.Height = 24;
             this.manageUserShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageUserShowDgv.Size = new System.Drawing.Size(1093, 135);
@@ -1995,6 +2001,7 @@
             this.appSettingNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.appSettingNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appSettingNavigationNextPageBtn.Name = "appSettingNavigationNextPageBtn";
+            this.appSettingNavigationNextPageBtn.ShowSubItems = false;
             this.appSettingNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.appSettingNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.appSettingNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2011,6 +2018,7 @@
             this.appSettingNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.appSettingNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appSettingNavigationLastPageBtn.Name = "appSettingNavigationLastPageBtn";
+            this.appSettingNavigationLastPageBtn.ShowSubItems = false;
             this.appSettingNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.appSettingNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.appSettingNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2027,6 +2035,7 @@
             this.appSettingNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.appSettingNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appSettingNavigationPreviousPageBtn.Name = "appSettingNavigationPreviousPageBtn";
+            this.appSettingNavigationPreviousPageBtn.ShowSubItems = false;
             this.appSettingNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.appSettingNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.appSettingNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2043,6 +2052,7 @@
             this.appSettingNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.appSettingNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appSettingNavigationFirstPageBtn.Name = "appSettingNavigationFirstPageBtn";
+            this.appSettingNavigationFirstPageBtn.ShowSubItems = false;
             this.appSettingNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.appSettingNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.appSettingNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2059,6 +2069,7 @@
             this.appSettingNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.appSettingNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appSettingNavigationReturnBtn.Name = "appSettingNavigationReturnBtn";
+            this.appSettingNavigationReturnBtn.ShowSubItems = false;
             this.appSettingNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.appSettingNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.appSettingNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2873,6 +2884,7 @@
             this.searchProposalNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
             this.searchProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationShowAllBtn.Name = "searchProposalNavigationShowAllBtn";
+            this.searchProposalNavigationShowAllBtn.ShowSubItems = false;
             this.searchProposalNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2910,6 +2922,7 @@
             this.searchProposalNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.searchProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationNextPageBtn.Name = "searchProposalNavigationNextPageBtn";
+            this.searchProposalNavigationNextPageBtn.ShowSubItems = false;
             this.searchProposalNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2928,6 +2941,7 @@
             this.searchProposalNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.searchProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationLastPageBtn.Name = "searchProposalNavigationLastPageBtn";
+            this.searchProposalNavigationLastPageBtn.ShowSubItems = false;
             this.searchProposalNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2946,6 +2960,7 @@
             this.searchProposalNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.searchProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationPreviousPageBtn.Name = "searchProposalNavigationPreviousPageBtn";
+            this.searchProposalNavigationPreviousPageBtn.ShowSubItems = false;
             this.searchProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2964,6 +2979,7 @@
             this.searchProposalNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.searchProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationFirstPageBtn.Name = "searchProposalNavigationFirstPageBtn";
+            this.searchProposalNavigationFirstPageBtn.ShowSubItems = false;
             this.searchProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2982,6 +2998,7 @@
             this.searchProposalNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.searchProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchProposalNavigationReturnBtn.Name = "searchProposalNavigationReturnBtn";
+            this.searchProposalNavigationReturnBtn.ShowSubItems = false;
             this.searchProposalNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.searchProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.searchProposalNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -3005,14 +3022,14 @@
             this.searchProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.searchProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.searchProposalShowDgv.RowTemplate.Height = 24;
             this.searchProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchProposalShowDgv.Size = new System.Drawing.Size(1075, 137);
@@ -4561,6 +4578,7 @@
             this.manageProposalNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.manageProposalNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationNextPageBtn.Name = "manageProposalNavigationNextPageBtn";
+            this.manageProposalNavigationNextPageBtn.ShowSubItems = false;
             this.manageProposalNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4579,6 +4597,7 @@
             this.manageProposalNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.manageProposalNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationLastPageBtn.Name = "manageProposalNavigationLastPageBtn";
+            this.manageProposalNavigationLastPageBtn.ShowSubItems = false;
             this.manageProposalNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4596,6 +4615,7 @@
             this.manageProposalNavigationShowAllBtn.Location = new System.Drawing.Point(697, 4);
             this.manageProposalNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationShowAllBtn.Name = "manageProposalNavigationShowAllBtn";
+            this.manageProposalNavigationShowAllBtn.ShowSubItems = false;
             this.manageProposalNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4615,6 +4635,7 @@
             this.manageProposalNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.manageProposalNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationPreviousPageBtn.Name = "manageProposalNavigationPreviousPageBtn";
+            this.manageProposalNavigationPreviousPageBtn.ShowSubItems = false;
             this.manageProposalNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4633,6 +4654,7 @@
             this.manageProposalNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.manageProposalNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationFirstPageBtn.Name = "manageProposalNavigationFirstPageBtn";
+            this.manageProposalNavigationFirstPageBtn.ShowSubItems = false;
             this.manageProposalNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4651,6 +4673,7 @@
             this.manageProposalNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.manageProposalNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageProposalNavigationReturnBtn.Name = "manageProposalNavigationReturnBtn";
+            this.manageProposalNavigationReturnBtn.ShowSubItems = false;
             this.manageProposalNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.manageProposalNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageProposalNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -4674,14 +4697,14 @@
             this.editProposalShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.editProposalShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.editProposalShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editProposalShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.editProposalShowDgv.RowTemplate.Height = 24;
             this.editProposalShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.editProposalShowDgv.Size = new System.Drawing.Size(1075, 121);
@@ -5634,19 +5657,6 @@
             this.addProposalClearBtn.Text = "پاک کردن";
             this.addProposalClearBtn.Click += new System.EventHandler(this.addProposalClearBtn_Click);
             // 
-            // addProposalRegisterBtn
-            // 
-            this.addProposalRegisterBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.addProposalRegisterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.addProposalRegisterBtn.Location = new System.Drawing.Point(92, 306);
-            this.addProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addProposalRegisterBtn.Name = "addProposalRegisterBtn";
-            this.addProposalRegisterBtn.Size = new System.Drawing.Size(144, 30);
-            this.addProposalRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
-            this.addProposalRegisterBtn.TabIndex = 27;
-            this.addProposalRegisterBtn.Text = "ثبت اطلاعات";
-            this.addProposalRegisterBtn.Click += new System.EventHandler(this.addProposalRegisterBtn_Click);
-            // 
             // superTabControlPanel12
             // 
             this.superTabControlPanel12.Controls.Add(this.manageTeacherPanel);
@@ -5740,6 +5750,7 @@
             this.manageTeacherNavigationShowAllBtn.Location = new System.Drawing.Point(696, 4);
             this.manageTeacherNavigationShowAllBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationShowAllBtn.Name = "manageTeacherNavigationShowAllBtn";
+            this.manageTeacherNavigationShowAllBtn.ShowSubItems = false;
             this.manageTeacherNavigationShowAllBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationShowAllBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationShowAllBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5778,6 +5789,7 @@
             this.manageTeacherNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.manageTeacherNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationNextPageBtn.Name = "manageTeacherNavigationNextPageBtn";
+            this.manageTeacherNavigationNextPageBtn.ShowSubItems = false;
             this.manageTeacherNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5796,6 +5808,7 @@
             this.manageTeacherNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.manageTeacherNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationLastPageBtn.Name = "manageTeacherNavigationLastPageBtn";
+            this.manageTeacherNavigationLastPageBtn.ShowSubItems = false;
             this.manageTeacherNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5814,6 +5827,7 @@
             this.manageTeacherNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.manageTeacherNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationPreviousPageBtn.Name = "manageTeacherNavigationPreviousPageBtn";
+            this.manageTeacherNavigationPreviousPageBtn.ShowSubItems = false;
             this.manageTeacherNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5832,6 +5846,7 @@
             this.manageTeacherNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.manageTeacherNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationFirstPageBtn.Name = "manageTeacherNavigationFirstPageBtn";
+            this.manageTeacherNavigationFirstPageBtn.ShowSubItems = false;
             this.manageTeacherNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5850,6 +5865,7 @@
             this.manageTeacherNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.manageTeacherNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manageTeacherNavigationReturnBtn.Name = "manageTeacherNavigationReturnBtn";
+            this.manageTeacherNavigationReturnBtn.ShowSubItems = false;
             this.manageTeacherNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.manageTeacherNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.manageTeacherNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -5872,14 +5888,14 @@
             this.manageTeacherShowDgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manageTeacherShowDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.manageTeacherShowDgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(226)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.manageTeacherShowDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.manageTeacherShowDgv.RowTemplate.Height = 24;
             this.manageTeacherShowDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageTeacherShowDgv.Size = new System.Drawing.Size(1075, 153);
@@ -6505,6 +6521,7 @@
             this.logNavigationNextPageBtn.Location = new System.Drawing.Point(465, 4);
             this.logNavigationNextPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logNavigationNextPageBtn.Name = "logNavigationNextPageBtn";
+            this.logNavigationNextPageBtn.ShowSubItems = false;
             this.logNavigationNextPageBtn.Size = new System.Drawing.Size(109, 30);
             this.logNavigationNextPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.logNavigationNextPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -6522,6 +6539,7 @@
             this.logNavigationLastPageBtn.Location = new System.Drawing.Point(581, 4);
             this.logNavigationLastPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logNavigationLastPageBtn.Name = "logNavigationLastPageBtn";
+            this.logNavigationLastPageBtn.ShowSubItems = false;
             this.logNavigationLastPageBtn.Size = new System.Drawing.Size(109, 30);
             this.logNavigationLastPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.logNavigationLastPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -6539,6 +6557,7 @@
             this.logNavigationPreviousPageBtn.Location = new System.Drawing.Point(245, 4);
             this.logNavigationPreviousPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logNavigationPreviousPageBtn.Name = "logNavigationPreviousPageBtn";
+            this.logNavigationPreviousPageBtn.ShowSubItems = false;
             this.logNavigationPreviousPageBtn.Size = new System.Drawing.Size(109, 30);
             this.logNavigationPreviousPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.logNavigationPreviousPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -6556,6 +6575,7 @@
             this.logNavigationFirstPageBtn.Location = new System.Drawing.Point(129, 4);
             this.logNavigationFirstPageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logNavigationFirstPageBtn.Name = "logNavigationFirstPageBtn";
+            this.logNavigationFirstPageBtn.ShowSubItems = false;
             this.logNavigationFirstPageBtn.Size = new System.Drawing.Size(109, 30);
             this.logNavigationFirstPageBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.logNavigationFirstPageBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -6573,6 +6593,7 @@
             this.logNavigationReturnBtn.Location = new System.Drawing.Point(13, 4);
             this.logNavigationReturnBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logNavigationReturnBtn.Name = "logNavigationReturnBtn";
+            this.logNavigationReturnBtn.ShowSubItems = false;
             this.logNavigationReturnBtn.Size = new System.Drawing.Size(109, 30);
             this.logNavigationReturnBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.logNavigationReturnBtn.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -6614,7 +6635,7 @@
             this.superTabControlPanel13.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.superTabControlPanel13.Name = "superTabControlPanel13";
-            this.superTabControlPanel13.Size = new System.Drawing.Size(1139, 868);
+            this.superTabControlPanel13.Size = new System.Drawing.Size(1147, 868);
             this.superTabControlPanel13.TabIndex = 0;
             this.superTabControlPanel13.TabItem = this.exitTab;
             // 
@@ -6933,119 +6954,86 @@
             this.menuHomeBtn.Click += new System.EventHandler(this.menuHomeBtn_Click);
             this.menuHomeBtn.MouseEnter += new System.EventHandler(this.iconMenuPanel_MouseEnter);
             // 
-            // superTabItem41
+            // addProposalRegisterBtn
             // 
-            this.superTabItem41.GlobalItem = false;
-            this.superTabItem41.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem41.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem41.Name = "superTabItem41";
-            this.superTabItem41.Text = "لاگ";
+            this.addProposalRegisterBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.addProposalRegisterBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.addProposalRegisterBtn.ImageTextSpacing = 5;
+            this.addProposalRegisterBtn.Location = new System.Drawing.Point(92, 306);
+            this.addProposalRegisterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addProposalRegisterBtn.Name = "addProposalRegisterBtn";
+            this.addProposalRegisterBtn.Size = new System.Drawing.Size(144, 30);
+            this.addProposalRegisterBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.addProposalRegisterBtn.TabIndex = 27;
+            this.addProposalRegisterBtn.Text = "ثبت اطلاعات";
+            this.addProposalRegisterBtn.Click += new System.EventHandler(this.addProposalRegisterBtn_Click);
             // 
-            // superTabItem26
+            // addProposalTab
             // 
-            this.superTabItem26.GlobalItem = false;
-            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem26.Name = "superTabItem26";
-            this.superTabItem26.Text = "لاگ";
+            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
+            this.addProposalTab.GlobalItem = false;
+            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
+            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.addProposalTab.Name = "addProposalTab";
+            this.addProposalTab.Text = "افزودن پروپوزال";
+            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
             // 
-            // superTabItem27
+            // superTabItem39
             // 
-            this.superTabItem27.GlobalItem = false;
-            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem27.Name = "superTabItem27";
-            this.superTabItem27.Text = "لاگ";
+            this.superTabItem39.GlobalItem = false;
+            this.superTabItem39.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem39.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem39.Name = "superTabItem39";
+            this.superTabItem39.Text = "لاگ";
             // 
-            // superTabItem29
+            // superTabItem14
             // 
-            this.superTabItem29.GlobalItem = false;
-            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem29.Name = "superTabItem29";
-            this.superTabItem29.Text = "لاگ";
+            this.superTabItem14.GlobalItem = false;
+            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem14.Name = "superTabItem14";
+            this.superTabItem14.Text = "لاگ";
             // 
-            // superTabItem30
+            // superTabItem15
             // 
-            this.superTabItem30.GlobalItem = false;
-            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem30.Name = "superTabItem30";
-            this.superTabItem30.Text = "لاگ";
+            this.superTabItem15.GlobalItem = false;
+            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem15.Name = "superTabItem15";
+            this.superTabItem15.Text = "لاگ";
             // 
-            // superTabItem31
+            // superTabItem17
             // 
-            this.superTabItem31.GlobalItem = false;
-            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem31.Name = "superTabItem31";
-            this.superTabItem31.Text = "لاگ";
+            this.superTabItem17.GlobalItem = false;
+            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem17.Name = "superTabItem17";
+            this.superTabItem17.Text = "لاگ";
             // 
-            // manageUserTab
+            // superTabItem18
             // 
-            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
-            this.manageUserTab.GlobalItem = false;
-            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
-            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageUserTab.Name = "manageUserTab";
-            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
+            this.superTabItem18.GlobalItem = false;
+            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem18.Name = "superTabItem18";
+            this.superTabItem18.Text = "لاگ";
             // 
-            // superTabItem40
+            // superTabItem19
             // 
-            this.superTabItem40.GlobalItem = false;
-            this.superTabItem40.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem40.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem40.Name = "superTabItem40";
-            this.superTabItem40.Text = "لاگ";
+            this.superTabItem19.GlobalItem = false;
+            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem19.Name = "superTabItem19";
+            this.superTabItem19.Text = "لاگ";
             // 
-            // superTabItem20
+            // searchProposalTab
             // 
-            this.superTabItem20.GlobalItem = false;
-            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem20.Name = "superTabItem20";
-            this.superTabItem20.Text = "لاگ";
-            // 
-            // superTabItem21
-            // 
-            this.superTabItem21.GlobalItem = false;
-            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem21.Name = "superTabItem21";
-            this.superTabItem21.Text = "لاگ";
-            // 
-            // superTabItem23
-            // 
-            this.superTabItem23.GlobalItem = false;
-            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem23.Name = "superTabItem23";
-            this.superTabItem23.Text = "لاگ";
-            // 
-            // superTabItem24
-            // 
-            this.superTabItem24.GlobalItem = false;
-            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem24.Name = "superTabItem24";
-            this.superTabItem24.Text = "لاگ";
-            // 
-            // superTabItem25
-            // 
-            this.superTabItem25.GlobalItem = false;
-            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem25.Name = "superTabItem25";
-            this.superTabItem25.Text = "لاگ";
-            // 
-            // manageTeacherTab
-            // 
-            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
-            this.manageTeacherTab.GlobalItem = false;
-            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
-            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.manageTeacherTab.Name = "manageTeacherTab";
-            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
+            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
+            this.searchProposalTab.GlobalItem = false;
+            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
+            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.searchProposalTab.Name = "searchProposalTab";
+            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
             // 
             // logTab
             // 
@@ -7112,72 +7100,119 @@
             this.manageProposalTab.Name = "manageProposalTab";
             this.manageProposalTab.Text = "مدیریت اطلاعات پروپوزال";
             // 
-            // superTabItem39
+            // superTabItem40
             // 
-            this.superTabItem39.GlobalItem = false;
-            this.superTabItem39.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem39.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem39.Name = "superTabItem39";
-            this.superTabItem39.Text = "لاگ";
+            this.superTabItem40.GlobalItem = false;
+            this.superTabItem40.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem40.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem40.Name = "superTabItem40";
+            this.superTabItem40.Text = "لاگ";
             // 
-            // superTabItem14
+            // superTabItem20
             // 
-            this.superTabItem14.GlobalItem = false;
-            this.superTabItem14.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem14.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem14.Name = "superTabItem14";
-            this.superTabItem14.Text = "لاگ";
+            this.superTabItem20.GlobalItem = false;
+            this.superTabItem20.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem20.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem20.Name = "superTabItem20";
+            this.superTabItem20.Text = "لاگ";
             // 
-            // superTabItem15
+            // superTabItem21
             // 
-            this.superTabItem15.GlobalItem = false;
-            this.superTabItem15.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem15.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem15.Name = "superTabItem15";
-            this.superTabItem15.Text = "لاگ";
+            this.superTabItem21.GlobalItem = false;
+            this.superTabItem21.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem21.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem21.Name = "superTabItem21";
+            this.superTabItem21.Text = "لاگ";
             // 
-            // superTabItem17
+            // superTabItem23
             // 
-            this.superTabItem17.GlobalItem = false;
-            this.superTabItem17.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem17.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem17.Name = "superTabItem17";
-            this.superTabItem17.Text = "لاگ";
+            this.superTabItem23.GlobalItem = false;
+            this.superTabItem23.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem23.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem23.Name = "superTabItem23";
+            this.superTabItem23.Text = "لاگ";
             // 
-            // superTabItem18
+            // superTabItem24
             // 
-            this.superTabItem18.GlobalItem = false;
-            this.superTabItem18.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem18.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem18.Name = "superTabItem18";
-            this.superTabItem18.Text = "لاگ";
+            this.superTabItem24.GlobalItem = false;
+            this.superTabItem24.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem24.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem24.Name = "superTabItem24";
+            this.superTabItem24.Text = "لاگ";
             // 
-            // superTabItem19
+            // superTabItem25
             // 
-            this.superTabItem19.GlobalItem = false;
-            this.superTabItem19.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
-            this.superTabItem19.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.superTabItem19.Name = "superTabItem19";
-            this.superTabItem19.Text = "لاگ";
+            this.superTabItem25.GlobalItem = false;
+            this.superTabItem25.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem25.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem25.Name = "superTabItem25";
+            this.superTabItem25.Text = "لاگ";
             // 
-            // searchProposalTab
+            // manageTeacherTab
             // 
-            this.searchProposalTab.AttachedControl = this.superTabControlPanel3;
-            this.searchProposalTab.GlobalItem = false;
-            this.searchProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.search;
-            this.searchProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.searchProposalTab.Name = "searchProposalTab";
-            this.searchProposalTab.Text = "جستـــجوی پروپوزال";
+            this.manageTeacherTab.AttachedControl = this.superTabControlPanel12;
+            this.manageTeacherTab.GlobalItem = false;
+            this.manageTeacherTab.Image = global::ProposalReportingSystem.Properties.Resources.teachers;
+            this.manageTeacherTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageTeacherTab.Name = "manageTeacherTab";
+            this.manageTeacherTab.Text = "مدیریت اطلاعات اساتید";
             // 
-            // addProposalTab
+            // superTabItem41
             // 
-            this.addProposalTab.AttachedControl = this.superTabControlPanel2;
-            this.addProposalTab.GlobalItem = false;
-            this.addProposalTab.Image = global::ProposalReportingSystem.Properties.Resources.file__1_;
-            this.addProposalTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.addProposalTab.Name = "addProposalTab";
-            this.addProposalTab.Text = "افزودن پروپوزال";
-            this.addProposalTab.Click += new System.EventHandler(this.addProposalTab_Click);
+            this.superTabItem41.GlobalItem = false;
+            this.superTabItem41.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem41.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem41.Name = "superTabItem41";
+            this.superTabItem41.Text = "لاگ";
+            // 
+            // superTabItem26
+            // 
+            this.superTabItem26.GlobalItem = false;
+            this.superTabItem26.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem26.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem26.Name = "superTabItem26";
+            this.superTabItem26.Text = "لاگ";
+            // 
+            // superTabItem27
+            // 
+            this.superTabItem27.GlobalItem = false;
+            this.superTabItem27.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem27.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem27.Name = "superTabItem27";
+            this.superTabItem27.Text = "لاگ";
+            // 
+            // superTabItem29
+            // 
+            this.superTabItem29.GlobalItem = false;
+            this.superTabItem29.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem29.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem29.Name = "superTabItem29";
+            this.superTabItem29.Text = "لاگ";
+            // 
+            // superTabItem30
+            // 
+            this.superTabItem30.GlobalItem = false;
+            this.superTabItem30.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem30.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem30.Name = "superTabItem30";
+            this.superTabItem30.Text = "لاگ";
+            // 
+            // superTabItem31
+            // 
+            this.superTabItem31.GlobalItem = false;
+            this.superTabItem31.Image = global::ProposalReportingSystem.Properties.Resources.tasks;
+            this.superTabItem31.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.superTabItem31.Name = "superTabItem31";
+            this.superTabItem31.Text = "لاگ";
+            // 
+            // manageUserTab
+            // 
+            this.manageUserTab.AttachedControl = this.superTabControlPanel4;
+            this.manageUserTab.GlobalItem = false;
+            this.manageUserTab.Image = global::ProposalReportingSystem.Properties.Resources.user;
+            this.manageUserTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.manageUserTab.Name = "manageUserTab";
+            this.manageUserTab.Text = "مدیریت اطلاعات کاربران";
             // 
             // personalSettingsTab
             // 
@@ -7188,14 +7223,25 @@
             this.personalSettingsTab.Name = "personalSettingsTab";
             this.personalSettingsTab.Text = "تنظیمات شخصی";
             // 
-            // aboutUsTab
+            // homeUserProfileLbl
             // 
-            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
-            this.aboutUsTab.GlobalItem = false;
-            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
-            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.aboutUsTab.Name = "aboutUsTab";
-            this.aboutUsTab.Text = "درباره نرم افزار";
+            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
+            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
+            this.homeUserProfileLbl.Location = new System.Drawing.Point(691, 102);
+            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
+            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
+            this.homeUserProfileLbl.TabIndex = 1;
+            this.homeUserProfileLbl.Visible = false;
+            // 
+            // homeTab
+            // 
+            this.homeTab.AttachedControl = this.superTabControlPanel1;
+            this.homeTab.GlobalItem = false;
+            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
+            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.homeTab.Name = "homeTab";
+            this.homeTab.Text = "خانه";
             // 
             // superTabItem32
             // 
@@ -7245,26 +7291,6 @@
             this.appSettingsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
             this.appSettingsTab.Name = "appSettingsTab";
             this.appSettingsTab.Text = "تنظیمات برنامه";
-            // 
-            // homeUserProfileLbl
-            // 
-            this.homeUserProfileLbl.BackColor = System.Drawing.Color.Transparent;
-            this.homeUserProfileLbl.Image = ((System.Drawing.Image)(resources.GetObject("homeUserProfileLbl.Image")));
-            this.homeUserProfileLbl.Location = new System.Drawing.Point(691, 102);
-            this.homeUserProfileLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeUserProfileLbl.Name = "homeUserProfileLbl";
-            this.homeUserProfileLbl.Size = new System.Drawing.Size(96, 82);
-            this.homeUserProfileLbl.TabIndex = 1;
-            this.homeUserProfileLbl.Visible = false;
-            // 
-            // homeTab
-            // 
-            this.homeTab.AttachedControl = this.superTabControlPanel1;
-            this.homeTab.GlobalItem = false;
-            this.homeTab.Image = global::ProposalReportingSystem.Properties.Resources.home;
-            this.homeTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
-            this.homeTab.Name = "homeTab";
-            this.homeTab.Text = "خانه";
             // 
             // superTabItem10
             // 
@@ -7328,6 +7354,15 @@
             this.exitTab.Name = "exitTab";
             this.exitTab.Text = "خروج";
             this.exitTab.Click += new System.EventHandler(this.exitTab_Click);
+            // 
+            // aboutUsTab
+            // 
+            this.aboutUsTab.AttachedControl = this.superTabControlPanel10;
+            this.aboutUsTab.GlobalItem = false;
+            this.aboutUsTab.Image = global::ProposalReportingSystem.Properties.Resources.about_us;
+            this.aboutUsTab.ImageAlignment = DevComponents.DotNetBar.ImageAlignment.MiddleRight;
+            this.aboutUsTab.Name = "aboutUsTab";
+            this.aboutUsTab.Text = "درباره نرم افزار";
             // 
             // Form1
             // 
