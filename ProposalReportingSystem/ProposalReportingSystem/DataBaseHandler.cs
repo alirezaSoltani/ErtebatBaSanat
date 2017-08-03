@@ -4608,6 +4608,8 @@ namespace ProposalReportingSystem
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + "','" + "EGroupTable'" + ")";
                     sc.ExecuteNonQuery();
+                    sc.CommandText = " UPDATE TeacherTable SET t_Group = " + "'" + newEGroup + "' WHERE t_Group = '" + lastEGroup + "'";
+                    sc.ExecuteNonQuery();
 
                     transaction.Commit();
                     popup = new PopUp("تغییرات موفقیت آمیز", "تغییرات با موفقیت ثبت شد", "تایید", "", "", "success");

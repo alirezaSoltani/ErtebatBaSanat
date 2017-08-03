@@ -77,7 +77,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(373, 31);
             this.label4.TabIndex = 11;
-            this.label4.Text = "نسخه 1.0.1";
+            this.label4.Text = "نسخه 1.1.0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginMinimizePbx

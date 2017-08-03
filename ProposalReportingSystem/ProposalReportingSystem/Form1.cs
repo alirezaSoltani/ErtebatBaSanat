@@ -3821,9 +3821,9 @@ namespace ProposalReportingSystem
                 }
 
                 dbh.AddUser(user, loginUser.U_NCode, myDateTime.ToString());
+                string userNcodeTemp = user.U_NCode.ToString();
                 manageUserClearBtn.PerformClick();
-                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode > 999999999");
-
+                dbh.dataGridViewUpdate2(manageUserShowDgv, usersBindingSource, "SELECT * FROM UsersTable WHERE u_NCode = '" + userNcodeTemp + "'");
             }
         }
 
@@ -4774,8 +4774,9 @@ namespace ProposalReportingSystem
 
 
                 dbh.AddTeacher(teacher, loginUser.U_NCode, myDateTime.ToString());
-
-                dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + manageTeacherExecutorNcodeTxtbx.Text + "'");
+                string teacherNcodeTemp = manageTeacherExecutorNcodeTxtbx.Text;
+                manageTeacherClearBtn.PerformClick();
+                dbh.dataGridViewUpdate2(manageTeacherShowDgv, teacherBindingSource, "SELECT * FROM TeacherTable WHERE t_NCode = '" + teacherNcodeTemp + "'");
             }
         }
 
