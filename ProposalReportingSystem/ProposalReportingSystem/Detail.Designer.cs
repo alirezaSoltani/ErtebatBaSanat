@@ -686,7 +686,7 @@
             this.detailEditionNumberTxtbx.Name = "detailEditionNumberTxtbx";
             this.detailEditionNumberTxtbx.PreventEnterBeep = true;
             this.detailEditionNumberTxtbx.ReadOnly = true;
-            this.detailEditionNumberTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailEditionNumberTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.detailEditionNumberTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailEditionNumberTxtbx.TabIndex = 23;
             this.detailEditionNumberTxtbx.TabStop = false;
@@ -816,7 +816,7 @@
             this.detailStartDateTxtbx.Name = "detailStartDateTxtbx";
             this.detailStartDateTxtbx.PreventEnterBeep = true;
             this.detailStartDateTxtbx.ReadOnly = true;
-            this.detailStartDateTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailStartDateTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.detailStartDateTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailStartDateTxtbx.TabIndex = 14;
             this.detailStartDateTxtbx.TabStop = false;
@@ -886,7 +886,7 @@
             this.detailValueTxtbx.Name = "detailValueTxtbx";
             this.detailValueTxtbx.PreventEnterBeep = true;
             this.detailValueTxtbx.ReadOnly = true;
-            this.detailValueTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailValueTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.detailValueTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailValueTxtbx.TabIndex = 20;
             this.detailValueTxtbx.TabStop = false;
@@ -968,7 +968,7 @@
             this.detailDurationTxtbx.Name = "detailDurationTxtbx";
             this.detailDurationTxtbx.PreventEnterBeep = true;
             this.detailDurationTxtbx.ReadOnly = true;
-            this.detailDurationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.detailDurationTxtbx.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.detailDurationTxtbx.Size = new System.Drawing.Size(158, 33);
             this.detailDurationTxtbx.TabIndex = 15;
             this.detailDurationTxtbx.TabStop = false;

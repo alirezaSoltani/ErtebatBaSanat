@@ -3244,6 +3244,7 @@ namespace ProposalReportingSystem
                     if (teacher.T_FName.ToString() != "notfound")
                     {
                         //Fill componenets with existing information
+                        isNewTeacher = false;
                         addProposalExecutorFNameTxtbx.Text = teacher.T_FName;
                         addProposalExecutorLNameTxtbx.Text = teacher.T_LName;
                         addProposalExecutorFacultyCb.Text = teacher.T_Faculty;
