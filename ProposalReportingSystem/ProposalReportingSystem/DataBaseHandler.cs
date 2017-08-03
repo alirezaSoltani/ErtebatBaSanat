@@ -4586,7 +4586,7 @@ namespace ProposalReportingSystem
 
         }
 
-        public void EditEGroup(String newEGroup, String lastEGroup, long username, String dateTime)
+        public void EditEGroup(String newEGroup, String lastEGroup, String faculty, long username, String dateTime)
         {
             try
             {
@@ -4604,9 +4604,9 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = " UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE groupName = '" + lastEGroup + "'";
+                    sc.CommandText = " UPDATE EGroupTable SET groupName = " + "'" + newEGroup + "' WHERE ( groupName = '" + lastEGroup + "' AND facultyName = '" + faculty + "' )";
                     sc.ExecuteNonQuery();
-                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + "','" + "EGroupTable'" + ")";
+                    sc.CommandText = " INSERT INTO logTable (username , dateTime , description ,tableName) VALUES ('" + username + "','" + dateTime + "','" + "Edited from " + lastEGroup + " to " + newEGroup + " For faculty " + faculty + "','" + "EGroupTable'" + ")";
                     sc.ExecuteNonQuery();
                     sc.CommandText = " UPDATE TeacherTable SET t_Group = " + "'" + newEGroup + "' WHERE t_Group = '" + lastEGroup + "'";
                     sc.ExecuteNonQuery();
@@ -4723,7 +4723,7 @@ namespace ProposalReportingSystem
 
                 try
                 {
-                    sc.CommandText = " DELETE FROM EGroupTable WHERE groupName = '" + groupName + "'";
+                    sc.CommandText = " DELETE FROM EGroupTable WHERE ( groupName = '" + groupName + "' AND facultyName = '" + facultyName + "' )";
                     sc.ExecuteNonQuery();
                     sc.CommandText = " INSERT INTO deletedEGroupTable  (groupName ,facultyName , date , username) VALUES( '" + groupName + "','" + facultyName + "' ,'" + dateTime + "','" + username + "')";
                     sc.ExecuteNonQuery();
@@ -4803,7 +4803,6 @@ namespace ProposalReportingSystem
 
 
         ///////////end query of EducationalGroup
-
 
 
         public List<string> getEDeg()

@@ -1621,9 +1621,9 @@ namespace ProposalReportingSystem
                     searchProposalExecutorEGroupCb.Items.Clear();
                     manageTeacherExecutorEgroupCb.Items.Clear();
 
+                    appSettingEgroupTxtbx.Focus();
 
-
-                    foreach (String EGroup in comboList)
+                    /*foreach (String EGroup in comboList)
                     {
                         addProposalExecutorEGroupCb.Items.Add(EGroup);
                         editProposalExecutorEGroupCb.Items.Add(EGroup);
@@ -1631,7 +1631,7 @@ namespace ProposalReportingSystem
                         manageTeacherExecutorEgroupCb.Items.Add(EGroup);
 
                         appSettingEgroupTxtbx.Focus();
-                    }
+                    }*/
                 }
             }
 
@@ -2078,6 +2078,7 @@ namespace ProposalReportingSystem
                     editProposalExecutorFacultyCb.Items.Clear();
                     searchProposalExecutorFacultyCb.Items.Clear();
                     manageTeacherExecutorFacultyCb.Items.Clear();
+                    manageUserFacultyCmb.Items.Clear();
 
                     comboList = dbh.getFaculty();
                     foreach (String ExecutorFaculty in comboList)
@@ -2086,6 +2087,7 @@ namespace ProposalReportingSystem
                         editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
                         manageTeacherExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageUserFacultyCmb.Items.Add(ExecutorFaculty);
                     }
                     appSettingFacultyTxtbx.Focus();
                 }
@@ -2163,7 +2165,7 @@ namespace ProposalReportingSystem
             {
                 if (!appSettingEgroupTxtbx.Text.Equals(""))
                 {
-                    dbh.EditEGroup(appSettingEgroupTxtbx.Text, appSettingCurrentSelectedOption, loginUser.U_NCode, myDateTime.ToString());
+                    dbh.EditEGroup(appSettingEgroupTxtbx.Text, appSettingCurrentSelectedOption, appSettingFacultyTxtbx.Text, loginUser.U_NCode, myDateTime.ToString());
                     appSettingEgroupTxtbx.Clear();
                     dbh.dataGridViewUpdate2(appSettingShowDv, appSettingBindingSource, "SELECT groupName FROM EGroupTable WHERE facultyName ='" + appSettingFacultyTxtbx.Text + "'");
                     appSettingShowDv.Columns[0].HeaderText = "گروه آموزشی";
@@ -2176,13 +2178,13 @@ namespace ProposalReportingSystem
                     manageTeacherExecutorEgroupCb.Items.Clear();
 
 
-                    foreach (String EGroup in comboList)
+                    /*foreach (String EGroup in comboList)
                     {
                         addProposalExecutorEGroupCb.Items.Add(EGroup);
                         editProposalExecutorEGroupCb.Items.Add(EGroup);
                         searchProposalExecutorEGroupCb.Items.Add(EGroup);
                         manageTeacherExecutorEgroupCb.Items.Add(EGroup);
-                    }
+                    }*/
 
                     appSettingEgroupTxtbx.Focus();
                 }
@@ -2472,7 +2474,24 @@ namespace ProposalReportingSystem
                     appSettingEditBtn.Enabled = false;
                     appSettingDeleteBtn.Enabled = false;
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    //form_initializer(); // To Reset items of comboBoxes and others
+
+                    addProposalExecutorFacultyCb.Items.Clear();
+                    editProposalExecutorFacultyCb.Items.Clear();
+                    searchProposalExecutorFacultyCb.Items.Clear();
+                    manageTeacherExecutorFacultyCb.Items.Clear();
+                    manageUserFacultyCmb.Items.Clear();
+
+                    comboList = dbh.getFaculty();
+                    foreach (String ExecutorFaculty in comboList)
+                    {
+                        addProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        editProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        searchProposalExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageTeacherExecutorFacultyCb.Items.Add(ExecutorFaculty);
+                        manageUserFacultyCmb.Items.Add(ExecutorFaculty);
+                    }
+
                     appSettingFacultyTxtbx.Focus();
                 }
 
@@ -2511,8 +2530,24 @@ namespace ProposalReportingSystem
                     appSettingEditBtn.Enabled = false;
                     appSettingDeleteBtn.Enabled = false;
 
-                    form_initializer(); // To Reset items of comboBoxes and others
+                    //form_initializer(); // To Reset items of comboBoxes and others
+
+                    addProposalExecutorEGroupCb.Items.Clear();
+                    editProposalExecutorEGroupCb.Items.Clear();
+                    searchProposalExecutorEGroupCb.Items.Clear();
+                    manageTeacherExecutorEgroupCb.Items.Clear();
+
                     appSettingEgroupTxtbx.Focus();
+
+                    /*foreach (String EGroup in comboList)
+                    {
+                        addProposalExecutorEGroupCb.Items.Add(EGroup);
+                        editProposalExecutorEGroupCb.Items.Add(EGroup);
+                        searchProposalExecutorEGroupCb.Items.Add(EGroup);
+                        manageTeacherExecutorEgroupCb.Items.Add(EGroup);
+
+                    }*/
+
                 }
 
                 else if (appSettingCoTxtbx.Enabled == true)
